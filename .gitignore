@@ -1,0 +1,4 @@
+.venv/
+venv/
+train_4000_600_chars.json
+filtered_dataset.jsonl
