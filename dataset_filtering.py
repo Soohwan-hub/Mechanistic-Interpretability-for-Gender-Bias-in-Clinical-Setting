@@ -105,8 +105,11 @@ def main():
                 
                 if cohort:
                     # 2. De-gender
-                    clean_text = degender_text(original_text)
-                    clean_summary = degender_text(entry.get('summary', ''))
+                    # clean_text = degender_text(original_text)
+                    # clean_summary = degender_text(entry.get('summary', ''))
+
+                    clean_text = original_text
+                    clean_summary = entry.get('summary', '')
                     
                     # 3. Construct new entry
                     new_entry = {

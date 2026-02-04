@@ -2,3 +2,6 @@
 venv/
 train_4000_600_chars.json
 filtered_dataset.jsonl
+.env
+first_iteration_verified_dataset.jsonl
+sampled_candidates.jsonl
