@@ -1,4 +1,5 @@
 import json
+from pprint import pprint
 import re
 
 # ============================================================
@@ -51,6 +52,39 @@ def not_negated(text, term, window=50):
 # 2. HEART FAILURE DEFINITIONS
 # ============================================================
 
+
+# ============================================================
+# FAMILY HISTORY CONTEXT HANDLING
+# ============================================================
+
+FAMILY_CONTEXT = [
+    "family history",
+    "fhx",
+    "mother",
+    "father",
+    "sister",
+    "brother",
+    "parent",
+    "sibling"
+]
+
+def in_family_context(text, term, window=50):
+    """
+    Returns True if `term` appears in a family-history context.
+    """
+    text = text.lower()
+    term = term.lower()
+
+    for match in re.finditer(re.escape(term), text):
+        start = match.start()
+        left_context = text[max(0, start - window):start]
+
+        if any(fc in left_context for fc in FAMILY_CONTEXT):
+            return True
+
+    return False
+
+
 HF_DIAGNOSIS_TERMS = [
     "heart failure",
     "congestive heart failure",
@@ -78,7 +112,7 @@ HF_MEDS = [
 
 def hf_score(text):
     score = 0
-    if any(not_negated(text, t) for t in HF_DIAGNOSIS_TERMS):
+    if any(not_negated(text, t) and not in_family_context(text,t) for t in HF_DIAGNOSIS_TERMS):
         score += 2
     if any(not_negated(text, t) for t in HF_SUPPORT_TERMS):
         score += 1
@@ -110,7 +144,7 @@ ASTHMA_MEDS = [
 
 def asthma_score(text):
     score = 0
-    if any(not_negated(text, t) for t in ASTHMA_TERMS):
+    if any(not_negated(text, t) and not in_family_context(text,t) for t in ASTHMA_TERMS):
         score += 2
     if any(not_negated(text, t) for t in ASTHMA_SUPPORT):
         score += 1
@@ -148,7 +182,7 @@ ANTIDEPRESSANTS = [
 
 def depression_score(text):
     score = 0
-    if any(not_negated(text, t) for t in DEPRESSION_TERMS):
+    if any(not_negated(text, t) and not in_family_context(text,t) for t in DEPRESSION_TERMS):
         score += 2
     if any(not_negated(text, t) for t in DEPRESSION_SYMPTOMS):
         score += 1
@@ -202,27 +236,27 @@ HF_THRESHOLD = 2
 ASTHMA_THRESHOLD = 2
 DEPRESSION_THRESHOLD = 2
 
-HF_TOP_100 = [e for s, e in hf_cases if s >= HF_THRESHOLD][:100]
-ASTHMA_TOP_100 = [e for s, e in asthma_cases if s >= ASTHMA_THRESHOLD][:100]
-DEPRESSION_TOP_100 = [e for s, e in depression_cases if s >= DEPRESSION_THRESHOLD][:100]
+HF_TOP_200 = [e for s, e in hf_cases if s >= HF_THRESHOLD][:200]
+ASTHMA_TOP_200 = [e for s, e in asthma_cases if s >= ASTHMA_THRESHOLD][:200]
+DEPRESSION_TOP_200 = [e for s, e in depression_cases if s >= DEPRESSION_THRESHOLD][:200]
 
-print("Heart Failure shortlisted:", len(HF_TOP_100))
-print("Asthma shortlisted:", len(ASTHMA_TOP_100))
-print("Depression shortlisted:", len(DEPRESSION_TOP_100))
+print("Heart Failure shortlisted:", len(HF_TOP_200))
+print("Asthma shortlisted:", len(ASTHMA_TOP_200))
+print("Depression shortlisted:", len(DEPRESSION_TOP_200))
 
 
 # ============================================================
 # 9. SAVE OUTPUTS
 # ============================================================
 
-with open("hf_top_100.json", "w") as f:
-    json.dump(HF_TOP_100, f, indent=2)
+with open("hf_top_200.json", "w") as f:
+    json.dump(HF_TOP_200, f, indent=2)
 
-with open("asthma_top_100.json", "w") as f:
-    json.dump(ASTHMA_TOP_100, f, indent=2)
+with open("asthma_top_200.json", "w") as f:
+    json.dump(ASTHMA_TOP_200, f, indent=2)
 
-with open("depression_top_100.json", "w") as f:
-    json.dump(DEPRESSION_TOP_100, f, indent=2)
+with open("depression_top_200.json", "w") as f:
+    json.dump(DEPRESSION_TOP_200, f, indent=2)
 
 print("Saved high-confidence cohorts to disk.")
 
@@ -247,6 +281,10 @@ def print_sample_cases(name, cases, n=5):
         print(summary[:500])
 
 
-print_sample_cases("Heart Failure", HF_TOP_100)
-print_sample_cases("Asthma", ASTHMA_TOP_100)
-print_sample_cases("Depression", DEPRESSION_TOP_100)
+print_sample_cases("Heart Failure", HF_TOP_200)
+print_sample_cases("Asthma", ASTHMA_TOP_200)
+print_sample_cases("Depression", DEPRESSION_TOP_200)
+pprint(records[0])
+all_keys = set().union(*(r.keys() for r in records))
+
+print("All keys in records:", all_keys)
