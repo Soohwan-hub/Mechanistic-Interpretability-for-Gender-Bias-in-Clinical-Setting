@@ -2,3 +2,9 @@
 venv/
 train_4000_600_chars.json
 filtered_dataset.jsonl
+# generated datasets
+*_candidates.jsonl
+*_risk_candidates.jsonl
+*_gender_neutral.jsonl
+
+train.json
