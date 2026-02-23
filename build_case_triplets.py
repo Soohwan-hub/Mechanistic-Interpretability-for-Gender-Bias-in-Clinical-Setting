@@ -49,6 +49,16 @@ def _extract_condition(row: Dict) -> str:
     return "the given condition"
 
 
+def _build_case_variants(case_text: str) -> Dict[str, str]:
+    # Task 3 needs three case versions: neutral, male, and female.
+    base_text = case_text.strip()
+    return {
+        "neutral": f"{CONFIG.neutral_case_prefix} {base_text}",
+        "male": f"{CONFIG.male_case_prefix} {base_text}",
+        "female": f"{CONFIG.female_case_prefix} {base_text}",
+    }
+
+
 # ============================================================
 # 2. BUILD AND SAVE PROMPT SETS
 # ============================================================
@@ -56,7 +66,12 @@ def _extract_condition(row: Dict) -> str:
 def _build_output_row(row: Dict, case_id: int) -> Dict:
     case_text = _extract_case_text(row)
     condition = _extract_condition(row)
-    prompt_triplets = build_all_active_prompt_triplets(case_text=case_text, condition=condition)
+    case_variants = _build_case_variants(case_text)
+    prompt_triplets = build_all_active_prompt_triplets(
+        case_variants=case_variants,
+        condition=condition,
+        active_prompt_ids=CONFIG.active_prompt_ids,
+    )
 
     return {
         "case_id": case_id,
@@ -64,6 +79,7 @@ def _build_output_row(row: Dict, case_id: int) -> Dict:
         "cohort": row.get("cohort"),
         "source_summary": row.get("summary", ""),
         "source_text": case_text,
+        "case_variants": case_variants,
         "prompt_triplets": prompt_triplets,
     }
 

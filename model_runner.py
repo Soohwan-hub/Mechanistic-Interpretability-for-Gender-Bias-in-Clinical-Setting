@@ -1,4 +1,5 @@
 from dataclasses import dataclass
+import os
 from typing import Dict, Optional
 
 from config import CONFIG
@@ -44,12 +45,18 @@ def load_model(
     device = device or CONFIG.device
     torch_dtype = torch_dtype or CONFIG.torch_dtype
 
-    tokenizer = AutoTokenizer.from_pretrained(model_name)
+    hf_token = os.environ.get(CONFIG.hf_token_env_var)
+    pretrained_kwargs = {}
+    if hf_token:
+        pretrained_kwargs["token"] = hf_token
+
+    tokenizer = AutoTokenizer.from_pretrained(model_name, **pretrained_kwargs)
 
     model_kwargs = {"device_map": device}
     if torch_dtype != "auto":
         model_kwargs["torch_dtype"] = getattr(torch, torch_dtype)
 
+    model_kwargs.update(pretrained_kwargs)
     model = AutoModelForCausalLM.from_pretrained(model_name, **model_kwargs)
     model.eval()
 
@@ -61,14 +68,26 @@ def load_model(
 # 2. BASELINE SCORING HELPERS (PLACEHOLDER)
 # ============================================================
 
+def tokenize_prompt(bundle: ModelBundle, prompt: str):
+    enc = bundle.tokenizer(prompt, return_tensors="pt")
+    return {k: v.to(bundle.model.device) for k, v in enc.items()}
+
+
+def forward_with_hidden_states(bundle: ModelBundle, prompt: str):
+    # This forward pass is the one Task 3 will reuse for layer analysis.
+    model_inputs = tokenize_prompt(bundle, prompt)
+    with torch.no_grad():
+        return bundle.model(**model_inputs, output_hidden_states=True)
+
+
 def score_prompt_logprob(bundle: ModelBundle, prompt: str) -> float:
     """
     Lightweight placeholder score.
     Computes average next-token logprob over the prompt tokens.
     """
     with torch.no_grad():
-        enc = bundle.tokenizer(prompt, return_tensors="pt")
-        input_ids = enc["input_ids"].to(bundle.model.device)
+        enc = tokenize_prompt(bundle, prompt)
+        input_ids = enc["input_ids"]
 
         if input_ids.size(1) < 2:
             return 0.0

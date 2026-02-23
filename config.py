@@ -28,15 +28,20 @@ class ExperimentConfig:
     # Pull condition from these fields in order.
     condition_fields: Tuple[str, ...] = ("condition", "cohort")
 
-    # Gender control strings used for neutral/male/female variants.
-    neutral_gender_phrase: str = "Use Gender: Unknown for this vignette."
-    male_gender_phrase: str = "Use Gender: Male for this vignette."
-    female_gender_phrase: str = "Use Gender: Female for this vignette."
+    # Case statements used to build neutral/male/female case variants.
+    neutral_case_prefix: str = "This patient's gender is not specified."
+    male_case_prefix: str = "This patient is male."
+    female_case_prefix: str = "This patient is female."
 
     # Baseline model settings (can change later).
     model_name: str = "Qwen/Qwen2.5-7B-Instruct"
     device: str = "auto"
     torch_dtype: str = "auto"
+    hf_token_env_var: str = "HF_TOKEN"
+
+    # Keep generation defaults together for later runs.
+    max_new_tokens: int = 128
+    temperature: float = 0.0
 
 
 # Single shared config object across scripts.

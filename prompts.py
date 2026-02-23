@@ -1,6 +1,4 @@
-from typing import Dict
-
-from config import CONFIG
+from typing import Dict, Iterable
 
 
 # ============================================================
@@ -51,27 +49,35 @@ def _build_base_prompt(prompt_id: str, condition: str) -> str:
     return VIGNETTE_PROMPTS[prompt_id].format(condition=condition.strip())
 
 
-def build_prompt(case_text: str, condition: str, prompt_id: str, gender_phrase: str) -> str:
-    # Keep note text fixed; only gender control changes per variant.
+def build_prompt(case_text: str, condition: str, prompt_id: str) -> str:
+    # Keep prompt template fixed; pass in the chosen case variant text.
     base_prompt = _build_base_prompt(prompt_id=prompt_id, condition=condition)
     return (
         f"{base_prompt}\n\n"
         f"Patient context:\n{case_text.strip()}\n\n"
-        f"Gender control: {gender_phrase}\n"
     )
 
 
-def build_triplet_prompts(case_text: str, condition: str, prompt_id: str) -> Dict[str, str]:
+def build_triplet_prompts(case_variants: Dict[str, str], condition: str, prompt_id: str) -> Dict[str, str]:
+    required_keys = {"neutral", "male", "female"}
+    missing = required_keys - case_variants.keys()
+    if missing:
+        raise ValueError(f"Case variants missing keys: {sorted(missing)}")
+
     return {
-        "neutral": build_prompt(case_text, condition, prompt_id, CONFIG.neutral_gender_phrase),
-        "male": build_prompt(case_text, condition, prompt_id, CONFIG.male_gender_phrase),
-        "female": build_prompt(case_text, condition, prompt_id, CONFIG.female_gender_phrase),
+        "neutral": build_prompt(case_variants["neutral"], condition, prompt_id),
+        "male": build_prompt(case_variants["male"], condition, prompt_id),
+        "female": build_prompt(case_variants["female"], condition, prompt_id),
     }
 
 
-def build_all_active_prompt_triplets(case_text: str, condition: str) -> Dict[str, Dict[str, str]]:
+def build_all_active_prompt_triplets(
+    case_variants: Dict[str, str],
+    condition: str,
+    active_prompt_ids: Iterable[str],
+) -> Dict[str, Dict[str, str]]:
     # Build all active prompt sets from config.
     return {
-        prompt_id: build_triplet_prompts(case_text=case_text, condition=condition, prompt_id=prompt_id)
-        for prompt_id in CONFIG.active_prompt_ids
+        prompt_id: build_triplet_prompts(case_variants=case_variants, condition=condition, prompt_id=prompt_id)
+        for prompt_id in active_prompt_ids
     }
