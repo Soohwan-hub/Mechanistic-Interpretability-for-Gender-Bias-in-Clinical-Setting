@@ -1,5 +1,9 @@
 .venv/
 venv/
+final_sampled_data.jsonl
+second_iteration_verified_dataset.jsonl
+specified_count_sampled_candidates.jsonl
+verified_dataset.jsonl
 train_4000_600_chars.json
 filtered_dataset.jsonl
 .env

@@ -1,7 +1,7 @@
 import pandas as pd
 from vllm import LLM, SamplingParams
 
-INPUT_FILE = "sampled_candidates.jsonl"
+INPUT_FILE = "specified_count_sampled_candidates.jsonl"
 OUTPUT_FILE = "verified_dataset.jsonl"
 # CHANGE THIS if you are using the 70B model or GH200 (FP8)
 MODEL_NAME = "meta-llama/Meta-Llama-3.1-8B-Instruct" 
