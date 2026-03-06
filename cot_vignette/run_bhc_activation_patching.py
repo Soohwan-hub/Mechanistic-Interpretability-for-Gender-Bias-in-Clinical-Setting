@@ -16,7 +16,7 @@ from cot_vignette.patch_targets import (
     patch_token_head_slice,
     patch_token_vector,
 )
-from cot_vignette.prompts_config import CORRUPT_PROMPTS
+from cot_vignette.prompts_config import BHC_PROMPT_KEYS_5_PER_TYPE, CORRUPT_PROMPTS
 
 
 MODEL_NAME = "Qwen/Qwen2.5-7B-Instruct"
@@ -225,7 +225,7 @@ def parse_args() -> RunConfig:
     parser = argparse.ArgumentParser()
     parser.add_argument("--patch-target", default="mlp", choices=["residual", "mlp", "attn", "attn_head"])
     parser.add_argument("--n-cases", type=int, default=30)
-    parser.add_argument("--prompts", default="cot_vignette_A,cot_vignette_B,cot_vignette_C")
+    parser.add_argument("--prompts", default=",".join(BHC_PROMPT_KEYS_5_PER_TYPE))
     parser.add_argument("--cohorts", default="depression,hf")
     parser.add_argument("--output-dir", default="/home/ubuntu/patching_results/bhc_prompt_sweep")
     parser.add_argument("--seed", type=int, default=42)
@@ -303,8 +303,11 @@ def main() -> None:
             corrupted_prompt = corrupt["corrupted_prompt"]
             corrupted_tokens = corrupt["corrupted_tokens"]
 
+            # Align clean-token index to the corrupted prompt timeline.
+            # If clean is longer, shift corrupted token positions forward.
+            # Example: clean=10, corrupt=8 -> offset=2, patch at token_idx+2.
             diff = len(clean_tokens) - len(corrupted_tokens)
-            offset = abs(diff) if diff < 0 else 0
+            offset = diff if diff > 0 else 0
 
             clean_cache = _cache_clean_vectors(
                 llm=llm,
