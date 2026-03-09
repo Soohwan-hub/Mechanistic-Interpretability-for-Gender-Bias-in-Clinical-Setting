@@ -37,6 +37,7 @@ class RunConfig:
     patch_target: str
     n_cases: int
     prompt_keys: List[str]
+    prompt_group: str
     cohorts: List[str]
     output_dir: str
     seed: int
@@ -153,11 +154,14 @@ def _run_patch_sweep(
     num_heads: int,
     head_idx: int,
     max_tokens: int,
-) -> Tuple[List[float], List[float]]:
+) -> Tuple[List[float], List[float], int]:
     softmax = torch.nn.Softmax(dim=-1)
     per_layer_mean: List[float] = []
     per_layer_max: List[float] = []
     token_count = len(corrupted_tokens) if max_tokens <= 0 else min(max_tokens, len(corrupted_tokens))
+    # If we shift indices forward with offset, cap token sweep to keep patch_idx in range.
+    # This avoids out-of-bounds when clean prompt is longer than corrupt prompt.
+    token_count = max(0, min(token_count, len(corrupted_tokens) - offset))
 
     for layer_idx in range(num_layers_model):
         layer_scores: List[float] = []
@@ -196,7 +200,19 @@ def _run_patch_sweep(
             per_layer_mean.append(float("nan"))
             per_layer_max.append(float("nan"))
 
-    return per_layer_mean, per_layer_max
+    return per_layer_mean, per_layer_max, token_count
+
+
+def _prompt_keys_from_group(prompt_group: str) -> List[str]:
+    if prompt_group == "all":
+        return list(BHC_PROMPT_KEYS_5_PER_TYPE)
+    if prompt_group == "A":
+        return [k for k in BHC_PROMPT_KEYS_5_PER_TYPE if k.startswith("cot_vignette_A_")]
+    if prompt_group == "B":
+        return [k for k in BHC_PROMPT_KEYS_5_PER_TYPE if k.startswith("cot_vignette_B_")]
+    if prompt_group == "C":
+        return [k for k in BHC_PROMPT_KEYS_5_PER_TYPE if k.startswith("cot_vignette_C_")]
+    raise ValueError(f"Unknown prompt_group: {prompt_group}")
 
 
 def _write_json(path: str, payload: Dict[str, Any]) -> None:
@@ -225,7 +241,17 @@ def parse_args() -> RunConfig:
     parser = argparse.ArgumentParser()
     parser.add_argument("--patch-target", default="mlp", choices=["residual", "mlp", "attn", "attn_head"])
     parser.add_argument("--n-cases", type=int, default=30)
-    parser.add_argument("--prompts", default=",".join(BHC_PROMPT_KEYS_5_PER_TYPE))
+    parser.add_argument(
+        "--prompt-group",
+        default="all",
+        choices=["all", "A", "B", "C"],
+        help="Run only one prompt family per instance (A/B/C) or all.",
+    )
+    parser.add_argument(
+        "--prompts",
+        default="",
+        help="Optional comma-separated explicit prompt keys. If set, overrides --prompt-group.",
+    )
     parser.add_argument("--cohorts", default="depression,hf")
     parser.add_argument("--output-dir", default="/home/ubuntu/patching_results/bhc_prompt_sweep")
     parser.add_argument("--seed", type=int, default=42)
@@ -234,10 +260,16 @@ def parse_args() -> RunConfig:
     parser.add_argument("--max-tokens", type=int, default=0, help="0 means full token sweep")
     parser.add_argument("--head-idx", type=int, default=0)
     args = parser.parse_args()
+    prompt_keys = (
+        [p.strip() for p in args.prompts.split(",") if p.strip()]
+        if args.prompts.strip()
+        else _prompt_keys_from_group(args.prompt_group)
+    )
     return RunConfig(
         patch_target=args.patch_target,
         n_cases=args.n_cases,
-        prompt_keys=[p.strip() for p in args.prompts.split(",") if p.strip()],
+        prompt_keys=prompt_keys,
+        prompt_group=args.prompt_group,
         cohorts=[c.strip() for c in args.cohorts.split(",") if c.strip()],
         output_dir=args.output_dir,
         seed=args.seed,
@@ -267,6 +299,24 @@ def main() -> None:
     clean_tokens = clean_prompt_output["clean_tokens"]
     patch_token_from = clean_prompt_output["patch_token_from"]
     target_gender_token = llm.tokenizer(" " + cfg.target_gender, add_special_tokens=False)["input_ids"][-1]
+    clean_cache = _cache_clean_vectors(
+        llm=llm,
+        patch_target=cfg.patch_target,
+        patch_token_from=patch_token_from,
+        num_layers_model=num_layers_model,
+        num_heads=num_heads,
+        head_idx=cfg.head_idx,
+        clean_prompt=clean_prompt,
+    )
+
+    for key in cfg.prompt_keys:
+        if key not in CORRUPT_PROMPTS:
+            raise KeyError(f"Prompt key not found in CORRUPT_PROMPTS: {key}")
+
+    print(
+        f"run_config patch_target={cfg.patch_target} prompt_group={cfg.prompt_group} "
+        f"num_prompts={len(cfg.prompt_keys)} cohorts={cfg.cohorts} n_cases={cfg.n_cases}"
+    )
 
     random.seed(cfg.seed)
     all_case_rows: List[Dict[str, Any]] = []
@@ -309,23 +359,13 @@ def main() -> None:
             diff = len(clean_tokens) - len(corrupted_tokens)
             offset = diff if diff > 0 else 0
 
-            clean_cache = _cache_clean_vectors(
-                llm=llm,
-                patch_target=cfg.patch_target,
-                patch_token_from=patch_token_from,
-                num_layers_model=num_layers_model,
-                num_heads=num_heads,
-                head_idx=cfg.head_idx,
-                clean_prompt=clean_prompt,
-            )
-
             corrupted_prob_target = _compute_corrupted_target_prob(
                 llm=llm,
                 corrupted_prompt=corrupted_prompt,
                 target_gender_token=target_gender_token,
             )
 
-            per_layer_mean, per_layer_max = _run_patch_sweep(
+            per_layer_mean, per_layer_max, tokens_swept = _run_patch_sweep(
                 llm=llm,
                 patch_target=cfg.patch_target,
                 clean_activations_cache=clean_cache,
@@ -354,7 +394,7 @@ def main() -> None:
                     "prompt_key": prompt_key,
                     "case_idx": case_idx,
                     "num_layers_model": num_layers_model,
-                    "num_tokens_swept": len(corrupted_tokens) if cfg.max_tokens <= 0 else min(cfg.max_tokens, len(corrupted_tokens)),
+                    "num_tokens_swept": tokens_swept,
                     "per_layer_mean": per_layer_mean,
                     "per_layer_max": per_layer_max,
                 },
