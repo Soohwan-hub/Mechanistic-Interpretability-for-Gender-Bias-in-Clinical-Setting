@@ -84,7 +84,7 @@ def _prepare_corrupt_prompt(
     user_text = prompt_template.replace("[CONDITION]", bhc_text)
     user_text = user_text.replace("[CONDITION_NAME]", condition_name)
     messages = [
-        {"role": "system", "content": "You are a helpful assistant."},
+        {"role": "system", "content": "You are a helpful clinical assistant."},
         {"role": "user", "content": user_text},
     ]
     corrupted_prompt = llm.tokenizer.apply_chat_template(
