@@ -1,0 +1,110 @@
+Resume: 75 completed, 15 remaining
+Loading weights:   0%|          | 0/339 [00:00<?, ?it/s]Loading weights:   1%|          | 2/339 [00:00<00:40,  8.40it/s]Loading weights:   1%|          | 4/339 [00:00<00:39,  8.48it/s]Loading weights:   2%|▏         | 6/339 [00:00<00:41,  8.04it/s]Loading weights:   3%|▎         | 9/339 [00:00<00:30, 10.88it/s]Loading weights:   3%|▎         | 11/339 [00:01<00:30, 10.60it/s]Loading weights:   4%|▍         | 13/339 [00:01<00:32, 10.09it/s]Loading weights:   4%|▍         | 15/339 [00:01<00:29, 11.07it/s]Loading weights:   5%|▌         | 17/339 [00:01<00:44,  7.29it/s]Loading weights:   5%|▌         | 18/339 [00:02<00:47,  6.70it/s]Loading weights:  55%|█████▍    | 186/339 [00:02<00:00, 252.14it/s]Loading weights: 100%|██████████| 339/339 [00:02<00:00, 144.18it/s]
+You have set `compile_config`, but we are unable to meet the criteria for compilation. Compilation will be skipped.
+Traceback (most recent call last):
+  File "/home/ubuntu/simple_patching/simple_patching.py", line 232, in run_patch_sweep
+    with tracer.invoke(corrupted_prompt):
+  File "/home/ubuntu/simple_patching/simple_patching.py", line 232, in run_patch_sweep
+    with tracer.invoke(corrupted_prompt):
+  File "/home/ubuntu/simple_patching/.venv/lib/python3.10/site-packages/nnsight/intervention/tracing/base.py", line 650, in skip_traced_code
+    raise ExitTracingException()
+nnsight.intervention.tracing.base.ExitTracingException
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/ubuntu/simple_patching/simple_patching.py", line 836, in <module>
+    main()
+  File "/home/ubuntu/simple_patching/simple_patching.py", line 832, in main
+    run_patching(args, run_dir, cohort_files)
+  File "/home/ubuntu/simple_patching/simple_patching.py", line 588, in run_patching
+    rewrite_scores, corrupted_prob = run_patch_sweep(
+  File "/home/ubuntu/simple_patching/simple_patching.py", line 231, in run_patch_sweep
+    with llm.generate(max_new_tokens=1) as tracer:
+  File "/home/ubuntu/simple_patching/.venv/lib/python3.10/site-packages/nnsight/intervention/tracing/tracer.py", line 327, in __exit__
+    result = super().__exit__(exc_type, exc_value, traceback)
+  File "/home/ubuntu/simple_patching/.venv/lib/python3.10/site-packages/nnsight/intervention/tracing/base.py", line 694, in __exit__
+    self.backend(self)
+  File "/home/ubuntu/simple_patching/.venv/lib/python3.10/site-packages/nnsight/intervention/backends/execution.py", line 21, in __call__
+    return tracer.execute(fn)
+  File "/home/ubuntu/simple_patching/.venv/lib/python3.10/site-packages/nnsight/intervention/tracing/tracer.py", line 427, in execute
+    self.model.interleave(self.fn, *args, **kwargs)
+  File "/home/ubuntu/simple_patching/.venv/lib/python3.10/site-packages/nnsight/modeling/mixins/meta.py", line 121, in interleave
+    return super().interleave(fn, *args, **kwargs)
+  File "/home/ubuntu/simple_patching/.venv/lib/python3.10/site-packages/nnsight/intervention/envoy.py", line 798, in interleave
+    result = fn(*args, **kwargs)
+  File "/home/ubuntu/simple_patching/.venv/lib/python3.10/site-packages/nnsight/modeling/language.py", line 155, in __nnsight_generate__
+    output = self._model.generate(*args, streamer=streamer, **kwargs)
+  File "/home/ubuntu/simple_patching/.venv/lib/python3.10/site-packages/torch/utils/_contextlib.py", line 116, in decorate_context
+    return func(*args, **kwargs)
+  File "/home/ubuntu/simple_patching/.venv/lib/python3.10/site-packages/transformers/generation/utils.py", line 2535, in generate
+    result = decoding_method(
+  File "/home/ubuntu/simple_patching/.venv/lib/python3.10/site-packages/transformers/generation/utils.py", line 2728, in _sample
+    outputs = self._prefill(
+  File "/home/ubuntu/simple_patching/.venv/lib/python3.10/site-packages/transformers/generation/utils.py", line 3776, in _prefill
+    return self(**model_inputs, return_dict=True)
+  File "/home/ubuntu/simple_patching/.venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1736, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/ubuntu/simple_patching/.venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1844, in _call_impl
+    return inner()
+  File "/home/ubuntu/simple_patching/.venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1790, in inner
+    result = forward_call(*args, **kwargs)
+  File "/home/ubuntu/simple_patching/.venv/lib/python3.10/site-packages/nnsight/intervention/interleaver.py", line 244, in nnsight_forward
+    return m.__nnsight_forward__(m, *args, **kwargs)
+  File "/home/ubuntu/simple_patching/.venv/lib/python3.10/site-packages/transformers/utils/generic.py", line 843, in wrapper
+    output = func(self, *args, **kwargs)
+  File "/home/ubuntu/simple_patching/.venv/lib/python3.10/site-packages/transformers/models/qwen2/modeling_qwen2.py", line 476, in forward
+    outputs: BaseModelOutputWithPast = self.model(
+  File "/home/ubuntu/simple_patching/.venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1736, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/ubuntu/simple_patching/.venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1844, in _call_impl
+    return inner()
+  File "/home/ubuntu/simple_patching/.venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1790, in inner
+    result = forward_call(*args, **kwargs)
+  File "/home/ubuntu/simple_patching/.venv/lib/python3.10/site-packages/nnsight/intervention/interleaver.py", line 244, in nnsight_forward
+    return m.__nnsight_forward__(m, *args, **kwargs)
+  File "/home/ubuntu/simple_patching/.venv/lib/python3.10/site-packages/transformers/utils/generic.py", line 917, in wrapper
+    output = func(self, *args, **kwargs)
+  File "/home/ubuntu/simple_patching/.venv/lib/python3.10/site-packages/transformers/utils/output_capturing.py", line 253, in wrapper
+    outputs = func(self, *args, **kwargs)
+  File "/home/ubuntu/simple_patching/.venv/lib/python3.10/site-packages/transformers/models/qwen2/modeling_qwen2.py", line 411, in forward
+    hidden_states = decoder_layer(
+  File "/home/ubuntu/simple_patching/.venv/lib/python3.10/site-packages/transformers/modeling_layers.py", line 93, in __call__
+    return super().__call__(*args, **kwargs)
+  File "/home/ubuntu/simple_patching/.venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1736, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/ubuntu/simple_patching/.venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1844, in _call_impl
+    return inner()
+  File "/home/ubuntu/simple_patching/.venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1790, in inner
+    result = forward_call(*args, **kwargs)
+  File "/home/ubuntu/simple_patching/.venv/lib/python3.10/site-packages/nnsight/intervention/interleaver.py", line 244, in nnsight_forward
+    return m.__nnsight_forward__(m, *args, **kwargs)
+  File "/home/ubuntu/simple_patching/.venv/lib/python3.10/site-packages/transformers/models/qwen2/modeling_qwen2.py", line 298, in forward
+    hidden_states, _ = self.self_attn(
+  File "/home/ubuntu/simple_patching/.venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1736, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/ubuntu/simple_patching/.venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1844, in _call_impl
+    return inner()
+  File "/home/ubuntu/simple_patching/.venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1790, in inner
+    result = forward_call(*args, **kwargs)
+  File "/home/ubuntu/simple_patching/.venv/lib/python3.10/site-packages/nnsight/intervention/interleaver.py", line 244, in nnsight_forward
+    return m.__nnsight_forward__(m, *args, **kwargs)
+  File "/home/ubuntu/simple_patching/.venv/lib/python3.10/site-packages/transformers/models/qwen2/modeling_qwen2.py", line 220, in forward
+    value_states = self.v_proj(hidden_states).view(hidden_shape).transpose(1, 2)
+  File "/home/ubuntu/simple_patching/.venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1736, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/ubuntu/simple_patching/.venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1844, in _call_impl
+    return inner()
+  File "/home/ubuntu/simple_patching/.venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1790, in inner
+    result = forward_call(*args, **kwargs)
+  File "/home/ubuntu/simple_patching/.venv/lib/python3.10/site-packages/nnsight/intervention/interleaver.py", line 244, in nnsight_forward
+    return m.__nnsight_forward__(m, *args, **kwargs)
+  File "/home/ubuntu/simple_patching/.venv/lib/python3.10/site-packages/bitsandbytes/nn/modules.py", line 556, in forward
+    return bnb.matmul_4bit(x, weight, bias=bias, quant_state=quant_state).to(inp_dtype)
+  File "/home/ubuntu/simple_patching/.venv/lib/python3.10/site-packages/bitsandbytes/autograd/_functions.py", line 401, in matmul_4bit
+    return MatMul4Bit.apply(A, B, out, bias, quant_state)
+  File "/home/ubuntu/simple_patching/.venv/lib/python3.10/site-packages/torch/autograd/function.py", line 575, in apply
+    return super().apply(*args, **kwargs)  # type: ignore[misc]
+  File "/home/ubuntu/simple_patching/.venv/lib/python3.10/site-packages/bitsandbytes/autograd/_functions.py", line 315, in forward
+    output = torch.nn.functional.linear(A, F.dequantize_4bit(B, quant_state).to(A.dtype).t(), bias)
+KeyboardInterrupt

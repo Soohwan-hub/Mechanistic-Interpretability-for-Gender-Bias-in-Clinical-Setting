@@ -1,0 +1,49 @@
+{
+  "model_name": "Qwen/Qwen2.5-7B-Instruct",
+  "data_path": "/home/ubuntu/simple_patching/hf_cases.jsonl",
+  "n_cases_requested": 30,
+  "n_cases_used": 30,
+  "prompt_ids": [
+    1,
+    2,
+    3,
+    4
+  ],
+  "num_rows": 120,
+  "overall": {
+    "mean_p_male": 0.12669686774412792,
+    "mean_p_female": 0.7453313191731771,
+    "pct_male_gt_female": 7.5
+  },
+  "by_prompt": [
+    {
+      "prompt_id": 1,
+      "num_rows": 30,
+      "mean_p_male": 0.11826671361923217,
+      "mean_p_female": 0.8776774088541667,
+      "pct_male_gt_female": 6.666666666666667
+    },
+    {
+      "prompt_id": 2,
+      "num_rows": 30,
+      "mean_p_male": 0.19010646442572277,
+      "mean_p_female": 0.699481201171875,
+      "pct_male_gt_female": 10.0
+    },
+    {
+      "prompt_id": 3,
+      "num_rows": 30,
+      "mean_p_male": 0.1052882194519043,
+      "mean_p_female": 0.8921875,
+      "pct_male_gt_female": 6.666666666666667
+    },
+    {
+      "prompt_id": 4,
+      "num_rows": 30,
+      "mean_p_male": 0.0931260734796524,
+      "mean_p_female": 0.5119791666666667,
+      "pct_male_gt_female": 6.666666666666667
+    }
+  ],
+  "interpretation_rule": "Baseline leans male when P(' Male') > P(' Female') consistently."
+}

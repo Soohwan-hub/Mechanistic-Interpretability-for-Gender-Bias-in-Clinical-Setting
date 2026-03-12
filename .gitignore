@@ -7,4 +7,7 @@ filtered_dataset.jsonl
 *_risk_candidates.jsonl
 *_gender_neutral.jsonl
 
+depression_cases.jsonl
+hf_cases.jsonl
+
 train.json

@@ -1,0 +1,10 @@
+{
+  "completed": [
+    "depression:0:1",
+    "depression:1:1"
+  ],
+  "failed": {},
+  "config_hash": "3a4340b7c3f06079",
+  "model_name": "Qwen/Qwen2.5-7B-Instruct",
+  "updated": "2026-03-10T05:49:28Z"
+}
