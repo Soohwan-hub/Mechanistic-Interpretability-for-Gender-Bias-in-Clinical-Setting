@@ -1,4 +1,0 @@
-Traceback (most recent call last):
-  File "/home/ubuntu/simple_patching/simple_patching.py", line 21, in <module>
-    from nnsight import LanguageModel
-ModuleNotFoundError: No module named 'nnsight'

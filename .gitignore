@@ -11,3 +11,5 @@ depression_cases.jsonl
 hf_cases.jsonl
 
 train.json
+__pycache__/
+*.py[cod]
