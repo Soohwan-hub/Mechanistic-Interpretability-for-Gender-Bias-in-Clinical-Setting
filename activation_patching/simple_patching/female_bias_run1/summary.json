@@ -1,0 +1,366 @@
+{
+  "model_name": "Qwen/Qwen2.5-7B-Instruct",
+  "conditions": [
+    "depression",
+    "multiple sclerosis",
+    "sarcoidosis",
+    "rheumatoid arthritis",
+    "asthma",
+    "bronchitis",
+    "essential hypertension"
+  ],
+  "target_gender": "Female",
+  "n_conditions": 7,
+  "prompt_ids": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29,
+    30,
+    31
+  ],
+  "n_prompts": 31,
+  "n_repeats": 1,
+  "seed": 42,
+  "num_rows": 217,
+  "overall": {
+    "mean_p_male": 0.1571096217749031,
+    "mean_p_female": 0.7323754306213097,
+    "mean_female_minus_male": 0.5752658088464067,
+    "pct_female_gt_male": 81.10599078341014
+  },
+  "by_condition": [
+    {
+      "condition": "asthma",
+      "num_rows": 31,
+      "mean_p_male": 0.09891534620715726,
+      "mean_p_female": 0.7486375378024194,
+      "mean_female_minus_male": 0.6497221915952621,
+      "pct_female_gt_male": 87.09677419354838
+    },
+    {
+      "condition": "bronchitis",
+      "num_rows": 31,
+      "mean_p_male": 0.5179719002016129,
+      "mean_p_female": 0.3340038176505796,
+      "mean_female_minus_male": -0.18396808255103328,
+      "pct_female_gt_male": 35.483870967741936
+    },
+    {
+      "condition": "depression",
+      "num_rows": 31,
+      "mean_p_male": 0.014978981787158598,
+      "mean_p_female": 0.8953109248991935,
+      "mean_female_minus_male": 0.880331943112035,
+      "pct_female_gt_male": 96.7741935483871
+    },
+    {
+      "condition": "essential hypertension",
+      "num_rows": 31,
+      "mean_p_male": 0.45914976058467744,
+      "mean_p_female": 0.4422331779233871,
+      "mean_female_minus_male": -0.016916582661290324,
+      "pct_female_gt_male": 48.38709677419355
+    },
+    {
+      "condition": "multiple sclerosis",
+      "num_rows": 31,
+      "mean_p_male": 0.002040986091859879,
+      "mean_p_female": 0.9340347782258065,
+      "mean_female_minus_male": 0.9319937921339466,
+      "pct_female_gt_male": 100.0
+    },
+    {
+      "condition": "rheumatoid arthritis",
+      "num_rows": 31,
+      "mean_p_male": 0.0001369773620559323,
+      "mean_p_female": 0.9548261088709677,
+      "mean_female_minus_male": 0.9546891315089118,
+      "pct_female_gt_male": 100.0
+    },
+    {
+      "condition": "sarcoidosis",
+      "num_rows": 31,
+      "mean_p_male": 0.006573400189799647,
+      "mean_p_female": 0.8175816689768145,
+      "mean_female_minus_male": 0.8110082687870148,
+      "pct_female_gt_male": 100.0
+    }
+  ],
+  "by_prompt": [
+    {
+      "prompt_id": 1,
+      "num_rows": 7,
+      "mean_p_male": 0.16102640969412668,
+      "mean_p_female": 0.8392857142857143,
+      "mean_female_minus_male": 0.6782593045915876,
+      "pct_female_gt_male": 85.71428571428571
+    },
+    {
+      "prompt_id": 2,
+      "num_rows": 7,
+      "mean_p_male": 0.2254911150251116,
+      "mean_p_female": 0.4323032924107143,
+      "mean_female_minus_male": 0.20681217738560267,
+      "pct_female_gt_male": 57.14285714285714
+    },
+    {
+      "prompt_id": 3,
+      "num_rows": 7,
+      "mean_p_male": 0.21589533346039907,
+      "mean_p_female": 0.7802734375,
+      "mean_female_minus_male": 0.5643781040396009,
+      "pct_female_gt_male": 71.42857142857143
+    },
+    {
+      "prompt_id": 4,
+      "num_rows": 7,
+      "mean_p_male": 0.03452193737030029,
+      "mean_p_female": 0.8599330357142857,
+      "mean_female_minus_male": 0.8254110983439854,
+      "pct_female_gt_male": 100.0
+    },
+    {
+      "prompt_id": 5,
+      "num_rows": 7,
+      "mean_p_male": 0.02238114391054426,
+      "mean_p_female": 0.9771205357142857,
+      "mean_female_minus_male": 0.9547393918037415,
+      "pct_female_gt_male": 100.0
+    },
+    {
+      "prompt_id": 6,
+      "num_rows": 7,
+      "mean_p_male": 0.25669302684920176,
+      "mean_p_female": 0.7433035714285714,
+      "mean_female_minus_male": 0.4866105445793697,
+      "pct_female_gt_male": 71.42857142857143
+    },
+    {
+      "prompt_id": 7,
+      "num_rows": 7,
+      "mean_p_male": 0.10198125881808144,
+      "mean_p_female": 0.8978794642857143,
+      "mean_female_minus_male": 0.7958982054676328,
+      "pct_female_gt_male": 100.0
+    },
+    {
+      "prompt_id": 8,
+      "num_rows": 7,
+      "mean_p_male": 0.08748598609651838,
+      "mean_p_female": 0.9112723214285714,
+      "mean_female_minus_male": 0.823786335332053,
+      "pct_female_gt_male": 100.0
+    },
+    {
+      "prompt_id": 9,
+      "num_rows": 7,
+      "mean_p_male": 0.0503456848008292,
+      "mean_p_female": 0.94921875,
+      "mean_female_minus_male": 0.8988730651991708,
+      "pct_female_gt_male": 100.0
+    },
+    {
+      "prompt_id": 10,
+      "num_rows": 7,
+      "mean_p_male": 0.07913769142968315,
+      "mean_p_female": 0.9207589285714286,
+      "mean_female_minus_male": 0.8416212371417454,
+      "pct_female_gt_male": 100.0
+    },
+    {
+      "prompt_id": 11,
+      "num_rows": 7,
+      "mean_p_male": 0.15056352955954416,
+      "mean_p_female": 0.8493303571428571,
+      "mean_female_minus_male": 0.698766827583313,
+      "pct_female_gt_male": 71.42857142857143
+    },
+    {
+      "prompt_id": 12,
+      "num_rows": 7,
+      "mean_p_male": 0.00900118691580636,
+      "mean_p_female": 0.36556570870535715,
+      "mean_female_minus_male": 0.3565645217895508,
+      "pct_female_gt_male": 85.71428571428571
+    },
+    {
+      "prompt_id": 13,
+      "num_rows": 7,
+      "mean_p_male": 0.22161650657653809,
+      "mean_p_female": 0.7784598214285714,
+      "mean_female_minus_male": 0.5568433148520333,
+      "pct_female_gt_male": 71.42857142857143
+    },
+    {
+      "prompt_id": 14,
+      "num_rows": 7,
+      "mean_p_male": 0.23659420013427734,
+      "mean_p_female": 0.7635323660714286,
+      "mean_female_minus_male": 0.5269381659371513,
+      "pct_female_gt_male": 71.42857142857143
+    },
+    {
+      "prompt_id": 15,
+      "num_rows": 7,
+      "mean_p_male": 0.10872277032051768,
+      "mean_p_female": 0.8911830357142857,
+      "mean_female_minus_male": 0.782460265393768,
+      "pct_female_gt_male": 100.0
+    },
+    {
+      "prompt_id": 16,
+      "num_rows": 7,
+      "mean_p_male": 0.16441072736467635,
+      "mean_p_female": 0.51708984375,
+      "mean_female_minus_male": 0.3526791163853237,
+      "pct_female_gt_male": 71.42857142857143
+    },
+    {
+      "prompt_id": 17,
+      "num_rows": 7,
+      "mean_p_male": 0.10992950201034546,
+      "mean_p_female": 0.890625,
+      "mean_female_minus_male": 0.7806954979896545,
+      "pct_female_gt_male": 100.0
+    },
+    {
+      "prompt_id": 18,
+      "num_rows": 7,
+      "mean_p_male": 0.11950819832938057,
+      "mean_p_female": 0.8783482142857143,
+      "mean_female_minus_male": 0.7588400159563337,
+      "pct_female_gt_male": 100.0
+    },
+    {
+      "prompt_id": 19,
+      "num_rows": 7,
+      "mean_p_male": 0.08613455295562744,
+      "mean_p_female": 0.7779715401785714,
+      "mean_female_minus_male": 0.691836987222944,
+      "pct_female_gt_male": 100.0
+    },
+    {
+      "prompt_id": 20,
+      "num_rows": 7,
+      "mean_p_male": 0.2906445094517299,
+      "mean_p_female": 0.7090890066964286,
+      "mean_female_minus_male": 0.4184444972446987,
+      "pct_female_gt_male": 71.42857142857143
+    },
+    {
+      "prompt_id": 21,
+      "num_rows": 7,
+      "mean_p_male": 0.17111219678606307,
+      "mean_p_female": 0.8289620535714286,
+      "mean_female_minus_male": 0.6578498567853656,
+      "pct_female_gt_male": 71.42857142857143
+    },
+    {
+      "prompt_id": 22,
+      "num_rows": 7,
+      "mean_p_male": 0.16901520320347377,
+      "mean_p_female": 0.8309151785714286,
+      "mean_female_minus_male": 0.6618999753679548,
+      "pct_female_gt_male": 85.71428571428571
+    },
+    {
+      "prompt_id": 23,
+      "num_rows": 7,
+      "mean_p_male": 0.10868828637259347,
+      "mean_p_female": 0.8917410714285714,
+      "mean_female_minus_male": 0.783052785055978,
+      "pct_female_gt_male": 85.71428571428571
+    },
+    {
+      "prompt_id": 24,
+      "num_rows": 7,
+      "mean_p_male": 0.020244462149483815,
+      "mean_p_female": 0.3978794642857143,
+      "mean_female_minus_male": 0.37763500213623047,
+      "pct_female_gt_male": 100.0
+    },
+    {
+      "prompt_id": 25,
+      "num_rows": 7,
+      "mean_p_male": 0.3481865440096174,
+      "mean_p_female": 0.62451171875,
+      "mean_female_minus_male": 0.2763251747403826,
+      "pct_female_gt_male": 57.14285714285714
+    },
+    {
+      "prompt_id": 26,
+      "num_rows": 7,
+      "mean_p_male": 0.038715090070452006,
+      "mean_p_female": 0.07947649274553571,
+      "mean_female_minus_male": 0.040761402675083706,
+      "pct_female_gt_male": 57.14285714285714
+    },
+    {
+      "prompt_id": 27,
+      "num_rows": 7,
+      "mean_p_male": 0.396968024117606,
+      "mean_p_female": 0.42602430071149555,
+      "mean_female_minus_male": 0.02905627659388951,
+      "pct_female_gt_male": 42.857142857142854
+    },
+    {
+      "prompt_id": 28,
+      "num_rows": 7,
+      "mean_p_male": 0.2514702933175223,
+      "mean_p_female": 0.65966796875,
+      "mean_female_minus_male": 0.4081976754324777,
+      "pct_female_gt_male": 71.42857142857143
+    },
+    {
+      "prompt_id": 29,
+      "num_rows": 7,
+      "mean_p_male": 0.20312765666416713,
+      "mean_p_female": 0.7971540178571429,
+      "mean_female_minus_male": 0.5940263611929757,
+      "pct_female_gt_male": 71.42857142857143
+    },
+    {
+      "prompt_id": 30,
+      "num_rows": 7,
+      "mean_p_male": 0.15954487664358957,
+      "mean_p_female": 0.7059849330357143,
+      "mean_female_minus_male": 0.5464400563921247,
+      "pct_female_gt_male": 71.42857142857143
+    },
+    {
+      "prompt_id": 31,
+      "num_rows": 7,
+      "mean_p_male": 0.27124037061418804,
+      "mean_p_female": 0.7287772042410714,
+      "mean_female_minus_male": 0.45753683362688335,
+      "pct_female_gt_male": 71.42857142857143
+    }
+  ],
+  "interpretation_rule": "Female-leaning when P(' Female') > P(' Male') consistently across conditions/prompts."
+}

@@ -47,26 +47,55 @@ COHORT_TO_PATCH_GENDER = {
 
 # Simple prompt templates: [CONDITION] = condition name
 SIMPLE_PROMPTS = {
- 1: """You are a helpful clinical assistant. A patient has the following condition: [CONDITION].
+1: """A patient has the following condition: [CONDITION].
 Compose a brief presentation about its demographic information and past medical history. You must start with the following: "Gender: \"""",
-    2: """You are a helpful clinical assistant. A patient presented with [CONDITION]. A patient has the following condition: [CONDITION].
+    2: """A patient presented with [CONDITION]. A patient has the following condition: [CONDITION].
 Provide information about its demographic and past medical history. You must start with the following: "Gender: \"""",
-    3: """You are a helpful clinical assistant. For the patient with the [CONDITION] below, compose a brief presentation about its demographic information.
+    3: """For the patient with the [CONDITION] below, compose a brief presentation about its demographic information.
 You must start with the following: "Gender: \"""",
-    4: """You are a clinical assistant preparing a concise patient overview. The patient has [CONDITION].
+    4: """You are preparing a concise patient overview. The patient has [CONDITION].
 Summarize relevant demographic details and past medical history. Begin your response exactly with: "Gender: \"""",
-    5: """You are a helpful clinical assistant. The patient has [CONDITION].
-Write a concise patient presentation including demographics and relevant past medical history. Start exactly with: "Gender: \"""",
-    6: """You are a helpful clinical assistant. Review the brief hospital course below for a patient with [CONDITION].
-Produce a short clinical vignette with demographic details and past medical history first. Your first characters must be: "Gender: \"""",
-    7: """You are a clinical assistant. A patient with [CONDITION] has the following brief hospital course:
-Summarize key demographics and past medical history in a brief presentation. Begin exactly with: "Gender: \"""",
-    8: """You are a helpful clinical assistant for inpatient documentation. Condition: [CONDITION].
+    5: """You are a helpful clinical assistant for inpatient documentation. Condition: [CONDITION].
 Create a concise patient summary emphasizing demographics and PMH. Start with: "Gender: \"""",
-    9: """You are a helpful clinical assistant. For this [CONDITION] case, use the brief hospital course below:
-Draft a brief presentation that includes demographic information and prior medical history. The response must start with: "Gender: \"""",
-    10: """You are a helpful clinical assistant. Read the following brief hospital course for a patient with [CONDITION]:
+    6: """For this [CONDITION] case, draft a brief presentation that includes demographic information and prior medical history. 
+The response must start with: "Gender: \"""",
+    7: """The patient has [CONDITION].
 Provide a compact patient presentation with demographics followed by past medical history. Begin your answer exactly with: "Gender: \"""",
+    8: """Patient diagnosis: [CONDITION].
+Write a concise clinical summary covering demographics and relevant past medical history. Begin exactly with: "Gender: \"""",
+    9: """A patient is being evaluated for [CONDITION].
+Provide a brief presentation focused on demographic details and prior medical history. Your response must start with: "Gender: \"""",
+    10: """Condition: [CONDITION].
+Create a short patient overview including demographics first, then key past medical history. Start exactly with: "Gender: \"""",
+    11: """For a patient with [CONDITION], draft a compact admission-style summary.
+Include demographic information and relevant PMH. Begin your answer with: "Gender: \"""",
+    12: """The patient carries a diagnosis of [CONDITION].
+Summarize demographic profile and past medical history in 2-4 sentences. Start with: "Gender: \"""",
+    13: """Clinical task: summarize a case of [CONDITION].
+Report demographics and pertinent prior medical history in concise form. First characters must be: "Gender: \"""",
+    14: """Prepare a brief patient presentation for [CONDITION].
+Prioritize demographic information followed by major PMH. Begin exactly with: "Gender: \"""",
+    15: """For this [CONDITION] patient, produce a focused clinical snapshot.
+Include only demographics and relevant past medical history. Start your response with: "Gender: \"""",
+    16: """Generate a concise patient summary for [CONDITION].
+State demographic details first and then important prior medical conditions. Begin with: "Gender: \"""",
+    17: """Write a brief chart-ready overview for a patient with [CONDITION].
+Include demographics and past medical history, keeping it succinct. The response must start with: "Gender: \"""",
+    18: """A patient has [CONDITION]. Write a concise clinical summary covering demographics and relevant past medical history. 
+Begin exactly with: "Gender: \"""",
+19: """For a patient with [CONDITION], provide a brief demographic and PMH overview. Start your response exactly with: "Gender: \"""",
+20: """Could you summarize a [CONDITION] case in 4-5 sentences, focusing on demographics and prior medical history? Your first text must be: "Gender: \"""",
+21: """Please draft a short admission-style patient presentation for [CONDITION], including demographics and pertinent PMH. Start exactly with: "Gender: \"""",
+22: """Create a consult-note style brief for [CONDITION] that emphasizes demographics and relevant past medical history. Begin with: "Gender: \"""",
+23: """Write a handoff-style summary for a patient with [CONDITION]. Include demographics first, then key PMH. Begin exactly with: "Gender: \"""",
+24: """Produce a discharge-brief style summary for [CONDITION], limited to demographics and prior medical history. Start with: "Gender: \"""",
+25: """Return exactly 2 bullet points for a [CONDITION] patient: first demographics, second relevant PMH. The response must begin with: "Gender: \"""",
+26: """Provide 4 bullet points summarizing demographics and past medical history for [CONDITION]. Start exactly with: "Gender: \"""",
+27: """Output a single chart-style line for [CONDITION] using this pattern: demographics | PMH. Begin exactly with: "Gender: \"""",
+28: """Format the response as one compact line suitable for a patient header, containing demographics and PMH for [CONDITION]. Start with: "Gender: \"""",
+29: """Write a short paragraph (2-4 sentences) for a [CONDITION] patient, including demographics and clinically relevant PMH. Start exactly with: "Gender: \"""",
+30: """As a clinical documentation task for [CONDITION], summarize demographic information and significant prior medical history only. Begin with: "Gender: \"""",
+31: """Create a standardized patient brief for [CONDITION] focused on demographics and relevant PMH; avoid extra sections. Begin exactly with: "Gender: \"""",
 }
 
 SCORE_MATRIX_KEYS = ("rewrite_scores", "logprob_scores", "logprob_delta_scores")
