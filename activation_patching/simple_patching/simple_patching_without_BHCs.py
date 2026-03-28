@@ -36,13 +36,43 @@ MODEL_NAME = "Qwen/Qwen2.5-7B-Instruct"
 
 COHORT_TO_CONDITION_NAME = {
     "depression": "depression",
-    "hf": "heart failure",
+    "asthma": "asthma",
+    "multiple_sclerosis": "multiple sclerosis",
+    "rheumatoid_arthritis": "rheumatoid arthritis",
+    "sarcoidosis": "sarcoidosis",
 }
 
-# Patch with Male activations for depression, Female for heart failure
+# Patch with Male activations for all selected female-biased cohorts
+# so the intervention is in the opposite direction of the bias.
 COHORT_TO_PATCH_GENDER = {
     "depression": "Male",
-    "hf": "Female",
+    "asthma": "Male",
+    "multiple_sclerosis": "Male",
+    "rheumatoid_arthritis": "Male",
+    "sarcoidosis": "Male",
+}
+
+DEFAULT_COHORTS = (
+    "asthma",
+    "depression",
+    "multiple_sclerosis",
+    "rheumatoid_arthritis",
+    "sarcoidosis",
+)
+
+# Accept common spacing/hyphen/typo variants for cohort names on CLI.
+COHORT_ALIASES = {
+    "asthma": "asthma",
+    "depression": "depression",
+    "multiple_sclerosis": "multiple_sclerosis",
+    "multiple sclerosis": "multiple_sclerosis",
+    "multiple-scierosis": "multiple_sclerosis",
+    "multiple scierosis": "multiple_sclerosis",
+    "rheumatoid_arthritis": "rheumatoid_arthritis",
+    "rheumatoid arthritis": "rheumatoid_arthritis",
+    "rheunmatoid arthirties": "rheumatoid_arthritis",
+    "rheunmatoid_arthirties": "rheumatoid_arthritis",
+    "sarcoidosis": "sarcoidosis",
 }
 
 # Simple prompt templates: [CONDITION] = condition name
@@ -132,6 +162,26 @@ def _config_hash(args: argparse.Namespace) -> str:
     return h.hexdigest()[:16]
 
 
+def _resolve_score_keys(raw: str) -> Tuple[str, ...]:
+    parts = [x.strip() for x in raw.split(",") if x.strip()]
+    if not parts:
+        raise ValueError("Empty --score-keys. Use one or more score keys, or 'all'.")
+    if len(parts) == 1 and parts[0].lower() == "all":
+        return SCORE_MATRIX_KEYS
+    invalid = [x for x in parts if x not in SCORE_MATRIX_KEYS]
+    if invalid:
+        valid = ",".join(SCORE_MATRIX_KEYS)
+        invalid_joined = ",".join(sorted(set(invalid)))
+        raise ValueError(f"Unknown --score-keys value(s): {invalid_joined}. Valid values: {valid},all")
+    deduped: List[str] = []
+    seen = set()
+    for key in parts:
+        if key not in seen:
+            deduped.append(key)
+            seen.add(key)
+    return tuple(deduped)
+
+
 # -----------------------------------------------------------------------------
 # Prompt building
 # -----------------------------------------------------------------------------
@@ -207,6 +257,7 @@ def run_patch_sweep(
     layer_start: int,
     layer_end: int,
     max_tokens: int,
+    selected_score_keys: Tuple[str, ...],
     step: int = 1,
 ) -> Dict[str, Any]:
     """
@@ -226,6 +277,9 @@ def run_patch_sweep(
 
     layers_swept = list(range(layer_start, min(layer_end, num_layers)))
     n_l = len(layers_swept)
+    need_rewrite = "rewrite_scores" in selected_score_keys
+    need_logprob = "logprob_scores" in selected_score_keys
+    need_logprob_delta = "logprob_delta_scores" in selected_score_keys
     rewrite_list: List[float] = []
     logprob_list: List[float] = []
     logprob_delta_list: List[float] = []
@@ -250,18 +304,27 @@ def run_patch_sweep(
             z_hs[li] = _resolve(saved_clean[li]).detach().clone()
 
         # Compute baseline corrupted probability/log-prob once using a short-lived trace.
-        if corrupted_prob_val is None:
+        if (need_rewrite and corrupted_prob_val is None) or (
+            (need_logprob or need_logprob_delta) and corrupted_logprob_val is None
+        ):
             with torch.no_grad():
                 with llm.generate(max_new_tokens=1) as tracer:
                     with tracer.invoke(corrupted_prompt):
                         logits = llm.lm_head.output
-                        log_probs = torch.log_softmax(logits[0, -1, :], dim=-1)
-                        corrupted_logprob_proxy = log_probs[target_gender_token_id].save()
-                        corrupted_prob_proxy = torch.exp(log_probs[target_gender_token_id]).save()
-            corrupted_prob_val = float(_resolve(corrupted_prob_proxy).cpu().float().item())
-            corrupted_logprob_val = float(_resolve(corrupted_logprob_proxy).cpu().float().item())
+                        if need_logprob or need_logprob_delta:
+                            log_probs = torch.log_softmax(logits[0, -1, :], dim=-1)
+                            corrupted_logprob_proxy = log_probs[target_gender_token_id].save()
+                            if need_rewrite:
+                                corrupted_prob_proxy = torch.exp(log_probs[target_gender_token_id]).save()
+                        elif need_rewrite:
+                            probs = torch.softmax(logits[0, -1, :], dim=-1)
+                            corrupted_prob_proxy = probs[target_gender_token_id].save()
+            if need_rewrite:
+                corrupted_prob_val = float(_resolve(corrupted_prob_proxy).cpu().float().item())
+            if need_logprob or need_logprob_delta:
+                corrupted_logprob_val = float(_resolve(corrupted_logprob_proxy).cpu().float().item())
 
-        corrupted_prob = corrupted_prob_val
+        corrupted_prob = corrupted_prob_val if corrupted_prob_val is not None else 0.0
         corrupted_logprob = corrupted_logprob_val if corrupted_logprob_val is not None else float("-inf")
         denom = 1.0 - corrupted_prob + 1e-8
 
@@ -275,31 +338,44 @@ def run_patch_sweep(
                             z_corrupt[:, patch_idx, :] = z_hs[layer_idx]
                             llm.model.layers[layer_idx].mlp.down_proj.output = z_corrupt
                             patched_logits = llm.lm_head.output
-                            patched_logprob = torch.log_softmax(
-                                patched_logits[0, -1, :], dim=-1
-                            )[target_gender_token_id]
-                            patched_prob = torch.exp(patched_logprob)
-                            rewrite_score = (patched_prob - corrupted_prob) / denom
-                            logprob_delta = patched_logprob - corrupted_logprob
-                            rewrite_proxy = rewrite_score.save()
-                            logprob_proxy = patched_logprob.save()
-                            logprob_delta_proxy = logprob_delta.save()
-                rewrite_list.append(float(_resolve(rewrite_proxy).cpu().float().item()))
-                logprob_list.append(float(_resolve(logprob_proxy).cpu().float().item()))
-                logprob_delta_list.append(float(_resolve(logprob_delta_proxy).cpu().float().item()))
+                            if need_logprob or need_logprob_delta:
+                                patched_logprob = torch.log_softmax(
+                                    patched_logits[0, -1, :], dim=-1
+                                )[target_gender_token_id]
+                            if need_rewrite:
+                                if need_logprob or need_logprob_delta:
+                                    patched_prob = torch.exp(patched_logprob)
+                                else:
+                                    patched_prob = torch.softmax(
+                                        patched_logits[0, -1, :], dim=-1
+                                    )[target_gender_token_id]
+                                rewrite_score = (patched_prob - corrupted_prob) / denom
+                                rewrite_proxy = rewrite_score.save()
+                            if need_logprob:
+                                logprob_proxy = patched_logprob.save()
+                            if need_logprob_delta:
+                                logprob_delta = patched_logprob - corrupted_logprob
+                                logprob_delta_proxy = logprob_delta.save()
+                if need_rewrite:
+                    rewrite_list.append(float(_resolve(rewrite_proxy).cpu().float().item()))
+                if need_logprob:
+                    logprob_list.append(float(_resolve(logprob_proxy).cpu().float().item()))
+                if need_logprob_delta:
+                    logprob_delta_list.append(float(_resolve(logprob_delta_proxy).cpu().float().item()))
 
-    rewrite_scores = np.array(rewrite_list, dtype=float).reshape(n_l, token_count)
-    logprob_scores = np.array(logprob_list, dtype=float).reshape(n_l, token_count)
-    logprob_delta_scores = np.array(logprob_delta_list, dtype=float).reshape(n_l, token_count)
-    return {
-        "rewrite_scores": rewrite_scores,
-        "logprob_scores": logprob_scores,
-        "logprob_delta_scores": logprob_delta_scores,
+    result: Dict[str, Any] = {
         "corrupted_prob": corrupted_prob_val or 0.0,
         "corrupted_logprob": corrupted_logprob_val
         if corrupted_logprob_val is not None
         else float("-inf"),
     }
+    if need_rewrite:
+        result["rewrite_scores"] = np.array(rewrite_list, dtype=float).reshape(n_l, token_count)
+    if need_logprob:
+        result["logprob_scores"] = np.array(logprob_list, dtype=float).reshape(n_l, token_count)
+    if need_logprob_delta:
+        result["logprob_delta_scores"] = np.array(logprob_delta_list, dtype=float).reshape(n_l, token_count)
+    return result
 
 
 # -----------------------------------------------------------------------------
@@ -379,6 +455,32 @@ def mark_failed(run_dir: Path, key: str, err: str, progress: Dict[str, Any]) -> 
 # -----------------------------------------------------------------------------
 def artifact_path(run_dir: Path, cohort: str, prompt_id: int) -> Path:
     return run_dir / "artifacts" / f"{cohort}_prompt{prompt_id}.pkl"
+
+
+def parse_artifact_stem(name: str) -> Optional[Tuple[str, int]]:
+    """
+    Parse artifact stem into (cohort, prompt_id).
+
+    Supported:
+      - cohort_promptN
+      - cohort_caseXXXX_promptN (legacy)
+    """
+    if "_prompt" not in name:
+        return None
+    prefix, prompt_suffix = name.rsplit("_prompt", 1)
+    try:
+        prompt_id = int(prompt_suffix)
+    except ValueError:
+        return None
+
+    cohort = prefix
+    if "_case" in prefix:
+        maybe_cohort, maybe_case = prefix.rsplit("_case", 1)
+        if maybe_case.isdigit():
+            cohort = maybe_cohort
+    if not cohort:
+        return None
+    return cohort, prompt_id
 
 
 def save_unit_artifact(
@@ -574,8 +676,19 @@ def parse_args() -> argparse.Namespace:
     p.add_argument("--run-id", type=str, default="default", help="Stable run folder for resume")
     p.add_argument("--resume", action="store_true", help="Skip completed units")
     p.add_argument("--output-dir", type=str, default="patching_results", help="Base output directory")
-    p.add_argument("--cohorts", type=str, default="depression,hf", help="Comma-separated cohorts")
+    p.add_argument(
+        "--cohorts",
+        type=str,
+        default=",".join(DEFAULT_COHORTS),
+        help="Comma-separated cohorts (e.g. asthma,depression,multiple_sclerosis,rheumatoid_arthritis,sarcoidosis)",
+    )
     p.add_argument("--prompt-ids", type=str, default="1,2,3,4", help="Comma-separated prompt template ids")
+    p.add_argument(
+        "--score-keys",
+        type=str,
+        default="rewrite_scores",
+        help="Comma-separated score matrix keys to compute/use. Values: rewrite_scores,logprob_scores,logprob_delta_scores,all",
+    )
     p.add_argument("--max-tokens", type=int, default=0, help="0 = full token sweep")
     p.add_argument("--layer-start", type=int, default=0, help="First layer index (inclusive)")
     p.add_argument("--layer-end", type=int, default=9999, help="Last layer index (exclusive)")
@@ -609,7 +722,12 @@ def build_work_list(
 ) -> List[Tuple[str, int]]:
     """List of (cohort, prompt_id) units (simple prompts only, no BHC cases)."""
     _ = run_dir  # reserved for future run-specific filtering
-    cohorts = [x.strip() for x in args.cohorts.split(",") if x.strip()]
+    raw_cohorts = [x.strip() for x in args.cohorts.split(",") if x.strip()]
+    cohorts: List[str] = []
+    for raw in raw_cohorts:
+        normalized = raw.lower().replace("-", "_")
+        resolved = COHORT_ALIASES.get(normalized, normalized)
+        cohorts.append(resolved)
     prompt_ids = [int(x.strip()) for x in args.prompt_ids.split(",") if x.strip()]
     invalid_prompt_ids = [pid for pid in prompt_ids if pid not in SIMPLE_PROMPTS]
     if invalid_prompt_ids:
@@ -630,6 +748,7 @@ def build_work_list(
 
 
 def run_patching(args: argparse.Namespace, run_dir: Path) -> None:
+    selected_score_keys: Tuple[str, ...] = args.selected_score_keys
     work_list = build_work_list(args, run_dir)
     progress = load_progress(run_dir)
     completed_set = set(progress.get("completed", []))
@@ -678,10 +797,14 @@ def run_patching(args: argparse.Namespace, run_dir: Path) -> None:
                 layer_start=layer_start,
                 layer_end=layer_end,
                 max_tokens=args.max_tokens,
+                selected_score_keys=selected_score_keys,
                 step=args.layer_step,
             )
-            rewrite_scores = sweep["rewrite_scores"]
-            n_l, n_t = rewrite_scores.shape
+            shape_key = next((k for k in selected_score_keys if k in sweep), None)
+            if shape_key is None:
+                raise RuntimeError("No selected score matrices found in sweep output.")
+            score_ref = sweep[shape_key]
+            n_l, n_t = score_ref.shape
             token_labels = [
                 f"{llm.tokenizer.decode(corrupted_tokens[i])}_{i}" for i in range(n_t)
             ]
@@ -691,27 +814,28 @@ def run_patching(args: argparse.Namespace, run_dir: Path) -> None:
                 "prompt_id": prompt_id,
                 "patch_gender": gender,
                 "condition_name": condition_name,
-                "corrupted_prob": sweep["corrupted_prob"],
-                "corrupted_logprob": sweep["corrupted_logprob"],
+                "corrupted_prob": sweep.get("corrupted_prob", 0.0),
+                "corrupted_logprob": sweep.get("corrupted_logprob", float("-inf")),
                 "num_layers": num_layers,
                 "num_tokens": n_t,
+                "score_keys": list(selected_score_keys),
             }
             save_unit_artifact(
                 run_dir,
                 cohort,
                 prompt_id,
-                {k: sweep[k] for k in SCORE_MATRIX_KEYS},
+                {k: sweep[k] for k in selected_score_keys if k in sweep},
                 token_labels,
                 layer_labels,
                 metadata,
             )
 
-            if args.save_heatmaps:
+            if args.save_heatmaps and "rewrite_scores" in sweep:
                 plot_dir = run_dir / "heatmaps"
                 plot_dir.mkdir(parents=True, exist_ok=True)
                 try:
                     plot_heatmap(
-                        rewrite_scores, token_labels, layer_labels,
+                        sweep["rewrite_scores"], token_labels, layer_labels,
                         f"{cohort} prompt{prompt_id} rewrite_scores",
                         str(plot_dir / f"{cohort}_prompt{prompt_id}_rewrite_scores"),
                         args.plot_format,
@@ -724,7 +848,7 @@ def run_patching(args: argparse.Namespace, run_dir: Path) -> None:
             if args.save_layer_plots:
                 plot_dir = run_dir / "layer_plots"
                 plot_dir.mkdir(parents=True, exist_ok=True)
-                for score_key in SCORE_MATRIX_KEYS:
+                for score_key in selected_score_keys:
                     if score_key not in sweep:
                         continue
                     stats = layer_aggregates(
@@ -765,37 +889,26 @@ def build_aggregates(run_dir: Path, args: argparse.Namespace) -> None:
     agg_store_by_cohort: Dict[str, Dict[str, Dict[str, Dict[int, List[float]]]]] = {}
     all_raw: List[Dict[str, Any]] = []
 
+    selected_score_keys: Tuple[str, ...] = args.selected_score_keys
     stat_keys = STAT_KEYS
-    for score_key in SCORE_MATRIX_KEYS:
+    for score_key in selected_score_keys:
         agg_store[score_key] = {s: {} for s in stat_keys}
 
     for p in artifacts_dir.glob("*.pkl"):
-        # Parse cohort_promptN.pkl (new) or cohort_caseXXXX_promptN.pkl (legacy).
-        name = p.stem
-        parts = name.split("_")
-        if len(parts) < 2:
+        parsed = parse_artifact_stem(p.stem)
+        if parsed is None:
             continue
-        cohort = parts[0]
-        prompt_id: Optional[int] = None
-        try:
-            if len(parts) >= 3 and parts[1].startswith("case"):
-                prompt_id = int(parts[2].replace("prompt", ""))
-            elif parts[1].startswith("prompt"):
-                prompt_id = int(parts[1].replace("prompt", ""))
-        except (ValueError, IndexError):
-            continue
-        if prompt_id is None:
-            continue
+        cohort, prompt_id = parsed
 
         with open(p, "rb") as f:
             import pickle
             data = pickle.load(f)
 
         score_matrices: Dict[str, np.ndarray] = {}
-        for score_key in SCORE_MATRIX_KEYS:
+        for score_key in selected_score_keys:
             if score_key in data:
                 score_matrices[score_key] = data[score_key]
-        if "rewrite_scores" not in score_matrices and "rewrite_scores" in data:
+        if "rewrite_scores" in selected_score_keys and "rewrite_scores" not in score_matrices and "rewrite_scores" in data:
             score_matrices["rewrite_scores"] = data["rewrite_scores"]
         if not score_matrices:
             continue
@@ -810,7 +923,7 @@ def build_aggregates(run_dir: Path, args: argparse.Namespace) -> None:
         if cohort not in agg_store_by_cohort:
             agg_store_by_cohort[cohort] = {
                 score_key: {s: {} for s in stat_keys}
-                for score_key in SCORE_MATRIX_KEYS
+                for score_key in selected_score_keys
             }
 
         for score_key, matrix in score_matrices.items():
@@ -827,7 +940,7 @@ def build_aggregates(run_dir: Path, args: argparse.Namespace) -> None:
         return
 
     layer_set = set()
-    for score_key in SCORE_MATRIX_KEYS:
+    for score_key in selected_score_keys:
         for stat_key in stat_keys:
             layer_set.update(agg_store[score_key][stat_key].keys())
     if not layer_set:
@@ -839,7 +952,7 @@ def build_aggregates(run_dir: Path, args: argparse.Namespace) -> None:
         row: Dict[str, Any] = {
             "layer": layer,
         }
-        for score_key in SCORE_MATRIX_KEYS:
+        for score_key in selected_score_keys:
             num_units_for_score = 0
             for stat_key in stat_keys:
                 vals = agg_store[score_key][stat_key].get(layer, [])
@@ -854,7 +967,7 @@ def build_aggregates(run_dir: Path, args: argparse.Namespace) -> None:
     with open(out_csv, "w", newline="") as f:
         import csv
         fieldnames = ["layer"]
-        for score_key in SCORE_MATRIX_KEYS:
+        for score_key in selected_score_keys:
             for stat_key in stat_keys:
                 fieldnames.append(f"{score_key}_{stat_key}")
             fieldnames.append(f"{score_key}_num_units")
@@ -877,7 +990,7 @@ def build_aggregates(run_dir: Path, args: argparse.Namespace) -> None:
             "topk_mean": f"top-{args.top_k} mean",
         }
         for cohort, cohort_store in sorted(agg_store_by_cohort.items()):
-            for score_key in SCORE_MATRIX_KEYS:
+            for score_key in selected_score_keys:
                 for stat_key in stat_keys:
                     layer_scores_stat: List[Tuple[int, float]] = []
                     for layer in layers_sorted:
@@ -898,42 +1011,33 @@ def build_aggregates(run_dir: Path, args: argparse.Namespace) -> None:
 
 def rebuild_plots_only(args: argparse.Namespace, run_dir: Path) -> None:
     """Regenerate all plots from existing artifacts."""
+    selected_score_keys: Tuple[str, ...] = args.selected_score_keys
     artifacts_dir = run_dir / "artifacts"
     if not artifacts_dir.exists():
         print("No artifacts dir found.", flush=True)
         return
     for p in sorted(artifacts_dir.glob("*.pkl")):
         name = p.stem
-        parts = name.split("_")
-        if len(parts) < 2:
+        parsed = parse_artifact_stem(name)
+        if parsed is None:
             continue
-        try:
-            cohort = parts[0]
-            if len(parts) >= 3 and parts[1].startswith("case"):
-                int(parts[1].replace("case", ""))
-                int(parts[2].replace("prompt", ""))
-            elif parts[1].startswith("prompt"):
-                int(parts[1].replace("prompt", ""))
-            else:
-                continue
-        except (ValueError, IndexError):
-            continue
+        cohort, prompt_id = parsed
         with open(p, "rb") as f:
             import pickle
             data = pickle.load(f)
         score_matrices: Dict[str, np.ndarray] = {}
-        for score_key in SCORE_MATRIX_KEYS:
+        for score_key in selected_score_keys:
             if score_key in data:
                 score_matrices[score_key] = data[score_key]
-        if "rewrite_scores" in data and "rewrite_scores" not in score_matrices:
+        if "rewrite_scores" in selected_score_keys and "rewrite_scores" in data and "rewrite_scores" not in score_matrices:
             score_matrices["rewrite_scores"] = data["rewrite_scores"]
         if not score_matrices:
             continue
-        rs = score_matrices["rewrite_scores"]
         token_labels = data["token_labels"]
         layer_labels = data["layer_labels"]
         ext = f".{args.plot_format}"
-        if args.save_heatmaps:
+        if args.save_heatmaps and "rewrite_scores" in score_matrices:
+            rs = score_matrices["rewrite_scores"]
             plot_dir = run_dir / "heatmaps"
             plot_dir.mkdir(parents=True, exist_ok=True)
             base_heatmap = plot_dir / (name + "_rewrite_scores" + ext)
@@ -983,6 +1087,7 @@ def rebuild_plots_only(args: argparse.Namespace, run_dir: Path) -> None:
 
 def main() -> None:
     args = parse_args()
+    args.selected_score_keys = _resolve_score_keys(args.score_keys)
     run_dir = get_run_dir(args)
     run_dir.mkdir(parents=True, exist_ok=True)
 
@@ -999,6 +1104,7 @@ def main() -> None:
     if args.dry_run:
         work_list = build_work_list(args, run_dir)
         print(f"Dry run: run_dir={run_dir}, work_units={len(work_list)}", flush=True)
+        print(f"Selected score keys: {','.join(args.selected_score_keys)}", flush=True)
         print(f"Progress: {load_progress(run_dir)}", flush=True)
         # Validate layer_aggregates
         fake = np.random.randn(4, 10).astype(np.float32)
