@@ -1,0 +1,104 @@
+{
+  "per_layer": [
+    {
+      "layer": 0,
+      "mean_rewrite_score": 0.5925753228366375,
+      "top10_mean_rewrite_score": 1.0,
+      "num_units": 2
+    },
+    {
+      "layer": 1,
+      "mean_rewrite_score": 4.404410719871521e-05,
+      "top10_mean_rewrite_score": 0.00026588439941406246,
+      "num_units": 2
+    },
+    {
+      "layer": 2,
+      "mean_rewrite_score": 0.10085386037826538,
+      "top10_mean_rewrite_score": 0.63775634765625,
+      "num_units": 2
+    },
+    {
+      "layer": 3,
+      "mean_rewrite_score": 0.00013596192002296448,
+      "top10_mean_rewrite_score": 0.0007016420364379883,
+      "num_units": 2
+    },
+    {
+      "layer": 4,
+      "mean_rewrite_score": 0.0002790801227092743,
+      "top10_mean_rewrite_score": 0.0014324188232421875,
+      "num_units": 2
+    },
+    {
+      "layer": 5,
+      "mean_rewrite_score": 9.359419345855713e-05,
+      "top10_mean_rewrite_score": 0.00029668807983398434,
+      "num_units": 2
+    }
+  ],
+  "raw_units": [
+    {
+      "cohort": "depression",
+      "case_idx": 1,
+      "prompt_id": 1,
+      "per_layer_mean": [
+        0.5323454365134239,
+        -2.6300549507141113e-06,
+        0.0942920446395874,
+        2.51084566116333e-06,
+        2.3387372493743896e-05,
+        -1.6391277313232422e-06
+      ],
+      "per_layer_top10": [
+        1.0,
+        2.3651123046875e-05,
+        0.6002197265625,
+        5.059242248535156e-05,
+        0.0001373291015625,
+        2.269744873046875e-05
+      ],
+      "metadata": {
+        "cohort": "depression",
+        "case_idx": 1,
+        "prompt_id": 1,
+        "patch_gender": "Male",
+        "condition_name": "depression",
+        "corrupted_prob": 0.0,
+        "num_layers": 28,
+        "num_tokens": 64
+      }
+    },
+    {
+      "cohort": "depression",
+      "case_idx": 0,
+      "prompt_id": 1,
+      "per_layer_mean": [
+        0.6528052091598511,
+        9.071826934814453e-05,
+        0.10741567611694336,
+        0.0002694129943847656,
+        0.0005347728729248047,
+        0.0001888275146484375
+      ],
+      "per_layer_top10": [
+        1.0,
+        0.00050811767578125,
+        0.67529296875,
+        0.001352691650390625,
+        0.002727508544921875,
+        0.0005706787109375
+      ],
+      "metadata": {
+        "cohort": "depression",
+        "case_idx": 0,
+        "prompt_id": 1,
+        "patch_gender": "Male",
+        "condition_name": "depression",
+        "corrupted_prob": 0.0,
+        "num_layers": 28,
+        "num_tokens": 64
+      }
+    }
+  ]
+}

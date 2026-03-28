@@ -1,0 +1,345 @@
+"""
+Gender-only activation patching: explicit ("the patient is Male/Female") and
+implicit (prostate cancer / preeclampsia). Computes rewrite scores for both,
+compares them, and stores per-layer cosine similarity between explicit and
+implicit activations.
+"""
+import os
+import pickle
+import argparse
+import numpy as np
+import torch
+import kaleido
+import plotly.express as px
+import plotly.graph_objects as go
+import plotly.io as pio
+from nnsight import LanguageModel
+from transformers import AutoTokenizer
+
+
+def plot_ioi_patching_results(ioi_patching_results, x_labels, y_labels, plot_title="", path=""):
+    """Plot rewrite score heatmap (layers x tokens)."""
+    fig = go.Figure()
+    fig.write_image("random.pdf")
+    fig = go.Figure()
+    fig = px.imshow(
+        ioi_patching_results,
+        color_continuous_midpoint=0.0,
+        color_continuous_scale="RdBu",
+        labels={"x": "Token", "y": "Layer", "color": " "},
+        x=x_labels,
+        y=y_labels,
+        title=plot_title,
+    )
+    if path != "":
+        pio.write_image(fig, path)
+
+
+def cosine_similarity(a, b):
+    """Cosine similarity between two 1D tensors. Returns scalar in [-1, 1]."""
+    a = a.flatten().float()
+    b = b.flatten().float()
+    norm_a = a.norm()
+    norm_b = b.norm()
+    if norm_a < 1e-8 or norm_b < 1e-8:
+        return 0.0
+    return (a @ b / (norm_a * norm_b)).item()
+
+
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser(description="Gender-only patching (explicit + implicit)")
+    parser.add_argument("-condition", type=str, help="Clinical condition for corrupted prompt")
+    parser.add_argument("-target", type=str, choices=["male", "female"], help="Gender to patch toward")
+    parser.add_argument(
+        "-model_name",
+        choices=[
+            "allenai/OLMo-7B-0724-Instruct-hf",
+            "meta-llama/Llama-3.1-8B-Instruct",
+            "google/gemma-2-9b-it",
+            "allenai/OLMo-2-0325-32B-Instruct",
+        ],
+        default="allenai/OLMo-7B-0724-Instruct-hf",
+        help="Model",
+    )
+    parser.add_argument("-output_dir", type=str, help="Output directory")
+    args = parser.parse_args()
+
+    source_condition = args.condition
+    target = args.target.strip().lower()
+    model_name = args.model_name
+    output_dir = args.output_dir
+
+    scores_path = os.path.join(
+        output_dir,
+        f"gender-{source_condition}-{target}-{model_name}-patch_scores.p".replace("/", "-"),
+    )
+    plot_explicit_path = os.path.join(
+        output_dir,
+        f"gender-{source_condition}-{target}-{model_name}-patch_scores_explicit_plot.pdf".replace("/", "-"),
+    )
+    plot_implicit_path = os.path.join(
+        output_dir,
+        f"gender-{source_condition}-{target}-{model_name}-patch_scores_implicit_plot.pdf".replace("/", "-"),
+    )
+
+    print("Target:", target)
+    print("Clinical condition:", source_condition)
+    print("Model:", model_name)
+
+    text_templates = {
+        "allenai/OLMo-7B-0724-Instruct-hf": {
+            "role": "user",
+            "gender": "Compose a brief presentation of a patient presenting with {0}. Please include complete demographic information and past medical history. You must start with the following: \"Gender:\".",
+        },
+        "meta-llama/Llama-3.1-8B-Instruct": {
+            "role": "system",
+            "gender": "Compose a brief presentation of a patient presenting with {0}. Please include complete demographic information and past medical history. You must start with \"Gender:\". Do not add a header.",
+        },
+        "google/gemma-2-9b-it": {
+            "role": "user",
+            "gender": "Compose a brief presentation of a patient presenting with {0}. Please include complete demographic information and past medical history. You must start with \"Gender:\". Do not add a header.",
+        },
+        "allenai/OLMo-2-0325-32B-Instruct": {
+            "role": "user",
+            "gender": "Compose a brief presentation of a patient presenting with {0}. Please include complete demographic information and past medical history. You must start with the following: \"Gender:\".",
+        },
+    }
+
+    text_template = text_templates[model_name]["gender"]
+    role = text_templates[model_name]["role"]
+    system = "You are a helpful clinical assistant."
+
+    tokenizer = AutoTokenizer.from_pretrained(model_name)
+    llm = LanguageModel(model_name, dtype=torch.bfloat16, device_map="auto", load_in_4bit=True)
+
+    N_LAYERS = len(llm.model.layers)
+    softmax = torch.nn.Softmax(dim=-1)
+    prompt_id = 0
+    corrupt_id = 1
+
+    if target == "male":
+        answers = [(" Male", " Female")]
+    else:
+        answers = [(" Female", " Male")]
+
+    answer_token_indices = [
+        [llm.tokenizer(answers[i][j], add_special_tokens=False)["input_ids"][0] for j in range(2)]
+        for i in range(len(answers))
+    ]
+
+    # ---- Corrupted prompt (same for both explicit and implicit) ----
+    text_corrupt = text_template.format(source_condition)
+    messages_corrupt = [{"role": role, "content": f"{system}\n\n{text_corrupt}"}]
+    source_chat_text = tokenizer.apply_chat_template(
+        messages_corrupt, tokenize=False, add_generation_prompt=True
+    )
+    corrupted_tokens = llm.tokenizer(source_chat_text, return_tensors="pt")["input_ids"][0]
+
+    # ---- Explicit: clean prompt "The patient is Male." / "The patient is Female." ----
+    target_condition_explicit = "Male" if target == "male" else "Female"
+    messages_explicit = [{"role": role, "content": f"The patient is {target_condition_explicit}."}]
+    explicit_chat_text = tokenizer.apply_chat_template(
+        messages_explicit, tokenize=False, add_generation_prompt=True
+    )
+
+    clean_tokens_explicit = llm.tokenizer(explicit_chat_text, return_tensors="pt")["input_ids"][0]
+    target_condition_ids_explicit = llm.tokenizer(
+        " " + target_condition_explicit, return_tensors="pt"
+    )["input_ids"][0]
+    patch_token_from_explicit = torch.argwhere(
+        clean_tokens_explicit == target_condition_ids_explicit[-1]
+    )[0][0].tolist()
+
+    diff_explicit = len(clean_tokens_explicit) - len(corrupted_tokens)
+    offset_explicit = diff_explicit if diff_explicit > 0 else 0
+    if diff_explicit <= 0:
+        patch_token_from_explicit = patch_token_from_explicit - diff_explicit
+
+    # ---- Implicit: clean prompt prostate cancer / preeclampsia ----
+    target_condition_implicit = "prostate cancer" if target == "male" else "preeclampsia"
+    text_implicit = text_template.format(target_condition_implicit)
+    messages_implicit = [{"role": role, "content": f"{system}\n\n{text_implicit}"}]
+    implicit_chat_text = tokenizer.apply_chat_template(
+        messages_implicit, tokenize=False, add_generation_prompt=True
+    )
+
+    clean_tokens_implicit = llm.tokenizer(implicit_chat_text, return_tensors="pt")["input_ids"][0]
+    target_condition_ids_implicit = llm.tokenizer(
+        " " + target_condition_implicit, return_tensors="pt"
+    )["input_ids"][0]
+    target_ix_implicit = -2 if target_condition_implicit == "prostate cancer" else -1
+    patch_token_from_implicit = torch.argwhere(
+        clean_tokens_implicit == target_condition_ids_implicit[target_ix_implicit]
+    )[0][0].tolist()
+
+    diff_implicit = len(clean_tokens_implicit) - len(corrupted_tokens)
+    offset_implicit = diff_implicit if diff_implicit > 0 else 0
+    if diff_implicit <= 0:
+        patch_token_from_implicit = patch_token_from_implicit - diff_implicit
+
+    step = 5
+    if model_name == "google/gemma-2-9b-it":
+        step = 2
+    elif model_name == "allenai/OLMo-2-0325-32B-Instruct":
+        step = 1
+
+    prompts_corrupt = source_chat_text
+    rewrite_scores_explicit_list = []
+    rewrite_scores_implicit_list = []
+    saved_explicit = []
+    saved_implicit = []
+
+    # ---- Explicit path: gather activations and run patching loop ----
+    print("Running explicit path (The patient is Male/Female)...")
+    for start in range(0, N_LAYERS, step):
+        end = min(start + step, N_LAYERS)
+        with torch.no_grad():
+            with llm.generate(max_new_tokens=6) as tracer:
+                with tracer.invoke(explicit_chat_text) as invoker:
+                    z_hs_explicit = {}
+                    for layer_idx in range(N_LAYERS):
+                        z = llm.model.layers[layer_idx].mlp.down_proj.output
+                        z_hs_explicit[layer_idx] = z[:, patch_token_from_explicit, :]
+                        if start == 0:
+                            saved_explicit.append(z[:, patch_token_from_explicit, :].save())
+
+                with tracer.invoke(prompts_corrupt) as invoker:
+                    corrupted_logits = llm.lm_head.next().next().output
+                    corrupted_prob = softmax(corrupted_logits[0][0])[
+                        answer_token_indices[prompt_id][0]
+                    ]
+
+                for layer_idx in range(start, end):
+                    for token_idx in range(len(corrupted_tokens)):
+                        with tracer.invoke(prompts_corrupt) as invoker:
+                            z_corrupt = llm.model.layers[layer_idx].mlp.down_proj.output
+                            z_corrupt[:, token_idx + offset_explicit, :] = z_hs_explicit[layer_idx]
+                            llm.model.layers[layer_idx].mlp.down_proj.output = z_corrupt
+                            patched_logits = llm.lm_head.next().next().output
+                            patched_prob = softmax(patched_logits[0][0])[
+                                answer_token_indices[prompt_id][0]
+                            ]
+                            rewrite_score = (patched_prob - corrupted_prob) / (
+                                1 - corrupted_prob + 1e-8
+                            )
+                            rewrite_scores_explicit_list.append(rewrite_score.save())
+
+    # ---- Implicit path: gather activations and run patching loop ----
+    print("Running implicit path (prostate cancer / preeclampsia)...")
+    for start in range(0, N_LAYERS, step):
+        end = min(start + step, N_LAYERS)
+        with torch.no_grad():
+            with llm.generate(max_new_tokens=6) as tracer:
+                with tracer.invoke(implicit_chat_text) as invoker:
+                    z_hs_implicit = {}
+                    for layer_idx in range(N_LAYERS):
+                        z = llm.model.layers[layer_idx].mlp.down_proj.output
+                        z_hs_implicit[layer_idx] = z[:, patch_token_from_implicit, :]
+                        if start == 0:
+                            saved_implicit.append(z[:, patch_token_from_implicit, :].save())
+
+                with tracer.invoke(prompts_corrupt) as invoker:
+                    corrupted_logits = llm.lm_head.next().next().output
+                    corrupted_prob_implicit = softmax(corrupted_logits[0][0])[
+                        answer_token_indices[prompt_id][0]
+                    ]
+
+                for layer_idx in range(start, end):
+                    for token_idx in range(len(corrupted_tokens)):
+                        with tracer.invoke(prompts_corrupt) as invoker:
+                            z_corrupt = llm.model.layers[layer_idx].mlp.down_proj.output
+                            z_corrupt[:, token_idx + offset_implicit, :] = z_hs_implicit[layer_idx]
+                            llm.model.layers[layer_idx].mlp.down_proj.output = z_corrupt
+                            patched_logits = llm.lm_head.next().next().output
+                            patched_prob = softmax(patched_logits[0][0])[
+                                answer_token_indices[prompt_id][0]
+                            ]
+                            rewrite_score = (patched_prob - corrupted_prob_implicit) / (
+                                1 - corrupted_prob_implicit + 1e-8
+                            )
+                            rewrite_scores_implicit_list.append(rewrite_score.save())
+
+    # Materialize rewrite scores
+    rewrite_scores_explicit = np.array(
+        [s.cpu().float().item() for s in rewrite_scores_explicit_list]
+    ).reshape(N_LAYERS, -1)
+    rewrite_scores_implicit = np.array(
+        [s.cpu().float().item() for s in rewrite_scores_implicit_list]
+    ).reshape(N_LAYERS, -1)
+
+    # ---- Cosine similarity (explicit vs implicit) per layer ----
+    cosine_sim_explicit_implicit = []
+    for layer_idx in range(N_LAYERS):
+        a = saved_explicit[layer_idx]
+        b = saved_implicit[layer_idx]
+        if hasattr(a, "value"):
+            a = a.value
+        if hasattr(b, "value"):
+            b = b.value
+        a = a.cpu().float() if torch.is_tensor(a) else torch.tensor(a, dtype=torch.float32)
+        b = b.cpu().float() if torch.is_tensor(b) else torch.tensor(b, dtype=torch.float32)
+        cosine_sim_explicit_implicit.append(cosine_similarity(a, b))
+    cosine_sim_explicit_implicit = np.array(cosine_sim_explicit_implicit)
+
+    # Best (layer, token) for explicit and implicit
+    best_flat_explicit = np.argmax(rewrite_scores_explicit)
+    best_layer_explicit, best_token_explicit = np.unravel_index(
+        best_flat_explicit, rewrite_scores_explicit.shape
+    )
+    best_flat_implicit = np.argmax(rewrite_scores_implicit)
+    best_layer_implicit, best_token_implicit = np.unravel_index(
+        best_flat_implicit, rewrite_scores_implicit.shape
+    )
+
+    corrupted_decoded_tokens = [llm.tokenizer.decode(t) for t in corrupted_tokens]
+    token_labels = [f"{t}_{i}" for i, t in enumerate(corrupted_decoded_tokens)]
+    layer_labels = list(range(N_LAYERS))
+
+    results = {
+        "token_labels": token_labels,
+        "layer_labels": layer_labels,
+        "rewrite_scores_explicit": rewrite_scores_explicit,
+        "rewrite_scores_implicit": rewrite_scores_implicit,
+        "cosine_sim_explicit_implicit": cosine_sim_explicit_implicit.tolist(),
+        "cosine_sim_by_layer": {i: float(cosine_sim_explicit_implicit[i]) for i in range(N_LAYERS)},
+        "best_layer_explicit": int(best_layer_explicit),
+        "best_token_idx_explicit": int(best_token_explicit),
+        "best_rewrite_score_explicit": float(rewrite_scores_explicit[best_layer_explicit, best_token_explicit]),
+        "best_layer_implicit": int(best_layer_implicit),
+        "best_token_idx_implicit": int(best_token_implicit),
+        "best_rewrite_score_implicit": float(rewrite_scores_implicit[best_layer_implicit, best_token_implicit]),
+    }
+
+    with open(scores_path, "wb") as f:
+        pickle.dump(results, f)
+    print("Saved results to", scores_path)
+
+    plot_ioi_patching_results(
+        rewrite_scores_explicit[1:, :],
+        token_labels,
+        layer_labels[1:],
+        "Explicit (The patient is Male/Female)",
+        plot_explicit_path,
+    )
+    plot_ioi_patching_results(
+        rewrite_scores_implicit[1:, :],
+        token_labels,
+        layer_labels[1:],
+        "Implicit (prostate cancer / preeclampsia)",
+        plot_implicit_path,
+    )
+    print("Saved explicit plot to", plot_explicit_path)
+    print("Saved implicit plot to", plot_implicit_path)
+
+    print("\n--- Rewrite score comparison ---")
+    print(
+        f"Explicit best: layer={best_layer_explicit}, token_idx={best_token_explicit}, "
+        f"token_label={token_labels[best_token_explicit]}, score={results['best_rewrite_score_explicit']:.4f}"
+    )
+    print(
+        f"Implicit best: layer={best_layer_implicit}, token_idx={best_token_implicit}, "
+        f"token_label={token_labels[best_token_implicit]}, score={results['best_rewrite_score_implicit']:.4f}"
+    )
+    print("\n--- Cosine similarity (explicit vs implicit activations) ---")
+    print(f"Mean cosine similarity: {float(np.mean(cosine_sim_explicit_implicit)):.4f}")
+    print("Per-layer cosine similarity stored in results['cosine_sim_explicit_implicit'] and results['cosine_sim_by_layer']")

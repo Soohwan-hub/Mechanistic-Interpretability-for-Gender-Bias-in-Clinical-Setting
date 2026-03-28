@@ -1,0 +1,249 @@
+{
+  "per_layer": [
+    {
+      "layer": 0,
+      "mean_rewrite_score": 0.22645498663832098,
+      "top10_mean_rewrite_score": 1.0,
+      "num_units": 1
+    },
+    {
+      "layer": 1,
+      "mean_rewrite_score": 0.0002543957202465503,
+      "top10_mean_rewrite_score": 0.00104217529296875,
+      "num_units": 1
+    },
+    {
+      "layer": 2,
+      "mean_rewrite_score": 0.028255945676332946,
+      "top10_mean_rewrite_score": 1.0,
+      "num_units": 1
+    },
+    {
+      "layer": 3,
+      "mean_rewrite_score": 0.0003002587850991782,
+      "top10_mean_rewrite_score": 0.0016998291015625,
+      "num_units": 1
+    },
+    {
+      "layer": 4,
+      "mean_rewrite_score": 0.0003119051714480181,
+      "top10_mean_rewrite_score": 0.00333404541015625,
+      "num_units": 1
+    },
+    {
+      "layer": 5,
+      "mean_rewrite_score": 0.0003208474163369183,
+      "top10_mean_rewrite_score": 0.000799560546875,
+      "num_units": 1
+    },
+    {
+      "layer": 6,
+      "mean_rewrite_score": 0.0003603237531917952,
+      "top10_mean_rewrite_score": 0.0043060302734375,
+      "num_units": 1
+    },
+    {
+      "layer": 7,
+      "mean_rewrite_score": 0.0006852129321077685,
+      "top10_mean_rewrite_score": 0.0330902099609375,
+      "num_units": 1
+    },
+    {
+      "layer": 8,
+      "mean_rewrite_score": 0.00027502976454697644,
+      "top10_mean_rewrite_score": 0.00182037353515625,
+      "num_units": 1
+    },
+    {
+      "layer": 9,
+      "mean_rewrite_score": 0.0002635113604657062,
+      "top10_mean_rewrite_score": 0.00131072998046875,
+      "num_units": 1
+    },
+    {
+      "layer": 10,
+      "mean_rewrite_score": 0.0002840215509588068,
+      "top10_mean_rewrite_score": 0.002178955078125,
+      "num_units": 1
+    },
+    {
+      "layer": 11,
+      "mean_rewrite_score": 0.0002556342583198052,
+      "top10_mean_rewrite_score": 0.0017059326171875,
+      "num_units": 1
+    },
+    {
+      "layer": 12,
+      "mean_rewrite_score": 0.00028720046534682763,
+      "top10_mean_rewrite_score": 0.0021759033203125,
+      "num_units": 1
+    },
+    {
+      "layer": 13,
+      "mean_rewrite_score": 0.0003078345096472538,
+      "top10_mean_rewrite_score": 0.00121612548828125,
+      "num_units": 1
+    },
+    {
+      "layer": 14,
+      "mean_rewrite_score": 0.0003321015989625609,
+      "top10_mean_rewrite_score": 0.003973388671875,
+      "num_units": 1
+    },
+    {
+      "layer": 15,
+      "mean_rewrite_score": 0.0003103115857937635,
+      "top10_mean_rewrite_score": 0.00122833251953125,
+      "num_units": 1
+    },
+    {
+      "layer": 16,
+      "mean_rewrite_score": 0.00029680739233504125,
+      "top10_mean_rewrite_score": 0.0028350830078125,
+      "num_units": 1
+    },
+    {
+      "layer": 17,
+      "mean_rewrite_score": 0.0003551012509829038,
+      "top10_mean_rewrite_score": 0.011273193359375,
+      "num_units": 1
+    },
+    {
+      "layer": 18,
+      "mean_rewrite_score": 0.0010332545160731195,
+      "top10_mean_rewrite_score": 0.064141845703125,
+      "num_units": 1
+    },
+    {
+      "layer": 19,
+      "mean_rewrite_score": 0.0011192668568004262,
+      "top10_mean_rewrite_score": 0.0807342529296875,
+      "num_units": 1
+    },
+    {
+      "layer": 20,
+      "mean_rewrite_score": 0.0010029681317217938,
+      "top10_mean_rewrite_score": 0.07816009521484375,
+      "num_units": 1
+    },
+    {
+      "layer": 21,
+      "mean_rewrite_score": 0.0003829394584094291,
+      "top10_mean_rewrite_score": 0.0197509765625,
+      "num_units": 1
+    },
+    {
+      "layer": 22,
+      "mean_rewrite_score": 0.00016679805078547753,
+      "top10_mean_rewrite_score": 0.000246429443359375,
+      "num_units": 1
+    },
+    {
+      "layer": 23,
+      "mean_rewrite_score": 0.0001514071509951637,
+      "top10_mean_rewrite_score": 0.001441192626953125,
+      "num_units": 1
+    },
+    {
+      "layer": 24,
+      "mean_rewrite_score": 0.0001755256157416802,
+      "top10_mean_rewrite_score": 0.00318450927734375,
+      "num_units": 1
+    },
+    {
+      "layer": 25,
+      "mean_rewrite_score": 0.00010214636336157333,
+      "top10_mean_rewrite_score": 0.000223541259765625,
+      "num_units": 1
+    },
+    {
+      "layer": 26,
+      "mean_rewrite_score": 9.202337884283684e-05,
+      "top10_mean_rewrite_score": 0.002042388916015625,
+      "num_units": 1
+    },
+    {
+      "layer": 27,
+      "mean_rewrite_score": 1.8759723349567098e-05,
+      "top10_mean_rewrite_score": 0.0017333984375,
+      "num_units": 1
+    }
+  ],
+  "raw_units": [
+    {
+      "cohort": "depression",
+      "case_idx": 0,
+      "prompt_id": 1,
+      "per_layer_mean": [
+        0.22645498663832098,
+        0.0002543957202465503,
+        0.028255945676332946,
+        0.0003002587850991782,
+        0.0003119051714480181,
+        0.0003208474163369183,
+        0.0003603237531917952,
+        0.0006852129321077685,
+        0.00027502976454697644,
+        0.0002635113604657062,
+        0.0002840215509588068,
+        0.0002556342583198052,
+        0.00028720046534682763,
+        0.0003078345096472538,
+        0.0003321015989625609,
+        0.0003103115857937635,
+        0.00029680739233504125,
+        0.0003551012509829038,
+        0.0010332545160731195,
+        0.0011192668568004262,
+        0.0010029681317217938,
+        0.0003829394584094291,
+        0.00016679805078547753,
+        0.0001514071509951637,
+        0.0001755256157416802,
+        0.00010214636336157333,
+        9.202337884283684e-05,
+        1.8759723349567098e-05
+      ],
+      "per_layer_top10": [
+        1.0,
+        0.00104217529296875,
+        1.0,
+        0.0016998291015625,
+        0.00333404541015625,
+        0.000799560546875,
+        0.0043060302734375,
+        0.0330902099609375,
+        0.00182037353515625,
+        0.00131072998046875,
+        0.002178955078125,
+        0.0017059326171875,
+        0.0021759033203125,
+        0.00121612548828125,
+        0.003973388671875,
+        0.00122833251953125,
+        0.0028350830078125,
+        0.011273193359375,
+        0.064141845703125,
+        0.0807342529296875,
+        0.07816009521484375,
+        0.0197509765625,
+        0.000246429443359375,
+        0.001441192626953125,
+        0.00318450927734375,
+        0.000223541259765625,
+        0.002042388916015625,
+        0.0017333984375
+      ],
+      "metadata": {
+        "cohort": "depression",
+        "case_idx": 0,
+        "prompt_id": 1,
+        "patch_gender": "Male",
+        "condition_name": "depression",
+        "corrupted_prob": 0.0016632080078125,
+        "num_layers": 28,
+        "num_tokens": 924
+      }
+    }
+  ]
+}
