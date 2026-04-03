@@ -32,7 +32,11 @@ except ImportError:
 # -----------------------------------------------------------------------------
 # Constants
 # -----------------------------------------------------------------------------
-MODEL_NAME = "Qwen/Qwen2.5-7B-Instruct"
+MODEL_OPTIONS = {
+    1: "Qwen/Qwen2.5-7B-Instruct",
+    2: "allenai/OLMo-7B-0724-Instruct-hf",
+    3: "meta-llama/Llama-3.1-8B-Instruct",
+}
 
 COHORT_TO_CONDITION_NAME = {
     "depression": "depression",
@@ -180,6 +184,32 @@ def _resolve_score_keys(raw: str) -> Tuple[str, ...]:
             deduped.append(key)
             seen.add(key)
     return tuple(deduped)
+
+
+def _resolve_model_name(model_id: int) -> str:
+    if model_id not in MODEL_OPTIONS:
+        valid = ",".join(str(k) for k in sorted(MODEL_OPTIONS.keys()))
+        raise ValueError(f"Unknown --model-id {model_id}. Valid values: {valid}")
+    return MODEL_OPTIONS[model_id]
+
+
+def _parse_nonnegative_int_csv(raw: str, arg_name: str) -> Tuple[int, ...]:
+    value = raw.strip()
+    if not value:
+        return tuple()
+    parsed: List[int] = []
+    for part in value.split(","):
+        token = part.strip()
+        if not token:
+            continue
+        try:
+            idx = int(token)
+        except ValueError as exc:
+            raise ValueError(f"Invalid {arg_name} value {token!r}; expected comma-separated integers.") from exc
+        if idx < 0:
+            raise ValueError(f"Invalid {arg_name} value {token!r}; layer indices must be >= 0.")
+        parsed.append(idx)
+    return tuple(sorted(set(parsed)))
 
 
 # -----------------------------------------------------------------------------
@@ -415,6 +445,22 @@ def layer_aggregates(score_matrix: np.ndarray, top_k: int = 30, trim_frac: float
         "trimmed_mean": per_layer_trimmed_mean,
         "topk_mean": per_layer_topk_mean,
     }
+
+
+def _filter_plot_stats_by_layers(
+    per_layer_stats: Dict[str, np.ndarray],
+    layer_labels: List[int],
+    excluded_layers: Tuple[int, ...],
+) -> Tuple[Dict[str, np.ndarray], List[int]]:
+    if not excluded_layers:
+        return per_layer_stats, layer_labels
+    excluded = set(excluded_layers)
+    keep_idx = [i for i, layer in enumerate(layer_labels) if layer not in excluded]
+    filtered_layer_labels = [layer_labels[i] for i in keep_idx]
+    filtered_stats: Dict[str, np.ndarray] = {
+        key: values[keep_idx] for key, values in per_layer_stats.items()
+    }
+    return filtered_stats, filtered_layer_labels
 
 
 # -----------------------------------------------------------------------------
@@ -689,6 +735,13 @@ def parse_args() -> argparse.Namespace:
         default="rewrite_scores",
         help="Comma-separated score matrix keys to compute/use. Values: rewrite_scores,logprob_scores,logprob_delta_scores,all",
     )
+    p.add_argument(
+        "--model-id",
+        type=int,
+        default=1,
+        choices=sorted(MODEL_OPTIONS.keys()),
+        help="Model selector: 1=Qwen/Qwen2.5-7B-Instruct, 2=allenai/OLMo-7B-0724-Instruct-hf, 3=meta-llama/Llama-3.1-8B-Instruct",
+    )
     p.add_argument("--max-tokens", type=int, default=0, help="0 = full token sweep")
     p.add_argument("--layer-start", type=int, default=0, help="First layer index (inclusive)")
     p.add_argument("--layer-end", type=int, default=9999, help="Last layer index (exclusive)")
@@ -705,6 +758,12 @@ def parse_args() -> argparse.Namespace:
     p.add_argument("--heatmap-mode", type=str, default="single", choices=["single", "full_suite"], help="single: one all-layer heatmap; full_suite: split layers + token windows + overview")
     p.add_argument("--heatmap-token-window", type=int, default=180, help="Token columns per heatmap tile (0 = no token split)")
     p.add_argument("--heatmap-overview-bin-size", type=int, default=10, help="Bin size for compact overview heatmap (1 disables binning)")
+    p.add_argument(
+        "--exclude-plot-layers",
+        type=str,
+        default="",
+        help="Comma-separated zero-indexed layer ids to omit from plot generation only (e.g. 0,1).",
+    )
     p.add_argument("--rebuild-plots-only", action="store_true", help="Regenerate plots from saved artifacts only")
     p.add_argument("--dry-run", action="store_true", help="Only validate config, work list, and progress (no model load)")
     return p.parse_args()
@@ -766,7 +825,7 @@ def run_patching(args: argparse.Namespace, run_dir: Path) -> None:
         bnb_4bit_compute_dtype=torch.bfloat16,
         bnb_4bit_use_double_quant=True,
     )
-    llm = LanguageModel(MODEL_NAME, quantization_config=quantization_config, device_map="auto")
+    llm = LanguageModel(args.model_name, quantization_config=quantization_config, device_map="auto")
     num_layers = len(llm.model.layers)
     layer_end = min(args.layer_end, num_layers)
     layer_start = max(0, args.layer_start)
@@ -858,9 +917,19 @@ def run_patching(args: argparse.Namespace, run_dir: Path) -> None:
                     per_prompt_dir.mkdir(parents=True, exist_ok=True)
                     base = per_prompt_dir / f"{cohort}_prompt{prompt_id}_{score_key}"
                     try:
+                        plot_stats, plot_layer_labels = _filter_plot_stats_by_layers(
+                            stats, layer_labels, args.excluded_plot_layers
+                        )
+                        if not plot_layer_labels:
+                            print(
+                                f"Plot warning (layer curves) {key} {score_key}: all layers excluded by --exclude-plot-layers",
+                                file=sys.stderr,
+                                flush=True,
+                            )
+                            continue
                         plot_layer_curves(
-                            stats,
-                            layer_labels,
+                            plot_stats,
+                            plot_layer_labels,
                             f"{cohort} prompt{prompt_id} {score_key}",
                             str(base),
                             args.plot_format,
@@ -983,6 +1052,7 @@ def build_aggregates(run_dir: Path, args: argparse.Namespace) -> None:
     if _HAS_PLOTLY and (args.save_heatmaps or args.save_layer_plots):
         plot_dir = run_dir / "layer_plots"
         plot_dir.mkdir(parents=True, exist_ok=True)
+        excluded_plot_layers = set(args.excluded_plot_layers)
         stat_labels = {
             "mean": "mean",
             "median": "median",
@@ -994,6 +1064,8 @@ def build_aggregates(run_dir: Path, args: argparse.Namespace) -> None:
                 for stat_key in stat_keys:
                     layer_scores_stat: List[Tuple[int, float]] = []
                     for layer in layers_sorted:
+                        if layer in excluded_plot_layers:
+                            continue
                         vals = cohort_store[score_key][stat_key].get(layer, [])
                         if vals:
                             layer_scores_stat.append((layer, float(np.mean(vals))))
@@ -1073,9 +1145,19 @@ def rebuild_plots_only(args: argparse.Namespace, run_dir: Path) -> None:
                 per_prompt_dir.mkdir(parents=True, exist_ok=True)
                 layer_plot_path = per_prompt_dir / (name + f"_{score_key}" + ext)
                 if not layer_plot_path.exists():
+                    plot_stats, plot_layer_labels = _filter_plot_stats_by_layers(
+                        stats, layer_labels, args.excluded_plot_layers
+                    )
+                    if not plot_layer_labels:
+                        print(
+                            f"Plot warning (layer curves) {name} {score_key}: all layers excluded by --exclude-plot-layers",
+                            file=sys.stderr,
+                            flush=True,
+                        )
+                        continue
                     plot_layer_curves(
-                        stats,
-                        layer_labels,
+                        plot_stats,
+                        plot_layer_labels,
                         f"{name} {score_key}",
                         str(per_prompt_dir / (name + f"_{score_key}")),
                         args.plot_format,
@@ -1087,7 +1169,11 @@ def rebuild_plots_only(args: argparse.Namespace, run_dir: Path) -> None:
 
 def main() -> None:
     args = parse_args()
+    args.model_name = _resolve_model_name(args.model_id)
     args.selected_score_keys = _resolve_score_keys(args.score_keys)
+    args.excluded_plot_layers = _parse_nonnegative_int_csv(
+        args.exclude_plot_layers, "--exclude-plot-layers"
+    )
     run_dir = get_run_dir(args)
     run_dir.mkdir(parents=True, exist_ok=True)
 
@@ -1098,7 +1184,7 @@ def main() -> None:
     progress = load_progress(run_dir)
     if not progress.get("config_hash"):
         progress["config_hash"] = _config_hash(args)
-        progress["model_name"] = MODEL_NAME
+        progress["model_name"] = args.model_name
         save_progress(run_dir, progress)
 
     if args.dry_run:
