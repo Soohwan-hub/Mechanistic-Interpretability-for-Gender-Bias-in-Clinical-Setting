@@ -13,25 +13,3 @@ hf_cases.jsonl
 train.json
 __pycache__/
 *.py[cod]
-
-head_onecond_ra_C_artifacts.tar.gz
-# head_onecond head-patching: commit figures under **/plots/*.png (or .pdf) only.
-# **/ matches nested paths (e.g. ra_A vs ra_C/artifacts/...). Ignores all .pkl/.pt/.json
-# there (incl. hook_shape.json, run_config.json, head_heatmap_data*.pkl, trackers).
-**/head_onecond*_artifacts/**/*.pkl
-**/head_onecond*_artifacts/**/*.pt
-**/head_onecond*_artifacts/**/*.json
-**/head_onecond*_artifacts.tar.gz
-
-
-
-generate_sweep_heatmaps.py
-regenerate_replication_plots.py
-setup_and_run_stage6.sh
-sae_localization_cot.ipynb
-final_cot_patching_mlp (1).ipynb
-cot_experiment_wSAE.ipynb
-cot_pathing_mlp_wSAE.md
-#gh200_full_artifacts_x86/
-gh200_full_artifacts/
-qwen_bronch_promptA/
