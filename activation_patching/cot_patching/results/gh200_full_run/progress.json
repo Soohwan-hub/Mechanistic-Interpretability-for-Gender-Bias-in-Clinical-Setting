@@ -1,0 +1,15 @@
+{
+  "completed_stages": [
+    "1",
+    "2",
+    "3",
+    "4",
+    "5",
+    "6"
+  ],
+  "failed_stages": {
+    "pipeline": "Length mismatch: Expected axis has 5 elements, new values have 4 elements"
+  },
+  "updated": "2026-04-21T21:09:52Z",
+  "model_name": "Qwen/Qwen2.5-7B-Instruct"
+}

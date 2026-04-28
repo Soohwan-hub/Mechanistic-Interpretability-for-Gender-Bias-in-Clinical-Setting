@@ -447,6 +447,55 @@ def layer_aggregates(score_matrix: np.ndarray, top_k: int = 30, trim_frac: float
     }
 
 
+def _topk_mean_1d(values: np.ndarray, top_k: int) -> float:
+    finite = values[np.isfinite(values)]
+    if finite.size == 0:
+        return float("nan")
+    k = min(max(1, top_k), finite.size)
+    sorted_desc = np.sort(finite)[::-1]
+    return float(np.mean(sorted_desc[:k]))
+
+
+def aggregate_heatmap_stats(
+    score_matrices: List[np.ndarray],
+    top_k: int,
+) -> Dict[str, np.ndarray]:
+    """Aggregate same-shape score matrices over prompt units for heatmap plotting."""
+    if not score_matrices:
+        raise ValueError("aggregate_heatmap_stats requires at least one score matrix.")
+    stack = np.stack(score_matrices, axis=0)
+    mean_matrix = np.nanmean(stack, axis=0)
+    median_matrix = np.nanmedian(stack, axis=0)
+
+    n_layers, n_tokens = stack.shape[1], stack.shape[2]
+    topk_mean_matrix = np.full((n_layers, n_tokens), np.nan, dtype=float)
+    for li in range(n_layers):
+        for ti in range(n_tokens):
+            topk_mean_matrix[li, ti] = _topk_mean_1d(stack[:, li, ti], top_k=top_k)
+
+    return {
+        "mean": mean_matrix,
+        "median": median_matrix,
+        "topk_mean": topk_mean_matrix,
+    }
+
+
+def _filter_heatmap_layers(
+    score_matrix: np.ndarray,
+    layer_labels: List[int],
+    excluded_layers: Tuple[int, ...],
+) -> Tuple[np.ndarray, List[int]]:
+    if not excluded_layers:
+        return score_matrix, layer_labels
+    excluded = set(excluded_layers)
+    keep_idx = [i for i, layer in enumerate(layer_labels) if layer not in excluded]
+    if not keep_idx:
+        return score_matrix[:0, :], []
+    filtered_matrix = score_matrix[keep_idx, :]
+    filtered_layers = [layer_labels[i] for i in keep_idx]
+    return filtered_matrix, filtered_layers
+
+
 def _filter_plot_stats_by_layers(
     per_layer_stats: Dict[str, np.ndarray],
     layer_labels: List[int],
@@ -593,6 +642,9 @@ def plot_heatmap(
             y=layer_labels,
             title=title,
         )
+        # Add visible cell boundaries so layer/token blocks are easier to read.
+        fig.update_traces(xgap=1, ygap=1)
+        fig.update_xaxes(showgrid=True, gridcolor="rgba(120,120,120,0.35)", gridwidth=0.5, automargin=True)
         fig.update_yaxes(tickmode="linear", tick0=min(layer_labels), dtick=1, automargin=True)
         fig.update_layout(height=max(700, 24 * len(layer_labels) + 160), width=1800)
         pio.write_image(fig, out)
@@ -629,6 +681,8 @@ def plot_heatmap(
                 y=chunk_layers,
                 title=f"{title} ({chunk_layers[0]}-{chunk_layers[-1]}, tok {tok_start}-{tok_end-1})",
             )
+            fig.update_traces(xgap=1, ygap=1)
+            fig.update_xaxes(showgrid=True, gridcolor="rgba(120,120,120,0.35)", gridwidth=0.5, automargin=True)
             # Prevent Plotly from collapsing y ticks to only a few labels.
             fig.update_yaxes(tickmode="linear", tick0=min(chunk_layers), dtick=1, automargin=True)
             fig.update_layout(height=max(560, 28 * len(chunk_layers) + 140), width=1800)
@@ -655,6 +709,8 @@ def plot_heatmap(
             y=layer_labels,
             title=f"{title} (overview, binned)",
         )
+        fig.update_traces(xgap=1, ygap=1)
+        fig.update_xaxes(showgrid=True, gridcolor="rgba(120,120,120,0.35)", gridwidth=0.5, automargin=True)
         fig.update_yaxes(tickmode="linear", tick0=min(layer_labels), dtick=1, automargin=True)
         fig.update_layout(height=max(700, 22 * len(layer_labels) + 160), width=1800)
         out_overview = out.replace(ext, f"_overview_bin{overview_bin_size}{ext}")
@@ -746,7 +802,7 @@ def parse_args() -> argparse.Namespace:
     p.add_argument("--layer-start", type=int, default=0, help="First layer index (inclusive)")
     p.add_argument("--layer-end", type=int, default=9999, help="Last layer index (exclusive)")
     p.add_argument("--layer-step", type=int, default=1, help="Layer step in sweep (memory tuning)")
-    p.add_argument("--top-k", type=int, default=30, help="Top-k used for top-k mean aggregation")
+    p.add_argument("--top-k", type=int, default=15, help="Top-k used for top-k mean aggregation")
     p.add_argument("--trim-frac", type=float, default=0.10, help="Trim fraction for trimmed mean aggregation")
     p.add_argument("--save-heatmaps", action="store_true", help="Save token×layer heatmap per unit")
     p.add_argument(
@@ -956,6 +1012,9 @@ def build_aggregates(run_dir: Path, args: argparse.Namespace) -> None:
         return
     agg_store: Dict[str, Dict[str, Dict[int, List[float]]]] = {}
     agg_store_by_cohort: Dict[str, Dict[str, Dict[str, Dict[int, List[float]]]]] = {}
+    heatmap_mats_by_cohort: Dict[str, Dict[str, List[np.ndarray]]] = {}
+    heatmap_token_labels_by_cohort: Dict[str, List[str]] = {}
+    heatmap_layer_labels_by_cohort: Dict[str, List[int]] = {}
     all_raw: List[Dict[str, Any]] = []
 
     selected_score_keys: Tuple[str, ...] = args.selected_score_keys
@@ -982,6 +1041,7 @@ def build_aggregates(run_dir: Path, args: argparse.Namespace) -> None:
         if not score_matrices:
             continue
 
+        token_labels = data["token_labels"]
         layer_labels = data["layer_labels"]
         raw_row: Dict[str, Any] = {
             "cohort": cohort,
@@ -994,10 +1054,29 @@ def build_aggregates(run_dir: Path, args: argparse.Namespace) -> None:
                 score_key: {s: {} for s in stat_keys}
                 for score_key in selected_score_keys
             }
+        if cohort not in heatmap_mats_by_cohort:
+            heatmap_mats_by_cohort[cohort] = {
+                score_key: [] for score_key in selected_score_keys
+            }
+            heatmap_token_labels_by_cohort[cohort] = token_labels
+            heatmap_layer_labels_by_cohort[cohort] = layer_labels
+
+        cohort_heatmap_compatible = (
+            token_labels == heatmap_token_labels_by_cohort[cohort]
+            and layer_labels == heatmap_layer_labels_by_cohort[cohort]
+        )
+        if not cohort_heatmap_compatible:
+            print(
+                f"Plot warning (aggregate heatmap) skipped {cohort}_prompt{prompt_id}: token/layer labels mismatch within cohort.",
+                file=sys.stderr,
+                flush=True,
+            )
 
         for score_key, matrix in score_matrices.items():
             stats = layer_aggregates(matrix, top_k=args.top_k, trim_frac=args.trim_frac)
             raw_row["score_stats"][score_key] = {k: v.tolist() for k, v in stats.items()}
+            if cohort_heatmap_compatible:
+                heatmap_mats_by_cohort[cohort][score_key].append(matrix)
             for i, layer in enumerate(layer_labels):
                 for stat_key in stat_keys:
                     val = float(stats[stat_key][i])
@@ -1079,6 +1158,57 @@ def build_aggregates(run_dir: Path, args: argparse.Namespace) -> None:
                         str(top_layers_dir / f"top_layers_{stat_key}_{cohort}_{score_key}"),
                         args.plot_format,
                     )
+
+    if _HAS_PLOTLY and args.save_heatmaps:
+        aggregate_heatmap_stat_order = ("mean", "median", "topk_mean")
+        aggregate_heatmap_stat_labels = {
+            "mean": "mean",
+            "median": "median",
+            "topk_mean": f"top-{args.top_k} mean",
+        }
+        aggregate_excluded_layers = tuple(sorted(set(args.excluded_plot_layers).union({0})))
+        for cohort, score_to_mats in sorted(heatmap_mats_by_cohort.items()):
+            token_labels = heatmap_token_labels_by_cohort[cohort]
+            layer_labels = heatmap_layer_labels_by_cohort[cohort]
+            for score_key in selected_score_keys:
+                matrices = score_to_mats.get(score_key, [])
+                if not matrices:
+                    continue
+                stats_2d = aggregate_heatmap_stats(matrices, top_k=args.top_k)
+                for stat_key in aggregate_heatmap_stat_order:
+                    matrix = stats_2d.get(stat_key)
+                    if matrix is None:
+                        continue
+                    plot_matrix, plot_layers = _filter_heatmap_layers(
+                        matrix, layer_labels, aggregate_excluded_layers
+                    )
+                    if not plot_layers:
+                        print(
+                            f"Plot warning (aggregate heatmap) {cohort} {score_key} {stat_key}: all layers excluded (including layer 0).",
+                            file=sys.stderr,
+                            flush=True,
+                        )
+                        continue
+                    aggregate_dir = run_dir / "heatmaps" / "aggregate_by_cohort" / score_key / stat_key
+                    aggregate_dir.mkdir(parents=True, exist_ok=True)
+                    try:
+                        plot_heatmap(
+                            plot_matrix,
+                            token_labels,
+                            plot_layers,
+                            f"{cohort} aggregate ({aggregate_heatmap_stat_labels[stat_key]}) {score_key}",
+                            str(aggregate_dir / f"{cohort}_{score_key}_{stat_key}"),
+                            args.plot_format,
+                            mode=args.heatmap_mode,
+                            token_window=args.heatmap_token_window,
+                            overview_bin_size=args.heatmap_overview_bin_size,
+                        )
+                    except Exception as e:
+                        print(
+                            f"Plot warning (aggregate heatmap) {cohort} {score_key} {stat_key}: {e}",
+                            file=sys.stderr,
+                            flush=True,
+                        )
 
 
 def rebuild_plots_only(args: argparse.Namespace, run_dir: Path) -> None:

@@ -1,0 +1,3 @@
+layer,feature_idx,gate_sign,n_hits,n_runs,n_conditions,n_prompt_vars,n_temps,n_seeds,mean_norm_effect,median_norm_effect,sign_consistency,replication_pass
+18,19114,positive,652,652,6,3,9,5,0.03391500381634634,0.0,0.4340490797546012,False
+18,8953,positive,405,326,6,3,9,5,0.026452692065225686,0.0,0.17530864197530865,False
