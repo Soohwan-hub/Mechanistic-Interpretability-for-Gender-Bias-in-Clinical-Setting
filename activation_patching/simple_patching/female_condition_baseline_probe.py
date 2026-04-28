@@ -24,7 +24,10 @@ except ImportError:
 from simple_patching_without_BHCs import SIMPLE_PROMPTS
 
 
-MODEL_NAME = "Qwen/Qwen2.5-7B-Instruct"
+MODEL_OPTIONS = {
+    1: "Qwen/Qwen2.5-7B-Instruct",
+    2: "allenai/OLMo-7B-0724-Instruct-hf",
+}
 DEFAULT_CONDITIONS = [
     "depression",
     "multiple sclerosis",
@@ -45,6 +48,13 @@ def atomic_write_json(path: Path, payload: Dict[str, Any]) -> None:
 
 def mean(values: List[float]) -> float:
     return float(sum(values) / len(values)) if values else 0.0
+
+
+def resolve_model_name(model_id: int) -> str:
+    if model_id not in MODEL_OPTIONS:
+        valid = ",".join(str(k) for k in sorted(MODEL_OPTIONS.keys()))
+        raise ValueError(f"Unknown --model-id {model_id}. Valid values: {valid}")
+    return MODEL_OPTIONS[model_id]
 
 
 def parse_args() -> argparse.Namespace:
@@ -68,6 +78,13 @@ def parse_args() -> argparse.Namespace:
         "--prompt-ids",
         type=str,
         default=",".join(str(x) for x in sorted(SIMPLE_PROMPTS.keys())),
+    )
+    parser.add_argument(
+        "--model-id",
+        type=int,
+        default=1,
+        choices=sorted(MODEL_OPTIONS.keys()),
+        help="Model selector: 1=Qwen/Qwen2.5-7B-Instruct, 2=allenai/OLMo-7B-0724-Instruct-hf",
     )
     parser.add_argument(
         "--n-repeats",
@@ -158,6 +175,7 @@ def maybe_save_plots(rows: List[Dict[str, Any]], out_dir: Path) -> None:
 
 def main() -> None:
     args = parse_args()
+    args.model_name = resolve_model_name(args.model_id)
     run_dir = Path(args.output_dir) / args.run_id
     run_dir.mkdir(parents=True, exist_ok=True)
 
@@ -205,9 +223,9 @@ def main() -> None:
             bnb_4bit_compute_dtype=torch.bfloat16,
             bnb_4bit_use_double_quant=True,
         )
-        tokenizer = AutoTokenizer.from_pretrained(MODEL_NAME)
+        tokenizer = AutoTokenizer.from_pretrained(args.model_name)
         model = AutoModelForCausalLM.from_pretrained(
-            MODEL_NAME,
+            args.model_name,
             quantization_config=quantization_config,
             device_map="auto",
         )
@@ -298,7 +316,7 @@ def main() -> None:
     overall_female = [float(x["p_female"]) for x in output_rows]
     overall_female_gt = [1.0 if x["female_gt_male"] else 0.0 for x in output_rows]
     summary = {
-        "model_name": MODEL_NAME,
+        "model_name": args.model_name,
         "conditions": conditions,
         "target_gender": "Female",
         "n_conditions": len(conditions),
