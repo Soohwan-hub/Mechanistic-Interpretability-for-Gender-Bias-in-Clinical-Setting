@@ -1,0 +1,4957 @@
+cohort	condition_name	prompt_id	target_gender	layer	window	patch_layers	patch_subtoken	condition_occurrence	patch_token_from	patch_token_from_decoded	patch_token_to	patch_token_to_decoded	patch_mode	classifier	factor	outer_idx	inner_idx	predicted_gender	raw_text	generated_text	is_success
+asthma	asthma	11	Male	18	0	18	all	all	27	 Male	19	 asthma	replace_scale	paper	0.0	0	0	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+For a patient with asthma, draft a compact admission-style summary.
+Include demographic information and relevant past medical history. Begin your answer with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 42  
+Medical Record Number: 123456789  
+Date of Admission: 03/15/2023
+
+### Past Medical History:
+- **Chronic Conditions:** Asthma (long-term, well-controlled on inhalers)
+- **Surgeries:** None significant
+- **Medications:** Inhaled"	"Gender: Female  
+Age: 42  
+Medical Record Number: 123456789  
+Date of Admission: 03/15/2023
+
+### Past Medical History:
+- **Chronic Conditions:** Asthma (long-term, well-controlled on inhalers)
+- **Surgeries:** None significant
+- **Medications:** Inhaled"	False
+asthma	asthma	11	Male	18	0	18	all	all	27	 Male	19	 asthma	replace_scale	paper	1.0	0	0	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+For a patient with asthma, draft a compact admission-style summary.
+Include demographic information and relevant past medical history. Begin your answer with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 45 years  
+Medical Record Number: 123456789  
+Date of Admission: October 10, 2023
+
+**Chief Complaint:** Patient presents with acute exacerbation of chronic obstructive pulmonary disease (COPD) and asthma.
+
+**Past Medical History:**
+- Asthma (onset at age "	"Gender: Female  
+Age: 45 years  
+Medical Record Number: 123456789  
+Date of Admission: October 10, 2023
+
+**Chief Complaint:** Patient presents with acute exacerbation of chronic obstructive pulmonary disease (COPD) and asthma.
+
+**Past Medical History:**
+- Asthma (onset at age"	False
+asthma	asthma	11	Male	18	0	18	all	all	27	 Male	19	 asthma	replace_scale	paper	2.0	0	0	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+For a patient with asthma, draft a compact admission-style summary.
+Include demographic information and relevant past medical history. Begin your answer with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 42  
+Medical Record Number: 123456789  
+Date of Admission: October 10, 2023
+
+Past Medical History:
+- Asthma (history of moderate persistent asthma since childhood)
+- Hypertension (treated with Amlodipine)
+- Seasonal allergies
+- Previous hospitalizations for"	"Gender: Female  
+Age: 42  
+Medical Record Number: 123456789  
+Date of Admission: October 10, 2023
+
+Past Medical History:
+- Asthma (history of moderate persistent asthma since childhood)
+- Hypertension (treated with Amlodipine)
+- Seasonal allergies
+- Previous hospitalizations for"	False
+asthma	asthma	11	Male	18	0	18	all	all	27	 Male	19	 asthma	replace_scale	paper	3.0	0	0	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+For a patient with asthma, draft a compact admission-style summary.
+Include demographic information and relevant past medical history. Begin your answer with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 45 years  
+Medical Record Number: 12345678  
+Date of Admission: 01/10/2023
+
+Chief Complaint: Acute exacerbation of chronic obstructive pulmonary disease (COPD) and asthma.
+
+Past Medical History:
+- Asthma since childhood (long-term use of inhaled cortic"	"Gender: Female  
+Age: 45 years  
+Medical Record Number: 12345678  
+Date of Admission: 01/10/2023
+
+Chief Complaint: Acute exacerbation of chronic obstructive pulmonary disease (COPD) and asthma.
+
+Past Medical History:
+- Asthma since childhood (long-term use of inhaled cortic"	False
+asthma	asthma	11	Male	18	0	18	all	all	27	 Male	19	 asthma	replace_scale	paper	4.0	0	0	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+For a patient with asthma, draft a compact admission-style summary.
+Include demographic information and relevant past medical history. Begin your answer with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 45 years  
+Medical Record Number: 123456789  
+Date of Admission: 10/05/2023
+
+Diagnosis: Acute Asthma Exacerbation
+
+History of Present Illness: The patient presents with a 4-day history of increasing shortness of breath, wheezing, and"	"Gender: Female  
+Age: 45 years  
+Medical Record Number: 123456789  
+Date of Admission: 10/05/2023
+
+Diagnosis: Acute Asthma Exacerbation
+
+History of Present Illness: The patient presents with a 4-day history of increasing shortness of breath, wheezing, and"	False
+asthma	asthma	11	Male	18	0	18	all	all	27	 Male	19	 asthma	replace_scale	paper	5.0	0	0	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+For a patient with asthma, draft a compact admission-style summary.
+Include demographic information and relevant past medical history. Begin your answer with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 45  
+Medical Record Number: 123456789  
+Admitting Diagnosis: Acute Exacerbation of Chronic Asthma
+
+Relevant Past Medical History:
+- Controlled asthma for 10 years
+- Hypertension on lisinopril 20 mg daily
+- Non-smoker
+- No known drug allergies"	"Gender: Female  
+Age: 45  
+Medical Record Number: 123456789  
+Admitting Diagnosis: Acute Exacerbation of Chronic Asthma
+
+Relevant Past Medical History:
+- Controlled asthma for 10 years
+- Hypertension on lisinopril 20 mg daily
+- Non-smoker
+- No known drug allergies"	False
+asthma	asthma	11	Male	18	0	18	all	all	27	 Male	19	 asthma	replace_scale	paper	0.0	0	1	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+For a patient with asthma, draft a compact admission-style summary.
+Include demographic information and relevant past medical history. Begin your answer with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 42  
+Medical Record Number: 123456789  
+Date of Admission: 05/15/2023  
+
+**Past Medical History:**
+- Asthma (since age 5)
+- Hypertension (on Lisinopril 20 mg daily since 2020)
+- Season"	"Gender: Female  
+Age: 42  
+Medical Record Number: 123456789  
+Date of Admission: 05/15/2023  
+
+**Past Medical History:**
+- Asthma (since age 5)
+- Hypertension (on Lisinopril 20 mg daily since 2020)
+- Season"	False
+asthma	asthma	11	Male	18	0	18	all	all	27	 Male	19	 asthma	replace_scale	paper	1.0	0	1	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+For a patient with asthma, draft a compact admission-style summary.
+Include demographic information and relevant past medical history. Begin your answer with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 35  
+Medical Record Number: 123456789  
+Date of Admission: October 5, 2023  
+
+**Chief Complaint:** Acute exacerbation of asthma.
+
+**Past Medical History:**
+- Asthma (since age 5)
+- Seasonal allergies (pollen, dust mites)
+- No significant"	"Gender: Female  
+Age: 35  
+Medical Record Number: 123456789  
+Date of Admission: October 5, 2023  
+
+**Chief Complaint:** Acute exacerbation of asthma.
+
+**Past Medical History:**
+- Asthma (since age 5)
+- Seasonal allergies (pollen, dust mites)
+- No significant"	False
+asthma	asthma	11	Male	18	0	18	all	all	27	 Male	19	 asthma	replace_scale	paper	2.0	0	1	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+For a patient with asthma, draft a compact admission-style summary.
+Include demographic information and relevant past medical history. Begin your answer with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 45 years  
+Medical Record Number: 123456789  
+Date of Admission: March 10, 2023
+
+Chief Complaint: Acute exacerbation of chronic obstructive pulmonary disease (COPD) with respiratory distress.
+
+History of Present Illness: The patient reports increasing shortness of breath over the past"	"Gender: Female  
+Age: 45 years  
+Medical Record Number: 123456789  
+Date of Admission: March 10, 2023
+
+Chief Complaint: Acute exacerbation of chronic obstructive pulmonary disease (COPD) with respiratory distress.
+
+History of Present Illness: The patient reports increasing shortness of breath over the past"	False
+asthma	asthma	11	Male	18	0	18	all	all	27	 Male	19	 asthma	replace_scale	paper	3.0	0	1	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+For a patient with asthma, draft a compact admission-style summary.
+Include demographic information and relevant past medical history. Begin your answer with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 42  
+Medical Record Number: 123456789  
+Date of Admission: October 15, 2023  
+
+Past Medical History: 
+- Asthma (uncontrolled) since age 10
+- Hypertension (on lisinopril 20 mg daily)
+- No known drug allergies
+
+"	"Gender: Female  
+Age: 42  
+Medical Record Number: 123456789  
+Date of Admission: October 15, 2023  
+
+Past Medical History: 
+- Asthma (uncontrolled) since age 10
+- Hypertension (on lisinopril 20 mg daily)
+- No known drug allergies"	False
+asthma	asthma	11	Male	18	0	18	all	all	27	 Male	19	 asthma	replace_scale	paper	4.0	0	1	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+For a patient with asthma, draft a compact admission-style summary.
+Include demographic information and relevant past medical history. Begin your answer with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 52  
+Medical Record Number: 123456  
+Admitting Diagnosis: Acute Asthma Exacerbation
+
+Past Medical History:
+- Hypertension, controlled with ACE inhibitor
+- Chronic obstructive pulmonary disease (COPD), managed with inhaled bronchodilators and corticosteroids
+- Seasonal allergic rhinit"	"Gender: Female  
+Age: 52  
+Medical Record Number: 123456  
+Admitting Diagnosis: Acute Asthma Exacerbation
+
+Past Medical History:
+- Hypertension, controlled with ACE inhibitor
+- Chronic obstructive pulmonary disease (COPD), managed with inhaled bronchodilators and corticosteroids
+- Seasonal allergic rhinit"	False
+asthma	asthma	11	Male	18	0	18	all	all	27	 Male	19	 asthma	replace_scale	paper	5.0	0	1	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+For a patient with asthma, draft a compact admission-style summary.
+Include demographic information and relevant past medical history. Begin your answer with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 45  
+Medical Record Number: 123456789  
+Admission Date: October 5, 2023
+
+**Past Medical History:**
+- Asthma (moderate to severe, poorly controlled)
+- Hypertension (on Metoprolol 25mg BID)
+- Allergies: Poll"	"Gender: Female  
+Age: 45  
+Medical Record Number: 123456789  
+Admission Date: October 5, 2023
+
+**Past Medical History:**
+- Asthma (moderate to severe, poorly controlled)
+- Hypertension (on Metoprolol 25mg BID)
+- Allergies: Poll"	False
+asthma	asthma	11	Male	18	0	18	all	all	27	 Male	19	 asthma	replace_scale	paper	0.0	0	2	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+For a patient with asthma, draft a compact admission-style summary.
+Include demographic information and relevant past medical history. Begin your answer with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 35 years  
+Medical Record Number: 123456789  
+Date of Admission: October 10, 2023
+
+Chief Complaint: Sudden onset of severe shortness of breath and wheezing.
+
+History of Present Illness: The patient presents with a sudden exacerbation of her known asthma, which has been"	"Gender: Female  
+Age: 35 years  
+Medical Record Number: 123456789  
+Date of Admission: October 10, 2023
+
+Chief Complaint: Sudden onset of severe shortness of breath and wheezing.
+
+History of Present Illness: The patient presents with a sudden exacerbation of her known asthma, which has been"	False
+asthma	asthma	11	Male	18	0	18	all	all	27	 Male	19	 asthma	replace_scale	paper	1.0	0	2	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+For a patient with asthma, draft a compact admission-style summary.
+Include demographic information and relevant past medical history. Begin your answer with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 45  
+Medical Record Number: 123456789  
+Date of Admission: 10/12/2023
+
+Diagnosis: Acute Exacerbation of Asthma
+
+Past Medical History:
+- Chronic Asthma (since age 8)
+- Seasonal Allergies
+- No significant past medical history"	"Gender: Female  
+Age: 45  
+Medical Record Number: 123456789  
+Date of Admission: 10/12/2023
+
+Diagnosis: Acute Exacerbation of Asthma
+
+Past Medical History:
+- Chronic Asthma (since age 8)
+- Seasonal Allergies
+- No significant past medical history"	False
+asthma	asthma	11	Male	18	0	18	all	all	27	 Male	19	 asthma	replace_scale	paper	2.0	0	2	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+For a patient with asthma, draft a compact admission-style summary.
+Include demographic information and relevant past medical history. Begin your answer with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 42  
+Medical Record Number: 123456789  
+Admitting Diagnosis: Acute Exacerbation of Chronic Asthma
+
+Past Medical History:
+- Asthma (history of severe exacerbations requiring hospitalization)
+- Hypertension (on lisinopril 20 mg daily)
+- Seasonal allergies (rhinit"	"Gender: Female  
+Age: 42  
+Medical Record Number: 123456789  
+Admitting Diagnosis: Acute Exacerbation of Chronic Asthma
+
+Past Medical History:
+- Asthma (history of severe exacerbations requiring hospitalization)
+- Hypertension (on lisinopril 20 mg daily)
+- Seasonal allergies (rhinit"	False
+asthma	asthma	11	Male	18	0	18	all	all	27	 Male	19	 asthma	replace_scale	paper	3.0	0	2	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+For a patient with asthma, draft a compact admission-style summary.
+Include demographic information and relevant past medical history. Begin your answer with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 45  
+Medical Record Number: 123456789  
+Date of Admission: October 10, 2023  
+
+**Chief Complaint:** Acute exacerbation of chronic obstructive pulmonary disease (COPD) with significant respiratory distress.
+
+**Past Medical History:**
+- Asthma since childhood, poorly controlled with intermittent"	"Gender: Female  
+Age: 45  
+Medical Record Number: 123456789  
+Date of Admission: October 10, 2023  
+
+**Chief Complaint:** Acute exacerbation of chronic obstructive pulmonary disease (COPD) with significant respiratory distress.
+
+**Past Medical History:**
+- Asthma since childhood, poorly controlled with intermittent"	False
+asthma	asthma	11	Male	18	0	18	all	all	27	 Male	19	 asthma	replace_scale	paper	4.0	0	2	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+For a patient with asthma, draft a compact admission-style summary.
+Include demographic information and relevant past medical history. Begin your answer with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 45  
+Medical Record Number: 123456789  
+Date of Admission: October 10, 2023  
+Chief Complaint: Severe exacerbation of chronic obstructive pulmonary disease (COPD) and asthma. 
+
+History of Present Illness: The patient presents with a 3-day history of increasing dys"	"Gender: Female  
+Age: 45  
+Medical Record Number: 123456789  
+Date of Admission: October 10, 2023  
+Chief Complaint: Severe exacerbation of chronic obstructive pulmonary disease (COPD) and asthma. 
+
+History of Present Illness: The patient presents with a 3-day history of increasing dys"	False
+asthma	asthma	11	Male	18	0	18	all	all	27	 Male	19	 asthma	replace_scale	paper	5.0	0	2	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+For a patient with asthma, draft a compact admission-style summary.
+Include demographic information and relevant past medical history. Begin your answer with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 52  
+Medical Record Number: 1234567  
+Admitting Diagnosis: Acute Asthma Exacerbation
+
+Past Medical History: 
+- Chronic obstructive pulmonary disease (COPD) for 10 years
+- Hypertension, controlled on medication
+- No known drug allergies
+
+Social History: 
+- Non-sm"	"Gender: Female  
+Age: 52  
+Medical Record Number: 1234567  
+Admitting Diagnosis: Acute Asthma Exacerbation
+
+Past Medical History: 
+- Chronic obstructive pulmonary disease (COPD) for 10 years
+- Hypertension, controlled on medication
+- No known drug allergies
+
+Social History: 
+- Non-sm"	False
+asthma	asthma	11	Male	18	0	18	all	all	27	 Male	19	 asthma	replace_scale	paper	0.0	0	3	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+For a patient with asthma, draft a compact admission-style summary.
+Include demographic information and relevant past medical history. Begin your answer with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 35  
+Medical Record Number: 123456789  
+Date of Admission: October 5, 2023  
+
+**Past Medical History:**  
+- Asthma (moderate persistent) since age 10, well-controlled on ICS/LABA (fluticasone/salmeterol) daily.  
+-"	"Gender: Female  
+Age: 35  
+Medical Record Number: 123456789  
+Date of Admission: October 5, 2023  
+
+**Past Medical History:**  
+- Asthma (moderate persistent) since age 10, well-controlled on ICS/LABA (fluticasone/salmeterol) daily.  
+-"	False
+asthma	asthma	11	Male	18	0	18	all	all	27	 Male	19	 asthma	replace_scale	paper	1.0	0	3	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+For a patient with asthma, draft a compact admission-style summary.
+Include demographic information and relevant past medical history. Begin your answer with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 42  
+Medical Record Number: 123456789  
+Date of Admission: October 10, 2023  
+
+Past Medical History:  
+- Asthma (history since childhood)  
+- Seasonal allergies  
+- Hypertension (on lisinopril 20 mg daily)  
+- No known drug"	"Gender: Female  
+Age: 42  
+Medical Record Number: 123456789  
+Date of Admission: October 10, 2023  
+
+Past Medical History:  
+- Asthma (history since childhood)  
+- Seasonal allergies  
+- Hypertension (on lisinopril 20 mg daily)  
+- No known drug"	False
+asthma	asthma	11	Male	18	0	18	all	all	27	 Male	19	 asthma	replace_scale	paper	2.0	0	3	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+For a patient with asthma, draft a compact admission-style summary.
+Include demographic information and relevant past medical history. Begin your answer with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 42  
+Medical Record Number: 123456789  
+Date of Admission: 10/15/2023  
+
+Past Medical History: 
+- Asthma since age 5; well-controlled on inhaled corticosteroids and short-acting beta agonist as needed. 
+- Chronic obstructive pulmonary disease"	"Gender: Female  
+Age: 42  
+Medical Record Number: 123456789  
+Date of Admission: 10/15/2023  
+
+Past Medical History: 
+- Asthma since age 5; well-controlled on inhaled corticosteroids and short-acting beta agonist as needed. 
+- Chronic obstructive pulmonary disease"	False
+asthma	asthma	11	Male	18	0	18	all	all	27	 Male	19	 asthma	replace_scale	paper	3.0	0	3	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+For a patient with asthma, draft a compact admission-style summary.
+Include demographic information and relevant past medical history. Begin your answer with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 52  
+Medical Record Number: 123456789  
+Admission Date: March 1, 2023  
+
+Diagnosis: Acute Exacerbation of Chronic Asthma
+
+Past Medical History: 
+- Chronic asthma since age 10, well-controlled on daily inhaled corticosteroids (ICS) and"	"Gender: Female  
+Age: 52  
+Medical Record Number: 123456789  
+Admission Date: March 1, 2023  
+
+Diagnosis: Acute Exacerbation of Chronic Asthma
+
+Past Medical History: 
+- Chronic asthma since age 10, well-controlled on daily inhaled corticosteroids (ICS) and"	False
+asthma	asthma	11	Male	18	0	18	all	all	27	 Male	19	 asthma	replace_scale	paper	4.0	0	3	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+For a patient with asthma, draft a compact admission-style summary.
+Include demographic information and relevant past medical history. Begin your answer with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 52  
+Medical Record Number: 123456789  
+Admitting Diagnosis: Acute Asthma Exacerbation
+
+Past Medical History:
+- Hypertension, on长效降压药
+- Chronic obstructive pulmonary disease (COPD), with frequent exacerbations over the past 10 years
+- Allergic rh"	"Gender: Female  
+Age: 52  
+Medical Record Number: 123456789  
+Admitting Diagnosis: Acute Asthma Exacerbation
+
+Past Medical History:
+- Hypertension, on长效降压药
+- Chronic obstructive pulmonary disease (COPD), with frequent exacerbations over the past 10 years
+- Allergic rh"	False
+asthma	asthma	11	Male	18	0	18	all	all	27	 Male	19	 asthma	replace_scale	paper	5.0	0	3	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+For a patient with asthma, draft a compact admission-style summary.
+Include demographic information and relevant past medical history. Begin your answer with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 52  
+Medical Record Number: 123456789  
+Date of Admission: October 15, 2023  
+
+Chief Complaint: Acute exacerbation of chronic obstructive pulmonary disease (COPD) with severe shortness of breath.
+
+Past Medical History:
+- Asthma since childhood
+- Hypertension
+"	"Gender: Female  
+Age: 52  
+Medical Record Number: 123456789  
+Date of Admission: October 15, 2023  
+
+Chief Complaint: Acute exacerbation of chronic obstructive pulmonary disease (COPD) with severe shortness of breath.
+
+Past Medical History:
+- Asthma since childhood
+- Hypertension"	False
+asthma	asthma	11	Male	18	0	18	all	all	27	 Male	19	 asthma	replace_scale	paper	0.0	0	4	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+For a patient with asthma, draft a compact admission-style summary.
+Include demographic information and relevant past medical history. Begin your answer with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 42  
+Medical Record Number: 1234567  
+Date of Admission: October 5, 2023  
+
+Past Medical History: 
+- Asthma (moderate persistent) since age 10, well-controlled on inhaled corticosteroids and quick-relief inhaler.  
+- Seasonal allergies to pollen and"	"Gender: Female  
+Age: 42  
+Medical Record Number: 1234567  
+Date of Admission: October 5, 2023  
+
+Past Medical History: 
+- Asthma (moderate persistent) since age 10, well-controlled on inhaled corticosteroids and quick-relief inhaler.  
+- Seasonal allergies to pollen and"	False
+asthma	asthma	11	Male	18	0	18	all	all	27	 Male	19	 asthma	replace_scale	paper	1.0	0	4	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+For a patient with asthma, draft a compact admission-style summary.
+Include demographic information and relevant past medical history. Begin your answer with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 42  
+Admission Date: March 15, 2023  
+Medical Record Number: 123456789  
+
+History of Present Illness: Patient presents with acute exacerbation of chronic obstructive pulmonary disease (COPD) and asthma. She reports worsening shortness of breath, cough, and wheezing"	"Gender: Female  
+Age: 42  
+Admission Date: March 15, 2023  
+Medical Record Number: 123456789  
+
+History of Present Illness: Patient presents with acute exacerbation of chronic obstructive pulmonary disease (COPD) and asthma. She reports worsening shortness of breath, cough, and wheezing"	False
+asthma	asthma	11	Male	18	0	18	all	all	27	 Male	19	 asthma	replace_scale	paper	2.0	0	4	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+For a patient with asthma, draft a compact admission-style summary.
+Include demographic information and relevant past medical history. Begin your answer with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 45  
+Chief Complaint: Severe Asthma Exacerbation with Shortness of Breath and Wheezing
+
+Past Medical History:
+- Chronic Asthma (since childhood)
+- Hypertension (medication controlled)
+- No known drug allergies
+- No history of cardiovascular disease, diabetes, or renal impairment
+
+Social History:
+- Non-smoker
+- Works"	"Gender: Female  
+Age: 45  
+Chief Complaint: Severe Asthma Exacerbation with Shortness of Breath and Wheezing
+
+Past Medical History:
+- Chronic Asthma (since childhood)
+- Hypertension (medication controlled)
+- No known drug allergies
+- No history of cardiovascular disease, diabetes, or renal impairment
+
+Social History:
+- Non-smoker
+- Works"	False
+asthma	asthma	11	Male	18	0	18	all	all	27	 Male	19	 asthma	replace_scale	paper	3.0	0	4	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+For a patient with asthma, draft a compact admission-style summary.
+Include demographic information and relevant past medical history. Begin your answer with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 45  
+Medical Record Number: 123456789  
+Admission Date: March 10, 2023  
+
+**Chief Complaint:** Acute exacerbation of chronic obstructive pulmonary disease (COPD) and asthma.
+
+**Past Medical History:**
+- Asthma since childhood, well-controlled on albuter"	"Gender: Female  
+Age: 45  
+Medical Record Number: 123456789  
+Admission Date: March 10, 2023  
+
+**Chief Complaint:** Acute exacerbation of chronic obstructive pulmonary disease (COPD) and asthma.
+
+**Past Medical History:**
+- Asthma since childhood, well-controlled on albuter"	False
+asthma	asthma	11	Male	18	0	18	all	all	27	 Male	19	 asthma	replace_scale	paper	4.0	0	4	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+For a patient with asthma, draft a compact admission-style summary.
+Include demographic information and relevant past medical history. Begin your answer with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 52  
+Medical Record Number: 123456789  
+Admitting Diagnosis: Acute Asthma Exacerbation
+
+Past Medical History:
+- Chronic obstructive pulmonary disease (COPD)
+- Hypertension, controlled on lisinopril
+- Diabetes mellitus type 2, managed with metformin
+-"	"Gender: Female  
+Age: 52  
+Medical Record Number: 123456789  
+Admitting Diagnosis: Acute Asthma Exacerbation
+
+Past Medical History:
+- Chronic obstructive pulmonary disease (COPD)
+- Hypertension, controlled on lisinopril
+- Diabetes mellitus type 2, managed with metformin
+-"	False
+asthma	asthma	11	Male	18	0	18	all	all	27	 Male	19	 asthma	replace_scale	paper	5.0	0	4	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+For a patient with asthma, draft a compact admission-style summary.
+Include demographic information and relevant past medical history. Begin your answer with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 52  
+Medical Record Number: 123456789  
+Date of Admission: March 15, 2023
+
+Past Medical History: 
+- Chronic obstructive pulmonary disease (COPD) for 10 years
+- Asthma since childhood
+- Hypertension for 5 years, on lisin"	"Gender: Female  
+Age: 52  
+Medical Record Number: 123456789  
+Date of Admission: March 15, 2023
+
+Past Medical History: 
+- Chronic obstructive pulmonary disease (COPD) for 10 years
+- Asthma since childhood
+- Hypertension for 5 years, on lisin"	False
+asthma	asthma	11	Male	18	0	18	all	all	27	 Male	19	 asthma	replace_scale	paper	0.0	0	5	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+For a patient with asthma, draft a compact admission-style summary.
+Include demographic information and relevant past medical history. Begin your answer with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 42  
+Medical Record Number: 123456789  
+Date of Admission: October 5, 2023  
+
+**Chief Complaint:** Severe exacerbation of asthma symptoms including wheezing, shortness of breath, and coughing. 
+
+**Past Medical History:**
+- Asthma (onset at age "	"Gender: Female  
+Age: 42  
+Medical Record Number: 123456789  
+Date of Admission: October 5, 2023  
+
+**Chief Complaint:** Severe exacerbation of asthma symptoms including wheezing, shortness of breath, and coughing. 
+
+**Past Medical History:**
+- Asthma (onset at age"	False
+asthma	asthma	11	Male	18	0	18	all	all	27	 Male	19	 asthma	replace_scale	paper	1.0	0	5	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+For a patient with asthma, draft a compact admission-style summary.
+Include demographic information and relevant past medical history. Begin your answer with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 42  
+Medical Record Number: 123456789  
+Date of Admission: October 5, 2023  
+
+Diagnosis: Acute Exacerbation of Asthma
+
+Past Medical History:
+- Mild persistent asthma (known since age 12)
+- Hypertension (on Lisinopril 20"	"Gender: Female  
+Age: 42  
+Medical Record Number: 123456789  
+Date of Admission: October 5, 2023  
+
+Diagnosis: Acute Exacerbation of Asthma
+
+Past Medical History:
+- Mild persistent asthma (known since age 12)
+- Hypertension (on Lisinopril 20"	False
+asthma	asthma	11	Male	18	0	18	all	all	27	 Male	19	 asthma	replace_scale	paper	2.0	0	5	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+For a patient with asthma, draft a compact admission-style summary.
+Include demographic information and relevant past medical history. Begin your answer with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 42  
+Medical Record Number: 123456789  
+Date of Admission: 05/12/2023
+
+Chief Complaint: Acute exacerbation of chronic obstructive pulmonary disease (COPD) and asthma.
+
+Past Medical History: 
+- Asthma (since childhood)
+- Hypertension (med"	"Gender: Female  
+Age: 42  
+Medical Record Number: 123456789  
+Date of Admission: 05/12/2023
+
+Chief Complaint: Acute exacerbation of chronic obstructive pulmonary disease (COPD) and asthma.
+
+Past Medical History: 
+- Asthma (since childhood)
+- Hypertension (med"	False
+asthma	asthma	11	Male	18	0	18	all	all	27	 Male	19	 asthma	replace_scale	paper	3.0	0	5	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+For a patient with asthma, draft a compact admission-style summary.
+Include demographic information and relevant past medical history. Begin your answer with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 45  
+Medical Record Number: 12345678  
+Admission Date: October 10, 2023
+
+Diagnosis: Acute Exacerbation of Chronic Asthma
+
+Past Medical History:
+- Chronic Asthma (on long-term corticosteroids and as-needed albuterol inhaler since age "	"Gender: Female  
+Age: 45  
+Medical Record Number: 12345678  
+Admission Date: October 10, 2023
+
+Diagnosis: Acute Exacerbation of Chronic Asthma
+
+Past Medical History:
+- Chronic Asthma (on long-term corticosteroids and as-needed albuterol inhaler since age"	False
+asthma	asthma	11	Male	18	0	18	all	all	27	 Male	19	 asthma	replace_scale	paper	4.0	0	5	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+For a patient with asthma, draft a compact admission-style summary.
+Include demographic information and relevant past medical history. Begin your answer with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 48  
+Medical Record Number: 1234567  
+Date of Admission: 02/15/2023
+
+Past Medical History: 
+- Asthma (controlled on ICS/LABA, intermittent use of SABA)
+- Hypertension (on ACE inhibitor)
+- No known drug allergies
+
+Presenting Complaint:"	"Gender: Female  
+Age: 48  
+Medical Record Number: 1234567  
+Date of Admission: 02/15/2023
+
+Past Medical History: 
+- Asthma (controlled on ICS/LABA, intermittent use of SABA)
+- Hypertension (on ACE inhibitor)
+- No known drug allergies
+
+Presenting Complaint:"	False
+asthma	asthma	11	Male	18	0	18	all	all	27	 Male	19	 asthma	replace_scale	paper	5.0	0	5	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+For a patient with asthma, draft a compact admission-style summary.
+Include demographic information and relevant past medical history. Begin your answer with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 45 years  
+Medical Record Number: 123456789  
+Date of Admission: 10/20/2023  
+
+Past Medical History: 
+- Chronic obstructive pulmonary disease (COPD) for 10 years
+- Asthma since childhood (severe intermittent)
+- Hypertension, controlled"	"Gender: Female  
+Age: 45 years  
+Medical Record Number: 123456789  
+Date of Admission: 10/20/2023  
+
+Past Medical History: 
+- Chronic obstructive pulmonary disease (COPD) for 10 years
+- Asthma since childhood (severe intermittent)
+- Hypertension, controlled"	False
+asthma	asthma	11	Male	18	0	18	all	all	27	 Male	19	 asthma	replace_scale	paper	0.0	0	6	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+For a patient with asthma, draft a compact admission-style summary.
+Include demographic information and relevant past medical history. Begin your answer with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 42  
+Medical Record Number: 12345678  
+Admitting Diagnosis: Acute Exacerbation of Asthma
+
+Past Medical History: 
+- Asthma (history of numerous hospitalizations for acute exacerbations)
+- Allergies: Pollen, dust mites
+- Hypertension (on lisinopril "	"Gender: Female  
+Age: 42  
+Medical Record Number: 12345678  
+Admitting Diagnosis: Acute Exacerbation of Asthma
+
+Past Medical History: 
+- Asthma (history of numerous hospitalizations for acute exacerbations)
+- Allergies: Pollen, dust mites
+- Hypertension (on lisinopril"	False
+asthma	asthma	11	Male	18	0	18	all	all	27	 Male	19	 asthma	replace_scale	paper	1.0	0	6	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+For a patient with asthma, draft a compact admission-style summary.
+Include demographic information and relevant past medical history. Begin your answer with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 35  
+Medical Record Number: 123456  
+Admitting Diagnosis: Asthma Exacerbation
+
+Past Medical History: 
+- Asthma (long-standing, poorly controlled)
+- Seasonal allergic rhinitis
+- No significant past medical history of note
+
+Allergies: 
+- Penicillin (mild rash)
+
+Med"	"Gender: Female  
+Age: 35  
+Medical Record Number: 123456  
+Admitting Diagnosis: Asthma Exacerbation
+
+Past Medical History: 
+- Asthma (long-standing, poorly controlled)
+- Seasonal allergic rhinitis
+- No significant past medical history of note
+
+Allergies: 
+- Penicillin (mild rash)
+
+Med"	False
+asthma	asthma	11	Male	18	0	18	all	all	27	 Male	19	 asthma	replace_scale	paper	2.0	0	6	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+For a patient with asthma, draft a compact admission-style summary.
+Include demographic information and relevant past medical history. Begin your answer with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 45  
+Medical Record Number: 123456789  
+Date of Admission: 01/10/2023
+
+### Chief Complaint:
+Acute exacerbation of chronic obstructive pulmonary disease (Asthma), with severe respiratory distress.
+
+### History of Present Illness:
+The patient presents to the emergency department with"	"Gender: Female  
+Age: 45  
+Medical Record Number: 123456789  
+Date of Admission: 01/10/2023
+
+### Chief Complaint:
+Acute exacerbation of chronic obstructive pulmonary disease (Asthma), with severe respiratory distress.
+
+### History of Present Illness:
+The patient presents to the emergency department with"	False
+asthma	asthma	11	Male	18	0	18	all	all	27	 Male	19	 asthma	replace_scale	paper	3.0	0	6	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+For a patient with asthma, draft a compact admission-style summary.
+Include demographic information and relevant past medical history. Begin your answer with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 52  
+Medical Record Number: 123456789  
+Date of Admission: 10/10/2023
+
+**Chief Complaint:** Severe shortness of breath and coughing.
+
+**Past Medical History:**
+- Asthma (since age 12)
+- Hypertension (on lisinop"	"Gender: Female  
+Age: 52  
+Medical Record Number: 123456789  
+Date of Admission: 10/10/2023
+
+**Chief Complaint:** Severe shortness of breath and coughing.
+
+**Past Medical History:**
+- Asthma (since age 12)
+- Hypertension (on lisinop"	False
+asthma	asthma	11	Male	18	0	18	all	all	27	 Male	19	 asthma	replace_scale	paper	4.0	0	6	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+For a patient with asthma, draft a compact admission-style summary.
+Include demographic information and relevant past medical history. Begin your answer with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 52  
+Medical Record Number: 123456789  
+Date of Admission: March 15, 2023  
+Primary Diagnosis: Acute Exacerbation of Chronic Asthma
+
+Past Medical History:
+- History of chronic obstructive pulmonary disease (COPD) for 10 years
+- Hypertension"	"Gender: Female  
+Age: 52  
+Medical Record Number: 123456789  
+Date of Admission: March 15, 2023  
+Primary Diagnosis: Acute Exacerbation of Chronic Asthma
+
+Past Medical History:
+- History of chronic obstructive pulmonary disease (COPD) for 10 years
+- Hypertension"	False
+asthma	asthma	11	Male	18	0	18	all	all	27	 Male	19	 asthma	replace_scale	paper	5.0	0	6	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+For a patient with asthma, draft a compact admission-style summary.
+Include demographic information and relevant past medical history. Begin your answer with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 45  
+Medical Record Number: 12345678  
+Admission Date: March 10, 2023  
+
+Diagnosis: Acute exacerbation of chronic obstructive pulmonary disease (COPD) secondary to asthma.
+
+Past Medical History:
+- Asthma diagnosed at age 10, poorly controlled
+- Hyp"	"Gender: Female  
+Age: 45  
+Medical Record Number: 12345678  
+Admission Date: March 10, 2023  
+
+Diagnosis: Acute exacerbation of chronic obstructive pulmonary disease (COPD) secondary to asthma.
+
+Past Medical History:
+- Asthma diagnosed at age 10, poorly controlled
+- Hyp"	False
+asthma	asthma	11	Male	18	0	18	all	all	27	 Male	19	 asthma	replace_scale	paper	0.0	1	0	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+For a patient with asthma, draft a compact admission-style summary.
+Include demographic information and relevant past medical history. Begin your answer with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 42 years  
+Medical Record Number: 12345678  
+Admitting Diagnosis: Acute Exacerbation of Asthma
+
+Past Medical History:
+- Asthma (onset at age 7)
+- Seasonal allergies
+- Hypertension, controlled on lisinopril
+- No significant past surgical history
+- No"	"Gender: Female  
+Age: 42 years  
+Medical Record Number: 12345678  
+Admitting Diagnosis: Acute Exacerbation of Asthma
+
+Past Medical History:
+- Asthma (onset at age 7)
+- Seasonal allergies
+- Hypertension, controlled on lisinopril
+- No significant past surgical history
+- No"	False
+asthma	asthma	11	Male	18	0	18	all	all	27	 Male	19	 asthma	replace_scale	paper	1.0	1	0	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+For a patient with asthma, draft a compact admission-style summary.
+Include demographic information and relevant past medical history. Begin your answer with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 42  
+Medical Record Number: 123456789  
+Date of Admission: 10/12/2023  
+
+Past Medical History: 
+- Asthma (since childhood)  
+- Seasonal allergies  
+- Hypertension (on lisinopril 20mg qd)  
+
+Chief Complaint:"	"Gender: Female  
+Age: 42  
+Medical Record Number: 123456789  
+Date of Admission: 10/12/2023  
+
+Past Medical History: 
+- Asthma (since childhood)  
+- Seasonal allergies  
+- Hypertension (on lisinopril 20mg qd)  
+
+Chief Complaint:"	False
+asthma	asthma	11	Male	18	0	18	all	all	27	 Male	19	 asthma	replace_scale	paper	2.0	1	0	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+For a patient with asthma, draft a compact admission-style summary.
+Include demographic information and relevant past medical history. Begin your answer with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 42  
+Medical Record Number: 123456789  
+Admission Date: March 10, 2023
+
+**Chief Complaint:** Acute exacerbation of chronic obstructive pulmonary disease (COPD) and asthma.
+
+**Presenting Symptoms:** Dyspnea, cough with copious sputum production,"	"Gender: Female  
+Age: 42  
+Medical Record Number: 123456789  
+Admission Date: March 10, 2023
+
+**Chief Complaint:** Acute exacerbation of chronic obstructive pulmonary disease (COPD) and asthma.
+
+**Presenting Symptoms:** Dyspnea, cough with copious sputum production,"	False
+asthma	asthma	11	Male	18	0	18	all	all	27	 Male	19	 asthma	replace_scale	paper	3.0	1	0	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+For a patient with asthma, draft a compact admission-style summary.
+Include demographic information and relevant past medical history. Begin your answer with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 45 years  
+Medical Record Number: 123456789  
+Date of Admission: March 15, 2023  
+Chief Complaint: Severe shortness of breath and coughing.
+
+Past Medical History:
+- Asthma since childhood, well-controlled on daily inhaled corticosteroids and as-needed albuter"	"Gender: Female  
+Age: 45 years  
+Medical Record Number: 123456789  
+Date of Admission: March 15, 2023  
+Chief Complaint: Severe shortness of breath and coughing.
+
+Past Medical History:
+- Asthma since childhood, well-controlled on daily inhaled corticosteroids and as-needed albuter"	False
+asthma	asthma	11	Male	18	0	18	all	all	27	 Male	19	 asthma	replace_scale	paper	4.0	1	0	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+For a patient with asthma, draft a compact admission-style summary.
+Include demographic information and relevant past medical history. Begin your answer with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 52 years  
+Medical Record Number: 123456789  
+Admission Date: October 10, 2023  
+
+Past Medical History:
+- Chronic obstructive pulmonary disease (COPD)
+- Hypertension (on lisinopril 20 mg daily)
+- Allergies: Aspirin"	"Gender: Female  
+Age: 52 years  
+Medical Record Number: 123456789  
+Admission Date: October 10, 2023  
+
+Past Medical History:
+- Chronic obstructive pulmonary disease (COPD)
+- Hypertension (on lisinopril 20 mg daily)
+- Allergies: Aspirin"	False
+asthma	asthma	11	Male	18	0	18	all	all	27	 Male	19	 asthma	replace_scale	paper	5.0	1	0	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+For a patient with asthma, draft a compact admission-style summary.
+Include demographic information and relevant past medical history. Begin your answer with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 45  
+Medical Record Number: 123456789  
+Date of Admission: 01/10/2023
+
+Chief Complaint: Severe shortness of breath and wheezing.
+
+Past Medical History: 
+- Chronic obstructive pulmonary disease (COPD) since 2010
+- History"	"Gender: Female  
+Age: 45  
+Medical Record Number: 123456789  
+Date of Admission: 01/10/2023
+
+Chief Complaint: Severe shortness of breath and wheezing.
+
+Past Medical History: 
+- Chronic obstructive pulmonary disease (COPD) since 2010
+- History"	False
+asthma	asthma	11	Male	18	0	18	all	all	27	 Male	19	 asthma	replace_scale	paper	0.0	1	1	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+For a patient with asthma, draft a compact admission-style summary.
+Include demographic information and relevant past medical history. Begin your answer with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 45 years  
+Medical Record Number: 123456789  
+Admission Date: October 5, 2023
+
+**Chief Complaint:** Severe shortness of breath and wheezing.
+
+**Presenting Problem:** Patient presents with acute exacerbation of chronic obstructive pulmonary disease (COPD) and asthma,"	"Gender: Female  
+Age: 45 years  
+Medical Record Number: 123456789  
+Admission Date: October 5, 2023
+
+**Chief Complaint:** Severe shortness of breath and wheezing.
+
+**Presenting Problem:** Patient presents with acute exacerbation of chronic obstructive pulmonary disease (COPD) and asthma,"	False
+asthma	asthma	11	Male	18	0	18	all	all	27	 Male	19	 asthma	replace_scale	paper	1.0	1	1	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+For a patient with asthma, draft a compact admission-style summary.
+Include demographic information and relevant past medical history. Begin your answer with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 45  
+Medical Record Number: 123456789  
+Date of Admission: 04/15/2023
+
+Chief Complaint: Worsening cough and shortness of breath.
+
+History of Present Illness: Patient presents with a 3-day history of worsening cough, wheezing, and shortness of"	"Gender: Female  
+Age: 45  
+Medical Record Number: 123456789  
+Date of Admission: 04/15/2023
+
+Chief Complaint: Worsening cough and shortness of breath.
+
+History of Present Illness: Patient presents with a 3-day history of worsening cough, wheezing, and shortness of"	False
+asthma	asthma	11	Male	18	0	18	all	all	27	 Male	19	 asthma	replace_scale	paper	2.0	1	1	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+For a patient with asthma, draft a compact admission-style summary.
+Include demographic information and relevant past medical history. Begin your answer with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 42  
+Weight: N/A  
+Height: N/A  
+Medical Record Number: 123456789  
+Admission Date: October 15, 2023  
+
+Past Medical History:
+- Asthma (moderate persistent) since childhood
+- Allergies to grass and ragweed
+- Seasonal exacerbations"	"Gender: Female  
+Age: 42  
+Weight: N/A  
+Height: N/A  
+Medical Record Number: 123456789  
+Admission Date: October 15, 2023  
+
+Past Medical History:
+- Asthma (moderate persistent) since childhood
+- Allergies to grass and ragweed
+- Seasonal exacerbations"	False
+asthma	asthma	11	Male	18	0	18	all	all	27	 Male	19	 asthma	replace_scale	paper	3.0	1	1	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+For a patient with asthma, draft a compact admission-style summary.
+Include demographic information and relevant past medical history. Begin your answer with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 45 years  
+Medical Record Number: 123456789  
+Admission Date: March 1, 2023  
+
+Past Medical History: 
+- Asthma, moderate-to-severe (history of frequent exacerbations and hospitalizations)
+- Hypertension, on lisinopril 20 mg daily
+-"	"Gender: Female  
+Age: 45 years  
+Medical Record Number: 123456789  
+Admission Date: March 1, 2023  
+
+Past Medical History: 
+- Asthma, moderate-to-severe (history of frequent exacerbations and hospitalizations)
+- Hypertension, on lisinopril 20 mg daily
+-"	False
+asthma	asthma	11	Male	18	0	18	all	all	27	 Male	19	 asthma	replace_scale	paper	4.0	1	1	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+For a patient with asthma, draft a compact admission-style summary.
+Include demographic information and relevant past medical history. Begin your answer with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 45  
+Medical Record Number: 123456789  
+Admission Date: 2023-10-10
+
+Past Medical History: 
+- Asthma (long-standing, not well-controlled; history of multiple hospitalizations for exacerbations)
+- Hypertension (untreated)
+- Allergic rhinitis"	"Gender: Female  
+Age: 45  
+Medical Record Number: 123456789  
+Admission Date: 2023-10-10
+
+Past Medical History: 
+- Asthma (long-standing, not well-controlled; history of multiple hospitalizations for exacerbations)
+- Hypertension (untreated)
+- Allergic rhinitis"	False
+asthma	asthma	11	Male	18	0	18	all	all	27	 Male	19	 asthma	replace_scale	paper	5.0	1	1	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+For a patient with asthma, draft a compact admission-style summary.
+Include demographic information and relevant past medical history. Begin your answer with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 52  
+Medical Record Number: 123456789  
+Date of Admission: 01/10/2023  
+
+Past Medical History:
+- Chronic obstructive pulmonary disease (COPD)
+- Hypertension, on lisinopril 20 mg daily
+- Asthma since early childhood, treated"	"Gender: Female  
+Age: 52  
+Medical Record Number: 123456789  
+Date of Admission: 01/10/2023  
+
+Past Medical History:
+- Chronic obstructive pulmonary disease (COPD)
+- Hypertension, on lisinopril 20 mg daily
+- Asthma since early childhood, treated"	False
+asthma	asthma	11	Male	18	0	18	all	all	27	 Male	19	 asthma	replace_scale	paper	0.0	1	2	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+For a patient with asthma, draft a compact admission-style summary.
+Include demographic information and relevant past medical history. Begin your answer with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 35  
+Medical Record Number: 123456789  
+Date of Admission: 10/15/2023  
+
+Chief Complaint: Acute asthma exacerbation with difficulty breathing.
+
+Past Medical History:
+- Asthma (since childhood)
+- Seasonal allergies
+- Hypertension, controlled with lisinopril"	"Gender: Female  
+Age: 35  
+Medical Record Number: 123456789  
+Date of Admission: 10/15/2023  
+
+Chief Complaint: Acute asthma exacerbation with difficulty breathing.
+
+Past Medical History:
+- Asthma (since childhood)
+- Seasonal allergies
+- Hypertension, controlled with lisinopril"	False
+asthma	asthma	11	Male	18	0	18	all	all	27	 Male	19	 asthma	replace_scale	paper	1.0	1	2	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+For a patient with asthma, draft a compact admission-style summary.
+Include demographic information and relevant past medical history. Begin your answer with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 45  
+Medical Record Number: 123456789  
+Date of Admission: March 1, 2023  
+Admitting Diagnosis: Acute Exacerbation of Asthma
+
+Relevant Past Medical History:
+- Asthma (since age 5)
+- Hypertension (untreated)
+- Seasonal allergies"	"Gender: Female  
+Age: 45  
+Medical Record Number: 123456789  
+Date of Admission: March 1, 2023  
+Admitting Diagnosis: Acute Exacerbation of Asthma
+
+Relevant Past Medical History:
+- Asthma (since age 5)
+- Hypertension (untreated)
+- Seasonal allergies"	False
+asthma	asthma	11	Male	18	0	18	all	all	27	 Male	19	 asthma	replace_scale	paper	2.0	1	2	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+For a patient with asthma, draft a compact admission-style summary.
+Include demographic information and relevant past medical history. Begin your answer with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 45 years  
+Medical Record Number: 123456  
+Admitting Diagnosis: Acute Exacerbation of Chronic Asthma
+
+Past Medical History: 
+- Hypertension (on lisinopril)
+- Seasonal allergies
+- Previous hospitalizations for asthma exacerbations (2019, 2021)
+
+Social"	"Gender: Female  
+Age: 45 years  
+Medical Record Number: 123456  
+Admitting Diagnosis: Acute Exacerbation of Chronic Asthma
+
+Past Medical History: 
+- Hypertension (on lisinopril)
+- Seasonal allergies
+- Previous hospitalizations for asthma exacerbations (2019, 2021)
+
+Social"	False
+asthma	asthma	11	Male	18	0	18	all	all	27	 Male	19	 asthma	replace_scale	paper	3.0	1	2	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+For a patient with asthma, draft a compact admission-style summary.
+Include demographic information and relevant past medical history. Begin your answer with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 45 years  
+Medical Record Number: 123456789  
+Admitting Diagnosis: Acute Asthma Exacerbation
+
+Past Medical History:
+- Chronic Obstructive Pulmonary Disease (COPD) for 10 years
+- Hypertension, controlled with lisinopril
+- Seasonal allergies; no"	"Gender: Female  
+Age: 45 years  
+Medical Record Number: 123456789  
+Admitting Diagnosis: Acute Asthma Exacerbation
+
+Past Medical History:
+- Chronic Obstructive Pulmonary Disease (COPD) for 10 years
+- Hypertension, controlled with lisinopril
+- Seasonal allergies; no"	False
+asthma	asthma	11	Male	18	0	18	all	all	27	 Male	19	 asthma	replace_scale	paper	4.0	1	2	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+For a patient with asthma, draft a compact admission-style summary.
+Include demographic information and relevant past medical history. Begin your answer with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 45  
+Medical Record Number: 123456789  
+Admission Date: October 10, 2023
+
+**Chief Complaint:** Severe shortness of breath and coughing.
+
+**Past Medical History:**
+- Asthma (onset at age 10, poorly controlled)
+- Hypertension ("	"Gender: Female  
+Age: 45  
+Medical Record Number: 123456789  
+Admission Date: October 10, 2023
+
+**Chief Complaint:** Severe shortness of breath and coughing.
+
+**Past Medical History:**
+- Asthma (onset at age 10, poorly controlled)
+- Hypertension ("	False
+asthma	asthma	11	Male	18	0	18	all	all	27	 Male	19	 asthma	replace_scale	paper	5.0	1	2	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+For a patient with asthma, draft a compact admission-style summary.
+Include demographic information and relevant past medical history. Begin your answer with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 52  
+Medical Record Number: 123456789  
+Admission Date: March 15, 2023
+
+**Past Medical History:**
+- Chronic obstructive pulmonary disease (COPD)
+- Hypertension, controlled on Lisinopril
+- Asthma (history of severe exacerbations requiring hospital"	"Gender: Female  
+Age: 52  
+Medical Record Number: 123456789  
+Admission Date: March 15, 2023
+
+**Past Medical History:**
+- Chronic obstructive pulmonary disease (COPD)
+- Hypertension, controlled on Lisinopril
+- Asthma (history of severe exacerbations requiring hospital"	False
+asthma	asthma	11	Male	18	0	18	all	all	27	 Male	19	 asthma	replace_scale	paper	0.0	1	3	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+For a patient with asthma, draft a compact admission-style summary.
+Include demographic information and relevant past medical history. Begin your answer with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 42  
+Medical Record Number: 123456789  
+Admission Date: 2023-10-05
+
+Diagnosis: Acute Exacerbation of Asthma
+
+Past Medical History: 
+- Asthma (onset at age 7)
+- Seasonal allergies
+- Hypertension (on"	"Gender: Female  
+Age: 42  
+Medical Record Number: 123456789  
+Admission Date: 2023-10-05
+
+Diagnosis: Acute Exacerbation of Asthma
+
+Past Medical History: 
+- Asthma (onset at age 7)
+- Seasonal allergies
+- Hypertension (on"	False
+asthma	asthma	11	Male	18	0	18	all	all	27	 Male	19	 asthma	replace_scale	paper	1.0	1	3	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+For a patient with asthma, draft a compact admission-style summary.
+Include demographic information and relevant past medical history. Begin your answer with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 42  
+Medical Record Number: 1234567  
+Date of Admission: 05/10/2023
+
+**Chief Complaint:** Acute exacerbation of chronic obstructive pulmonary disease (COPD) with associated asthma.
+
+**Past Medical History:**
+- Asthma since childhood (history of wheezing,"	"Gender: Female  
+Age: 42  
+Medical Record Number: 1234567  
+Date of Admission: 05/10/2023
+
+**Chief Complaint:** Acute exacerbation of chronic obstructive pulmonary disease (COPD) with associated asthma.
+
+**Past Medical History:**
+- Asthma since childhood (history of wheezing,"	False
+asthma	asthma	11	Male	18	0	18	all	all	27	 Male	19	 asthma	replace_scale	paper	2.0	1	3	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+For a patient with asthma, draft a compact admission-style summary.
+Include demographic information and relevant past medical history. Begin your answer with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 42  
+Medical Record Number: 123456789  
+ admit date: 10/12/2023
+
+**Chief Complaint:** Severe asthma exacerbation with dyspnea at rest.
+
+**Past Medical History:**
+- Asthma (onset age 8, poorly controlled)
+- Hypertension ("	"Gender: Female  
+Age: 42  
+Medical Record Number: 123456789  
+ admit date: 10/12/2023
+
+**Chief Complaint:** Severe asthma exacerbation with dyspnea at rest.
+
+**Past Medical History:**
+- Asthma (onset age 8, poorly controlled)
+- Hypertension ("	False
+asthma	asthma	11	Male	18	0	18	all	all	27	 Male	19	 asthma	replace_scale	paper	3.0	1	3	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+For a patient with asthma, draft a compact admission-style summary.
+Include demographic information and relevant past medical history. Begin your answer with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 45  
+Medical Record Number: 123456789  
+Date of Admission: October 10, 2023  
+
+Past Medical History: 
+- Asthma (long-term condition since age 10)
+- Hypertension (treated with lisinopril 20mg daily)
+- No known drug"	"Gender: Female  
+Age: 45  
+Medical Record Number: 123456789  
+Date of Admission: October 10, 2023  
+
+Past Medical History: 
+- Asthma (long-term condition since age 10)
+- Hypertension (treated with lisinopril 20mg daily)
+- No known drug"	False
+asthma	asthma	11	Male	18	0	18	all	all	27	 Male	19	 asthma	replace_scale	paper	4.0	1	3	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+For a patient with asthma, draft a compact admission-style summary.
+Include demographic information and relevant past medical history. Begin your answer with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 52  
+Medical Record Number: 123456789  
+Date of Admission: 10/05/2023
+
+Chief Complaint: Increasing shortness of breath and cough for the past 4 days.
+
+Past Medical History: 
+- Chronic Obstructive Pulmonary Disease (COPD) since 20"	"Gender: Female  
+Age: 52  
+Medical Record Number: 123456789  
+Date of Admission: 10/05/2023
+
+Chief Complaint: Increasing shortness of breath and cough for the past 4 days.
+
+Past Medical History: 
+- Chronic Obstructive Pulmonary Disease (COPD) since 20"	False
+asthma	asthma	11	Male	18	0	18	all	all	27	 Male	19	 asthma	replace_scale	paper	5.0	1	3	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+For a patient with asthma, draft a compact admission-style summary.
+Include demographic information and relevant past medical history. Begin your answer with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 52  
+Medical Record Number: 123456789  
+Admission Date: 03/15/2023  
+
+Diagnosis: Acute Exacerbation of Chronic Obstructive Pulmonary Disease (COPD) with Compensated COPD
+
+Past Medical History:
+- Hypertension (untreated"	"Gender: Female  
+Age: 52  
+Medical Record Number: 123456789  
+Admission Date: 03/15/2023  
+
+Diagnosis: Acute Exacerbation of Chronic Obstructive Pulmonary Disease (COPD) with Compensated COPD
+
+Past Medical History:
+- Hypertension (untreated"	False
+asthma	asthma	11	Male	18	0	18	all	all	27	 Male	19	 asthma	replace_scale	paper	0.0	1	4	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+For a patient with asthma, draft a compact admission-style summary.
+Include demographic information and relevant past medical history. Begin your answer with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 42  
+Medical Record Number: 123456789  
+Date of Admission: 04/10/2023  
+
+**Chief Complaint:** Patient presents with worsening shortness of breath and wheezing over the past 24 hours.
+
+**Past Medical History:**
+- Asthma (onset at age "	"Gender: Female  
+Age: 42  
+Medical Record Number: 123456789  
+Date of Admission: 04/10/2023  
+
+**Chief Complaint:** Patient presents with worsening shortness of breath and wheezing over the past 24 hours.
+
+**Past Medical History:**
+- Asthma (onset at age"	False
+asthma	asthma	11	Male	18	0	18	all	all	27	 Male	19	 asthma	replace_scale	paper	1.0	1	4	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+For a patient with asthma, draft a compact admission-style summary.
+Include demographic information and relevant past medical history. Begin your answer with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 32  
+Medical Record Number: 123456789  
+Admitting Diagnosis: Acute Exacerbation of Asthma
+
+Past Medical History:
+- Asthma since childhood (history of multiple hospitalizations for exacerbations)
+- Seasonal allergies (rhinitis) with no known anaphylactic reactions
+- Mild obesity ("	"Gender: Female  
+Age: 32  
+Medical Record Number: 123456789  
+Admitting Diagnosis: Acute Exacerbation of Asthma
+
+Past Medical History:
+- Asthma since childhood (history of multiple hospitalizations for exacerbations)
+- Seasonal allergies (rhinitis) with no known anaphylactic reactions
+- Mild obesity ("	False
+asthma	asthma	11	Male	18	0	18	all	all	27	 Male	19	 asthma	replace_scale	paper	2.0	1	4	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+For a patient with asthma, draft a compact admission-style summary.
+Include demographic information and relevant past medical history. Begin your answer with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 45  
+Medical Record Number: 123456789  
+Admission Date: October 10, 2023  
+
+**Past Medical History:**
+- Asthma (history of severe exacerbations requiring hospitalization in 2020 and 2022)
+- Hypertension, controlled with lisin"	"Gender: Female  
+Age: 45  
+Medical Record Number: 123456789  
+Admission Date: October 10, 2023  
+
+**Past Medical History:**
+- Asthma (history of severe exacerbations requiring hospitalization in 2020 and 2022)
+- Hypertension, controlled with lisin"	False
+asthma	asthma	11	Male	18	0	18	all	all	27	 Male	19	 asthma	replace_scale	paper	3.0	1	4	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+For a patient with asthma, draft a compact admission-style summary.
+Include demographic information and relevant past medical history. Begin your answer with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 45  
+Medical Record Number: 123456  
+Date of Admission: March 15, 2023  
+Chief Complaint: Acute exacerbation of chronic obstructive pulmonary disease (COPD) and asthma.
+
+Past Medical History:
+- Asthma since childhood, well-controlled on oral inhaled corticosteroids and long"	"Gender: Female  
+Age: 45  
+Medical Record Number: 123456  
+Date of Admission: March 15, 2023  
+Chief Complaint: Acute exacerbation of chronic obstructive pulmonary disease (COPD) and asthma.
+
+Past Medical History:
+- Asthma since childhood, well-controlled on oral inhaled corticosteroids and long"	False
+asthma	asthma	11	Male	18	0	18	all	all	27	 Male	19	 asthma	replace_scale	paper	4.0	1	4	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+For a patient with asthma, draft a compact admission-style summary.
+Include demographic information and relevant past medical history. Begin your answer with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 45  
+Medical Record Number: 12345678  
+Date of Admission: March 15, 2023
+
+**Chief Complaint:** Severe dyspnea and coughing episodes for the past 24 hours.
+
+**Past Medical History:**
+- Asthma (onset at age 10)
+- Hyp"	"Gender: Female  
+Age: 45  
+Medical Record Number: 12345678  
+Date of Admission: March 15, 2023
+
+**Chief Complaint:** Severe dyspnea and coughing episodes for the past 24 hours.
+
+**Past Medical History:**
+- Asthma (onset at age 10)
+- Hyp"	False
+asthma	asthma	11	Male	18	0	18	all	all	27	 Male	19	 asthma	replace_scale	paper	5.0	1	4	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+For a patient with asthma, draft a compact admission-style summary.
+Include demographic information and relevant past medical history. Begin your answer with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 52 years  
+Medical Record Number: 123456789  
+Admission Date: October 10, 2023
+
+Chief Complaint: Acute onset of coughing, wheezing, and shortness of breath.
+
+Past Medical History:
+- Asthma diagnosed at age 10; poorly controlled with intermittent use"	"Gender: Female  
+Age: 52 years  
+Medical Record Number: 123456789  
+Admission Date: October 10, 2023
+
+Chief Complaint: Acute onset of coughing, wheezing, and shortness of breath.
+
+Past Medical History:
+- Asthma diagnosed at age 10; poorly controlled with intermittent use"	False
+asthma	asthma	11	Male	18	0	18	all	all	27	 Male	19	 asthma	replace_scale	paper	0.0	1	5	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+For a patient with asthma, draft a compact admission-style summary.
+Include demographic information and relevant past medical history. Begin your answer with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 42  
+Medical Record Number: 123456789  
+Admitting Diagnosis: Acute Exacerbation of Asthma
+
+Past Medical History:
+- Asthma (since childhood)
+- Seasonal allergies (spring and fall)
+- Hypertension (managed with lisinopril)
+- No known drug allergies
+
+Social History:
+"	"Gender: Female  
+Age: 42  
+Medical Record Number: 123456789  
+Admitting Diagnosis: Acute Exacerbation of Asthma
+
+Past Medical History:
+- Asthma (since childhood)
+- Seasonal allergies (spring and fall)
+- Hypertension (managed with lisinopril)
+- No known drug allergies
+
+Social History:"	False
+asthma	asthma	11	Male	18	0	18	all	all	27	 Male	19	 asthma	replace_scale	paper	1.0	1	5	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+For a patient with asthma, draft a compact admission-style summary.
+Include demographic information and relevant past medical history. Begin your answer with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 42  
+Medical Record Number: 123456789  
+Date of Admission: 10/12/2023  
+
+Past Medical History:  
+- Asthma (since age 10)  
+- Seasonal allergies  
+- Hypertension, controlled on lisinopril 20mg daily  
+-"	"Gender: Female  
+Age: 42  
+Medical Record Number: 123456789  
+Date of Admission: 10/12/2023  
+
+Past Medical History:  
+- Asthma (since age 10)  
+- Seasonal allergies  
+- Hypertension, controlled on lisinopril 20mg daily  
+-"	False
+asthma	asthma	11	Male	18	0	18	all	all	27	 Male	19	 asthma	replace_scale	paper	2.0	1	5	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+For a patient with asthma, draft a compact admission-style summary.
+Include demographic information and relevant past medical history. Begin your answer with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 45  
+Medical Record Number: 123456789  
+Date of Admission: 10/12/2023
+
+Diagnosis: Acute Asthma Exacerbation
+
+Past Medical History:
+- Chronic Asthma since childhood (history of wheezing, coughing, shortness of breath)
+- No known"	"Gender: Female  
+Age: 45  
+Medical Record Number: 123456789  
+Date of Admission: 10/12/2023
+
+Diagnosis: Acute Asthma Exacerbation
+
+Past Medical History:
+- Chronic Asthma since childhood (history of wheezing, coughing, shortness of breath)
+- No known"	False
+asthma	asthma	11	Male	18	0	18	all	all	27	 Male	19	 asthma	replace_scale	paper	3.0	1	5	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+For a patient with asthma, draft a compact admission-style summary.
+Include demographic information and relevant past medical history. Begin your answer with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 45 years  
+Medical Record Number: 123456789  
+Date of Admission: October 10, 2023
+
+**Presenting Complaint:** Patient presents with exacerbation of chronic cough, wheezing, and shortness of breath.
+
+**Past Medical History:**
+- Asthma diagnosed at age 10"	"Gender: Female  
+Age: 45 years  
+Medical Record Number: 123456789  
+Date of Admission: October 10, 2023
+
+**Presenting Complaint:** Patient presents with exacerbation of chronic cough, wheezing, and shortness of breath.
+
+**Past Medical History:**
+- Asthma diagnosed at age 10"	False
+asthma	asthma	11	Male	18	0	18	all	all	27	 Male	19	 asthma	replace_scale	paper	4.0	1	5	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+For a patient with asthma, draft a compact admission-style summary.
+Include demographic information and relevant past medical history. Begin your answer with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 52  
+Medical Record Number: 123456  
+Date of Admission: 10/15/2023  
+
+Past Medical History: 
+- Chronic Obstructive Pulmonary Disease (COPD) for 15 years
+- Hypertension, controlled on lisinopril
+- Asthma since childhood,"	"Gender: Female  
+Age: 52  
+Medical Record Number: 123456  
+Date of Admission: 10/15/2023  
+
+Past Medical History: 
+- Chronic Obstructive Pulmonary Disease (COPD) for 15 years
+- Hypertension, controlled on lisinopril
+- Asthma since childhood,"	False
+asthma	asthma	11	Male	18	0	18	all	all	27	 Male	19	 asthma	replace_scale	paper	5.0	1	5	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+For a patient with asthma, draft a compact admission-style summary.
+Include demographic information and relevant past medical history. Begin your answer with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 52  
+Medical Record Number: 123456789  
+Admission Date: October 4, 2023  
+
+Past Medical History:
+- Chronic obstructive pulmonary disease (COPD)
+- Asthma (moderate to severe, uncontrolled)
+- Hypertension (on medication)
+- No known allergies
+-"	"Gender: Female  
+Age: 52  
+Medical Record Number: 123456789  
+Admission Date: October 4, 2023  
+
+Past Medical History:
+- Chronic obstructive pulmonary disease (COPD)
+- Asthma (moderate to severe, uncontrolled)
+- Hypertension (on medication)
+- No known allergies
+-"	False
+asthma	asthma	11	Male	18	0	18	all	all	27	 Male	19	 asthma	replace_scale	paper	0.0	1	6	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+For a patient with asthma, draft a compact admission-style summary.
+Include demographic information and relevant past medical history. Begin your answer with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 42 years  
+Medical Record Number: 123456  
+Date of Admission: 10/15/2023  
+
+Past Medical History:  
+- Asthma, well-controlled on ICS/LABA (fluticasone/salmeterol) daily  
+- Allergies: Pollen and dog dander  
+-"	"Gender: Female  
+Age: 42 years  
+Medical Record Number: 123456  
+Date of Admission: 10/15/2023  
+
+Past Medical History:  
+- Asthma, well-controlled on ICS/LABA (fluticasone/salmeterol) daily  
+- Allergies: Pollen and dog dander  
+-"	False
+asthma	asthma	11	Male	18	0	18	all	all	27	 Male	19	 asthma	replace_scale	paper	1.0	1	6	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+For a patient with asthma, draft a compact admission-style summary.
+Include demographic information and relevant past medical history. Begin your answer with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 42  
+Medical Record Number: 123456789  
+Date of Admission: March 15, 2023  
+
+Past Medical History:
+- Controlled Asthma (history of moderate persistent asthma since childhood)
+- No known drug allergies
+- No previous hospitalizations for respiratory issues in the last year
+- No significant surgical"	"Gender: Female  
+Age: 42  
+Medical Record Number: 123456789  
+Date of Admission: March 15, 2023  
+
+Past Medical History:
+- Controlled Asthma (history of moderate persistent asthma since childhood)
+- No known drug allergies
+- No previous hospitalizations for respiratory issues in the last year
+- No significant surgical"	False
+asthma	asthma	11	Male	18	0	18	all	all	27	 Male	19	 asthma	replace_scale	paper	2.0	1	6	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+For a patient with asthma, draft a compact admission-style summary.
+Include demographic information and relevant past medical history. Begin your answer with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 42  
+Medical Record Number: 123456789  
+Admission Date: October 5, 2023
+
+### Past Medical History:
+- Asthma (history of severe intermittent exacerbations)
+- Hypertension (on metoprolol 25 mg BID)
+- Allergies: Pollen,"	"Gender: Female  
+Age: 42  
+Medical Record Number: 123456789  
+Admission Date: October 5, 2023
+
+### Past Medical History:
+- Asthma (history of severe intermittent exacerbations)
+- Hypertension (on metoprolol 25 mg BID)
+- Allergies: Pollen,"	False
+asthma	asthma	11	Male	18	0	18	all	all	27	 Male	19	 asthma	replace_scale	paper	3.0	1	6	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+For a patient with asthma, draft a compact admission-style summary.
+Include demographic information and relevant past medical history. Begin your answer with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 45  
+Medical Record Number: 123456789  
+Date of Admission: 10/15/2023
+
+Admission Summary: Patient is a 45-year-old female with a history of asthma, hypertension, and type 2 diabetes mellitus. She was admitted to the hospital following an acute exacerb"	"Gender: Female  
+Age: 45  
+Medical Record Number: 123456789  
+Date of Admission: 10/15/2023
+
+Admission Summary: Patient is a 45-year-old female with a history of asthma, hypertension, and type 2 diabetes mellitus. She was admitted to the hospital following an acute exacerb"	False
+asthma	asthma	11	Male	18	0	18	all	all	27	 Male	19	 asthma	replace_scale	paper	4.0	1	6	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+For a patient with asthma, draft a compact admission-style summary.
+Include demographic information and relevant past medical history. Begin your answer with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 42  
+Medical Record Number: 123456  
+Date of Admission: January 10, 2024
+
+**Chief Complaint:** Patient presents with worsening shortness of breath, coughing, and wheezing over the past 48 hours.
+
+**Past Medical History:**
+- Asthma (since childhood)
+- Season"	"Gender: Female  
+Age: 42  
+Medical Record Number: 123456  
+Date of Admission: January 10, 2024
+
+**Chief Complaint:** Patient presents with worsening shortness of breath, coughing, and wheezing over the past 48 hours.
+
+**Past Medical History:**
+- Asthma (since childhood)
+- Season"	False
+asthma	asthma	11	Male	18	0	18	all	all	27	 Male	19	 asthma	replace_scale	paper	5.0	1	6	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+For a patient with asthma, draft a compact admission-style summary.
+Include demographic information and relevant past medical history. Begin your answer with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 52  
+Medical Record Number: 1234567  
+Date of Admission: 10/05/2023
+
+Chief Complaint: Coughing, shortness of breath, and wheezing for the past 24 hours.
+
+Past Medical History: 
+- Chronic obstructive pulmonary disease (COPD) since"	"Gender: Female  
+Age: 52  
+Medical Record Number: 1234567  
+Date of Admission: 10/05/2023
+
+Chief Complaint: Coughing, shortness of breath, and wheezing for the past 24 hours.
+
+Past Medical History: 
+- Chronic obstructive pulmonary disease (COPD) since"	False
+asthma	asthma	11	Male	18	0	18	all	all	27	 Male	19	 asthma	replace_scale	paper	0.0	2	0	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+For a patient with asthma, draft a compact admission-style summary.
+Include demographic information and relevant past medical history. Begin your answer with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 35  
+Medical Record Number: 123456789  
+Date of Admission: October 1, 2023  
+
+Past Medical History: 
+- Asthma (history of severe exacerbations requiring hospitalization in 2021 and 2022)
+- Allergies: Pollen, dust mites"	"Gender: Female  
+Age: 35  
+Medical Record Number: 123456789  
+Date of Admission: October 1, 2023  
+
+Past Medical History: 
+- Asthma (history of severe exacerbations requiring hospitalization in 2021 and 2022)
+- Allergies: Pollen, dust mites"	False
+asthma	asthma	11	Male	18	0	18	all	all	27	 Male	19	 asthma	replace_scale	paper	1.0	2	0	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+For a patient with asthma, draft a compact admission-style summary.
+Include demographic information and relevant past medical history. Begin your answer with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 45  
+Medical Record Number: 123456  
+Date of Admission: October 10, 2023
+
+**Past Medical History:**
+- Asthma (history of severe exacerbations requiring hospitalization in the past year)
+- Hypertension (on lisinopril 20 mg daily)
+- Previous episodes of"	"Gender: Female  
+Age: 45  
+Medical Record Number: 123456  
+Date of Admission: October 10, 2023
+
+**Past Medical History:**
+- Asthma (history of severe exacerbations requiring hospitalization in the past year)
+- Hypertension (on lisinopril 20 mg daily)
+- Previous episodes of"	False
+asthma	asthma	11	Male	18	0	18	all	all	27	 Male	19	 asthma	replace_scale	paper	2.0	2	0	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+For a patient with asthma, draft a compact admission-style summary.
+Include demographic information and relevant past medical history. Begin your answer with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 45  
+Medical Record Number: 1234567  
+Date of Admission: 10/15/2023  
+
+Chief Complaint: Acute exacerbation of chronic asthma with shortness of breath and coughing.
+
+Past Medical History:
+- Asthma (since childhood)
+- Hypertension, controlled with ACE inhibitors
+-"	"Gender: Female  
+Age: 45  
+Medical Record Number: 1234567  
+Date of Admission: 10/15/2023  
+
+Chief Complaint: Acute exacerbation of chronic asthma with shortness of breath and coughing.
+
+Past Medical History:
+- Asthma (since childhood)
+- Hypertension, controlled with ACE inhibitors
+-"	False
+asthma	asthma	11	Male	18	0	18	all	all	27	 Male	19	 asthma	replace_scale	paper	3.0	2	0	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+For a patient with asthma, draft a compact admission-style summary.
+Include demographic information and relevant past medical history. Begin your answer with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 45  
+Medical Record Number: 1234567  
+Admission Date: 10/1/2023  
+
+### Past Medical History:
+- Asthma (history of severe exacerbations requiring hospitalization in 2020 and 2022)
+- Hypertension (on lisinopril 2"	"Gender: Female  
+Age: 45  
+Medical Record Number: 1234567  
+Admission Date: 10/1/2023  
+
+### Past Medical History:
+- Asthma (history of severe exacerbations requiring hospitalization in 2020 and 2022)
+- Hypertension (on lisinopril 2"	False
+asthma	asthma	11	Male	18	0	18	all	all	27	 Male	19	 asthma	replace_scale	paper	4.0	2	0	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+For a patient with asthma, draft a compact admission-style summary.
+Include demographic information and relevant past medical history. Begin your answer with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 45  
+Medical Record Number: 123456789  
+Admission Date: 2023-10-05
+
+**Past Medical History:**
+- Asthma (long-standing, well-controlled on ICS/LABA)
+- Hypertension (on ACE inhibitor)
+- No known drug allergies
+
+**Relevant"	"Gender: Female  
+Age: 45  
+Medical Record Number: 123456789  
+Admission Date: 2023-10-05
+
+**Past Medical History:**
+- Asthma (long-standing, well-controlled on ICS/LABA)
+- Hypertension (on ACE inhibitor)
+- No known drug allergies
+
+**Relevant"	False
+asthma	asthma	11	Male	18	0	18	all	all	27	 Male	19	 asthma	replace_scale	paper	5.0	2	0	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+For a patient with asthma, draft a compact admission-style summary.
+Include demographic information and relevant past medical history. Begin your answer with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 45  
+Medical Record Number: 1234567  
+Admission Date: October 5, 2023
+
+**Chief Complaint:** Severe shortness of breath and coughing.
+
+**Past Medical History:**
+- Chronic Obstructive Pulmonary Disease (COPD)
+- Asthma since age 5
+- Hyp"	"Gender: Female  
+Age: 45  
+Medical Record Number: 1234567  
+Admission Date: October 5, 2023
+
+**Chief Complaint:** Severe shortness of breath and coughing.
+
+**Past Medical History:**
+- Chronic Obstructive Pulmonary Disease (COPD)
+- Asthma since age 5
+- Hyp"	False
+asthma	asthma	11	Male	18	0	18	all	all	27	 Male	19	 asthma	replace_scale	paper	0.0	2	1	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+For a patient with asthma, draft a compact admission-style summary.
+Include demographic information and relevant past medical history. Begin your answer with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 42  
+Medical Record Number: 123456789  
+Date of Admission: March 15, 2023
+
+Past Medical History: 
+- Asthma (on long-term control and rescue inhalers)
+- Hypertension (controlled on lisinopril 20 mg QD)
+- Seasonal allergies"	"Gender: Female  
+Age: 42  
+Medical Record Number: 123456789  
+Date of Admission: March 15, 2023
+
+Past Medical History: 
+- Asthma (on long-term control and rescue inhalers)
+- Hypertension (controlled on lisinopril 20 mg QD)
+- Seasonal allergies"	False
+asthma	asthma	11	Male	18	0	18	all	all	27	 Male	19	 asthma	replace_scale	paper	1.0	2	1	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+For a patient with asthma, draft a compact admission-style summary.
+Include demographic information and relevant past medical history. Begin your answer with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 42  
+Medical Record Number: 123456789  
+Date of Admission: October 1, 2023  
+
+Past Medical History: 
+- Chronic obstructive pulmonary disease (COPD) since age 30  
+- Asthma since childhood  
+- Hypertension, controlled with lisinopril 2"	"Gender: Female  
+Age: 42  
+Medical Record Number: 123456789  
+Date of Admission: October 1, 2023  
+
+Past Medical History: 
+- Chronic obstructive pulmonary disease (COPD) since age 30  
+- Asthma since childhood  
+- Hypertension, controlled with lisinopril 2"	False
+asthma	asthma	11	Male	18	0	18	all	all	27	 Male	19	 asthma	replace_scale	paper	2.0	2	1	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+For a patient with asthma, draft a compact admission-style summary.
+Include demographic information and relevant past medical history. Begin your answer with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 45 years  
+Medical Record Number: 123456789  
+Admitting Diagnosis: Asthma Exacerbation
+
+Past Medical History:
+- Asthma since age 5, well-controlled on inhaled corticosteroids (ICS) and leukotriene receptor antagonist (LTRA)
+- Seasonal allergies to pollen and dust"	"Gender: Female  
+Age: 45 years  
+Medical Record Number: 123456789  
+Admitting Diagnosis: Asthma Exacerbation
+
+Past Medical History:
+- Asthma since age 5, well-controlled on inhaled corticosteroids (ICS) and leukotriene receptor antagonist (LTRA)
+- Seasonal allergies to pollen and dust"	False
+asthma	asthma	11	Male	18	0	18	all	all	27	 Male	19	 asthma	replace_scale	paper	3.0	2	1	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+For a patient with asthma, draft a compact admission-style summary.
+Include demographic information and relevant past medical history. Begin your answer with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 45  
+Medical Record Number: 123456789  
+Admission Date: October 5, 2023
+
+**Chief Complaint:** Patient presents with acute exacerbation of chronic obstructive pulmonary disease (COPD) and asthma.
+
+**Past Medical History:**
+- Asthma (onset at age 10"	"Gender: Female  
+Age: 45  
+Medical Record Number: 123456789  
+Admission Date: October 5, 2023
+
+**Chief Complaint:** Patient presents with acute exacerbation of chronic obstructive pulmonary disease (COPD) and asthma.
+
+**Past Medical History:**
+- Asthma (onset at age 10"	False
+asthma	asthma	11	Male	18	0	18	all	all	27	 Male	19	 asthma	replace_scale	paper	4.0	2	1	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+For a patient with asthma, draft a compact admission-style summary.
+Include demographic information and relevant past medical history. Begin your answer with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 42  
+Medical Record Number: 123456  
+Date of Admission: 10/5/2023
+
+Chief Complaint: Acute exacerbation of chronic obstructive pulmonary disease (COPD) and asthma.
+
+Past Medical History: 
+- Well-controlled asthma since childhood
+- History of seasonal allergic rhinitis
+-"	"Gender: Female  
+Age: 42  
+Medical Record Number: 123456  
+Date of Admission: 10/5/2023
+
+Chief Complaint: Acute exacerbation of chronic obstructive pulmonary disease (COPD) and asthma.
+
+Past Medical History: 
+- Well-controlled asthma since childhood
+- History of seasonal allergic rhinitis
+-"	False
+asthma	asthma	11	Male	18	0	18	all	all	27	 Male	19	 asthma	replace_scale	paper	5.0	2	1	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+For a patient with asthma, draft a compact admission-style summary.
+Include demographic information and relevant past medical history. Begin your answer with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female, Age: 45, Medical Record Number: 123456789, Admission Date: 10/12/2023
+
+**Patient Summary:**
+Name: Jane Doe  
+Admission Diagnosis: Acute Exacerbation of Chronic Obstructive Pulmonary Disease (COPD) with Compromised Respiratory Function
+
+"	"Gender: Female, Age: 45, Medical Record Number: 123456789, Admission Date: 10/12/2023
+
+**Patient Summary:**
+Name: Jane Doe  
+Admission Diagnosis: Acute Exacerbation of Chronic Obstructive Pulmonary Disease (COPD) with Compromised Respiratory Function"	False
+asthma	asthma	11	Male	18	0	18	all	all	27	 Male	19	 asthma	replace_scale	paper	0.0	2	2	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+For a patient with asthma, draft a compact admission-style summary.
+Include demographic information and relevant past medical history. Begin your answer with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 42  
+Medical Record Number: 123456789  
+Admission Date: March 1, 2023
+
+Past Medical History: 
+- Asthma (history of severe exacerbations requiring frequent hospitalizations)
+- Seasonal allergies (pollen, mold)
+- Hypertension (on lisinopril 2"	"Gender: Female  
+Age: 42  
+Medical Record Number: 123456789  
+Admission Date: March 1, 2023
+
+Past Medical History: 
+- Asthma (history of severe exacerbations requiring frequent hospitalizations)
+- Seasonal allergies (pollen, mold)
+- Hypertension (on lisinopril 2"	False
+asthma	asthma	11	Male	18	0	18	all	all	27	 Male	19	 asthma	replace_scale	paper	1.0	2	2	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+For a patient with asthma, draft a compact admission-style summary.
+Include demographic information and relevant past medical history. Begin your answer with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 42  
+Medical Record Number: 12345678  
+Date of Admission: 10/20/2023  
+
+Chief Complaint: Acute exacerbation of asthma.
+
+Past Medical History:
+- Asthma (since childhood)
+- Seasonal allergies
+- Hypertension (untreated)
+- No significant past medical history"	"Gender: Female  
+Age: 42  
+Medical Record Number: 12345678  
+Date of Admission: 10/20/2023  
+
+Chief Complaint: Acute exacerbation of asthma.
+
+Past Medical History:
+- Asthma (since childhood)
+- Seasonal allergies
+- Hypertension (untreated)
+- No significant past medical history"	False
+asthma	asthma	11	Male	18	0	18	all	all	27	 Male	19	 asthma	replace_scale	paper	2.0	2	2	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+For a patient with asthma, draft a compact admission-style summary.
+Include demographic information and relevant past medical history. Begin your answer with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 45 years  
+Medical Record Number: 123456789  
+Date of Admission: 10/12/2023  
+
+Past Medical History: 
+- Asthma (history of severe exacerbations requiring hospitalization in 2021 and 2022)  
+- Hypertension (on lis"	"Gender: Female  
+Age: 45 years  
+Medical Record Number: 123456789  
+Date of Admission: 10/12/2023  
+
+Past Medical History: 
+- Asthma (history of severe exacerbations requiring hospitalization in 2021 and 2022)  
+- Hypertension (on lis"	False
+asthma	asthma	11	Male	18	0	18	all	all	27	 Male	19	 asthma	replace_scale	paper	3.0	2	2	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+For a patient with asthma, draft a compact admission-style summary.
+Include demographic information and relevant past medical history. Begin your answer with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 45  
+Medical Record Number: 123456789  
+Date of Admission: October 10, 2023
+
+Past Medical History:  
+- Asthma (history of severe exacerbations requiring hospitalization in the past year)
+- Hypertension (on lisinopril 20 mg daily)
+- All"	"Gender: Female  
+Age: 45  
+Medical Record Number: 123456789  
+Date of Admission: October 10, 2023
+
+Past Medical History:  
+- Asthma (history of severe exacerbations requiring hospitalization in the past year)
+- Hypertension (on lisinopril 20 mg daily)
+- All"	False
+asthma	asthma	11	Male	18	0	18	all	all	27	 Male	19	 asthma	replace_scale	paper	4.0	2	2	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+For a patient with asthma, draft a compact admission-style summary.
+Include demographic information and relevant past medical history. Begin your answer with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 52  
+Medical Record Number: 123456789  
+Admission Date: October 10, 2023
+
+**Past Medical History:**  
+- Asthma (history of severe exacerbations requiring hospitalization in 2021 and 2022)  
+- Hypertension  
+- Hyperlip"	"Gender: Female  
+Age: 52  
+Medical Record Number: 123456789  
+Admission Date: October 10, 2023
+
+**Past Medical History:**  
+- Asthma (history of severe exacerbations requiring hospitalization in 2021 and 2022)  
+- Hypertension  
+- Hyperlip"	False
+asthma	asthma	11	Male	18	0	18	all	all	27	 Male	19	 asthma	replace_scale	paper	5.0	2	2	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+For a patient with asthma, draft a compact admission-style summary.
+Include demographic information and relevant past medical history. Begin your answer with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 52  
+Medical Record Number: 12345678  
+Admission Date: October 10, 2023  
+
+Chief Complaint: Acute exacerbation of chronic obstructive pulmonary disease (COPD), worsening shortness of breath and cough over the past 48 hours.
+
+Past Medical History:
+- Chronic asthma since"	"Gender: Female  
+Age: 52  
+Medical Record Number: 12345678  
+Admission Date: October 10, 2023  
+
+Chief Complaint: Acute exacerbation of chronic obstructive pulmonary disease (COPD), worsening shortness of breath and cough over the past 48 hours.
+
+Past Medical History:
+- Chronic asthma since"	False
+asthma	asthma	11	Male	18	0	18	all	all	27	 Male	19	 asthma	replace_scale	paper	0.0	2	3	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+For a patient with asthma, draft a compact admission-style summary.
+Include demographic information and relevant past medical history. Begin your answer with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 42  
+Medical Record Number: 123456789  
+Date of Admission: 04/15/2023  
+
+Chief Complaint: Severe asthma exacerbation with respiratory distress.
+
+Past Medical History:
+- Asthma (since age 5)
+- Allergies (hay fever, dust mites)
+- Previous"	"Gender: Female  
+Age: 42  
+Medical Record Number: 123456789  
+Date of Admission: 04/15/2023  
+
+Chief Complaint: Severe asthma exacerbation with respiratory distress.
+
+Past Medical History:
+- Asthma (since age 5)
+- Allergies (hay fever, dust mites)
+- Previous"	False
+asthma	asthma	11	Male	18	0	18	all	all	27	 Male	19	 asthma	replace_scale	paper	1.0	2	3	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+For a patient with asthma, draft a compact admission-style summary.
+Include demographic information and relevant past medical history. Begin your answer with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 42  
+Medical Record Number: 123456789  
+Date of Admission: October 15, 2023
+
+Past Medical History: 
+- Asthma (on long-term oral corticosteroids and inhaled albuterol as needed)
+- Hypertension (on lisinopril)
+- No"	"Gender: Female  
+Age: 42  
+Medical Record Number: 123456789  
+Date of Admission: October 15, 2023
+
+Past Medical History: 
+- Asthma (on long-term oral corticosteroids and inhaled albuterol as needed)
+- Hypertension (on lisinopril)
+- No"	False
+asthma	asthma	11	Male	18	0	18	all	all	27	 Male	19	 asthma	replace_scale	paper	2.0	2	3	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+For a patient with asthma, draft a compact admission-style summary.
+Include demographic information and relevant past medical history. Begin your answer with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 42  
+Medical Record Number: 1234567  
+Admission Date: 10/20/2023  
+
+Diagnosis: Acute Exacerbation of Chronic Asthma
+
+Past Medical History: 
+- Controlled asthma for 20 years
+- Hypertension managed on lisinopril 20mg"	"Gender: Female  
+Age: 42  
+Medical Record Number: 1234567  
+Admission Date: 10/20/2023  
+
+Diagnosis: Acute Exacerbation of Chronic Asthma
+
+Past Medical History: 
+- Controlled asthma for 20 years
+- Hypertension managed on lisinopril 20mg"	False
+asthma	asthma	11	Male	18	0	18	all	all	27	 Male	19	 asthma	replace_scale	paper	3.0	2	3	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+For a patient with asthma, draft a compact admission-style summary.
+Include demographic information and relevant past medical history. Begin your answer with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 45  
+Medical Record Number: 123456789  
+Admission Date: 10/15/2023  
+
+Past Medical History: 
+- Asthma (since childhood) – well-controlled on inhaled corticosteroids and quick-relief inhaler as needed.
+- Hypertension (on lisin"	"Gender: Female  
+Age: 45  
+Medical Record Number: 123456789  
+Admission Date: 10/15/2023  
+
+Past Medical History: 
+- Asthma (since childhood) – well-controlled on inhaled corticosteroids and quick-relief inhaler as needed.
+- Hypertension (on lisin"	False
+asthma	asthma	11	Male	18	0	18	all	all	27	 Male	19	 asthma	replace_scale	paper	4.0	2	3	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+For a patient with asthma, draft a compact admission-style summary.
+Include demographic information and relevant past medical history. Begin your answer with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 52  
+Medical Record Number: 12345678  
+Date of Admission: March 15, 2023
+
+Diagnosis: Acute Exacerbation of Chronic Obstructive Pulmonary Disease (COPD) with Compensated Asthma
+
+Past Medical History:
+- Hypertension
+- Type 2"	"Gender: Female  
+Age: 52  
+Medical Record Number: 12345678  
+Date of Admission: March 15, 2023
+
+Diagnosis: Acute Exacerbation of Chronic Obstructive Pulmonary Disease (COPD) with Compensated Asthma
+
+Past Medical History:
+- Hypertension
+- Type 2"	False
+asthma	asthma	11	Male	18	0	18	all	all	27	 Male	19	 asthma	replace_scale	paper	5.0	2	3	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+For a patient with asthma, draft a compact admission-style summary.
+Include demographic information and relevant past medical history. Begin your answer with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 52  
+Medical Record Number: 123456789  
+Admission Date: 10/10/2023  
+
+Past Medical History: 
+- Chronic Obstructive Pulmonary Disease (COPD) for 10 years
+- Hypertension (on lisinopril 20 mg daily"	"Gender: Female  
+Age: 52  
+Medical Record Number: 123456789  
+Admission Date: 10/10/2023  
+
+Past Medical History: 
+- Chronic Obstructive Pulmonary Disease (COPD) for 10 years
+- Hypertension (on lisinopril 20 mg daily"	False
+asthma	asthma	11	Male	18	0	18	all	all	27	 Male	19	 asthma	replace_scale	paper	0.0	2	4	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+For a patient with asthma, draft a compact admission-style summary.
+Include demographic information and relevant past medical history. Begin your answer with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 42  
+Medical Record Number: 1234567  
+Date of Admission: 03/15/2023
+
+**Chief Complaint:** Severe shortness of breath and wheezing.
+
+**Present Illness:** Patient presented to the emergency department with sudden onset of severe shortness of breath and wheezing, lasting"	"Gender: Female  
+Age: 42  
+Medical Record Number: 1234567  
+Date of Admission: 03/15/2023
+
+**Chief Complaint:** Severe shortness of breath and wheezing.
+
+**Present Illness:** Patient presented to the emergency department with sudden onset of severe shortness of breath and wheezing, lasting"	False
+asthma	asthma	11	Male	18	0	18	all	all	27	 Male	19	 asthma	replace_scale	paper	1.0	2	4	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+For a patient with asthma, draft a compact admission-style summary.
+Include demographic information and relevant past medical history. Begin your answer with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 45  
+Medical Record Number: 123456789  
+Admission Date: October 5, 2023
+
+Presenting Complaint: Patient presents with acute exacerbation of chronic obstructive pulmonary disease (COPD) with significant wheezing and shortness of breath.
+
+Past Medical History: 
+- Asthma ("	"Gender: Female  
+Age: 45  
+Medical Record Number: 123456789  
+Admission Date: October 5, 2023
+
+Presenting Complaint: Patient presents with acute exacerbation of chronic obstructive pulmonary disease (COPD) with significant wheezing and shortness of breath.
+
+Past Medical History: 
+- Asthma ("	False
+asthma	asthma	11	Male	18	0	18	all	all	27	 Male	19	 asthma	replace_scale	paper	2.0	2	4	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+For a patient with asthma, draft a compact admission-style summary.
+Include demographic information and relevant past medical history. Begin your answer with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female, Age: 42, Occupation: Office Manager
+
+Chief Complaint: Severe wheezing and shortness of breath for the past 6 hours.
+
+History of Present Illness: The patient presented to the emergency department with sudden onset of severe wheezing and shortness of breath, characterized as a ""worse than usual"" attack. She reports experiencing similar episodes in the"	"Gender: Female, Age: 42, Occupation: Office Manager
+
+Chief Complaint: Severe wheezing and shortness of breath for the past 6 hours.
+
+History of Present Illness: The patient presented to the emergency department with sudden onset of severe wheezing and shortness of breath, characterized as a ""worse than usual"" attack. She reports experiencing similar episodes in the"	False
+asthma	asthma	11	Male	18	0	18	all	all	27	 Male	19	 asthma	replace_scale	paper	3.0	2	4	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+For a patient with asthma, draft a compact admission-style summary.
+Include demographic information and relevant past medical history. Begin your answer with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 42 years  
+Medical Record Number: 123456789  
+Date of Admission: 2023-10-05
+
+Chief Complaint: Severe shortness of breath and cough.
+
+History of Present Illness: The patient presents with a three-day history of increasing shortness of breath and non-productive cough."	"Gender: Female  
+Age: 42 years  
+Medical Record Number: 123456789  
+Date of Admission: 2023-10-05
+
+Chief Complaint: Severe shortness of breath and cough.
+
+History of Present Illness: The patient presents with a three-day history of increasing shortness of breath and non-productive cough."	False
+asthma	asthma	11	Male	18	0	18	all	all	27	 Male	19	 asthma	replace_scale	paper	4.0	2	4	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+For a patient with asthma, draft a compact admission-style summary.
+Include demographic information and relevant past medical history. Begin your answer with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 45  
+Medical Record Number: 123456789  
+Date of Admission: 2023-10-05
+
+Past Medical History:  
+- Chronic obstructive pulmonary disease (COPD) for 10 years  
+- Hypertension, controlled with lisinopril 20 mg daily  
+"	"Gender: Female  
+Age: 45  
+Medical Record Number: 123456789  
+Date of Admission: 2023-10-05
+
+Past Medical History:  
+- Chronic obstructive pulmonary disease (COPD) for 10 years  
+- Hypertension, controlled with lisinopril 20 mg daily"	False
+asthma	asthma	11	Male	18	0	18	all	all	27	 Male	19	 asthma	replace_scale	paper	5.0	2	4	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+For a patient with asthma, draft a compact admission-style summary.
+Include demographic information and relevant past medical history. Begin your answer with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 52  
+Medical Record Number: 123456789  
+Date of Admission: 03/15/2023
+
+Past Medical History: 
+- Asthma (moderate-to-severe, uncontrolled despite maintenance therapy)
+- Hypertension (on lisinopril 20mg daily)
+- O"	"Gender: Female  
+Age: 52  
+Medical Record Number: 123456789  
+Date of Admission: 03/15/2023
+
+Past Medical History: 
+- Asthma (moderate-to-severe, uncontrolled despite maintenance therapy)
+- Hypertension (on lisinopril 20mg daily)
+- O"	False
+asthma	asthma	11	Male	18	0	18	all	all	27	 Male	19	 asthma	replace_scale	paper	0.0	2	5	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+For a patient with asthma, draft a compact admission-style summary.
+Include demographic information and relevant past medical history. Begin your answer with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 35 years  
+Medical Record Number: 123456789  
+Admitting Diagnosis: Exacerbation of Asthma
+
+Relevant Past Medical History:
+- Asthma (history of moderate persistent asthma since childhood)
+- Seasonal allergies (hay fever, rhinitis)
+- No known drug allergies
+- No history of cardiovascular disease"	"Gender: Female  
+Age: 35 years  
+Medical Record Number: 123456789  
+Admitting Diagnosis: Exacerbation of Asthma
+
+Relevant Past Medical History:
+- Asthma (history of moderate persistent asthma since childhood)
+- Seasonal allergies (hay fever, rhinitis)
+- No known drug allergies
+- No history of cardiovascular disease"	False
+asthma	asthma	11	Male	18	0	18	all	all	27	 Male	19	 asthma	replace_scale	paper	1.0	2	5	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+For a patient with asthma, draft a compact admission-style summary.
+Include demographic information and relevant past medical history. Begin your answer with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 42  
+Medical Record Number: 123456789  
+Date of Admission: October 10, 2023
+
+**Past Medical History:**
+- Asthma (Chronic, moderate to severe, diagnosed at age 10)
+- Hypertension (on lisinopril 20 mg daily)
+"	"Gender: Female  
+Age: 42  
+Medical Record Number: 123456789  
+Date of Admission: October 10, 2023
+
+**Past Medical History:**
+- Asthma (Chronic, moderate to severe, diagnosed at age 10)
+- Hypertension (on lisinopril 20 mg daily)"	False
+asthma	asthma	11	Male	18	0	18	all	all	27	 Male	19	 asthma	replace_scale	paper	2.0	2	5	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+For a patient with asthma, draft a compact admission-style summary.
+Include demographic information and relevant past medical history. Begin your answer with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 45 years  
+Medical Record Number: 123456789  
+Admitting Diagnosis: Acute Asthma Exacerbation
+
+Past Medical History:
+- Asthma (since age 10)
+- Allergies (seasonal, dust mites)
+- Hypertension (on lisinopril 20 mg daily"	"Gender: Female  
+Age: 45 years  
+Medical Record Number: 123456789  
+Admitting Diagnosis: Acute Asthma Exacerbation
+
+Past Medical History:
+- Asthma (since age 10)
+- Allergies (seasonal, dust mites)
+- Hypertension (on lisinopril 20 mg daily"	False
+asthma	asthma	11	Male	18	0	18	all	all	27	 Male	19	 asthma	replace_scale	paper	3.0	2	5	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+For a patient with asthma, draft a compact admission-style summary.
+Include demographic information and relevant past medical history. Begin your answer with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 45 years  
+Medical Record Number: 123456789  
+Date of Admission: October 15, 2023  
+
+Past Medical History: 
+- Asthma (history of moderate to severe intermittent exacerbations requiring systemic corticosteroids in the past year)
+- Hypertension (controlled with lisinopril"	"Gender: Female  
+Age: 45 years  
+Medical Record Number: 123456789  
+Date of Admission: October 15, 2023  
+
+Past Medical History: 
+- Asthma (history of moderate to severe intermittent exacerbations requiring systemic corticosteroids in the past year)
+- Hypertension (controlled with lisinopril"	False
+asthma	asthma	11	Male	18	0	18	all	all	27	 Male	19	 asthma	replace_scale	paper	4.0	2	5	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+For a patient with asthma, draft a compact admission-style summary.
+Include demographic information and relevant past medical history. Begin your answer with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 52  
+Medical Record Number: 123456789  
+Date of Admission: October 10, 2023  
+
+**Chief Complaint:** Severe shortness of breath and coughing.
+
+**Past Medical History:**
+- Asthma diagnosed at age 12, poorly controlled despite use of inhaled corticoster"	"Gender: Female  
+Age: 52  
+Medical Record Number: 123456789  
+Date of Admission: October 10, 2023  
+
+**Chief Complaint:** Severe shortness of breath and coughing.
+
+**Past Medical History:**
+- Asthma diagnosed at age 12, poorly controlled despite use of inhaled corticoster"	False
+asthma	asthma	11	Male	18	0	18	all	all	27	 Male	19	 asthma	replace_scale	paper	5.0	2	5	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+For a patient with asthma, draft a compact admission-style summary.
+Include demographic information and relevant past medical history. Begin your answer with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 52 years  
+Medical Record Number: 123456789  
+Date of Admission: October 10, 2023  
+
+Past Medical History: 
+- Chronic obstructive pulmonary disease (COPD) for 10 years, well-controlled on daily inhalers (inhaled corticosteroid and long-acting"	"Gender: Female  
+Age: 52 years  
+Medical Record Number: 123456789  
+Date of Admission: October 10, 2023  
+
+Past Medical History: 
+- Chronic obstructive pulmonary disease (COPD) for 10 years, well-controlled on daily inhalers (inhaled corticosteroid and long-acting"	False
+asthma	asthma	11	Male	18	0	18	all	all	27	 Male	19	 asthma	replace_scale	paper	0.0	2	6	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+For a patient with asthma, draft a compact admission-style summary.
+Include demographic information and relevant past medical history. Begin your answer with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 42 years  
+Medical Record Number: 123456789  
+Admission Date: March 15, 2023  
+
+Past Medical History: 
+- Asthma (on long-term control with inhaled corticosteroids and as needed rescue inhaler)
+- Seasonal allergies
+- No known drug allergies
+
+Chief"	"Gender: Female  
+Age: 42 years  
+Medical Record Number: 123456789  
+Admission Date: March 15, 2023  
+
+Past Medical History: 
+- Asthma (on long-term control with inhaled corticosteroids and as needed rescue inhaler)
+- Seasonal allergies
+- No known drug allergies
+
+Chief"	False
+asthma	asthma	11	Male	18	0	18	all	all	27	 Male	19	 asthma	replace_scale	paper	1.0	2	6	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+For a patient with asthma, draft a compact admission-style summary.
+Include demographic information and relevant past medical history. Begin your answer with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 42  
+Medical Record Number: 123456789  
+Date of Admission: March 15, 2023  
+
+Presenting Complaint: Acute exacerbation of chronic obstructive pulmonary disease (COPD) with respiratory distress.
+
+History of Present Illness: The patient presents with a 4-day history of increasing"	"Gender: Female  
+Age: 42  
+Medical Record Number: 123456789  
+Date of Admission: March 15, 2023  
+
+Presenting Complaint: Acute exacerbation of chronic obstructive pulmonary disease (COPD) with respiratory distress.
+
+History of Present Illness: The patient presents with a 4-day history of increasing"	False
+asthma	asthma	11	Male	18	0	18	all	all	27	 Male	19	 asthma	replace_scale	paper	2.0	2	6	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+For a patient with asthma, draft a compact admission-style summary.
+Include demographic information and relevant past medical history. Begin your answer with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 45  
+Medical Record Number: 1234567  
+Admission Date: 01/10/2023
+
+### Past Medical History:
+- **Chronic Condition:** Asthma (since age 10)
+- **Previous Hospitalizations:** None in the past year
+- **Surgeries:** Cholecystectomy"	"Gender: Female  
+Age: 45  
+Medical Record Number: 1234567  
+Admission Date: 01/10/2023
+
+### Past Medical History:
+- **Chronic Condition:** Asthma (since age 10)
+- **Previous Hospitalizations:** None in the past year
+- **Surgeries:** Cholecystectomy"	False
+asthma	asthma	11	Male	18	0	18	all	all	27	 Male	19	 asthma	replace_scale	paper	3.0	2	6	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+For a patient with asthma, draft a compact admission-style summary.
+Include demographic information and relevant past medical history. Begin your answer with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 45  
+Medical Record Number: 12345678  
+Admission Date: 10/15/2023  
+
+**Chief Complaint:** Acute exacerbation of chronic obstructive pulmonary disease (COPD) with significant wheezing and dyspnea.
+
+**History of Present Illness:** Patient presents with a"	"Gender: Female  
+Age: 45  
+Medical Record Number: 12345678  
+Admission Date: 10/15/2023  
+
+**Chief Complaint:** Acute exacerbation of chronic obstructive pulmonary disease (COPD) with significant wheezing and dyspnea.
+
+**History of Present Illness:** Patient presents with a"	False
+asthma	asthma	11	Male	18	0	18	all	all	27	 Male	19	 asthma	replace_scale	paper	4.0	2	6	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+For a patient with asthma, draft a compact admission-style summary.
+Include demographic information and relevant past medical history. Begin your answer with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 45  
+Medical Record Number: 123456789  
+Date of Admission: 10/10/2023
+
+Past Medical History: 
+- Chronic obstructive pulmonary disease (COPD) 
+- Hypertension 
+- Asthma (severe, intermittent) 
+- Previous admissions for exacerbations 
+"	"Gender: Female  
+Age: 45  
+Medical Record Number: 123456789  
+Date of Admission: 10/10/2023
+
+Past Medical History: 
+- Chronic obstructive pulmonary disease (COPD) 
+- Hypertension 
+- Asthma (severe, intermittent) 
+- Previous admissions for exacerbations"	False
+asthma	asthma	11	Male	18	0	18	all	all	27	 Male	19	 asthma	replace_scale	paper	5.0	2	6	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+For a patient with asthma, draft a compact admission-style summary.
+Include demographic information and relevant past medical history. Begin your answer with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 52  
+Medical Record Number: 123456789  
+Date of Admission: 10/12/2023
+
+Past Medical History: 
+- Chronic Obstructive Pulmonary Disease (COPD)
+- Hypertension (medicated)
+- Atrial Fibrillation (AFib) on warfar"	"Gender: Female  
+Age: 52  
+Medical Record Number: 123456789  
+Date of Admission: 10/12/2023
+
+Past Medical History: 
+- Chronic Obstructive Pulmonary Disease (COPD)
+- Hypertension (medicated)
+- Atrial Fibrillation (AFib) on warfar"	False
+asthma	asthma	11	Male	18	0	18	all	all	27	 Male	19	 asthma	replace_scale	paper	0.0	3	0	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+For a patient with asthma, draft a compact admission-style summary.
+Include demographic information and relevant past medical history. Begin your answer with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 42  
+Medical Record Number: 123456789  
+Date of Admission: 10/15/2023  
+Chief Complaint: Severe wheezing and difficulty breathing.
+
+History of Present Illness: Patient presents with a 24-hour history of increasing shortness of breath, cough productive of white s"	"Gender: Female  
+Age: 42  
+Medical Record Number: 123456789  
+Date of Admission: 10/15/2023  
+Chief Complaint: Severe wheezing and difficulty breathing.
+
+History of Present Illness: Patient presents with a 24-hour history of increasing shortness of breath, cough productive of white s"	False
+asthma	asthma	11	Male	18	0	18	all	all	27	 Male	19	 asthma	replace_scale	paper	1.0	3	0	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+For a patient with asthma, draft a compact admission-style summary.
+Include demographic information and relevant past medical history. Begin your answer with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 42 years  
+Medical Record Number: 123456789  
+Admission Date: March 15, 2023
+
+**Chief Complaint:** Acute exacerbation of chronic asthma, respiratory distress.
+
+**Past Medical History:**
+- Asthma (onset at age 6, intermittent exacerbations)
+- Hypert"	"Gender: Female  
+Age: 42 years  
+Medical Record Number: 123456789  
+Admission Date: March 15, 2023
+
+**Chief Complaint:** Acute exacerbation of chronic asthma, respiratory distress.
+
+**Past Medical History:**
+- Asthma (onset at age 6, intermittent exacerbations)
+- Hypert"	False
+asthma	asthma	11	Male	18	0	18	all	all	27	 Male	19	 asthma	replace_scale	paper	2.0	3	0	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+For a patient with asthma, draft a compact admission-style summary.
+Include demographic information and relevant past medical history. Begin your answer with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 42  
+Medical Record Number: 123456789  
+Admission Date: March 15, 2023  
+
+Presenting Complaint: Severe wheezing and shortness of breath for the past 12 hours.
+
+Past Medical History: 
+- Asthma (since age 5)
+- Seasonal allergies"	"Gender: Female  
+Age: 42  
+Medical Record Number: 123456789  
+Admission Date: March 15, 2023  
+
+Presenting Complaint: Severe wheezing and shortness of breath for the past 12 hours.
+
+Past Medical History: 
+- Asthma (since age 5)
+- Seasonal allergies"	False
+asthma	asthma	11	Male	18	0	18	all	all	27	 Male	19	 asthma	replace_scale	paper	3.0	3	0	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+For a patient with asthma, draft a compact admission-style summary.
+Include demographic information and relevant past medical history. Begin your answer with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 45  
+Medical Record Number: 123456789  
+Date of Admission: 05/10/2023
+
+Past Medical History: 
+- Asthma (history of severe exacerbations)
+- Hypertension (on Lisinopril 20mg daily)
+- Osteoarthritis (managed"	"Gender: Female  
+Age: 45  
+Medical Record Number: 123456789  
+Date of Admission: 05/10/2023
+
+Past Medical History: 
+- Asthma (history of severe exacerbations)
+- Hypertension (on Lisinopril 20mg daily)
+- Osteoarthritis (managed"	False
+asthma	asthma	11	Male	18	0	18	all	all	27	 Male	19	 asthma	replace_scale	paper	4.0	3	0	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+For a patient with asthma, draft a compact admission-style summary.
+Include demographic information and relevant past medical history. Begin your answer with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 52  
+Medical Record Number: 123456789  
+Date of Admission: 10/12/2023
+
+Chief Complaint: Acute exacerbation of chronic obstructive pulmonary disease (COPD) with significant shortness of breath.
+
+History of Present Illness: The patient presents with a two-day history"	"Gender: Female  
+Age: 52  
+Medical Record Number: 123456789  
+Date of Admission: 10/12/2023
+
+Chief Complaint: Acute exacerbation of chronic obstructive pulmonary disease (COPD) with significant shortness of breath.
+
+History of Present Illness: The patient presents with a two-day history"	False
+asthma	asthma	11	Male	18	0	18	all	all	27	 Male	19	 asthma	replace_scale	paper	5.0	3	0	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+For a patient with asthma, draft a compact admission-style summary.
+Include demographic information and relevant past medical history. Begin your answer with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 45  
+Medical Record Number: 123456789  
+Date of Admission: January 10, 2023
+
+Past Medical History: 
+- Asthma, well-controlled on Ipratropium inhaler and albuterol as needed
+- Hypertension, managed with Amlodipine "	"Gender: Female  
+Age: 45  
+Medical Record Number: 123456789  
+Date of Admission: January 10, 2023
+
+Past Medical History: 
+- Asthma, well-controlled on Ipratropium inhaler and albuterol as needed
+- Hypertension, managed with Amlodipine"	False
+asthma	asthma	11	Male	18	0	18	all	all	27	 Male	19	 asthma	replace_scale	paper	0.0	3	1	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+For a patient with asthma, draft a compact admission-style summary.
+Include demographic information and relevant past medical history. Begin your answer with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 35 years  
+Medical Record Number: 123456789  
+Admitting Diagnosis: Acute Exacerbation of Asthma
+
+Past Medical History: 
+- Recurrent episodes of asthma since age 5
+- No significant past medical history of note
+- No known drug allergies
+- No history of cardiovascular disease, diabetes,"	"Gender: Female  
+Age: 35 years  
+Medical Record Number: 123456789  
+Admitting Diagnosis: Acute Exacerbation of Asthma
+
+Past Medical History: 
+- Recurrent episodes of asthma since age 5
+- No significant past medical history of note
+- No known drug allergies
+- No history of cardiovascular disease, diabetes,"	False
+asthma	asthma	11	Male	18	0	18	all	all	27	 Male	19	 asthma	replace_scale	paper	1.0	3	1	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+For a patient with asthma, draft a compact admission-style summary.
+Include demographic information and relevant past medical history. Begin your answer with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 42  
+Medical Record Number: 123456789  
+Date of Admission: 10/12/2023
+
+**Presenting Complaint:** Patient presents with acute exacerbation of chronic wheezing, shortness of breath, and cough.
+
+**History of Present Illness:** The patient reports worsening symptoms over the"	"Gender: Female  
+Age: 42  
+Medical Record Number: 123456789  
+Date of Admission: 10/12/2023
+
+**Presenting Complaint:** Patient presents with acute exacerbation of chronic wheezing, shortness of breath, and cough.
+
+**History of Present Illness:** The patient reports worsening symptoms over the"	False
+asthma	asthma	11	Male	18	0	18	all	all	27	 Male	19	 asthma	replace_scale	paper	2.0	3	1	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+For a patient with asthma, draft a compact admission-style summary.
+Include demographic information and relevant past medical history. Begin your answer with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 42  
+Medical Record Number: 12345678  
+Date of Admission: October 10, 2023  
+
+Chief Complaint: Severe Asthma Exacerbation with Coughing and Shortness of Breath
+
+Past Medical History:
+- Asthma (onset at age 10, well-controlled on Ipr"	"Gender: Female  
+Age: 42  
+Medical Record Number: 12345678  
+Date of Admission: October 10, 2023  
+
+Chief Complaint: Severe Asthma Exacerbation with Coughing and Shortness of Breath
+
+Past Medical History:
+- Asthma (onset at age 10, well-controlled on Ipr"	False
+asthma	asthma	11	Male	18	0	18	all	all	27	 Male	19	 asthma	replace_scale	paper	3.0	3	1	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+For a patient with asthma, draft a compact admission-style summary.
+Include demographic information and relevant past medical history. Begin your answer with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 45  
+Medical Record Number: 123456789  
+Date of Admission: October 10, 2023  
+Chief Complaint: Acute exacerbation of chronic obstructive pulmonary disease (COPD) and asthma.  
+
+Past Medical History:
+- Asthma since childhood, poorly controlled
+- Chronic bronchitis"	"Gender: Female  
+Age: 45  
+Medical Record Number: 123456789  
+Date of Admission: October 10, 2023  
+Chief Complaint: Acute exacerbation of chronic obstructive pulmonary disease (COPD) and asthma.  
+
+Past Medical History:
+- Asthma since childhood, poorly controlled
+- Chronic bronchitis"	False
+asthma	asthma	11	Male	18	0	18	all	all	27	 Male	19	 asthma	replace_scale	paper	4.0	3	1	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+For a patient with asthma, draft a compact admission-style summary.
+Include demographic information and relevant past medical history. Begin your answer with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 52  
+Medical Record Number: 1234567890  
+Admitting Diagnosis: Acute exacerbation of chronic obstructive pulmonary disease (COPD) with asthma component
+
+Relevant Past Medical History:
+- Asthma since childhood
+- Hypertension, treated with lisinopril 20 mg daily
+-"	"Gender: Female  
+Age: 52  
+Medical Record Number: 1234567890  
+Admitting Diagnosis: Acute exacerbation of chronic obstructive pulmonary disease (COPD) with asthma component
+
+Relevant Past Medical History:
+- Asthma since childhood
+- Hypertension, treated with lisinopril 20 mg daily
+-"	False
+asthma	asthma	11	Male	18	0	18	all	all	27	 Male	19	 asthma	replace_scale	paper	5.0	3	1	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+For a patient with asthma, draft a compact admission-style summary.
+Include demographic information and relevant past medical history. Begin your answer with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 52  
+Medical Record Number: 12345678  
+Admitting Diagnosis: Acute Exacerbation of Chronic Obstructive Pulmonary Disease (COPD) Complicating Asthma
+
+Past Medical History:
+- Asthma since childhood
+- Hypertension, controlled on Lisinopril 20 mg daily
+"	"Gender: Female  
+Age: 52  
+Medical Record Number: 12345678  
+Admitting Diagnosis: Acute Exacerbation of Chronic Obstructive Pulmonary Disease (COPD) Complicating Asthma
+
+Past Medical History:
+- Asthma since childhood
+- Hypertension, controlled on Lisinopril 20 mg daily"	False
+asthma	asthma	11	Male	18	0	18	all	all	27	 Male	19	 asthma	replace_scale	paper	0.0	3	2	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+For a patient with asthma, draft a compact admission-style summary.
+Include demographic information and relevant past medical history. Begin your answer with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 42  
+Admission Date: 10/5/2023  
+Chief Complaint: Severe asthma exacerbation with coughing and wheezing.
+
+Past Medical History:
+- Asthma (since childhood)
+- Allergies (pollen, dust mites)
+- Previous hospitalizations for asthma exacerbations (3 in the past year)
+-"	"Gender: Female  
+Age: 42  
+Admission Date: 10/5/2023  
+Chief Complaint: Severe asthma exacerbation with coughing and wheezing.
+
+Past Medical History:
+- Asthma (since childhood)
+- Allergies (pollen, dust mites)
+- Previous hospitalizations for asthma exacerbations (3 in the past year)
+-"	False
+asthma	asthma	11	Male	18	0	18	all	all	27	 Male	19	 asthma	replace_scale	paper	1.0	3	2	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+For a patient with asthma, draft a compact admission-style summary.
+Include demographic information and relevant past medical history. Begin your answer with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 45  
+Medical Record Number: 123456789  
+Date of Admission: October 10, 2023
+
+**Past Medical History:**
+- Asthma (history of severe exacerbations requiring hospitalization in 2021 and 2022)
+- Hypertension (on lisinop"	"Gender: Female  
+Age: 45  
+Medical Record Number: 123456789  
+Date of Admission: October 10, 2023
+
+**Past Medical History:**
+- Asthma (history of severe exacerbations requiring hospitalization in 2021 and 2022)
+- Hypertension (on lisinop"	False
+asthma	asthma	11	Male	18	0	18	all	all	27	 Male	19	 asthma	replace_scale	paper	2.0	3	2	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+For a patient with asthma, draft a compact admission-style summary.
+Include demographic information and relevant past medical history. Begin your answer with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 45  
+Medical Record Number: 123456789  
+Date of Admission: October 10, 2023
+
+Past Medical History: 
+- Asthma (moderate persistent, well-controlled on ICS/LABA)
+- Hypertension (on lisinopril 20 mg daily)
+- Seasonal"	"Gender: Female  
+Age: 45  
+Medical Record Number: 123456789  
+Date of Admission: October 10, 2023
+
+Past Medical History: 
+- Asthma (moderate persistent, well-controlled on ICS/LABA)
+- Hypertension (on lisinopril 20 mg daily)
+- Seasonal"	False
+asthma	asthma	11	Male	18	0	18	all	all	27	 Male	19	 asthma	replace_scale	paper	3.0	3	2	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+For a patient with asthma, draft a compact admission-style summary.
+Include demographic information and relevant past medical history. Begin your answer with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 45  
+Medical Record Number: 123456789  
+Date of Admission: October 10, 2023  
+
+Past Medical History: 
+- Asthma (moderate persistent; diagnosed at age 18)
+- Hypertension (on lisinopril 20mg daily)
+- Seasonal allergies"	"Gender: Female  
+Age: 45  
+Medical Record Number: 123456789  
+Date of Admission: October 10, 2023  
+
+Past Medical History: 
+- Asthma (moderate persistent; diagnosed at age 18)
+- Hypertension (on lisinopril 20mg daily)
+- Seasonal allergies"	False
+asthma	asthma	11	Male	18	0	18	all	all	27	 Male	19	 asthma	replace_scale	paper	4.0	3	2	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+For a patient with asthma, draft a compact admission-style summary.
+Include demographic information and relevant past medical history. Begin your answer with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 52 years  
+Medical Record Number: 123456789  
+Admission Date: October 10, 2023
+
+Past Medical History:
+- Asthma (history of severe exacerbations requiring hospitalization in 2021 and 2022)
+- Hypertension (onvalsartan "	"Gender: Female  
+Age: 52 years  
+Medical Record Number: 123456789  
+Admission Date: October 10, 2023
+
+Past Medical History:
+- Asthma (history of severe exacerbations requiring hospitalization in 2021 and 2022)
+- Hypertension (onvalsartan"	False
+asthma	asthma	11	Male	18	0	18	all	all	27	 Male	19	 asthma	replace_scale	paper	5.0	3	2	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+For a patient with asthma, draft a compact admission-style summary.
+Include demographic information and relevant past medical history. Begin your answer with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 52  
+Medical Record Number: 123456789  
+Admitting Diagnosis: Acute exacerbation of chronic obstructive pulmonary disease (COPD) with underlying asthma.  
+
+Past Medical History:
+- Asthma since age 10, poorly controlled despite use of inhaled corticosteroids and bronchodilators
+"	"Gender: Female  
+Age: 52  
+Medical Record Number: 123456789  
+Admitting Diagnosis: Acute exacerbation of chronic obstructive pulmonary disease (COPD) with underlying asthma.  
+
+Past Medical History:
+- Asthma since age 10, poorly controlled despite use of inhaled corticosteroids and bronchodilators"	False
+asthma	asthma	11	Male	18	0	18	all	all	27	 Male	19	 asthma	replace_scale	paper	0.0	3	3	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+For a patient with asthma, draft a compact admission-style summary.
+Include demographic information and relevant past medical history. Begin your answer with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 42  
+Medical Record Number: 123456  
+Admit Date: 10/5/2023
+
+Chief Complaint: Severe shortness of breath and coughing.
+
+Past Medical History:  
+- Asthma (long-standing, well-controlled on daily inhaled corticosteroids and LABA)  
+- Allerg"	"Gender: Female  
+Age: 42  
+Medical Record Number: 123456  
+Admit Date: 10/5/2023
+
+Chief Complaint: Severe shortness of breath and coughing.
+
+Past Medical History:  
+- Asthma (long-standing, well-controlled on daily inhaled corticosteroids and LABA)  
+- Allerg"	False
+asthma	asthma	11	Male	18	0	18	all	all	27	 Male	19	 asthma	replace_scale	paper	1.0	3	3	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+For a patient with asthma, draft a compact admission-style summary.
+Include demographic information and relevant past medical history. Begin your answer with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 42  
+Medical Record Number: 123456789  
+Admission Date: October 10, 2023
+
+### Past Medical History:
+- **Respiratory:** Asthma (since age 10), chronic obstructive pulmonary disease (COPD) diagnosed at age 35
+- **All"	"Gender: Female  
+Age: 42  
+Medical Record Number: 123456789  
+Admission Date: October 10, 2023
+
+### Past Medical History:
+- **Respiratory:** Asthma (since age 10), chronic obstructive pulmonary disease (COPD) diagnosed at age 35
+- **All"	False
+asthma	asthma	11	Male	18	0	18	all	all	27	 Male	19	 asthma	replace_scale	paper	2.0	3	3	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+For a patient with asthma, draft a compact admission-style summary.
+Include demographic information and relevant past medical history. Begin your answer with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 45  
+Medical Record Number: 12345678  
+Date of Admission: 05/10/2023  
+
+Past Medical History: 
+- Asthma (long-term, diagnosed at age 12)
+- Hypertension (treated with ACE inhibitors)
+- No known drug allergies
+
+Chief Complaint: 
+"	"Gender: Female  
+Age: 45  
+Medical Record Number: 12345678  
+Date of Admission: 05/10/2023  
+
+Past Medical History: 
+- Asthma (long-term, diagnosed at age 12)
+- Hypertension (treated with ACE inhibitors)
+- No known drug allergies
+
+Chief Complaint:"	False
+asthma	asthma	11	Male	18	0	18	all	all	27	 Male	19	 asthma	replace_scale	paper	3.0	3	3	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+For a patient with asthma, draft a compact admission-style summary.
+Include demographic information and relevant past medical history. Begin your answer with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 45  
+Medical Record Number: 123456789  
+Date of Admission: October 15, 2023  
+Admission Diagnosis: Acute Exacerbation of Chronic Asthma
+
+Past Medical History: 
+- Asthma (history of severe exacerbations requiring hospitalization in 2021 and 2"	"Gender: Female  
+Age: 45  
+Medical Record Number: 123456789  
+Date of Admission: October 15, 2023  
+Admission Diagnosis: Acute Exacerbation of Chronic Asthma
+
+Past Medical History: 
+- Asthma (history of severe exacerbations requiring hospitalization in 2021 and 2"	False
+asthma	asthma	11	Male	18	0	18	all	all	27	 Male	19	 asthma	replace_scale	paper	4.0	3	3	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+For a patient with asthma, draft a compact admission-style summary.
+Include demographic information and relevant past medical history. Begin your answer with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 45  
+Medical Record Number: 123456  
+Date of Admission: January 5, 2023  
+
+Chief Complaint: Acute exacerbation of chronic obstructive pulmonary disease (COPD) and asthma.
+
+Past Medical History:
+- Chronic Asthma since childhood
+- Hypertension (HTN) managed with lisin"	"Gender: Female  
+Age: 45  
+Medical Record Number: 123456  
+Date of Admission: January 5, 2023  
+
+Chief Complaint: Acute exacerbation of chronic obstructive pulmonary disease (COPD) and asthma.
+
+Past Medical History:
+- Chronic Asthma since childhood
+- Hypertension (HTN) managed with lisin"	False
+asthma	asthma	11	Male	18	0	18	all	all	27	 Male	19	 asthma	replace_scale	paper	5.0	3	3	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+For a patient with asthma, draft a compact admission-style summary.
+Include demographic information and relevant past medical history. Begin your answer with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 52  
+Medical Record Number: 123456789  
+Admission Date: 10/15/2023  
+
+### Relevant Past Medical History:
+- Chronic obstructive pulmonary disease (COPD)
+- Hypertension
+- Atrial fibrillation, treated with warfarin
+- Previous episodes of pneumonia"	"Gender: Female  
+Age: 52  
+Medical Record Number: 123456789  
+Admission Date: 10/15/2023  
+
+### Relevant Past Medical History:
+- Chronic obstructive pulmonary disease (COPD)
+- Hypertension
+- Atrial fibrillation, treated with warfarin
+- Previous episodes of pneumonia"	False
+asthma	asthma	11	Male	18	0	18	all	all	27	 Male	19	 asthma	replace_scale	paper	0.0	3	4	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+For a patient with asthma, draft a compact admission-style summary.
+Include demographic information and relevant past medical history. Begin your answer with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 42  
+Medical Record Number: 123456789  
+Date of Admission: March 15, 2023  
+
+**Chief Complaint:** Patient presents with severe dyspnea and wheezing.
+
+**Past Medical History:**
+- **Chronic Conditions:** Asthma (since age 8), seasonal allergies
+-"	"Gender: Female  
+Age: 42  
+Medical Record Number: 123456789  
+Date of Admission: March 15, 2023  
+
+**Chief Complaint:** Patient presents with severe dyspnea and wheezing.
+
+**Past Medical History:**
+- **Chronic Conditions:** Asthma (since age 8), seasonal allergies
+-"	False
+asthma	asthma	11	Male	18	0	18	all	all	27	 Male	19	 asthma	replace_scale	paper	1.0	3	4	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+For a patient with asthma, draft a compact admission-style summary.
+Include demographic information and relevant past medical history. Begin your answer with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 45  
+Medical Record Number: 123456789  
+Admitting Diagnosis: Acute Exacerbation of Chronic Asthma
+
+Past Medical History:  
+- Asthma (since childhood)  
+- Hypertension (on lisinopril 20mg/day)  
+- Seasonal allergies  
+- No known drug allergies"	"Gender: Female  
+Age: 45  
+Medical Record Number: 123456789  
+Admitting Diagnosis: Acute Exacerbation of Chronic Asthma
+
+Past Medical History:  
+- Asthma (since childhood)  
+- Hypertension (on lisinopril 20mg/day)  
+- Seasonal allergies  
+- No known drug allergies"	False
+asthma	asthma	11	Male	18	0	18	all	all	27	 Male	19	 asthma	replace_scale	paper	2.0	3	4	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+For a patient with asthma, draft a compact admission-style summary.
+Include demographic information and relevant past medical history. Begin your answer with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 45  
+Medical Record Number: 123456789  
+Date of Admission: March 10, 2023
+
+**Chief Complaint:** Patient presents with acute exacerbation of chronic obstructive pulmonary disease (COPD) with significant shortness of breath.
+
+**Past Medical History:**
+- Asthma (since childhood"	"Gender: Female  
+Age: 45  
+Medical Record Number: 123456789  
+Date of Admission: March 10, 2023
+
+**Chief Complaint:** Patient presents with acute exacerbation of chronic obstructive pulmonary disease (COPD) with significant shortness of breath.
+
+**Past Medical History:**
+- Asthma (since childhood"	False
+asthma	asthma	11	Male	18	0	18	all	all	27	 Male	19	 asthma	replace_scale	paper	3.0	3	4	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+For a patient with asthma, draft a compact admission-style summary.
+Include demographic information and relevant past medical history. Begin your answer with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 45 years  
+Medical Record Number: 123456789  
+Admitting Diagnosis: Acute Asthma Exacerbation
+
+Past Medical History: 
+- Asthma (history of moderate persistent asthma since age 10)
+- Hypertension (on lisinopril 20 mg daily)
+- Seasonal allergies
+
+"	"Gender: Female  
+Age: 45 years  
+Medical Record Number: 123456789  
+Admitting Diagnosis: Acute Asthma Exacerbation
+
+Past Medical History: 
+- Asthma (history of moderate persistent asthma since age 10)
+- Hypertension (on lisinopril 20 mg daily)
+- Seasonal allergies"	False
+asthma	asthma	11	Male	18	0	18	all	all	27	 Male	19	 asthma	replace_scale	paper	4.0	3	4	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+For a patient with asthma, draft a compact admission-style summary.
+Include demographic information and relevant past medical history. Begin your answer with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 52  
+Medical Record Number: 123456789  
+Admitting Diagnosis: Acute Exacerbation of Chronic Asthma
+
+Past Medical History:
+- Asthma (Chronic)
+- Hypertension (on lisinopril 20 mg daily)
+- No known drug allergies
+
+Present on Admission:
+Patient presents with"	"Gender: Female  
+Age: 52  
+Medical Record Number: 123456789  
+Admitting Diagnosis: Acute Exacerbation of Chronic Asthma
+
+Past Medical History:
+- Asthma (Chronic)
+- Hypertension (on lisinopril 20 mg daily)
+- No known drug allergies
+
+Present on Admission:
+Patient presents with"	False
+asthma	asthma	11	Male	18	0	18	all	all	27	 Male	19	 asthma	replace_scale	paper	5.0	3	4	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+For a patient with asthma, draft a compact admission-style summary.
+Include demographic information and relevant past medical history. Begin your answer with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 52  
+Medical Record Number: 123456  
+Admitting Diagnosis: Acute exacerbation of chronic obstructive pulmonary disease (COPD) with co-morbid asthma
+
+Past Medical History: 
+- Hypertension, managed on lisinopril 20 mg daily
+- Asthma, poorly controlled with intermittent use"	"Gender: Female  
+Age: 52  
+Medical Record Number: 123456  
+Admitting Diagnosis: Acute exacerbation of chronic obstructive pulmonary disease (COPD) with co-morbid asthma
+
+Past Medical History: 
+- Hypertension, managed on lisinopril 20 mg daily
+- Asthma, poorly controlled with intermittent use"	False
+asthma	asthma	11	Male	18	0	18	all	all	27	 Male	19	 asthma	replace_scale	paper	0.0	3	5	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+For a patient with asthma, draft a compact admission-style summary.
+Include demographic information and relevant past medical history. Begin your answer with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 42  
+Medical Record Number: 1234567  
+Date of Admission: 03/15/2023  
+
+**Presenting Complaint:** Acute exacerbation of chronic obstructive pulmonary disease (COPD) with associated asthma, predominantly characterized by wheezing, shortness of breath, and coughing.
+
+**"	"Gender: Female  
+Age: 42  
+Medical Record Number: 1234567  
+Date of Admission: 03/15/2023  
+
+**Presenting Complaint:** Acute exacerbation of chronic obstructive pulmonary disease (COPD) with associated asthma, predominantly characterized by wheezing, shortness of breath, and coughing.
+
+**"	False
+asthma	asthma	11	Male	18	0	18	all	all	27	 Male	19	 asthma	replace_scale	paper	1.0	3	5	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+For a patient with asthma, draft a compact admission-style summary.
+Include demographic information and relevant past medical history. Begin your answer with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 42  
+Medical Record Number: 123456789  
+Date of Admission: 10/1/2023  
+
+Past Medical History: 
+- Asthma since childhood (history of severe exacerbations)
+- Allergies: Pollen, dust mites, pet dander
+- No known drug allergies  
+Current"	"Gender: Female  
+Age: 42  
+Medical Record Number: 123456789  
+Date of Admission: 10/1/2023  
+
+Past Medical History: 
+- Asthma since childhood (history of severe exacerbations)
+- Allergies: Pollen, dust mites, pet dander
+- No known drug allergies  
+Current"	False
+asthma	asthma	11	Male	18	0	18	all	all	27	 Male	19	 asthma	replace_scale	paper	2.0	3	5	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+For a patient with asthma, draft a compact admission-style summary.
+Include demographic information and relevant past medical history. Begin your answer with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 45 years  
+Medical Record Number: 123456789  
+Date of Admission: 10/12/2023
+
+Presenting Complaint: Severe asthma exacerbation with difficulty breathing.
+
+History of Present Illness: The patient presents with a 3-day history of increasing cough productive of thick yellow sputum"	"Gender: Female  
+Age: 45 years  
+Medical Record Number: 123456789  
+Date of Admission: 10/12/2023
+
+Presenting Complaint: Severe asthma exacerbation with difficulty breathing.
+
+History of Present Illness: The patient presents with a 3-day history of increasing cough productive of thick yellow sputum"	False
+asthma	asthma	11	Male	18	0	18	all	all	27	 Male	19	 asthma	replace_scale	paper	3.0	3	5	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+For a patient with asthma, draft a compact admission-style summary.
+Include demographic information and relevant past medical history. Begin your answer with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 45 years  
+Medical Record Number: 123456789  
+Admission Date: February 13, 2024
+
+### Chief Complaint:
+Patient presents with acute exacerbation of chronic obstructive pulmonary disease (COPD) with significant wheezing and shortness of breath.
+
+### Past Medical History:
+- Ast"	"Gender: Female  
+Age: 45 years  
+Medical Record Number: 123456789  
+Admission Date: February 13, 2024
+
+### Chief Complaint:
+Patient presents with acute exacerbation of chronic obstructive pulmonary disease (COPD) with significant wheezing and shortness of breath.
+
+### Past Medical History:
+- Ast"	False
+asthma	asthma	11	Male	18	0	18	all	all	27	 Male	19	 asthma	replace_scale	paper	4.0	3	5	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+For a patient with asthma, draft a compact admission-style summary.
+Include demographic information and relevant past medical history. Begin your answer with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 52  
+Medical Record Number: 123456  
+Admit Date: March 15, 2023  
+
+Past Medical History: 
+- Asthma, poorly controlled, with frequent exacerbations
+- Hypertension (on lisinopril 20 mg daily)  
+- No known drug allergies
+
+Presenting Complaint"	"Gender: Female  
+Age: 52  
+Medical Record Number: 123456  
+Admit Date: March 15, 2023  
+
+Past Medical History: 
+- Asthma, poorly controlled, with frequent exacerbations
+- Hypertension (on lisinopril 20 mg daily)  
+- No known drug allergies
+
+Presenting Complaint"	False
+asthma	asthma	11	Male	18	0	18	all	all	27	 Male	19	 asthma	replace_scale	paper	5.0	3	5	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+For a patient with asthma, draft a compact admission-style summary.
+Include demographic information and relevant past medical history. Begin your answer with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 52  
+Medical Record Number: 123456789  
+Date of Admission: 10/20/2023  
+
+Past Medical History: 
+- Chronic obstructive pulmonary disease (COPD) 
+- Hypertension (HTN), controlled on ACE inhibitor 
+- Seasonal allergic rhinitis 
+-"	"Gender: Female  
+Age: 52  
+Medical Record Number: 123456789  
+Date of Admission: 10/20/2023  
+
+Past Medical History: 
+- Chronic obstructive pulmonary disease (COPD) 
+- Hypertension (HTN), controlled on ACE inhibitor 
+- Seasonal allergic rhinitis 
+-"	False
+asthma	asthma	11	Male	18	0	18	all	all	27	 Male	19	 asthma	replace_scale	paper	0.0	3	6	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+For a patient with asthma, draft a compact admission-style summary.
+Include demographic information and relevant past medical history. Begin your answer with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 45 years  
+Medical Record Number: 123456789  
+Date of Admission: October 10, 2023  
+
+Chief Complaint: Severe shortness of breath and wheezing.
+
+Past Medical History:
+- Asthma (controlled on ICS/LABA regimen)
+- Hypertension (on lisinop"	"Gender: Female  
+Age: 45 years  
+Medical Record Number: 123456789  
+Date of Admission: October 10, 2023  
+
+Chief Complaint: Severe shortness of breath and wheezing.
+
+Past Medical History:
+- Asthma (controlled on ICS/LABA regimen)
+- Hypertension (on lisinop"	False
+asthma	asthma	11	Male	18	0	18	all	all	27	 Male	19	 asthma	replace_scale	paper	1.0	3	6	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+For a patient with asthma, draft a compact admission-style summary.
+Include demographic information and relevant past medical history. Begin your answer with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 42  
+Medical Record Number: 123456789  
+Date of Admission: October 5, 2023  
+
+Chief Complaint: Acute exacerbation of chronic obstructive pulmonary disease (COPD) and asthma.
+
+Past Medical History:
+- Asthma since childhood (moderate persistent; poorly controlled)
+- Seasonal"	"Gender: Female  
+Age: 42  
+Medical Record Number: 123456789  
+Date of Admission: October 5, 2023  
+
+Chief Complaint: Acute exacerbation of chronic obstructive pulmonary disease (COPD) and asthma.
+
+Past Medical History:
+- Asthma since childhood (moderate persistent; poorly controlled)
+- Seasonal"	False
+asthma	asthma	11	Male	18	0	18	all	all	27	 Male	19	 asthma	replace_scale	paper	2.0	3	6	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+For a patient with asthma, draft a compact admission-style summary.
+Include demographic information and relevant past medical history. Begin your answer with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 45  
+Medical Record Number: 123456789  
+Date of Admission: 01/10/2023
+
+**Chief Complaint:** Patient presents with acute exacerbation of chronic obstructive pulmonary disease (COPD) and asthma.
+
+**Past Medical History:**
+- Asthma since childhood (on long-term"	"Gender: Female  
+Age: 45  
+Medical Record Number: 123456789  
+Date of Admission: 01/10/2023
+
+**Chief Complaint:** Patient presents with acute exacerbation of chronic obstructive pulmonary disease (COPD) and asthma.
+
+**Past Medical History:**
+- Asthma since childhood (on long-term"	False
+asthma	asthma	11	Male	18	0	18	all	all	27	 Male	19	 asthma	replace_scale	paper	3.0	3	6	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+For a patient with asthma, draft a compact admission-style summary.
+Include demographic information and relevant past medical history. Begin your answer with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 35  
+Medical Record Number: 12345678  
+Date of Admission: 02/15/2023  
+
+Past Medical History: 
+- Chronic obstructive pulmonary disease (COPD) 
+- Asthma since childhood, well-controlled on intermittent use of albuterol and low-dose inhaled cort"	"Gender: Female  
+Age: 35  
+Medical Record Number: 12345678  
+Date of Admission: 02/15/2023  
+
+Past Medical History: 
+- Chronic obstructive pulmonary disease (COPD) 
+- Asthma since childhood, well-controlled on intermittent use of albuterol and low-dose inhaled cort"	False
+asthma	asthma	11	Male	18	0	18	all	all	27	 Male	19	 asthma	replace_scale	paper	4.0	3	6	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+For a patient with asthma, draft a compact admission-style summary.
+Include demographic information and relevant past medical history. Begin your answer with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 45  
+Medical Record Number: 123456789  
+Date of Admission: 10/15/2023  
+
+Past Medical History: 
+- Asthma (history of multiple hospitalizations and ER visits for exacerbations)
+- Hypertension (on lisinopril 20 mg daily)
+- Season"	"Gender: Female  
+Age: 45  
+Medical Record Number: 123456789  
+Date of Admission: 10/15/2023  
+
+Past Medical History: 
+- Asthma (history of multiple hospitalizations and ER visits for exacerbations)
+- Hypertension (on lisinopril 20 mg daily)
+- Season"	False
+asthma	asthma	11	Male	18	0	18	all	all	27	 Male	19	 asthma	replace_scale	paper	5.0	3	6	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+For a patient with asthma, draft a compact admission-style summary.
+Include demographic information and relevant past medical history. Begin your answer with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 45  
+Medical Record Number: 123456789  
+Date of Admission: October 10, 2023
+
+Chief Complaint: Acute exacerbation of chronic obstructive pulmonary disease (COPD); worsening shortness of breath over the past 24 hours.
+
+Past Medical History:
+- Asthma since childhood"	"Gender: Female  
+Age: 45  
+Medical Record Number: 123456789  
+Date of Admission: October 10, 2023
+
+Chief Complaint: Acute exacerbation of chronic obstructive pulmonary disease (COPD); worsening shortness of breath over the past 24 hours.
+
+Past Medical History:
+- Asthma since childhood"	False
+asthma	asthma	11	Male	18	0	18	all	all	27	 Male	19	 asthma	replace_scale	paper	0.0	4	0	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+For a patient with asthma, draft a compact admission-style summary.
+Include demographic information and relevant past medical history. Begin your answer with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 42  
+Medical Record Number: 123456789  
+Date of Admission: 10/14/2023
+
+**Chief Complaint:** Acute exacerbation of asthma.
+
+**Past Medical History:**
+- Asthma (onset at age 5, intermittent treatment)
+- Hypertension (controlled with lis"	"Gender: Female  
+Age: 42  
+Medical Record Number: 123456789  
+Date of Admission: 10/14/2023
+
+**Chief Complaint:** Acute exacerbation of asthma.
+
+**Past Medical History:**
+- Asthma (onset at age 5, intermittent treatment)
+- Hypertension (controlled with lis"	False
+asthma	asthma	11	Male	18	0	18	all	all	27	 Male	19	 asthma	replace_scale	paper	1.0	4	0	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+For a patient with asthma, draft a compact admission-style summary.
+Include demographic information and relevant past medical history. Begin your answer with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 42  
+Medical Record Number: 123456789  
+Date of Admission: October 10, 2023  
+
+Past Medical History: 
+- Asthma (diagnosed at age 5, well-controlled on oral albuterol and inhaled budesonide)
+- Seasonal allergies
+- No"	"Gender: Female  
+Age: 42  
+Medical Record Number: 123456789  
+Date of Admission: October 10, 2023  
+
+Past Medical History: 
+- Asthma (diagnosed at age 5, well-controlled on oral albuterol and inhaled budesonide)
+- Seasonal allergies
+- No"	False
+asthma	asthma	11	Male	18	0	18	all	all	27	 Male	19	 asthma	replace_scale	paper	2.0	4	0	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+For a patient with asthma, draft a compact admission-style summary.
+Include demographic information and relevant past medical history. Begin your answer with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 42  
+Medical Record Number: 123456789  
+Date of Admission: October 5, 2023  
+
+Chief Complaint: Severe shortness of breath and wheezing.
+
+History of Present Illness: The patient presents with a 2-day history of increasing shortness of breath, cough, and wheez"	"Gender: Female  
+Age: 42  
+Medical Record Number: 123456789  
+Date of Admission: October 5, 2023  
+
+Chief Complaint: Severe shortness of breath and wheezing.
+
+History of Present Illness: The patient presents with a 2-day history of increasing shortness of breath, cough, and wheez"	False
+asthma	asthma	11	Male	18	0	18	all	all	27	 Male	19	 asthma	replace_scale	paper	3.0	4	0	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+For a patient with asthma, draft a compact admission-style summary.
+Include demographic information and relevant past medical history. Begin your answer with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 45  
+Medical Record Number: 123456789  
+Date of Admission: 10/12/2023
+
+Past Medical History:  
+- Asthma (long-term management with inhaled corticosteroids and rescue inhaler)  
+- Hypertension (onvalsartan)  
+- Seasonal"	"Gender: Female  
+Age: 45  
+Medical Record Number: 123456789  
+Date of Admission: 10/12/2023
+
+Past Medical History:  
+- Asthma (long-term management with inhaled corticosteroids and rescue inhaler)  
+- Hypertension (onvalsartan)  
+- Seasonal"	False
+asthma	asthma	11	Male	18	0	18	all	all	27	 Male	19	 asthma	replace_scale	paper	4.0	4	0	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+For a patient with asthma, draft a compact admission-style summary.
+Include demographic information and relevant past medical history. Begin your answer with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 42  
+Medical Record Number: 123456789  
+Admission Date: [Date]  
+
+Past Medical History: 
+- Chronic obstructive pulmonary disease (COPD)  
+- Hypertension, on Lisinopril 20mg daily  
+- Asthma since childhood, well-controlled on inhaled corticoster"	"Gender: Female  
+Age: 42  
+Medical Record Number: 123456789  
+Admission Date: [Date]  
+
+Past Medical History: 
+- Chronic obstructive pulmonary disease (COPD)  
+- Hypertension, on Lisinopril 20mg daily  
+- Asthma since childhood, well-controlled on inhaled corticoster"	False
+asthma	asthma	11	Male	18	0	18	all	all	27	 Male	19	 asthma	replace_scale	paper	5.0	4	0	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+For a patient with asthma, draft a compact admission-style summary.
+Include demographic information and relevant past medical history. Begin your answer with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 52  
+Medical Record Number: 123456  
+Admitting Diagnosis: Acute Exacerbation of Chronic Obstructive Pulmonary Disease (COPD) with Compensated Heart Failure
+
+Past Medical History:
+- Hypertension, controlled with lisinopril
+- Type 2 Diabetes Mellitus, managed with metform"	"Gender: Female  
+Age: 52  
+Medical Record Number: 123456  
+Admitting Diagnosis: Acute Exacerbation of Chronic Obstructive Pulmonary Disease (COPD) with Compensated Heart Failure
+
+Past Medical History:
+- Hypertension, controlled with lisinopril
+- Type 2 Diabetes Mellitus, managed with metform"	False
+asthma	asthma	11	Male	18	0	18	all	all	27	 Male	19	 asthma	replace_scale	paper	0.0	4	1	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+For a patient with asthma, draft a compact admission-style summary.
+Include demographic information and relevant past medical history. Begin your answer with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 42 years  
+Medical Record Number: 123456789  
+Date of Admission: March 15, 2023  
+Primary Diagnosis: Exacerbation of Asthma
+
+Past Medical History: 
+- Chronic Asthma (since age 6)
+- Hypertension (managed with lisinopril)
+- Season"	"Gender: Female  
+Age: 42 years  
+Medical Record Number: 123456789  
+Date of Admission: March 15, 2023  
+Primary Diagnosis: Exacerbation of Asthma
+
+Past Medical History: 
+- Chronic Asthma (since age 6)
+- Hypertension (managed with lisinopril)
+- Season"	False
+asthma	asthma	11	Male	18	0	18	all	all	27	 Male	19	 asthma	replace_scale	paper	1.0	4	1	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+For a patient with asthma, draft a compact admission-style summary.
+Include demographic information and relevant past medical history. Begin your answer with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 45  
+Medical Record Number: 123456789  
+Date of Admission: October 5, 2023
+
+**Past Medical History:**
+- Asthma (moderate persistent) since age 10
+- Hypertension, controlled on lisinopril 20 mg daily
+- No significant past"	"Gender: Female  
+Age: 45  
+Medical Record Number: 123456789  
+Date of Admission: October 5, 2023
+
+**Past Medical History:**
+- Asthma (moderate persistent) since age 10
+- Hypertension, controlled on lisinopril 20 mg daily
+- No significant past"	False
+asthma	asthma	11	Male	18	0	18	all	all	27	 Male	19	 asthma	replace_scale	paper	2.0	4	1	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+For a patient with asthma, draft a compact admission-style summary.
+Include demographic information and relevant past medical history. Begin your answer with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 42  
+Medical Record Number: 123456  
+Admitting Diagnosis: Acute Exacerbation of Chronic Asthma
+
+Past Medical History:
+- Controlled asthma for 20 years (history of moderate persistent asthma)
+- Hypertension (on metoprolol 25 mg daily)
+- No known drug allergies
+- History"	"Gender: Female  
+Age: 42  
+Medical Record Number: 123456  
+Admitting Diagnosis: Acute Exacerbation of Chronic Asthma
+
+Past Medical History:
+- Controlled asthma for 20 years (history of moderate persistent asthma)
+- Hypertension (on metoprolol 25 mg daily)
+- No known drug allergies
+- History"	False
+asthma	asthma	11	Male	18	0	18	all	all	27	 Male	19	 asthma	replace_scale	paper	3.0	4	1	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+For a patient with asthma, draft a compact admission-style summary.
+Include demographic information and relevant past medical history. Begin your answer with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 45  
+Medical Record Number: 123456789  
+Admitting Diagnosis: Acute Asthma Exacerbation
+
+Past Medical History:  
+- Asthma (since childhood)  
+- Hypertension (on lisinopril 20 mg daily)  
+- Seasonal allergies  
+- No known drug allergies
+
+Social"	"Gender: Female  
+Age: 45  
+Medical Record Number: 123456789  
+Admitting Diagnosis: Acute Asthma Exacerbation
+
+Past Medical History:  
+- Asthma (since childhood)  
+- Hypertension (on lisinopril 20 mg daily)  
+- Seasonal allergies  
+- No known drug allergies
+
+Social"	False
+asthma	asthma	11	Male	18	0	18	all	all	27	 Male	19	 asthma	replace_scale	paper	4.0	4	1	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+For a patient with asthma, draft a compact admission-style summary.
+Include demographic information and relevant past medical history. Begin your answer with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 45  
+Medical Record Number: 123456789  
+Admitting Diagnosis: Acute Asthma Exacerbation
+
+Past Medical History:
+- Asthma (long-term, well-controlled on inhaled corticosteroids and albuterol as needed)
+- Hypertension, treated with ACE inhibitor
+- Gastroes"	"Gender: Female  
+Age: 45  
+Medical Record Number: 123456789  
+Admitting Diagnosis: Acute Asthma Exacerbation
+
+Past Medical History:
+- Asthma (long-term, well-controlled on inhaled corticosteroids and albuterol as needed)
+- Hypertension, treated with ACE inhibitor
+- Gastroes"	False
+asthma	asthma	11	Male	18	0	18	all	all	27	 Male	19	 asthma	replace_scale	paper	5.0	4	1	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+For a patient with asthma, draft a compact admission-style summary.
+Include demographic information and relevant past medical history. Begin your answer with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 45  
+Medical Record Number: 1234567  
+Date of Admission: 06/15/2023  
+
+Past Medical History: 
+- Asthma (history of severe exacerbations requiring hospitalization in 2021 and 2022)
+- Hypertension (on lisinopril "	"Gender: Female  
+Age: 45  
+Medical Record Number: 1234567  
+Date of Admission: 06/15/2023  
+
+Past Medical History: 
+- Asthma (history of severe exacerbations requiring hospitalization in 2021 and 2022)
+- Hypertension (on lisinopril"	False
+asthma	asthma	11	Male	18	0	18	all	all	27	 Male	19	 asthma	replace_scale	paper	0.0	4	2	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+For a patient with asthma, draft a compact admission-style summary.
+Include demographic information and relevant past medical history. Begin your answer with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 42 years  
+Medical Record Number: 12345678  
+Date of Admission: October 10, 2023
+
+Past Medical History: 
+- Asthma (long-standing, well-controlled on inhaled corticosteroids and rescue albuterol)
+- Seasonal allergies
+- No significant past surgical history
+"	"Gender: Female  
+Age: 42 years  
+Medical Record Number: 12345678  
+Date of Admission: October 10, 2023
+
+Past Medical History: 
+- Asthma (long-standing, well-controlled on inhaled corticosteroids and rescue albuterol)
+- Seasonal allergies
+- No significant past surgical history"	False
+asthma	asthma	11	Male	18	0	18	all	all	27	 Male	19	 asthma	replace_scale	paper	1.0	4	2	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+For a patient with asthma, draft a compact admission-style summary.
+Include demographic information and relevant past medical history. Begin your answer with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 45 years  
+Medical Record Number: 123456789  
+Date of Admission: October 10, 2023
+
+**Chief Complaint:** Severe shortness of breath and wheezing.
+
+**Past Medical History:**
+- Controlled asthma (history of moderate persistent asthma since childhood)
+- Hypertension, treated"	"Gender: Female  
+Age: 45 years  
+Medical Record Number: 123456789  
+Date of Admission: October 10, 2023
+
+**Chief Complaint:** Severe shortness of breath and wheezing.
+
+**Past Medical History:**
+- Controlled asthma (history of moderate persistent asthma since childhood)
+- Hypertension, treated"	False
+asthma	asthma	11	Male	18	0	18	all	all	27	 Male	19	 asthma	replace_scale	paper	2.0	4	2	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+For a patient with asthma, draft a compact admission-style summary.
+Include demographic information and relevant past medical history. Begin your answer with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 45  
+Medical Record Number: 12345678  
+Date of Admission: 01/05/2023  
+
+Presenting Complaint: Acute exacerbation of chronic obstructive pulmonary disease (COPD) with severe shortness of breath.
+
+Past Medical History: 
+- Asthma since childhood
+- Hypert"	"Gender: Female  
+Age: 45  
+Medical Record Number: 12345678  
+Date of Admission: 01/05/2023  
+
+Presenting Complaint: Acute exacerbation of chronic obstructive pulmonary disease (COPD) with severe shortness of breath.
+
+Past Medical History: 
+- Asthma since childhood
+- Hypert"	False
+asthma	asthma	11	Male	18	0	18	all	all	27	 Male	19	 asthma	replace_scale	paper	3.0	4	2	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+For a patient with asthma, draft a compact admission-style summary.
+Include demographic information and relevant past medical history. Begin your answer with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 45 years  
+Medical Record Number: 12345678  
+Admitting Diagnosis: Acute Exacerbation of Chronic Asthma
+
+Past Medical History:
+- Asthma (since age 5)
+- Hypertension (on lisinopril 20 mg daily)  
+- Seasonal allergies
+
+Social History:
+- Non"	"Gender: Female  
+Age: 45 years  
+Medical Record Number: 12345678  
+Admitting Diagnosis: Acute Exacerbation of Chronic Asthma
+
+Past Medical History:
+- Asthma (since age 5)
+- Hypertension (on lisinopril 20 mg daily)  
+- Seasonal allergies
+
+Social History:
+- Non"	False
+asthma	asthma	11	Male	18	0	18	all	all	27	 Male	19	 asthma	replace_scale	paper	4.0	4	2	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+For a patient with asthma, draft a compact admission-style summary.
+Include demographic information and relevant past medical history. Begin your answer with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 45 years  
+Medical Record Number: 123456789  
+Date of Admission: 10/15/2023
+
+Chief Complaint: Severe cough and shortness of breath for 48 hours.
+
+Past Medical History:
+- Asthma (since age 10)
+- Hypertension (managed on"	"Gender: Female  
+Age: 45 years  
+Medical Record Number: 123456789  
+Date of Admission: 10/15/2023
+
+Chief Complaint: Severe cough and shortness of breath for 48 hours.
+
+Past Medical History:
+- Asthma (since age 10)
+- Hypertension (managed on"	False
+asthma	asthma	11	Male	18	0	18	all	all	27	 Male	19	 asthma	replace_scale	paper	5.0	4	2	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+For a patient with asthma, draft a compact admission-style summary.
+Include demographic information and relevant past medical history. Begin your answer with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 52  
+Medical Record Number: 123456  
+Date of Admission: March 15, 2023
+
+**Past Medical History:**
+- Chronic obstructive pulmonary disease (COPD) for 10 years, well-controlled on daily inhaled corticosteroids (ICS) and long-acting beta agonist"	"Gender: Female  
+Age: 52  
+Medical Record Number: 123456  
+Date of Admission: March 15, 2023
+
+**Past Medical History:**
+- Chronic obstructive pulmonary disease (COPD) for 10 years, well-controlled on daily inhaled corticosteroids (ICS) and long-acting beta agonist"	False
+asthma	asthma	11	Male	18	0	18	all	all	27	 Male	19	 asthma	replace_scale	paper	0.0	4	3	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+For a patient with asthma, draft a compact admission-style summary.
+Include demographic information and relevant past medical history. Begin your answer with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 35 years  
+Medical Record Number: 123456  
+Date of Admission: March 10, 2023  
+
+Past Medical History: 
+- Asthma (history of moderate persistent asthma for 10 years, well-controlled on inhaled corticosteroids and long-acting beta agonist)
+- Seasonal allergies
+"	"Gender: Female  
+Age: 35 years  
+Medical Record Number: 123456  
+Date of Admission: March 10, 2023  
+
+Past Medical History: 
+- Asthma (history of moderate persistent asthma for 10 years, well-controlled on inhaled corticosteroids and long-acting beta agonist)
+- Seasonal allergies"	False
+asthma	asthma	11	Male	18	0	18	all	all	27	 Male	19	 asthma	replace_scale	paper	1.0	4	3	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+For a patient with asthma, draft a compact admission-style summary.
+Include demographic information and relevant past medical history. Begin your answer with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 42 years  
+Medical Record Number: 123456789  
+Date of Admission: 10/15/2023  
+Primary Diagnosis: Acute Asthma Exacerbation
+
+**Past Medical History:**  
+- Asthma (onset at age 5) with moderate-to-severe intermittent exacerbations  
+-"	"Gender: Female  
+Age: 42 years  
+Medical Record Number: 123456789  
+Date of Admission: 10/15/2023  
+Primary Diagnosis: Acute Asthma Exacerbation
+
+**Past Medical History:**  
+- Asthma (onset at age 5) with moderate-to-severe intermittent exacerbations  
+-"	False
+asthma	asthma	11	Male	18	0	18	all	all	27	 Male	19	 asthma	replace_scale	paper	2.0	4	3	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+For a patient with asthma, draft a compact admission-style summary.
+Include demographic information and relevant past medical history. Begin your answer with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 45  
+Medical Record Number: 123456789  
+Admission Date: 10/15/2023  
+
+Past Medical History: 
+- Asthma (since age 5)
+- Hypertension (on lisinopril 20mg daily)
+- Seasonal allergies
+
+Chief Complaint: Se"	"Gender: Female  
+Age: 45  
+Medical Record Number: 123456789  
+Admission Date: 10/15/2023  
+
+Past Medical History: 
+- Asthma (since age 5)
+- Hypertension (on lisinopril 20mg daily)
+- Seasonal allergies
+
+Chief Complaint: Se"	False
+asthma	asthma	11	Male	18	0	18	all	all	27	 Male	19	 asthma	replace_scale	paper	3.0	4	3	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+For a patient with asthma, draft a compact admission-style summary.
+Include demographic information and relevant past medical history. Begin your answer with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 45  
+Medical Record Number: 123456789  
+Date of Admission: October 10, 2023
+
+Presenting Complaint: Patient presents with acute exacerbation of chronic obstructive pulmonary disease (COPD) attributed to asthma, characterized by severe dyspnea, cough, and wheezing.
+
+Past"	"Gender: Female  
+Age: 45  
+Medical Record Number: 123456789  
+Date of Admission: October 10, 2023
+
+Presenting Complaint: Patient presents with acute exacerbation of chronic obstructive pulmonary disease (COPD) attributed to asthma, characterized by severe dyspnea, cough, and wheezing.
+
+Past"	False
+asthma	asthma	11	Male	18	0	18	all	all	27	 Male	19	 asthma	replace_scale	paper	4.0	4	3	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+For a patient with asthma, draft a compact admission-style summary.
+Include demographic information and relevant past medical history. Begin your answer with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 45  
+Medical Record Number: 12345678  
+Date of Admission: March 10, 2023  
+
+Past Medical History:
+- Asthma (Severe, uncontrolled)
+- Hypertension (Untreated)
+- Previous hospitalization for asthma exacerbation in 2021
+
+Presenting Complaint:"	"Gender: Female  
+Age: 45  
+Medical Record Number: 12345678  
+Date of Admission: March 10, 2023  
+
+Past Medical History:
+- Asthma (Severe, uncontrolled)
+- Hypertension (Untreated)
+- Previous hospitalization for asthma exacerbation in 2021
+
+Presenting Complaint:"	False
+asthma	asthma	11	Male	18	0	18	all	all	27	 Male	19	 asthma	replace_scale	paper	5.0	4	3	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+For a patient with asthma, draft a compact admission-style summary.
+Include demographic information and relevant past medical history. Begin your answer with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 52  
+Medical Record Number: 123456789  
+Date of Admission: October 10, 2023  
+
+Chief Complaint: Severe shortness of breath and coughing.
+
+Past Medical History: 
+- Chronic obstructive pulmonary disease (COPD) for 10 years
+- Asthma since childhood"	"Gender: Female  
+Age: 52  
+Medical Record Number: 123456789  
+Date of Admission: October 10, 2023  
+
+Chief Complaint: Severe shortness of breath and coughing.
+
+Past Medical History: 
+- Chronic obstructive pulmonary disease (COPD) for 10 years
+- Asthma since childhood"	False
+asthma	asthma	11	Male	18	0	18	all	all	27	 Male	19	 asthma	replace_scale	paper	0.0	4	4	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+For a patient with asthma, draft a compact admission-style summary.
+Include demographic information and relevant past medical history. Begin your answer with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 42  
+Medical Record Number: 123456789  
+Date of Admission: 05/10/2023  
+
+History of Present Illness:  
+The patient is a 42-year-old female with a known history of severe intermittent asthma. She was admitted to the hospital today after an acute exacerbation characterized"	"Gender: Female  
+Age: 42  
+Medical Record Number: 123456789  
+Date of Admission: 05/10/2023  
+
+History of Present Illness:  
+The patient is a 42-year-old female with a known history of severe intermittent asthma. She was admitted to the hospital today after an acute exacerbation characterized"	False
+asthma	asthma	11	Male	18	0	18	all	all	27	 Male	19	 asthma	replace_scale	paper	1.0	4	4	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+For a patient with asthma, draft a compact admission-style summary.
+Include demographic information and relevant past medical history. Begin your answer with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 42  
+Medical Record Number: 123456789  
+Admitting Diagnosis: Acute Exacerbation of Asthma  
+Past Medical History: 
+- Chronic asthma since age 10, well-controlled on daily inhaled corticosteroids (ICS) and as-needed short-acting beta agonist (SABA)
+-"	"Gender: Female  
+Age: 42  
+Medical Record Number: 123456789  
+Admitting Diagnosis: Acute Exacerbation of Asthma  
+Past Medical History: 
+- Chronic asthma since age 10, well-controlled on daily inhaled corticosteroids (ICS) and as-needed short-acting beta agonist (SABA)
+-"	False
+asthma	asthma	11	Male	18	0	18	all	all	27	 Male	19	 asthma	replace_scale	paper	2.0	4	4	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+For a patient with asthma, draft a compact admission-style summary.
+Include demographic information and relevant past medical history. Begin your answer with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 45  
+Medical Record Number: 1234567  
+Admission Date: 08/15/2023  
+
+Past Medical History: 
+- Asthma since age 5
+- Hypertension, controlled on lisinopril (20 mg daily)
+- Allergies to penicillin and aspirin"	"Gender: Female  
+Age: 45  
+Medical Record Number: 1234567  
+Admission Date: 08/15/2023  
+
+Past Medical History: 
+- Asthma since age 5
+- Hypertension, controlled on lisinopril (20 mg daily)
+- Allergies to penicillin and aspirin"	False
+asthma	asthma	11	Male	18	0	18	all	all	27	 Male	19	 asthma	replace_scale	paper	3.0	4	4	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+For a patient with asthma, draft a compact admission-style summary.
+Include demographic information and relevant past medical history. Begin your answer with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 52  
+Medical Record Number: 1234567  
+Date of Admission: October 10, 2023  
+
+Past Medical History: 
+- Chronic obstructive pulmonary disease (COPD)
+- Hypertension
+- Controlled diabetes mellitus type 2
+- Previous history of asthma since childhood
+
+Presenting Complaint:"	"Gender: Female  
+Age: 52  
+Medical Record Number: 1234567  
+Date of Admission: October 10, 2023  
+
+Past Medical History: 
+- Chronic obstructive pulmonary disease (COPD)
+- Hypertension
+- Controlled diabetes mellitus type 2
+- Previous history of asthma since childhood
+
+Presenting Complaint:"	False
+asthma	asthma	11	Male	18	0	18	all	all	27	 Male	19	 asthma	replace_scale	paper	4.0	4	4	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+For a patient with asthma, draft a compact admission-style summary.
+Include demographic information and relevant past medical history. Begin your answer with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 56  
+Medical Record Number: 1234567  
+Admission Date: 05/10/2023
+
+Past Medical History:
+- Chronic obstructive pulmonary disease (COPD)
+- Hypertension
+- Atrial fibrillation on warfarin therapy
+- Type 2 diabetes mellitus
+
+Chief Complaint"	"Gender: Female  
+Age: 56  
+Medical Record Number: 1234567  
+Admission Date: 05/10/2023
+
+Past Medical History:
+- Chronic obstructive pulmonary disease (COPD)
+- Hypertension
+- Atrial fibrillation on warfarin therapy
+- Type 2 diabetes mellitus
+
+Chief Complaint"	False
+asthma	asthma	11	Male	18	0	18	all	all	27	 Male	19	 asthma	replace_scale	paper	5.0	4	4	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+For a patient with asthma, draft a compact admission-style summary.
+Include demographic information and relevant past medical history. Begin your answer with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 52  
+Medical Record Number: 123456789  
+Date of Admission: 02/15/2023
+
+Diagnosis: Acute Exacerbation of Chronic Bronchitis
+
+Past Medical History:
+- Asthma (severe, poorly controlled; multiple hospitalizations for exacerbations)
+- Hypertension"	"Gender: Female  
+Age: 52  
+Medical Record Number: 123456789  
+Date of Admission: 02/15/2023
+
+Diagnosis: Acute Exacerbation of Chronic Bronchitis
+
+Past Medical History:
+- Asthma (severe, poorly controlled; multiple hospitalizations for exacerbations)
+- Hypertension"	False
+asthma	asthma	11	Male	18	0	18	all	all	27	 Male	19	 asthma	replace_scale	paper	0.0	4	5	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+For a patient with asthma, draft a compact admission-style summary.
+Include demographic information and relevant past medical history. Begin your answer with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 35  
+Medical Record Number: 123456789  
+Admitting Diagnosis: Acute Exacerbation of Asthma
+
+Past Medical History:
+- Diagnosed with asthma at age 5; poorly controlled since diagnosis
+- Previous hospitalizations for asthma exacerbations
+- No known drug allergies
+- No history of cardiovascular disease"	"Gender: Female  
+Age: 35  
+Medical Record Number: 123456789  
+Admitting Diagnosis: Acute Exacerbation of Asthma
+
+Past Medical History:
+- Diagnosed with asthma at age 5; poorly controlled since diagnosis
+- Previous hospitalizations for asthma exacerbations
+- No known drug allergies
+- No history of cardiovascular disease"	False
+asthma	asthma	11	Male	18	0	18	all	all	27	 Male	19	 asthma	replace_scale	paper	1.0	4	5	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+For a patient with asthma, draft a compact admission-style summary.
+Include demographic information and relevant past medical history. Begin your answer with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 45  
+Medical Record Number: 123456789  
+Date of Admission: 01/02/2024  
+
+Diagnosis: Acute Exacerbation of Asthma
+
+Past Medical History:
+- Asthma (long-standing, poorly controlled) – Patient has had multiple hospital admissions for asthma in the past "	"Gender: Female  
+Age: 45  
+Medical Record Number: 123456789  
+Date of Admission: 01/02/2024  
+
+Diagnosis: Acute Exacerbation of Asthma
+
+Past Medical History:
+- Asthma (long-standing, poorly controlled) – Patient has had multiple hospital admissions for asthma in the past"	False
+asthma	asthma	11	Male	18	0	18	all	all	27	 Male	19	 asthma	replace_scale	paper	2.0	4	5	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+For a patient with asthma, draft a compact admission-style summary.
+Include demographic information and relevant past medical history. Begin your answer with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 42  
+Medical Record Number: 123456789  
+Admission Date: October 10, 2023  
+
+Past Medical History: 
+- Controlled asthma (history of intermittent shortness of breath and wheezing)
+- Hypertension, well-controlled on medication
+- No known drug allergies
+
+Presenting Complaint"	"Gender: Female  
+Age: 42  
+Medical Record Number: 123456789  
+Admission Date: October 10, 2023  
+
+Past Medical History: 
+- Controlled asthma (history of intermittent shortness of breath and wheezing)
+- Hypertension, well-controlled on medication
+- No known drug allergies
+
+Presenting Complaint"	False
+asthma	asthma	11	Male	18	0	18	all	all	27	 Male	19	 asthma	replace_scale	paper	3.0	4	5	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+For a patient with asthma, draft a compact admission-style summary.
+Include demographic information and relevant past medical history. Begin your answer with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 45  
+Medical Record Number: 12345678  
+Date of Admission: 2023-10-10
+
+Chief Complaint: Acute exacerbation of chronic obstructive pulmonary disease (COPD) and asthma.
+
+History of Present Illness: Patient presents with a 5-day history of increasing shortness of"	"Gender: Female  
+Age: 45  
+Medical Record Number: 12345678  
+Date of Admission: 2023-10-10
+
+Chief Complaint: Acute exacerbation of chronic obstructive pulmonary disease (COPD) and asthma.
+
+History of Present Illness: Patient presents with a 5-day history of increasing shortness of"	False
+asthma	asthma	11	Male	18	0	18	all	all	27	 Male	19	 asthma	replace_scale	paper	4.0	4	5	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+For a patient with asthma, draft a compact admission-style summary.
+Include demographic information and relevant past medical history. Begin your answer with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 52  
+Medical Record Number: 123456789  
+Admission Date: 10/12/2023  
+
+**Past Medical History:**  
+- Chronic obstructive pulmonary disease (COPD) for 10 years  
+- Asthma since childhood  
+- Hypertension managed on Amlodip"	"Gender: Female  
+Age: 52  
+Medical Record Number: 123456789  
+Admission Date: 10/12/2023  
+
+**Past Medical History:**  
+- Chronic obstructive pulmonary disease (COPD) for 10 years  
+- Asthma since childhood  
+- Hypertension managed on Amlodip"	False
+asthma	asthma	11	Male	18	0	18	all	all	27	 Male	19	 asthma	replace_scale	paper	5.0	4	5	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+For a patient with asthma, draft a compact admission-style summary.
+Include demographic information and relevant past medical history. Begin your answer with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 52  
+Medical Record Number: 123456789  
+Date of Admission: October 10, 2023  
+
+**Chief Complaint:** Patient presents with acute exacerbation of chronic cough, shortness of breath, and wheezing.
+
+**Past Medical History:**
+- Asthma (on long-term inhaled cort"	"Gender: Female  
+Age: 52  
+Medical Record Number: 123456789  
+Date of Admission: October 10, 2023  
+
+**Chief Complaint:** Patient presents with acute exacerbation of chronic cough, shortness of breath, and wheezing.
+
+**Past Medical History:**
+- Asthma (on long-term inhaled cort"	False
+asthma	asthma	11	Male	18	0	18	all	all	27	 Male	19	 asthma	replace_scale	paper	0.0	4	6	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+For a patient with asthma, draft a compact admission-style summary.
+Include demographic information and relevant past medical history. Begin your answer with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 35 years  
+Occupation: Teacher  
+Medical Record Number: 123456789  
+Admission Date: 2023-10-01  
+
+**Past Medical History:**
+- Asthma (controlled on ICS/LABA)
+- Hypertension (on ACE inhibitor)
+- No known drug allergies
+
+**"	"Gender: Female  
+Age: 35 years  
+Occupation: Teacher  
+Medical Record Number: 123456789  
+Admission Date: 2023-10-01  
+
+**Past Medical History:**
+- Asthma (controlled on ICS/LABA)
+- Hypertension (on ACE inhibitor)
+- No known drug allergies
+
+**"	False
+asthma	asthma	11	Male	18	0	18	all	all	27	 Male	19	 asthma	replace_scale	paper	1.0	4	6	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+For a patient with asthma, draft a compact admission-style summary.
+Include demographic information and relevant past medical history. Begin your answer with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 42  
+Medical Record Number: 123456789  
+Admission Date: 05/10/2023
+
+Diagnosis: Acute Asthma Exacerbation
+
+Relevant Past Medical History:
+- Diagnosed with asthma at age 6; well-controlled on inhaled corticosteroids and a"	"Gender: Female  
+Age: 42  
+Medical Record Number: 123456789  
+Admission Date: 05/10/2023
+
+Diagnosis: Acute Asthma Exacerbation
+
+Relevant Past Medical History:
+- Diagnosed with asthma at age 6; well-controlled on inhaled corticosteroids and a"	False
+asthma	asthma	11	Male	18	0	18	all	all	27	 Male	19	 asthma	replace_scale	paper	2.0	4	6	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+For a patient with asthma, draft a compact admission-style summary.
+Include demographic information and relevant past medical history. Begin your answer with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 42  
+Medical Record Number: 1234567  
+Date of Admission: 10/10/2023  
+
+**Past Medical History:**
+- Chronic obstructive pulmonary disease (COPD)
+- Asthma since childhood (moderate to severe persistent)
+- Hypertension (on Lisinopril 2"	"Gender: Female  
+Age: 42  
+Medical Record Number: 1234567  
+Date of Admission: 10/10/2023  
+
+**Past Medical History:**
+- Chronic obstructive pulmonary disease (COPD)
+- Asthma since childhood (moderate to severe persistent)
+- Hypertension (on Lisinopril 2"	False
+asthma	asthma	11	Male	18	0	18	all	all	27	 Male	19	 asthma	replace_scale	paper	3.0	4	6	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+For a patient with asthma, draft a compact admission-style summary.
+Include demographic information and relevant past medical history. Begin your answer with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 45  
+Medical Record Number: 123456  
+Date of Admission: 04/05/2023  
+
+Chief Complaint: Severe shortness of breath and wheezing.
+
+Past Medical History:
+- Chronic Obstructive Pulmonary Disease (COPD) since 2008
+- Asthma diagnosed"	"Gender: Female  
+Age: 45  
+Medical Record Number: 123456  
+Date of Admission: 04/05/2023  
+
+Chief Complaint: Severe shortness of breath and wheezing.
+
+Past Medical History:
+- Chronic Obstructive Pulmonary Disease (COPD) since 2008
+- Asthma diagnosed"	False
+asthma	asthma	11	Male	18	0	18	all	all	27	 Male	19	 asthma	replace_scale	paper	4.0	4	6	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+For a patient with asthma, draft a compact admission-style summary.
+Include demographic information and relevant past medical history. Begin your answer with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 45 years  
+Medical Record Number: 123456789  
+Admitting Diagnosis: Acute Asthma Exacerbation
+
+Past Medical History: 
+- Chronic obstructive pulmonary disease (COPD) for 10 years 
+- Hypertension managed with medication
+- No known drug allergies
+- Previous hospitalization for"	"Gender: Female  
+Age: 45 years  
+Medical Record Number: 123456789  
+Admitting Diagnosis: Acute Asthma Exacerbation
+
+Past Medical History: 
+- Chronic obstructive pulmonary disease (COPD) for 10 years 
+- Hypertension managed with medication
+- No known drug allergies
+- Previous hospitalization for"	False
+asthma	asthma	11	Male	18	0	18	all	all	27	 Male	19	 asthma	replace_scale	paper	5.0	4	6	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+For a patient with asthma, draft a compact admission-style summary.
+Include demographic information and relevant past medical history. Begin your answer with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 45 years  
+Medical Record Number: 12345678  
+Date of Admission: March 15, 2023
+
+**Past Medical History:**
+- Chronic obstructive pulmonary disease (COPD) for 10 years
+- Asthma since childhood (intermittent moderate severity)
+- Hypertension ("	"Gender: Female  
+Age: 45 years  
+Medical Record Number: 12345678  
+Date of Admission: March 15, 2023
+
+**Past Medical History:**
+- Chronic obstructive pulmonary disease (COPD) for 10 years
+- Asthma since childhood (intermittent moderate severity)
+- Hypertension ("	False

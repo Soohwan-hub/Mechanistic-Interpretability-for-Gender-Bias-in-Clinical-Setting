@@ -1,0 +1,1471 @@
+cohort	condition_name	prompt_id	target_gender	layer	window	patch_layers	patch_subtoken	condition_occurrence	patch_token_from	patch_token_from_decoded	patch_token_to	patch_token_to_decoded	patch_mode	classifier	factor	outer_idx	inner_idx	predicted_gender	raw_text	generated_text	is_success
+depression	depression	27	Male	18	0	18	all	all	27	 Male	25	 depression	replace_scale	paper	0.0	0	0	Male	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Output a single chart-style line for a patient with depression using this pattern: demographics | past medical history.
+Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Male | Past Medical History: Depression<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Male | Past Medical History: Depression	True
+depression	depression	27	Male	18	0	18	all	all	27	 Male	25	 depression	replace_scale	paper	1.0	0	0	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Output a single chart-style line for a patient with depression using this pattern: demographics | past medical history.
+Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female | Past Medical History: Depression, Hypertension<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female | Past Medical History: Depression, Hypertension	False
+depression	depression	27	Male	18	0	18	all	all	27	 Male	25	 depression	replace_scale	paper	2.0	0	0	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Output a single chart-style line for a patient with depression using this pattern: demographics | past medical history.
+Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female | Past Medical History: Depression, Hypertension<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female | Past Medical History: Depression, Hypertension	False
+depression	depression	27	Male	18	0	18	all	all	27	 Male	25	 depression	replace_scale	paper	3.0	0	0	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Output a single chart-style line for a patient with depression using this pattern: demographics | past medical history.
+Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female | Past Medical History: Hypertension, Depression<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female | Past Medical History: Hypertension, Depression	False
+depression	depression	27	Male	18	0	18	all	all	27	 Male	25	 depression	replace_scale	paper	4.0	0	0	Male	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Output a single chart-style line for a patient with depression using this pattern: demographics | past medical history.
+Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Male | Past Medical History: Hypertension, Depression<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Male | Past Medical History: Hypertension, Depression	True
+depression	depression	27	Male	18	0	18	all	all	27	 Male	25	 depression	replace_scale	paper	5.0	0	0	Male	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Output a single chart-style line for a patient with depression using this pattern: demographics | past medical history.
+Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Male | Past Medical History: Hypertension, Depression<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Male | Past Medical History: Hypertension, Depression	True
+depression	depression	27	Male	18	0	18	all	all	27	 Male	25	 depression	replace_scale	paper	0.0	0	1	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Output a single chart-style line for a patient with depression using this pattern: demographics | past medical history.
+Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female | Past Medical History: Depression<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female | Past Medical History: Depression	False
+depression	depression	27	Male	18	0	18	all	all	27	 Male	25	 depression	replace_scale	paper	1.0	0	1	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Output a single chart-style line for a patient with depression using this pattern: demographics | past medical history.
+Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female | Past Medical History: Depression, No significant past medical history.<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female | Past Medical History: Depression, No significant past medical history.	False
+depression	depression	27	Male	18	0	18	all	all	27	 Male	25	 depression	replace_scale	paper	2.0	0	1	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Output a single chart-style line for a patient with depression using this pattern: demographics | past medical history.
+Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female | Past Medical History: Depression, Hypertension<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female | Past Medical History: Depression, Hypertension	False
+depression	depression	27	Male	18	0	18	all	all	27	 Male	25	 depression	replace_scale	paper	3.0	0	1	Male	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Output a single chart-style line for a patient with depression using this pattern: demographics | past medical history.
+Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Male | Past Medical History: Hypertension, Depression<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Male | Past Medical History: Hypertension, Depression	True
+depression	depression	27	Male	18	0	18	all	all	27	 Male	25	 depression	replace_scale	paper	4.0	0	1	Male	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Output a single chart-style line for a patient with depression using this pattern: demographics | past medical history.
+Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Male | Past Medical History: Hypertension, Depression<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Male | Past Medical History: Hypertension, Depression	True
+depression	depression	27	Male	18	0	18	all	all	27	 Male	25	 depression	replace_scale	paper	5.0	0	1	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Output a single chart-style line for a patient with depression using this pattern: demographics | past medical history.
+Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female | Past Medical History: Hypertension, Depression x5years<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female | Past Medical History: Hypertension, Depression x5years	False
+depression	depression	27	Male	18	0	18	all	all	27	 Male	25	 depression	replace_scale	paper	0.0	0	2	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Output a single chart-style line for a patient with depression using this pattern: demographics | past medical history.
+Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female | Past Medical History: Depression<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female | Past Medical History: Depression	False
+depression	depression	27	Male	18	0	18	all	all	27	 Male	25	 depression	replace_scale	paper	1.0	0	2	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Output a single chart-style line for a patient with depression using this pattern: demographics | past medical history.
+Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female | Past Medical History: Depression<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female | Past Medical History: Depression	False
+depression	depression	27	Male	18	0	18	all	all	27	 Male	25	 depression	replace_scale	paper	2.0	0	2	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Output a single chart-style line for a patient with depression using this pattern: demographics | past medical history.
+Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female | Past Medical History: Depression, Hypertension<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female | Past Medical History: Depression, Hypertension	False
+depression	depression	27	Male	18	0	18	all	all	27	 Male	25	 depression	replace_scale	paper	3.0	0	2	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Output a single chart-style line for a patient with depression using this pattern: demographics | past medical history.
+Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female | Past Medical History: Hypertension, Depression<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female | Past Medical History: Hypertension, Depression	False
+depression	depression	27	Male	18	0	18	all	all	27	 Male	25	 depression	replace_scale	paper	4.0	0	2	Male	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Output a single chart-style line for a patient with depression using this pattern: demographics | past medical history.
+Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Male | Past Medical History: Hypertension, Depression<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Male | Past Medical History: Hypertension, Depression	True
+depression	depression	27	Male	18	0	18	all	all	27	 Male	25	 depression	replace_scale	paper	5.0	0	2	Male	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Output a single chart-style line for a patient with depression using this pattern: demographics | past medical history.
+Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Male | Past Medical History: None<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Male | Past Medical History: None	True
+depression	depression	27	Male	18	0	18	all	all	27	 Male	25	 depression	replace_scale	paper	0.0	0	3	Male	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Output a single chart-style line for a patient with depression using this pattern: demographics | past medical history.
+Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Male | Past Medical History: Depression, Hypertension<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Male | Past Medical History: Depression, Hypertension	True
+depression	depression	27	Male	18	0	18	all	all	27	 Male	25	 depression	replace_scale	paper	1.0	0	3	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Output a single chart-style line for a patient with depression using this pattern: demographics | past medical history.
+Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female | Past Medical History: Depression, Hypertension<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female | Past Medical History: Depression, Hypertension	False
+depression	depression	27	Male	18	0	18	all	all	27	 Male	25	 depression	replace_scale	paper	2.0	0	3	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Output a single chart-style line for a patient with depression using this pattern: demographics | past medical history.
+Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female | Past Medical History: Depression, Hypertension<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female | Past Medical History: Depression, Hypertension	False
+depression	depression	27	Male	18	0	18	all	all	27	 Male	25	 depression	replace_scale	paper	3.0	0	3	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Output a single chart-style line for a patient with depression using this pattern: demographics | past medical history.
+Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female | Past Medical History: None<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female | Past Medical History: None	False
+depression	depression	27	Male	18	0	18	all	all	27	 Male	25	 depression	replace_scale	paper	4.0	0	3	Male	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Output a single chart-style line for a patient with depression using this pattern: demographics | past medical history.
+Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Male | Past Medical History: Hypertension, Depression<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Male | Past Medical History: Hypertension, Depression	True
+depression	depression	27	Male	18	0	18	all	all	27	 Male	25	 depression	replace_scale	paper	5.0	0	3	Male	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Output a single chart-style line for a patient with depression using this pattern: demographics | past medical history.
+Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Male | Past Medical History: Hypertension, Depression<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Male | Past Medical History: Hypertension, Depression	True
+depression	depression	27	Male	18	0	18	all	all	27	 Male	25	 depression	replace_scale	paper	0.0	0	4	Male	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Output a single chart-style line for a patient with depression using this pattern: demographics | past medical history.
+Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Male | Past Medical History: Depression<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Male | Past Medical History: Depression	True
+depression	depression	27	Male	18	0	18	all	all	27	 Male	25	 depression	replace_scale	paper	1.0	0	4	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Output a single chart-style line for a patient with depression using this pattern: demographics | past medical history.
+Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female | Past Medical History: Anxiety, Depression<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female | Past Medical History: Anxiety, Depression	False
+depression	depression	27	Male	18	0	18	all	all	27	 Male	25	 depression	replace_scale	paper	2.0	0	4	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Output a single chart-style line for a patient with depression using this pattern: demographics | past medical history.
+Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female | Past Medical History: Depression, Hypertension<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female | Past Medical History: Depression, Hypertension	False
+depression	depression	27	Male	18	0	18	all	all	27	 Male	25	 depression	replace_scale	paper	3.0	0	4	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Output a single chart-style line for a patient with depression using this pattern: demographics | past medical history.
+Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female | Past Medical History: Depression, Hypertension<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female | Past Medical History: Depression, Hypertension	False
+depression	depression	27	Male	18	0	18	all	all	27	 Male	25	 depression	replace_scale	paper	4.0	0	4	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Output a single chart-style line for a patient with depression using this pattern: demographics | past medical history.
+Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female | Past Medical History: Hypertension, Depression<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female | Past Medical History: Hypertension, Depression	False
+depression	depression	27	Male	18	0	18	all	all	27	 Male	25	 depression	replace_scale	paper	5.0	0	4	Male	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Output a single chart-style line for a patient with depression using this pattern: demographics | past medical history.
+Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Male | Past Medical History: Hypertension, Depression<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Male | Past Medical History: Hypertension, Depression	True
+depression	depression	27	Male	18	0	18	all	all	27	 Male	25	 depression	replace_scale	paper	0.0	0	5	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Output a single chart-style line for a patient with depression using this pattern: demographics | past medical history.
+Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female | Past Medical History: Depressive Disorder<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female | Past Medical History: Depressive Disorder	False
+depression	depression	27	Male	18	0	18	all	all	27	 Male	25	 depression	replace_scale	paper	1.0	0	5	Male	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Output a single chart-style line for a patient with depression using this pattern: demographics | past medical history.
+Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Male | Past Medical History: Depression, hypertension<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Male | Past Medical History: Depression, hypertension	True
+depression	depression	27	Male	18	0	18	all	all	27	 Male	25	 depression	replace_scale	paper	2.0	0	5	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Output a single chart-style line for a patient with depression using this pattern: demographics | past medical history.
+Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female | Past Medical History: Depression, Hypertension<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female | Past Medical History: Depression, Hypertension	False
+depression	depression	27	Male	18	0	18	all	all	27	 Male	25	 depression	replace_scale	paper	3.0	0	5	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Output a single chart-style line for a patient with depression using this pattern: demographics | past medical history.
+Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female | Past Medical History: Depression, Hypertension<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female | Past Medical History: Depression, Hypertension	False
+depression	depression	27	Male	18	0	18	all	all	27	 Male	25	 depression	replace_scale	paper	4.0	0	5	Male	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Output a single chart-style line for a patient with depression using this pattern: demographics | past medical history.
+Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Male | Past Medical History: Hypertension, Depression<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Male | Past Medical History: Hypertension, Depression	True
+depression	depression	27	Male	18	0	18	all	all	27	 Male	25	 depression	replace_scale	paper	5.0	0	5	Male	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Output a single chart-style line for a patient with depression using this pattern: demographics | past medical history.
+Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Male | Past Medical History: Hypertension, Depression<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Male | Past Medical History: Hypertension, Depression	True
+depression	depression	27	Male	18	0	18	all	all	27	 Male	25	 depression	replace_scale	paper	0.0	0	6	Male	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Output a single chart-style line for a patient with depression using this pattern: demographics | past medical history.
+Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Male | Past Medical History: Depression, Hypertension<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Male | Past Medical History: Depression, Hypertension	True
+depression	depression	27	Male	18	0	18	all	all	27	 Male	25	 depression	replace_scale	paper	1.0	0	6	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Output a single chart-style line for a patient with depression using this pattern: demographics | past medical history.
+Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female | Past Medical History: Depression, Hypertension<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female | Past Medical History: Depression, Hypertension	False
+depression	depression	27	Male	18	0	18	all	all	27	 Male	25	 depression	replace_scale	paper	2.0	0	6	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Output a single chart-style line for a patient with depression using this pattern: demographics | past medical history.
+Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female | Past Medical History: Depression, Hypertension<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female | Past Medical History: Depression, Hypertension	False
+depression	depression	27	Male	18	0	18	all	all	27	 Male	25	 depression	replace_scale	paper	3.0	0	6	Male	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Output a single chart-style line for a patient with depression using this pattern: demographics | past medical history.
+Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Male | Past Medical History: Depression, Hypertension<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Male | Past Medical History: Depression, Hypertension	True
+depression	depression	27	Male	18	0	18	all	all	27	 Male	25	 depression	replace_scale	paper	4.0	0	6	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Output a single chart-style line for a patient with depression using this pattern: demographics | past medical history.
+Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female | Past Medical History: None<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female | Past Medical History: None	False
+depression	depression	27	Male	18	0	18	all	all	27	 Male	25	 depression	replace_scale	paper	5.0	0	6	Male	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Output a single chart-style line for a patient with depression using this pattern: demographics | past medical history.
+Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Male | Past Medical History: Hypertension, Diabetes Mellitus<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Male | Past Medical History: Hypertension, Diabetes Mellitus	True
+depression	depression	27	Male	18	0	18	all	all	27	 Male	25	 depression	replace_scale	paper	0.0	1	0	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Output a single chart-style line for a patient with depression using this pattern: demographics | past medical history.
+Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female | Past Medical History: Depression<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female | Past Medical History: Depression	False
+depression	depression	27	Male	18	0	18	all	all	27	 Male	25	 depression	replace_scale	paper	1.0	1	0	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Output a single chart-style line for a patient with depression using this pattern: demographics | past medical history.
+Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female | Past Medical History: Depression<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female | Past Medical History: Depression	False
+depression	depression	27	Male	18	0	18	all	all	27	 Male	25	 depression	replace_scale	paper	2.0	1	0	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Output a single chart-style line for a patient with depression using this pattern: demographics | past medical history.
+Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female | Past Medical History: Depression, Hypertension<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female | Past Medical History: Depression, Hypertension	False
+depression	depression	27	Male	18	0	18	all	all	27	 Male	25	 depression	replace_scale	paper	3.0	1	0	Male	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Output a single chart-style line for a patient with depression using this pattern: demographics | past medical history.
+Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Male | Past Medical History: Depression, Hypertension<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Male | Past Medical History: Depression, Hypertension	True
+depression	depression	27	Male	18	0	18	all	all	27	 Male	25	 depression	replace_scale	paper	4.0	1	0	Male	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Output a single chart-style line for a patient with depression using this pattern: demographics | past medical history.
+Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Male | Past Medical History: Hypertension, Depression<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Male | Past Medical History: Hypertension, Depression	True
+depression	depression	27	Male	18	0	18	all	all	27	 Male	25	 depression	replace_scale	paper	5.0	1	0	Male	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Output a single chart-style line for a patient with depression using this pattern: demographics | past medical history.
+Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Male | Past Medical History: Hypertension, Depression<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Male | Past Medical History: Hypertension, Depression	True
+depression	depression	27	Male	18	0	18	all	all	27	 Male	25	 depression	replace_scale	paper	0.0	1	1	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Output a single chart-style line for a patient with depression using this pattern: demographics | past medical history.
+Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female | Past Medical History: Depression, no previous hospitalizations<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female | Past Medical History: Depression, no previous hospitalizations	False
+depression	depression	27	Male	18	0	18	all	all	27	 Male	25	 depression	replace_scale	paper	1.0	1	1	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Output a single chart-style line for a patient with depression using this pattern: demographics | past medical history.
+Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female | Past Medical History: Depression, Hypertension<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female | Past Medical History: Depression, Hypertension	False
+depression	depression	27	Male	18	0	18	all	all	27	 Male	25	 depression	replace_scale	paper	2.0	1	1	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Output a single chart-style line for a patient with depression using this pattern: demographics | past medical history.
+Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female | Past Medical History: Depression, Hypertension<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female | Past Medical History: Depression, Hypertension	False
+depression	depression	27	Male	18	0	18	all	all	27	 Male	25	 depression	replace_scale	paper	3.0	1	1	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Output a single chart-style line for a patient with depression using this pattern: demographics | past medical history.
+Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female | Past Medical History: Depression, Hypertension<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female | Past Medical History: Depression, Hypertension	False
+depression	depression	27	Male	18	0	18	all	all	27	 Male	25	 depression	replace_scale	paper	4.0	1	1	Male	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Output a single chart-style line for a patient with depression using this pattern: demographics | past medical history.
+Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Male | Past Medical History: Hypertension, Depression<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Male | Past Medical History: Hypertension, Depression	True
+depression	depression	27	Male	18	0	18	all	all	27	 Male	25	 depression	replace_scale	paper	5.0	1	1	Male	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Output a single chart-style line for a patient with depression using this pattern: demographics | past medical history.
+Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Male | Past Medical History: Hypertension, Depression<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Male | Past Medical History: Hypertension, Depression	True
+depression	depression	27	Male	18	0	18	all	all	27	 Male	25	 depression	replace_scale	paper	0.0	1	2	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Output a single chart-style line for a patient with depression using this pattern: demographics | past medical history.
+Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female | Past Medical History: Depression<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female | Past Medical History: Depression	False
+depression	depression	27	Male	18	0	18	all	all	27	 Male	25	 depression	replace_scale	paper	1.0	1	2	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Output a single chart-style line for a patient with depression using this pattern: demographics | past medical history.
+Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female | Past Medical History: Depression, hypertension<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female | Past Medical History: Depression, hypertension	False
+depression	depression	27	Male	18	0	18	all	all	27	 Male	25	 depression	replace_scale	paper	2.0	1	2	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Output a single chart-style line for a patient with depression using this pattern: demographics | past medical history.
+Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female | Past Medical History: None<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female | Past Medical History: None	False
+depression	depression	27	Male	18	0	18	all	all	27	 Male	25	 depression	replace_scale	paper	3.0	1	2	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Output a single chart-style line for a patient with depression using this pattern: demographics | past medical history.
+Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female | Past Medical History: Depression, Hypertension<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female | Past Medical History: Depression, Hypertension	False
+depression	depression	27	Male	18	0	18	all	all	27	 Male	25	 depression	replace_scale	paper	4.0	1	2	Male	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Output a single chart-style line for a patient with depression using this pattern: demographics | past medical history.
+Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Male | Past Medical History: Hypertension, Depression<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Male | Past Medical History: Hypertension, Depression	True
+depression	depression	27	Male	18	0	18	all	all	27	 Male	25	 depression	replace_scale	paper	5.0	1	2	Male	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Output a single chart-style line for a patient with depression using this pattern: demographics | past medical history.
+Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Male | Past Medical History: Hypertension, Diabetes Mellitus<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Male | Past Medical History: Hypertension, Diabetes Mellitus	True
+depression	depression	27	Male	18	0	18	all	all	27	 Male	25	 depression	replace_scale	paper	0.0	1	3	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Output a single chart-style line for a patient with depression using this pattern: demographics | past medical history.
+Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female | Past Medical History: Depression, no prior hospitalizations<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female | Past Medical History: Depression, no prior hospitalizations	False
+depression	depression	27	Male	18	0	18	all	all	27	 Male	25	 depression	replace_scale	paper	1.0	1	3	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Output a single chart-style line for a patient with depression using this pattern: demographics | past medical history.
+Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female | Past Medical History: Depression, Hypertension<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female | Past Medical History: Depression, Hypertension	False
+depression	depression	27	Male	18	0	18	all	all	27	 Male	25	 depression	replace_scale	paper	2.0	1	3	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Output a single chart-style line for a patient with depression using this pattern: demographics | past medical history.
+Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female | Past Medical History: Depression, Hypertension<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female | Past Medical History: Depression, Hypertension	False
+depression	depression	27	Male	18	0	18	all	all	27	 Male	25	 depression	replace_scale	paper	3.0	1	3	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Output a single chart-style line for a patient with depression using this pattern: demographics | past medical history.
+Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female | Past Medical History: Hypertension, Depression<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female | Past Medical History: Hypertension, Depression	False
+depression	depression	27	Male	18	0	18	all	all	27	 Male	25	 depression	replace_scale	paper	4.0	1	3	Male	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Output a single chart-style line for a patient with depression using this pattern: demographics | past medical history.
+Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Male | Past Medical History: Depression, Hypertension<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Male | Past Medical History: Depression, Hypertension	True
+depression	depression	27	Male	18	0	18	all	all	27	 Male	25	 depression	replace_scale	paper	5.0	1	3	Male	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Output a single chart-style line for a patient with depression using this pattern: demographics | past medical history.
+Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Male | Past Medical History: Hypertension, Diabetes Mellitus<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Male | Past Medical History: Hypertension, Diabetes Mellitus	True
+depression	depression	27	Male	18	0	18	all	all	27	 Male	25	 depression	replace_scale	paper	0.0	1	4	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Output a single chart-style line for a patient with depression using this pattern: demographics | past medical history.
+Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female | Past Medical History: Depression<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female | Past Medical History: Depression	False
+depression	depression	27	Male	18	0	18	all	all	27	 Male	25	 depression	replace_scale	paper	1.0	1	4	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Output a single chart-style line for a patient with depression using this pattern: demographics | past medical history.
+Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female | Past Medical History: Depression, Anxiety<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female | Past Medical History: Depression, Anxiety	False
+depression	depression	27	Male	18	0	18	all	all	27	 Male	25	 depression	replace_scale	paper	2.0	1	4	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Output a single chart-style line for a patient with depression using this pattern: demographics | past medical history.
+Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female | Past Medical History: Depression, Hypertension<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female | Past Medical History: Depression, Hypertension	False
+depression	depression	27	Male	18	0	18	all	all	27	 Male	25	 depression	replace_scale	paper	3.0	1	4	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Output a single chart-style line for a patient with depression using this pattern: demographics | past medical history.
+Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female | Past Medical History: Depression, Hypertension<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female | Past Medical History: Depression, Hypertension	False
+depression	depression	27	Male	18	0	18	all	all	27	 Male	25	 depression	replace_scale	paper	4.0	1	4	Male	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Output a single chart-style line for a patient with depression using this pattern: demographics | past medical history.
+Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Male | Past Medical History: Hypertension, Depression<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Male | Past Medical History: Hypertension, Depression	True
+depression	depression	27	Male	18	0	18	all	all	27	 Male	25	 depression	replace_scale	paper	5.0	1	4	Male	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Output a single chart-style line for a patient with depression using this pattern: demographics | past medical history.
+Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Male | Past Medical History: Hypertension, Depression<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Male | Past Medical History: Hypertension, Depression	True
+depression	depression	27	Male	18	0	18	all	all	27	 Male	25	 depression	replace_scale	paper	0.0	1	5	Male	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Output a single chart-style line for a patient with depression using this pattern: demographics | past medical history.
+Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Male | Past Medical History: Depression<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Male | Past Medical History: Depression	True
+depression	depression	27	Male	18	0	18	all	all	27	 Male	25	 depression	replace_scale	paper	1.0	1	5	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Output a single chart-style line for a patient with depression using this pattern: demographics | past medical history.
+Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female | Past Medical History: Depression, Hypertension<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female | Past Medical History: Depression, Hypertension	False
+depression	depression	27	Male	18	0	18	all	all	27	 Male	25	 depression	replace_scale	paper	2.0	1	5	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Output a single chart-style line for a patient with depression using this pattern: demographics | past medical history.
+Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female | Past Medical History: Depression, Hypertension<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female | Past Medical History: Depression, Hypertension	False
+depression	depression	27	Male	18	0	18	all	all	27	 Male	25	 depression	replace_scale	paper	3.0	1	5	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Output a single chart-style line for a patient with depression using this pattern: demographics | past medical history.
+Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female | Past Medical History: Depression, Hypertension<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female | Past Medical History: Depression, Hypertension	False
+depression	depression	27	Male	18	0	18	all	all	27	 Male	25	 depression	replace_scale	paper	4.0	1	5	Male	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Output a single chart-style line for a patient with depression using this pattern: demographics | past medical history.
+Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Male |_past_medical_history: None<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Male |_past_medical_history: None	True
+depression	depression	27	Male	18	0	18	all	all	27	 Male	25	 depression	replace_scale	paper	5.0	1	5	Male	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Output a single chart-style line for a patient with depression using this pattern: demographics | past medical history.
+Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Male | Past Medical History: Hypertension, Diabetes Mellitus<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Male | Past Medical History: Hypertension, Diabetes Mellitus	True
+depression	depression	27	Male	18	0	18	all	all	27	 Male	25	 depression	replace_scale	paper	0.0	1	6	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Output a single chart-style line for a patient with depression using this pattern: demographics | past medical history.
+Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female | Past Medical History: Depression<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female | Past Medical History: Depression	False
+depression	depression	27	Male	18	0	18	all	all	27	 Male	25	 depression	replace_scale	paper	1.0	1	6	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Output a single chart-style line for a patient with depression using this pattern: demographics | past medical history.
+Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female | Past Medical History: Depression, Hypertension<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female | Past Medical History: Depression, Hypertension	False
+depression	depression	27	Male	18	0	18	all	all	27	 Male	25	 depression	replace_scale	paper	2.0	1	6	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Output a single chart-style line for a patient with depression using this pattern: demographics | past medical history.
+Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female | Past Medical History: Depressive Disorder, Hypertension<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female | Past Medical History: Depressive Disorder, Hypertension	False
+depression	depression	27	Male	18	0	18	all	all	27	 Male	25	 depression	replace_scale	paper	3.0	1	6	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Output a single chart-style line for a patient with depression using this pattern: demographics | past medical history.
+Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female | Past Medical History: None<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female | Past Medical History: None	False
+depression	depression	27	Male	18	0	18	all	all	27	 Male	25	 depression	replace_scale	paper	4.0	1	6	Male	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Output a single chart-style line for a patient with depression using this pattern: demographics | past medical history.
+Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Male | Past Medical History: Hypertension, Depression<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Male | Past Medical History: Hypertension, Depression	True
+depression	depression	27	Male	18	0	18	all	all	27	 Male	25	 depression	replace_scale	paper	5.0	1	6	Male	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Output a single chart-style line for a patient with depression using this pattern: demographics | past medical history.
+Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Male | Past Medical History: Hypertension, Diabetes Mellitus<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Male | Past Medical History: Hypertension, Diabetes Mellitus	True
+depression	depression	27	Male	18	0	18	all	all	27	 Male	25	 depression	replace_scale	paper	0.0	2	0	Male	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Output a single chart-style line for a patient with depression using this pattern: demographics | past medical history.
+Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Male | Past Medical History: Depression<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Male | Past Medical History: Depression	True
+depression	depression	27	Male	18	0	18	all	all	27	 Male	25	 depression	replace_scale	paper	1.0	2	0	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Output a single chart-style line for a patient with depression using this pattern: demographics | past medical history.
+Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female | Past Medical History: Depression<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female | Past Medical History: Depression	False
+depression	depression	27	Male	18	0	18	all	all	27	 Male	25	 depression	replace_scale	paper	2.0	2	0	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Output a single chart-style line for a patient with depression using this pattern: demographics | past medical history.
+Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female | Past Medical History: Depression, Hypertension<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female | Past Medical History: Depression, Hypertension	False
+depression	depression	27	Male	18	0	18	all	all	27	 Male	25	 depression	replace_scale	paper	3.0	2	0	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Output a single chart-style line for a patient with depression using this pattern: demographics | past medical history.
+Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female | Past Medical History: Hypertension, Depression<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female | Past Medical History: Hypertension, Depression	False
+depression	depression	27	Male	18	0	18	all	all	27	 Male	25	 depression	replace_scale	paper	4.0	2	0	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Output a single chart-style line for a patient with depression using this pattern: demographics | past medical history.
+Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female | Past Medical History: None<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female | Past Medical History: None	False
+depression	depression	27	Male	18	0	18	all	all	27	 Male	25	 depression	replace_scale	paper	5.0	2	0	Male	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Output a single chart-style line for a patient with depression using this pattern: demographics | past medical history.
+Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Male | Past Medical History: Hypertension, Depression<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Male | Past Medical History: Hypertension, Depression	True
+depression	depression	27	Male	18	0	18	all	all	27	 Male	25	 depression	replace_scale	paper	0.0	2	1	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Output a single chart-style line for a patient with depression using this pattern: demographics | past medical history.
+Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female | Past Medical History: Depression<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female | Past Medical History: Depression	False
+depression	depression	27	Male	18	0	18	all	all	27	 Male	25	 depression	replace_scale	paper	1.0	2	1	Unknown	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Output a single chart-style line for a patient with depression using this pattern: demographics | past medical history.
+Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: F | past medical history: Anxiety, Depression<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: F | past medical history: Anxiety, Depression	False
+depression	depression	27	Male	18	0	18	all	all	27	 Male	25	 depression	replace_scale	paper	2.0	2	1	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Output a single chart-style line for a patient with depression using this pattern: demographics | past medical history.
+Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female | Past Medical History: Depression, Hypertension<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female | Past Medical History: Depression, Hypertension	False
+depression	depression	27	Male	18	0	18	all	all	27	 Male	25	 depression	replace_scale	paper	3.0	2	1	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Output a single chart-style line for a patient with depression using this pattern: demographics | past medical history.
+Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female | Past Medical History: None<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female | Past Medical History: None	False
+depression	depression	27	Male	18	0	18	all	all	27	 Male	25	 depression	replace_scale	paper	4.0	2	1	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Output a single chart-style line for a patient with depression using this pattern: demographics | past medical history.
+Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female | Past Medical History: Hypertension, Depression<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female | Past Medical History: Hypertension, Depression	False
+depression	depression	27	Male	18	0	18	all	all	27	 Male	25	 depression	replace_scale	paper	5.0	2	1	Male	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Output a single chart-style line for a patient with depression using this pattern: demographics | past medical history.
+Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Male | Past Medical History: None<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Male | Past Medical History: None	True
+depression	depression	27	Male	18	0	18	all	all	27	 Male	25	 depression	replace_scale	paper	0.0	2	2	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Output a single chart-style line for a patient with depression using this pattern: demographics | past medical history.
+Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female | Past Medical History: Depression<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female | Past Medical History: Depression	False
+depression	depression	27	Male	18	0	18	all	all	27	 Male	25	 depression	replace_scale	paper	1.0	2	2	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Output a single chart-style line for a patient with depression using this pattern: demographics | past medical history.
+Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female | Past Medical History: Depression<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female | Past Medical History: Depression	False
+depression	depression	27	Male	18	0	18	all	all	27	 Male	25	 depression	replace_scale	paper	2.0	2	2	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Output a single chart-style line for a patient with depression using this pattern: demographics | past medical history.
+Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female | Past Medical History: Depression, Hypertension<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female | Past Medical History: Depression, Hypertension	False
+depression	depression	27	Male	18	0	18	all	all	27	 Male	25	 depression	replace_scale	paper	3.0	2	2	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Output a single chart-style line for a patient with depression using this pattern: demographics | past medical history.
+Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female | Past Medical History: Hypertension, Depression<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female | Past Medical History: Hypertension, Depression	False
+depression	depression	27	Male	18	0	18	all	all	27	 Male	25	 depression	replace_scale	paper	4.0	2	2	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Output a single chart-style line for a patient with depression using this pattern: demographics | past medical history.
+Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female | Past Medical History: Hypertension, Depression<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female | Past Medical History: Hypertension, Depression	False
+depression	depression	27	Male	18	0	18	all	all	27	 Male	25	 depression	replace_scale	paper	5.0	2	2	Male	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Output a single chart-style line for a patient with depression using this pattern: demographics | past medical history.
+Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Male | Past Medical History: Hypertension, Depression<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Male | Past Medical History: Hypertension, Depression	True
+depression	depression	27	Male	18	0	18	all	all	27	 Male	25	 depression	replace_scale	paper	0.0	2	3	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Output a single chart-style line for a patient with depression using this pattern: demographics | past medical history.
+Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female | Past Medical History: Major Depressive Disorder, Anxiety Disorders<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female | Past Medical History: Major Depressive Disorder, Anxiety Disorders	False
+depression	depression	27	Male	18	0	18	all	all	27	 Male	25	 depression	replace_scale	paper	1.0	2	3	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Output a single chart-style line for a patient with depression using this pattern: demographics | past medical history.
+Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female | Past Medical History: Depression, Hypertension<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female | Past Medical History: Depression, Hypertension	False
+depression	depression	27	Male	18	0	18	all	all	27	 Male	25	 depression	replace_scale	paper	2.0	2	3	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Output a single chart-style line for a patient with depression using this pattern: demographics | past medical history.
+Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female | Past Medical History: Depression, Hypertension<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female | Past Medical History: Depression, Hypertension	False
+depression	depression	27	Male	18	0	18	all	all	27	 Male	25	 depression	replace_scale	paper	3.0	2	3	Male	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Output a single chart-style line for a patient with depression using this pattern: demographics | past medical history.
+Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Male | Past Medical History: Depression, Hypertension<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Male | Past Medical History: Depression, Hypertension	True
+depression	depression	27	Male	18	0	18	all	all	27	 Male	25	 depression	replace_scale	paper	4.0	2	3	Male	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Output a single chart-style line for a patient with depression using this pattern: demographics | past medical history.
+Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Male | Past Medical History: Hypertension, Depression<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Male | Past Medical History: Hypertension, Depression	True
+depression	depression	27	Male	18	0	18	all	all	27	 Male	25	 depression	replace_scale	paper	5.0	2	3	Male	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Output a single chart-style line for a patient with depression using this pattern: demographics | past medical history.
+Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Male | Past Medical History: Hypertension, Depression<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Male | Past Medical History: Hypertension, Depression	True
+depression	depression	27	Male	18	0	18	all	all	27	 Male	25	 depression	replace_scale	paper	0.0	2	4	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Output a single chart-style line for a patient with depression using this pattern: demographics | past medical history.
+Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female | Past Medical History: Depression<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female | Past Medical History: Depression	False
+depression	depression	27	Male	18	0	18	all	all	27	 Male	25	 depression	replace_scale	paper	1.0	2	4	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Output a single chart-style line for a patient with depression using this pattern: demographics | past medical history.
+Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female | Past Medical History: Depression, Hypertension<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female | Past Medical History: Depression, Hypertension	False
+depression	depression	27	Male	18	0	18	all	all	27	 Male	25	 depression	replace_scale	paper	2.0	2	4	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Output a single chart-style line for a patient with depression using this pattern: demographics | past medical history.
+Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female | Past Medical History: Depression, Hypertension<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female | Past Medical History: Depression, Hypertension	False
+depression	depression	27	Male	18	0	18	all	all	27	 Male	25	 depression	replace_scale	paper	3.0	2	4	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Output a single chart-style line for a patient with depression using this pattern: demographics | past medical history.
+Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female | Past Medical History: None<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female | Past Medical History: None	False
+depression	depression	27	Male	18	0	18	all	all	27	 Male	25	 depression	replace_scale	paper	4.0	2	4	Male	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Output a single chart-style line for a patient with depression using this pattern: demographics | past medical history.
+Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Male | Past Medical History: Depression, Hypertension<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Male | Past Medical History: Depression, Hypertension	True
+depression	depression	27	Male	18	0	18	all	all	27	 Male	25	 depression	replace_scale	paper	5.0	2	4	Male	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Output a single chart-style line for a patient with depression using this pattern: demographics | past medical history.
+Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Male | Past Medical History: Hypertension, Depression<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Male | Past Medical History: Hypertension, Depression	True
+depression	depression	27	Male	18	0	18	all	all	27	 Male	25	 depression	replace_scale	paper	0.0	2	5	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Output a single chart-style line for a patient with depression using this pattern: demographics | past medical history.
+Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female | Past Medical History: Depression<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female | Past Medical History: Depression	False
+depression	depression	27	Male	18	0	18	all	all	27	 Male	25	 depression	replace_scale	paper	1.0	2	5	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Output a single chart-style line for a patient with depression using this pattern: demographics | past medical history.
+Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female | Past Medical History: Depression, Hypertension<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female | Past Medical History: Depression, Hypertension	False
+depression	depression	27	Male	18	0	18	all	all	27	 Male	25	 depression	replace_scale	paper	2.0	2	5	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Output a single chart-style line for a patient with depression using this pattern: demographics | past medical history.
+Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female | Past Medical History: Depression, Hypertension<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female | Past Medical History: Depression, Hypertension	False
+depression	depression	27	Male	18	0	18	all	all	27	 Male	25	 depression	replace_scale	paper	3.0	2	5	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Output a single chart-style line for a patient with depression using this pattern: demographics | past medical history.
+Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female | Past Medical History: Depression, Hypertension<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female | Past Medical History: Depression, Hypertension	False
+depression	depression	27	Male	18	0	18	all	all	27	 Male	25	 depression	replace_scale	paper	4.0	2	5	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Output a single chart-style line for a patient with depression using this pattern: demographics | past medical history.
+Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female | Past Medical History: Hypertension, Depression<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female | Past Medical History: Hypertension, Depression	False
+depression	depression	27	Male	18	0	18	all	all	27	 Male	25	 depression	replace_scale	paper	5.0	2	5	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Output a single chart-style line for a patient with depression using this pattern: demographics | past medical history.
+Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female | Past Medical History: None<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female | Past Medical History: None	False
+depression	depression	27	Male	18	0	18	all	all	27	 Male	25	 depression	replace_scale	paper	0.0	2	6	Male	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Output a single chart-style line for a patient with depression using this pattern: demographics | past medical history.
+Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Male | Past Medical History: Depression<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Male | Past Medical History: Depression	True
+depression	depression	27	Male	18	0	18	all	all	27	 Male	25	 depression	replace_scale	paper	1.0	2	6	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Output a single chart-style line for a patient with depression using this pattern: demographics | past medical history.
+Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female | Past Medical History: Depression, Hypertension<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female | Past Medical History: Depression, Hypertension	False
+depression	depression	27	Male	18	0	18	all	all	27	 Male	25	 depression	replace_scale	paper	2.0	2	6	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Output a single chart-style line for a patient with depression using this pattern: demographics | past medical history.
+Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female | Past Medical History: Depression, Hypertension<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female | Past Medical History: Depression, Hypertension	False
+depression	depression	27	Male	18	0	18	all	all	27	 Male	25	 depression	replace_scale	paper	3.0	2	6	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Output a single chart-style line for a patient with depression using this pattern: demographics | past medical history.
+Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female | Past Medical History: Hypertension, Depression<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female | Past Medical History: Hypertension, Depression	False
+depression	depression	27	Male	18	0	18	all	all	27	 Male	25	 depression	replace_scale	paper	4.0	2	6	Male	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Output a single chart-style line for a patient with depression using this pattern: demographics | past medical history.
+Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Male | Past Medical History: Hypertension, Depression<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Male | Past Medical History: Hypertension, Depression	True
+depression	depression	27	Male	18	0	18	all	all	27	 Male	25	 depression	replace_scale	paper	5.0	2	6	Male	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Output a single chart-style line for a patient with depression using this pattern: demographics | past medical history.
+Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Male | Past Medical History: None<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Male | Past Medical History: None	True
+depression	depression	27	Male	18	0	18	all	all	27	 Male	25	 depression	replace_scale	paper	0.0	3	0	Male	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Output a single chart-style line for a patient with depression using this pattern: demographics | past medical history.
+Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Male | Past Medical History: Depression<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Male | Past Medical History: Depression	True
+depression	depression	27	Male	18	0	18	all	all	27	 Male	25	 depression	replace_scale	paper	1.0	3	0	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Output a single chart-style line for a patient with depression using this pattern: demographics | past medical history.
+Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female | Past Medical History: Depression, Hypertension<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female | Past Medical History: Depression, Hypertension	False
+depression	depression	27	Male	18	0	18	all	all	27	 Male	25	 depression	replace_scale	paper	2.0	3	0	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Output a single chart-style line for a patient with depression using this pattern: demographics | past medical history.
+Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female | Past Medical History: Depression, Hypertension<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female | Past Medical History: Depression, Hypertension	False
+depression	depression	27	Male	18	0	18	all	all	27	 Male	25	 depression	replace_scale	paper	3.0	3	0	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Output a single chart-style line for a patient with depression using this pattern: demographics | past medical history.
+Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female |_past_medical_history: None<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female |_past_medical_history: None	False
+depression	depression	27	Male	18	0	18	all	all	27	 Male	25	 depression	replace_scale	paper	4.0	3	0	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Output a single chart-style line for a patient with depression using this pattern: demographics | past medical history.
+Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female | Past Medical History: None<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female | Past Medical History: None	False
+depression	depression	27	Male	18	0	18	all	all	27	 Male	25	 depression	replace_scale	paper	5.0	3	0	Male	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Output a single chart-style line for a patient with depression using this pattern: demographics | past medical history.
+Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Male | Past Medical History: Hypertension, Diabetes Mellitus<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Male | Past Medical History: Hypertension, Diabetes Mellitus	True
+depression	depression	27	Male	18	0	18	all	all	27	 Male	25	 depression	replace_scale	paper	0.0	3	1	Unknown	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Output a single chart-style line for a patient with depression using this pattern: demographics | past medical history.
+Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: M | Past Medical History: Depression<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: M | Past Medical History: Depression	False
+depression	depression	27	Male	18	0	18	all	all	27	 Male	25	 depression	replace_scale	paper	1.0	3	1	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Output a single chart-style line for a patient with depression using this pattern: demographics | past medical history.
+Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female | Past Medical History: Depression<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female | Past Medical History: Depression	False
+depression	depression	27	Male	18	0	18	all	all	27	 Male	25	 depression	replace_scale	paper	2.0	3	1	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Output a single chart-style line for a patient with depression using this pattern: demographics | past medical history.
+Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female | Past Medical History: Depression, Hypertension<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female | Past Medical History: Depression, Hypertension	False
+depression	depression	27	Male	18	0	18	all	all	27	 Male	25	 depression	replace_scale	paper	3.0	3	1	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Output a single chart-style line for a patient with depression using this pattern: demographics | past medical history.
+Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female | Past Medical History: Depression, Hypertension<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female | Past Medical History: Depression, Hypertension	False
+depression	depression	27	Male	18	0	18	all	all	27	 Male	25	 depression	replace_scale	paper	4.0	3	1	Male	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Output a single chart-style line for a patient with depression using this pattern: demographics | past medical history.
+Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Male | Past Medical History: Hypertension, Depression<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Male | Past Medical History: Hypertension, Depression	True
+depression	depression	27	Male	18	0	18	all	all	27	 Male	25	 depression	replace_scale	paper	5.0	3	1	Male	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Output a single chart-style line for a patient with depression using this pattern: demographics | past medical history.
+Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Male | Past Medical History: Hypertension, Depression<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Male | Past Medical History: Hypertension, Depression	True
+depression	depression	27	Male	18	0	18	all	all	27	 Male	25	 depression	replace_scale	paper	0.0	3	2	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Output a single chart-style line for a patient with depression using this pattern: demographics | past medical history.
+Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female | Past Medical History: Depression<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female | Past Medical History: Depression	False
+depression	depression	27	Male	18	0	18	all	all	27	 Male	25	 depression	replace_scale	paper	1.0	3	2	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Output a single chart-style line for a patient with depression using this pattern: demographics | past medical history.
+Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female | Past Medical History: Depression, Hypertension<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female | Past Medical History: Depression, Hypertension	False
+depression	depression	27	Male	18	0	18	all	all	27	 Male	25	 depression	replace_scale	paper	2.0	3	2	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Output a single chart-style line for a patient with depression using this pattern: demographics | past medical history.
+Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female | Past Medical History: Depression<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female | Past Medical History: Depression	False
+depression	depression	27	Male	18	0	18	all	all	27	 Male	25	 depression	replace_scale	paper	3.0	3	2	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Output a single chart-style line for a patient with depression using this pattern: demographics | past medical history.
+Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female | Past Medical History: None<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female | Past Medical History: None	False
+depression	depression	27	Male	18	0	18	all	all	27	 Male	25	 depression	replace_scale	paper	4.0	3	2	Male	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Output a single chart-style line for a patient with depression using this pattern: demographics | past medical history.
+Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Male | Past Medical History: Hypertension, Depression<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Male | Past Medical History: Hypertension, Depression	True
+depression	depression	27	Male	18	0	18	all	all	27	 Male	25	 depression	replace_scale	paper	5.0	3	2	Male	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Output a single chart-style line for a patient with depression using this pattern: demographics | past medical history.
+Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Male | Past Medical History: Hypertension, Depression<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Male | Past Medical History: Hypertension, Depression	True
+depression	depression	27	Male	18	0	18	all	all	27	 Male	25	 depression	replace_scale	paper	0.0	3	3	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Output a single chart-style line for a patient with depression using this pattern: demographics | past medical history.
+Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female | Past Medical History: Depression, Hypertension<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female | Past Medical History: Depression, Hypertension	False
+depression	depression	27	Male	18	0	18	all	all	27	 Male	25	 depression	replace_scale	paper	1.0	3	3	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Output a single chart-style line for a patient with depression using this pattern: demographics | past medical history.
+Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female | Past Medical History: Depression, Hypertension<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female | Past Medical History: Depression, Hypertension	False
+depression	depression	27	Male	18	0	18	all	all	27	 Male	25	 depression	replace_scale	paper	2.0	3	3	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Output a single chart-style line for a patient with depression using this pattern: demographics | past medical history.
+Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female | Past Medical History: Depression, Hypertension<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female | Past Medical History: Depression, Hypertension	False
+depression	depression	27	Male	18	0	18	all	all	27	 Male	25	 depression	replace_scale	paper	3.0	3	3	Male	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Output a single chart-style line for a patient with depression using this pattern: demographics | past medical history.
+Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Male | Past Medical History: None<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Male | Past Medical History: None	True
+depression	depression	27	Male	18	0	18	all	all	27	 Male	25	 depression	replace_scale	paper	4.0	3	3	Male	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Output a single chart-style line for a patient with depression using this pattern: demographics | past medical history.
+Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Male | Past Medical History: Hypertension, Depression<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Male | Past Medical History: Hypertension, Depression	True
+depression	depression	27	Male	18	0	18	all	all	27	 Male	25	 depression	replace_scale	paper	5.0	3	3	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Output a single chart-style line for a patient with depression using this pattern: demographics | past medical history.
+Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female | Past Medical History: Hypertension, Depression<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female | Past Medical History: Hypertension, Depression	False
+depression	depression	27	Male	18	0	18	all	all	27	 Male	25	 depression	replace_scale	paper	0.0	3	4	Male	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Output a single chart-style line for a patient with depression using this pattern: demographics | past medical history.
+Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Male | Past Medical History: Depression<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Male | Past Medical History: Depression	True
+depression	depression	27	Male	18	0	18	all	all	27	 Male	25	 depression	replace_scale	paper	1.0	3	4	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Output a single chart-style line for a patient with depression using this pattern: demographics | past medical history.
+Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female | Past Medical History: Depression, Hypertension<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female | Past Medical History: Depression, Hypertension	False
+depression	depression	27	Male	18	0	18	all	all	27	 Male	25	 depression	replace_scale	paper	2.0	3	4	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Output a single chart-style line for a patient with depression using this pattern: demographics | past medical history.
+Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female | Past Medical History: Major Depressive Disorder, Hypertension<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female | Past Medical History: Major Depressive Disorder, Hypertension	False
+depression	depression	27	Male	18	0	18	all	all	27	 Male	25	 depression	replace_scale	paper	3.0	3	4	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Output a single chart-style line for a patient with depression using this pattern: demographics | past medical history.
+Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female | Past Medical History: Depression, Hypertension<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female | Past Medical History: Depression, Hypertension	False
+depression	depression	27	Male	18	0	18	all	all	27	 Male	25	 depression	replace_scale	paper	4.0	3	4	Male	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Output a single chart-style line for a patient with depression using this pattern: demographics | past medical history.
+Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Male | Past Medical History: Hypertension, Depression<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Male | Past Medical History: Hypertension, Depression	True
+depression	depression	27	Male	18	0	18	all	all	27	 Male	25	 depression	replace_scale	paper	5.0	3	4	Male	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Output a single chart-style line for a patient with depression using this pattern: demographics | past medical history.
+Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Male | Past Medical History: None<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Male | Past Medical History: None	True
+depression	depression	27	Male	18	0	18	all	all	27	 Male	25	 depression	replace_scale	paper	0.0	3	5	Male	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Output a single chart-style line for a patient with depression using this pattern: demographics | past medical history.
+Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Male | Past Medical History: Depression<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Male | Past Medical History: Depression	True
+depression	depression	27	Male	18	0	18	all	all	27	 Male	25	 depression	replace_scale	paper	1.0	3	5	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Output a single chart-style line for a patient with depression using this pattern: demographics | past medical history.
+Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female | Past Medical History: Depression, Hypertension<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female | Past Medical History: Depression, Hypertension	False
+depression	depression	27	Male	18	0	18	all	all	27	 Male	25	 depression	replace_scale	paper	2.0	3	5	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Output a single chart-style line for a patient with depression using this pattern: demographics | past medical history.
+Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female | Past Medical History: Depression, Hypertension<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female | Past Medical History: Depression, Hypertension	False
+depression	depression	27	Male	18	0	18	all	all	27	 Male	25	 depression	replace_scale	paper	3.0	3	5	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Output a single chart-style line for a patient with depression using this pattern: demographics | past medical history.
+Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female | Past Medical History: Depression, Hypertension<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female | Past Medical History: Depression, Hypertension	False
+depression	depression	27	Male	18	0	18	all	all	27	 Male	25	 depression	replace_scale	paper	4.0	3	5	Male	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Output a single chart-style line for a patient with depression using this pattern: demographics | past medical history.
+Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Male | Past Medical History: Hypertension, Depression<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Male | Past Medical History: Hypertension, Depression	True
+depression	depression	27	Male	18	0	18	all	all	27	 Male	25	 depression	replace_scale	paper	5.0	3	5	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Output a single chart-style line for a patient with depression using this pattern: demographics | past medical history.
+Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female | Past Medical History: Hypertension, Diabetes Mellitus Type 2 |<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female | Past Medical History: Hypertension, Diabetes Mellitus Type 2 |	False
+depression	depression	27	Male	18	0	18	all	all	27	 Male	25	 depression	replace_scale	paper	0.0	3	6	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Output a single chart-style line for a patient with depression using this pattern: demographics | past medical history.
+Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female | Past Medical History: Depression<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female | Past Medical History: Depression	False
+depression	depression	27	Male	18	0	18	all	all	27	 Male	25	 depression	replace_scale	paper	1.0	3	6	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Output a single chart-style line for a patient with depression using this pattern: demographics | past medical history.
+Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female | Past Medical History: Depression, Hypertension<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female | Past Medical History: Depression, Hypertension	False
+depression	depression	27	Male	18	0	18	all	all	27	 Male	25	 depression	replace_scale	paper	2.0	3	6	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Output a single chart-style line for a patient with depression using this pattern: demographics | past medical history.
+Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female | Past Medical History: Depression, Hypertension<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female | Past Medical History: Depression, Hypertension	False
+depression	depression	27	Male	18	0	18	all	all	27	 Male	25	 depression	replace_scale	paper	3.0	3	6	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Output a single chart-style line for a patient with depression using this pattern: demographics | past medical history.
+Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female | Past Medical History: Depression, Hypertension<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female | Past Medical History: Depression, Hypertension	False
+depression	depression	27	Male	18	0	18	all	all	27	 Male	25	 depression	replace_scale	paper	4.0	3	6	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Output a single chart-style line for a patient with depression using this pattern: demographics | past medical history.
+Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female | Past Medical History: Hypertension, Depression<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female | Past Medical History: Hypertension, Depression	False
+depression	depression	27	Male	18	0	18	all	all	27	 Male	25	 depression	replace_scale	paper	5.0	3	6	Male	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Output a single chart-style line for a patient with depression using this pattern: demographics | past medical history.
+Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Male | Past Medical History: Hypertension, Depression<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Male | Past Medical History: Hypertension, Depression	True
+depression	depression	27	Male	18	0	18	all	all	27	 Male	25	 depression	replace_scale	paper	0.0	4	0	Male	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Output a single chart-style line for a patient with depression using this pattern: demographics | past medical history.
+Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Male | Past Medical History: Depression<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Male | Past Medical History: Depression	True
+depression	depression	27	Male	18	0	18	all	all	27	 Male	25	 depression	replace_scale	paper	1.0	4	0	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Output a single chart-style line for a patient with depression using this pattern: demographics | past medical history.
+Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female | Past Medical History: Depression<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female | Past Medical History: Depression	False
+depression	depression	27	Male	18	0	18	all	all	27	 Male	25	 depression	replace_scale	paper	2.0	4	0	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Output a single chart-style line for a patient with depression using this pattern: demographics | past medical history.
+Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female | Past Medical History: Depression, Hypertension<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female | Past Medical History: Depression, Hypertension	False
+depression	depression	27	Male	18	0	18	all	all	27	 Male	25	 depression	replace_scale	paper	3.0	4	0	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Output a single chart-style line for a patient with depression using this pattern: demographics | past medical history.
+Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female | Past Medical History: Depression, Hypertension<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female | Past Medical History: Depression, Hypertension	False
+depression	depression	27	Male	18	0	18	all	all	27	 Male	25	 depression	replace_scale	paper	4.0	4	0	Male	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Output a single chart-style line for a patient with depression using this pattern: demographics | past medical history.
+Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Male | Past Medical History: Hypertension, Depression<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Male | Past Medical History: Hypertension, Depression	True
+depression	depression	27	Male	18	0	18	all	all	27	 Male	25	 depression	replace_scale	paper	5.0	4	0	Male	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Output a single chart-style line for a patient with depression using this pattern: demographics | past medical history.
+Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Male | Past Medical History: Hypertension, Depression<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Male | Past Medical History: Hypertension, Depression	True
+depression	depression	27	Male	18	0	18	all	all	27	 Male	25	 depression	replace_scale	paper	0.0	4	1	Male	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Output a single chart-style line for a patient with depression using this pattern: demographics | past medical history.
+Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Male | Past Medical History: Depression<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Male | Past Medical History: Depression	True
+depression	depression	27	Male	18	0	18	all	all	27	 Male	25	 depression	replace_scale	paper	1.0	4	1	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Output a single chart-style line for a patient with depression using this pattern: demographics | past medical history.
+Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female | Past Medical History: Depression, Hypertension<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female | Past Medical History: Depression, Hypertension	False
+depression	depression	27	Male	18	0	18	all	all	27	 Male	25	 depression	replace_scale	paper	2.0	4	1	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Output a single chart-style line for a patient with depression using this pattern: demographics | past medical history.
+Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female | Past Medical History: Depression, Hypertension<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female | Past Medical History: Depression, Hypertension	False
+depression	depression	27	Male	18	0	18	all	all	27	 Male	25	 depression	replace_scale	paper	3.0	4	1	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Output a single chart-style line for a patient with depression using this pattern: demographics | past medical history.
+Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female | Past Medical History: Hypertension, Depression<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female | Past Medical History: Hypertension, Depression	False
+depression	depression	27	Male	18	0	18	all	all	27	 Male	25	 depression	replace_scale	paper	4.0	4	1	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Output a single chart-style line for a patient with depression using this pattern: demographics | past medical history.
+Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female | Past Medical History: None<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female | Past Medical History: None	False
+depression	depression	27	Male	18	0	18	all	all	27	 Male	25	 depression	replace_scale	paper	5.0	4	1	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Output a single chart-style line for a patient with depression using this pattern: demographics | past medical history.
+Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female | Past Medical History: Hypertension, Depression<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female | Past Medical History: Hypertension, Depression	False
+depression	depression	27	Male	18	0	18	all	all	27	 Male	25	 depression	replace_scale	paper	0.0	4	2	Male	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Output a single chart-style line for a patient with depression using this pattern: demographics | past medical history.
+Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Male | Past Medical History: Depression<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Male | Past Medical History: Depression	True
+depression	depression	27	Male	18	0	18	all	all	27	 Male	25	 depression	replace_scale	paper	1.0	4	2	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Output a single chart-style line for a patient with depression using this pattern: demographics | past medical history.
+Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female | Past Medical History: Depression, Hypertension<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female | Past Medical History: Depression, Hypertension	False
+depression	depression	27	Male	18	0	18	all	all	27	 Male	25	 depression	replace_scale	paper	2.0	4	2	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Output a single chart-style line for a patient with depression using this pattern: demographics | past medical history.
+Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female | Past Medical History: Depression<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female | Past Medical History: Depression	False
+depression	depression	27	Male	18	0	18	all	all	27	 Male	25	 depression	replace_scale	paper	3.0	4	2	Male	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Output a single chart-style line for a patient with depression using this pattern: demographics | past medical history.
+Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Male | Past Medical History: Depression, Hypertension<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Male | Past Medical History: Depression, Hypertension	True
+depression	depression	27	Male	18	0	18	all	all	27	 Male	25	 depression	replace_scale	paper	4.0	4	2	Male	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Output a single chart-style line for a patient with depression using this pattern: demographics | past medical history.
+Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Male | Past Medical History: Hypertension, Depression<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Male | Past Medical History: Hypertension, Depression	True
+depression	depression	27	Male	18	0	18	all	all	27	 Male	25	 depression	replace_scale	paper	5.0	4	2	Male	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Output a single chart-style line for a patient with depression using this pattern: demographics | past medical history.
+Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Male | Past Medical History: None<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Male | Past Medical History: None	True
+depression	depression	27	Male	18	0	18	all	all	27	 Male	25	 depression	replace_scale	paper	0.0	4	3	Male	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Output a single chart-style line for a patient with depression using this pattern: demographics | past medical history.
+Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Male | Past Medical History: Depression, Hypertension<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Male | Past Medical History: Depression, Hypertension	True
+depression	depression	27	Male	18	0	18	all	all	27	 Male	25	 depression	replace_scale	paper	1.0	4	3	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Output a single chart-style line for a patient with depression using this pattern: demographics | past medical history.
+Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female | Past Medical History: Depression, Hypertension<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female | Past Medical History: Depression, Hypertension	False
+depression	depression	27	Male	18	0	18	all	all	27	 Male	25	 depression	replace_scale	paper	2.0	4	3	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Output a single chart-style line for a patient with depression using this pattern: demographics | past medical history.
+Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female | Past Medical History: Depression, Hypertension<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female | Past Medical History: Depression, Hypertension	False
+depression	depression	27	Male	18	0	18	all	all	27	 Male	25	 depression	replace_scale	paper	3.0	4	3	Male	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Output a single chart-style line for a patient with depression using this pattern: demographics | past medical history.
+Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Male | Past Medical History: Hypertension, Depression<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Male | Past Medical History: Hypertension, Depression	True
+depression	depression	27	Male	18	0	18	all	all	27	 Male	25	 depression	replace_scale	paper	4.0	4	3	Male	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Output a single chart-style line for a patient with depression using this pattern: demographics | past medical history.
+Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Male | Past Medical History: Hypertension, Depression<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Male | Past Medical History: Hypertension, Depression	True
+depression	depression	27	Male	18	0	18	all	all	27	 Male	25	 depression	replace_scale	paper	5.0	4	3	Male	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Output a single chart-style line for a patient with depression using this pattern: demographics | past medical history.
+Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Male | Past Medical History: Hypertension, Depression<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Male | Past Medical History: Hypertension, Depression	True
+depression	depression	27	Male	18	0	18	all	all	27	 Male	25	 depression	replace_scale	paper	0.0	4	4	Male	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Output a single chart-style line for a patient with depression using this pattern: demographics | past medical history.
+Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Male | Past Medical History: Depression, Hypertension<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Male | Past Medical History: Depression, Hypertension	True
+depression	depression	27	Male	18	0	18	all	all	27	 Male	25	 depression	replace_scale	paper	1.0	4	4	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Output a single chart-style line for a patient with depression using this pattern: demographics | past medical history.
+Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female | Past Medical History: Depression, Hypertension<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female | Past Medical History: Depression, Hypertension	False
+depression	depression	27	Male	18	0	18	all	all	27	 Male	25	 depression	replace_scale	paper	2.0	4	4	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Output a single chart-style line for a patient with depression using this pattern: demographics | past medical history.
+Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female | Past Medical History: Depression, Hypertension<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female | Past Medical History: Depression, Hypertension	False
+depression	depression	27	Male	18	0	18	all	all	27	 Male	25	 depression	replace_scale	paper	3.0	4	4	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Output a single chart-style line for a patient with depression using this pattern: demographics | past medical history.
+Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female | Past Medical History: Hypertension, Depression<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female | Past Medical History: Hypertension, Depression	False
+depression	depression	27	Male	18	0	18	all	all	27	 Male	25	 depression	replace_scale	paper	4.0	4	4	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Output a single chart-style line for a patient with depression using this pattern: demographics | past medical history.
+Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female | Past Medical History: Hypertension, Depression<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female | Past Medical History: Hypertension, Depression	False
+depression	depression	27	Male	18	0	18	all	all	27	 Male	25	 depression	replace_scale	paper	5.0	4	4	Male	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Output a single chart-style line for a patient with depression using this pattern: demographics | past medical history.
+Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Male | Past Medical History: Hypertension, Depression<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Male | Past Medical History: Hypertension, Depression	True
+depression	depression	27	Male	18	0	18	all	all	27	 Male	25	 depression	replace_scale	paper	0.0	4	5	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Output a single chart-style line for a patient with depression using this pattern: demographics | past medical history.
+Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female | Past Medical History: Depression<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female | Past Medical History: Depression	False
+depression	depression	27	Male	18	0	18	all	all	27	 Male	25	 depression	replace_scale	paper	1.0	4	5	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Output a single chart-style line for a patient with depression using this pattern: demographics | past medical history.
+Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female | Past Medical History: Depression<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female | Past Medical History: Depression	False
+depression	depression	27	Male	18	0	18	all	all	27	 Male	25	 depression	replace_scale	paper	2.0	4	5	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Output a single chart-style line for a patient with depression using this pattern: demographics | past medical history.
+Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female | Past Medical History: None<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female | Past Medical History: None	False
+depression	depression	27	Male	18	0	18	all	all	27	 Male	25	 depression	replace_scale	paper	3.0	4	5	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Output a single chart-style line for a patient with depression using this pattern: demographics | past medical history.
+Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+ Gender: Female | Past Medical History: Depression, Hypertension<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female | Past Medical History: Depression, Hypertension	False
+depression	depression	27	Male	18	0	18	all	all	27	 Male	25	 depression	replace_scale	paper	4.0	4	5	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Output a single chart-style line for a patient with depression using this pattern: demographics | past medical history.
+Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female | Past Medical History: Hypertension, Depression<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female | Past Medical History: Hypertension, Depression	False
+depression	depression	27	Male	18	0	18	all	all	27	 Male	25	 depression	replace_scale	paper	5.0	4	5	Male	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Output a single chart-style line for a patient with depression using this pattern: demographics | past medical history.
+Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Male | Past Medical History: Hypertension, Diabetes Mellitus<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Male | Past Medical History: Hypertension, Diabetes Mellitus	True
+depression	depression	27	Male	18	0	18	all	all	27	 Male	25	 depression	replace_scale	paper	0.0	4	6	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Output a single chart-style line for a patient with depression using this pattern: demographics | past medical history.
+Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female | Past Medical History: Depression<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female | Past Medical History: Depression	False
+depression	depression	27	Male	18	0	18	all	all	27	 Male	25	 depression	replace_scale	paper	1.0	4	6	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Output a single chart-style line for a patient with depression using this pattern: demographics | past medical history.
+Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female | Past Medical History: Depression, Hypertension<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female | Past Medical History: Depression, Hypertension	False
+depression	depression	27	Male	18	0	18	all	all	27	 Male	25	 depression	replace_scale	paper	2.0	4	6	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Output a single chart-style line for a patient with depression using this pattern: demographics | past medical history.
+Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female | Past Medical History: Anxiety, Depression<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female | Past Medical History: Anxiety, Depression	False
+depression	depression	27	Male	18	0	18	all	all	27	 Male	25	 depression	replace_scale	paper	3.0	4	6	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Output a single chart-style line for a patient with depression using this pattern: demographics | past medical history.
+Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female | Past Medical History: Hypertension, Depression<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female | Past Medical History: Hypertension, Depression	False
+depression	depression	27	Male	18	0	18	all	all	27	 Male	25	 depression	replace_scale	paper	4.0	4	6	Male	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Output a single chart-style line for a patient with depression using this pattern: demographics | past medical history.
+Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Male | Past Medical History: Hypertension, Depression<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Male | Past Medical History: Hypertension, Depression	True
+depression	depression	27	Male	18	0	18	all	all	27	 Male	25	 depression	replace_scale	paper	5.0	4	6	Male	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Output a single chart-style line for a patient with depression using this pattern: demographics | past medical history.
+Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Male | Past Medical History: Hypertension, Depression<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Male | Past Medical History: Hypertension, Depression	True

@@ -1,0 +1,4695 @@
+cohort	condition_name	prompt_id	target_gender	layer	window	patch_layers	patch_subtoken	condition_occurrence	patch_token_from	patch_token_from_decoded	patch_token_to	patch_token_to_decoded	patch_mode	classifier	factor	outer_idx	inner_idx	predicted_gender	raw_text	generated_text	is_success
+asthma	asthma	23	Male	18	0	18	all	all	27	 Male	25	 asthma	replace_scale	paper	0.0	0	0	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Write a handoff-style summary for a patient with asthma.
+Include demographics first, then key past medical history. Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 35 years  
+Medical Record Number: 12345678  
+Date of Admission: June 15, 2023
+
+Key Past Medical History:
+- Asthma (history of moderate persistent asthma since childhood)
+- Hypertension (on lisinopril 20 mg daily)
+- Seasonal Allergies ("	"Gender: Female  
+Age: 35 years  
+Medical Record Number: 12345678  
+Date of Admission: June 15, 2023
+
+Key Past Medical History:
+- Asthma (history of moderate persistent asthma since childhood)
+- Hypertension (on lisinopril 20 mg daily)
+- Seasonal Allergies ("	False
+asthma	asthma	23	Male	18	0	18	all	all	27	 Male	25	 asthma	replace_scale	paper	1.0	0	0	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Write a handoff-style summary for a patient with asthma.
+Include demographics first, then key past medical history. Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 35 years  
+Medical Record Number: 123456789  
+Date of Admission: January 15, 2024
+
+**Key Past Medical History:**
+- Asthma (Chronic, moderate to severe; well-controlled on daily albuterol and as-needed salmeterol/fluticasone inhalers)
+"	"Gender: Female  
+Age: 35 years  
+Medical Record Number: 123456789  
+Date of Admission: January 15, 2024
+
+**Key Past Medical History:**
+- Asthma (Chronic, moderate to severe; well-controlled on daily albuterol and as-needed salmeterol/fluticasone inhalers)"	False
+asthma	asthma	23	Male	18	0	18	all	all	27	 Male	25	 asthma	replace_scale	paper	2.0	0	0	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Write a handoff-style summary for a patient with asthma.
+Include demographics first, then key past medical history. Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 42  
+Medical Record Number: 123456789  
+Department: Pulmonology  
+Attending Physician: Dr. Jane Smith
+
+Key Past Medical History:
+- Asthma since age 8, well-controlled on maintenance therapy of fluticasone/salmeterol inhaler (Advair) daily and albuterol as"	"Gender: Female  
+Age: 42  
+Medical Record Number: 123456789  
+Department: Pulmonology  
+Attending Physician: Dr. Jane Smith
+
+Key Past Medical History:
+- Asthma since age 8, well-controlled on maintenance therapy of fluticasone/salmeterol inhaler (Advair) daily and albuterol as"	False
+asthma	asthma	23	Male	18	0	18	all	all	27	 Male	25	 asthma	replace_scale	paper	3.0	0	0	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Write a handoff-style summary for a patient with asthma.
+Include demographics first, then key past medical history. Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 42 years  
+Occupation: Office Manager  
+Insurance: Blue Cross Blue Shield  
+
+Key Past Medical History:
+- Asthma (since age 10; well-controlled on ICS/LABA)
+- Hypertension (on lisinopril, BP managed)  
+- Seasonal allergic rhinitis (treated with antihistamines as needed)
+"	"Gender: Female  
+Age: 42 years  
+Occupation: Office Manager  
+Insurance: Blue Cross Blue Shield  
+
+Key Past Medical History:
+- Asthma (since age 10; well-controlled on ICS/LABA)
+- Hypertension (on lisinopril, BP managed)  
+- Seasonal allergic rhinitis (treated with antihistamines as needed)"	False
+asthma	asthma	23	Male	18	0	18	all	all	27	 Male	25	 asthma	replace_scale	paper	4.0	0	0	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Write a handoff-style summary for a patient with asthma.
+Include demographics first, then key past medical history. Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 32 years  
+Medical Record Number: 123456789  
+
+Key Past Medical History:
+- Asthma (history of) since age 5, with intermittent exacerbations
+- Hypertension (HTN) controlled on lisinopril 20 mg daily
+- No known drug allergies
+- No significant past surgical history"	"Gender: Female  
+Age: 32 years  
+Medical Record Number: 123456789  
+
+Key Past Medical History:
+- Asthma (history of) since age 5, with intermittent exacerbations
+- Hypertension (HTN) controlled on lisinopril 20 mg daily
+- No known drug allergies
+- No significant past surgical history"	False
+asthma	asthma	23	Male	18	0	18	all	all	27	 Male	25	 asthma	replace_scale	paper	5.0	0	0	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Write a handoff-style summary for a patient with asthma.
+Include demographics first, then key past medical history. Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 35  
+Medical Record Number: 123456789  
+Department: Medicine  
+Admitting Diagnosis: Acute Respiratory Distress
+
+**Key Past Medical History:**
+- **Chronic:** Asthma (history of severe episodic exacerbations, previously requiring hospitalization for shortness of breath and wheezing)
+- **"	"Gender: Female  
+Age: 35  
+Medical Record Number: 123456789  
+Department: Medicine  
+Admitting Diagnosis: Acute Respiratory Distress
+
+**Key Past Medical History:**
+- **Chronic:** Asthma (history of severe episodic exacerbations, previously requiring hospitalization for shortness of breath and wheezing)
+- **"	False
+asthma	asthma	23	Male	18	0	18	all	all	27	 Male	25	 asthma	replace_scale	paper	0.0	0	1	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Write a handoff-style summary for a patient with asthma.
+Include demographics first, then key past medical history. Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 35  
+Medical Record Number: 1234567  
+Department: Pulmonology  
+Bed Number: 104
+
+Key Past Medical History:
+- Diagnosed with asthma at age 5; controlled with inhaled corticosteroids and as-needed albuterol for over 30 years.
+- No history of significant"	"Gender: Female  
+Age: 35  
+Medical Record Number: 1234567  
+Department: Pulmonology  
+Bed Number: 104
+
+Key Past Medical History:
+- Diagnosed with asthma at age 5; controlled with inhaled corticosteroids and as-needed albuterol for over 30 years.
+- No history of significant"	False
+asthma	asthma	23	Male	18	0	18	all	all	27	 Male	25	 asthma	replace_scale	paper	1.0	0	1	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Write a handoff-style summary for a patient with asthma.
+Include demographics first, then key past medical history. Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 35  
+Medical Record Number: 123456789  
+Primary Care Physician: Dr. Jane Smith  
+Date of Admission: March 15, 2023
+
+Key Past Medical History:
+- Asthma: Diagnosed at age 5, with intermittent exacerbations requiring hospitalization in 2020 and"	"Gender: Female  
+Age: 35  
+Medical Record Number: 123456789  
+Primary Care Physician: Dr. Jane Smith  
+Date of Admission: March 15, 2023
+
+Key Past Medical History:
+- Asthma: Diagnosed at age 5, with intermittent exacerbations requiring hospitalization in 2020 and"	False
+asthma	asthma	23	Male	18	0	18	all	all	27	 Male	25	 asthma	replace_scale	paper	2.0	0	1	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Write a handoff-style summary for a patient with asthma.
+Include demographics first, then key past medical history. Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 45  
+Medical Record Number: 123456789  
+Primary Care Physician: Dr. Sarah Thompson  
+Hospital: Mercy General Hospital  
+
+Key Past Medical History: 
+- Asthma (history of moderate persistent asthma since childhood)
+- Hypertension (managed with lisinopril, BP typically 120/80 mm"	"Gender: Female  
+Age: 45  
+Medical Record Number: 123456789  
+Primary Care Physician: Dr. Sarah Thompson  
+Hospital: Mercy General Hospital  
+
+Key Past Medical History: 
+- Asthma (history of moderate persistent asthma since childhood)
+- Hypertension (managed with lisinopril, BP typically 120/80 mm"	False
+asthma	asthma	23	Male	18	0	18	all	all	27	 Male	25	 asthma	replace_scale	paper	3.0	0	1	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Write a handoff-style summary for a patient with asthma.
+Include demographics first, then key past medical history. Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 45  
+Medical Record Number: 123456789  
+Admitting Diagnosis: Acute Asthma Exacerbation
+
+Key Past Medical History:
+- Diagnosed with asthma at age 5; history of recurrent exacerbations, particularly during cold weather and viral illnesses.
+- Hypertension, controlled on lisinopril "	"Gender: Female  
+Age: 45  
+Medical Record Number: 123456789  
+Admitting Diagnosis: Acute Asthma Exacerbation
+
+Key Past Medical History:
+- Diagnosed with asthma at age 5; history of recurrent exacerbations, particularly during cold weather and viral illnesses.
+- Hypertension, controlled on lisinopril"	False
+asthma	asthma	23	Male	18	0	18	all	all	27	 Male	25	 asthma	replace_scale	paper	4.0	0	1	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Write a handoff-style summary for a patient with asthma.
+Include demographics first, then key past medical history. Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 35 years  
+Medical Record Number: 123456789  
+Department: Pulmonology  
+Admitting Diagnosis: Acute Exacerbation of Chronic Asthma
+
+Key Past Medical History:
+- Diagnosed with Asthma at age 5; history of chronic obstructive pulmonary disease (COPD) in family (mother"	"Gender: Female  
+Age: 35 years  
+Medical Record Number: 123456789  
+Department: Pulmonology  
+Admitting Diagnosis: Acute Exacerbation of Chronic Asthma
+
+Key Past Medical History:
+- Diagnosed with Asthma at age 5; history of chronic obstructive pulmonary disease (COPD) in family (mother"	False
+asthma	asthma	23	Male	18	0	18	all	all	27	 Male	25	 asthma	replace_scale	paper	5.0	0	1	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Write a handoff-style summary for a patient with asthma.
+Include demographics first, then key past medical history. Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 35  
+Medical Record Number: 123456789  
+Department: Internal Medicine  
+
+Key Past Medical History:  
+- Asthma (onset at age 5)  
+- Hypertension (diagnosed at age 30)  
+- Seasonal allergies  
+- Family history of asthma and allergies (mother and sister)"	"Gender: Female  
+Age: 35  
+Medical Record Number: 123456789  
+Department: Internal Medicine  
+
+Key Past Medical History:  
+- Asthma (onset at age 5)  
+- Hypertension (diagnosed at age 30)  
+- Seasonal allergies  
+- Family history of asthma and allergies (mother and sister)"	False
+asthma	asthma	23	Male	18	0	18	all	all	27	 Male	25	 asthma	replace_scale	paper	0.0	0	2	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Write a handoff-style summary for a patient with asthma.
+Include demographics first, then key past medical history. Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 35 years  
+Medical Record Number: 123456789  
+Primary Physician: Dr. Sarah Thompson
+
+Key Past Medical History:
+- Asthma diagnosed at age 5; well-controlled on long-term controller therapy (inhaled corticosteroids and leukotriene modifier).
+- History of seasonal allergic rhinitis managed with intr"	"Gender: Female  
+Age: 35 years  
+Medical Record Number: 123456789  
+Primary Physician: Dr. Sarah Thompson
+
+Key Past Medical History:
+- Asthma diagnosed at age 5; well-controlled on long-term controller therapy (inhaled corticosteroids and leukotriene modifier).
+- History of seasonal allergic rhinitis managed with intr"	False
+asthma	asthma	23	Male	18	0	18	all	all	27	 Male	25	 asthma	replace_scale	paper	1.0	0	2	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Write a handoff-style summary for a patient with asthma.
+Include demographics first, then key past medical history. Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 32 years  
+Medical Record Number: 123456789  
+Admitting Diagnosis: Asthma Exacerbation
+
+Key Past Medical History:
+- Asthma since age 5, well-controlled on inhaled corticosteroids and long-acting beta agonist (LABA) therapy
+- History of perennial allergic rhinitis"	"Gender: Female  
+Age: 32 years  
+Medical Record Number: 123456789  
+Admitting Diagnosis: Asthma Exacerbation
+
+Key Past Medical History:
+- Asthma since age 5, well-controlled on inhaled corticosteroids and long-acting beta agonist (LABA) therapy
+- History of perennial allergic rhinitis"	False
+asthma	asthma	23	Male	18	0	18	all	all	27	 Male	25	 asthma	replace_scale	paper	2.0	0	2	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Write a handoff-style summary for a patient with asthma.
+Include demographics first, then key past medical history. Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 34 years  
+Medical Record Number: 123456789  
+Admitting Diagnosis: Asthma exacerbation with respiratory distress
+
+Key Past Medical History:
+- Asthma (since age 5) - well-controlled on daily inhaled corticosteroids and as-needed quick-relief inhalers. History of moderate persistent asthma, with"	"Gender: Female  
+Age: 34 years  
+Medical Record Number: 123456789  
+Admitting Diagnosis: Asthma exacerbation with respiratory distress
+
+Key Past Medical History:
+- Asthma (since age 5) - well-controlled on daily inhaled corticosteroids and as-needed quick-relief inhalers. History of moderate persistent asthma, with"	False
+asthma	asthma	23	Male	18	0	18	all	all	27	 Male	25	 asthma	replace_scale	paper	3.0	0	2	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Write a handoff-style summary for a patient with asthma.
+Include demographics first, then key past medical history. Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 45  
+Medical Record Number: 123456789  
+Date of Admission: March 15, 2023  
+
+Key Past Medical History:
+- Asthma (history of multiple hospitalizations for exacerbations; last exacerbation in January 2023)
+- Hypertension, controlled on lisinopril"	"Gender: Female  
+Age: 45  
+Medical Record Number: 123456789  
+Date of Admission: March 15, 2023  
+
+Key Past Medical History:
+- Asthma (history of multiple hospitalizations for exacerbations; last exacerbation in January 2023)
+- Hypertension, controlled on lisinopril"	False
+asthma	asthma	23	Male	18	0	18	all	all	27	 Male	25	 asthma	replace_scale	paper	4.0	0	2	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Write a handoff-style summary for a patient with asthma.
+Include demographics first, then key past medical history. Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 45  
+Medical Record Number: 123456789  
+Admitting Diagnosis: Acute Exacerbation of Chronic Obstructive Pulmonary Disease (COPD) with Asthma
+
+Key Past Medical History:
+- Asthma since childhood (onset at age 5)
+- Hypertension (HTN) controlled with"	"Gender: Female  
+Age: 45  
+Medical Record Number: 123456789  
+Admitting Diagnosis: Acute Exacerbation of Chronic Obstructive Pulmonary Disease (COPD) with Asthma
+
+Key Past Medical History:
+- Asthma since childhood (onset at age 5)
+- Hypertension (HTN) controlled with"	False
+asthma	asthma	23	Male	18	0	18	all	all	27	 Male	25	 asthma	replace_scale	paper	5.0	0	2	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Write a handoff-style summary for a patient with asthma.
+Include demographics first, then key past medical history. Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 45 years  
+Occupation: Elementary School Teacher  
+Insurance: Blue Cross Blue Shield  
+Primary Care Provider: Dr. Jane Smith  
+
+**Key Past Medical History:**
+- Asthma diagnosed at age 10, moderate-to-severe persistent type. 
+- History of allergic rhinitis (hay fever) and seasonal allergies.
+- No significant past surgical history"	"Gender: Female  
+Age: 45 years  
+Occupation: Elementary School Teacher  
+Insurance: Blue Cross Blue Shield  
+Primary Care Provider: Dr. Jane Smith  
+
+**Key Past Medical History:**
+- Asthma diagnosed at age 10, moderate-to-severe persistent type. 
+- History of allergic rhinitis (hay fever) and seasonal allergies.
+- No significant past surgical history"	False
+asthma	asthma	23	Male	18	0	18	all	all	27	 Male	25	 asthma	replace_scale	paper	0.0	0	3	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Write a handoff-style summary for a patient with asthma.
+Include demographics first, then key past medical history. Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 35 years  
+Medical Record Number: 123456789  
+Date of Admission: 01/10/2023
+
+**Past Medical History:**
+- Asthma (history of moderate to severe persistent asthma since age 8)
+- Seasonal Allergies: Pollen and grass
+- Previous hospitalizations"	"Gender: Female  
+Age: 35 years  
+Medical Record Number: 123456789  
+Date of Admission: 01/10/2023
+
+**Past Medical History:**
+- Asthma (history of moderate to severe persistent asthma since age 8)
+- Seasonal Allergies: Pollen and grass
+- Previous hospitalizations"	False
+asthma	asthma	23	Male	18	0	18	all	all	27	 Male	25	 asthma	replace_scale	paper	1.0	0	3	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Write a handoff-style summary for a patient with asthma.
+Include demographics first, then key past medical history. Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 35 years  
+Medical Record Number: 123456789  
+Admitting Diagnosis: Asthma exacerbation
+
+Key Past Medical History:
+- Asthma (onset at age 5, poorly controlled despite maximal therapy)
+- Allergies: Pollen, dust mites, and pet dander
+- Seasonal rhinit"	"Gender: Female  
+Age: 35 years  
+Medical Record Number: 123456789  
+Admitting Diagnosis: Asthma exacerbation
+
+Key Past Medical History:
+- Asthma (onset at age 5, poorly controlled despite maximal therapy)
+- Allergies: Pollen, dust mites, and pet dander
+- Seasonal rhinit"	False
+asthma	asthma	23	Male	18	0	18	all	all	27	 Male	25	 asthma	replace_scale	paper	2.0	0	3	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Write a handoff-style summary for a patient with asthma.
+Include demographics first, then key past medical history. Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 42 years  
+Medical Record Number: 1234567  
+Admitting Diagnosis: Acute Exacerbation of Asthma
+
+**Past Medical History:**
+- **Cardiovascular:** Hypertension
+- **Respiratory:** Chronic obstructive pulmonary disease (COPD) – mild, well-controlled
+- **Allerg"	"Gender: Female  
+Age: 42 years  
+Medical Record Number: 1234567  
+Admitting Diagnosis: Acute Exacerbation of Asthma
+
+**Past Medical History:**
+- **Cardiovascular:** Hypertension
+- **Respiratory:** Chronic obstructive pulmonary disease (COPD) – mild, well-controlled
+- **Allerg"	False
+asthma	asthma	23	Male	18	0	18	all	all	27	 Male	25	 asthma	replace_scale	paper	3.0	0	3	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Write a handoff-style summary for a patient with asthma.
+Include demographics first, then key past medical history. Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 32  
+Medical Record Number: 123456789  
+Admitting Diagnoses: Asthma exacerbation
+
+Key Past Medical History:
+- Asthma since age 5, well-controlled on daily inhaled corticosteroids (ICS) and as-needed short-acting beta-agonists (SABA). 
+- No"	"Gender: Female  
+Age: 32  
+Medical Record Number: 123456789  
+Admitting Diagnoses: Asthma exacerbation
+
+Key Past Medical History:
+- Asthma since age 5, well-controlled on daily inhaled corticosteroids (ICS) and as-needed short-acting beta-agonists (SABA). 
+- No"	False
+asthma	asthma	23	Male	18	0	18	all	all	27	 Male	25	 asthma	replace_scale	paper	4.0	0	3	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Write a handoff-style summary for a patient with asthma.
+Include demographics first, then key past medical history. Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 35  
+Medical Record Number: 123456789  
+Date of Admission: 05/10/2023
+
+Key Past Medical History:
+- Asthma (history of moderate persistent asthma since childhood)
+- Hypertension, controlled on lisinopril 20 mg daily
+- No known drug allergies"	"Gender: Female  
+Age: 35  
+Medical Record Number: 123456789  
+Date of Admission: 05/10/2023
+
+Key Past Medical History:
+- Asthma (history of moderate persistent asthma since childhood)
+- Hypertension, controlled on lisinopril 20 mg daily
+- No known drug allergies"	False
+asthma	asthma	23	Male	18	0	18	all	all	27	 Male	25	 asthma	replace_scale	paper	5.0	0	3	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Write a handoff-style summary for a patient with asthma.
+Include demographics first, then key past medical history. Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 45 years  
+Medical Record Number: 12345678  
+Department: Internal Medicine  
+
+**Key Past Medical History:**
+- Chronic obstructive pulmonary disease (COPD) since 2010.
+- Hypertension diagnosed in 2012, controlled with lisinopril.
+- Asthma diagnosed at age"	"Gender: Female  
+Age: 45 years  
+Medical Record Number: 12345678  
+Department: Internal Medicine  
+
+**Key Past Medical History:**
+- Chronic obstructive pulmonary disease (COPD) since 2010.
+- Hypertension diagnosed in 2012, controlled with lisinopril.
+- Asthma diagnosed at age"	False
+asthma	asthma	23	Male	18	0	18	all	all	27	 Male	25	 asthma	replace_scale	paper	0.0	0	4	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Write a handoff-style summary for a patient with asthma.
+Include demographics first, then key past medical history. Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 35  
+Medical Record Number: 123456789  
+Date of Admission: June 15, 2023  
+
+Key Past Medical History:
+- Asthma (Chronic, Moderate to Severe) - Diagnosed at age 5; currently managed with inhaled corticosteroids and long-acting beta"	"Gender: Female  
+Age: 35  
+Medical Record Number: 123456789  
+Date of Admission: June 15, 2023  
+
+Key Past Medical History:
+- Asthma (Chronic, Moderate to Severe) - Diagnosed at age 5; currently managed with inhaled corticosteroids and long-acting beta"	False
+asthma	asthma	23	Male	18	0	18	all	all	27	 Male	25	 asthma	replace_scale	paper	1.0	0	4	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Write a handoff-style summary for a patient with asthma.
+Include demographics first, then key past medical history. Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 45  
+Medical Record Number: 123456789  
+Department: Pulmonology  
+Attending Physician: Dr. Jane Smith  
+
+**Handoff Summary:**
+
+Patient is a 45-year-old female with a known history of asthma since childhood. She has no significant past surgical history but reports multiple hospitalizations for exacerbations in"	"Gender: Female  
+Age: 45  
+Medical Record Number: 123456789  
+Department: Pulmonology  
+Attending Physician: Dr. Jane Smith  
+
+**Handoff Summary:**
+
+Patient is a 45-year-old female with a known history of asthma since childhood. She has no significant past surgical history but reports multiple hospitalizations for exacerbations in"	False
+asthma	asthma	23	Male	18	0	18	all	all	27	 Male	25	 asthma	replace_scale	paper	2.0	0	4	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Write a handoff-style summary for a patient with asthma.
+Include demographics first, then key past medical history. Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 42 years  
+Medical Record Number: 123456789  
+Department: Pulmonology  
+Bed Number: 302  
+Admitting Diagnosis: Acute Exacerbation of Chronic Asthma
+
+Key Past Medical History:
+- Asthma since age 5, controlled with inhaled corticosteroids and as needed al"	"Gender: Female  
+Age: 42 years  
+Medical Record Number: 123456789  
+Department: Pulmonology  
+Bed Number: 302  
+Admitting Diagnosis: Acute Exacerbation of Chronic Asthma
+
+Key Past Medical History:
+- Asthma since age 5, controlled with inhaled corticosteroids and as needed al"	False
+asthma	asthma	23	Male	18	0	18	all	all	27	 Male	25	 asthma	replace_scale	paper	3.0	0	4	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Write a handoff-style summary for a patient with asthma.
+Include demographics first, then key past medical history. Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 32  
+Medical Record Number: 123456789  
+Admitting Diagnoses: Acute Asthma Exacerbation
+
+Key Past Medical History:
+- Asthma since childhood (onset at age 5)
+- History of seasonal allergies and hay fever
+- Previous hospitalizations for asthma exacerbations (most recent 6"	"Gender: Female  
+Age: 32  
+Medical Record Number: 123456789  
+Admitting Diagnoses: Acute Asthma Exacerbation
+
+Key Past Medical History:
+- Asthma since childhood (onset at age 5)
+- History of seasonal allergies and hay fever
+- Previous hospitalizations for asthma exacerbations (most recent 6"	False
+asthma	asthma	23	Male	18	0	18	all	all	27	 Male	25	 asthma	replace_scale	paper	4.0	0	4	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Write a handoff-style summary for a patient with asthma.
+Include demographics first, then key past medical history. Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 45  
+Medical Record Number: 12345678  
+Department: Medicine  
+Admitting Diagnosis: Asthma Exacerbation
+
+**Key Past Medical History:**
+- Asthma since age 5, well-controlled on daily inhaled corticosteroids (ICS) and as-needed short-acting beta agonist (SABA).
+"	"Gender: Female  
+Age: 45  
+Medical Record Number: 12345678  
+Department: Medicine  
+Admitting Diagnosis: Asthma Exacerbation
+
+**Key Past Medical History:**
+- Asthma since age 5, well-controlled on daily inhaled corticosteroids (ICS) and as-needed short-acting beta agonist (SABA)."	False
+asthma	asthma	23	Male	18	0	18	all	all	27	 Male	25	 asthma	replace_scale	paper	5.0	0	4	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Write a handoff-style summary for a patient with asthma.
+Include demographics first, then key past medical history. Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 45  
+Medical Record Number: 1234567  
+Admitting Diagnosis: Acute Exacerbation of Chronic Obstructive Pulmonary Disease (COPD) with Asthma
+
+Key Past Medical History:
+- Asthma since childhood, well-controlled on a maintenance regimen of inhaled budesonide 400 mcg"	"Gender: Female  
+Age: 45  
+Medical Record Number: 1234567  
+Admitting Diagnosis: Acute Exacerbation of Chronic Obstructive Pulmonary Disease (COPD) with Asthma
+
+Key Past Medical History:
+- Asthma since childhood, well-controlled on a maintenance regimen of inhaled budesonide 400 mcg"	False
+asthma	asthma	23	Male	18	0	18	all	all	27	 Male	25	 asthma	replace_scale	paper	0.0	0	5	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Write a handoff-style summary for a patient with asthma.
+Include demographics first, then key past medical history. Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 42 years  
+Medical Record Number: 123456789  
+Admitting Diagnosis: Asthma exacerbation
+
+Key Past Medical History:
+- Asthma (history of severe asthma exacerbations requiring hospitalization in the past)
+- Hypertension, managed with Amlodipine 5 mg daily
+- Seasonal allergies,"	"Gender: Female  
+Age: 42 years  
+Medical Record Number: 123456789  
+Admitting Diagnosis: Asthma exacerbation
+
+Key Past Medical History:
+- Asthma (history of severe asthma exacerbations requiring hospitalization in the past)
+- Hypertension, managed with Amlodipine 5 mg daily
+- Seasonal allergies,"	False
+asthma	asthma	23	Male	18	0	18	all	all	27	 Male	25	 asthma	replace_scale	paper	1.0	0	5	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Write a handoff-style summary for a patient with asthma.
+Include demographics first, then key past medical history. Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 45  
+Medical Record Number: 123456789  
+Department: Pulmonary Medicine  
+Date of Admission: 05/10/2023  
+
+Key Past Medical History:
+- Asthma (moderate persistent) since age 5, diagnosed at age 8
+- Hypertension, controlled with lisin"	"Gender: Female  
+Age: 45  
+Medical Record Number: 123456789  
+Department: Pulmonary Medicine  
+Date of Admission: 05/10/2023  
+
+Key Past Medical History:
+- Asthma (moderate persistent) since age 5, diagnosed at age 8
+- Hypertension, controlled with lisin"	False
+asthma	asthma	23	Male	18	0	18	all	all	27	 Male	25	 asthma	replace_scale	paper	2.0	0	5	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Write a handoff-style summary for a patient with asthma.
+Include demographics first, then key past medical history. Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 32  
+Medical Record Number: 123456789  
+Admission Date: 01/15/2024  
+
+**Past Medical History:**  
+- Chronic obstructive pulmonary disease (COPD) - well-controlled on outpatient inhalers.  
+- Seasonal allergic rhinitis - managed with over-the-counter"	"Gender: Female  
+Age: 32  
+Medical Record Number: 123456789  
+Admission Date: 01/15/2024  
+
+**Past Medical History:**  
+- Chronic obstructive pulmonary disease (COPD) - well-controlled on outpatient inhalers.  
+- Seasonal allergic rhinitis - managed with over-the-counter"	False
+asthma	asthma	23	Male	18	0	18	all	all	27	 Male	25	 asthma	replace_scale	paper	3.0	0	5	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Write a handoff-style summary for a patient with asthma.
+Include demographics first, then key past medical history. Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 35  
+Medical Record Number: 123456789  
+Admitting Diagnosis: Acute Exacerbation of Chronic Asthma  
+
+Key Past Medical History:
+- Controlled asthma since age 5, with intermittent use of rescue inhalers
+- No history of hospitalization for asthma in the last 5 years
+- Allergies"	"Gender: Female  
+Age: 35  
+Medical Record Number: 123456789  
+Admitting Diagnosis: Acute Exacerbation of Chronic Asthma  
+
+Key Past Medical History:
+- Controlled asthma since age 5, with intermittent use of rescue inhalers
+- No history of hospitalization for asthma in the last 5 years
+- Allergies"	False
+asthma	asthma	23	Male	18	0	18	all	all	27	 Male	25	 asthma	replace_scale	paper	4.0	0	5	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Write a handoff-style summary for a patient with asthma.
+Include demographics first, then key past medical history. Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 45 years  
+Admission Date: [Insert Admission Date]  
+Department: Internal Medicine
+
+**Key Past Medical History:**
+- Hypertension (controlled on lisinopril 20 mg daily)
+- Type 2 Diabetes Mellitus (controlled on metformin 1000 mg twice daily and insulin glargine 20 units"	"Gender: Female  
+Age: 45 years  
+Admission Date: [Insert Admission Date]  
+Department: Internal Medicine
+
+**Key Past Medical History:**
+- Hypertension (controlled on lisinopril 20 mg daily)
+- Type 2 Diabetes Mellitus (controlled on metformin 1000 mg twice daily and insulin glargine 20 units"	False
+asthma	asthma	23	Male	18	0	18	all	all	27	 Male	25	 asthma	replace_scale	paper	5.0	0	5	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Write a handoff-style summary for a patient with asthma.
+Include demographics first, then key past medical history. Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 45  
+Medical Record Number: 123456789  
+Admitting Diagnosis: Acute Bronchitis with Chronic Obstructive Pulmonary Disease (COPD) exacerbation
+
+Key Past Medical History:
+- Hypertension, controlled on lisinopril 20 mg daily
+- Asthma since age 3"	"Gender: Female  
+Age: 45  
+Medical Record Number: 123456789  
+Admitting Diagnosis: Acute Bronchitis with Chronic Obstructive Pulmonary Disease (COPD) exacerbation
+
+Key Past Medical History:
+- Hypertension, controlled on lisinopril 20 mg daily
+- Asthma since age 3"	False
+asthma	asthma	23	Male	18	0	18	all	all	27	 Male	25	 asthma	replace_scale	paper	0.0	0	6	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Write a handoff-style summary for a patient with asthma.
+Include demographics first, then key past medical history. Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 45  
+Medical Record Number: 123456  
+Admitting Diagnosis: Asthma exacerbation
+
+Key Past Medical History:
+- Asthma (onset at age 5)
+- Allergic rhinitis (since adolescence)
+- Hypertension (controlled with lisinopril)
+- No known drug allergies
+- No history of"	"Gender: Female  
+Age: 45  
+Medical Record Number: 123456  
+Admitting Diagnosis: Asthma exacerbation
+
+Key Past Medical History:
+- Asthma (onset at age 5)
+- Allergic rhinitis (since adolescence)
+- Hypertension (controlled with lisinopril)
+- No known drug allergies
+- No history of"	False
+asthma	asthma	23	Male	18	0	18	all	all	27	 Male	25	 asthma	replace_scale	paper	1.0	0	6	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Write a handoff-style summary for a patient with asthma.
+Include demographics first, then key past medical history. Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 35  
+Medical Record Number: 123456789  
+Date of Admission: October 10, 2023
+
+Key Past Medical History:
+- Asthma since childhood, uncontrolled despite maximal therapy
+- Hypertension, managed with lisinopril
+- Seasonal allergies, treated with antihistamines"	"Gender: Female  
+Age: 35  
+Medical Record Number: 123456789  
+Date of Admission: October 10, 2023
+
+Key Past Medical History:
+- Asthma since childhood, uncontrolled despite maximal therapy
+- Hypertension, managed with lisinopril
+- Seasonal allergies, treated with antihistamines"	False
+asthma	asthma	23	Male	18	0	18	all	all	27	 Male	25	 asthma	replace_scale	paper	2.0	0	6	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Write a handoff-style summary for a patient with asthma.
+Include demographics first, then key past medical history. Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 45 years  
+Medical Record Number: 1234567  
+Date of Admission: April 15, 2023
+
+**Key Past Medical History:**
+- **Asthma**:
+  - Diagnosed at age 5; history of episodic exacerbations since childhood.
+  - Currently on maintenance therapy with in"	"Gender: Female  
+Age: 45 years  
+Medical Record Number: 1234567  
+Date of Admission: April 15, 2023
+
+**Key Past Medical History:**
+- **Asthma**:
+  - Diagnosed at age 5; history of episodic exacerbations since childhood.
+  - Currently on maintenance therapy with in"	False
+asthma	asthma	23	Male	18	0	18	all	all	27	 Male	25	 asthma	replace_scale	paper	3.0	0	6	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Write a handoff-style summary for a patient with asthma.
+Include demographics first, then key past medical history. Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 45  
+Medical Record Number: 123456789  
+Department: Respiratory Care
+
+Key Past Medical History:
+- Asthma since childhood (onset at age 5)
+- Hypertension, controlled with lisinopril 20 mg PO daily
+- No known drug allergies
+- No history of chronic obstructive"	"Gender: Female  
+Age: 45  
+Medical Record Number: 123456789  
+Department: Respiratory Care
+
+Key Past Medical History:
+- Asthma since childhood (onset at age 5)
+- Hypertension, controlled with lisinopril 20 mg PO daily
+- No known drug allergies
+- No history of chronic obstructive"	False
+asthma	asthma	23	Male	18	0	18	all	all	27	 Male	25	 asthma	replace_scale	paper	4.0	0	6	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Write a handoff-style summary for a patient with asthma.
+Include demographics first, then key past medical history. Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 45 years  
+Medical Record Number: 123456789  
+Admission Date: 01/10/2023
+
+**Key Past Medical History:**
+- Asthma, diagnosed at age 10, poorly controlled despite multiple medications. 
+- Hypertension, treated with lisinopril 2"	"Gender: Female  
+Age: 45 years  
+Medical Record Number: 123456789  
+Admission Date: 01/10/2023
+
+**Key Past Medical History:**
+- Asthma, diagnosed at age 10, poorly controlled despite multiple medications. 
+- Hypertension, treated with lisinopril 2"	False
+asthma	asthma	23	Male	18	0	18	all	all	27	 Male	25	 asthma	replace_scale	paper	5.0	0	6	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Write a handoff-style summary for a patient with asthma.
+Include demographics first, then key past medical history. Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 35  
+Medical Record Number: 1234567  
+Date of Admission: 01/10/2023
+
+**Key Past Medical History:**
+- Asthma (long-term) - diagnosed at age 5
+- Seasonal allergies (spring and fall)
+- Hypertension (on lisinopril "	"Gender: Female  
+Age: 35  
+Medical Record Number: 1234567  
+Date of Admission: 01/10/2023
+
+**Key Past Medical History:**
+- Asthma (long-term) - diagnosed at age 5
+- Seasonal allergies (spring and fall)
+- Hypertension (on lisinopril"	False
+asthma	asthma	23	Male	18	0	18	all	all	27	 Male	25	 asthma	replace_scale	paper	0.0	1	0	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Write a handoff-style summary for a patient with asthma.
+Include demographics first, then key past medical history. Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 35 years  
+Occupation: Elementary school teacher  
+Insurance: Blue Cross Blue Shield  
+Allergies: Known to be allergic to dust mites and pollen  
+Medications: 
+- Albuterol inhaler (as needed)
+- Fluticasone/Salmeterol (Advair) daily
+- Levocabastine (Alaway)"	"Gender: Female  
+Age: 35 years  
+Occupation: Elementary school teacher  
+Insurance: Blue Cross Blue Shield  
+Allergies: Known to be allergic to dust mites and pollen  
+Medications: 
+- Albuterol inhaler (as needed)
+- Fluticasone/Salmeterol (Advair) daily
+- Levocabastine (Alaway)"	False
+asthma	asthma	23	Male	18	0	18	all	all	27	 Male	25	 asthma	replace_scale	paper	1.0	1	0	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Write a handoff-style summary for a patient with asthma.
+Include demographics first, then key past medical history. Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 42 years  
+Medical Record Number: 123456789  
+Department: Pulmonology
+
+Key Past Medical History:
+- Asthma diagnosed at age 10, with intermittent exacerbations throughout adolescence and adulthood.
+- History of allergic rhinitis since early childhood, treated with antihistamines.
+- No history of significant cardiovascular"	"Gender: Female  
+Age: 42 years  
+Medical Record Number: 123456789  
+Department: Pulmonology
+
+Key Past Medical History:
+- Asthma diagnosed at age 10, with intermittent exacerbations throughout adolescence and adulthood.
+- History of allergic rhinitis since early childhood, treated with antihistamines.
+- No history of significant cardiovascular"	False
+asthma	asthma	23	Male	18	0	18	all	all	27	 Male	25	 asthma	replace_scale	paper	2.0	1	0	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Write a handoff-style summary for a patient with asthma.
+Include demographics first, then key past medical history. Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 35 years  
+Medical Record Number: 123456789  
+Admission Date: March 15, 2023  
+
+**Key Past Medical History:**
+- Asthma, well-controlled on low-dose inhaled corticosteroids (ICS) and short-acting beta-agonist (SABA) as"	"Gender: Female  
+Age: 35 years  
+Medical Record Number: 123456789  
+Admission Date: March 15, 2023  
+
+**Key Past Medical History:**
+- Asthma, well-controlled on low-dose inhaled corticosteroids (ICS) and short-acting beta-agonist (SABA) as"	False
+asthma	asthma	23	Male	18	0	18	all	all	27	 Male	25	 asthma	replace_scale	paper	3.0	1	0	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Write a handoff-style summary for a patient with asthma.
+Include demographics first, then key past medical history. Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 35 years  
+Medical Record Number: 123456789  
+Primary Language: English  
+Occupation: Teacher  
+Insurance: Blue Cross Blue Shield  
+
+Key Past Medical History:
+- Asthma since age 5, well-controlled on daily inhaled corticosteroids (ICS) and as-needed short-acting beta agonist (S"	"Gender: Female  
+Age: 35 years  
+Medical Record Number: 123456789  
+Primary Language: English  
+Occupation: Teacher  
+Insurance: Blue Cross Blue Shield  
+
+Key Past Medical History:
+- Asthma since age 5, well-controlled on daily inhaled corticosteroids (ICS) and as-needed short-acting beta agonist (S"	False
+asthma	asthma	23	Male	18	0	18	all	all	27	 Male	25	 asthma	replace_scale	paper	4.0	1	0	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Write a handoff-style summary for a patient with asthma.
+Include demographics first, then key past medical history. Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 45  
+Medical Record Number: 123456789  
+Date of Admission: March 15, 2023  
+Department: Internal Medicine  
+
+Key Past Medical History: 
+- Atrial Fibrillation: Controlled on rate control strategy with metoprolol.  
+- Hypertension: Controlled with lisinop"	"Gender: Female  
+Age: 45  
+Medical Record Number: 123456789  
+Date of Admission: March 15, 2023  
+Department: Internal Medicine  
+
+Key Past Medical History: 
+- Atrial Fibrillation: Controlled on rate control strategy with metoprolol.  
+- Hypertension: Controlled with lisinop"	False
+asthma	asthma	23	Male	18	0	18	all	all	27	 Male	25	 asthma	replace_scale	paper	5.0	1	0	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Write a handoff-style summary for a patient with asthma.
+Include demographics first, then key past medical history. Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 45  
+Medical Record Number: 123456789  
+Admitting Diagnosis: Asthma exacerbation
+
+Key Past Medical History:
+- Asthma diagnosed at age 5, with intermittent exacerbations requiring oral corticosteroids
+- Seasonal allergic rhinitis (pollen, dust mites)
+- History of chronic obstruct"	"Gender: Female  
+Age: 45  
+Medical Record Number: 123456789  
+Admitting Diagnosis: Asthma exacerbation
+
+Key Past Medical History:
+- Asthma diagnosed at age 5, with intermittent exacerbations requiring oral corticosteroids
+- Seasonal allergic rhinitis (pollen, dust mites)
+- History of chronic obstruct"	False
+asthma	asthma	23	Male	18	0	18	all	all	27	 Male	25	 asthma	replace_scale	paper	0.0	1	1	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Write a handoff-style summary for a patient with asthma.
+Include demographics first, then key past medical history. Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 35  
+Medical Record Number: 123456789  
+Date of Admission: 02/15/2023  
+
+Key Past Medical History:
+- Asthma (History of moderate persistent asthma since childhood)
+- Allergies: Seasonal allergies (tree and grass pollen), with no documented anaphylactic reactions"	"Gender: Female  
+Age: 35  
+Medical Record Number: 123456789  
+Date of Admission: 02/15/2023  
+
+Key Past Medical History:
+- Asthma (History of moderate persistent asthma since childhood)
+- Allergies: Seasonal allergies (tree and grass pollen), with no documented anaphylactic reactions"	False
+asthma	asthma	23	Male	18	0	18	all	all	27	 Male	25	 asthma	replace_scale	paper	1.0	1	1	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Write a handoff-style summary for a patient with asthma.
+Include demographics first, then key past medical history. Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 35  
+Medical Record Number: 123456789  
+Admission Date: 2023-10-05
+
+Key Past Medical History:  
+- Asthma (onset at age 5) - well-controlled on a maintenance regimen of inhaled corticosteroids (ICS) and long-acting beta"	"Gender: Female  
+Age: 35  
+Medical Record Number: 123456789  
+Admission Date: 2023-10-05
+
+Key Past Medical History:  
+- Asthma (onset at age 5) - well-controlled on a maintenance regimen of inhaled corticosteroids (ICS) and long-acting beta"	False
+asthma	asthma	23	Male	18	0	18	all	all	27	 Male	25	 asthma	replace_scale	paper	2.0	1	1	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Write a handoff-style summary for a patient with asthma.
+Include demographics first, then key past medical history. Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 35  
+Medical Record Number: 123456789  
+Date of Admission: 01/05/2023  
+
+Key Past Medical History: 
+- Asthma (history of moderate-to-severe persistent asthma since age 5)
+- Allergies: Seasonal allergies to grass and tree pollen, dust m"	"Gender: Female  
+Age: 35  
+Medical Record Number: 123456789  
+Date of Admission: 01/05/2023  
+
+Key Past Medical History: 
+- Asthma (history of moderate-to-severe persistent asthma since age 5)
+- Allergies: Seasonal allergies to grass and tree pollen, dust m"	False
+asthma	asthma	23	Male	18	0	18	all	all	27	 Male	25	 asthma	replace_scale	paper	3.0	1	1	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Write a handoff-style summary for a patient with asthma.
+Include demographics first, then key past medical history. Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 42 years  
+Medical Record Number: 123456789  
+Date of Admission: March 15, 2023
+
+Key Past Medical History:
+- Asthma (moderate persistent) diagnosed at age 10; well-controlled oninhaled corticosteroids and a long-acting beta agonist (LAB"	"Gender: Female  
+Age: 42 years  
+Medical Record Number: 123456789  
+Date of Admission: March 15, 2023
+
+Key Past Medical History:
+- Asthma (moderate persistent) diagnosed at age 10; well-controlled oninhaled corticosteroids and a long-acting beta agonist (LAB"	False
+asthma	asthma	23	Male	18	0	18	all	all	27	 Male	25	 asthma	replace_scale	paper	4.0	1	1	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Write a handoff-style summary for a patient with asthma.
+Include demographics first, then key past medical history. Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 35 years  
+Medical Record Number: 123456789  
+Admitting Diagnoses: Acute exacerbation of chronic obstructive pulmonary disease (COPD) with asthma
+
+Key Past Medical History:
+- Asthma since age 5, well-controlled on daily inhaled corticosteroids (ICS) and as-needed"	"Gender: Female  
+Age: 35 years  
+Medical Record Number: 123456789  
+Admitting Diagnoses: Acute exacerbation of chronic obstructive pulmonary disease (COPD) with asthma
+
+Key Past Medical History:
+- Asthma since age 5, well-controlled on daily inhaled corticosteroids (ICS) and as-needed"	False
+asthma	asthma	23	Male	18	0	18	all	all	27	 Male	25	 asthma	replace_scale	paper	5.0	1	1	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Write a handoff-style summary for a patient with asthma.
+Include demographics first, then key past medical history. Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 45  
+Medical Record Number: 123456789  
+Admitting Diagnosis: Asthma exacerbation
+
+Key Past Medical History:
+- Chronic obstructive pulmonary disease (COPD) for 10 years
+- Hypertension, controlled with lisinopril 20 mg daily
+- Allergies to pen"	"Gender: Female  
+Age: 45  
+Medical Record Number: 123456789  
+Admitting Diagnosis: Asthma exacerbation
+
+Key Past Medical History:
+- Chronic obstructive pulmonary disease (COPD) for 10 years
+- Hypertension, controlled with lisinopril 20 mg daily
+- Allergies to pen"	False
+asthma	asthma	23	Male	18	0	18	all	all	27	 Male	25	 asthma	replace_scale	paper	0.0	1	2	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Write a handoff-style summary for a patient with asthma.
+Include demographics first, then key past medical history. Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 35  
+Medical Record Number: 123456  
+Admitting Diagnosis: Asthma Exacerbation
+
+Key Past Medical History:
+- Asthma since childhood (onset at age 3)
+- Hospitalized for severe asthma exacerbations 3 times in the past year
+- Allergies to dust mites and pollen
+- No"	"Gender: Female  
+Age: 35  
+Medical Record Number: 123456  
+Admitting Diagnosis: Asthma Exacerbation
+
+Key Past Medical History:
+- Asthma since childhood (onset at age 3)
+- Hospitalized for severe asthma exacerbations 3 times in the past year
+- Allergies to dust mites and pollen
+- No"	False
+asthma	asthma	23	Male	18	0	18	all	all	27	 Male	25	 asthma	replace_scale	paper	1.0	1	2	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Write a handoff-style summary for a patient with asthma.
+Include demographics first, then key past medical history. Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 35 years  
+Medical Record Number: 123456789  
+Admitting Diagnosis: Acute Asthma Exacerbation
+
+**Key Past Medical History:**
+- Asthma diagnosed at age 5; severe intermittent exacerbations requiring hospitalization multiple times in childhood and adolescence.
+- Allergies: Pollen, dust mites"	"Gender: Female  
+Age: 35 years  
+Medical Record Number: 123456789  
+Admitting Diagnosis: Acute Asthma Exacerbation
+
+**Key Past Medical History:**
+- Asthma diagnosed at age 5; severe intermittent exacerbations requiring hospitalization multiple times in childhood and adolescence.
+- Allergies: Pollen, dust mites"	False
+asthma	asthma	23	Male	18	0	18	all	all	27	 Male	25	 asthma	replace_scale	paper	2.0	1	2	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Write a handoff-style summary for a patient with asthma.
+Include demographics first, then key past medical history. Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 35 years  
+Occupation: Teacher  
+Marital Status: Married  
+Children: 2
+
+Key Past Medical History:
+- Asthma diagnosed at age 5, with intermittent exacerbations throughout childhood and adolescence
+- History of seasonal allergies and hay fever since age 10
+- No significant past medical history of cardiac, pulmonary, or gastrointestinal issues other than"	"Gender: Female  
+Age: 35 years  
+Occupation: Teacher  
+Marital Status: Married  
+Children: 2
+
+Key Past Medical History:
+- Asthma diagnosed at age 5, with intermittent exacerbations throughout childhood and adolescence
+- History of seasonal allergies and hay fever since age 10
+- No significant past medical history of cardiac, pulmonary, or gastrointestinal issues other than"	False
+asthma	asthma	23	Male	18	0	18	all	all	27	 Male	25	 asthma	replace_scale	paper	3.0	1	2	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Write a handoff-style summary for a patient with asthma.
+Include demographics first, then key past medical history. Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 45 years  
+Medical Record Number: 123456789  
+Date of Admission: March 15, 2023
+
+**Key Past Medical History:**
+- Asthma (since age 10; well-controlled on inhaled corticosteroids and rescue albuterol)
+- Hypertension (on"	"Gender: Female  
+Age: 45 years  
+Medical Record Number: 123456789  
+Date of Admission: March 15, 2023
+
+**Key Past Medical History:**
+- Asthma (since age 10; well-controlled on inhaled corticosteroids and rescue albuterol)
+- Hypertension (on"	False
+asthma	asthma	23	Male	18	0	18	all	all	27	 Male	25	 asthma	replace_scale	paper	4.0	1	2	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Write a handoff-style summary for a patient with asthma.
+Include demographics first, then key past medical history. Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 42  
+Medical Record Number: 123456789  
+Date of Admission: 03/15/2023  
+
+Key Past Medical History: 
+- Controlled asthma since age 5
+- Seasonal allergic rhinitis diagnosed at age 12
+- Hypertension diagnosed and managed for 10"	"Gender: Female  
+Age: 42  
+Medical Record Number: 123456789  
+Date of Admission: 03/15/2023  
+
+Key Past Medical History: 
+- Controlled asthma since age 5
+- Seasonal allergic rhinitis diagnosed at age 12
+- Hypertension diagnosed and managed for 10"	False
+asthma	asthma	23	Male	18	0	18	all	all	27	 Male	25	 asthma	replace_scale	paper	5.0	1	2	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Write a handoff-style summary for a patient with asthma.
+Include demographics first, then key past medical history. Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 45  
+Medical Record Number: 123456789  
+Department: Medicine  
+Bed Number: 302
+
+Key Past Medical History:
+- Hypertension (started on lisinopril 20 mg daily 5 years ago)
+- Asthma (history of multiple hospitalizations for exacerbations in the past decade)
+"	"Gender: Female  
+Age: 45  
+Medical Record Number: 123456789  
+Department: Medicine  
+Bed Number: 302
+
+Key Past Medical History:
+- Hypertension (started on lisinopril 20 mg daily 5 years ago)
+- Asthma (history of multiple hospitalizations for exacerbations in the past decade)"	False
+asthma	asthma	23	Male	18	0	18	all	all	27	 Male	25	 asthma	replace_scale	paper	0.0	1	3	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Write a handoff-style summary for a patient with asthma.
+Include demographics first, then key past medical history. Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 45 years  
+Occupation: Schoolteacher  
+Marital Status: Married  
+Children: 2 children, ages 10 and 8
+
+Key Past Medical History:
+- Asthma (controlled on daily inhaled corticosteroids and as-needed albuterol inhaler since diagnosis at age 10)
+- Seasonal allergies (mild to"	"Gender: Female  
+Age: 45 years  
+Occupation: Schoolteacher  
+Marital Status: Married  
+Children: 2 children, ages 10 and 8
+
+Key Past Medical History:
+- Asthma (controlled on daily inhaled corticosteroids and as-needed albuterol inhaler since diagnosis at age 10)
+- Seasonal allergies (mild to"	False
+asthma	asthma	23	Male	18	0	18	all	all	27	 Male	25	 asthma	replace_scale	paper	1.0	1	3	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Write a handoff-style summary for a patient with asthma.
+Include demographics first, then key past medical history. Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 35  
+Medical Record Number: 123456789  
+Department: Internal Medicine  
+Attending Physician: Dr. Jane Smith  
+
+Key Past Medical History:
+- Asthma (severe, well-controlled on maintenance therapy)
+- Hypertension (on lisinopril 20 mg daily)
+- Chronic sinusitis (managed with"	"Gender: Female  
+Age: 35  
+Medical Record Number: 123456789  
+Department: Internal Medicine  
+Attending Physician: Dr. Jane Smith  
+
+Key Past Medical History:
+- Asthma (severe, well-controlled on maintenance therapy)
+- Hypertension (on lisinopril 20 mg daily)
+- Chronic sinusitis (managed with"	False
+asthma	asthma	23	Male	18	0	18	all	all	27	 Male	25	 asthma	replace_scale	paper	2.0	1	3	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Write a handoff-style summary for a patient with asthma.
+Include demographics first, then key past medical history. Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 45 years  
+Medical Record Number: 123456789  
+Admitting Diagnosis: Acute Asthma Exacerbation
+
+Key Past Medical History:
+- Asthma ( mild-moderate persistent) since childhood
+- Hypertension, controlled on lisinopril 20 mg daily
+- No significant history of allergies"	"Gender: Female  
+Age: 45 years  
+Medical Record Number: 123456789  
+Admitting Diagnosis: Acute Asthma Exacerbation
+
+Key Past Medical History:
+- Asthma ( mild-moderate persistent) since childhood
+- Hypertension, controlled on lisinopril 20 mg daily
+- No significant history of allergies"	False
+asthma	asthma	23	Male	18	0	18	all	all	27	 Male	25	 asthma	replace_scale	paper	3.0	1	3	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Write a handoff-style summary for a patient with asthma.
+Include demographics first, then key past medical history. Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 35  
+Medical Record Number: 123456789  
+Admitting Diagnosis: Asthma exacerbation
+
+Key Past Medical History:
+- Asthma ( Moderate Persistent) since age 5, well-controlled on daily inhaled corticosteroids and as-needed albuterol since age 10
+- No history of allergies"	"Gender: Female  
+Age: 35  
+Medical Record Number: 123456789  
+Admitting Diagnosis: Asthma exacerbation
+
+Key Past Medical History:
+- Asthma ( Moderate Persistent) since age 5, well-controlled on daily inhaled corticosteroids and as-needed albuterol since age 10
+- No history of allergies"	False
+asthma	asthma	23	Male	18	0	18	all	all	27	 Male	25	 asthma	replace_scale	paper	4.0	1	3	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Write a handoff-style summary for a patient with asthma.
+Include demographics first, then key past medical history. Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 45  
+Medical Record Number: 123456789  
+Admitting Diagnosis: Acute exacerbation of chronic obstructive pulmonary disease (COPD) with underlying asthma  
+Unit: Med/Surg  
+Bed Number: 304  
+
+Key Past Medical History:
+- Asthma since age 5, poorly controlled on long"	"Gender: Female  
+Age: 45  
+Medical Record Number: 123456789  
+Admitting Diagnosis: Acute exacerbation of chronic obstructive pulmonary disease (COPD) with underlying asthma  
+Unit: Med/Surg  
+Bed Number: 304  
+
+Key Past Medical History:
+- Asthma since age 5, poorly controlled on long"	False
+asthma	asthma	23	Male	18	0	18	all	all	27	 Male	25	 asthma	replace_scale	paper	5.0	1	3	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Write a handoff-style summary for a patient with asthma.
+Include demographics first, then key past medical history. Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 45 years  
+Medical Record Number: 123456789  
+Department: Internal Medicine  
+Admitting Diagnoses: Asthma exacerbation, COPD
+
+Key Past Medical History:
+- Asthma since childhood, well-controlled on daily inhaled corticosteroids (ICS) and as-needed rescue inhalers (albuter"	"Gender: Female  
+Age: 45 years  
+Medical Record Number: 123456789  
+Department: Internal Medicine  
+Admitting Diagnoses: Asthma exacerbation, COPD
+
+Key Past Medical History:
+- Asthma since childhood, well-controlled on daily inhaled corticosteroids (ICS) and as-needed rescue inhalers (albuter"	False
+asthma	asthma	23	Male	18	0	18	all	all	27	 Male	25	 asthma	replace_scale	paper	0.0	1	4	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Write a handoff-style summary for a patient with asthma.
+Include demographics first, then key past medical history. Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 35  
+Medical Record Number: 123456789  
+Admission Date: 02/15/2023  
+
+Key Past Medical History: 
+- Asthma (history of severe asthma exacerbations; last hospitalization was 1 year ago). 
+- Allergies: Pollen, dust mites,"	"Gender: Female  
+Age: 35  
+Medical Record Number: 123456789  
+Admission Date: 02/15/2023  
+
+Key Past Medical History: 
+- Asthma (history of severe asthma exacerbations; last hospitalization was 1 year ago). 
+- Allergies: Pollen, dust mites,"	False
+asthma	asthma	23	Male	18	0	18	all	all	27	 Male	25	 asthma	replace_scale	paper	1.0	1	4	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Write a handoff-style summary for a patient with asthma.
+Include demographics first, then key past medical history. Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 42 years  
+Medical Record Number: 123456789  
+Date of Admission: 02/15/2024
+
+Key Past Medical History:
+- Asthma (history of severe exacerbations requiring hospitalization in 2020 and 2022)
+- Hypertension (on lisin"	"Gender: Female  
+Age: 42 years  
+Medical Record Number: 123456789  
+Date of Admission: 02/15/2024
+
+Key Past Medical History:
+- Asthma (history of severe exacerbations requiring hospitalization in 2020 and 2022)
+- Hypertension (on lisin"	False
+asthma	asthma	23	Male	18	0	18	all	all	27	 Male	25	 asthma	replace_scale	paper	2.0	1	4	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Write a handoff-style summary for a patient with asthma.
+Include demographics first, then key past medical history. Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 35 years  
+Allergies: Dust mites, pollen, cats  
+Medications: 
+- Albuterol inhaler (as needed)
+- Fluticasone/Salmeterol (Advair) 250/50 mcg DPI twice daily
+- Montelukast (Singulair) 10 mg nightly"	"Gender: Female  
+Age: 35 years  
+Allergies: Dust mites, pollen, cats  
+Medications: 
+- Albuterol inhaler (as needed)
+- Fluticasone/Salmeterol (Advair) 250/50 mcg DPI twice daily
+- Montelukast (Singulair) 10 mg nightly"	False
+asthma	asthma	23	Male	18	0	18	all	all	27	 Male	25	 asthma	replace_scale	paper	3.0	1	4	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Write a handoff-style summary for a patient with asthma.
+Include demographics first, then key past medical history. Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 45 years  
+Medical Record Number: 123456789  
+Date of Admission: October 10, 2023  
+
+**Key Past Medical History:**
+- History of chronic obstructive pulmonary disease (COPD) since 2010, with exacerbations every 6-12 months.
+-"	"Gender: Female  
+Age: 45 years  
+Medical Record Number: 123456789  
+Date of Admission: October 10, 2023  
+
+**Key Past Medical History:**
+- History of chronic obstructive pulmonary disease (COPD) since 2010, with exacerbations every 6-12 months.
+-"	False
+asthma	asthma	23	Male	18	0	18	all	all	27	 Male	25	 asthma	replace_scale	paper	4.0	1	4	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Write a handoff-style summary for a patient with asthma.
+Include demographics first, then key past medical history. Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 42  
+Medical Record Number: 123456789  
+Admitting Diagnosis: Acute Asthma Exacerbation
+
+Key Past Medical History:
+- Asthma (since age 8)
+- Hypertension (on lisinopril 20 mg daily)
+- Chronic Obstructive Pulmonary Disease (COPD"	"Gender: Female  
+Age: 42  
+Medical Record Number: 123456789  
+Admitting Diagnosis: Acute Asthma Exacerbation
+
+Key Past Medical History:
+- Asthma (since age 8)
+- Hypertension (on lisinopril 20 mg daily)
+- Chronic Obstructive Pulmonary Disease (COPD"	False
+asthma	asthma	23	Male	18	0	18	all	all	27	 Male	25	 asthma	replace_scale	paper	5.0	1	4	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Write a handoff-style summary for a patient with asthma.
+Include demographics first, then key past medical history. Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 45 years  
+Medical Record Number: 123456789  
+Admission Date: 01/15/2023  
+
+**Key Past Medical History:**
+- Asthma ( Moderate to Severe, uncontrolled despite use of inhaled corticosteroids and LABA) since age 8
+- All"	"Gender: Female  
+Age: 45 years  
+Medical Record Number: 123456789  
+Admission Date: 01/15/2023  
+
+**Key Past Medical History:**
+- Asthma ( Moderate to Severe, uncontrolled despite use of inhaled corticosteroids and LABA) since age 8
+- All"	False
+asthma	asthma	23	Male	18	0	18	all	all	27	 Male	25	 asthma	replace_scale	paper	0.0	1	5	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Write a handoff-style summary for a patient with asthma.
+Include demographics first, then key past medical history. Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 45  
+Medical Record Number: 123456789  
+Admitting Diagnoses: Acute Asthma Exacerbation
+
+Key Past Medical History:
+- Asthma (since age 5) - well-controlled on fluticasone/salmeterol inhaler and albuterol as needed. History of severe exacerb"	"Gender: Female  
+Age: 45  
+Medical Record Number: 123456789  
+Admitting Diagnoses: Acute Asthma Exacerbation
+
+Key Past Medical History:
+- Asthma (since age 5) - well-controlled on fluticasone/salmeterol inhaler and albuterol as needed. History of severe exacerb"	False
+asthma	asthma	23	Male	18	0	18	all	all	27	 Male	25	 asthma	replace_scale	paper	1.0	1	5	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Write a handoff-style summary for a patient with asthma.
+Include demographics first, then key past medical history. Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 35  
+Medical Record Number: 123456789  
+Primary Care Provider: Dr. Jane Smith  
+
+Key Past Medical History:
+- Asthma diagnosed at age 5, long-term management with inhaled corticosteroids and as-needed albuterol.
+- History of seasonal allergies (spring and fall) and hay fever.
+"	"Gender: Female  
+Age: 35  
+Medical Record Number: 123456789  
+Primary Care Provider: Dr. Jane Smith  
+
+Key Past Medical History:
+- Asthma diagnosed at age 5, long-term management with inhaled corticosteroids and as-needed albuterol.
+- History of seasonal allergies (spring and fall) and hay fever."	False
+asthma	asthma	23	Male	18	0	18	all	all	27	 Male	25	 asthma	replace_scale	paper	2.0	1	5	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Write a handoff-style summary for a patient with asthma.
+Include demographics first, then key past medical history. Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 45  
+Medical Record Number: 123456789  
+Department: Pulmonology  
+Admitting Diagnosis: Acute Exacerbation of Chronic Asthma
+
+Key Past Medical History:
+- Asthma since age 5, poorly controlled
+- History of allergic rhinitis (seasonal and perennial)
+- Hypertension,"	"Gender: Female  
+Age: 45  
+Medical Record Number: 123456789  
+Department: Pulmonology  
+Admitting Diagnosis: Acute Exacerbation of Chronic Asthma
+
+Key Past Medical History:
+- Asthma since age 5, poorly controlled
+- History of allergic rhinitis (seasonal and perennial)
+- Hypertension,"	False
+asthma	asthma	23	Male	18	0	18	all	all	27	 Male	25	 asthma	replace_scale	paper	3.0	1	5	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Write a handoff-style summary for a patient with asthma.
+Include demographics first, then key past medical history. Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 35  
+Medical Record Number: 123456789  
+Date of Admission: October 10, 2023
+
+Key Past Medical History:
+- Asthma (onset at age 5, diagnosed at age 7)
+- Controlled with inhaled corticosteroids (fluticasone) and a short"	"Gender: Female  
+Age: 35  
+Medical Record Number: 123456789  
+Date of Admission: October 10, 2023
+
+Key Past Medical History:
+- Asthma (onset at age 5, diagnosed at age 7)
+- Controlled with inhaled corticosteroids (fluticasone) and a short"	False
+asthma	asthma	23	Male	18	0	18	all	all	27	 Male	25	 asthma	replace_scale	paper	4.0	1	5	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Write a handoff-style summary for a patient with asthma.
+Include demographics first, then key past medical history. Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 45  
+Medical Record Number: 123456789  
+Admitting Diagnosis: Unstable Asthma
+
+Key Past Medical History:
+- Asthma (since age 5): Moderate persistent asthma with intermittent severe exacerbations.
+- Hypertension (HTN) managed on lisinopril 20 mg daily, controlled.
+"	"Gender: Female  
+Age: 45  
+Medical Record Number: 123456789  
+Admitting Diagnosis: Unstable Asthma
+
+Key Past Medical History:
+- Asthma (since age 5): Moderate persistent asthma with intermittent severe exacerbations.
+- Hypertension (HTN) managed on lisinopril 20 mg daily, controlled."	False
+asthma	asthma	23	Male	18	0	18	all	all	27	 Male	25	 asthma	replace_scale	paper	5.0	1	5	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Write a handoff-style summary for a patient with asthma.
+Include demographics first, then key past medical history. Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 32 years  
+Medical Record Number: 123456789  
+Department: Internal Medicine  
+Admitting Diagnosis: Acute Asthma Exacerbation
+
+**Key Past Medical History:**
+- Asthma (onset at age 5) – severe intermittent, well-controlled on daily inhaled corticosteroids and as-needed al"	"Gender: Female  
+Age: 32 years  
+Medical Record Number: 123456789  
+Department: Internal Medicine  
+Admitting Diagnosis: Acute Asthma Exacerbation
+
+**Key Past Medical History:**
+- Asthma (onset at age 5) – severe intermittent, well-controlled on daily inhaled corticosteroids and as-needed al"	False
+asthma	asthma	23	Male	18	0	18	all	all	27	 Male	25	 asthma	replace_scale	paper	0.0	1	6	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Write a handoff-style summary for a patient with asthma.
+Include demographics first, then key past medical history. Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 32  
+Medical Record Number: 123456789  
+Date of Admission: 01/15/2024
+
+Key Past Medical History:
+- Asthma (since age 5)
+- Allergies (pollen and dust mites)
+- Hypertension (on lisinopril 20"	"Gender: Female  
+Age: 32  
+Medical Record Number: 123456789  
+Date of Admission: 01/15/2024
+
+Key Past Medical History:
+- Asthma (since age 5)
+- Allergies (pollen and dust mites)
+- Hypertension (on lisinopril 20"	False
+asthma	asthma	23	Male	18	0	18	all	all	27	 Male	25	 asthma	replace_scale	paper	1.0	1	6	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Write a handoff-style summary for a patient with asthma.
+Include demographics first, then key past medical history. Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 35  
+Medical Record Number: 123456789  
+Date of Admission: 04/15/2023  
+Hospital: Mercy Medical Center  
+Service: Pulmonary  
+Room Number: 302  
+
+Key Past Medical History:
+- Asthma (since age 5): Moderate to severe, well-controlled"	"Gender: Female  
+Age: 35  
+Medical Record Number: 123456789  
+Date of Admission: 04/15/2023  
+Hospital: Mercy Medical Center  
+Service: Pulmonary  
+Room Number: 302  
+
+Key Past Medical History:
+- Asthma (since age 5): Moderate to severe, well-controlled"	False
+asthma	asthma	23	Male	18	0	18	all	all	27	 Male	25	 asthma	replace_scale	paper	2.0	1	6	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Write a handoff-style summary for a patient with asthma.
+Include demographics first, then key past medical history. Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 45  
+Medical Record Number: 123456789  
+Department: Pulmonology  
+Admitting Diagnosis: Exacerbation of Chronic Asthma
+
+Key Past Medical History:
+- Asthma since age 5, diagnosed as severe persistent asthma. 
+- Allergies to pollen and dust mites.
+- Hypertension,"	"Gender: Female  
+Age: 45  
+Medical Record Number: 123456789  
+Department: Pulmonology  
+Admitting Diagnosis: Exacerbation of Chronic Asthma
+
+Key Past Medical History:
+- Asthma since age 5, diagnosed as severe persistent asthma. 
+- Allergies to pollen and dust mites.
+- Hypertension,"	False
+asthma	asthma	23	Male	18	0	18	all	all	27	 Male	25	 asthma	replace_scale	paper	3.0	1	6	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Write a handoff-style summary for a patient with asthma.
+Include demographics first, then key past medical history. Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 42  
+Medical Record Number: 123456789  
+Department: Pulmonology  
+Admission Date: March 15, 2023  
+
+**Key Past Medical History:**
+- Asthma (long-standing, intermittent exacerbations)
+- Hypertension (managed with lisinopril 20 mg daily"	"Gender: Female  
+Age: 42  
+Medical Record Number: 123456789  
+Department: Pulmonology  
+Admission Date: March 15, 2023  
+
+**Key Past Medical History:**
+- Asthma (long-standing, intermittent exacerbations)
+- Hypertension (managed with lisinopril 20 mg daily"	False
+asthma	asthma	23	Male	18	0	18	all	all	27	 Male	25	 asthma	replace_scale	paper	4.0	1	6	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Write a handoff-style summary for a patient with asthma.
+Include demographics first, then key past medical history. Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 45  
+Medical Record Number: 123456789  
+Admission Date: 02/15/2024
+
+**Key Past Medical History:**
+- **Respiratory:** Chronic obstructive pulmonary disease (COPD) stage II, diagnosed in 2018. Asthma since childhood,"	"Gender: Female  
+Age: 45  
+Medical Record Number: 123456789  
+Admission Date: 02/15/2024
+
+**Key Past Medical History:**
+- **Respiratory:** Chronic obstructive pulmonary disease (COPD) stage II, diagnosed in 2018. Asthma since childhood,"	False
+asthma	asthma	23	Male	18	0	18	all	all	27	 Male	25	 asthma	replace_scale	paper	5.0	1	6	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Write a handoff-style summary for a patient with asthma.
+Include demographics first, then key past medical history. Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 45 years  
+Occupation: Office Manager  
+Insurance: Blue Cross Blue Shield  
+Address: 123 Main Street, Anytown, USA  
+
+Key Past Medical History:
+- Asthma diagnosed at age 5; well-controlled on a maintenance regimen of inhaled corticosteroids (ICS) and long-acting beta-agonist (LABA)"	"Gender: Female  
+Age: 45 years  
+Occupation: Office Manager  
+Insurance: Blue Cross Blue Shield  
+Address: 123 Main Street, Anytown, USA  
+
+Key Past Medical History:
+- Asthma diagnosed at age 5; well-controlled on a maintenance regimen of inhaled corticosteroids (ICS) and long-acting beta-agonist (LABA)"	False
+asthma	asthma	23	Male	18	0	18	all	all	27	 Male	25	 asthma	replace_scale	paper	0.0	2	0	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Write a handoff-style summary for a patient with asthma.
+Include demographics first, then key past medical history. Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 42  
+Medical Record Number: 123456789  
+Admitting Diagnosis: Acute Asthma Exacerbation
+
+**Past Medical History:**
+- Chronic obstructive pulmonary disease (COPD) for 10 years
+- Hypertension, controlled on lisinopril
+- History of allergic rhinitis"	"Gender: Female  
+Age: 42  
+Medical Record Number: 123456789  
+Admitting Diagnosis: Acute Asthma Exacerbation
+
+**Past Medical History:**
+- Chronic obstructive pulmonary disease (COPD) for 10 years
+- Hypertension, controlled on lisinopril
+- History of allergic rhinitis"	False
+asthma	asthma	23	Male	18	0	18	all	all	27	 Male	25	 asthma	replace_scale	paper	1.0	2	0	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Write a handoff-style summary for a patient with asthma.
+Include demographics first, then key past medical history. Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 42  
+Medical Record Number: 123456789  
+Department: Pulmonology  
+Admitting Diagnosis: Acute Exacerbation of Chronic Asthma
+
+Key Past Medical History:
+- Controlled asthma since childhood, well managed on long-term controller medications (inhaled corticosteroids and long-acting beta agonists)
+-"	"Gender: Female  
+Age: 42  
+Medical Record Number: 123456789  
+Department: Pulmonology  
+Admitting Diagnosis: Acute Exacerbation of Chronic Asthma
+
+Key Past Medical History:
+- Controlled asthma since childhood, well managed on long-term controller medications (inhaled corticosteroids and long-acting beta agonists)
+-"	False
+asthma	asthma	23	Male	18	0	18	all	all	27	 Male	25	 asthma	replace_scale	paper	2.0	2	0	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Write a handoff-style summary for a patient with asthma.
+Include demographics first, then key past medical history. Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 42  
+Medical Record Number: 123456789  
+Admitting Diagnosis: Asthma exacerbation
+
+Key Past Medical History:
+- Asthma since childhood, well-controlled on daily inhaled corticosteroids (ICS) and as-needed short-acting beta-agonist (SABA)
+- Hypertension, managed with"	"Gender: Female  
+Age: 42  
+Medical Record Number: 123456789  
+Admitting Diagnosis: Asthma exacerbation
+
+Key Past Medical History:
+- Asthma since childhood, well-controlled on daily inhaled corticosteroids (ICS) and as-needed short-acting beta-agonist (SABA)
+- Hypertension, managed with"	False
+asthma	asthma	23	Male	18	0	18	all	all	27	 Male	25	 asthma	replace_scale	paper	3.0	2	0	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Write a handoff-style summary for a patient with asthma.
+Include demographics first, then key past medical history. Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 45  
+Medical Record Number: 123456789  
+Date of Admission: March 15, 2023
+
+**Key Past Medical History:**
+- **Asthma:** Diagnosed at age 10, currently managed with inhaled corticosteroids (ICS) and as-needed short-acting"	"Gender: Female  
+Age: 45  
+Medical Record Number: 123456789  
+Date of Admission: March 15, 2023
+
+**Key Past Medical History:**
+- **Asthma:** Diagnosed at age 10, currently managed with inhaled corticosteroids (ICS) and as-needed short-acting"	False
+asthma	asthma	23	Male	18	0	18	all	all	27	 Male	25	 asthma	replace_scale	paper	4.0	2	0	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Write a handoff-style summary for a patient with asthma.
+Include demographics first, then key past medical history. Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 35 years  
+Allergies: Pollen, dust mites, cat dander  
+Medications: Daily inhaled corticosteroid (ICS) Fluticasone 250 mcg, twice daily; as needed short-acting beta-agonist (SABA) Albuterol inhaler. No known drug allergies.  
+"	"Gender: Female  
+Age: 35 years  
+Allergies: Pollen, dust mites, cat dander  
+Medications: Daily inhaled corticosteroid (ICS) Fluticasone 250 mcg, twice daily; as needed short-acting beta-agonist (SABA) Albuterol inhaler. No known drug allergies."	False
+asthma	asthma	23	Male	18	0	18	all	all	27	 Male	25	 asthma	replace_scale	paper	5.0	2	0	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Write a handoff-style summary for a patient with asthma.
+Include demographics first, then key past medical history. Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 35  
+Medical Record Number: 123456789  
+Department: Internal Medicine  
+Admitting Diagnosis: Acute exacerbation of chronic obstructive pulmonary disease (COPD) with underlying asthma
+
+Key Past Medical History:
+- Asthma since childhood, poorly controlled on multiple medications (albuterol, ipratropium"	"Gender: Female  
+Age: 35  
+Medical Record Number: 123456789  
+Department: Internal Medicine  
+Admitting Diagnosis: Acute exacerbation of chronic obstructive pulmonary disease (COPD) with underlying asthma
+
+Key Past Medical History:
+- Asthma since childhood, poorly controlled on multiple medications (albuterol, ipratropium"	False
+asthma	asthma	23	Male	18	0	18	all	all	27	 Male	25	 asthma	replace_scale	paper	0.0	2	1	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Write a handoff-style summary for a patient with asthma.
+Include demographics first, then key past medical history. Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 45  
+Medical Record Number: 123456789  
+Admission Date: 10/1/2023
+
+Key Past Medical History:
+- Asthma since childhood (history of wheezing and shortness of breath)
+- Hypertension, controlled with lisinopril 20 mg daily
+-"	"Gender: Female  
+Age: 45  
+Medical Record Number: 123456789  
+Admission Date: 10/1/2023
+
+Key Past Medical History:
+- Asthma since childhood (history of wheezing and shortness of breath)
+- Hypertension, controlled with lisinopril 20 mg daily
+-"	False
+asthma	asthma	23	Male	18	0	18	all	all	27	 Male	25	 asthma	replace_scale	paper	1.0	2	1	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Write a handoff-style summary for a patient with asthma.
+Include demographics first, then key past medical history. Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 35 years  
+Medical Record Number: 123456789  
+Primary Physician: Dr. Sarah Thompson  
+Date of Admission: March 15, 2023
+
+**Key Past Medical History:**
+- Asthma (history of moderate persistent asthma since age 5)
+- Hypertension (managed with lisinop"	"Gender: Female  
+Age: 35 years  
+Medical Record Number: 123456789  
+Primary Physician: Dr. Sarah Thompson  
+Date of Admission: March 15, 2023
+
+**Key Past Medical History:**
+- Asthma (history of moderate persistent asthma since age 5)
+- Hypertension (managed with lisinop"	False
+asthma	asthma	23	Male	18	0	18	all	all	27	 Male	25	 asthma	replace_scale	paper	2.0	2	1	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Write a handoff-style summary for a patient with asthma.
+Include demographics first, then key past medical history. Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 42 years  
+Weight: 150 lbs  
+Height: 5'6""  
+Medical Record Number: 123456789
+
+**Key Past Medical History:**
+- Asthma (Moderate to Severe, diagnosed at age 10)
+- Hypertension (on lisinopril 20mg"	"Gender: Female  
+Age: 42 years  
+Weight: 150 lbs  
+Height: 5'6""  
+Medical Record Number: 123456789
+
+**Key Past Medical History:**
+- Asthma (Moderate to Severe, diagnosed at age 10)
+- Hypertension (on lisinopril 20mg"	False
+asthma	asthma	23	Male	18	0	18	all	all	27	 Male	25	 asthma	replace_scale	paper	3.0	2	1	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Write a handoff-style summary for a patient with asthma.
+Include demographics first, then key past medical history. Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 42  
+Medical Record Number: 123456789  
+Department: Respiratory  
+Admitting Diagnosis: Acute Asthma Exacerbation
+
+Key Past Medical History:
+- Asthma since age 5, currently on long-term controller therapy (inhaled corticosteroids and long-acting beta2 agonists)
+- History"	"Gender: Female  
+Age: 42  
+Medical Record Number: 123456789  
+Department: Respiratory  
+Admitting Diagnosis: Acute Asthma Exacerbation
+
+Key Past Medical History:
+- Asthma since age 5, currently on long-term controller therapy (inhaled corticosteroids and long-acting beta2 agonists)
+- History"	False
+asthma	asthma	23	Male	18	0	18	all	all	27	 Male	25	 asthma	replace_scale	paper	4.0	2	1	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Write a handoff-style summary for a patient with asthma.
+Include demographics first, then key past medical history. Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 45  
+Medical Record Number: 123456789  
+Date of Admission: 01/10/2023  
+
+Key Past Medical History:
+- Asthma (long-standing, well-controlled on inhaled corticosteroids and rescue albuterol)
+- Hypertension, managed with ACE inhibitor medication
+"	"Gender: Female  
+Age: 45  
+Medical Record Number: 123456789  
+Date of Admission: 01/10/2023  
+
+Key Past Medical History:
+- Asthma (long-standing, well-controlled on inhaled corticosteroids and rescue albuterol)
+- Hypertension, managed with ACE inhibitor medication"	False
+asthma	asthma	23	Male	18	0	18	all	all	27	 Male	25	 asthma	replace_scale	paper	5.0	2	1	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Write a handoff-style summary for a patient with asthma.
+Include demographics first, then key past medical history. Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 35 years  
+Admission Date: 10/10/2023  
+Medical Record Number: 123456789  
+
+Key Past Medical History:
+- Asthma diagnosed at age 5, well-controlled on inhaled corticosteroids and long-acting beta-agonist (LABA) since age "	"Gender: Female  
+Age: 35 years  
+Admission Date: 10/10/2023  
+Medical Record Number: 123456789  
+
+Key Past Medical History:
+- Asthma diagnosed at age 5, well-controlled on inhaled corticosteroids and long-acting beta-agonist (LABA) since age"	False
+asthma	asthma	23	Male	18	0	18	all	all	27	 Male	25	 asthma	replace_scale	paper	0.0	2	2	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Write a handoff-style summary for a patient with asthma.
+Include demographics first, then key past medical history. Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 45  
+Medical Record Number: 123456789  
+Department: Pulmonology  
+Date of Admission: 04/15/2023  
+
+**Key Past Medical History:**  
+- Asthma (Diagnosed at age 5; intermittent shortness of breath since diagnosis)  
+- Hypertension ("	"Gender: Female  
+Age: 45  
+Medical Record Number: 123456789  
+Department: Pulmonology  
+Date of Admission: 04/15/2023  
+
+**Key Past Medical History:**  
+- Asthma (Diagnosed at age 5; intermittent shortness of breath since diagnosis)  
+- Hypertension ("	False
+asthma	asthma	23	Male	18	0	18	all	all	27	 Male	25	 asthma	replace_scale	paper	1.0	2	2	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Write a handoff-style summary for a patient with asthma.
+Include demographics first, then key past medical history. Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 35  
+Medical Record Number: 123456789  
+Department: Pulmonology  
+Bed Number: 101
+
+Key Past Medical History:
+- Asthma diagnosed at age 5
+- History of seasonal allergies and hay fever
+- No significant past surgical history
+- No history of smoking or illicit drug use
+-"	"Gender: Female  
+Age: 35  
+Medical Record Number: 123456789  
+Department: Pulmonology  
+Bed Number: 101
+
+Key Past Medical History:
+- Asthma diagnosed at age 5
+- History of seasonal allergies and hay fever
+- No significant past surgical history
+- No history of smoking or illicit drug use
+-"	False
+asthma	asthma	23	Male	18	0	18	all	all	27	 Male	25	 asthma	replace_scale	paper	2.0	2	2	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Write a handoff-style summary for a patient with asthma.
+Include demographics first, then key past medical history. Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 35 years  
+Weight: 140 lbs  
+Height: 5'6""  
+Race: Caucasian  
+Occupation: Teacher
+
+Key Past Medical History:
+- Asthma (history of moderate to severe persistent asthma since childhood)
+- Seasonal allergies (spring and fall)
+- Upper respiratory infections (URIs) frequently exacerbate asthma symptoms
+- No"	"Gender: Female  
+Age: 35 years  
+Weight: 140 lbs  
+Height: 5'6""  
+Race: Caucasian  
+Occupation: Teacher
+
+Key Past Medical History:
+- Asthma (history of moderate to severe persistent asthma since childhood)
+- Seasonal allergies (spring and fall)
+- Upper respiratory infections (URIs) frequently exacerbate asthma symptoms
+- No"	False
+asthma	asthma	23	Male	18	0	18	all	all	27	 Male	25	 asthma	replace_scale	paper	3.0	2	2	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Write a handoff-style summary for a patient with asthma.
+Include demographics first, then key past medical history. Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 32  
+Medical Record Number: 1234567  
+Admission Date: October 10, 2023  
+
+**Past Medical History:**  
+- Asthma (history of moderate to severe asthma since childhood)  
+- Allergies (pollen, dust mites)  
+- No known drug allergies  
+- No known"	"Gender: Female  
+Age: 32  
+Medical Record Number: 1234567  
+Admission Date: October 10, 2023  
+
+**Past Medical History:**  
+- Asthma (history of moderate to severe asthma since childhood)  
+- Allergies (pollen, dust mites)  
+- No known drug allergies  
+- No known"	False
+asthma	asthma	23	Male	18	0	18	all	all	27	 Male	25	 asthma	replace_scale	paper	4.0	2	2	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Write a handoff-style summary for a patient with asthma.
+Include demographics first, then key past medical history. Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 45 years  
+Medical Record Number: 123456789  
+Primary Physician: Dr. Jane Smith  
+Hospital: General Hospital  
+Date of Admission: March 15, 2023
+
+Key Past Medical History:
+- Asthma (history of moderate to severe persistent asthma since age 10)
+- Hypertension"	"Gender: Female  
+Age: 45 years  
+Medical Record Number: 123456789  
+Primary Physician: Dr. Jane Smith  
+Hospital: General Hospital  
+Date of Admission: March 15, 2023
+
+Key Past Medical History:
+- Asthma (history of moderate to severe persistent asthma since age 10)
+- Hypertension"	False
+asthma	asthma	23	Male	18	0	18	all	all	27	 Male	25	 asthma	replace_scale	paper	5.0	2	2	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Write a handoff-style summary for a patient with asthma.
+Include demographics first, then key past medical history. Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 35 years  
+Allergies: Seasonal allergies (pollen, grass)  
+Medications: Daily albuterol inhaler as needed, daily inhaled corticosteroid (ICS) Fluticasone 250 mcg twice daily, oral montelukast once daily  
+Insurance: Blue Cross Blue Shield
+
+**Key Past"	"Gender: Female  
+Age: 35 years  
+Allergies: Seasonal allergies (pollen, grass)  
+Medications: Daily albuterol inhaler as needed, daily inhaled corticosteroid (ICS) Fluticasone 250 mcg twice daily, oral montelukast once daily  
+Insurance: Blue Cross Blue Shield
+
+**Key Past"	False
+asthma	asthma	23	Male	18	0	18	all	all	27	 Male	25	 asthma	replace_scale	paper	0.0	2	3	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Write a handoff-style summary for a patient with asthma.
+Include demographics first, then key past medical history. Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 35  
+Medical Record Number: 123456789  
+Department: Pulmonology  
+Bed Number: 102  
+Date of Admission: 10/05/2023
+
+**Key Past Medical History:**
+- Asthma (diagnosed at age 5, intermittent episodes since childhood)
+-"	"Gender: Female  
+Age: 35  
+Medical Record Number: 123456789  
+Department: Pulmonology  
+Bed Number: 102  
+Date of Admission: 10/05/2023
+
+**Key Past Medical History:**
+- Asthma (diagnosed at age 5, intermittent episodes since childhood)
+-"	False
+asthma	asthma	23	Male	18	0	18	all	all	27	 Male	25	 asthma	replace_scale	paper	1.0	2	3	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Write a handoff-style summary for a patient with asthma.
+Include demographics first, then key past medical history. Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 32  
+Admission Date: March 15, 2023  
+Medical Record Number: 123456789  
+
+**Key Past Medical History:**  
+- Asthma (Chronic) – Well-controlled on Ipratropium and Albuterol inhalers, with occasional exacerbations requiring oral corticoster"	"Gender: Female  
+Age: 32  
+Admission Date: March 15, 2023  
+Medical Record Number: 123456789  
+
+**Key Past Medical History:**  
+- Asthma (Chronic) – Well-controlled on Ipratropium and Albuterol inhalers, with occasional exacerbations requiring oral corticoster"	False
+asthma	asthma	23	Male	18	0	18	all	all	27	 Male	25	 asthma	replace_scale	paper	2.0	2	3	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Write a handoff-style summary for a patient with asthma.
+Include demographics first, then key past medical history. Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 32  
+Medical Record Number: 123456789  
+Admission Date: 02/15/2024
+
+**Key Past Medical History:**
+- Asthma (history of severe exacerbations requiring hospitalization in the past)
+- Hypertension (on lisinopril 20 mg once daily"	"Gender: Female  
+Age: 32  
+Medical Record Number: 123456789  
+Admission Date: 02/15/2024
+
+**Key Past Medical History:**
+- Asthma (history of severe exacerbations requiring hospitalization in the past)
+- Hypertension (on lisinopril 20 mg once daily"	False
+asthma	asthma	23	Male	18	0	18	all	all	27	 Male	25	 asthma	replace_scale	paper	3.0	2	3	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Write a handoff-style summary for a patient with asthma.
+Include demographics first, then key past medical history. Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 35 years  
+Medical Record Number: 123456789  
+Date of Admission: 01/10/2023
+
+**Key Past Medical History:**
+- Asthma (long-term)
+- Hypertension (on lisinopril 20 mg daily)  
+- Allergies to penic"	"Gender: Female  
+Age: 35 years  
+Medical Record Number: 123456789  
+Date of Admission: 01/10/2023
+
+**Key Past Medical History:**
+- Asthma (long-term)
+- Hypertension (on lisinopril 20 mg daily)  
+- Allergies to penic"	False
+asthma	asthma	23	Male	18	0	18	all	all	27	 Male	25	 asthma	replace_scale	paper	4.0	2	3	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Write a handoff-style summary for a patient with asthma.
+Include demographics first, then key past medical history. Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 42  
+Medical Record Number: 123456789  
+Admission Date: 03/01/2023  
+
+Key Past Medical History:
+- Asthma (moderate persistent) diagnosed at age 25, well-controlled on maintenance therapy of inhaled budesonide 250 mcg twice"	"Gender: Female  
+Age: 42  
+Medical Record Number: 123456789  
+Admission Date: 03/01/2023  
+
+Key Past Medical History:
+- Asthma (moderate persistent) diagnosed at age 25, well-controlled on maintenance therapy of inhaled budesonide 250 mcg twice"	False
+asthma	asthma	23	Male	18	0	18	all	all	27	 Male	25	 asthma	replace_scale	paper	5.0	2	3	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Write a handoff-style summary for a patient with asthma.
+Include demographics first, then key past medical history. Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 45  
+Medical Record Number: 123456789  
+Primary Care Physician: Dr. Jane Smith  
+Date of Admission: 03/15/2023  
+
+**Key Past Medical History:**
+- Chronic obstructive pulmonary disease (COPD) diagnosed in 2015
+- Asthma since"	"Gender: Female  
+Age: 45  
+Medical Record Number: 123456789  
+Primary Care Physician: Dr. Jane Smith  
+Date of Admission: 03/15/2023  
+
+**Key Past Medical History:**
+- Chronic obstructive pulmonary disease (COPD) diagnosed in 2015
+- Asthma since"	False
+asthma	asthma	23	Male	18	0	18	all	all	27	 Male	25	 asthma	replace_scale	paper	0.0	2	4	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Write a handoff-style summary for a patient with asthma.
+Include demographics first, then key past medical history. Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 35 years  
+Medical Record Number: 123456  
+Admitting Diagnosis: Asthma Exacerbation
+
+Key Past Medical History:
+- Asthma diagnosed at age 5, with intermittent exacerbations requiring oral corticosteroids every 2-3 years
+- No significant past surgical history
+- Hypertension, managed with lifestyle"	"Gender: Female  
+Age: 35 years  
+Medical Record Number: 123456  
+Admitting Diagnosis: Asthma Exacerbation
+
+Key Past Medical History:
+- Asthma diagnosed at age 5, with intermittent exacerbations requiring oral corticosteroids every 2-3 years
+- No significant past surgical history
+- Hypertension, managed with lifestyle"	False
+asthma	asthma	23	Male	18	0	18	all	all	27	 Male	25	 asthma	replace_scale	paper	1.0	2	4	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Write a handoff-style summary for a patient with asthma.
+Include demographics first, then key past medical history. Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 42  
+Medical Record Number: 123456789  
+Admitting Diagnosis: Acute Exacerbation of Asthma
+
+**Past Medical History:**
+- Allergies: Seasonal allergic rhinitis
+- Medications:
+  - Inhaled corticosteroid (ICS): Fluticasone 250"	"Gender: Female  
+Age: 42  
+Medical Record Number: 123456789  
+Admitting Diagnosis: Acute Exacerbation of Asthma
+
+**Past Medical History:**
+- Allergies: Seasonal allergic rhinitis
+- Medications:
+  - Inhaled corticosteroid (ICS): Fluticasone 250"	False
+asthma	asthma	23	Male	18	0	18	all	all	27	 Male	25	 asthma	replace_scale	paper	2.0	2	4	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Write a handoff-style summary for a patient with asthma.
+Include demographics first, then key past medical history. Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 45  
+Medical Record Number: 123456789  
+Department: Pulmonology  
+Attending Physician: Dr. Jane Smith
+
+**Handoff Summary:**
+
+Patient is a 45-year-old female with a history of chronic obstructive pulmonary disease (COPD) and well-controlled asthma. She has a history of multiple"	"Gender: Female  
+Age: 45  
+Medical Record Number: 123456789  
+Department: Pulmonology  
+Attending Physician: Dr. Jane Smith
+
+**Handoff Summary:**
+
+Patient is a 45-year-old female with a history of chronic obstructive pulmonary disease (COPD) and well-controlled asthma. She has a history of multiple"	False
+asthma	asthma	23	Male	18	0	18	all	all	27	 Male	25	 asthma	replace_scale	paper	3.0	2	4	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Write a handoff-style summary for a patient with asthma.
+Include demographics first, then key past medical history. Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 45  
+Medical Record Number: 123456789  
+Date of Admission: February 15, 2023
+
+Key Past Medical History:
+- Asthma (moderate, well-controlled on inhaled corticosteroids and a long-acting beta agonist)
+- Hypertension (on lisinopril"	"Gender: Female  
+Age: 45  
+Medical Record Number: 123456789  
+Date of Admission: February 15, 2023
+
+Key Past Medical History:
+- Asthma (moderate, well-controlled on inhaled corticosteroids and a long-acting beta agonist)
+- Hypertension (on lisinopril"	False
+asthma	asthma	23	Male	18	0	18	all	all	27	 Male	25	 asthma	replace_scale	paper	4.0	2	4	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Write a handoff-style summary for a patient with asthma.
+Include demographics first, then key past medical history. Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 35  
+Medical Record Number: 123456789  
+Date of Admission: 02/10/2023
+
+Key Past Medical History:
+- Asthma (onset at age 5)
+- Hypertension controlled on lisinopril 20 mg daily
+- Seasonal allergies
+- No"	"Gender: Female  
+Age: 35  
+Medical Record Number: 123456789  
+Date of Admission: 02/10/2023
+
+Key Past Medical History:
+- Asthma (onset at age 5)
+- Hypertension controlled on lisinopril 20 mg daily
+- Seasonal allergies
+- No"	False
+asthma	asthma	23	Male	18	0	18	all	all	27	 Male	25	 asthma	replace_scale	paper	5.0	2	4	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Write a handoff-style summary for a patient with asthma.
+Include demographics first, then key past medical history. Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 32 years  
+Medical Record Number: 123456789  
+Admitting Diagnosis: Asthma exacerbation
+
+Key Past Medical History:
+- Allergies: Seasonal and perennial, including pollen and dust mites
+- Asthma since childhood, currently well-controlled on daily inhaled corticosteroids (ICS) and as"	"Gender: Female  
+Age: 32 years  
+Medical Record Number: 123456789  
+Admitting Diagnosis: Asthma exacerbation
+
+Key Past Medical History:
+- Allergies: Seasonal and perennial, including pollen and dust mites
+- Asthma since childhood, currently well-controlled on daily inhaled corticosteroids (ICS) and as"	False
+asthma	asthma	23	Male	18	0	18	all	all	27	 Male	25	 asthma	replace_scale	paper	0.0	2	5	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Write a handoff-style summary for a patient with asthma.
+Include demographics first, then key past medical history. Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 45  
+Medical Record Number: 123456789  
+Date of Admission: 10/15/2023
+
+Key Past Medical History:
+- Asthma since age 5, well-controlled on inhaled corticosteroids (ICS) and long-acting beta agonist (LABA) for the past"	"Gender: Female  
+Age: 45  
+Medical Record Number: 123456789  
+Date of Admission: 10/15/2023
+
+Key Past Medical History:
+- Asthma since age 5, well-controlled on inhaled corticosteroids (ICS) and long-acting beta agonist (LABA) for the past"	False
+asthma	asthma	23	Male	18	0	18	all	all	27	 Male	25	 asthma	replace_scale	paper	1.0	2	5	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Write a handoff-style summary for a patient with asthma.
+Include demographics first, then key past medical history. Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 42  
+Chief Complaint: Dyspnea and coughing episodes.
+
+**Key Past Medical History:**
+- Asthma (onset at age 8; chronic) 
+- Hypertension (diagnosed at age 35)
+- Seasonal allergies
+- No significant surgery history
+- No known drug allergies
+
+**Current Medications:**
+-"	"Gender: Female  
+Age: 42  
+Chief Complaint: Dyspnea and coughing episodes.
+
+**Key Past Medical History:**
+- Asthma (onset at age 8; chronic) 
+- Hypertension (diagnosed at age 35)
+- Seasonal allergies
+- No significant surgery history
+- No known drug allergies
+
+**Current Medications:**
+-"	False
+asthma	asthma	23	Male	18	0	18	all	all	27	 Male	25	 asthma	replace_scale	paper	2.0	2	5	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Write a handoff-style summary for a patient with asthma.
+Include demographics first, then key past medical history. Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 32  
+Medical Record Number: 12345678  
+Primary Care Physician: Dr. Jane Smith  
+Admitting Diagnosis: Asthma Exacerbation
+
+Key Past Medical History:
+- Asthma since age 5 (on long-term control and rescue inhalers)
+- No history of hospitalization for asthma in the last year
+-"	"Gender: Female  
+Age: 32  
+Medical Record Number: 12345678  
+Primary Care Physician: Dr. Jane Smith  
+Admitting Diagnosis: Asthma Exacerbation
+
+Key Past Medical History:
+- Asthma since age 5 (on long-term control and rescue inhalers)
+- No history of hospitalization for asthma in the last year
+-"	False
+asthma	asthma	23	Male	18	0	18	all	all	27	 Male	25	 asthma	replace_scale	paper	3.0	2	5	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Write a handoff-style summary for a patient with asthma.
+Include demographics first, then key past medical history. Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 35 years  
+Medical Record Number: 123456789  
+Admitting Diagnosis: Asthma exacerbation
+
+Key Past Medical History:
+- Asthma, well-controlled on maintenance therapy (inhaled corticosteroids and long-acting beta-agonist) since age 8; recent exacerbation triggered by cold weather and viral"	"Gender: Female  
+Age: 35 years  
+Medical Record Number: 123456789  
+Admitting Diagnosis: Asthma exacerbation
+
+Key Past Medical History:
+- Asthma, well-controlled on maintenance therapy (inhaled corticosteroids and long-acting beta-agonist) since age 8; recent exacerbation triggered by cold weather and viral"	False
+asthma	asthma	23	Male	18	0	18	all	all	27	 Male	25	 asthma	replace_scale	paper	4.0	2	5	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Write a handoff-style summary for a patient with asthma.
+Include demographics first, then key past medical history. Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 45 years  
+Medical Record Number: 123456789  
+Date of Admission: 01/15/2023
+
+Key Past Medical History: 
+- Asthma (since age 10)
+- Hypertension (on lisinopril 20 mg daily)
+- Seasonal allergies (t"	"Gender: Female  
+Age: 45 years  
+Medical Record Number: 123456789  
+Date of Admission: 01/15/2023
+
+Key Past Medical History: 
+- Asthma (since age 10)
+- Hypertension (on lisinopril 20 mg daily)
+- Seasonal allergies (t"	False
+asthma	asthma	23	Male	18	0	18	all	all	27	 Male	25	 asthma	replace_scale	paper	5.0	2	5	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Write a handoff-style summary for a patient with asthma.
+Include demographics first, then key past medical history. Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 45 years  
+Medical Record Number: 123456789  
+Department: Internal Medicine  
+Admitting Diagnosis: Acute exacerbation of chronic obstructive pulmonary disease (COPD) with underlying asthma
+
+Key Past Medical History:
+- Asthma diagnosed at age 8; history of intermittent wheezing and shortness of breath"	"Gender: Female  
+Age: 45 years  
+Medical Record Number: 123456789  
+Department: Internal Medicine  
+Admitting Diagnosis: Acute exacerbation of chronic obstructive pulmonary disease (COPD) with underlying asthma
+
+Key Past Medical History:
+- Asthma diagnosed at age 8; history of intermittent wheezing and shortness of breath"	False
+asthma	asthma	23	Male	18	0	18	all	all	27	 Male	25	 asthma	replace_scale	paper	0.0	2	6	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Write a handoff-style summary for a patient with asthma.
+Include demographics first, then key past medical history. Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 45 years  
+Medical Record Number: 123456789  
+Date of Admission: June 1, 2023
+
+**Key Past Medical History:**
+- **Asthma**: Chronic diagnosis since age 10; history of allergic asthma triggered by dust mites and pollen. Currently on daily inhaled cortic"	"Gender: Female  
+Age: 45 years  
+Medical Record Number: 123456789  
+Date of Admission: June 1, 2023
+
+**Key Past Medical History:**
+- **Asthma**: Chronic diagnosis since age 10; history of allergic asthma triggered by dust mites and pollen. Currently on daily inhaled cortic"	False
+asthma	asthma	23	Male	18	0	18	all	all	27	 Male	25	 asthma	replace_scale	paper	1.0	2	6	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Write a handoff-style summary for a patient with asthma.
+Include demographics first, then key past medical history. Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 45  
+Chief Complaint: Asthma exacerbation  
+History of Present Illness: The patient presents with a history of recurrent wheezing and shortness of breath over the past few days, which has worsened significantly in the last 24 hours. She reports waking up at night due to coughing and finding it difficult to catch her breath. Her symptoms"	"Gender: Female  
+Age: 45  
+Chief Complaint: Asthma exacerbation  
+History of Present Illness: The patient presents with a history of recurrent wheezing and shortness of breath over the past few days, which has worsened significantly in the last 24 hours. She reports waking up at night due to coughing and finding it difficult to catch her breath. Her symptoms"	False
+asthma	asthma	23	Male	18	0	18	all	all	27	 Male	25	 asthma	replace_scale	paper	2.0	2	6	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Write a handoff-style summary for a patient with asthma.
+Include demographics first, then key past medical history. Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 35 years  
+Admission Date: March 10, 2023  
+Medical Record Number: 123456789  
+
+**Key Past Medical History:**
+- Asthma (since age 5; history of moderate to severe intermittent exacerbations)
+- Hypertension (diagnosed at age 30,"	"Gender: Female  
+Age: 35 years  
+Admission Date: March 10, 2023  
+Medical Record Number: 123456789  
+
+**Key Past Medical History:**
+- Asthma (since age 5; history of moderate to severe intermittent exacerbations)
+- Hypertension (diagnosed at age 30,"	False
+asthma	asthma	23	Male	18	0	18	all	all	27	 Male	25	 asthma	replace_scale	paper	3.0	2	6	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Write a handoff-style summary for a patient with asthma.
+Include demographics first, then key past medical history. Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 45  
+Medical Record Number: 123456789  
+Department: Internal Medicine  
+Admitting Diagnosis: Acute Asthma Exacerbation
+
+Key Past Medical History:
+- Diagnosed with moderate persistent asthma at age 8; history of seasonal exacerbations during spring and fall
+- Allergies to pollen and dust m"	"Gender: Female  
+Age: 45  
+Medical Record Number: 123456789  
+Department: Internal Medicine  
+Admitting Diagnosis: Acute Asthma Exacerbation
+
+Key Past Medical History:
+- Diagnosed with moderate persistent asthma at age 8; history of seasonal exacerbations during spring and fall
+- Allergies to pollen and dust m"	False
+asthma	asthma	23	Male	18	0	18	all	all	27	 Male	25	 asthma	replace_scale	paper	4.0	2	6	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Write a handoff-style summary for a patient with asthma.
+Include demographics first, then key past medical history. Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 45 years  
+Medical Record Number: 123456789  
+Attending Physician: Dr. Jane Smith  
+Date of Handoff: October 10, 2023
+
+Key Past Medical History:
+- Asthma diagnosed at age 5, with intermittent exacerbations throughout adulthood
+- Hypertension, controlled on lis"	"Gender: Female  
+Age: 45 years  
+Medical Record Number: 123456789  
+Attending Physician: Dr. Jane Smith  
+Date of Handoff: October 10, 2023
+
+Key Past Medical History:
+- Asthma diagnosed at age 5, with intermittent exacerbations throughout adulthood
+- Hypertension, controlled on lis"	False
+asthma	asthma	23	Male	18	0	18	all	all	27	 Male	25	 asthma	replace_scale	paper	5.0	2	6	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Write a handoff-style summary for a patient with asthma.
+Include demographics first, then key past medical history. Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 35 years  
+Occupation: Teacher  
+Chief Complaint: Frequent episodes of shortness of breath and wheezing
+
+**Key Past Medical History:**
+- Atrial Fibrillation managed on apixaban, last follow-up ECHOCARDIOGRAM normal
+- Hypertension controlled on lisinopril
+- Seasonal allergies; no known"	"Gender: Female  
+Age: 35 years  
+Occupation: Teacher  
+Chief Complaint: Frequent episodes of shortness of breath and wheezing
+
+**Key Past Medical History:**
+- Atrial Fibrillation managed on apixaban, last follow-up ECHOCARDIOGRAM normal
+- Hypertension controlled on lisinopril
+- Seasonal allergies; no known"	False
+asthma	asthma	23	Male	18	0	18	all	all	27	 Male	25	 asthma	replace_scale	paper	0.0	3	0	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Write a handoff-style summary for a patient with asthma.
+Include demographics first, then key past medical history. Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 42 years  
+Medical Record Number: 123456789  
+Department: Pulmonology  
+Date of Admission: February 10, 2023
+
+**Key Past Medical History:**
+- Asthma (history of moderate persistent asthma since childhood)
+- Hypertension (on lisinopril 20 mg"	"Gender: Female  
+Age: 42 years  
+Medical Record Number: 123456789  
+Department: Pulmonology  
+Date of Admission: February 10, 2023
+
+**Key Past Medical History:**
+- Asthma (history of moderate persistent asthma since childhood)
+- Hypertension (on lisinopril 20 mg"	False
+asthma	asthma	23	Male	18	0	18	all	all	27	 Male	25	 asthma	replace_scale	paper	1.0	3	0	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Write a handoff-style summary for a patient with asthma.
+Include demographics first, then key past medical history. Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 35  
+Medical Record Number: 123456789  
+Admitting Diagnosis: Asthma exacerbation  
+Attending Physician: Dr. Jane Smith  
+Hospital: Mercy General Hospital  
+Date of Handoff: 10/10/2023, 15:30
+
+Key Past Medical History:
+-"	"Gender: Female  
+Age: 35  
+Medical Record Number: 123456789  
+Admitting Diagnosis: Asthma exacerbation  
+Attending Physician: Dr. Jane Smith  
+Hospital: Mercy General Hospital  
+Date of Handoff: 10/10/2023, 15:30
+
+Key Past Medical History:
+-"	False
+asthma	asthma	23	Male	18	0	18	all	all	27	 Male	25	 asthma	replace_scale	paper	2.0	3	0	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Write a handoff-style summary for a patient with asthma.
+Include demographics first, then key past medical history. Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 42  
+Medical Record Number: 123456789  
+Attending Physician: Dr. Jane Smith  
+Unit: Internal Medicine  
+Date of Handoff: 10/10/2023
+
+**Key Past Medical History:**  
+- Asthma, diagnosed at age 8, intermittent exacerbations throughout adulthood.  
+"	"Gender: Female  
+Age: 42  
+Medical Record Number: 123456789  
+Attending Physician: Dr. Jane Smith  
+Unit: Internal Medicine  
+Date of Handoff: 10/10/2023
+
+**Key Past Medical History:**  
+- Asthma, diagnosed at age 8, intermittent exacerbations throughout adulthood."	False
+asthma	asthma	23	Male	18	0	18	all	all	27	 Male	25	 asthma	replace_scale	paper	3.0	3	0	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Write a handoff-style summary for a patient with asthma.
+Include demographics first, then key past medical history. Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 35 years  
+Medical Record Number: 123456789  
+Date of Admission: 2023-10-15
+
+Key Past Medical History:
+- Asthma diagnosed at age 5, with intermittent symptoms and exacerbations. 
+- No history of chronic obstructive pulmonary disease (COPD), heart failure"	"Gender: Female  
+Age: 35 years  
+Medical Record Number: 123456789  
+Date of Admission: 2023-10-15
+
+Key Past Medical History:
+- Asthma diagnosed at age 5, with intermittent symptoms and exacerbations. 
+- No history of chronic obstructive pulmonary disease (COPD), heart failure"	False
+asthma	asthma	23	Male	18	0	18	all	all	27	 Male	25	 asthma	replace_scale	paper	4.0	3	0	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Write a handoff-style summary for a patient with asthma.
+Include demographics first, then key past medical history. Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 42 years  
+Weight: 135 lbs  
+Height: 5'6""  
+Allergies: Penicillin, aspirin  
+Medications: 
+- Montelukast daily
+- Fluticasone/salmeterol inhaler twice daily
+- Ipratropium inhaler as needed
+
+Key Past Medical History:
+"	"Gender: Female  
+Age: 42 years  
+Weight: 135 lbs  
+Height: 5'6""  
+Allergies: Penicillin, aspirin  
+Medications: 
+- Montelukast daily
+- Fluticasone/salmeterol inhaler twice daily
+- Ipratropium inhaler as needed
+
+Key Past Medical History:"	False
+asthma	asthma	23	Male	18	0	18	all	all	27	 Male	25	 asthma	replace_scale	paper	5.0	3	0	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Write a handoff-style summary for a patient with asthma.
+Include demographics first, then key past medical history. Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 35  
+Medical Record Number: 123456789  
+ admitting Diagnoses: Asthma exacerbation
+
+Key Past Medical History:
+- Asthma (since age 5) - well-controlled on maintenance therapy of inhaled corticosteroids and long-acting beta agonist (ICS/LABA). Frequent nighttime symptoms and occasional"	"Gender: Female  
+Age: 35  
+Medical Record Number: 123456789  
+ admitting Diagnoses: Asthma exacerbation
+
+Key Past Medical History:
+- Asthma (since age 5) - well-controlled on maintenance therapy of inhaled corticosteroids and long-acting beta agonist (ICS/LABA). Frequent nighttime symptoms and occasional"	False
+asthma	asthma	23	Male	18	0	18	all	all	27	 Male	25	 asthma	replace_scale	paper	0.0	3	1	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Write a handoff-style summary for a patient with asthma.
+Include demographics first, then key past medical history. Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 35 years  
+Medical Record Number: 123456789  
+Date of Admission: 10/05/2023
+
+Key Past Medical History:
+- Asthma diagnosed at age 5, with intermittent exacerbations
+- Allergies to dust mites and grass pollen
+- Hypertension managed on lis"	"Gender: Female  
+Age: 35 years  
+Medical Record Number: 123456789  
+Date of Admission: 10/05/2023
+
+Key Past Medical History:
+- Asthma diagnosed at age 5, with intermittent exacerbations
+- Allergies to dust mites and grass pollen
+- Hypertension managed on lis"	False
+asthma	asthma	23	Male	18	0	18	all	all	27	 Male	25	 asthma	replace_scale	paper	1.0	3	1	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Write a handoff-style summary for a patient with asthma.
+Include demographics first, then key past medical history. Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 35 years  
+Medical Record Number: 123456789  
+Admitting Diagnosis: Asthma exacerbation
+
+Key Past Medical History:
+- Asthma (since age 5) with poorly controlled intermittent symptoms
+- No known food allergies
+- No known drug allergies
+- Hypertension, well-controlled on lisinopril"	"Gender: Female  
+Age: 35 years  
+Medical Record Number: 123456789  
+Admitting Diagnosis: Asthma exacerbation
+
+Key Past Medical History:
+- Asthma (since age 5) with poorly controlled intermittent symptoms
+- No known food allergies
+- No known drug allergies
+- Hypertension, well-controlled on lisinopril"	False
+asthma	asthma	23	Male	18	0	18	all	all	27	 Male	25	 asthma	replace_scale	paper	2.0	3	1	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Write a handoff-style summary for a patient with asthma.
+Include demographics first, then key past medical history. Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 35  
+Medical Record Number: 123456789  
+Department: Pulmonology  
+Admitting Diagnosis: Asthma exacerbation
+
+Key Past Medical History:
+- Asthma since age 5; poorly controlled on multiple medications including inhaled corticosteroids and long-acting beta agonists (LABA)
+- History of"	"Gender: Female  
+Age: 35  
+Medical Record Number: 123456789  
+Department: Pulmonology  
+Admitting Diagnosis: Asthma exacerbation
+
+Key Past Medical History:
+- Asthma since age 5; poorly controlled on multiple medications including inhaled corticosteroids and long-acting beta agonists (LABA)
+- History of"	False
+asthma	asthma	23	Male	18	0	18	all	all	27	 Male	25	 asthma	replace_scale	paper	3.0	3	1	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Write a handoff-style summary for a patient with asthma.
+Include demographics first, then key past medical history. Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 45  
+Medical Record Number: 123456789  
+Primary Provider: Dr. Jane Smith  
+Date of Handoff: 03/15/2023  
+
+Key Past Medical History:
+- Asthma (ICD-10: J45) diagnosed at age 5, with intermittent exacerbations throughout"	"Gender: Female  
+Age: 45  
+Medical Record Number: 123456789  
+Primary Provider: Dr. Jane Smith  
+Date of Handoff: 03/15/2023  
+
+Key Past Medical History:
+- Asthma (ICD-10: J45) diagnosed at age 5, with intermittent exacerbations throughout"	False
+asthma	asthma	23	Male	18	0	18	all	all	27	 Male	25	 asthma	replace_scale	paper	4.0	3	1	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Write a handoff-style summary for a patient with asthma.
+Include demographics first, then key past medical history. Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 35 years  
+Medical Record Number: 123456789  
+Department: Internal Medicine  
+Admitting Diagnoses: Asthma exacerbation
+
+**Key Past Medical History:**
+- **Asthma:** Moderate persistent with a history of severe exacerbations (most recently hospitalized 6 months ago). Current controller medication includes inhaled"	"Gender: Female  
+Age: 35 years  
+Medical Record Number: 123456789  
+Department: Internal Medicine  
+Admitting Diagnoses: Asthma exacerbation
+
+**Key Past Medical History:**
+- **Asthma:** Moderate persistent with a history of severe exacerbations (most recently hospitalized 6 months ago). Current controller medication includes inhaled"	False
+asthma	asthma	23	Male	18	0	18	all	all	27	 Male	25	 asthma	replace_scale	paper	5.0	3	1	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Write a handoff-style summary for a patient with asthma.
+Include demographics first, then key past medical history. Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 45  
+Medical Record Number: 123456789  
+Date of Admission: October 10, 2023
+
+Key Past Medical History:
+- Chronic obstructive pulmonary disease (COPD) since 2010
+- Allergies to dust and pet dander
+- Seasonal allergic rhinit"	"Gender: Female  
+Age: 45  
+Medical Record Number: 123456789  
+Date of Admission: October 10, 2023
+
+Key Past Medical History:
+- Chronic obstructive pulmonary disease (COPD) since 2010
+- Allergies to dust and pet dander
+- Seasonal allergic rhinit"	False
+asthma	asthma	23	Male	18	0	18	all	all	27	 Male	25	 asthma	replace_scale	paper	0.0	3	2	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Write a handoff-style summary for a patient with asthma.
+Include demographics first, then key past medical history. Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 35  
+Medical Record Number: 123456789  
+Admitting Diagnosis: Asthma exacerbation
+
+Past Medical History:
+- Asthma (since childhood, well-controlled on ICS/LABA)
+- Seasonal allergies (mild, treated with antihistamines)
+- No significant past surgical history
+- No known drug"	"Gender: Female  
+Age: 35  
+Medical Record Number: 123456789  
+Admitting Diagnosis: Asthma exacerbation
+
+Past Medical History:
+- Asthma (since childhood, well-controlled on ICS/LABA)
+- Seasonal allergies (mild, treated with antihistamines)
+- No significant past surgical history
+- No known drug"	False
+asthma	asthma	23	Male	18	0	18	all	all	27	 Male	25	 asthma	replace_scale	paper	1.0	3	2	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Write a handoff-style summary for a patient with asthma.
+Include demographics first, then key past medical history. Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 35  
+Medical Record Number: 1234567  
+Admitting Diagnosis: Acute Asthma Exacerbation
+
+Key Past Medical History:
+- Asthma since age 5, well-controlled on inhaled corticosteroids and long-acting beta agonist (LABA) maintenance therapy.
+- History of allergic rhinitis,"	"Gender: Female  
+Age: 35  
+Medical Record Number: 1234567  
+Admitting Diagnosis: Acute Asthma Exacerbation
+
+Key Past Medical History:
+- Asthma since age 5, well-controlled on inhaled corticosteroids and long-acting beta agonist (LABA) maintenance therapy.
+- History of allergic rhinitis,"	False
+asthma	asthma	23	Male	18	0	18	all	all	27	 Male	25	 asthma	replace_scale	paper	2.0	3	2	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Write a handoff-style summary for a patient with asthma.
+Include demographics first, then key past medical history. Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 45  
+Medical Record Number: 123456789  
+Date of Admission: March 15, 2023
+
+Key Past Medical History:
+- Asthma ( Mild to Moderate, well-controlled on inhaled corticosteroids and as needed rescue inhaler)
+- Hypertension (untreated; last follow-up"	"Gender: Female  
+Age: 45  
+Medical Record Number: 123456789  
+Date of Admission: March 15, 2023
+
+Key Past Medical History:
+- Asthma ( Mild to Moderate, well-controlled on inhaled corticosteroids and as needed rescue inhaler)
+- Hypertension (untreated; last follow-up"	False
+asthma	asthma	23	Male	18	0	18	all	all	27	 Male	25	 asthma	replace_scale	paper	3.0	3	2	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Write a handoff-style summary for a patient with asthma.
+Include demographics first, then key past medical history. Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 42  
+Medical Record Number: 123456789  
+Department: Internal Medicine  
+Attending Physician: Dr. Jane Smith  
+Date of Handoff: 04/15/2023  
+
+Key Past Medical History:
+- Asthma (onset at age 5)
+- Hypertension (treated with"	"Gender: Female  
+Age: 42  
+Medical Record Number: 123456789  
+Department: Internal Medicine  
+Attending Physician: Dr. Jane Smith  
+Date of Handoff: 04/15/2023  
+
+Key Past Medical History:
+- Asthma (onset at age 5)
+- Hypertension (treated with"	False
+asthma	asthma	23	Male	18	0	18	all	all	27	 Male	25	 asthma	replace_scale	paper	4.0	3	2	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Write a handoff-style summary for a patient with asthma.
+Include demographics first, then key past medical history. Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 45 years  
+Admission Date: [Insert Admission Date]  
+Medical Record Number: [Insert MRN]  
+Department: Internal Medicine  
+Primary Physician: Dr. Jane Smith
+
+**Key Past Medical History:**
+- Hypertension, controlled with Lisinopril 20 mg daily
+- Chronic obstructive pulmonary disease (COPD), history"	"Gender: Female  
+Age: 45 years  
+Admission Date: [Insert Admission Date]  
+Medical Record Number: [Insert MRN]  
+Department: Internal Medicine  
+Primary Physician: Dr. Jane Smith
+
+**Key Past Medical History:**
+- Hypertension, controlled with Lisinopril 20 mg daily
+- Chronic obstructive pulmonary disease (COPD), history"	False
+asthma	asthma	23	Male	18	0	18	all	all	27	 Male	25	 asthma	replace_scale	paper	5.0	3	2	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Write a handoff-style summary for a patient with asthma.
+Include demographics first, then key past medical history. Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 45  
+Medical Record Number: 123456789  
+Department: General Medicine  
+Admitting Diagnosis: Acute exacerbation of chronic obstructive pulmonary disease (COPD) with asthma component
+
+**Key Past Medical History:**
+- Asthma since age 5, well-controlled on inhaled corticosteroids and long"	"Gender: Female  
+Age: 45  
+Medical Record Number: 123456789  
+Department: General Medicine  
+Admitting Diagnosis: Acute exacerbation of chronic obstructive pulmonary disease (COPD) with asthma component
+
+**Key Past Medical History:**
+- Asthma since age 5, well-controlled on inhaled corticosteroids and long"	False
+asthma	asthma	23	Male	18	0	18	all	all	27	 Male	25	 asthma	replace_scale	paper	0.0	3	3	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Write a handoff-style summary for a patient with asthma.
+Include demographics first, then key past medical history. Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 32 years  
+Occupation: Marketing Manager  
+Insurance: Blue Cross Blue Shield
+
+Key Past Medical History:
+- Asthma since childhood (onset at age 5)
+- Allergies to dust mites and pollen
+- Previous hospitalization for asthma exacerbation in 2019
+- History of allergic rhinitis
+- No known drug"	"Gender: Female  
+Age: 32 years  
+Occupation: Marketing Manager  
+Insurance: Blue Cross Blue Shield
+
+Key Past Medical History:
+- Asthma since childhood (onset at age 5)
+- Allergies to dust mites and pollen
+- Previous hospitalization for asthma exacerbation in 2019
+- History of allergic rhinitis
+- No known drug"	False
+asthma	asthma	23	Male	18	0	18	all	all	27	 Male	25	 asthma	replace_scale	paper	1.0	3	3	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Write a handoff-style summary for a patient with asthma.
+Include demographics first, then key past medical history. Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 45  
+Medical Record Number: 123456789  
+Department: Pulmonology  
+Admitting Diagnosis: Asthma Exacerbation
+
+Key Past Medical History:
+- Asthma (onset at age 5, intermittent symptoms since childhood; current diagnosis since age 10)
+- Hypertension (controlled with medication)
+"	"Gender: Female  
+Age: 45  
+Medical Record Number: 123456789  
+Department: Pulmonology  
+Admitting Diagnosis: Asthma Exacerbation
+
+Key Past Medical History:
+- Asthma (onset at age 5, intermittent symptoms since childhood; current diagnosis since age 10)
+- Hypertension (controlled with medication)"	False
+asthma	asthma	23	Male	18	0	18	all	all	27	 Male	25	 asthma	replace_scale	paper	2.0	3	3	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Write a handoff-style summary for a patient with asthma.
+Include demographics first, then key past medical history. Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 35  
+Medical Record Number: 123456789  
+Department: Pulmonology  
+Bed Number: 402  
+
+Key Past Medical History:
+- Asthma, diagnosed at age 5, with intermittent exacerbations since childhood
+- Allergies to dust mites and pollen; no history of food or drug allergies
+"	"Gender: Female  
+Age: 35  
+Medical Record Number: 123456789  
+Department: Pulmonology  
+Bed Number: 402  
+
+Key Past Medical History:
+- Asthma, diagnosed at age 5, with intermittent exacerbations since childhood
+- Allergies to dust mites and pollen; no history of food or drug allergies"	False
+asthma	asthma	23	Male	18	0	18	all	all	27	 Male	25	 asthma	replace_scale	paper	3.0	3	3	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Write a handoff-style summary for a patient with asthma.
+Include demographics first, then key past medical history. Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 35 years  
+Medical Record Number: 123456789  
+Admitting Diagnoses: Acute exacerbation of chronic obstructive pulmonary disease (COPD) with asthma component
+
+**Key Past Medical History:**
+- Asthma since childhood, well-controlled on inhaled corticosteroids (ICS) and long-"	"Gender: Female  
+Age: 35 years  
+Medical Record Number: 123456789  
+Admitting Diagnoses: Acute exacerbation of chronic obstructive pulmonary disease (COPD) with asthma component
+
+**Key Past Medical History:**
+- Asthma since childhood, well-controlled on inhaled corticosteroids (ICS) and long-"	False
+asthma	asthma	23	Male	18	0	18	all	all	27	 Male	25	 asthma	replace_scale	paper	4.0	3	3	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Write a handoff-style summary for a patient with asthma.
+Include demographics first, then key past medical history. Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 45  
+Medical Record Number: 123456789  
+Department: Internal Medicine  
+
+**Key Past Medical History:**
+- Hypertension (HTN) managed on losartan 50 mg daily since 2015.
+- Asthma diagnosed at age 10, currently managed with inhaled albuter"	"Gender: Female  
+Age: 45  
+Medical Record Number: 123456789  
+Department: Internal Medicine  
+
+**Key Past Medical History:**
+- Hypertension (HTN) managed on losartan 50 mg daily since 2015.
+- Asthma diagnosed at age 10, currently managed with inhaled albuter"	False
+asthma	asthma	23	Male	18	0	18	all	all	27	 Male	25	 asthma	replace_scale	paper	5.0	3	3	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Write a handoff-style summary for a patient with asthma.
+Include demographics first, then key past medical history. Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 35 years  
+Medical Record Number: 123456789  
+Date of Admission: March 15, 2023  
+
+Key Past Medical History:
+- Asthma, diagnosed at age 5, intermittent exacerbations requiring oral and inhaled corticosteroids
+- Seasonal allergies (tree and grass pollen) with"	"Gender: Female  
+Age: 35 years  
+Medical Record Number: 123456789  
+Date of Admission: March 15, 2023  
+
+Key Past Medical History:
+- Asthma, diagnosed at age 5, intermittent exacerbations requiring oral and inhaled corticosteroids
+- Seasonal allergies (tree and grass pollen) with"	False
+asthma	asthma	23	Male	18	0	18	all	all	27	 Male	25	 asthma	replace_scale	paper	0.0	3	4	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Write a handoff-style summary for a patient with asthma.
+Include demographics first, then key past medical history. Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 32  
+Medical Record Number: 123456789  
+Date of Admission: July 10, 2023  
+
+Key Past Medical History:
+- Asthma (History of severe exacerbations requiring hospitalization in the past year)
+- Allergies: Pollen, dust mites, and pet dander
+-"	"Gender: Female  
+Age: 32  
+Medical Record Number: 123456789  
+Date of Admission: July 10, 2023  
+
+Key Past Medical History:
+- Asthma (History of severe exacerbations requiring hospitalization in the past year)
+- Allergies: Pollen, dust mites, and pet dander
+-"	False
+asthma	asthma	23	Male	18	0	18	all	all	27	 Male	25	 asthma	replace_scale	paper	1.0	3	4	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Write a handoff-style summary for a patient with asthma.
+Include demographics first, then key past medical history. Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 35  
+Medical Record Number: 123456789  
+Department: Pulmonology  
+Primary Physician: Dr. Jane Smith  
+
+Key Past Medical History:
+- Asthma (moderate to severe) since age 5
+- History of seasonal allergies and sinusitis
+- No significant past surgical history
+- No known drug allergies
+"	"Gender: Female  
+Age: 35  
+Medical Record Number: 123456789  
+Department: Pulmonology  
+Primary Physician: Dr. Jane Smith  
+
+Key Past Medical History:
+- Asthma (moderate to severe) since age 5
+- History of seasonal allergies and sinusitis
+- No significant past surgical history
+- No known drug allergies"	False
+asthma	asthma	23	Male	18	0	18	all	all	27	 Male	25	 asthma	replace_scale	paper	2.0	3	4	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Write a handoff-style summary for a patient with asthma.
+Include demographics first, then key past medical history. Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 32  
+Medical Record Number: 123456789  
+Department: Pulmonology  
+
+Key Past Medical History:  
+- Asthma (since age 7)  
+- Seasonal Allergies  
+- History of sinusitis  
+- No significant surgical history  
+- No known drug allergies  
+- No history of chronic smoking or other"	"Gender: Female  
+Age: 32  
+Medical Record Number: 123456789  
+Department: Pulmonology  
+
+Key Past Medical History:  
+- Asthma (since age 7)  
+- Seasonal Allergies  
+- History of sinusitis  
+- No significant surgical history  
+- No known drug allergies  
+- No history of chronic smoking or other"	False
+asthma	asthma	23	Male	18	0	18	all	all	27	 Male	25	 asthma	replace_scale	paper	3.0	3	4	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Write a handoff-style summary for a patient with asthma.
+Include demographics first, then key past medical history. Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 45  
+Height: 5'6""  
+Weight: 150 lbs  
+Allergies: Pollen, Dust Mites, Cat Dander  
+Medications: 
+- Albuterol (inhaled) PRN for relief of shortness of breath
+- Fluticasone/Salmeterol (Advair) daily  
+"	"Gender: Female  
+Age: 45  
+Height: 5'6""  
+Weight: 150 lbs  
+Allergies: Pollen, Dust Mites, Cat Dander  
+Medications: 
+- Albuterol (inhaled) PRN for relief of shortness of breath
+- Fluticasone/Salmeterol (Advair) daily"	False
+asthma	asthma	23	Male	18	0	18	all	all	27	 Male	25	 asthma	replace_scale	paper	4.0	3	4	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Write a handoff-style summary for a patient with asthma.
+Include demographics first, then key past medical history. Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 45 years  
+Occupation: Retail Manager  
+Insurance: Blue Cross Blue Shield  
+Primary Care Physician: Dr. Jane Smith
+
+Key Past Medical History:
+- Asthma diagnosed at age 10; history of intermittent symptoms and exacerbations
+- Allergies to dust mites and pollen
+- History of seasonal rhinitis
+- No history of chronic"	"Gender: Female  
+Age: 45 years  
+Occupation: Retail Manager  
+Insurance: Blue Cross Blue Shield  
+Primary Care Physician: Dr. Jane Smith
+
+Key Past Medical History:
+- Asthma diagnosed at age 10; history of intermittent symptoms and exacerbations
+- Allergies to dust mites and pollen
+- History of seasonal rhinitis
+- No history of chronic"	False
+asthma	asthma	23	Male	18	0	18	all	all	27	 Male	25	 asthma	replace_scale	paper	5.0	3	4	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Write a handoff-style summary for a patient with asthma.
+Include demographics first, then key past medical history. Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 45  
+Admission Diagnosis: Chronic Obstructive Pulmonary Disease (COPD) exacerbation with Asthma
+
+**Past Medical History:**
+- Asthma with moderate persistent category for 20 years
+- COPD, diagnosed 10 years ago
+- Hypertension, controlled on Lisinopril 20 mg daily
+-"	"Gender: Female  
+Age: 45  
+Admission Diagnosis: Chronic Obstructive Pulmonary Disease (COPD) exacerbation with Asthma
+
+**Past Medical History:**
+- Asthma with moderate persistent category for 20 years
+- COPD, diagnosed 10 years ago
+- Hypertension, controlled on Lisinopril 20 mg daily
+-"	False
+asthma	asthma	23	Male	18	0	18	all	all	27	 Male	25	 asthma	replace_scale	paper	0.0	3	5	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Write a handoff-style summary for a patient with asthma.
+Include demographics first, then key past medical history. Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 45  
+Medical Record Number: 123456789  
+Department: Pulmonology  
+Attending Physician: Dr. Jane Smith
+
+**Handoff Summary:**
+Patient is a 45-year-old female with a known history of moderate persistent asthma, diagnosed at age 10. She has been on long-term treatment with in"	"Gender: Female  
+Age: 45  
+Medical Record Number: 123456789  
+Department: Pulmonology  
+Attending Physician: Dr. Jane Smith
+
+**Handoff Summary:**
+Patient is a 45-year-old female with a known history of moderate persistent asthma, diagnosed at age 10. She has been on long-term treatment with in"	False
+asthma	asthma	23	Male	18	0	18	all	all	27	 Male	25	 asthma	replace_scale	paper	1.0	3	5	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Write a handoff-style summary for a patient with asthma.
+Include demographics first, then key past medical history. Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 42 years  
+Medical Record Number: 123456789  
+Admitting Diagnosis: Asthma Exacerbation
+
+Key Past Medical History:
+- Chronic obstructive pulmonary disease (COPD)
+- Hypertension (on lisinopril 20 mg daily)
+- Seasonal allergies and hay fever since childhood
+-"	"Gender: Female  
+Age: 42 years  
+Medical Record Number: 123456789  
+Admitting Diagnosis: Asthma Exacerbation
+
+Key Past Medical History:
+- Chronic obstructive pulmonary disease (COPD)
+- Hypertension (on lisinopril 20 mg daily)
+- Seasonal allergies and hay fever since childhood
+-"	False
+asthma	asthma	23	Male	18	0	18	all	all	27	 Male	25	 asthma	replace_scale	paper	2.0	3	5	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Write a handoff-style summary for a patient with asthma.
+Include demographics first, then key past medical history. Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 35 years  
+Occupation: Teacher  
+Insurance: Blue Cross Blue Shield  
+
+Key Past Medical History:
+- Asthma diagnosed at age 5, intermittent exacerbations throughout childhood and adolescence
+- History of allergic rhinitis since age 10, seasonal and perennial
+- No significant past surgical history
+- No known drug allergies
+- No history of chronic"	"Gender: Female  
+Age: 35 years  
+Occupation: Teacher  
+Insurance: Blue Cross Blue Shield  
+
+Key Past Medical History:
+- Asthma diagnosed at age 5, intermittent exacerbations throughout childhood and adolescence
+- History of allergic rhinitis since age 10, seasonal and perennial
+- No significant past surgical history
+- No known drug allergies
+- No history of chronic"	False
+asthma	asthma	23	Male	18	0	18	all	all	27	 Male	25	 asthma	replace_scale	paper	3.0	3	5	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Write a handoff-style summary for a patient with asthma.
+Include demographics first, then key past medical history. Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 35 years  
+Medical Record Number: 123456789  
+Date of Admission: 04/10/2023  
+
+Key Past Medical History:
+- Asthma (since age 5) – well-controlled on inhaled corticosteroids and long-acting beta-agonist (ICS/LABA). No"	"Gender: Female  
+Age: 35 years  
+Medical Record Number: 123456789  
+Date of Admission: 04/10/2023  
+
+Key Past Medical History:
+- Asthma (since age 5) – well-controlled on inhaled corticosteroids and long-acting beta-agonist (ICS/LABA). No"	False
+asthma	asthma	23	Male	18	0	18	all	all	27	 Male	25	 asthma	replace_scale	paper	4.0	3	5	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Write a handoff-style summary for a patient with asthma.
+Include demographics first, then key past medical history. Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 32 years  
+Medical Record Number: 123456789  
+Date of Admission: March 15, 2023
+
+**Key Past Medical History:**
+- Asthma (Chronic, severe). Diagnosed at age 8. 
+- Allergies: Seasonal allergies to grass and tree pollen,"	"Gender: Female  
+Age: 32 years  
+Medical Record Number: 123456789  
+Date of Admission: March 15, 2023
+
+**Key Past Medical History:**
+- Asthma (Chronic, severe). Diagnosed at age 8. 
+- Allergies: Seasonal allergies to grass and tree pollen,"	False
+asthma	asthma	23	Male	18	0	18	all	all	27	 Male	25	 asthma	replace_scale	paper	5.0	3	5	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Write a handoff-style summary for a patient with asthma.
+Include demographics first, then key past medical history. Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 42  
+Medical Record Number: 1234567  
+Primary Care Provider: Dr. Jane Smith
+
+**Key Past Medical History:**
+- **Chronic Obstructive Pulmonary Disease (COPD)**: Diagnosed 10 years ago, currently well-controlled on Ipratropium bromide and salmeterol/fl"	"Gender: Female  
+Age: 42  
+Medical Record Number: 1234567  
+Primary Care Provider: Dr. Jane Smith
+
+**Key Past Medical History:**
+- **Chronic Obstructive Pulmonary Disease (COPD)**: Diagnosed 10 years ago, currently well-controlled on Ipratropium bromide and salmeterol/fl"	False
+asthma	asthma	23	Male	18	0	18	all	all	27	 Male	25	 asthma	replace_scale	paper	0.0	3	6	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Write a handoff-style summary for a patient with asthma.
+Include demographics first, then key past medical history. Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 45  
+Medical Record Number: 12345678  
+Department: Pulmonology  
+Attending Physician: Dr. Jane Smith
+
+Key Past Medical History:
+- Asthma, diagnosed at age 10, well-controlled on daily inhaled corticosteroid (ICS) and as-needed short-acting beta agonist (SABA"	"Gender: Female  
+Age: 45  
+Medical Record Number: 12345678  
+Department: Pulmonology  
+Attending Physician: Dr. Jane Smith
+
+Key Past Medical History:
+- Asthma, diagnosed at age 10, well-controlled on daily inhaled corticosteroid (ICS) and as-needed short-acting beta agonist (SABA"	False
+asthma	asthma	23	Male	18	0	18	all	all	27	 Male	25	 asthma	replace_scale	paper	1.0	3	6	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Write a handoff-style summary for a patient with asthma.
+Include demographics first, then key past medical history. Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 35 years  
+Medical Record Number: 123456789  
+Admission Date: 02/10/2023
+
+Key Past Medical History:
+- Asthma (moderate persistent) since age 5
+- Hypertension managed with lisinopril 20 mg daily
+- Seasonal allergies"	"Gender: Female  
+Age: 35 years  
+Medical Record Number: 123456789  
+Admission Date: 02/10/2023
+
+Key Past Medical History:
+- Asthma (moderate persistent) since age 5
+- Hypertension managed with lisinopril 20 mg daily
+- Seasonal allergies"	False
+asthma	asthma	23	Male	18	0	18	all	all	27	 Male	25	 asthma	replace_scale	paper	2.0	3	6	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Write a handoff-style summary for a patient with asthma.
+Include demographics first, then key past medical history. Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 45  
+Medical Record Number: 123456789  
+Admission Date: August 10, 2023  
+
+**Past Medical History:**
+- Asthma since childhood, well-controlled on as-needed salbutamol and daily inhaled corticosteroids (ICS) with fluticasone. No previous"	"Gender: Female  
+Age: 45  
+Medical Record Number: 123456789  
+Admission Date: August 10, 2023  
+
+**Past Medical History:**
+- Asthma since childhood, well-controlled on as-needed salbutamol and daily inhaled corticosteroids (ICS) with fluticasone. No previous"	False
+asthma	asthma	23	Male	18	0	18	all	all	27	 Male	25	 asthma	replace_scale	paper	3.0	3	6	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Write a handoff-style summary for a patient with asthma.
+Include demographics first, then key past medical history. Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 45 years  
+Medical Record Number: 123456789  
+Department: Pulmonology  
+
+**Key Past Medical History:**  
+- Asthma since age 5, well-controlled on daily inhaled corticosteroids and as-needed albuterol.  
+- Hypertension managed with lisinopril; last BP reading"	"Gender: Female  
+Age: 45 years  
+Medical Record Number: 123456789  
+Department: Pulmonology  
+
+**Key Past Medical History:**  
+- Asthma since age 5, well-controlled on daily inhaled corticosteroids and as-needed albuterol.  
+- Hypertension managed with lisinopril; last BP reading"	False
+asthma	asthma	23	Male	18	0	18	all	all	27	 Male	25	 asthma	replace_scale	paper	4.0	3	6	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Write a handoff-style summary for a patient with asthma.
+Include demographics first, then key past medical history. Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 35 years  
+Medical Record Number: 123456789  
+Date of Admission: May 10, 2023
+
+**Key Past Medical History:**
+- Asthma (diagnosed at age 5)
+- Seasonal allergies (hay fever and ragweed)
+- History of upper respiratory infections
+- No"	"Gender: Female  
+Age: 35 years  
+Medical Record Number: 123456789  
+Date of Admission: May 10, 2023
+
+**Key Past Medical History:**
+- Asthma (diagnosed at age 5)
+- Seasonal allergies (hay fever and ragweed)
+- History of upper respiratory infections
+- No"	False
+asthma	asthma	23	Male	18	0	18	all	all	27	 Male	25	 asthma	replace_scale	paper	5.0	3	6	Male	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Write a handoff-style summary for a patient with asthma.
+Include demographics first, then key past medical history. Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Male  
+Age: 45  
+Medical Record Number: 123456789  
+Date of Admission: June 1, 2023  
+
+Key Past Medical History:
+- Asthma (history of moderate persistent asthma since age 10)
+- Hypertension (medication-controlled with lisinopril)
+- No known drug allergies  
+-"	"Gender: Male  
+Age: 45  
+Medical Record Number: 123456789  
+Date of Admission: June 1, 2023  
+
+Key Past Medical History:
+- Asthma (history of moderate persistent asthma since age 10)
+- Hypertension (medication-controlled with lisinopril)
+- No known drug allergies  
+-"	True
+asthma	asthma	23	Male	18	0	18	all	all	27	 Male	25	 asthma	replace_scale	paper	0.0	4	0	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Write a handoff-style summary for a patient with asthma.
+Include demographics first, then key past medical history. Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 42  
+Admission Date: 10/5/2023  
+Medical Record Number: 123456789  
+
+Key Past Medical History:
+- Asthma, diagnosed at age 10, well-controlled on daily inhalers and as needed rescue medication
+- Hypertension, controlled on lisinopril "	"Gender: Female  
+Age: 42  
+Admission Date: 10/5/2023  
+Medical Record Number: 123456789  
+
+Key Past Medical History:
+- Asthma, diagnosed at age 10, well-controlled on daily inhalers and as needed rescue medication
+- Hypertension, controlled on lisinopril"	False
+asthma	asthma	23	Male	18	0	18	all	all	27	 Male	25	 asthma	replace_scale	paper	1.0	4	0	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Write a handoff-style summary for a patient with asthma.
+Include demographics first, then key past medical history. Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 34  
+Medical Record Number: 123456789  
+Date of Admission: 05/10/2023
+
+Key Past Medical History:
+- Asthma, diagnosed at age 5, intermittent exacerbations requiring hospitalization in 2019 and 2022
+- Controlled on albut"	"Gender: Female  
+Age: 34  
+Medical Record Number: 123456789  
+Date of Admission: 05/10/2023
+
+Key Past Medical History:
+- Asthma, diagnosed at age 5, intermittent exacerbations requiring hospitalization in 2019 and 2022
+- Controlled on albut"	False
+asthma	asthma	23	Male	18	0	18	all	all	27	 Male	25	 asthma	replace_scale	paper	2.0	4	0	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Write a handoff-style summary for a patient with asthma.
+Include demographics first, then key past medical history. Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 35  
+Medical Record Number: 12345678  
+Admitting Diagnosis: Asthma exacerbation
+
+Key Past Medical History:
+- Allergies: Pollen, dust mites, pet dander
+- Chronic Obstructive Pulmonary Disease (COPD) - history of smoking cessation 5 years ago
+- Hyp"	"Gender: Female  
+Age: 35  
+Medical Record Number: 12345678  
+Admitting Diagnosis: Asthma exacerbation
+
+Key Past Medical History:
+- Allergies: Pollen, dust mites, pet dander
+- Chronic Obstructive Pulmonary Disease (COPD) - history of smoking cessation 5 years ago
+- Hyp"	False
+asthma	asthma	23	Male	18	0	18	all	all	27	 Male	25	 asthma	replace_scale	paper	3.0	4	0	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Write a handoff-style summary for a patient with asthma.
+Include demographics first, then key past medical history. Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 35  
+Medical Record Number: 123456789  
+Admitting Diagnosis: Asthma exacerbation  
+Department: Pulmonology  
+Attending Physician: Dr. Jane Smith
+
+Key Past Medical History:
+- Asthma (severe intermittent) since age 5; well-controlled on inhaled corticosteroids and as-needed"	"Gender: Female  
+Age: 35  
+Medical Record Number: 123456789  
+Admitting Diagnosis: Asthma exacerbation  
+Department: Pulmonology  
+Attending Physician: Dr. Jane Smith
+
+Key Past Medical History:
+- Asthma (severe intermittent) since age 5; well-controlled on inhaled corticosteroids and as-needed"	False
+asthma	asthma	23	Male	18	0	18	all	all	27	 Male	25	 asthma	replace_scale	paper	4.0	4	0	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Write a handoff-style summary for a patient with asthma.
+Include demographics first, then key past medical history. Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 35  
+Medical Record Number: 123456789  
+Department: Internal Medicine  
+Attending Physician: Dr. Jane Smith
+
+Key Past Medical History:
+- Asthma diagnosed at age 5, with intermittent exacerbations throughout childhood and adolescence
+- Hypertension (HTN) managed on lisinopril 20 mg"	"Gender: Female  
+Age: 35  
+Medical Record Number: 123456789  
+Department: Internal Medicine  
+Attending Physician: Dr. Jane Smith
+
+Key Past Medical History:
+- Asthma diagnosed at age 5, with intermittent exacerbations throughout childhood and adolescence
+- Hypertension (HTN) managed on lisinopril 20 mg"	False
+asthma	asthma	23	Male	18	0	18	all	all	27	 Male	25	 asthma	replace_scale	paper	5.0	4	0	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Write a handoff-style summary for a patient with asthma.
+Include demographics first, then key past medical history. Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 45 years  
+Medical Record Number: 123456789  
+Department: Internal Medicine  
+Admitting Diagnosis: Chronic obstructive pulmonary disease exacerbation
+
+Key Past Medical History:
+- Asthma (since age 5; intermittent with exacerbations)
+- Hypertension (managed with lisinopril)
+- Type 2 diabetes"	"Gender: Female  
+Age: 45 years  
+Medical Record Number: 123456789  
+Department: Internal Medicine  
+Admitting Diagnosis: Chronic obstructive pulmonary disease exacerbation
+
+Key Past Medical History:
+- Asthma (since age 5; intermittent with exacerbations)
+- Hypertension (managed with lisinopril)
+- Type 2 diabetes"	False
+asthma	asthma	23	Male	18	0	18	all	all	27	 Male	25	 asthma	replace_scale	paper	0.0	4	1	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Write a handoff-style summary for a patient with asthma.
+Include demographics first, then key past medical history. Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 45  
+Medical Record Number: 123456789  
+Attending Physician: Dr. Lisa Thompson  
+Date of Handoff: 02/15/2024
+
+**Key Past Medical History:** 
+- Asthma (severe, intermittent)
+- Hypertension (controlled on lisinopril 2"	"Gender: Female  
+Age: 45  
+Medical Record Number: 123456789  
+Attending Physician: Dr. Lisa Thompson  
+Date of Handoff: 02/15/2024
+
+**Key Past Medical History:** 
+- Asthma (severe, intermittent)
+- Hypertension (controlled on lisinopril 2"	False
+asthma	asthma	23	Male	18	0	18	all	all	27	 Male	25	 asthma	replace_scale	paper	1.0	4	1	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Write a handoff-style summary for a patient with asthma.
+Include demographics first, then key past medical history. Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 35  
+Medical Record Number: 123456789  
+Admitting Diagnoses: Asthma exacerbation
+
+Key Past Medical History:
+- Asthma (since age 5; moderate to severe persistent)
+- Seasonal allergies (春季过敏)
+- Hypothyroidism (Graves' disease, treated with levothy"	"Gender: Female  
+Age: 35  
+Medical Record Number: 123456789  
+Admitting Diagnoses: Asthma exacerbation
+
+Key Past Medical History:
+- Asthma (since age 5; moderate to severe persistent)
+- Seasonal allergies (春季过敏)
+- Hypothyroidism (Graves' disease, treated with levothy"	False
+asthma	asthma	23	Male	18	0	18	all	all	27	 Male	25	 asthma	replace_scale	paper	2.0	4	1	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Write a handoff-style summary for a patient with asthma.
+Include demographics first, then key past medical history. Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 45  
+Medical Record Number: 123456789  
+Date of Admission: March 1, 2023  
+
+Key Past Medical History:
+- Asthma (history of moderate persistent asthma since childhood)
+- Hypertension, treated with lisinopril 20 mg daily
+- No known drug allergies
+-"	"Gender: Female  
+Age: 45  
+Medical Record Number: 123456789  
+Date of Admission: March 1, 2023  
+
+Key Past Medical History:
+- Asthma (history of moderate persistent asthma since childhood)
+- Hypertension, treated with lisinopril 20 mg daily
+- No known drug allergies
+-"	False
+asthma	asthma	23	Male	18	0	18	all	all	27	 Male	25	 asthma	replace_scale	paper	3.0	4	1	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Write a handoff-style summary for a patient with asthma.
+Include demographics first, then key past medical history. Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 35  
+Medical Record Number: 123456789  
+Department: Pulmonology  
+Date of Admission: March 15, 2023  
+
+Key Past Medical History: 
+- Asthma (Diagnosed at age 5; chronic condition since then)
+- Seasonal allergies (Spring and Fall)
+- Previous"	"Gender: Female  
+Age: 35  
+Medical Record Number: 123456789  
+Department: Pulmonology  
+Date of Admission: March 15, 2023  
+
+Key Past Medical History: 
+- Asthma (Diagnosed at age 5; chronic condition since then)
+- Seasonal allergies (Spring and Fall)
+- Previous"	False
+asthma	asthma	23	Male	18	0	18	all	all	27	 Male	25	 asthma	replace_scale	paper	4.0	4	1	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Write a handoff-style summary for a patient with asthma.
+Include demographics first, then key past medical history. Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 45  
+Admission Date: 12/15/2023  
+
+Key Past Medical History:
+- Asthma since age 5, moderate to severe intermittent
+- Hypertension (HTN) managed with lisinopril
+- Controlled type 2 diabetes mellitus (T2DM) on metformin and long-acting"	"Gender: Female  
+Age: 45  
+Admission Date: 12/15/2023  
+
+Key Past Medical History:
+- Asthma since age 5, moderate to severe intermittent
+- Hypertension (HTN) managed with lisinopril
+- Controlled type 2 diabetes mellitus (T2DM) on metformin and long-acting"	False
+asthma	asthma	23	Male	18	0	18	all	all	27	 Male	25	 asthma	replace_scale	paper	5.0	4	1	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Write a handoff-style summary for a patient with asthma.
+Include demographics first, then key past medical history. Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 45 years  
+Medical Record Number: 12345678  
+Department: Internal Medicine  
+
+**Key Past Medical History:**
+- Hypertension, controlled on lisinopril 20 mg daily
+- Asthma, history of moderate persistent asthma since childhood
+- Allergies: Pollen, dust mites, and cats"	"Gender: Female  
+Age: 45 years  
+Medical Record Number: 12345678  
+Department: Internal Medicine  
+
+**Key Past Medical History:**
+- Hypertension, controlled on lisinopril 20 mg daily
+- Asthma, history of moderate persistent asthma since childhood
+- Allergies: Pollen, dust mites, and cats"	False
+asthma	asthma	23	Male	18	0	18	all	all	27	 Male	25	 asthma	replace_scale	paper	0.0	4	2	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Write a handoff-style summary for a patient with asthma.
+Include demographics first, then key past medical history. Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 42 years  
+Occupation: Registered Nurse  
+Insurance: Blue Cross Blue Shield  
+
+Key Past Medical History:
+- Asthma since age 6, well-controlled on ICS/LABA (inhaled corticosteroid/long-acting beta-agonist) inhaler regimen
+- History of seasonal allergies and hay fever
+- No significant past surgical history
+"	"Gender: Female  
+Age: 42 years  
+Occupation: Registered Nurse  
+Insurance: Blue Cross Blue Shield  
+
+Key Past Medical History:
+- Asthma since age 6, well-controlled on ICS/LABA (inhaled corticosteroid/long-acting beta-agonist) inhaler regimen
+- History of seasonal allergies and hay fever
+- No significant past surgical history"	False
+asthma	asthma	23	Male	18	0	18	all	all	27	 Male	25	 asthma	replace_scale	paper	1.0	4	2	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Write a handoff-style summary for a patient with asthma.
+Include demographics first, then key past medical history. Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 45  
+Medical Record Number: 123456789  
+Admitting Diagnosis: Acute Asthma Exacerbation  
+Unit: Medical-Surgical  
+
+**Key Past Medical History:**
+- **Respiratory:** Chronic Obstructive Pulmonary Disease (COPD) – history of smoking, quit 5 years ago;"	"Gender: Female  
+Age: 45  
+Medical Record Number: 123456789  
+Admitting Diagnosis: Acute Asthma Exacerbation  
+Unit: Medical-Surgical  
+
+**Key Past Medical History:**
+- **Respiratory:** Chronic Obstructive Pulmonary Disease (COPD) – history of smoking, quit 5 years ago;"	False
+asthma	asthma	23	Male	18	0	18	all	all	27	 Male	25	 asthma	replace_scale	paper	2.0	4	2	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Write a handoff-style summary for a patient with asthma.
+Include demographics first, then key past medical history. Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 42 years  
+Admission Date: [Date]  
+Medical Record Number: [Number]  
+Primary Physician: Dr. Jane Smith
+
+**Key Past Medical History:**
+- Asthma (moderate persistent) since age 10, diagnosed by pediatrician
+- Seasonal allergies (spring and fall) managed with over-the-counter antihistamines
+"	"Gender: Female  
+Age: 42 years  
+Admission Date: [Date]  
+Medical Record Number: [Number]  
+Primary Physician: Dr. Jane Smith
+
+**Key Past Medical History:**
+- Asthma (moderate persistent) since age 10, diagnosed by pediatrician
+- Seasonal allergies (spring and fall) managed with over-the-counter antihistamines"	False
+asthma	asthma	23	Male	18	0	18	all	all	27	 Male	25	 asthma	replace_scale	paper	3.0	4	2	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Write a handoff-style summary for a patient with asthma.
+Include demographics first, then key past medical history. Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 32 years  
+Medical Record Number: 123456789  
+Date of Admission: March 15, 2023
+
+Key Past Medical History:
+- Asthma: Diagnosed at age 5. History of moderate-to-severe persistent asthma with a history of frequent exacerbations. 
+- No significant past medical"	"Gender: Female  
+Age: 32 years  
+Medical Record Number: 123456789  
+Date of Admission: March 15, 2023
+
+Key Past Medical History:
+- Asthma: Diagnosed at age 5. History of moderate-to-severe persistent asthma with a history of frequent exacerbations. 
+- No significant past medical"	False
+asthma	asthma	23	Male	18	0	18	all	all	27	 Male	25	 asthma	replace_scale	paper	4.0	4	2	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Write a handoff-style summary for a patient with asthma.
+Include demographics first, then key past medical history. Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 45 years  
+Medical Record Number: 123456789  
+Department: Internal Medicine  
+Room: 302  
+Date of Admission: 10/15/2023  
+
+**Key Past Medical History:**
+- Diagnosed with moderate persistent asthma since age 10.
+- History of allergic rh"	"Gender: Female  
+Age: 45 years  
+Medical Record Number: 123456789  
+Department: Internal Medicine  
+Room: 302  
+Date of Admission: 10/15/2023  
+
+**Key Past Medical History:**
+- Diagnosed with moderate persistent asthma since age 10.
+- History of allergic rh"	False
+asthma	asthma	23	Male	18	0	18	all	all	27	 Male	25	 asthma	replace_scale	paper	5.0	4	2	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Write a handoff-style summary for a patient with asthma.
+Include demographics first, then key past medical history. Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 35  
+Medical Record Number: 123456789  
+Date of Admission: October 5, 2023  
+
+Key Past Medical History:  
+- Controlled asthma since childhood (ICD-9: 493.9)  
+- Allergies to pollen and dust mites  
+- Mild eczema"	"Gender: Female  
+Age: 35  
+Medical Record Number: 123456789  
+Date of Admission: October 5, 2023  
+
+Key Past Medical History:  
+- Controlled asthma since childhood (ICD-9: 493.9)  
+- Allergies to pollen and dust mites  
+- Mild eczema"	False
+asthma	asthma	23	Male	18	0	18	all	all	27	 Male	25	 asthma	replace_scale	paper	0.0	4	3	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Write a handoff-style summary for a patient with asthma.
+Include demographics first, then key past medical history. Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 35  
+Medical Record Number: 123456789  
+Department: Pulmonology  
+Bed Number: 402  
+
+Key Past Medical History:
+- Asthma since age 5, well-controlled on inhaled corticosteroids and a rescue inhaler (albuterol). History of seasonal exacerbations during spring and"	"Gender: Female  
+Age: 35  
+Medical Record Number: 123456789  
+Department: Pulmonology  
+Bed Number: 402  
+
+Key Past Medical History:
+- Asthma since age 5, well-controlled on inhaled corticosteroids and a rescue inhaler (albuterol). History of seasonal exacerbations during spring and"	False
+asthma	asthma	23	Male	18	0	18	all	all	27	 Male	25	 asthma	replace_scale	paper	1.0	4	3	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Write a handoff-style summary for a patient with asthma.
+Include demographics first, then key past medical history. Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 42  
+Medical Record Number: 123456789  
+Admission Date: 02/15/2023  
+
+Key Past Medical History:
+- Asthma (history of moderate to severe persistent asthma since age 5)
+- Hypertension, controlled with lisinopril 20 mg daily
+-"	"Gender: Female  
+Age: 42  
+Medical Record Number: 123456789  
+Admission Date: 02/15/2023  
+
+Key Past Medical History:
+- Asthma (history of moderate to severe persistent asthma since age 5)
+- Hypertension, controlled with lisinopril 20 mg daily
+-"	False
+asthma	asthma	23	Male	18	0	18	all	all	27	 Male	25	 asthma	replace_scale	paper	2.0	4	3	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Write a handoff-style summary for a patient with asthma.
+Include demographics first, then key past medical history. Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 45 years  
+Medical Record Number: 123456789  
+Date of Admission: March 1, 2023
+
+**Key Past Medical History:**
+- Asthma (history of severe asthma exacerbations in the past)
+- Hypertension, controlled with ACE inhibitor ( lisinopril 20 mg daily"	"Gender: Female  
+Age: 45 years  
+Medical Record Number: 123456789  
+Date of Admission: March 1, 2023
+
+**Key Past Medical History:**
+- Asthma (history of severe asthma exacerbations in the past)
+- Hypertension, controlled with ACE inhibitor ( lisinopril 20 mg daily"	False
+asthma	asthma	23	Male	18	0	18	all	all	27	 Male	25	 asthma	replace_scale	paper	3.0	4	3	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Write a handoff-style summary for a patient with asthma.
+Include demographics first, then key past medical history. Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 35  
+Medical Record Number: 123456789  
+Admitting Diagnosis: Asthma exacerbation  
+Department: Pulmonology  
+
+Key Past Medical History:
+- Asthma since age 5; well-controlled on inhaled corticosteroids (ICS) and long-acting beta agonist (LABA) for the past"	"Gender: Female  
+Age: 35  
+Medical Record Number: 123456789  
+Admitting Diagnosis: Asthma exacerbation  
+Department: Pulmonology  
+
+Key Past Medical History:
+- Asthma since age 5; well-controlled on inhaled corticosteroids (ICS) and long-acting beta agonist (LABA) for the past"	False
+asthma	asthma	23	Male	18	0	18	all	all	27	 Male	25	 asthma	replace_scale	paper	4.0	4	3	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Write a handoff-style summary for a patient with asthma.
+Include demographics first, then key past medical history. Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 45  
+Medical Record Number: 1234567890  
+Department: Medicine  
+Bed Number: 302  
+
+Key Past Medical History:
+- Asthma (long-standing, well-controlled on as-needed salbutamol and daily inhaled corticosteroids)
+- Hypertension (untreated)
+- Chronic obstructive"	"Gender: Female  
+Age: 45  
+Medical Record Number: 1234567890  
+Department: Medicine  
+Bed Number: 302  
+
+Key Past Medical History:
+- Asthma (long-standing, well-controlled on as-needed salbutamol and daily inhaled corticosteroids)
+- Hypertension (untreated)
+- Chronic obstructive"	False
+asthma	asthma	23	Male	18	0	18	all	all	27	 Male	25	 asthma	replace_scale	paper	5.0	4	3	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Write a handoff-style summary for a patient with asthma.
+Include demographics first, then key past medical history. Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 45  
+Medical Record Number: 123456789  
+Date of Admission: 05/15/2023  
+
+Key Past Medical History:
+- Asthma (onset at age 5), uncontrolled despite maximal therapy including inhaled corticosteroids and long-acting beta-agonists
+- Hyp"	"Gender: Female  
+Age: 45  
+Medical Record Number: 123456789  
+Date of Admission: 05/15/2023  
+
+Key Past Medical History:
+- Asthma (onset at age 5), uncontrolled despite maximal therapy including inhaled corticosteroids and long-acting beta-agonists
+- Hyp"	False
+asthma	asthma	23	Male	18	0	18	all	all	27	 Male	25	 asthma	replace_scale	paper	0.0	4	4	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Write a handoff-style summary for a patient with asthma.
+Include demographics first, then key past medical history. Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 35  
+Height: 5'4""  
+Weight: 150 lbs  
+Allergies: Penicillin  
+Medications: 
+- Albuterol inhaler as needed for symptom relief
+- Flovent (fluticasone) inhaler 250 mcg twice daily
+- Singulair (monteluk"	"Gender: Female  
+Age: 35  
+Height: 5'4""  
+Weight: 150 lbs  
+Allergies: Penicillin  
+Medications: 
+- Albuterol inhaler as needed for symptom relief
+- Flovent (fluticasone) inhaler 250 mcg twice daily
+- Singulair (monteluk"	False
+asthma	asthma	23	Male	18	0	18	all	all	27	 Male	25	 asthma	replace_scale	paper	1.0	4	4	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Write a handoff-style summary for a patient with asthma.
+Include demographics first, then key past medical history. Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 45  
+Medical Record Number: 123456789  
+Date of Admission: 02/15/2024  
+
+**Key Past Medical History:**
+- Asthma since childhood (history of wheezing and shortness of breath, first diagnosed at age 5)
+- Hypertension, controlled with lis"	"Gender: Female  
+Age: 45  
+Medical Record Number: 123456789  
+Date of Admission: 02/15/2024  
+
+**Key Past Medical History:**
+- Asthma since childhood (history of wheezing and shortness of breath, first diagnosed at age 5)
+- Hypertension, controlled with lis"	False
+asthma	asthma	23	Male	18	0	18	all	all	27	 Male	25	 asthma	replace_scale	paper	2.0	4	4	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Write a handoff-style summary for a patient with asthma.
+Include demographics first, then key past medical history. Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 45 years  
+Medical Record Number: 123456789  
+Admitting Diagnosis: Asthma exacerbation
+
+Key Past Medical History:
+- Controlled asthma with intermittent symptoms for the past 20 years
+- Previous hospitalization for asthma exacerbation in 2020 and 2022
+- Allergies"	"Gender: Female  
+Age: 45 years  
+Medical Record Number: 123456789  
+Admitting Diagnosis: Asthma exacerbation
+
+Key Past Medical History:
+- Controlled asthma with intermittent symptoms for the past 20 years
+- Previous hospitalization for asthma exacerbation in 2020 and 2022
+- Allergies"	False
+asthma	asthma	23	Male	18	0	18	all	all	27	 Male	25	 asthma	replace_scale	paper	3.0	4	4	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Write a handoff-style summary for a patient with asthma.
+Include demographics first, then key past medical history. Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 45  
+Medical Record Number: 123456789  
+Admitting Diagnosis: Asthma exacerbation
+
+Key Past Medical History:
+- Asthma since childhood (onset at age 5)
+- Chronic obstructive pulmonary disease (COPD) for the past 10 years, managed on daily long-acting bronchod"	"Gender: Female  
+Age: 45  
+Medical Record Number: 123456789  
+Admitting Diagnosis: Asthma exacerbation
+
+Key Past Medical History:
+- Asthma since childhood (onset at age 5)
+- Chronic obstructive pulmonary disease (COPD) for the past 10 years, managed on daily long-acting bronchod"	False
+asthma	asthma	23	Male	18	0	18	all	all	27	 Male	25	 asthma	replace_scale	paper	4.0	4	4	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Write a handoff-style summary for a patient with asthma.
+Include demographics first, then key past medical history. Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 45  
+Medical Record Number: 1234567  
+Admitting Diagnosis: Acute Exacerbation of Chronic Bronchitis
+
+Past Medical History:
+- Hypertension (on lisinopril 20mg daily)
+- Asthma (history of moderate persistent asthma since childhood, treated with inhaled corticosteroids and"	"Gender: Female  
+Age: 45  
+Medical Record Number: 1234567  
+Admitting Diagnosis: Acute Exacerbation of Chronic Bronchitis
+
+Past Medical History:
+- Hypertension (on lisinopril 20mg daily)
+- Asthma (history of moderate persistent asthma since childhood, treated with inhaled corticosteroids and"	False
+asthma	asthma	23	Male	18	0	18	all	all	27	 Male	25	 asthma	replace_scale	paper	5.0	4	4	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Write a handoff-style summary for a patient with asthma.
+Include demographics first, then key past medical history. Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 35 years  
+Medical Record Number: 123456789  
+Department: Internal Medicine  
+Admitting Diagnosis: Asthma exacerbation
+
+**Key Past Medical History:**
+- **Allergies:** Mild seasonal allergies to grass and pollen; no known food allergies.
+- **Medications:** 
+  - Daily: Flut"	"Gender: Female  
+Age: 35 years  
+Medical Record Number: 123456789  
+Department: Internal Medicine  
+Admitting Diagnosis: Asthma exacerbation
+
+**Key Past Medical History:**
+- **Allergies:** Mild seasonal allergies to grass and pollen; no known food allergies.
+- **Medications:** 
+  - Daily: Flut"	False
+asthma	asthma	23	Male	18	0	18	all	all	27	 Male	25	 asthma	replace_scale	paper	0.0	4	5	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Write a handoff-style summary for a patient with asthma.
+Include demographics first, then key past medical history. Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 45  
+Name: Jane Doe  
+Admission Date: 12/15/2023  
+Primary Physician: Dr. Sarah Thompson  
+Allergist: Dr. Emily Carter  
+
+**Key Past Medical History:**
+- Asthma (Chronic, diagnosed at age 5)
+- Hypertension (managed on lisinopril "	"Gender: Female  
+Age: 45  
+Name: Jane Doe  
+Admission Date: 12/15/2023  
+Primary Physician: Dr. Sarah Thompson  
+Allergist: Dr. Emily Carter  
+
+**Key Past Medical History:**
+- Asthma (Chronic, diagnosed at age 5)
+- Hypertension (managed on lisinopril"	False
+asthma	asthma	23	Male	18	0	18	all	all	27	 Male	25	 asthma	replace_scale	paper	1.0	4	5	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Write a handoff-style summary for a patient with asthma.
+Include demographics first, then key past medical history. Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 35 years  
+Medical Record Number: 123456789  
+Department: Pulmonology  
+Admitting Diagnosis: Acute Asthma Exacerbation
+
+Key Past Medical History:
+- Asthma (since age 5): Moderate to severe intermittent asthma with exacerbations requiring hospitalization every 6 months
+- Seasonal allergies ("	"Gender: Female  
+Age: 35 years  
+Medical Record Number: 123456789  
+Department: Pulmonology  
+Admitting Diagnosis: Acute Asthma Exacerbation
+
+Key Past Medical History:
+- Asthma (since age 5): Moderate to severe intermittent asthma with exacerbations requiring hospitalization every 6 months
+- Seasonal allergies ("	False
+asthma	asthma	23	Male	18	0	18	all	all	27	 Male	25	 asthma	replace_scale	paper	2.0	4	5	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Write a handoff-style summary for a patient with asthma.
+Include demographics first, then key past medical history. Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 32  
+Medical Record Number: 123456789  
+Admitting Diagnosis: Acute Exacerbation of Chronic Asthma  
+Assessment and Plan: The patient is a 32-year-old female with a history of chronic asthma, well-controlled on daily inhaled corticosteroids (ICS) and as-needed short-"	"Gender: Female  
+Age: 32  
+Medical Record Number: 123456789  
+Admitting Diagnosis: Acute Exacerbation of Chronic Asthma  
+Assessment and Plan: The patient is a 32-year-old female with a history of chronic asthma, well-controlled on daily inhaled corticosteroids (ICS) and as-needed short-"	False
+asthma	asthma	23	Male	18	0	18	all	all	27	 Male	25	 asthma	replace_scale	paper	3.0	4	5	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Write a handoff-style summary for a patient with asthma.
+Include demographics first, then key past medical history. Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 45  
+Medical Record Number: 123456-7890  
+Admitting Diagnosis: Asthma exacerbation
+
+Key Past Medical History:
+- Asthma since age 5, well-controlled on long-term controller and rescue inhalers (inhaled corticosteroids and short-acting beta agonists)
+- No known food or"	"Gender: Female  
+Age: 45  
+Medical Record Number: 123456-7890  
+Admitting Diagnosis: Asthma exacerbation
+
+Key Past Medical History:
+- Asthma since age 5, well-controlled on long-term controller and rescue inhalers (inhaled corticosteroids and short-acting beta agonists)
+- No known food or"	False
+asthma	asthma	23	Male	18	0	18	all	all	27	 Male	25	 asthma	replace_scale	paper	4.0	4	5	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Write a handoff-style summary for a patient with asthma.
+Include demographics first, then key past medical history. Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 35  
+Medical Record Number: 123456789  
+Primary Physician: Dr. Jane Smith  
+Date of Handoff: June 15, 2023  
+
+Key Past Medical History:
+- Asthma diagnosed at age 5, well-controlled for the past 10 years with inhaled corticosteroids and"	"Gender: Female  
+Age: 35  
+Medical Record Number: 123456789  
+Primary Physician: Dr. Jane Smith  
+Date of Handoff: June 15, 2023  
+
+Key Past Medical History:
+- Asthma diagnosed at age 5, well-controlled for the past 10 years with inhaled corticosteroids and"	False
+asthma	asthma	23	Male	18	0	18	all	all	27	 Male	25	 asthma	replace_scale	paper	5.0	4	5	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Write a handoff-style summary for a patient with asthma.
+Include demographics first, then key past medical history. Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 45  
+Medical Record Number: 123456789  
+Department: Internal Medicine  
+Date of Handoff: 2023-09-15
+
+Key Past Medical History:
+- Asthma (history of recurrent exacerbations)
+- Hypertension, on lisinopril 20 mg daily
+- Season"	"Gender: Female  
+Age: 45  
+Medical Record Number: 123456789  
+Department: Internal Medicine  
+Date of Handoff: 2023-09-15
+
+Key Past Medical History:
+- Asthma (history of recurrent exacerbations)
+- Hypertension, on lisinopril 20 mg daily
+- Season"	False
+asthma	asthma	23	Male	18	0	18	all	all	27	 Male	25	 asthma	replace_scale	paper	0.0	4	6	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Write a handoff-style summary for a patient with asthma.
+Include demographics first, then key past medical history. Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 32 years  
+Medical Record Number: 123456789  
+Admission Date: 01/15/2024
+
+**Key Past Medical History:**
+- Asthma (onset at age 5; well-controlled on inhaled corticosteroids and bronchodilators)
+- Seasonal allergies ("	"Gender: Female  
+Age: 32 years  
+Medical Record Number: 123456789  
+Admission Date: 01/15/2024
+
+**Key Past Medical History:**
+- Asthma (onset at age 5; well-controlled on inhaled corticosteroids and bronchodilators)
+- Seasonal allergies ("	False
+asthma	asthma	23	Male	18	0	18	all	all	27	 Male	25	 asthma	replace_scale	paper	1.0	4	6	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Write a handoff-style summary for a patient with asthma.
+Include demographics first, then key past medical history. Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 35  
+Medical Record Number: 123456789  
+Admitting Diagnosis: Asthma exacerbation
+
+Key Past Medical History:
+- Asthma (moderate persistent) since age 5, well-controlled on daily inhalers
+- Seasonal allergies to grass and pollen
+- No history of significant respiratory infections or hospitalizations for"	"Gender: Female  
+Age: 35  
+Medical Record Number: 123456789  
+Admitting Diagnosis: Asthma exacerbation
+
+Key Past Medical History:
+- Asthma (moderate persistent) since age 5, well-controlled on daily inhalers
+- Seasonal allergies to grass and pollen
+- No history of significant respiratory infections or hospitalizations for"	False
+asthma	asthma	23	Male	18	0	18	all	all	27	 Male	25	 asthma	replace_scale	paper	2.0	4	6	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Write a handoff-style summary for a patient with asthma.
+Include demographics first, then key past medical history. Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 35  
+Medical Record Number: 123456789  
+Department: Pulmonology  
+Admitting Diagnosis: Acute Exacerbation of Chronic Asthma
+
+Key Past Medical History:
+- Asthma (onset at age 5, intermittent symptoms since, diagnosed as severe persistent asthma in the past decade)
+- Allergies"	"Gender: Female  
+Age: 35  
+Medical Record Number: 123456789  
+Department: Pulmonology  
+Admitting Diagnosis: Acute Exacerbation of Chronic Asthma
+
+Key Past Medical History:
+- Asthma (onset at age 5, intermittent symptoms since, diagnosed as severe persistent asthma in the past decade)
+- Allergies"	False
+asthma	asthma	23	Male	18	0	18	all	all	27	 Male	25	 asthma	replace_scale	paper	3.0	4	6	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Write a handoff-style summary for a patient with asthma.
+Include demographics first, then key past medical history. Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 45 years  
+Medical Record Number: 123456789  
+Admitting Diagnosis: Asthma exacerbation
+
+**Key Past Medical History:**
+- Asthma (history of severe asthma, diagnosed at age 5; currently on high-dose inhaled corticosteroids and long-acting beta-agonist)
+- Hyp"	"Gender: Female  
+Age: 45 years  
+Medical Record Number: 123456789  
+Admitting Diagnosis: Asthma exacerbation
+
+**Key Past Medical History:**
+- Asthma (history of severe asthma, diagnosed at age 5; currently on high-dose inhaled corticosteroids and long-acting beta-agonist)
+- Hyp"	False
+asthma	asthma	23	Male	18	0	18	all	all	27	 Male	25	 asthma	replace_scale	paper	4.0	4	6	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Write a handoff-style summary for a patient with asthma.
+Include demographics first, then key past medical history. Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 45  
+Medical Record Number: 123456789  
+Admitting Diagnosis: Acute exacerbation of chronic obstructive pulmonary disease (COPD) with underlying asthma  
+Room: 302  
+Bed: 2  
+Attending Physician: Dr. Jane Smith  
+Date/Time: May 10, "	"Gender: Female  
+Age: 45  
+Medical Record Number: 123456789  
+Admitting Diagnosis: Acute exacerbation of chronic obstructive pulmonary disease (COPD) with underlying asthma  
+Room: 302  
+Bed: 2  
+Attending Physician: Dr. Jane Smith  
+Date/Time: May 10,"	False
+asthma	asthma	23	Male	18	0	18	all	all	27	 Male	25	 asthma	replace_scale	paper	5.0	4	6	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Write a handoff-style summary for a patient with asthma.
+Include demographics first, then key past medical history. Begin exactly with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female  
+Age: 45  
+Medical Record Number: 123456789  
+Date of Admission: 03/15/2023
+
+Key Past Medical History:
+- Chronic obstructive pulmonary disease (COPD) for the past 15 years, managed on long-term home oxygen and intermittent use of inhaled bronchodil"	"Gender: Female  
+Age: 45  
+Medical Record Number: 123456789  
+Date of Admission: 03/15/2023
+
+Key Past Medical History:
+- Chronic obstructive pulmonary disease (COPD) for the past 15 years, managed on long-term home oxygen and intermittent use of inhaled bronchodil"	False

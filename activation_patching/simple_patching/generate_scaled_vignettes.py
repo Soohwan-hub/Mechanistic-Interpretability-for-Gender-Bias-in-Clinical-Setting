@@ -208,7 +208,7 @@ GENDER_WORDS = {
         "his",
     ),
 }
-
+ 
 
 def _parse_csv(raw: str) -> Tuple[str, ...]:
     return tuple(x.strip() for x in raw.split(",") if x.strip())
@@ -342,6 +342,22 @@ def _build_vignette_prompt(
     )
 
 
+def _select_prompt_template(args: argparse.Namespace, prompt_id: int) -> str:
+    if args.free_generation_prompts:
+        return FREE_VIGNETTE_PROMPTS[prompt_id]
+    if args.use_original_simple_prompts:
+        return SIMPLE_PROMPTS[prompt_id]
+    return GENDER_FIRST_VIGNETTE_PROMPTS[prompt_id]
+
+
+def _prompt_source_name(args: argparse.Namespace) -> str:
+    if args.free_generation_prompts:
+        return "free_patient_vignette_variants"
+    if args.use_original_simple_prompts:
+        return "original_simple_prompts"
+    return "gender_first_patient_vignette_variants"
+
+
 def _target_gender_patch_token(llm: LanguageModel, prompt: str, target_gender: str) -> int:
     clean_tokens = llm.tokenizer(prompt, return_tensors="pt")["input_ids"][0].tolist()
     target_ids = llm.tokenizer(
@@ -395,6 +411,101 @@ def _condition_patch_tokens(
     else:
         raise ValueError(f"Unknown patch_subtoken={patch_subtoken!r}")
     return patch_tokens
+
+
+def _print_token_debug(
+    llm: LanguageModel,
+    args: argparse.Namespace,
+    cohort: str,
+    prompt_id: int,
+) -> None:
+    target_gender = _format_gender(args.target_gender)
+    condition_name = COHORT_TO_CONDITION_NAME[cohort]
+    template = _select_prompt_template(args, prompt_id)
+    clean_prompt = _build_clean_gender_prompt(llm, target_gender)
+    source_prompt = _build_vignette_prompt(
+        llm,
+        template,
+        condition_name,
+        args.system_message,
+    )
+
+    clean_tokens = llm.tokenizer(clean_prompt, return_tensors="pt")["input_ids"][0].tolist()
+    source_tokens = llm.tokenizer(source_prompt, return_tensors="pt")["input_ids"][0].tolist()
+    target_ids = llm.tokenizer(
+        " " + target_gender,
+        return_tensors="pt",
+        add_special_tokens=False,
+    )["input_ids"][0].tolist()
+    condition_ids = llm.tokenizer(
+        " " + condition_name,
+        return_tensors="pt",
+        add_special_tokens=False,
+    )["input_ids"][0].tolist()
+
+    patch_token_from = _target_gender_patch_token(llm, clean_prompt, target_gender)
+    condition_starts = _find_all_subsequences(source_tokens, condition_ids)
+    patch_token_to = _condition_patch_tokens(
+        llm,
+        source_prompt,
+        condition_name,
+        args.patch_subtoken,
+        args.condition_occurrence,
+    )
+    clean_tokens = llm.tokenizer(clean_prompt, return_tensors="pt")["input_ids"][0].tolist()
+    source_tokens = llm.tokenizer(source_prompt, return_tensors="pt")["input_ids"][0].tolist()
+    patch_token_from_decoded = llm.tokenizer.decode(
+        [clean_tokens[patch_token_from]]
+    ).replace("\n", "\\n")
+    patch_token_to_decoded = "|".join(
+        llm.tokenizer.decode([source_tokens[token_idx]]).replace("\n", "\\n")
+        for token_idx in patch_token_to
+    )
+
+    print("=" * 80, flush=True)
+    print(f"Token debug: cohort={cohort}, prompt_id={prompt_id}", flush=True)
+    print(f"target_gender={target_gender!r}, condition_name={condition_name!r}", flush=True)
+    print(f"prompt_source={_prompt_source_name(args)}", flush=True)
+    print(f"clean_token_count={len(clean_tokens)}, source_token_count={len(source_tokens)}", flush=True)
+    print(
+        "target ids: "
+        + ", ".join(
+            f"{tid}:{llm.tokenizer.decode([tid])!r}" for tid in target_ids
+        ),
+        flush=True,
+    )
+    print(
+        f"patch_token_from={patch_token_from}: "
+        f"{clean_tokens[patch_token_from]}:{llm.tokenizer.decode([clean_tokens[patch_token_from]])!r}",
+        flush=True,
+    )
+    print(
+        "condition ids: "
+        + ", ".join(
+            f"{tid}:{llm.tokenizer.decode([tid])!r}" for tid in condition_ids
+        ),
+        flush=True,
+    )
+    print(f"condition sequence starts={condition_starts}", flush=True)
+    print(
+        "patch_token_to: "
+        + ", ".join(
+            f"{idx}:{source_tokens[idx]}:{llm.tokenizer.decode([source_tokens[idx]])!r}"
+            for idx in patch_token_to
+        ),
+        flush=True,
+    )
+    for start in condition_starts:
+        end = start + len(condition_ids)
+        decoded = llm.tokenizer.decode(source_tokens[start:end])
+        pieces = [
+            f"{idx}:{source_tokens[idx]}:{llm.tokenizer.decode([source_tokens[idx]])!r}"
+            for idx in range(start, end)
+        ]
+        print(f"condition occurrence {start}-{end - 1}: {decoded!r}", flush=True)
+        print("  " + " | ".join(pieces), flush=True)
+    print("source prompt preview:", flush=True)
+    print(source_prompt, flush=True)
 
 
 def _patch_layers(layer: int, window: int, num_layers: int) -> Tuple[int, ...]:
@@ -504,6 +615,11 @@ def _write_summary(path: Path, rows: List[Dict[str, Any]]) -> None:
         success = sum(1 for row in group if row["is_success"] == "True")
         male = sum(1 for row in group if row["predicted_gender"] == "Male")
         female = sum(1 for row in group if row["predicted_gender"] == "Female")
+        unknown = sum(1 for row in group if row["predicted_gender"] == "Unknown")
+        ambiguous = sum(1 for row in group if row["predicted_gender"] == "Ambiguous")
+        male_to_female_ratio = float("inf") if female == 0 and male > 0 else (
+            male / female if female > 0 else float("nan")
+        )
         summary_rows.append(
             {
                 "scope": "cohort_prompt",
@@ -511,9 +627,14 @@ def _write_summary(path: Path, rows: List[Dict[str, Any]]) -> None:
                 "prompt_id": prompt_id,
                 "factor": factor,
                 "n": len(group),
+                "male_n": male,
+                "female_n": female,
+                "unknown_n": unknown,
+                "ambiguous_n": ambiguous,
                 "target_success_rate": success / len(group),
                 "male_rate": male / len(group),
                 "female_rate": female / len(group),
+                "male_to_female_ratio": male_to_female_ratio,
             }
         )
 
@@ -521,6 +642,11 @@ def _write_summary(path: Path, rows: List[Dict[str, Any]]) -> None:
         success = sum(1 for row in group if row["is_success"] == "True")
         male = sum(1 for row in group if row["predicted_gender"] == "Male")
         female = sum(1 for row in group if row["predicted_gender"] == "Female")
+        unknown = sum(1 for row in group if row["predicted_gender"] == "Unknown")
+        ambiguous = sum(1 for row in group if row["predicted_gender"] == "Ambiguous")
+        male_to_female_ratio = float("inf") if female == 0 and male > 0 else (
+            male / female if female > 0 else float("nan")
+        )
         summary_rows.append(
             {
                 "scope": "overall",
@@ -528,9 +654,14 @@ def _write_summary(path: Path, rows: List[Dict[str, Any]]) -> None:
                 "prompt_id": "all",
                 "factor": factor,
                 "n": len(group),
+                "male_n": male,
+                "female_n": female,
+                "unknown_n": unknown,
+                "ambiguous_n": ambiguous,
                 "target_success_rate": success / len(group),
                 "male_rate": male / len(group),
                 "female_rate": female / len(group),
+                "male_to_female_ratio": male_to_female_ratio,
             }
         )
 
@@ -547,12 +678,7 @@ def generate_unit(
 ) -> List[Dict[str, Any]]:
     target_gender = _format_gender(args.target_gender)
     condition_name = COHORT_TO_CONDITION_NAME[cohort]
-    if args.free_generation_prompts:
-        template = FREE_VIGNETTE_PROMPTS[prompt_id]
-    elif args.use_original_simple_prompts:
-        template = SIMPLE_PROMPTS[prompt_id]
-    else:
-        template = GENDER_FIRST_VIGNETTE_PROMPTS[prompt_id]
+    template = _select_prompt_template(args, prompt_id)
     clean_prompt = _build_clean_gender_prompt(llm, target_gender)
     source_prompt = _build_vignette_prompt(
         llm,
@@ -568,6 +694,15 @@ def generate_unit(
         condition_name,
         args.patch_subtoken,
         args.condition_occurrence,
+    )
+    clean_tokens = llm.tokenizer(clean_prompt, return_tensors="pt")["input_ids"][0].tolist()
+    source_tokens = llm.tokenizer(source_prompt, return_tensors="pt")["input_ids"][0].tolist()
+    patch_token_from_decoded = llm.tokenizer.decode([clean_tokens[patch_token_from]]).replace(
+        "\n", "\\n"
+    )
+    patch_token_to_decoded = "|".join(
+        llm.tokenizer.decode([source_tokens[token_idx]]).replace("\n", "\\n")
+        for token_idx in patch_token_to
     )
 
     generate_kwargs: Dict[str, Any] = {}
@@ -638,7 +773,9 @@ def generate_unit(
                 "patch_subtoken": args.patch_subtoken,
                 "condition_occurrence": args.condition_occurrence,
                 "patch_token_from": patch_token_from,
+                "patch_token_from_decoded": patch_token_from_decoded,
                 "patch_token_to": ",".join(str(x) for x in patch_token_to),
+                "patch_token_to_decoded": patch_token_to_decoded,
                 "patch_mode": args.patch_mode,
                 "classifier": args.classifier,
                 "factor": factor,
@@ -731,6 +868,11 @@ def parse_args() -> argparse.Namespace:
     p.add_argument("--resume", action="store_true", help="Skip cohort/prompt TSVs that already exist.")
     p.add_argument("--dry-run", action="store_true", help="Print planned work without loading a model.")
     p.add_argument(
+        "--debug-tokenization",
+        action="store_true",
+        help="Print clean/source tokenization and patch token positions, then exit.",
+    )
+    p.add_argument(
         "--system-message",
         type=str,
         default="You are a helpful clinical assistant.",
@@ -776,13 +918,7 @@ def main() -> None:
         "include_baseline": args.include_baseline,
         "free_generation_prompts": args.free_generation_prompts,
         "use_original_simple_prompts": args.use_original_simple_prompts,
-        "prompt_source": (
-            "free_patient_vignette_variants"
-            if args.free_generation_prompts
-            else "original_simple_prompts"
-            if args.use_original_simple_prompts
-            else "gender_first_patient_vignette_variants"
-        ),
+        "prompt_source": _prompt_source_name(args),
         "classifier": args.classifier,
         "outer_n": args.outer_n,
         "inner_n": args.inner_n,
@@ -813,6 +949,11 @@ def main() -> None:
     llm = LanguageModel(args.model_name, quantization_config=quantization_config, device_map="auto")
     patch_layers = _patch_layers(args.layer, args.window, len(llm.model.layers))
     print(f"Patch layers: {patch_layers}", flush=True)
+    if args.debug_tokenization:
+        for cohort, prompt_id in work:
+            _print_token_debug(llm, args, cohort, prompt_id)
+        print("Token debug done.", flush=True)
+        return
 
     combined_path = run_dir / "all_generations.tsv"
     if args.resume:

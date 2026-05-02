@@ -1,0 +1,951 @@
+Run dir: /home/ubuntu/vignette_results/qwen_all31_all5cohorts_layer18_patchAllCond_occAll_scales012345_n35
+Model: Qwen/Qwen2.5-7B-Instruct
+Work units: 155; samples per unit: 210
+Total planned generations: 32550
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Patch layers: (18,)
+asthma prompt1: batch 1/5
+Loading weights:   0%|          | 0/339 [00:00<?, ?it/s]Loading weights:   0%|          | 1/339 [00:00<00:49,  6.78it/s]Loading weights:   1%|          | 2/339 [00:00<00:49,  6.85it/s]Loading weights:   2%|▏         | 6/339 [00:00<00:18, 18.49it/s]Loading weights:   8%|▊         | 28/339 [00:00<00:03, 85.62it/s]Loading weights:  12%|█▏        | 42/339 [00:00<00:02, 99.45it/s]Loading weights:  19%|█▉        | 64/339 [00:00<00:02, 135.23it/s]Loading weights:  23%|██▎       | 79/339 [00:00<00:01, 134.54it/s]Loading weights:  29%|██▉       | 100/339 [00:00<00:01, 154.91it/s]Loading weights:  34%|███▍      | 116/339 [00:01<00:01, 145.74it/s]Loading weights:  40%|████      | 136/339 [00:01<00:01, 159.26it/s]Loading weights:  45%|████▌     | 153/339 [00:01<00:01, 154.42it/s]Loading weights:  51%|█████     | 172/339 [00:01<00:01, 161.10it/s]Loading weights:  56%|█████▌    | 189/339 [00:01<00:00, 156.78it/s]Loading weights:  61%|██████▏   | 208/339 [00:01<00:00, 163.31it/s]Loading weights:  66%|██████▋   | 225/339 [00:01<00:00, 156.49it/s]Loading weights:  72%|███████▏  | 244/339 [00:01<00:00, 164.58it/s]Loading weights:  77%|███████▋  | 261/339 [00:01<00:00, 156.34it/s]Loading weights:  83%|████████▎ | 280/339 [00:02<00:00, 164.16it/s]Loading weights:  88%|████████▊ | 297/339 [00:02<00:00, 159.46it/s]Loading weights:  93%|█████████▎| 316/339 [00:02<00:00, 166.69it/s]Loading weights:  98%|█████████▊| 333/339 [00:02<00:00, 159.92it/s]Loading weights: 100%|██████████| 339/339 [00:02<00:00, 141.19it/s]
+[transformers] You have set `compile_config`, but we are unable to meet the criteria for compilation. Compilation will be skipped.
+asthma prompt1: batch 2/5
+asthma prompt1: batch 3/5
+asthma prompt1: batch 4/5
+asthma prompt1: batch 5/5
+Wrote /home/ubuntu/vignette_results/qwen_all31_all5cohorts_layer18_patchAllCond_occAll_scales012345_n35/generations/asthma_prompt1.tsv
+asthma prompt2: batch 1/5
+asthma prompt2: batch 2/5
+asthma prompt2: batch 3/5
+asthma prompt2: batch 4/5
+asthma prompt2: batch 5/5
+Wrote /home/ubuntu/vignette_results/qwen_all31_all5cohorts_layer18_patchAllCond_occAll_scales012345_n35/generations/asthma_prompt2.tsv
+asthma prompt3: batch 1/5
+asthma prompt3: batch 2/5
+asthma prompt3: batch 3/5
+asthma prompt3: batch 4/5
+asthma prompt3: batch 5/5
+Wrote /home/ubuntu/vignette_results/qwen_all31_all5cohorts_layer18_patchAllCond_occAll_scales012345_n35/generations/asthma_prompt3.tsv
+asthma prompt4: batch 1/5
+asthma prompt4: batch 2/5
+asthma prompt4: batch 3/5
+asthma prompt4: batch 4/5
+asthma prompt4: batch 5/5
+Wrote /home/ubuntu/vignette_results/qwen_all31_all5cohorts_layer18_patchAllCond_occAll_scales012345_n35/generations/asthma_prompt4.tsv
+asthma prompt5: batch 1/5
+asthma prompt5: batch 2/5
+asthma prompt5: batch 3/5
+asthma prompt5: batch 4/5
+asthma prompt5: batch 5/5
+Wrote /home/ubuntu/vignette_results/qwen_all31_all5cohorts_layer18_patchAllCond_occAll_scales012345_n35/generations/asthma_prompt5.tsv
+asthma prompt6: batch 1/5
+asthma prompt6: batch 2/5
+asthma prompt6: batch 3/5
+asthma prompt6: batch 4/5
+asthma prompt6: batch 5/5
+Wrote /home/ubuntu/vignette_results/qwen_all31_all5cohorts_layer18_patchAllCond_occAll_scales012345_n35/generations/asthma_prompt6.tsv
+asthma prompt7: batch 1/5
+asthma prompt7: batch 2/5
+asthma prompt7: batch 3/5
+asthma prompt7: batch 4/5
+asthma prompt7: batch 5/5
+Wrote /home/ubuntu/vignette_results/qwen_all31_all5cohorts_layer18_patchAllCond_occAll_scales012345_n35/generations/asthma_prompt7.tsv
+asthma prompt8: batch 1/5
+asthma prompt8: batch 2/5
+asthma prompt8: batch 3/5
+asthma prompt8: batch 4/5
+asthma prompt8: batch 5/5
+Wrote /home/ubuntu/vignette_results/qwen_all31_all5cohorts_layer18_patchAllCond_occAll_scales012345_n35/generations/asthma_prompt8.tsv
+asthma prompt9: batch 1/5
+asthma prompt9: batch 2/5
+asthma prompt9: batch 3/5
+asthma prompt9: batch 4/5
+asthma prompt9: batch 5/5
+Wrote /home/ubuntu/vignette_results/qwen_all31_all5cohorts_layer18_patchAllCond_occAll_scales012345_n35/generations/asthma_prompt9.tsv
+asthma prompt10: batch 1/5
+asthma prompt10: batch 2/5
+asthma prompt10: batch 3/5
+asthma prompt10: batch 4/5
+asthma prompt10: batch 5/5
+Wrote /home/ubuntu/vignette_results/qwen_all31_all5cohorts_layer18_patchAllCond_occAll_scales012345_n35/generations/asthma_prompt10.tsv
+asthma prompt11: batch 1/5
+asthma prompt11: batch 2/5
+asthma prompt11: batch 3/5
+asthma prompt11: batch 4/5
+asthma prompt11: batch 5/5
+Wrote /home/ubuntu/vignette_results/qwen_all31_all5cohorts_layer18_patchAllCond_occAll_scales012345_n35/generations/asthma_prompt11.tsv
+asthma prompt12: batch 1/5
+asthma prompt12: batch 2/5
+asthma prompt12: batch 3/5
+asthma prompt12: batch 4/5
+asthma prompt12: batch 5/5
+Wrote /home/ubuntu/vignette_results/qwen_all31_all5cohorts_layer18_patchAllCond_occAll_scales012345_n35/generations/asthma_prompt12.tsv
+asthma prompt13: batch 1/5
+asthma prompt13: batch 2/5
+asthma prompt13: batch 3/5
+asthma prompt13: batch 4/5
+asthma prompt13: batch 5/5
+Wrote /home/ubuntu/vignette_results/qwen_all31_all5cohorts_layer18_patchAllCond_occAll_scales012345_n35/generations/asthma_prompt13.tsv
+asthma prompt14: batch 1/5
+asthma prompt14: batch 2/5
+asthma prompt14: batch 3/5
+asthma prompt14: batch 4/5
+asthma prompt14: batch 5/5
+Wrote /home/ubuntu/vignette_results/qwen_all31_all5cohorts_layer18_patchAllCond_occAll_scales012345_n35/generations/asthma_prompt14.tsv
+asthma prompt15: batch 1/5
+asthma prompt15: batch 2/5
+asthma prompt15: batch 3/5
+asthma prompt15: batch 4/5
+asthma prompt15: batch 5/5
+Wrote /home/ubuntu/vignette_results/qwen_all31_all5cohorts_layer18_patchAllCond_occAll_scales012345_n35/generations/asthma_prompt15.tsv
+asthma prompt16: batch 1/5
+asthma prompt16: batch 2/5
+asthma prompt16: batch 3/5
+asthma prompt16: batch 4/5
+asthma prompt16: batch 5/5
+Wrote /home/ubuntu/vignette_results/qwen_all31_all5cohorts_layer18_patchAllCond_occAll_scales012345_n35/generations/asthma_prompt16.tsv
+asthma prompt17: batch 1/5
+asthma prompt17: batch 2/5
+asthma prompt17: batch 3/5
+asthma prompt17: batch 4/5
+asthma prompt17: batch 5/5
+Wrote /home/ubuntu/vignette_results/qwen_all31_all5cohorts_layer18_patchAllCond_occAll_scales012345_n35/generations/asthma_prompt17.tsv
+asthma prompt18: batch 1/5
+asthma prompt18: batch 2/5
+asthma prompt18: batch 3/5
+asthma prompt18: batch 4/5
+asthma prompt18: batch 5/5
+Wrote /home/ubuntu/vignette_results/qwen_all31_all5cohorts_layer18_patchAllCond_occAll_scales012345_n35/generations/asthma_prompt18.tsv
+asthma prompt19: batch 1/5
+asthma prompt19: batch 2/5
+asthma prompt19: batch 3/5
+asthma prompt19: batch 4/5
+asthma prompt19: batch 5/5
+Wrote /home/ubuntu/vignette_results/qwen_all31_all5cohorts_layer18_patchAllCond_occAll_scales012345_n35/generations/asthma_prompt19.tsv
+asthma prompt20: batch 1/5
+asthma prompt20: batch 2/5
+asthma prompt20: batch 3/5
+asthma prompt20: batch 4/5
+asthma prompt20: batch 5/5
+Wrote /home/ubuntu/vignette_results/qwen_all31_all5cohorts_layer18_patchAllCond_occAll_scales012345_n35/generations/asthma_prompt20.tsv
+asthma prompt21: batch 1/5
+asthma prompt21: batch 2/5
+asthma prompt21: batch 3/5
+asthma prompt21: batch 4/5
+asthma prompt21: batch 5/5
+Wrote /home/ubuntu/vignette_results/qwen_all31_all5cohorts_layer18_patchAllCond_occAll_scales012345_n35/generations/asthma_prompt21.tsv
+asthma prompt22: batch 1/5
+asthma prompt22: batch 2/5
+asthma prompt22: batch 3/5
+asthma prompt22: batch 4/5
+asthma prompt22: batch 5/5
+Wrote /home/ubuntu/vignette_results/qwen_all31_all5cohorts_layer18_patchAllCond_occAll_scales012345_n35/generations/asthma_prompt22.tsv
+asthma prompt23: batch 1/5
+asthma prompt23: batch 2/5
+asthma prompt23: batch 3/5
+asthma prompt23: batch 4/5
+asthma prompt23: batch 5/5
+Wrote /home/ubuntu/vignette_results/qwen_all31_all5cohorts_layer18_patchAllCond_occAll_scales012345_n35/generations/asthma_prompt23.tsv
+asthma prompt24: batch 1/5
+asthma prompt24: batch 2/5
+asthma prompt24: batch 3/5
+asthma prompt24: batch 4/5
+asthma prompt24: batch 5/5
+Wrote /home/ubuntu/vignette_results/qwen_all31_all5cohorts_layer18_patchAllCond_occAll_scales012345_n35/generations/asthma_prompt24.tsv
+asthma prompt25: batch 1/5
+asthma prompt25: batch 2/5
+asthma prompt25: batch 3/5
+asthma prompt25: batch 4/5
+asthma prompt25: batch 5/5
+Wrote /home/ubuntu/vignette_results/qwen_all31_all5cohorts_layer18_patchAllCond_occAll_scales012345_n35/generations/asthma_prompt25.tsv
+asthma prompt26: batch 1/5
+asthma prompt26: batch 2/5
+asthma prompt26: batch 3/5
+asthma prompt26: batch 4/5
+asthma prompt26: batch 5/5
+Wrote /home/ubuntu/vignette_results/qwen_all31_all5cohorts_layer18_patchAllCond_occAll_scales012345_n35/generations/asthma_prompt26.tsv
+asthma prompt27: batch 1/5
+asthma prompt27: batch 2/5
+asthma prompt27: batch 3/5
+asthma prompt27: batch 4/5
+asthma prompt27: batch 5/5
+Wrote /home/ubuntu/vignette_results/qwen_all31_all5cohorts_layer18_patchAllCond_occAll_scales012345_n35/generations/asthma_prompt27.tsv
+asthma prompt28: batch 1/5
+asthma prompt28: batch 2/5
+asthma prompt28: batch 3/5
+asthma prompt28: batch 4/5
+asthma prompt28: batch 5/5
+Wrote /home/ubuntu/vignette_results/qwen_all31_all5cohorts_layer18_patchAllCond_occAll_scales012345_n35/generations/asthma_prompt28.tsv
+asthma prompt29: batch 1/5
+asthma prompt29: batch 2/5
+asthma prompt29: batch 3/5
+asthma prompt29: batch 4/5
+asthma prompt29: batch 5/5
+Wrote /home/ubuntu/vignette_results/qwen_all31_all5cohorts_layer18_patchAllCond_occAll_scales012345_n35/generations/asthma_prompt29.tsv
+asthma prompt30: batch 1/5
+asthma prompt30: batch 2/5
+asthma prompt30: batch 3/5
+Run dir: /home/ubuntu/vignette_results/qwen_all31_all5cohorts_layer18_patchAllCond_occAll_scales012345_n35
+Model: Qwen/Qwen2.5-7B-Instruct
+Work units: 126; samples per unit: 210
+Total planned generations: 26460
+Patch layers: (18,)
+asthma prompt30: batch 1/5
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Loading weights:   0%|          | 0/339 [00:00<?, ?it/s]Loading weights:   0%|          | 1/339 [00:00<00:47,  7.13it/s]Loading weights:   1%|          | 2/339 [00:00<00:47,  7.12it/s]Loading weights:   2%|▏         | 6/339 [00:00<00:17, 19.19it/s]Loading weights:   8%|▊         | 28/339 [00:00<00:03, 88.29it/s]Loading weights:  12%|█▏        | 42/339 [00:00<00:02, 102.88it/s]Loading weights:  19%|█▉        | 65/339 [00:00<00:02, 135.26it/s]Loading weights:  26%|██▌       | 88/339 [00:00<00:01, 154.72it/s]Loading weights:  31%|███       | 104/339 [00:00<00:01, 151.84it/s]Loading weights:  37%|███▋      | 124/339 [00:01<00:01, 164.94it/s]Loading weights:  42%|████▏     | 141/339 [00:01<00:01, 161.08it/s]Loading weights:  47%|████▋     | 160/339 [00:01<00:01, 163.11it/s]Loading weights:  52%|█████▏    | 177/339 [00:01<00:01, 153.85it/s]Loading weights:  58%|█████▊    | 196/339 [00:01<00:00, 159.54it/s]Loading weights:  63%|██████▎   | 213/339 [00:01<00:00, 142.04it/s]Loading weights:  68%|██████▊   | 232/339 [00:01<00:00, 147.68it/s]Loading weights:  73%|███████▎  | 248/339 [00:01<00:00, 145.87it/s]Loading weights:  79%|███████▉  | 268/339 [00:02<00:00, 153.39it/s]Loading weights:  84%|████████▍ | 284/339 [00:02<00:00, 146.83it/s]Loading weights:  88%|████████▊ | 300/339 [00:02<00:00, 149.85it/s]Loading weights:  94%|█████████▎| 317/339 [00:02<00:00, 147.80it/s]Loading weights:  98%|█████████▊| 332/339 [00:02<00:00, 146.02it/s]Loading weights: 100%|██████████| 339/339 [00:02<00:00, 137.70it/s]
+[transformers] You have set `compile_config`, but we are unable to meet the criteria for compilation. Compilation will be skipped.
+asthma prompt30: batch 2/5
+asthma prompt30: batch 3/5
+asthma prompt30: batch 4/5
+asthma prompt30: batch 5/5
+Wrote /home/ubuntu/vignette_results/qwen_all31_all5cohorts_layer18_patchAllCond_occAll_scales012345_n35/generations/asthma_prompt30.tsv
+asthma prompt31: batch 1/5
+asthma prompt31: batch 2/5
+asthma prompt31: batch 3/5
+asthma prompt31: batch 4/5
+asthma prompt31: batch 5/5
+Wrote /home/ubuntu/vignette_results/qwen_all31_all5cohorts_layer18_patchAllCond_occAll_scales012345_n35/generations/asthma_prompt31.tsv
+depression prompt1: batch 1/5
+depression prompt1: batch 2/5
+depression prompt1: batch 3/5
+depression prompt1: batch 4/5
+depression prompt1: batch 5/5
+Wrote /home/ubuntu/vignette_results/qwen_all31_all5cohorts_layer18_patchAllCond_occAll_scales012345_n35/generations/depression_prompt1.tsv
+depression prompt2: batch 1/5
+depression prompt2: batch 2/5
+depression prompt2: batch 3/5
+depression prompt2: batch 4/5
+depression prompt2: batch 5/5
+Wrote /home/ubuntu/vignette_results/qwen_all31_all5cohorts_layer18_patchAllCond_occAll_scales012345_n35/generations/depression_prompt2.tsv
+depression prompt3: batch 1/5
+depression prompt3: batch 2/5
+depression prompt3: batch 3/5
+depression prompt3: batch 4/5
+depression prompt3: batch 5/5
+Wrote /home/ubuntu/vignette_results/qwen_all31_all5cohorts_layer18_patchAllCond_occAll_scales012345_n35/generations/depression_prompt3.tsv
+depression prompt4: batch 1/5
+depression prompt4: batch 2/5
+depression prompt4: batch 3/5
+depression prompt4: batch 4/5
+depression prompt4: batch 5/5
+Wrote /home/ubuntu/vignette_results/qwen_all31_all5cohorts_layer18_patchAllCond_occAll_scales012345_n35/generations/depression_prompt4.tsv
+depression prompt5: batch 1/5
+depression prompt5: batch 2/5
+depression prompt5: batch 3/5
+depression prompt5: batch 4/5
+depression prompt5: batch 5/5
+Wrote /home/ubuntu/vignette_results/qwen_all31_all5cohorts_layer18_patchAllCond_occAll_scales012345_n35/generations/depression_prompt5.tsv
+depression prompt6: batch 1/5
+depression prompt6: batch 2/5
+depression prompt6: batch 3/5
+depression prompt6: batch 4/5
+depression prompt6: batch 5/5
+Wrote /home/ubuntu/vignette_results/qwen_all31_all5cohorts_layer18_patchAllCond_occAll_scales012345_n35/generations/depression_prompt6.tsv
+depression prompt7: batch 1/5
+depression prompt7: batch 2/5
+depression prompt7: batch 3/5
+depression prompt7: batch 4/5
+depression prompt7: batch 5/5
+Wrote /home/ubuntu/vignette_results/qwen_all31_all5cohorts_layer18_patchAllCond_occAll_scales012345_n35/generations/depression_prompt7.tsv
+depression prompt8: batch 1/5
+depression prompt8: batch 2/5
+depression prompt8: batch 3/5
+depression prompt8: batch 4/5
+depression prompt8: batch 5/5
+Wrote /home/ubuntu/vignette_results/qwen_all31_all5cohorts_layer18_patchAllCond_occAll_scales012345_n35/generations/depression_prompt8.tsv
+depression prompt9: batch 1/5
+depression prompt9: batch 2/5
+depression prompt9: batch 3/5
+depression prompt9: batch 4/5
+depression prompt9: batch 5/5
+Wrote /home/ubuntu/vignette_results/qwen_all31_all5cohorts_layer18_patchAllCond_occAll_scales012345_n35/generations/depression_prompt9.tsv
+depression prompt10: batch 1/5
+depression prompt10: batch 2/5
+depression prompt10: batch 3/5
+depression prompt10: batch 4/5
+depression prompt10: batch 5/5
+Wrote /home/ubuntu/vignette_results/qwen_all31_all5cohorts_layer18_patchAllCond_occAll_scales012345_n35/generations/depression_prompt10.tsv
+depression prompt11: batch 1/5
+depression prompt11: batch 2/5
+depression prompt11: batch 3/5
+depression prompt11: batch 4/5
+depression prompt11: batch 5/5
+Wrote /home/ubuntu/vignette_results/qwen_all31_all5cohorts_layer18_patchAllCond_occAll_scales012345_n35/generations/depression_prompt11.tsv
+depression prompt12: batch 1/5
+depression prompt12: batch 2/5
+depression prompt12: batch 3/5
+depression prompt12: batch 4/5
+depression prompt12: batch 5/5
+Wrote /home/ubuntu/vignette_results/qwen_all31_all5cohorts_layer18_patchAllCond_occAll_scales012345_n35/generations/depression_prompt12.tsv
+depression prompt13: batch 1/5
+depression prompt13: batch 2/5
+depression prompt13: batch 3/5
+depression prompt13: batch 4/5
+depression prompt13: batch 5/5
+Wrote /home/ubuntu/vignette_results/qwen_all31_all5cohorts_layer18_patchAllCond_occAll_scales012345_n35/generations/depression_prompt13.tsv
+depression prompt14: batch 1/5
+depression prompt14: batch 2/5
+depression prompt14: batch 3/5
+depression prompt14: batch 4/5
+depression prompt14: batch 5/5
+Wrote /home/ubuntu/vignette_results/qwen_all31_all5cohorts_layer18_patchAllCond_occAll_scales012345_n35/generations/depression_prompt14.tsv
+depression prompt15: batch 1/5
+depression prompt15: batch 2/5
+depression prompt15: batch 3/5
+depression prompt15: batch 4/5
+depression prompt15: batch 5/5
+Wrote /home/ubuntu/vignette_results/qwen_all31_all5cohorts_layer18_patchAllCond_occAll_scales012345_n35/generations/depression_prompt15.tsv
+depression prompt16: batch 1/5
+depression prompt16: batch 2/5
+depression prompt16: batch 3/5
+depression prompt16: batch 4/5
+depression prompt16: batch 5/5
+Wrote /home/ubuntu/vignette_results/qwen_all31_all5cohorts_layer18_patchAllCond_occAll_scales012345_n35/generations/depression_prompt16.tsv
+depression prompt17: batch 1/5
+depression prompt17: batch 2/5
+depression prompt17: batch 3/5
+depression prompt17: batch 4/5
+depression prompt17: batch 5/5
+Wrote /home/ubuntu/vignette_results/qwen_all31_all5cohorts_layer18_patchAllCond_occAll_scales012345_n35/generations/depression_prompt17.tsv
+depression prompt18: batch 1/5
+depression prompt18: batch 2/5
+depression prompt18: batch 3/5
+depression prompt18: batch 4/5
+depression prompt18: batch 5/5
+Wrote /home/ubuntu/vignette_results/qwen_all31_all5cohorts_layer18_patchAllCond_occAll_scales012345_n35/generations/depression_prompt18.tsv
+depression prompt19: batch 1/5
+depression prompt19: batch 2/5
+depression prompt19: batch 3/5
+depression prompt19: batch 4/5
+depression prompt19: batch 5/5
+Wrote /home/ubuntu/vignette_results/qwen_all31_all5cohorts_layer18_patchAllCond_occAll_scales012345_n35/generations/depression_prompt19.tsv
+depression prompt20: batch 1/5
+depression prompt20: batch 2/5
+depression prompt20: batch 3/5
+depression prompt20: batch 4/5
+depression prompt20: batch 5/5
+Wrote /home/ubuntu/vignette_results/qwen_all31_all5cohorts_layer18_patchAllCond_occAll_scales012345_n35/generations/depression_prompt20.tsv
+depression prompt21: batch 1/5
+depression prompt21: batch 2/5
+depression prompt21: batch 3/5
+depression prompt21: batch 4/5
+depression prompt21: batch 5/5
+Wrote /home/ubuntu/vignette_results/qwen_all31_all5cohorts_layer18_patchAllCond_occAll_scales012345_n35/generations/depression_prompt21.tsv
+depression prompt22: batch 1/5
+depression prompt22: batch 2/5
+depression prompt22: batch 3/5
+depression prompt22: batch 4/5
+depression prompt22: batch 5/5
+Wrote /home/ubuntu/vignette_results/qwen_all31_all5cohorts_layer18_patchAllCond_occAll_scales012345_n35/generations/depression_prompt22.tsv
+depression prompt23: batch 1/5
+depression prompt23: batch 2/5
+depression prompt23: batch 3/5
+depression prompt23: batch 4/5
+depression prompt23: batch 5/5
+Wrote /home/ubuntu/vignette_results/qwen_all31_all5cohorts_layer18_patchAllCond_occAll_scales012345_n35/generations/depression_prompt23.tsv
+depression prompt24: batch 1/5
+depression prompt24: batch 2/5
+depression prompt24: batch 3/5
+depression prompt24: batch 4/5
+depression prompt24: batch 5/5
+Wrote /home/ubuntu/vignette_results/qwen_all31_all5cohorts_layer18_patchAllCond_occAll_scales012345_n35/generations/depression_prompt24.tsv
+depression prompt25: batch 1/5
+depression prompt25: batch 2/5
+depression prompt25: batch 3/5
+depression prompt25: batch 4/5
+depression prompt25: batch 5/5
+Wrote /home/ubuntu/vignette_results/qwen_all31_all5cohorts_layer18_patchAllCond_occAll_scales012345_n35/generations/depression_prompt25.tsv
+depression prompt26: batch 1/5
+depression prompt26: batch 2/5
+depression prompt26: batch 3/5
+depression prompt26: batch 4/5
+depression prompt26: batch 5/5
+Wrote /home/ubuntu/vignette_results/qwen_all31_all5cohorts_layer18_patchAllCond_occAll_scales012345_n35/generations/depression_prompt26.tsv
+depression prompt27: batch 1/5
+depression prompt27: batch 2/5
+depression prompt27: batch 3/5
+depression prompt27: batch 4/5
+depression prompt27: batch 5/5
+Wrote /home/ubuntu/vignette_results/qwen_all31_all5cohorts_layer18_patchAllCond_occAll_scales012345_n35/generations/depression_prompt27.tsv
+depression prompt28: batch 1/5
+depression prompt28: batch 2/5
+depression prompt28: batch 3/5
+depression prompt28: batch 4/5
+depression prompt28: batch 5/5
+Wrote /home/ubuntu/vignette_results/qwen_all31_all5cohorts_layer18_patchAllCond_occAll_scales012345_n35/generations/depression_prompt28.tsv
+depression prompt29: batch 1/5
+depression prompt29: batch 2/5
+depression prompt29: batch 3/5
+depression prompt29: batch 4/5
+depression prompt29: batch 5/5
+Wrote /home/ubuntu/vignette_results/qwen_all31_all5cohorts_layer18_patchAllCond_occAll_scales012345_n35/generations/depression_prompt29.tsv
+depression prompt30: batch 1/5
+depression prompt30: batch 2/5
+depression prompt30: batch 3/5
+depression prompt30: batch 4/5
+depression prompt30: batch 5/5
+Wrote /home/ubuntu/vignette_results/qwen_all31_all5cohorts_layer18_patchAllCond_occAll_scales012345_n35/generations/depression_prompt30.tsv
+depression prompt31: batch 1/5
+depression prompt31: batch 2/5
+depression prompt31: batch 3/5
+depression prompt31: batch 4/5
+depression prompt31: batch 5/5
+Wrote /home/ubuntu/vignette_results/qwen_all31_all5cohorts_layer18_patchAllCond_occAll_scales012345_n35/generations/depression_prompt31.tsv
+multiple_sclerosis prompt1: batch 1/5
+multiple_sclerosis prompt1: batch 2/5
+multiple_sclerosis prompt1: batch 3/5
+multiple_sclerosis prompt1: batch 4/5
+multiple_sclerosis prompt1: batch 5/5
+Wrote /home/ubuntu/vignette_results/qwen_all31_all5cohorts_layer18_patchAllCond_occAll_scales012345_n35/generations/multiple_sclerosis_prompt1.tsv
+multiple_sclerosis prompt2: batch 1/5
+multiple_sclerosis prompt2: batch 2/5
+multiple_sclerosis prompt2: batch 3/5
+multiple_sclerosis prompt2: batch 4/5
+multiple_sclerosis prompt2: batch 5/5
+Wrote /home/ubuntu/vignette_results/qwen_all31_all5cohorts_layer18_patchAllCond_occAll_scales012345_n35/generations/multiple_sclerosis_prompt2.tsv
+multiple_sclerosis prompt3: batch 1/5
+multiple_sclerosis prompt3: batch 2/5
+multiple_sclerosis prompt3: batch 3/5
+multiple_sclerosis prompt3: batch 4/5
+multiple_sclerosis prompt3: batch 5/5
+Wrote /home/ubuntu/vignette_results/qwen_all31_all5cohorts_layer18_patchAllCond_occAll_scales012345_n35/generations/multiple_sclerosis_prompt3.tsv
+multiple_sclerosis prompt4: batch 1/5
+multiple_sclerosis prompt4: batch 2/5
+multiple_sclerosis prompt4: batch 3/5
+multiple_sclerosis prompt4: batch 4/5
+multiple_sclerosis prompt4: batch 5/5
+Wrote /home/ubuntu/vignette_results/qwen_all31_all5cohorts_layer18_patchAllCond_occAll_scales012345_n35/generations/multiple_sclerosis_prompt4.tsv
+multiple_sclerosis prompt5: batch 1/5
+multiple_sclerosis prompt5: batch 2/5
+multiple_sclerosis prompt5: batch 3/5
+multiple_sclerosis prompt5: batch 4/5
+multiple_sclerosis prompt5: batch 5/5
+Wrote /home/ubuntu/vignette_results/qwen_all31_all5cohorts_layer18_patchAllCond_occAll_scales012345_n35/generations/multiple_sclerosis_prompt5.tsv
+multiple_sclerosis prompt6: batch 1/5
+multiple_sclerosis prompt6: batch 2/5
+multiple_sclerosis prompt6: batch 3/5
+multiple_sclerosis prompt6: batch 4/5
+multiple_sclerosis prompt6: batch 5/5
+Wrote /home/ubuntu/vignette_results/qwen_all31_all5cohorts_layer18_patchAllCond_occAll_scales012345_n35/generations/multiple_sclerosis_prompt6.tsv
+multiple_sclerosis prompt7: batch 1/5
+multiple_sclerosis prompt7: batch 2/5
+multiple_sclerosis prompt7: batch 3/5
+multiple_sclerosis prompt7: batch 4/5
+multiple_sclerosis prompt7: batch 5/5
+Wrote /home/ubuntu/vignette_results/qwen_all31_all5cohorts_layer18_patchAllCond_occAll_scales012345_n35/generations/multiple_sclerosis_prompt7.tsv
+multiple_sclerosis prompt8: batch 1/5
+multiple_sclerosis prompt8: batch 2/5
+multiple_sclerosis prompt8: batch 3/5
+multiple_sclerosis prompt8: batch 4/5
+multiple_sclerosis prompt8: batch 5/5
+Wrote /home/ubuntu/vignette_results/qwen_all31_all5cohorts_layer18_patchAllCond_occAll_scales012345_n35/generations/multiple_sclerosis_prompt8.tsv
+multiple_sclerosis prompt9: batch 1/5
+multiple_sclerosis prompt9: batch 2/5
+multiple_sclerosis prompt9: batch 3/5
+multiple_sclerosis prompt9: batch 4/5
+multiple_sclerosis prompt9: batch 5/5
+Wrote /home/ubuntu/vignette_results/qwen_all31_all5cohorts_layer18_patchAllCond_occAll_scales012345_n35/generations/multiple_sclerosis_prompt9.tsv
+multiple_sclerosis prompt10: batch 1/5
+multiple_sclerosis prompt10: batch 2/5
+multiple_sclerosis prompt10: batch 3/5
+multiple_sclerosis prompt10: batch 4/5
+multiple_sclerosis prompt10: batch 5/5
+Wrote /home/ubuntu/vignette_results/qwen_all31_all5cohorts_layer18_patchAllCond_occAll_scales012345_n35/generations/multiple_sclerosis_prompt10.tsv
+multiple_sclerosis prompt11: batch 1/5
+multiple_sclerosis prompt11: batch 2/5
+multiple_sclerosis prompt11: batch 3/5
+multiple_sclerosis prompt11: batch 4/5
+multiple_sclerosis prompt11: batch 5/5
+Wrote /home/ubuntu/vignette_results/qwen_all31_all5cohorts_layer18_patchAllCond_occAll_scales012345_n35/generations/multiple_sclerosis_prompt11.tsv
+multiple_sclerosis prompt12: batch 1/5
+multiple_sclerosis prompt12: batch 2/5
+multiple_sclerosis prompt12: batch 3/5
+multiple_sclerosis prompt12: batch 4/5
+multiple_sclerosis prompt12: batch 5/5
+Wrote /home/ubuntu/vignette_results/qwen_all31_all5cohorts_layer18_patchAllCond_occAll_scales012345_n35/generations/multiple_sclerosis_prompt12.tsv
+multiple_sclerosis prompt13: batch 1/5
+multiple_sclerosis prompt13: batch 2/5
+multiple_sclerosis prompt13: batch 3/5
+multiple_sclerosis prompt13: batch 4/5
+multiple_sclerosis prompt13: batch 5/5
+Wrote /home/ubuntu/vignette_results/qwen_all31_all5cohorts_layer18_patchAllCond_occAll_scales012345_n35/generations/multiple_sclerosis_prompt13.tsv
+multiple_sclerosis prompt14: batch 1/5
+multiple_sclerosis prompt14: batch 2/5
+multiple_sclerosis prompt14: batch 3/5
+multiple_sclerosis prompt14: batch 4/5
+multiple_sclerosis prompt14: batch 5/5
+Wrote /home/ubuntu/vignette_results/qwen_all31_all5cohorts_layer18_patchAllCond_occAll_scales012345_n35/generations/multiple_sclerosis_prompt14.tsv
+multiple_sclerosis prompt15: batch 1/5
+multiple_sclerosis prompt15: batch 2/5
+multiple_sclerosis prompt15: batch 3/5
+multiple_sclerosis prompt15: batch 4/5
+multiple_sclerosis prompt15: batch 5/5
+Wrote /home/ubuntu/vignette_results/qwen_all31_all5cohorts_layer18_patchAllCond_occAll_scales012345_n35/generations/multiple_sclerosis_prompt15.tsv
+multiple_sclerosis prompt16: batch 1/5
+multiple_sclerosis prompt16: batch 2/5
+multiple_sclerosis prompt16: batch 3/5
+multiple_sclerosis prompt16: batch 4/5
+multiple_sclerosis prompt16: batch 5/5
+Wrote /home/ubuntu/vignette_results/qwen_all31_all5cohorts_layer18_patchAllCond_occAll_scales012345_n35/generations/multiple_sclerosis_prompt16.tsv
+multiple_sclerosis prompt17: batch 1/5
+multiple_sclerosis prompt17: batch 2/5
+multiple_sclerosis prompt17: batch 3/5
+multiple_sclerosis prompt17: batch 4/5
+multiple_sclerosis prompt17: batch 5/5
+Wrote /home/ubuntu/vignette_results/qwen_all31_all5cohorts_layer18_patchAllCond_occAll_scales012345_n35/generations/multiple_sclerosis_prompt17.tsv
+multiple_sclerosis prompt18: batch 1/5
+multiple_sclerosis prompt18: batch 2/5
+multiple_sclerosis prompt18: batch 3/5
+multiple_sclerosis prompt18: batch 4/5
+multiple_sclerosis prompt18: batch 5/5
+Wrote /home/ubuntu/vignette_results/qwen_all31_all5cohorts_layer18_patchAllCond_occAll_scales012345_n35/generations/multiple_sclerosis_prompt18.tsv
+multiple_sclerosis prompt19: batch 1/5
+multiple_sclerosis prompt19: batch 2/5
+multiple_sclerosis prompt19: batch 3/5
+multiple_sclerosis prompt19: batch 4/5
+multiple_sclerosis prompt19: batch 5/5
+Wrote /home/ubuntu/vignette_results/qwen_all31_all5cohorts_layer18_patchAllCond_occAll_scales012345_n35/generations/multiple_sclerosis_prompt19.tsv
+multiple_sclerosis prompt20: batch 1/5
+multiple_sclerosis prompt20: batch 2/5
+multiple_sclerosis prompt20: batch 3/5
+multiple_sclerosis prompt20: batch 4/5
+multiple_sclerosis prompt20: batch 5/5
+Wrote /home/ubuntu/vignette_results/qwen_all31_all5cohorts_layer18_patchAllCond_occAll_scales012345_n35/generations/multiple_sclerosis_prompt20.tsv
+multiple_sclerosis prompt21: batch 1/5
+multiple_sclerosis prompt21: batch 2/5
+multiple_sclerosis prompt21: batch 3/5
+multiple_sclerosis prompt21: batch 4/5
+multiple_sclerosis prompt21: batch 5/5
+Wrote /home/ubuntu/vignette_results/qwen_all31_all5cohorts_layer18_patchAllCond_occAll_scales012345_n35/generations/multiple_sclerosis_prompt21.tsv
+multiple_sclerosis prompt22: batch 1/5
+multiple_sclerosis prompt22: batch 2/5
+multiple_sclerosis prompt22: batch 3/5
+multiple_sclerosis prompt22: batch 4/5
+multiple_sclerosis prompt22: batch 5/5
+Wrote /home/ubuntu/vignette_results/qwen_all31_all5cohorts_layer18_patchAllCond_occAll_scales012345_n35/generations/multiple_sclerosis_prompt22.tsv
+multiple_sclerosis prompt23: batch 1/5
+multiple_sclerosis prompt23: batch 2/5
+multiple_sclerosis prompt23: batch 3/5
+multiple_sclerosis prompt23: batch 4/5
+multiple_sclerosis prompt23: batch 5/5
+Wrote /home/ubuntu/vignette_results/qwen_all31_all5cohorts_layer18_patchAllCond_occAll_scales012345_n35/generations/multiple_sclerosis_prompt23.tsv
+multiple_sclerosis prompt24: batch 1/5
+multiple_sclerosis prompt24: batch 2/5
+multiple_sclerosis prompt24: batch 3/5
+multiple_sclerosis prompt24: batch 4/5
+multiple_sclerosis prompt24: batch 5/5
+Wrote /home/ubuntu/vignette_results/qwen_all31_all5cohorts_layer18_patchAllCond_occAll_scales012345_n35/generations/multiple_sclerosis_prompt24.tsv
+multiple_sclerosis prompt25: batch 1/5
+multiple_sclerosis prompt25: batch 2/5
+multiple_sclerosis prompt25: batch 3/5
+multiple_sclerosis prompt25: batch 4/5
+multiple_sclerosis prompt25: batch 5/5
+Wrote /home/ubuntu/vignette_results/qwen_all31_all5cohorts_layer18_patchAllCond_occAll_scales012345_n35/generations/multiple_sclerosis_prompt25.tsv
+multiple_sclerosis prompt26: batch 1/5
+multiple_sclerosis prompt26: batch 2/5
+multiple_sclerosis prompt26: batch 3/5
+multiple_sclerosis prompt26: batch 4/5
+multiple_sclerosis prompt26: batch 5/5
+Wrote /home/ubuntu/vignette_results/qwen_all31_all5cohorts_layer18_patchAllCond_occAll_scales012345_n35/generations/multiple_sclerosis_prompt26.tsv
+multiple_sclerosis prompt27: batch 1/5
+multiple_sclerosis prompt27: batch 2/5
+multiple_sclerosis prompt27: batch 3/5
+multiple_sclerosis prompt27: batch 4/5
+multiple_sclerosis prompt27: batch 5/5
+Wrote /home/ubuntu/vignette_results/qwen_all31_all5cohorts_layer18_patchAllCond_occAll_scales012345_n35/generations/multiple_sclerosis_prompt27.tsv
+multiple_sclerosis prompt28: batch 1/5
+multiple_sclerosis prompt28: batch 2/5
+multiple_sclerosis prompt28: batch 3/5
+multiple_sclerosis prompt28: batch 4/5
+multiple_sclerosis prompt28: batch 5/5
+Wrote /home/ubuntu/vignette_results/qwen_all31_all5cohorts_layer18_patchAllCond_occAll_scales012345_n35/generations/multiple_sclerosis_prompt28.tsv
+multiple_sclerosis prompt29: batch 1/5
+multiple_sclerosis prompt29: batch 2/5
+multiple_sclerosis prompt29: batch 3/5
+multiple_sclerosis prompt29: batch 4/5
+multiple_sclerosis prompt29: batch 5/5
+Wrote /home/ubuntu/vignette_results/qwen_all31_all5cohorts_layer18_patchAllCond_occAll_scales012345_n35/generations/multiple_sclerosis_prompt29.tsv
+multiple_sclerosis prompt30: batch 1/5
+multiple_sclerosis prompt30: batch 2/5
+multiple_sclerosis prompt30: batch 3/5
+multiple_sclerosis prompt30: batch 4/5
+multiple_sclerosis prompt30: batch 5/5
+Wrote /home/ubuntu/vignette_results/qwen_all31_all5cohorts_layer18_patchAllCond_occAll_scales012345_n35/generations/multiple_sclerosis_prompt30.tsv
+multiple_sclerosis prompt31: batch 1/5
+multiple_sclerosis prompt31: batch 2/5
+multiple_sclerosis prompt31: batch 3/5
+multiple_sclerosis prompt31: batch 4/5
+multiple_sclerosis prompt31: batch 5/5
+Wrote /home/ubuntu/vignette_results/qwen_all31_all5cohorts_layer18_patchAllCond_occAll_scales012345_n35/generations/multiple_sclerosis_prompt31.tsv
+rheumatoid_arthritis prompt1: batch 1/5
+rheumatoid_arthritis prompt1: batch 2/5
+rheumatoid_arthritis prompt1: batch 3/5
+rheumatoid_arthritis prompt1: batch 4/5
+rheumatoid_arthritis prompt1: batch 5/5
+Wrote /home/ubuntu/vignette_results/qwen_all31_all5cohorts_layer18_patchAllCond_occAll_scales012345_n35/generations/rheumatoid_arthritis_prompt1.tsv
+rheumatoid_arthritis prompt2: batch 1/5
+rheumatoid_arthritis prompt2: batch 2/5
+rheumatoid_arthritis prompt2: batch 3/5
+rheumatoid_arthritis prompt2: batch 4/5
+rheumatoid_arthritis prompt2: batch 5/5
+Wrote /home/ubuntu/vignette_results/qwen_all31_all5cohorts_layer18_patchAllCond_occAll_scales012345_n35/generations/rheumatoid_arthritis_prompt2.tsv
+rheumatoid_arthritis prompt3: batch 1/5
+rheumatoid_arthritis prompt3: batch 2/5
+rheumatoid_arthritis prompt3: batch 3/5
+rheumatoid_arthritis prompt3: batch 4/5
+rheumatoid_arthritis prompt3: batch 5/5
+Wrote /home/ubuntu/vignette_results/qwen_all31_all5cohorts_layer18_patchAllCond_occAll_scales012345_n35/generations/rheumatoid_arthritis_prompt3.tsv
+rheumatoid_arthritis prompt4: batch 1/5
+rheumatoid_arthritis prompt4: batch 2/5
+rheumatoid_arthritis prompt4: batch 3/5
+rheumatoid_arthritis prompt4: batch 4/5
+rheumatoid_arthritis prompt4: batch 5/5
+Wrote /home/ubuntu/vignette_results/qwen_all31_all5cohorts_layer18_patchAllCond_occAll_scales012345_n35/generations/rheumatoid_arthritis_prompt4.tsv
+rheumatoid_arthritis prompt5: batch 1/5
+rheumatoid_arthritis prompt5: batch 2/5
+rheumatoid_arthritis prompt5: batch 3/5
+rheumatoid_arthritis prompt5: batch 4/5
+rheumatoid_arthritis prompt5: batch 5/5
+Wrote /home/ubuntu/vignette_results/qwen_all31_all5cohorts_layer18_patchAllCond_occAll_scales012345_n35/generations/rheumatoid_arthritis_prompt5.tsv
+rheumatoid_arthritis prompt6: batch 1/5
+rheumatoid_arthritis prompt6: batch 2/5
+rheumatoid_arthritis prompt6: batch 3/5
+rheumatoid_arthritis prompt6: batch 4/5
+rheumatoid_arthritis prompt6: batch 5/5
+Wrote /home/ubuntu/vignette_results/qwen_all31_all5cohorts_layer18_patchAllCond_occAll_scales012345_n35/generations/rheumatoid_arthritis_prompt6.tsv
+rheumatoid_arthritis prompt7: batch 1/5
+rheumatoid_arthritis prompt7: batch 2/5
+rheumatoid_arthritis prompt7: batch 3/5
+rheumatoid_arthritis prompt7: batch 4/5
+rheumatoid_arthritis prompt7: batch 5/5
+Wrote /home/ubuntu/vignette_results/qwen_all31_all5cohorts_layer18_patchAllCond_occAll_scales012345_n35/generations/rheumatoid_arthritis_prompt7.tsv
+rheumatoid_arthritis prompt8: batch 1/5
+rheumatoid_arthritis prompt8: batch 2/5
+rheumatoid_arthritis prompt8: batch 3/5
+rheumatoid_arthritis prompt8: batch 4/5
+rheumatoid_arthritis prompt8: batch 5/5
+Wrote /home/ubuntu/vignette_results/qwen_all31_all5cohorts_layer18_patchAllCond_occAll_scales012345_n35/generations/rheumatoid_arthritis_prompt8.tsv
+rheumatoid_arthritis prompt9: batch 1/5
+rheumatoid_arthritis prompt9: batch 2/5
+rheumatoid_arthritis prompt9: batch 3/5
+rheumatoid_arthritis prompt9: batch 4/5
+rheumatoid_arthritis prompt9: batch 5/5
+Wrote /home/ubuntu/vignette_results/qwen_all31_all5cohorts_layer18_patchAllCond_occAll_scales012345_n35/generations/rheumatoid_arthritis_prompt9.tsv
+rheumatoid_arthritis prompt10: batch 1/5
+rheumatoid_arthritis prompt10: batch 2/5
+rheumatoid_arthritis prompt10: batch 3/5
+rheumatoid_arthritis prompt10: batch 4/5
+rheumatoid_arthritis prompt10: batch 5/5
+Wrote /home/ubuntu/vignette_results/qwen_all31_all5cohorts_layer18_patchAllCond_occAll_scales012345_n35/generations/rheumatoid_arthritis_prompt10.tsv
+rheumatoid_arthritis prompt11: batch 1/5
+rheumatoid_arthritis prompt11: batch 2/5
+rheumatoid_arthritis prompt11: batch 3/5
+rheumatoid_arthritis prompt11: batch 4/5
+rheumatoid_arthritis prompt11: batch 5/5
+Wrote /home/ubuntu/vignette_results/qwen_all31_all5cohorts_layer18_patchAllCond_occAll_scales012345_n35/generations/rheumatoid_arthritis_prompt11.tsv
+rheumatoid_arthritis prompt12: batch 1/5
+rheumatoid_arthritis prompt12: batch 2/5
+rheumatoid_arthritis prompt12: batch 3/5
+rheumatoid_arthritis prompt12: batch 4/5
+rheumatoid_arthritis prompt12: batch 5/5
+Wrote /home/ubuntu/vignette_results/qwen_all31_all5cohorts_layer18_patchAllCond_occAll_scales012345_n35/generations/rheumatoid_arthritis_prompt12.tsv
+rheumatoid_arthritis prompt13: batch 1/5
+rheumatoid_arthritis prompt13: batch 2/5
+rheumatoid_arthritis prompt13: batch 3/5
+rheumatoid_arthritis prompt13: batch 4/5
+rheumatoid_arthritis prompt13: batch 5/5
+Wrote /home/ubuntu/vignette_results/qwen_all31_all5cohorts_layer18_patchAllCond_occAll_scales012345_n35/generations/rheumatoid_arthritis_prompt13.tsv
+rheumatoid_arthritis prompt14: batch 1/5
+rheumatoid_arthritis prompt14: batch 2/5
+rheumatoid_arthritis prompt14: batch 3/5
+rheumatoid_arthritis prompt14: batch 4/5
+rheumatoid_arthritis prompt14: batch 5/5
+Wrote /home/ubuntu/vignette_results/qwen_all31_all5cohorts_layer18_patchAllCond_occAll_scales012345_n35/generations/rheumatoid_arthritis_prompt14.tsv
+rheumatoid_arthritis prompt15: batch 1/5
+rheumatoid_arthritis prompt15: batch 2/5
+rheumatoid_arthritis prompt15: batch 3/5
+rheumatoid_arthritis prompt15: batch 4/5
+rheumatoid_arthritis prompt15: batch 5/5
+Wrote /home/ubuntu/vignette_results/qwen_all31_all5cohorts_layer18_patchAllCond_occAll_scales012345_n35/generations/rheumatoid_arthritis_prompt15.tsv
+rheumatoid_arthritis prompt16: batch 1/5
+rheumatoid_arthritis prompt16: batch 2/5
+rheumatoid_arthritis prompt16: batch 3/5
+rheumatoid_arthritis prompt16: batch 4/5
+rheumatoid_arthritis prompt16: batch 5/5
+Wrote /home/ubuntu/vignette_results/qwen_all31_all5cohorts_layer18_patchAllCond_occAll_scales012345_n35/generations/rheumatoid_arthritis_prompt16.tsv
+rheumatoid_arthritis prompt17: batch 1/5
+rheumatoid_arthritis prompt17: batch 2/5
+rheumatoid_arthritis prompt17: batch 3/5
+rheumatoid_arthritis prompt17: batch 4/5
+rheumatoid_arthritis prompt17: batch 5/5
+Wrote /home/ubuntu/vignette_results/qwen_all31_all5cohorts_layer18_patchAllCond_occAll_scales012345_n35/generations/rheumatoid_arthritis_prompt17.tsv
+rheumatoid_arthritis prompt18: batch 1/5
+rheumatoid_arthritis prompt18: batch 2/5
+rheumatoid_arthritis prompt18: batch 3/5
+rheumatoid_arthritis prompt18: batch 4/5
+rheumatoid_arthritis prompt18: batch 5/5
+Wrote /home/ubuntu/vignette_results/qwen_all31_all5cohorts_layer18_patchAllCond_occAll_scales012345_n35/generations/rheumatoid_arthritis_prompt18.tsv
+rheumatoid_arthritis prompt19: batch 1/5
+rheumatoid_arthritis prompt19: batch 2/5
+rheumatoid_arthritis prompt19: batch 3/5
+rheumatoid_arthritis prompt19: batch 4/5
+rheumatoid_arthritis prompt19: batch 5/5
+Wrote /home/ubuntu/vignette_results/qwen_all31_all5cohorts_layer18_patchAllCond_occAll_scales012345_n35/generations/rheumatoid_arthritis_prompt19.tsv
+rheumatoid_arthritis prompt20: batch 1/5
+rheumatoid_arthritis prompt20: batch 2/5
+rheumatoid_arthritis prompt20: batch 3/5
+rheumatoid_arthritis prompt20: batch 4/5
+rheumatoid_arthritis prompt20: batch 5/5
+Wrote /home/ubuntu/vignette_results/qwen_all31_all5cohorts_layer18_patchAllCond_occAll_scales012345_n35/generations/rheumatoid_arthritis_prompt20.tsv
+rheumatoid_arthritis prompt21: batch 1/5
+rheumatoid_arthritis prompt21: batch 2/5
+rheumatoid_arthritis prompt21: batch 3/5
+rheumatoid_arthritis prompt21: batch 4/5
+rheumatoid_arthritis prompt21: batch 5/5
+Wrote /home/ubuntu/vignette_results/qwen_all31_all5cohorts_layer18_patchAllCond_occAll_scales012345_n35/generations/rheumatoid_arthritis_prompt21.tsv
+rheumatoid_arthritis prompt22: batch 1/5
+rheumatoid_arthritis prompt22: batch 2/5
+rheumatoid_arthritis prompt22: batch 3/5
+rheumatoid_arthritis prompt22: batch 4/5
+rheumatoid_arthritis prompt22: batch 5/5
+Wrote /home/ubuntu/vignette_results/qwen_all31_all5cohorts_layer18_patchAllCond_occAll_scales012345_n35/generations/rheumatoid_arthritis_prompt22.tsv
+rheumatoid_arthritis prompt23: batch 1/5
+rheumatoid_arthritis prompt23: batch 2/5
+rheumatoid_arthritis prompt23: batch 3/5
+rheumatoid_arthritis prompt23: batch 4/5
+rheumatoid_arthritis prompt23: batch 5/5
+Wrote /home/ubuntu/vignette_results/qwen_all31_all5cohorts_layer18_patchAllCond_occAll_scales012345_n35/generations/rheumatoid_arthritis_prompt23.tsv
+rheumatoid_arthritis prompt24: batch 1/5
+rheumatoid_arthritis prompt24: batch 2/5
+rheumatoid_arthritis prompt24: batch 3/5
+rheumatoid_arthritis prompt24: batch 4/5
+rheumatoid_arthritis prompt24: batch 5/5
+Wrote /home/ubuntu/vignette_results/qwen_all31_all5cohorts_layer18_patchAllCond_occAll_scales012345_n35/generations/rheumatoid_arthritis_prompt24.tsv
+rheumatoid_arthritis prompt25: batch 1/5
+rheumatoid_arthritis prompt25: batch 2/5
+rheumatoid_arthritis prompt25: batch 3/5
+rheumatoid_arthritis prompt25: batch 4/5
+rheumatoid_arthritis prompt25: batch 5/5
+Wrote /home/ubuntu/vignette_results/qwen_all31_all5cohorts_layer18_patchAllCond_occAll_scales012345_n35/generations/rheumatoid_arthritis_prompt25.tsv
+rheumatoid_arthritis prompt26: batch 1/5
+rheumatoid_arthritis prompt26: batch 2/5
+rheumatoid_arthritis prompt26: batch 3/5
+rheumatoid_arthritis prompt26: batch 4/5
+rheumatoid_arthritis prompt26: batch 5/5
+Wrote /home/ubuntu/vignette_results/qwen_all31_all5cohorts_layer18_patchAllCond_occAll_scales012345_n35/generations/rheumatoid_arthritis_prompt26.tsv
+rheumatoid_arthritis prompt27: batch 1/5
+rheumatoid_arthritis prompt27: batch 2/5
+rheumatoid_arthritis prompt27: batch 3/5
+rheumatoid_arthritis prompt27: batch 4/5
+rheumatoid_arthritis prompt27: batch 5/5
+Wrote /home/ubuntu/vignette_results/qwen_all31_all5cohorts_layer18_patchAllCond_occAll_scales012345_n35/generations/rheumatoid_arthritis_prompt27.tsv
+rheumatoid_arthritis prompt28: batch 1/5
+rheumatoid_arthritis prompt28: batch 2/5
+rheumatoid_arthritis prompt28: batch 3/5
+rheumatoid_arthritis prompt28: batch 4/5
+rheumatoid_arthritis prompt28: batch 5/5
+Wrote /home/ubuntu/vignette_results/qwen_all31_all5cohorts_layer18_patchAllCond_occAll_scales012345_n35/generations/rheumatoid_arthritis_prompt28.tsv
+rheumatoid_arthritis prompt29: batch 1/5
+rheumatoid_arthritis prompt29: batch 2/5
+rheumatoid_arthritis prompt29: batch 3/5
+rheumatoid_arthritis prompt29: batch 4/5
+rheumatoid_arthritis prompt29: batch 5/5
+Wrote /home/ubuntu/vignette_results/qwen_all31_all5cohorts_layer18_patchAllCond_occAll_scales012345_n35/generations/rheumatoid_arthritis_prompt29.tsv
+rheumatoid_arthritis prompt30: batch 1/5
+rheumatoid_arthritis prompt30: batch 2/5
+rheumatoid_arthritis prompt30: batch 3/5
+rheumatoid_arthritis prompt30: batch 4/5
+rheumatoid_arthritis prompt30: batch 5/5
+Wrote /home/ubuntu/vignette_results/qwen_all31_all5cohorts_layer18_patchAllCond_occAll_scales012345_n35/generations/rheumatoid_arthritis_prompt30.tsv
+rheumatoid_arthritis prompt31: batch 1/5
+rheumatoid_arthritis prompt31: batch 2/5
+rheumatoid_arthritis prompt31: batch 3/5
+rheumatoid_arthritis prompt31: batch 4/5
+rheumatoid_arthritis prompt31: batch 5/5
+Wrote /home/ubuntu/vignette_results/qwen_all31_all5cohorts_layer18_patchAllCond_occAll_scales012345_n35/generations/rheumatoid_arthritis_prompt31.tsv
+sarcoidosis prompt1: batch 1/5
+sarcoidosis prompt1: batch 2/5
+sarcoidosis prompt1: batch 3/5
+sarcoidosis prompt1: batch 4/5
+sarcoidosis prompt1: batch 5/5
+Wrote /home/ubuntu/vignette_results/qwen_all31_all5cohorts_layer18_patchAllCond_occAll_scales012345_n35/generations/sarcoidosis_prompt1.tsv
+sarcoidosis prompt2: batch 1/5
+sarcoidosis prompt2: batch 2/5
+sarcoidosis prompt2: batch 3/5
+sarcoidosis prompt2: batch 4/5
+sarcoidosis prompt2: batch 5/5
+Wrote /home/ubuntu/vignette_results/qwen_all31_all5cohorts_layer18_patchAllCond_occAll_scales012345_n35/generations/sarcoidosis_prompt2.tsv
+sarcoidosis prompt3: batch 1/5
+sarcoidosis prompt3: batch 2/5
+sarcoidosis prompt3: batch 3/5
+sarcoidosis prompt3: batch 4/5
+sarcoidosis prompt3: batch 5/5
+Wrote /home/ubuntu/vignette_results/qwen_all31_all5cohorts_layer18_patchAllCond_occAll_scales012345_n35/generations/sarcoidosis_prompt3.tsv
+sarcoidosis prompt4: batch 1/5
+sarcoidosis prompt4: batch 2/5
+sarcoidosis prompt4: batch 3/5
+sarcoidosis prompt4: batch 4/5
+sarcoidosis prompt4: batch 5/5
+Wrote /home/ubuntu/vignette_results/qwen_all31_all5cohorts_layer18_patchAllCond_occAll_scales012345_n35/generations/sarcoidosis_prompt4.tsv
+sarcoidosis prompt5: batch 1/5
+sarcoidosis prompt5: batch 2/5
+sarcoidosis prompt5: batch 3/5
+sarcoidosis prompt5: batch 4/5
+sarcoidosis prompt5: batch 5/5
+Wrote /home/ubuntu/vignette_results/qwen_all31_all5cohorts_layer18_patchAllCond_occAll_scales012345_n35/generations/sarcoidosis_prompt5.tsv
+sarcoidosis prompt6: batch 1/5
+sarcoidosis prompt6: batch 2/5
+sarcoidosis prompt6: batch 3/5
+sarcoidosis prompt6: batch 4/5
+sarcoidosis prompt6: batch 5/5
+Wrote /home/ubuntu/vignette_results/qwen_all31_all5cohorts_layer18_patchAllCond_occAll_scales012345_n35/generations/sarcoidosis_prompt6.tsv
+sarcoidosis prompt7: batch 1/5
+sarcoidosis prompt7: batch 2/5
+sarcoidosis prompt7: batch 3/5
+sarcoidosis prompt7: batch 4/5
+sarcoidosis prompt7: batch 5/5
+Wrote /home/ubuntu/vignette_results/qwen_all31_all5cohorts_layer18_patchAllCond_occAll_scales012345_n35/generations/sarcoidosis_prompt7.tsv
+sarcoidosis prompt8: batch 1/5
+sarcoidosis prompt8: batch 2/5
+sarcoidosis prompt8: batch 3/5
+sarcoidosis prompt8: batch 4/5
+sarcoidosis prompt8: batch 5/5
+Wrote /home/ubuntu/vignette_results/qwen_all31_all5cohorts_layer18_patchAllCond_occAll_scales012345_n35/generations/sarcoidosis_prompt8.tsv
+sarcoidosis prompt9: batch 1/5
+sarcoidosis prompt9: batch 2/5
+sarcoidosis prompt9: batch 3/5
+sarcoidosis prompt9: batch 4/5
+sarcoidosis prompt9: batch 5/5
+Wrote /home/ubuntu/vignette_results/qwen_all31_all5cohorts_layer18_patchAllCond_occAll_scales012345_n35/generations/sarcoidosis_prompt9.tsv
+sarcoidosis prompt10: batch 1/5
+sarcoidosis prompt10: batch 2/5
+sarcoidosis prompt10: batch 3/5
+sarcoidosis prompt10: batch 4/5
+sarcoidosis prompt10: batch 5/5
+Wrote /home/ubuntu/vignette_results/qwen_all31_all5cohorts_layer18_patchAllCond_occAll_scales012345_n35/generations/sarcoidosis_prompt10.tsv
+sarcoidosis prompt11: batch 1/5
+sarcoidosis prompt11: batch 2/5
+sarcoidosis prompt11: batch 3/5
+sarcoidosis prompt11: batch 4/5
+sarcoidosis prompt11: batch 5/5
+Wrote /home/ubuntu/vignette_results/qwen_all31_all5cohorts_layer18_patchAllCond_occAll_scales012345_n35/generations/sarcoidosis_prompt11.tsv
+sarcoidosis prompt12: batch 1/5
+sarcoidosis prompt12: batch 2/5
+sarcoidosis prompt12: batch 3/5
+sarcoidosis prompt12: batch 4/5
+sarcoidosis prompt12: batch 5/5
+Wrote /home/ubuntu/vignette_results/qwen_all31_all5cohorts_layer18_patchAllCond_occAll_scales012345_n35/generations/sarcoidosis_prompt12.tsv
+sarcoidosis prompt13: batch 1/5
+sarcoidosis prompt13: batch 2/5
+sarcoidosis prompt13: batch 3/5
+sarcoidosis prompt13: batch 4/5
+sarcoidosis prompt13: batch 5/5
+Wrote /home/ubuntu/vignette_results/qwen_all31_all5cohorts_layer18_patchAllCond_occAll_scales012345_n35/generations/sarcoidosis_prompt13.tsv
+sarcoidosis prompt14: batch 1/5
+sarcoidosis prompt14: batch 2/5
+sarcoidosis prompt14: batch 3/5
+sarcoidosis prompt14: batch 4/5
+sarcoidosis prompt14: batch 5/5
+Wrote /home/ubuntu/vignette_results/qwen_all31_all5cohorts_layer18_patchAllCond_occAll_scales012345_n35/generations/sarcoidosis_prompt14.tsv
+sarcoidosis prompt15: batch 1/5
+sarcoidosis prompt15: batch 2/5
+sarcoidosis prompt15: batch 3/5
+sarcoidosis prompt15: batch 4/5
+sarcoidosis prompt15: batch 5/5
+Wrote /home/ubuntu/vignette_results/qwen_all31_all5cohorts_layer18_patchAllCond_occAll_scales012345_n35/generations/sarcoidosis_prompt15.tsv
+sarcoidosis prompt16: batch 1/5
+sarcoidosis prompt16: batch 2/5
+sarcoidosis prompt16: batch 3/5
+sarcoidosis prompt16: batch 4/5
+sarcoidosis prompt16: batch 5/5
+Wrote /home/ubuntu/vignette_results/qwen_all31_all5cohorts_layer18_patchAllCond_occAll_scales012345_n35/generations/sarcoidosis_prompt16.tsv
+sarcoidosis prompt17: batch 1/5
+sarcoidosis prompt17: batch 2/5
+sarcoidosis prompt17: batch 3/5
+sarcoidosis prompt17: batch 4/5
+sarcoidosis prompt17: batch 5/5
+Wrote /home/ubuntu/vignette_results/qwen_all31_all5cohorts_layer18_patchAllCond_occAll_scales012345_n35/generations/sarcoidosis_prompt17.tsv
+sarcoidosis prompt18: batch 1/5
+sarcoidosis prompt18: batch 2/5
+sarcoidosis prompt18: batch 3/5
+sarcoidosis prompt18: batch 4/5
+sarcoidosis prompt18: batch 5/5
+Wrote /home/ubuntu/vignette_results/qwen_all31_all5cohorts_layer18_patchAllCond_occAll_scales012345_n35/generations/sarcoidosis_prompt18.tsv
+sarcoidosis prompt19: batch 1/5
+sarcoidosis prompt19: batch 2/5
+sarcoidosis prompt19: batch 3/5
+sarcoidosis prompt19: batch 4/5
+sarcoidosis prompt19: batch 5/5
+Wrote /home/ubuntu/vignette_results/qwen_all31_all5cohorts_layer18_patchAllCond_occAll_scales012345_n35/generations/sarcoidosis_prompt19.tsv
+sarcoidosis prompt20: batch 1/5
+sarcoidosis prompt20: batch 2/5
+sarcoidosis prompt20: batch 3/5
+sarcoidosis prompt20: batch 4/5
+sarcoidosis prompt20: batch 5/5
+Wrote /home/ubuntu/vignette_results/qwen_all31_all5cohorts_layer18_patchAllCond_occAll_scales012345_n35/generations/sarcoidosis_prompt20.tsv
+sarcoidosis prompt21: batch 1/5
+sarcoidosis prompt21: batch 2/5
+sarcoidosis prompt21: batch 3/5
+sarcoidosis prompt21: batch 4/5
+sarcoidosis prompt21: batch 5/5
+Wrote /home/ubuntu/vignette_results/qwen_all31_all5cohorts_layer18_patchAllCond_occAll_scales012345_n35/generations/sarcoidosis_prompt21.tsv
+sarcoidosis prompt22: batch 1/5
+sarcoidosis prompt22: batch 2/5
+sarcoidosis prompt22: batch 3/5
+sarcoidosis prompt22: batch 4/5
+sarcoidosis prompt22: batch 5/5
+Wrote /home/ubuntu/vignette_results/qwen_all31_all5cohorts_layer18_patchAllCond_occAll_scales012345_n35/generations/sarcoidosis_prompt22.tsv
+sarcoidosis prompt23: batch 1/5
+sarcoidosis prompt23: batch 2/5
+sarcoidosis prompt23: batch 3/5
+sarcoidosis prompt23: batch 4/5
+sarcoidosis prompt23: batch 5/5
+Wrote /home/ubuntu/vignette_results/qwen_all31_all5cohorts_layer18_patchAllCond_occAll_scales012345_n35/generations/sarcoidosis_prompt23.tsv
+sarcoidosis prompt24: batch 1/5
+sarcoidosis prompt24: batch 2/5
+sarcoidosis prompt24: batch 3/5
+sarcoidosis prompt24: batch 4/5
+sarcoidosis prompt24: batch 5/5
+Wrote /home/ubuntu/vignette_results/qwen_all31_all5cohorts_layer18_patchAllCond_occAll_scales012345_n35/generations/sarcoidosis_prompt24.tsv
+sarcoidosis prompt25: batch 1/5
+sarcoidosis prompt25: batch 2/5
+sarcoidosis prompt25: batch 3/5
+sarcoidosis prompt25: batch 4/5
+sarcoidosis prompt25: batch 5/5
+Wrote /home/ubuntu/vignette_results/qwen_all31_all5cohorts_layer18_patchAllCond_occAll_scales012345_n35/generations/sarcoidosis_prompt25.tsv
+sarcoidosis prompt26: batch 1/5
+sarcoidosis prompt26: batch 2/5
+sarcoidosis prompt26: batch 3/5
+sarcoidosis prompt26: batch 4/5
+sarcoidosis prompt26: batch 5/5
+Wrote /home/ubuntu/vignette_results/qwen_all31_all5cohorts_layer18_patchAllCond_occAll_scales012345_n35/generations/sarcoidosis_prompt26.tsv
+sarcoidosis prompt27: batch 1/5
+sarcoidosis prompt27: batch 2/5
+sarcoidosis prompt27: batch 3/5
+sarcoidosis prompt27: batch 4/5
+sarcoidosis prompt27: batch 5/5
+Wrote /home/ubuntu/vignette_results/qwen_all31_all5cohorts_layer18_patchAllCond_occAll_scales012345_n35/generations/sarcoidosis_prompt27.tsv
+sarcoidosis prompt28: batch 1/5
+sarcoidosis prompt28: batch 2/5
+sarcoidosis prompt28: batch 3/5
+sarcoidosis prompt28: batch 4/5
+sarcoidosis prompt28: batch 5/5
+Wrote /home/ubuntu/vignette_results/qwen_all31_all5cohorts_layer18_patchAllCond_occAll_scales012345_n35/generations/sarcoidosis_prompt28.tsv
+sarcoidosis prompt29: batch 1/5
+sarcoidosis prompt29: batch 2/5
+sarcoidosis prompt29: batch 3/5
+sarcoidosis prompt29: batch 4/5
+sarcoidosis prompt29: batch 5/5
+Wrote /home/ubuntu/vignette_results/qwen_all31_all5cohorts_layer18_patchAllCond_occAll_scales012345_n35/generations/sarcoidosis_prompt29.tsv
+sarcoidosis prompt30: batch 1/5
+sarcoidosis prompt30: batch 2/5
+sarcoidosis prompt30: batch 3/5
+sarcoidosis prompt30: batch 4/5
+sarcoidosis prompt30: batch 5/5
+Wrote /home/ubuntu/vignette_results/qwen_all31_all5cohorts_layer18_patchAllCond_occAll_scales012345_n35/generations/sarcoidosis_prompt30.tsv
+sarcoidosis prompt31: batch 1/5
+sarcoidosis prompt31: batch 2/5
+sarcoidosis prompt31: batch 3/5
+sarcoidosis prompt31: batch 4/5
+sarcoidosis prompt31: batch 5/5
+Wrote /home/ubuntu/vignette_results/qwen_all31_all5cohorts_layer18_patchAllCond_occAll_scales012345_n35/generations/sarcoidosis_prompt31.tsv
+Wrote /home/ubuntu/vignette_results/qwen_all31_all5cohorts_layer18_patchAllCond_occAll_scales012345_n35/all_generations.tsv
+Wrote /home/ubuntu/vignette_results/qwen_all31_all5cohorts_layer18_patchAllCond_occAll_scales012345_n35/summary_by_factor.tsv

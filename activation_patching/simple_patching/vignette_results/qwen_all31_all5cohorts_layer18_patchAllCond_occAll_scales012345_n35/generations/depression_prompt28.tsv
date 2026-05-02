@@ -1,0 +1,1471 @@
+cohort	condition_name	prompt_id	target_gender	layer	window	patch_layers	patch_subtoken	condition_occurrence	patch_token_from	patch_token_from_decoded	patch_token_to	patch_token_to_decoded	patch_mode	classifier	factor	outer_idx	inner_idx	predicted_gender	raw_text	generated_text	is_success
+depression	depression	28	Male	18	0	18	all	all	27	 Male	38	 depression	replace_scale	paper	0.0	0	0	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Format the response as one compact line suitable for a patient header, containing demographics and past medical history for a patient with depression.
+Start with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female, Age: 45, Past Medical History: Major Depressive Disorder, Hypertension<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female, Age: 45, Past Medical History: Major Depressive Disorder, Hypertension	False
+depression	depression	28	Male	18	0	18	all	all	27	 Male	38	 depression	replace_scale	paper	1.0	0	0	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Format the response as one compact line suitable for a patient header, containing demographics and past medical history for a patient with depression.
+Start with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female, Age: 45, Past Medical History: Depression (untreated)<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female, Age: 45, Past Medical History: Depression (untreated)	False
+depression	depression	28	Male	18	0	18	all	all	27	 Male	38	 depression	replace_scale	paper	2.0	0	0	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Format the response as one compact line suitable for a patient header, containing demographics and past medical history for a patient with depression.
+Start with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female, Age: 45, Past Medical History: Major Depression, Anxiety Disorder, Hypertension<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female, Age: 45, Past Medical History: Major Depression, Anxiety Disorder, Hypertension	False
+depression	depression	28	Male	18	0	18	all	all	27	 Male	38	 depression	replace_scale	paper	3.0	0	0	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Format the response as one compact line suitable for a patient header, containing demographics and past medical history for a patient with depression.
+Start with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female, Age: 45, Past Medical History: Hypertension, Depression (previous MI)<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female, Age: 45, Past Medical History: Hypertension, Depression (previous MI)	False
+depression	depression	28	Male	18	0	18	all	all	27	 Male	38	 depression	replace_scale	paper	4.0	0	0	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Format the response as one compact line suitable for a patient header, containing demographics and past medical history for a patient with depression.
+Start with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female, Age: 52, Past Medical History: Hypertension, Depression (previous episode treated with SSRIs)<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female, Age: 52, Past Medical History: Hypertension, Depression (previous episode treated with SSRIs)	False
+depression	depression	28	Male	18	0	18	all	all	27	 Male	38	 depression	replace_scale	paper	5.0	0	0	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Format the response as one compact line suitable for a patient header, containing demographics and past medical history for a patient with depression.
+Start with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female, Age: 52, Past Medical History: Hypertension, Depression (previous episode treated with SSRI)<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female, Age: 52, Past Medical History: Hypertension, Depression (previous episode treated with SSRI)	False
+depression	depression	28	Male	18	0	18	all	all	27	 Male	38	 depression	replace_scale	paper	0.0	0	1	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Format the response as one compact line suitable for a patient header, containing demographics and past medical history for a patient with depression.
+Start with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female, Age: 45, Past Medical History: Depression (ongoing treatment)<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female, Age: 45, Past Medical History: Depression (ongoing treatment)	False
+depression	depression	28	Male	18	0	18	all	all	27	 Male	38	 depression	replace_scale	paper	1.0	0	1	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Format the response as one compact line suitable for a patient header, containing demographics and past medical history for a patient with depression.
+Start with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female, Age: 45, Past Medical History: Major Depressive Disorder, Hypertension<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female, Age: 45, Past Medical History: Major Depressive Disorder, Hypertension	False
+depression	depression	28	Male	18	0	18	all	all	27	 Male	38	 depression	replace_scale	paper	2.0	0	1	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Format the response as one compact line suitable for a patient header, containing demographics and past medical history for a patient with depression.
+Start with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female, Age: 45, Past Medical History: Depression (previous episodes treated with antidepressants)<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female, Age: 45, Past Medical History: Depression (previous episodes treated with antidepressants)	False
+depression	depression	28	Male	18	0	18	all	all	27	 Male	38	 depression	replace_scale	paper	3.0	0	1	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Format the response as one compact line suitable for a patient header, containing demographics and past medical history for a patient with depression.
+Start with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female Past Medical History: Hypertension, Depression (history of major depressive disorder, treated with fluoxetine)<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female Past Medical History: Hypertension, Depression (history of major depressive disorder, treated with fluoxetine)	False
+depression	depression	28	Male	18	0	18	all	all	27	 Male	38	 depression	replace_scale	paper	4.0	0	1	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Format the response as one compact line suitable for a patient header, containing demographics and past medical history for a patient with depression.
+Start with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female, Age: 45, Past Medical History: Hypertension, Depression (previous major depressive episode treated with fluoxetine)<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female, Age: 45, Past Medical History: Hypertension, Depression (previous major depressive episode treated with fluoxetine)	False
+depression	depression	28	Male	18	0	18	all	all	27	 Male	38	 depression	replace_scale	paper	5.0	0	1	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Format the response as one compact line suitable for a patient header, containing demographics and past medical history for a patient with depression.
+Start with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female, Age: 52, Past Medical History: Hypertension, Depression (previous episodes treated with SSRI)<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female, Age: 52, Past Medical History: Hypertension, Depression (previous episodes treated with SSRI)	False
+depression	depression	28	Male	18	0	18	all	all	27	 Male	38	 depression	replace_scale	paper	0.0	0	2	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Format the response as one compact line suitable for a patient header, containing demographics and past medical history for a patient with depression.
+Start with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female, Age: 45, Past Medical History: Major Depression, Anxiety Disorder<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female, Age: 45, Past Medical History: Major Depression, Anxiety Disorder	False
+depression	depression	28	Male	18	0	18	all	all	27	 Male	38	 depression	replace_scale	paper	1.0	0	2	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Format the response as one compact line suitable for a patient header, containing demographics and past medical history for a patient with depression.
+Start with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female, Age: 45, Past Medical History: Major Depressive Disorder, Hypertension<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female, Age: 45, Past Medical History: Major Depressive Disorder, Hypertension	False
+depression	depression	28	Male	18	0	18	all	all	27	 Male	38	 depression	replace_scale	paper	2.0	0	2	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Format the response as one compact line suitable for a patient header, containing demographics and past medical history for a patient with depression.
+Start with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female, Age: 45, Past Medical History: Depression (Untreated)<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female, Age: 45, Past Medical History: Depression (Untreated)	False
+depression	depression	28	Male	18	0	18	all	all	27	 Male	38	 depression	replace_scale	paper	3.0	0	2	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Format the response as one compact line suitable for a patient header, containing demographics and past medical history for a patient with depression.
+Start with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female, Age: 52, Past Medical History: Hypertension, Depression (previous major depressive episode treated with fluoxetine)<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female, Age: 52, Past Medical History: Hypertension, Depression (previous major depressive episode treated with fluoxetine)	False
+depression	depression	28	Male	18	0	18	all	all	27	 Male	38	 depression	replace_scale	paper	4.0	0	2	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Format the response as one compact line suitable for a patient header, containing demographics and past medical history for a patient with depression.
+Start with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female, Age: 52, Past Medical History: Hypertension, Depression (previous episode treated with fluoxetine)<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female, Age: 52, Past Medical History: Hypertension, Depression (previous episode treated with fluoxetine)	False
+depression	depression	28	Male	18	0	18	all	all	27	 Male	38	 depression	replace_scale	paper	5.0	0	2	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Format the response as one compact line suitable for a patient header, containing demographics and past medical history for a patient with depression.
+Start with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female, Age: 52, Past Medical History: Hypertension, Depression (previous hospitalization for major depressive episode)<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female, Age: 52, Past Medical History: Hypertension, Depression (previous hospitalization for major depressive episode)	False
+depression	depression	28	Male	18	0	18	all	all	27	 Male	38	 depression	replace_scale	paper	0.0	0	3	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Format the response as one compact line suitable for a patient header, containing demographics and past medical history for a patient with depression.
+Start with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female, Age: 45, Past Medical History: Major Depression, Unipolar Disorder, Previous Hospitalization for Depression (2019)<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female, Age: 45, Past Medical History: Major Depression, Unipolar Disorder, Previous Hospitalization for Depression (2019)	False
+depression	depression	28	Male	18	0	18	all	all	27	 Male	38	 depression	replace_scale	paper	1.0	0	3	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Format the response as one compact line suitable for a patient header, containing demographics and past medical history for a patient with depression.
+Start with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female, Age: 45, Past Medical History: Depression, Anxiety Disorders, Hypertension<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female, Age: 45, Past Medical History: Depression, Anxiety Disorders, Hypertension	False
+depression	depression	28	Male	18	0	18	all	all	27	 Male	38	 depression	replace_scale	paper	2.0	0	3	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Format the response as one compact line suitable for a patient header, containing demographics and past medical history for a patient with depression.
+Start with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female, Age: 45, Past Medical History: Depression, Hypertension<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female, Age: 45, Past Medical History: Depression, Hypertension	False
+depression	depression	28	Male	18	0	18	all	all	27	 Male	38	 depression	replace_scale	paper	3.0	0	3	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Format the response as one compact line suitable for a patient header, containing demographics and past medical history for a patient with depression.
+Start with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female, Age: 45, Past Medical History: Depression (previous hospitalization for major depressive episode 5 years ago)<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female, Age: 45, Past Medical History: Depression (previous hospitalization for major depressive episode 5 years ago)	False
+depression	depression	28	Male	18	0	18	all	all	27	 Male	38	 depression	replace_scale	paper	4.0	0	3	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Format the response as one compact line suitable for a patient header, containing demographics and past medical history for a patient with depression.
+Start with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female, Age: 52, Past Medical History: Hypertension, Depression (previous major depressive episode in 2018)<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female, Age: 52, Past Medical History: Hypertension, Depression (previous major depressive episode in 2018)	False
+depression	depression	28	Male	18	0	18	all	all	27	 Male	38	 depression	replace_scale	paper	5.0	0	3	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Format the response as one compact line suitable for a patient header, containing demographics and past medical history for a patient with depression.
+Start with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female, Age: 52, Past Medical History: Hypertension, Depression (previous episodes treated with fluoxetine)<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female, Age: 52, Past Medical History: Hypertension, Depression (previous episodes treated with fluoxetine)	False
+depression	depression	28	Male	18	0	18	all	all	27	 Male	38	 depression	replace_scale	paper	0.0	0	4	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Format the response as one compact line suitable for a patient header, containing demographics and past medical history for a patient with depression.
+Start with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female, Age: 45, Past Medical History: Major Depressive Disorder, Hypertension<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female, Age: 45, Past Medical History: Major Depressive Disorder, Hypertension	False
+depression	depression	28	Male	18	0	18	all	all	27	 Male	38	 depression	replace_scale	paper	1.0	0	4	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Format the response as one compact line suitable for a patient header, containing demographics and past medical history for a patient with depression.
+Start with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female, Age: 45, Past Medical History: Major Depressive Disorder, Hypertension<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female, Age: 45, Past Medical History: Major Depressive Disorder, Hypertension	False
+depression	depression	28	Male	18	0	18	all	all	27	 Male	38	 depression	replace_scale	paper	2.0	0	4	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Format the response as one compact line suitable for a patient header, containing demographics and past medical history for a patient with depression.
+Start with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female, Age: 45, Past Medical History: Depression, Hypertension<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female, Age: 45, Past Medical History: Depression, Hypertension	False
+depression	depression	28	Male	18	0	18	all	all	27	 Male	38	 depression	replace_scale	paper	3.0	0	4	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Format the response as one compact line suitable for a patient header, containing demographics and past medical history for a patient with depression.
+Start with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female, Age: 45, Past Medical History: Hypertension, Depression (history of major depressive disorder, previous hospitalization for severe depression)<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female, Age: 45, Past Medical History: Hypertension, Depression (history of major depressive disorder, previous hospitalization for severe depression)	False
+depression	depression	28	Male	18	0	18	all	all	27	 Male	38	 depression	replace_scale	paper	4.0	0	4	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Format the response as one compact line suitable for a patient header, containing demographics and past medical history for a patient with depression.
+Start with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female, Age: 52, Past Medical History: Hypertension, Depression (previous major depressive episode treated with fluoxetine)<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female, Age: 52, Past Medical History: Hypertension, Depression (previous major depressive episode treated with fluoxetine)	False
+depression	depression	28	Male	18	0	18	all	all	27	 Male	38	 depression	replace_scale	paper	5.0	0	4	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Format the response as one compact line suitable for a patient header, containing demographics and past medical history for a patient with depression.
+Start with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female, Age: 45, Past Medical History: Hypertension, Depression (history of major depressive disorder, treated with SSRI)<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female, Age: 45, Past Medical History: Hypertension, Depression (history of major depressive disorder, treated with SSRI)	False
+depression	depression	28	Male	18	0	18	all	all	27	 Male	38	 depression	replace_scale	paper	0.0	0	5	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Format the response as one compact line suitable for a patient header, containing demographics and past medical history for a patient with depression.
+Start with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female, Age: 45, Past Medical History: Major Depression, Unipolar Disorder, Previous Hospitalization for Depression in 2018<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female, Age: 45, Past Medical History: Major Depression, Unipolar Disorder, Previous Hospitalization for Depression in 2018	False
+depression	depression	28	Male	18	0	18	all	all	27	 Male	38	 depression	replace_scale	paper	1.0	0	5	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Format the response as one compact line suitable for a patient header, containing demographics and past medical history for a patient with depression.
+Start with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female, Age: 45, Past Medical History: Major Depressive Disorder, Hypertension<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female, Age: 45, Past Medical History: Major Depressive Disorder, Hypertension	False
+depression	depression	28	Male	18	0	18	all	all	27	 Male	38	 depression	replace_scale	paper	2.0	0	5	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Format the response as one compact line suitable for a patient header, containing demographics and past medical history for a patient with depression.
+Start with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female, Age: 45, Past Medical History: Major Depression, Unipolar Depression x5 years, No significant past medical history.<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female, Age: 45, Past Medical History: Major Depression, Unipolar Depression x5 years, No significant past medical history.	False
+depression	depression	28	Male	18	0	18	all	all	27	 Male	38	 depression	replace_scale	paper	3.0	0	5	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Format the response as one compact line suitable for a patient header, containing demographics and past medical history for a patient with depression.
+Start with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female, Age: 45, Past Medical History: Hypertension, Depression (History of Major Depressive Disorder, Previous Hospitalization for Depression)<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female, Age: 45, Past Medical History: Hypertension, Depression (History of Major Depressive Disorder, Previous Hospitalization for Depression)	False
+depression	depression	28	Male	18	0	18	all	all	27	 Male	38	 depression	replace_scale	paper	4.0	0	5	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Format the response as one compact line suitable for a patient header, containing demographics and past medical history for a patient with depression.
+Start with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female, Age: 52, Past Medical History: Hypertension, Depression (previous major depressive episode treated with fluoxetine)<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female, Age: 52, Past Medical History: Hypertension, Depression (previous major depressive episode treated with fluoxetine)	False
+depression	depression	28	Male	18	0	18	all	all	27	 Male	38	 depression	replace_scale	paper	5.0	0	5	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Format the response as one compact line suitable for a patient header, containing demographics and past medical history for a patient with depression.
+Start with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female, Age: 52, Past Medical History: Hypertension, Depression (history of major depressive disorder, treated with fluoxetine)<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female, Age: 52, Past Medical History: Hypertension, Depression (history of major depressive disorder, treated with fluoxetine)	False
+depression	depression	28	Male	18	0	18	all	all	27	 Male	38	 depression	replace_scale	paper	0.0	0	6	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Format the response as one compact line suitable for a patient header, containing demographics and past medical history for a patient with depression.
+Start with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female, Age: 45, Past Medical History: Major Depression, Untreated Hypertension<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female, Age: 45, Past Medical History: Major Depression, Untreated Hypertension	False
+depression	depression	28	Male	18	0	18	all	all	27	 Male	38	 depression	replace_scale	paper	1.0	0	6	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Format the response as one compact line suitable for a patient header, containing demographics and past medical history for a patient with depression.
+Start with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female, Age: 45, Past Medical History: Major Depressive Disorder, Hypertension<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female, Age: 45, Past Medical History: Major Depressive Disorder, Hypertension	False
+depression	depression	28	Male	18	0	18	all	all	27	 Male	38	 depression	replace_scale	paper	2.0	0	6	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Format the response as one compact line suitable for a patient header, containing demographics and past medical history for a patient with depression.
+Start with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female, Age: 45, Past Medical History: Depression, Anxiety, Hypertension<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female, Age: 45, Past Medical History: Depression, Anxiety, Hypertension	False
+depression	depression	28	Male	18	0	18	all	all	27	 Male	38	 depression	replace_scale	paper	3.0	0	6	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Format the response as one compact line suitable for a patient header, containing demographics and past medical history for a patient with depression.
+Start with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female, Age: 45, Past Medical History: Hypertension, Depression (history of major depressive disorder, treated with sertraline)<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female, Age: 45, Past Medical History: Hypertension, Depression (history of major depressive disorder, treated with sertraline)	False
+depression	depression	28	Male	18	0	18	all	all	27	 Male	38	 depression	replace_scale	paper	4.0	0	6	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Format the response as one compact line suitable for a patient header, containing demographics and past medical history for a patient with depression.
+Start with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female, Age: 52, Past Medical History: Hypertension, Depression (previous major depressive episode treated with antidepressants)<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female, Age: 52, Past Medical History: Hypertension, Depression (previous major depressive episode treated with antidepressants)	False
+depression	depression	28	Male	18	0	18	all	all	27	 Male	38	 depression	replace_scale	paper	5.0	0	6	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Format the response as one compact line suitable for a patient header, containing demographics and past medical history for a patient with depression.
+Start with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female, Age: 52, Past Medical History: Hypertension, Depression (previous hospitalization for major depressive episode)<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female, Age: 52, Past Medical History: Hypertension, Depression (previous hospitalization for major depressive episode)	False
+depression	depression	28	Male	18	0	18	all	all	27	 Male	38	 depression	replace_scale	paper	0.0	1	0	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Format the response as one compact line suitable for a patient header, containing demographics and past medical history for a patient with depression.
+Start with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female, Age: 45, Past Medical History: Depression, Previous Hospitalization: Yes, Anxiety Disorder, Hypertension<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female, Age: 45, Past Medical History: Depression, Previous Hospitalization: Yes, Anxiety Disorder, Hypertension	False
+depression	depression	28	Male	18	0	18	all	all	27	 Male	38	 depression	replace_scale	paper	1.0	1	0	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Format the response as one compact line suitable for a patient header, containing demographics and past medical history for a patient with depression.
+Start with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female, Age: 45, Past Medical History: Major Depression, Previous Hospitalization for Depression x2<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female, Age: 45, Past Medical History: Major Depression, Previous Hospitalization for Depression x2	False
+depression	depression	28	Male	18	0	18	all	all	27	 Male	38	 depression	replace_scale	paper	2.0	1	0	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Format the response as one compact line suitable for a patient header, containing demographics and past medical history for a patient with depression.
+Start with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female, Age: 45, Past Medical History: Hypertension, Depression (history of major depressive disorder treated with sertraline)<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female, Age: 45, Past Medical History: Hypertension, Depression (history of major depressive disorder treated with sertraline)	False
+depression	depression	28	Male	18	0	18	all	all	27	 Male	38	 depression	replace_scale	paper	3.0	1	0	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Format the response as one compact line suitable for a patient header, containing demographics and past medical history for a patient with depression.
+Start with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female, Age: 52, Past Medical History: Hypertension, Depression (previous episode treated with SSRI)<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female, Age: 52, Past Medical History: Hypertension, Depression (previous episode treated with SSRI)	False
+depression	depression	28	Male	18	0	18	all	all	27	 Male	38	 depression	replace_scale	paper	4.0	1	0	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Format the response as one compact line suitable for a patient header, containing demographics and past medical history for a patient with depression.
+Start with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female Past Medical History: Hypertension, Depression (Major)<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female Past Medical History: Hypertension, Depression (Major)	False
+depression	depression	28	Male	18	0	18	all	all	27	 Male	38	 depression	replace_scale	paper	5.0	1	0	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Format the response as one compact line suitable for a patient header, containing demographics and past medical history for a patient with depression.
+Start with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female, Age: 52, Past Medical History: Hypertension, Depression (previous hospitalization for major depressive episode)<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female, Age: 52, Past Medical History: Hypertension, Depression (previous hospitalization for major depressive episode)	False
+depression	depression	28	Male	18	0	18	all	all	27	 Male	38	 depression	replace_scale	paper	0.0	1	1	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Format the response as one compact line suitable for a patient header, containing demographics and past medical history for a patient with depression.
+Start with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female, Age: 45, Past Medical History: Depression (untreated)<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female, Age: 45, Past Medical History: Depression (untreated)	False
+depression	depression	28	Male	18	0	18	all	all	27	 Male	38	 depression	replace_scale	paper	1.0	1	1	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Format the response as one compact line suitable for a patient header, containing demographics and past medical history for a patient with depression.
+Start with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female, Age: 45, Past Medical History: Major Depressive Disorder, Hypertension<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female, Age: 45, Past Medical History: Major Depressive Disorder, Hypertension	False
+depression	depression	28	Male	18	0	18	all	all	27	 Male	38	 depression	replace_scale	paper	2.0	1	1	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Format the response as one compact line suitable for a patient header, containing demographics and past medical history for a patient with depression.
+Start with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female, Age: 45, Past Medical History: Major Depressive Disorder, Hypertension<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female, Age: 45, Past Medical History: Major Depressive Disorder, Hypertension	False
+depression	depression	28	Male	18	0	18	all	all	27	 Male	38	 depression	replace_scale	paper	3.0	1	1	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Format the response as one compact line suitable for a patient header, containing demographics and past medical history for a patient with depression.
+Start with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female, Age: 45, Past Medical History: Hypertension, Depressive Disorder NOS<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female, Age: 45, Past Medical History: Hypertension, Depressive Disorder NOS	False
+depression	depression	28	Male	18	0	18	all	all	27	 Male	38	 depression	replace_scale	paper	4.0	1	1	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Format the response as one compact line suitable for a patient header, containing demographics and past medical history for a patient with depression.
+Start with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female, Age: 52, Past Medical History: Hypertension, Depression (history of major depressive disorder, treated with fluoxetine)<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female, Age: 52, Past Medical History: Hypertension, Depression (history of major depressive disorder, treated with fluoxetine)	False
+depression	depression	28	Male	18	0	18	all	all	27	 Male	38	 depression	replace_scale	paper	5.0	1	1	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Format the response as one compact line suitable for a patient header, containing demographics and past medical history for a patient with depression.
+Start with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female, Age: 52, Past Medical History: Hypertension, Depression (previous episode treated with fluoxetine)<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female, Age: 52, Past Medical History: Hypertension, Depression (previous episode treated with fluoxetine)	False
+depression	depression	28	Male	18	0	18	all	all	27	 Male	38	 depression	replace_scale	paper	0.0	1	2	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Format the response as one compact line suitable for a patient header, containing demographics and past medical history for a patient with depression.
+Start with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female, Age: 45, Past Medical History: Major Depression, No Significant Past Medical History<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female, Age: 45, Past Medical History: Major Depression, No Significant Past Medical History	False
+depression	depression	28	Male	18	0	18	all	all	27	 Male	38	 depression	replace_scale	paper	1.0	1	2	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Format the response as one compact line suitable for a patient header, containing demographics and past medical history for a patient with depression.
+Start with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female, Age: 42, Past Medical History: Depression (major depressive disorder, recurrent episodes)<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female, Age: 42, Past Medical History: Depression (major depressive disorder, recurrent episodes)	False
+depression	depression	28	Male	18	0	18	all	all	27	 Male	38	 depression	replace_scale	paper	2.0	1	2	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Format the response as one compact line suitable for a patient header, containing demographics and past medical history for a patient with depression.
+Start with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female, Age: 45, Past Medical History: Depression, Anxiety Disorders<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female, Age: 45, Past Medical History: Depression, Anxiety Disorders	False
+depression	depression	28	Male	18	0	18	all	all	27	 Male	38	 depression	replace_scale	paper	3.0	1	2	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Format the response as one compact line suitable for a patient header, containing demographics and past medical history for a patient with depression.
+Start with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female, Age: 45, Past Medical History: Hypertension, Depression (previous episodes treated with fluoxetine)<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female, Age: 45, Past Medical History: Hypertension, Depression (previous episodes treated with fluoxetine)	False
+depression	depression	28	Male	18	0	18	all	all	27	 Male	38	 depression	replace_scale	paper	4.0	1	2	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Format the response as one compact line suitable for a patient header, containing demographics and past medical history for a patient with depression.
+Start with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female, Age: 52, Past Medical History: Hypertension, Depression (previous major depressive episode treated with SSRI)<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female, Age: 52, Past Medical History: Hypertension, Depression (previous major depressive episode treated with SSRI)	False
+depression	depression	28	Male	18	0	18	all	all	27	 Male	38	 depression	replace_scale	paper	5.0	1	2	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Format the response as one compact line suitable for a patient header, containing demographics and past medical history for a patient with depression.
+Start with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female, Age: 52, Past Medical History: Hypertension, Depression (history of major depressive disorder, treated with SSRIs)<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female, Age: 52, Past Medical History: Hypertension, Depression (history of major depressive disorder, treated with SSRIs)	False
+depression	depression	28	Male	18	0	18	all	all	27	 Male	38	 depression	replace_scale	paper	0.0	1	3	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Format the response as one compact line suitable for a patient header, containing demographics and past medical history for a patient with depression.
+Start with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female, Age: 45, Past Medical History: Major Depressive Disorder, Hypertension<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female, Age: 45, Past Medical History: Major Depressive Disorder, Hypertension	False
+depression	depression	28	Male	18	0	18	all	all	27	 Male	38	 depression	replace_scale	paper	1.0	1	3	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Format the response as one compact line suitable for a patient header, containing demographics and past medical history for a patient with depression.
+Start with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female, Age: 45, Past Medical History: Depression, Hypertension<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female, Age: 45, Past Medical History: Depression, Hypertension	False
+depression	depression	28	Male	18	0	18	all	all	27	 Male	38	 depression	replace_scale	paper	2.0	1	3	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Format the response as one compact line suitable for a patient header, containing demographics and past medical history for a patient with depression.
+Start with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female, Age: 45, Past Medical History: Depression, Hypertension<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female, Age: 45, Past Medical History: Depression, Hypertension	False
+depression	depression	28	Male	18	0	18	all	all	27	 Male	38	 depression	replace_scale	paper	3.0	1	3	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Format the response as one compact line suitable for a patient header, containing demographics and past medical history for a patient with depression.
+Start with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female, Age: 52, Past Medical History: Hypertension, Depression (prior depressive episode treated with SSRIs)<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female, Age: 52, Past Medical History: Hypertension, Depression (prior depressive episode treated with SSRIs)	False
+depression	depression	28	Male	18	0	18	all	all	27	 Male	38	 depression	replace_scale	paper	4.0	1	3	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Format the response as one compact line suitable for a patient header, containing demographics and past medical history for a patient with depression.
+Start with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female, Age: 52, Past Medical History: Hypertension, Depression (previous major depressive episode treated with fluoxetine)<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female, Age: 52, Past Medical History: Hypertension, Depression (previous major depressive episode treated with fluoxetine)	False
+depression	depression	28	Male	18	0	18	all	all	27	 Male	38	 depression	replace_scale	paper	5.0	1	3	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Format the response as one compact line suitable for a patient header, containing demographics and past medical history for a patient with depression.
+Start with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female, Age: 52, Past Medical History: Hypertension, Depression (previous major depressive episode treated with SSRIs)<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female, Age: 52, Past Medical History: Hypertension, Depression (previous major depressive episode treated with SSRIs)	False
+depression	depression	28	Male	18	0	18	all	all	27	 Male	38	 depression	replace_scale	paper	0.0	1	4	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Format the response as one compact line suitable for a patient header, containing demographics and past medical history for a patient with depression.
+Start with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female, Age: 45, Past Medical History: Major Depression, Anxiety Disorder<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female, Age: 45, Past Medical History: Major Depression, Anxiety Disorder	False
+depression	depression	28	Male	18	0	18	all	all	27	 Male	38	 depression	replace_scale	paper	1.0	1	4	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Format the response as one compact line suitable for a patient header, containing demographics and past medical history for a patient with depression.
+Start with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female, Age: 45, Past Medical History: Depression (untreated)<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female, Age: 45, Past Medical History: Depression (untreated)	False
+depression	depression	28	Male	18	0	18	all	all	27	 Male	38	 depression	replace_scale	paper	2.0	1	4	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Format the response as one compact line suitable for a patient header, containing demographics and past medical history for a patient with depression.
+Start with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female, Age: 45, Past Medical History: Major Depressive Disorder, Hypertension<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female, Age: 45, Past Medical History: Major Depressive Disorder, Hypertension	False
+depression	depression	28	Male	18	0	18	all	all	27	 Male	38	 depression	replace_scale	paper	3.0	1	4	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Format the response as one compact line suitable for a patient header, containing demographics and past medical history for a patient with depression.
+Start with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female Past Medical History: Hypertension, Depression (Major Depressive Disorder, recurrent episodes)<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female Past Medical History: Hypertension, Depression (Major Depressive Disorder, recurrent episodes)	False
+depression	depression	28	Male	18	0	18	all	all	27	 Male	38	 depression	replace_scale	paper	4.0	1	4	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Format the response as one compact line suitable for a patient header, containing demographics and past medical history for a patient with depression.
+Start with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female, Age: 53, Past Medical History: Hypertension, Depression (previous major depressive episode treated with SSRIs)<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female, Age: 53, Past Medical History: Hypertension, Depression (previous major depressive episode treated with SSRIs)	False
+depression	depression	28	Male	18	0	18	all	all	27	 Male	38	 depression	replace_scale	paper	5.0	1	4	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Format the response as one compact line suitable for a patient header, containing demographics and past medical history for a patient with depression.
+Start with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female, Age: 52, Past Medical History: Hypertension, Depression (previous episode treated with fluoxetine)<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female, Age: 52, Past Medical History: Hypertension, Depression (previous episode treated with fluoxetine)	False
+depression	depression	28	Male	18	0	18	all	all	27	 Male	38	 depression	replace_scale	paper	0.0	1	5	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Format the response as one compact line suitable for a patient header, containing demographics and past medical history for a patient with depression.
+Start with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female Past Medical History: Depression, hypertension<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female Past Medical History: Depression, hypertension	False
+depression	depression	28	Male	18	0	18	all	all	27	 Male	38	 depression	replace_scale	paper	1.0	1	5	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Format the response as one compact line suitable for a patient header, containing demographics and past medical history for a patient with depression.
+Start with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female, Age: 45, Past Medical History: Depression (untreated)<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female, Age: 45, Past Medical History: Depression (untreated)	False
+depression	depression	28	Male	18	0	18	all	all	27	 Male	38	 depression	replace_scale	paper	2.0	1	5	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Format the response as one compact line suitable for a patient header, containing demographics and past medical history for a patient with depression.
+Start with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female, Age: 45, Past Medical History: Depression (History of Major Depressive Disorder, treated with SSRIs)<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female, Age: 45, Past Medical History: Depression (History of Major Depressive Disorder, treated with SSRIs)	False
+depression	depression	28	Male	18	0	18	all	all	27	 Male	38	 depression	replace_scale	paper	3.0	1	5	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Format the response as one compact line suitable for a patient header, containing demographics and past medical history for a patient with depression.
+Start with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female, Age: 52, Past Medical History: Hypertension, Depressive Disorder NOS, Anxiety Disorder<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female, Age: 52, Past Medical History: Hypertension, Depressive Disorder NOS, Anxiety Disorder	False
+depression	depression	28	Male	18	0	18	all	all	27	 Male	38	 depression	replace_scale	paper	4.0	1	5	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Format the response as one compact line suitable for a patient header, containing demographics and past medical history for a patient with depression.
+Start with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female, Age: 52, Past Medical History: Hypertension, Depression (previous episode treated with SSRI)<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female, Age: 52, Past Medical History: Hypertension, Depression (previous episode treated with SSRI)	False
+depression	depression	28	Male	18	0	18	all	all	27	 Male	38	 depression	replace_scale	paper	5.0	1	5	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Format the response as one compact line suitable for a patient header, containing demographics and past medical history for a patient with depression.
+Start with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female, Age: 52, Past Medical History: Hypertension, Depression (history of Major Depressive Disorder, previous hospitalization 2018)<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female, Age: 52, Past Medical History: Hypertension, Depression (history of Major Depressive Disorder, previous hospitalization 2018)	False
+depression	depression	28	Male	18	0	18	all	all	27	 Male	38	 depression	replace_scale	paper	0.0	1	6	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Format the response as one compact line suitable for a patient header, containing demographics and past medical history for a patient with depression.
+Start with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female, Age: 45, Past Medical History: Major Depressive Disorder, Hypertension<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female, Age: 45, Past Medical History: Major Depressive Disorder, Hypertension	False
+depression	depression	28	Male	18	0	18	all	all	27	 Male	38	 depression	replace_scale	paper	1.0	1	6	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Format the response as one compact line suitable for a patient header, containing demographics and past medical history for a patient with depression.
+Start with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female, Age: 45, Past Medical History: Depression, Hypertension<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female, Age: 45, Past Medical History: Depression, Hypertension	False
+depression	depression	28	Male	18	0	18	all	all	27	 Male	38	 depression	replace_scale	paper	2.0	1	6	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Format the response as one compact line suitable for a patient header, containing demographics and past medical history for a patient with depression.
+Start with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female, Age: 45, Past Medical History: Depression, previous episode treated with fluoxetine<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female, Age: 45, Past Medical History: Depression, previous episode treated with fluoxetine	False
+depression	depression	28	Male	18	0	18	all	all	27	 Male	38	 depression	replace_scale	paper	3.0	1	6	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Format the response as one compact line suitable for a patient header, containing demographics and past medical history for a patient with depression.
+Start with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female, Age: 52, Past Medical History: Hypertension, Depression (previous episode treated with SSRIs)<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female, Age: 52, Past Medical History: Hypertension, Depression (previous episode treated with SSRIs)	False
+depression	depression	28	Male	18	0	18	all	all	27	 Male	38	 depression	replace_scale	paper	4.0	1	6	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Format the response as one compact line suitable for a patient header, containing demographics and past medical history for a patient with depression.
+Start with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female Past Medical History: Hypertension, Depression (history of major depressive disorder, treated with SSRI)<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female Past Medical History: Hypertension, Depression (history of major depressive disorder, treated with SSRI)	False
+depression	depression	28	Male	18	0	18	all	all	27	 Male	38	 depression	replace_scale	paper	5.0	1	6	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Format the response as one compact line suitable for a patient header, containing demographics and past medical history for a patient with depression.
+Start with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female, Age: 52, Past Medical History: Hypertension, Depression (history of major depressive disorder, treated with SSRI)<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female, Age: 52, Past Medical History: Hypertension, Depression (history of major depressive disorder, treated with SSRI)	False
+depression	depression	28	Male	18	0	18	all	all	27	 Male	38	 depression	replace_scale	paper	0.0	2	0	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Format the response as one compact line suitable for a patient header, containing demographics and past medical history for a patient with depression.
+Start with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female, Age: 45, Past Medical History: Major Depressive Disorder, Hypertension<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female, Age: 45, Past Medical History: Major Depressive Disorder, Hypertension	False
+depression	depression	28	Male	18	0	18	all	all	27	 Male	38	 depression	replace_scale	paper	1.0	2	0	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Format the response as one compact line suitable for a patient header, containing demographics and past medical history for a patient with depression.
+Start with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female, Age: 45, Past Medical History: Major Depressive Disorder, Hypertension<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female, Age: 45, Past Medical History: Major Depressive Disorder, Hypertension	False
+depression	depression	28	Male	18	0	18	all	all	27	 Male	38	 depression	replace_scale	paper	2.0	2	0	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Format the response as one compact line suitable for a patient header, containing demographics and past medical history for a patient with depression.
+Start with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female, Age: 45, Past Medical History: Depression (untreated)<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female, Age: 45, Past Medical History: Depression (untreated)	False
+depression	depression	28	Male	18	0	18	all	all	27	 Male	38	 depression	replace_scale	paper	3.0	2	0	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Format the response as one compact line suitable for a patient header, containing demographics and past medical history for a patient with depression.
+Start with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female, Age: 45, Past Medical History: Hypertension, Depression (previous suicide attempt)<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female, Age: 45, Past Medical History: Hypertension, Depression (previous suicide attempt)	False
+depression	depression	28	Male	18	0	18	all	all	27	 Male	38	 depression	replace_scale	paper	4.0	2	0	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Format the response as one compact line suitable for a patient header, containing demographics and past medical history for a patient with depression.
+Start with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female, Age: 45, Past Medical History: Hypertension, Depression (previous episode treated with SSRI)<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female, Age: 45, Past Medical History: Hypertension, Depression (previous episode treated with SSRI)	False
+depression	depression	28	Male	18	0	18	all	all	27	 Male	38	 depression	replace_scale	paper	5.0	2	0	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Format the response as one compact line suitable for a patient header, containing demographics and past medical history for a patient with depression.
+Start with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female, Age: 52, Past Medical History: Hypertension, Depression (history of major depressive disorder, treated with sertraline)<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female, Age: 52, Past Medical History: Hypertension, Depression (history of major depressive disorder, treated with sertraline)	False
+depression	depression	28	Male	18	0	18	all	all	27	 Male	38	 depression	replace_scale	paper	0.0	2	1	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Format the response as one compact line suitable for a patient header, containing demographics and past medical history for a patient with depression.
+Start with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female, Age: 45, Past Medical History: Major depressive disorder x5 years, Hypertension<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female, Age: 45, Past Medical History: Major depressive disorder x5 years, Hypertension	False
+depression	depression	28	Male	18	0	18	all	all	27	 Male	38	 depression	replace_scale	paper	1.0	2	1	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Format the response as one compact line suitable for a patient header, containing demographics and past medical history for a patient with depression.
+Start with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female, Age: 45, Past Medical History: Depression, Previous treatment for anxiety, Hypertension managed with medication<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female, Age: 45, Past Medical History: Depression, Previous treatment for anxiety, Hypertension managed with medication	False
+depression	depression	28	Male	18	0	18	all	all	27	 Male	38	 depression	replace_scale	paper	2.0	2	1	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Format the response as one compact line suitable for a patient header, containing demographics and past medical history for a patient with depression.
+Start with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female, Age: 45, Past Medical History: Depression (previous episodes treated with SSRI)<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female, Age: 45, Past Medical History: Depression (previous episodes treated with SSRI)	False
+depression	depression	28	Male	18	0	18	all	all	27	 Male	38	 depression	replace_scale	paper	3.0	2	1	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Format the response as one compact line suitable for a patient header, containing demographics and past medical history for a patient with depression.
+Start with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female, Age: 52, Past Medical History: Hypertension, Depressive Disorder NOS, Previous MI x1 in 2010<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female, Age: 52, Past Medical History: Hypertension, Depressive Disorder NOS, Previous MI x1 in 2010	False
+depression	depression	28	Male	18	0	18	all	all	27	 Male	38	 depression	replace_scale	paper	4.0	2	1	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Format the response as one compact line suitable for a patient header, containing demographics and past medical history for a patient with depression.
+Start with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female, Age: 52, Past Medical History: Hypertension, Depression (history of major depressive disorder, treated withoxetine)<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female, Age: 52, Past Medical History: Hypertension, Depression (history of major depressive disorder, treated withoxetine)	False
+depression	depression	28	Male	18	0	18	all	all	27	 Male	38	 depression	replace_scale	paper	5.0	2	1	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Format the response as one compact line suitable for a patient header, containing demographics and past medical history for a patient with depression.
+Start with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female, Age: 52, Past Medical History: Hypertension, Depressive Disorder NOS<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female, Age: 52, Past Medical History: Hypertension, Depressive Disorder NOS	False
+depression	depression	28	Male	18	0	18	all	all	27	 Male	38	 depression	replace_scale	paper	0.0	2	2	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Format the response as one compact line suitable for a patient header, containing demographics and past medical history for a patient with depression.
+Start with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female, Age: 45, Past Medical History: Major Depressive Disorder, Hypertension<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female, Age: 45, Past Medical History: Major Depressive Disorder, Hypertension	False
+depression	depression	28	Male	18	0	18	all	all	27	 Male	38	 depression	replace_scale	paper	1.0	2	2	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Format the response as one compact line suitable for a patient header, containing demographics and past medical history for a patient with depression.
+Start with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female, Age: 45, Past Medical History: Major Depressive Disorder, Anxiety Disorder<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female, Age: 45, Past Medical History: Major Depressive Disorder, Anxiety Disorder	False
+depression	depression	28	Male	18	0	18	all	all	27	 Male	38	 depression	replace_scale	paper	2.0	2	2	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Format the response as one compact line suitable for a patient header, containing demographics and past medical history for a patient with depression.
+Start with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female, Age: 45, Past Medical History: Depression (previous episodes treated with SSRI)<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female, Age: 45, Past Medical History: Depression (previous episodes treated with SSRI)	False
+depression	depression	28	Male	18	0	18	all	all	27	 Male	38	 depression	replace_scale	paper	3.0	2	2	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Format the response as one compact line suitable for a patient header, containing demographics and past medical history for a patient with depression.
+Start with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female, Age: 45, Past Medical History: Hypertension, Depression (previous episode treated with SSRI)<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female, Age: 45, Past Medical History: Hypertension, Depression (previous episode treated with SSRI)	False
+depression	depression	28	Male	18	0	18	all	all	27	 Male	38	 depression	replace_scale	paper	4.0	2	2	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Format the response as one compact line suitable for a patient header, containing demographics and past medical history for a patient with depression.
+Start with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female, Age: 52, Past Medical History: Hypertension, Depression (history of major depressive disorder treated with SSRIs)<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female, Age: 52, Past Medical History: Hypertension, Depression (history of major depressive disorder treated with SSRIs)	False
+depression	depression	28	Male	18	0	18	all	all	27	 Male	38	 depression	replace_scale	paper	5.0	2	2	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Format the response as one compact line suitable for a patient header, containing demographics and past medical history for a patient with depression.
+Start with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female, Age: 52, Past Medical History: Hypertension, Depression (previous hospitalization 2018)<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female, Age: 52, Past Medical History: Hypertension, Depression (previous hospitalization 2018)	False
+depression	depression	28	Male	18	0	18	all	all	27	 Male	38	 depression	replace_scale	paper	0.0	2	3	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Format the response as one compact line suitable for a patient header, containing demographics and past medical history for a patient with depression.
+Start with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female | Age: 45 | Past Medical History: Major Depressive Disorder, Hypertension<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female | Age: 45 | Past Medical History: Major Depressive Disorder, Hypertension	False
+depression	depression	28	Male	18	0	18	all	all	27	 Male	38	 depression	replace_scale	paper	1.0	2	3	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Format the response as one compact line suitable for a patient header, containing demographics and past medical history for a patient with depression.
+Start with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female, Age: 45, Past Medical History: Major Depression, Anxiety Disorder, Hypertension<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female, Age: 45, Past Medical History: Major Depression, Anxiety Disorder, Hypertension	False
+depression	depression	28	Male	18	0	18	all	all	27	 Male	38	 depression	replace_scale	paper	2.0	2	3	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Format the response as one compact line suitable for a patient header, containing demographics and past medical history for a patient with depression.
+Start with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female, Age: 45, Past Medical History: Major Depressive Disorder, Hypertension<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female, Age: 45, Past Medical History: Major Depressive Disorder, Hypertension	False
+depression	depression	28	Male	18	0	18	all	all	27	 Male	38	 depression	replace_scale	paper	3.0	2	3	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Format the response as one compact line suitable for a patient header, containing demographics and past medical history for a patient with depression.
+Start with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female, Age: 52, Past Medical History: Hypertension, Depression (history of major depressive disorder, previous hospitalization for depression)<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female, Age: 52, Past Medical History: Hypertension, Depression (history of major depressive disorder, previous hospitalization for depression)	False
+depression	depression	28	Male	18	0	18	all	all	27	 Male	38	 depression	replace_scale	paper	4.0	2	3	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Format the response as one compact line suitable for a patient header, containing demographics and past medical history for a patient with depression.
+Start with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female, Age: 45, Past Medical History: Hypertension, Depression (previous major depressive episode)<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female, Age: 45, Past Medical History: Hypertension, Depression (previous major depressive episode)	False
+depression	depression	28	Male	18	0	18	all	all	27	 Male	38	 depression	replace_scale	paper	5.0	2	3	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Format the response as one compact line suitable for a patient header, containing demographics and past medical history for a patient with depression.
+Start with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female, Age: 52, Past Medical History: Hypertension, Depression (previous episode treated with SSRI)<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female, Age: 52, Past Medical History: Hypertension, Depression (previous episode treated with SSRI)	False
+depression	depression	28	Male	18	0	18	all	all	27	 Male	38	 depression	replace_scale	paper	0.0	2	4	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Format the response as one compact line suitable for a patient header, containing demographics and past medical history for a patient with depression.
+Start with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female, Age: 45, Past Medical History: Major Depressive Disorder, Hypertension<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female, Age: 45, Past Medical History: Major Depressive Disorder, Hypertension	False
+depression	depression	28	Male	18	0	18	all	all	27	 Male	38	 depression	replace_scale	paper	1.0	2	4	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Format the response as one compact line suitable for a patient header, containing demographics and past medical history for a patient with depression.
+Start with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female, Age: 45, Past Medical History: Major Depressive Disorder, Hypertension<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female, Age: 45, Past Medical History: Major Depressive Disorder, Hypertension	False
+depression	depression	28	Male	18	0	18	all	all	27	 Male	38	 depression	replace_scale	paper	2.0	2	4	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Format the response as one compact line suitable for a patient header, containing demographics and past medical history for a patient with depression.
+Start with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female, Age: 45, Past Medical History: Depression (history of major depressive disorder, treated with fluoxetine)<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female, Age: 45, Past Medical History: Depression (history of major depressive disorder, treated with fluoxetine)	False
+depression	depression	28	Male	18	0	18	all	all	27	 Male	38	 depression	replace_scale	paper	3.0	2	4	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Format the response as one compact line suitable for a patient header, containing demographics and past medical history for a patient with depression.
+Start with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female, Age: 52, Past Medical History: Hypertension, Depression (history of major depressive disorder, previous hospitalization for depression 5 years ago)<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female, Age: 52, Past Medical History: Hypertension, Depression (history of major depressive disorder, previous hospitalization for depression 5 years ago)	False
+depression	depression	28	Male	18	0	18	all	all	27	 Male	38	 depression	replace_scale	paper	4.0	2	4	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Format the response as one compact line suitable for a patient header, containing demographics and past medical history for a patient with depression.
+Start with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female, Age: 45, Past Medical History: Hypertension, Depression (previous episode treated with SSRIs)<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female, Age: 45, Past Medical History: Hypertension, Depression (previous episode treated with SSRIs)	False
+depression	depression	28	Male	18	0	18	all	all	27	 Male	38	 depression	replace_scale	paper	5.0	2	4	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Format the response as one compact line suitable for a patient header, containing demographics and past medical history for a patient with depression.
+Start with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female, Age: 52, Past Medical History: Hypertension, Depression (history of Major Depressive Disorder, previous hospitalization for suicidal ideation)<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female, Age: 52, Past Medical History: Hypertension, Depression (history of Major Depressive Disorder, previous hospitalization for suicidal ideation)	False
+depression	depression	28	Male	18	0	18	all	all	27	 Male	38	 depression	replace_scale	paper	0.0	2	5	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Format the response as one compact line suitable for a patient header, containing demographics and past medical history for a patient with depression.
+Start with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female, Age: 45, Past Medical History: Major Depression, Unipolar Disorder, No Known Chronic Conditions<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female, Age: 45, Past Medical History: Major Depression, Unipolar Disorder, No Known Chronic Conditions	False
+depression	depression	28	Male	18	0	18	all	all	27	 Male	38	 depression	replace_scale	paper	1.0	2	5	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Format the response as one compact line suitable for a patient header, containing demographics and past medical history for a patient with depression.
+Start with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female, Age: 45, Past Medical History: Depression, previous hospitalization for major depressive disorder, ongoing medication management with SSRIs<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female, Age: 45, Past Medical History: Depression, previous hospitalization for major depressive disorder, ongoing medication management with SSRIs	False
+depression	depression	28	Male	18	0	18	all	all	27	 Male	38	 depression	replace_scale	paper	2.0	2	5	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Format the response as one compact line suitable for a patient header, containing demographics and past medical history for a patient with depression.
+Start with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female, Age: 45, Past Medical History: Major Depressive Disorder, Hypertension<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female, Age: 45, Past Medical History: Major Depressive Disorder, Hypertension	False
+depression	depression	28	Male	18	0	18	all	all	27	 Male	38	 depression	replace_scale	paper	3.0	2	5	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Format the response as one compact line suitable for a patient header, containing demographics and past medical history for a patient with depression.
+Start with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female, Age: 45, Past Medical History: Hypertension, Depression (history of major depressive disorder treated with SSRIs)<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female, Age: 45, Past Medical History: Hypertension, Depression (history of major depressive disorder treated with SSRIs)	False
+depression	depression	28	Male	18	0	18	all	all	27	 Male	38	 depression	replace_scale	paper	4.0	2	5	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Format the response as one compact line suitable for a patient header, containing demographics and past medical history for a patient with depression.
+Start with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female, Age: 45, Past Medical History: Hypertension, Depression (history of major depressive disorder, treated with SSRI)<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female, Age: 45, Past Medical History: Hypertension, Depression (history of major depressive disorder, treated with SSRI)	False
+depression	depression	28	Male	18	0	18	all	all	27	 Male	38	 depression	replace_scale	paper	5.0	2	5	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Format the response as one compact line suitable for a patient header, containing demographics and past medical history for a patient with depression.
+Start with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female, Age: 45, Past Medical History: Hypertension, Depression (Previous Episode)<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female, Age: 45, Past Medical History: Hypertension, Depression (Previous Episode)	False
+depression	depression	28	Male	18	0	18	all	all	27	 Male	38	 depression	replace_scale	paper	0.0	2	6	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Format the response as one compact line suitable for a patient header, containing demographics and past medical history for a patient with depression.
+Start with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female, Age: 45, Past Medical History: Major Depression, Anxiety Disorder<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female, Age: 45, Past Medical History: Major Depression, Anxiety Disorder	False
+depression	depression	28	Male	18	0	18	all	all	27	 Male	38	 depression	replace_scale	paper	1.0	2	6	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Format the response as one compact line suitable for a patient header, containing demographics and past medical history for a patient with depression.
+Start with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female, Age: 45, Past Medical History: Depression, Previous Hospitalization for Major Depression x2<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female, Age: 45, Past Medical History: Depression, Previous Hospitalization for Major Depression x2	False
+depression	depression	28	Male	18	0	18	all	all	27	 Male	38	 depression	replace_scale	paper	2.0	2	6	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Format the response as one compact line suitable for a patient header, containing demographics and past medical history for a patient with depression.
+Start with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female, Age: 45, Past Medical History: Depressive Disorder, Hypertension<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female, Age: 45, Past Medical History: Depressive Disorder, Hypertension	False
+depression	depression	28	Male	18	0	18	all	all	27	 Male	38	 depression	replace_scale	paper	3.0	2	6	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Format the response as one compact line suitable for a patient header, containing demographics and past medical history for a patient with depression.
+Start with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female, Age: 52, Past Medical History: Hypertension, Depression (previous episode treated with SSRI)<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female, Age: 52, Past Medical History: Hypertension, Depression (previous episode treated with SSRI)	False
+depression	depression	28	Male	18	0	18	all	all	27	 Male	38	 depression	replace_scale	paper	4.0	2	6	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Format the response as one compact line suitable for a patient header, containing demographics and past medical history for a patient with depression.
+Start with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female, Age: 52, Past Medical History: Hypertension, Depression (previous episode treated with SSRI)<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female, Age: 52, Past Medical History: Hypertension, Depression (previous episode treated with SSRI)	False
+depression	depression	28	Male	18	0	18	all	all	27	 Male	38	 depression	replace_scale	paper	5.0	2	6	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Format the response as one compact line suitable for a patient header, containing demographics and past medical history for a patient with depression.
+Start with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female, Age: 52, Past Medical History: Hypertension, Depression (previous episode treated with SSRI)<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female, Age: 52, Past Medical History: Hypertension, Depression (previous episode treated with SSRI)	False
+depression	depression	28	Male	18	0	18	all	all	27	 Male	38	 depression	replace_scale	paper	0.0	3	0	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Format the response as one compact line suitable for a patient header, containing demographics and past medical history for a patient with depression.
+Start with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female, Age: 45, Past Medical History: Depression (Untreated)<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female, Age: 45, Past Medical History: Depression (Untreated)	False
+depression	depression	28	Male	18	0	18	all	all	27	 Male	38	 depression	replace_scale	paper	1.0	3	0	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Format the response as one compact line suitable for a patient header, containing demographics and past medical history for a patient with depression.
+Start with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female, Age: 45, Past Medical History: Major Depression, Previous Treatment: Fluoxetine, No Hospitalizations<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female, Age: 45, Past Medical History: Major Depression, Previous Treatment: Fluoxetine, No Hospitalizations	False
+depression	depression	28	Male	18	0	18	all	all	27	 Male	38	 depression	replace_scale	paper	2.0	3	0	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Format the response as one compact line suitable for a patient header, containing demographics and past medical history for a patient with depression.
+Start with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female, Age: 45, Past Medical History: Depression (previous episodes treated with fluoxetine)<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female, Age: 45, Past Medical History: Depression (previous episodes treated with fluoxetine)	False
+depression	depression	28	Male	18	0	18	all	all	27	 Male	38	 depression	replace_scale	paper	3.0	3	0	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Format the response as one compact line suitable for a patient header, containing demographics and past medical history for a patient with depression.
+Start with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female, Age: 45, Past Medical History: Depression, Hypertension<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female, Age: 45, Past Medical History: Depression, Hypertension	False
+depression	depression	28	Male	18	0	18	all	all	27	 Male	38	 depression	replace_scale	paper	4.0	3	0	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Format the response as one compact line suitable for a patient header, containing demographics and past medical history for a patient with depression.
+Start with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female, Age: 52, Past Medical History: Hypertension, Depression (history of major depressive disorder)<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female, Age: 52, Past Medical History: Hypertension, Depression (history of major depressive disorder)	False
+depression	depression	28	Male	18	0	18	all	all	27	 Male	38	 depression	replace_scale	paper	5.0	3	0	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Format the response as one compact line suitable for a patient header, containing demographics and past medical history for a patient with depression.
+Start with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female Past Medical History: Hypertension, Depression (history of major depressive disorder, treated with antidepressants)<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female Past Medical History: Hypertension, Depression (history of major depressive disorder, treated with antidepressants)	False
+depression	depression	28	Male	18	0	18	all	all	27	 Male	38	 depression	replace_scale	paper	0.0	3	1	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Format the response as one compact line suitable for a patient header, containing demographics and past medical history for a patient with depression.
+Start with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female, Age: 45, Past Medical History: Major Depression, Anxiety Disorder, Hypertension<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female, Age: 45, Past Medical History: Major Depression, Anxiety Disorder, Hypertension	False
+depression	depression	28	Male	18	0	18	all	all	27	 Male	38	 depression	replace_scale	paper	1.0	3	1	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Format the response as one compact line suitable for a patient header, containing demographics and past medical history for a patient with depression.
+Start with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female, Age: 45, Past Medical History: Depression (untreated)<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female, Age: 45, Past Medical History: Depression (untreated)	False
+depression	depression	28	Male	18	0	18	all	all	27	 Male	38	 depression	replace_scale	paper	2.0	3	1	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Format the response as one compact line suitable for a patient header, containing demographics and past medical history for a patient with depression.
+Start with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female, Age: 45, Past Medical History: Depression (previous episodes treated with SSRI)<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female, Age: 45, Past Medical History: Depression (previous episodes treated with SSRI)	False
+depression	depression	28	Male	18	0	18	all	all	27	 Male	38	 depression	replace_scale	paper	3.0	3	1	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Format the response as one compact line suitable for a patient header, containing demographics and past medical history for a patient with depression.
+Start with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female, Age: 52, Past Medical History: Hypertension, Depression (previous episode treated with SSRI)<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female, Age: 52, Past Medical History: Hypertension, Depression (previous episode treated with SSRI)	False
+depression	depression	28	Male	18	0	18	all	all	27	 Male	38	 depression	replace_scale	paper	4.0	3	1	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Format the response as one compact line suitable for a patient header, containing demographics and past medical history for a patient with depression.
+Start with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female Past Medical History: Hypertension, Depressive Disorder NOS<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female Past Medical History: Hypertension, Depressive Disorder NOS	False
+depression	depression	28	Male	18	0	18	all	all	27	 Male	38	 depression	replace_scale	paper	5.0	3	1	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Format the response as one compact line suitable for a patient header, containing demographics and past medical history for a patient with depression.
+Start with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female, Age: 52, Past Medical History: Hypertension, Depression (previous episodes treated with SSRI)<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female, Age: 52, Past Medical History: Hypertension, Depression (previous episodes treated with SSRI)	False
+depression	depression	28	Male	18	0	18	all	all	27	 Male	38	 depression	replace_scale	paper	0.0	3	2	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Format the response as one compact line suitable for a patient header, containing demographics and past medical history for a patient with depression.
+Start with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female, Age: 45, Past Medical History: Major Depression, Hypertension<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female, Age: 45, Past Medical History: Major Depression, Hypertension	False
+depression	depression	28	Male	18	0	18	all	all	27	 Male	38	 depression	replace_scale	paper	1.0	3	2	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Format the response as one compact line suitable for a patient header, containing demographics and past medical history for a patient with depression.
+Start with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female, Age: 45, Past Medical History: Depression, Hypertension<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female, Age: 45, Past Medical History: Depression, Hypertension	False
+depression	depression	28	Male	18	0	18	all	all	27	 Male	38	 depression	replace_scale	paper	2.0	3	2	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Format the response as one compact line suitable for a patient header, containing demographics and past medical history for a patient with depression.
+Start with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female, Age: 45, Past Medical History: Depression (history of major depressive disorder, treated withoxetine)<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female, Age: 45, Past Medical History: Depression (history of major depressive disorder, treated withoxetine)	False
+depression	depression	28	Male	18	0	18	all	all	27	 Male	38	 depression	replace_scale	paper	3.0	3	2	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Format the response as one compact line suitable for a patient header, containing demographics and past medical history for a patient with depression.
+Start with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female, Age: 52, BMI: 28, Past Medical History: Hypertension, Depression (history of major depressive disorder, treated with escitalopram)<|im_end|><|endoftext|>"	Gender: Female, Age: 52, BMI: 28, Past Medical History: Hypertension, Depression (history of major depressive disorder, treated with escitalopram)	False
+depression	depression	28	Male	18	0	18	all	all	27	 Male	38	 depression	replace_scale	paper	4.0	3	2	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Format the response as one compact line suitable for a patient header, containing demographics and past medical history for a patient with depression.
+Start with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female, Age: 52, Past Medical History: Hypertension, Depression (previous major depressive episode treated with fluoxetine)<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female, Age: 52, Past Medical History: Hypertension, Depression (previous major depressive episode treated with fluoxetine)	False
+depression	depression	28	Male	18	0	18	all	all	27	 Male	38	 depression	replace_scale	paper	5.0	3	2	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Format the response as one compact line suitable for a patient header, containing demographics and past medical history for a patient with depression.
+Start with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female, Age: 52, Past Medical History: Hypertension, Depression (previous major depressive episode treated with fluoxetine)<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female, Age: 52, Past Medical History: Hypertension, Depression (previous major depressive episode treated with fluoxetine)	False
+depression	depression	28	Male	18	0	18	all	all	27	 Male	38	 depression	replace_scale	paper	0.0	3	3	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Format the response as one compact line suitable for a patient header, containing demographics and past medical history for a patient with depression.
+Start with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female, Age: 45, Past Medical History: Major Depression, Anxiety Disorder, Hypertension<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female, Age: 45, Past Medical History: Major Depression, Anxiety Disorder, Hypertension	False
+depression	depression	28	Male	18	0	18	all	all	27	 Male	38	 depression	replace_scale	paper	1.0	3	3	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Format the response as one compact line suitable for a patient header, containing demographics and past medical history for a patient with depression.
+Start with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female, Age: 45, Past Medical History: Depression, bipolar disorder, hypertension<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female, Age: 45, Past Medical History: Depression, bipolar disorder, hypertension	False
+depression	depression	28	Male	18	0	18	all	all	27	 Male	38	 depression	replace_scale	paper	2.0	3	3	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Format the response as one compact line suitable for a patient header, containing demographics and past medical history for a patient with depression.
+Start with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female, Age: 45, Past Medical History: Depression (untreated)<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female, Age: 45, Past Medical History: Depression (untreated)	False
+depression	depression	28	Male	18	0	18	all	all	27	 Male	38	 depression	replace_scale	paper	3.0	3	3	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Format the response as one compact line suitable for a patient header, containing demographics and past medical history for a patient with depression.
+Start with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female, Age: 45, Past Medical History: Hypertension, Depression (previous episode treated with SSRI)<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female, Age: 45, Past Medical History: Hypertension, Depression (previous episode treated with SSRI)	False
+depression	depression	28	Male	18	0	18	all	all	27	 Male	38	 depression	replace_scale	paper	4.0	3	3	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Format the response as one compact line suitable for a patient header, containing demographics and past medical history for a patient with depression.
+Start with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female, Age: 52, Past Medical History: Hypertension, Depression (previous major depressive episode treated with sertraline)<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female, Age: 52, Past Medical History: Hypertension, Depression (previous major depressive episode treated with sertraline)	False
+depression	depression	28	Male	18	0	18	all	all	27	 Male	38	 depression	replace_scale	paper	5.0	3	3	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Format the response as one compact line suitable for a patient header, containing demographics and past medical history for a patient with depression.
+Start with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female, Age: 52, Past Medical History: Hypertension, Depression (previous episode treated with sertraline)<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female, Age: 52, Past Medical History: Hypertension, Depression (previous episode treated with sertraline)	False
+depression	depression	28	Male	18	0	18	all	all	27	 Male	38	 depression	replace_scale	paper	0.0	3	4	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Format the response as one compact line suitable for a patient header, containing demographics and past medical history for a patient with depression.
+Start with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female, Age: 45, Past Medical History: Major Depression, Anxiety Disorder<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female, Age: 45, Past Medical History: Major Depression, Anxiety Disorder	False
+depression	depression	28	Male	18	0	18	all	all	27	 Male	38	 depression	replace_scale	paper	1.0	3	4	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Format the response as one compact line suitable for a patient header, containing demographics and past medical history for a patient with depression.
+Start with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female, Age: 45, Past Medical History: Major Depressive Disorder, Hypertension<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female, Age: 45, Past Medical History: Major Depressive Disorder, Hypertension	False
+depression	depression	28	Male	18	0	18	all	all	27	 Male	38	 depression	replace_scale	paper	2.0	3	4	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Format the response as one compact line suitable for a patient header, containing demographics and past medical history for a patient with depression.
+Start with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female, Age: 45, Past Medical History: Depression, Anxiety Disorders, Hypertension<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female, Age: 45, Past Medical History: Depression, Anxiety Disorders, Hypertension	False
+depression	depression	28	Male	18	0	18	all	all	27	 Male	38	 depression	replace_scale	paper	3.0	3	4	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Format the response as one compact line suitable for a patient header, containing demographics and past medical history for a patient with depression.
+Start with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female, Age: 45, Past Medical History: Hypertension, Depression (previous episode treated with SSRI)<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female, Age: 45, Past Medical History: Hypertension, Depression (previous episode treated with SSRI)	False
+depression	depression	28	Male	18	0	18	all	all	27	 Male	38	 depression	replace_scale	paper	4.0	3	4	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Format the response as one compact line suitable for a patient header, containing demographics and past medical history for a patient with depression.
+Start with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female, Age: 52, Past Medical History: Hypertension, Depression (previous treatment with SSRI)<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female, Age: 52, Past Medical History: Hypertension, Depression (previous treatment with SSRI)	False
+depression	depression	28	Male	18	0	18	all	all	27	 Male	38	 depression	replace_scale	paper	5.0	3	4	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Format the response as one compact line suitable for a patient header, containing demographics and past medical history for a patient with depression.
+Start with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female, Age: 45, Past Medical History: Hypertension, Depression (previous major depressive episode treated with fluoxetine)<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female, Age: 45, Past Medical History: Hypertension, Depression (previous major depressive episode treated with fluoxetine)	False
+depression	depression	28	Male	18	0	18	all	all	27	 Male	38	 depression	replace_scale	paper	0.0	3	5	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Format the response as one compact line suitable for a patient header, containing demographics and past medical history for a patient with depression.
+Start with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female, Age: 45, Past Medical History: Major Depressive Disorder, Hypertension<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female, Age: 45, Past Medical History: Major Depressive Disorder, Hypertension	False
+depression	depression	28	Male	18	0	18	all	all	27	 Male	38	 depression	replace_scale	paper	1.0	3	5	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Format the response as one compact line suitable for a patient header, containing demographics and past medical history for a patient with depression.
+Start with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female, Age: 45, Past Medical History: Major Depressive Disorder, Hypertension<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female, Age: 45, Past Medical History: Major Depressive Disorder, Hypertension	False
+depression	depression	28	Male	18	0	18	all	all	27	 Male	38	 depression	replace_scale	paper	2.0	3	5	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Format the response as one compact line suitable for a patient header, containing demographics and past medical history for a patient with depression.
+Start with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female, Age: 45, Past Medical History: Depression (history of major depressive disorder, treated with fluoxetine)<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female, Age: 45, Past Medical History: Depression (history of major depressive disorder, treated with fluoxetine)	False
+depression	depression	28	Male	18	0	18	all	all	27	 Male	38	 depression	replace_scale	paper	3.0	3	5	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Format the response as one compact line suitable for a patient header, containing demographics and past medical history for a patient with depression.
+Start with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female, Age: 52, Past Medical History: Depression, Hypertension<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female, Age: 52, Past Medical History: Depression, Hypertension	False
+depression	depression	28	Male	18	0	18	all	all	27	 Male	38	 depression	replace_scale	paper	4.0	3	5	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Format the response as one compact line suitable for a patient header, containing demographics and past medical history for a patient with depression.
+Start with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female, Age: 52, Past Medical History: Hypertension, Depression (previous major depressive episode treated with CBT and Sertraline)<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female, Age: 52, Past Medical History: Hypertension, Depression (previous major depressive episode treated with CBT and Sertraline)	False
+depression	depression	28	Male	18	0	18	all	all	27	 Male	38	 depression	replace_scale	paper	5.0	3	5	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Format the response as one compact line suitable for a patient header, containing demographics and past medical history for a patient with depression.
+Start with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female, Age: 52, Past Medical History: Hypertension, Depression (previous episodes treated withoxetine)<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female, Age: 52, Past Medical History: Hypertension, Depression (previous episodes treated withoxetine)	False
+depression	depression	28	Male	18	0	18	all	all	27	 Male	38	 depression	replace_scale	paper	0.0	3	6	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Format the response as one compact line suitable for a patient header, containing demographics and past medical history for a patient with depression.
+Start with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female, Age: 45, Past Medical History: Major Depressive Disorder, Hypertension<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female, Age: 45, Past Medical History: Major Depressive Disorder, Hypertension	False
+depression	depression	28	Male	18	0	18	all	all	27	 Male	38	 depression	replace_scale	paper	1.0	3	6	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Format the response as one compact line suitable for a patient header, containing demographics and past medical history for a patient with depression.
+Start with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female, Age: 45, Past Medical History: Depressive Disorder, Hypertension<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female, Age: 45, Past Medical History: Depressive Disorder, Hypertension	False
+depression	depression	28	Male	18	0	18	all	all	27	 Male	38	 depression	replace_scale	paper	2.0	3	6	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Format the response as one compact line suitable for a patient header, containing demographics and past medical history for a patient with depression.
+Start with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female, Age: 45, Past Medical History: Depression (previous episodes treated with SSRI)<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female, Age: 45, Past Medical History: Depression (previous episodes treated with SSRI)	False
+depression	depression	28	Male	18	0	18	all	all	27	 Male	38	 depression	replace_scale	paper	3.0	3	6	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Format the response as one compact line suitable for a patient header, containing demographics and past medical history for a patient with depression.
+Start with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female, Age: 45, Past Medical History: Hypertension, Depression (ongoing treatment)<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female, Age: 45, Past Medical History: Hypertension, Depression (ongoing treatment)	False
+depression	depression	28	Male	18	0	18	all	all	27	 Male	38	 depression	replace_scale	paper	4.0	3	6	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Format the response as one compact line suitable for a patient header, containing demographics and past medical history for a patient with depression.
+Start with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female, Age: 52, Past Medical History: Hypertension, Depression (previous episode treated with SSRIs)<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female, Age: 52, Past Medical History: Hypertension, Depression (previous episode treated with SSRIs)	False
+depression	depression	28	Male	18	0	18	all	all	27	 Male	38	 depression	replace_scale	paper	5.0	3	6	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Format the response as one compact line suitable for a patient header, containing demographics and past medical history for a patient with depression.
+Start with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female, Age: 45, Past Medical History: Hypertension, Depression (previous hospitalization for major depressive episode)<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female, Age: 45, Past Medical History: Hypertension, Depression (previous hospitalization for major depressive episode)	False
+depression	depression	28	Male	18	0	18	all	all	27	 Male	38	 depression	replace_scale	paper	0.0	4	0	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Format the response as one compact line suitable for a patient header, containing demographics and past medical history for a patient with depression.
+Start with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female, Age: 45, Past Medical History: Major Depression, Hypertension<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female, Age: 45, Past Medical History: Major Depression, Hypertension	False
+depression	depression	28	Male	18	0	18	all	all	27	 Male	38	 depression	replace_scale	paper	1.0	4	0	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Format the response as one compact line suitable for a patient header, containing demographics and past medical history for a patient with depression.
+Start with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female, Age: 45, Past Medical History: Depression (untreated)<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female, Age: 45, Past Medical History: Depression (untreated)	False
+depression	depression	28	Male	18	0	18	all	all	27	 Male	38	 depression	replace_scale	paper	2.0	4	0	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Format the response as one compact line suitable for a patient header, containing demographics and past medical history for a patient with depression.
+Start with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female, Age: 45, Past Medical History: Major Depressive Disorder, Hypertension<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female, Age: 45, Past Medical History: Major Depressive Disorder, Hypertension	False
+depression	depression	28	Male	18	0	18	all	all	27	 Male	38	 depression	replace_scale	paper	3.0	4	0	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Format the response as one compact line suitable for a patient header, containing demographics and past medical history for a patient with depression.
+Start with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female, Age: 52, Past Medical History: Hypertension, Depression (previous major depressive episode treated with fluoxetine)<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female, Age: 52, Past Medical History: Hypertension, Depression (previous major depressive episode treated with fluoxetine)	False
+depression	depression	28	Male	18	0	18	all	all	27	 Male	38	 depression	replace_scale	paper	4.0	4	0	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Format the response as one compact line suitable for a patient header, containing demographics and past medical history for a patient with depression.
+Start with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female, Age: 45, Past Medical History: Hypertension, Depressive Disorder NOS<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female, Age: 45, Past Medical History: Hypertension, Depressive Disorder NOS	False
+depression	depression	28	Male	18	0	18	all	all	27	 Male	38	 depression	replace_scale	paper	5.0	4	0	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Format the response as one compact line suitable for a patient header, containing demographics and past medical history for a patient with depression.
+Start with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female, Age: 52, Past Medical History: Hypertension, Depression (previous episode treated with SSRI)<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female, Age: 52, Past Medical History: Hypertension, Depression (previous episode treated with SSRI)	False
+depression	depression	28	Male	18	0	18	all	all	27	 Male	38	 depression	replace_scale	paper	0.0	4	1	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Format the response as one compact line suitable for a patient header, containing demographics and past medical history for a patient with depression.
+Start with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female, Age: 45, Past Medical History: Major Depressive Disorder, Hypertension<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female, Age: 45, Past Medical History: Major Depressive Disorder, Hypertension	False
+depression	depression	28	Male	18	0	18	all	all	27	 Male	38	 depression	replace_scale	paper	1.0	4	1	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Format the response as one compact line suitable for a patient header, containing demographics and past medical history for a patient with depression.
+Start with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female, Age: 45, PMHx: Depression (untreated)<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female, Age: 45, PMHx: Depression (untreated)	False
+depression	depression	28	Male	18	0	18	all	all	27	 Male	38	 depression	replace_scale	paper	2.0	4	1	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Format the response as one compact line suitable for a patient header, containing demographics and past medical history for a patient with depression.
+Start with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female, Age: 45, Past Medical History: Depression, Hypertension<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female, Age: 45, Past Medical History: Depression, Hypertension	False
+depression	depression	28	Male	18	0	18	all	all	27	 Male	38	 depression	replace_scale	paper	3.0	4	1	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Format the response as one compact line suitable for a patient header, containing demographics and past medical history for a patient with depression.
+Start with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female, Age: 45, Past Medical History: Hypertension, Depression (previous episode treated with fluoxetine)<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female, Age: 45, Past Medical History: Hypertension, Depression (previous episode treated with fluoxetine)	False
+depression	depression	28	Male	18	0	18	all	all	27	 Male	38	 depression	replace_scale	paper	4.0	4	1	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Format the response as one compact line suitable for a patient header, containing demographics and past medical history for a patient with depression.
+Start with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female, Age: 52, Past Medical History: Hypertension, Depression (previous major depressive episode treated with SSRI)<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female, Age: 52, Past Medical History: Hypertension, Depression (previous major depressive episode treated with SSRI)	False
+depression	depression	28	Male	18	0	18	all	all	27	 Male	38	 depression	replace_scale	paper	5.0	4	1	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Format the response as one compact line suitable for a patient header, containing demographics and past medical history for a patient with depression.
+Start with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female, Age: 52, Past Medical History: Hypertension, Depression (previous major depressive episode treated with fluoxetine)<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female, Age: 52, Past Medical History: Hypertension, Depression (previous major depressive episode treated with fluoxetine)	False
+depression	depression	28	Male	18	0	18	all	all	27	 Male	38	 depression	replace_scale	paper	0.0	4	2	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Format the response as one compact line suitable for a patient header, containing demographics and past medical history for a patient with depression.
+Start with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female, Age: 45, Past Medical History: Major Depressive Disorder, Hypertension<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female, Age: 45, Past Medical History: Major Depressive Disorder, Hypertension	False
+depression	depression	28	Male	18	0	18	all	all	27	 Male	38	 depression	replace_scale	paper	1.0	4	2	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Format the response as one compact line suitable for a patient header, containing demographics and past medical history for a patient with depression.
+Start with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female, Age: 45, Past Medical History: Depression (major depressive disorder x3 episodes)<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female, Age: 45, Past Medical History: Depression (major depressive disorder x3 episodes)	False
+depression	depression	28	Male	18	0	18	all	all	27	 Male	38	 depression	replace_scale	paper	2.0	4	2	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Format the response as one compact line suitable for a patient header, containing demographics and past medical history for a patient with depression.
+Start with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female, Age: 45, Past Medical History: Depression, Anxiety, Hypertension<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female, Age: 45, Past Medical History: Depression, Anxiety, Hypertension	False
+depression	depression	28	Male	18	0	18	all	all	27	 Male	38	 depression	replace_scale	paper	3.0	4	2	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Format the response as one compact line suitable for a patient header, containing demographics and past medical history for a patient with depression.
+Start with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female, Age: 52, Past Medical History: Hypertension, Depression (previous episode treated with fluoxetine)<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female, Age: 52, Past Medical History: Hypertension, Depression (previous episode treated with fluoxetine)	False
+depression	depression	28	Male	18	0	18	all	all	27	 Male	38	 depression	replace_scale	paper	4.0	4	2	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Format the response as one compact line suitable for a patient header, containing demographics and past medical history for a patient with depression.
+Start with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female, Age: 52, Past Medical History: Hypertension, Depression (history of major depressive disorder, treated with fluoxetine)<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female, Age: 52, Past Medical History: Hypertension, Depression (history of major depressive disorder, treated with fluoxetine)	False
+depression	depression	28	Male	18	0	18	all	all	27	 Male	38	 depression	replace_scale	paper	5.0	4	2	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Format the response as one compact line suitable for a patient header, containing demographics and past medical history for a patient with depression.
+Start with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female, Age: 52, Past Medical History: Hypertension, Depression (history of major depressive disorder, previous hospitalization 2018)<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female, Age: 52, Past Medical History: Hypertension, Depression (history of major depressive disorder, previous hospitalization 2018)	False
+depression	depression	28	Male	18	0	18	all	all	27	 Male	38	 depression	replace_scale	paper	0.0	4	3	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Format the response as one compact line suitable for a patient header, containing demographics and past medical history for a patient with depression.
+Start with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female, Age: 45, Past Medical History: Depression (bipolar II disorder since 2005)<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female, Age: 45, Past Medical History: Depression (bipolar II disorder since 2005)	False
+depression	depression	28	Male	18	0	18	all	all	27	 Male	38	 depression	replace_scale	paper	1.0	4	3	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Format the response as one compact line suitable for a patient header, containing demographics and past medical history for a patient with depression.
+Start with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female, Age: 45, Past Medical History: Depression, Anxiety, Hypertension<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female, Age: 45, Past Medical History: Depression, Anxiety, Hypertension	False
+depression	depression	28	Male	18	0	18	all	all	27	 Male	38	 depression	replace_scale	paper	2.0	4	3	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Format the response as one compact line suitable for a patient header, containing demographics and past medical history for a patient with depression.
+Start with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female, Age: 45, Past Medical History: Major Depression, Hypertension<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female, Age: 45, Past Medical History: Major Depression, Hypertension	False
+depression	depression	28	Male	18	0	18	all	all	27	 Male	38	 depression	replace_scale	paper	3.0	4	3	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Format the response as one compact line suitable for a patient header, containing demographics and past medical history for a patient with depression.
+Start with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female, Age: 45, Past Medical History: Hypertension, Depressive Disorder NOS<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female, Age: 45, Past Medical History: Hypertension, Depressive Disorder NOS	False
+depression	depression	28	Male	18	0	18	all	all	27	 Male	38	 depression	replace_scale	paper	4.0	4	3	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Format the response as one compact line suitable for a patient header, containing demographics and past medical history for a patient with depression.
+Start with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female, Age: 52, Past Medical History: Hypertension, Depression (previous hospitalization 2018)<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female, Age: 52, Past Medical History: Hypertension, Depression (previous hospitalization 2018)	False
+depression	depression	28	Male	18	0	18	all	all	27	 Male	38	 depression	replace_scale	paper	5.0	4	3	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Format the response as one compact line suitable for a patient header, containing demographics and past medical history for a patient with depression.
+Start with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female, Age: 52, Past Medical History: Hypertension, Depression, Diabetes Mellitus Type 2<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female, Age: 52, Past Medical History: Hypertension, Depression, Diabetes Mellitus Type 2	False
+depression	depression	28	Male	18	0	18	all	all	27	 Male	38	 depression	replace_scale	paper	0.0	4	4	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Format the response as one compact line suitable for a patient header, containing demographics and past medical history for a patient with depression.
+Start with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female, Age: 45, Past Medical History: Major Depressive Disorder, Hypertension<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female, Age: 45, Past Medical History: Major Depressive Disorder, Hypertension	False
+depression	depression	28	Male	18	0	18	all	all	27	 Male	38	 depression	replace_scale	paper	1.0	4	4	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Format the response as one compact line suitable for a patient header, containing demographics and past medical history for a patient with depression.
+Start with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female, Age: 45, Past Medical History: Depression (untreated)<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female, Age: 45, Past Medical History: Depression (untreated)	False
+depression	depression	28	Male	18	0	18	all	all	27	 Male	38	 depression	replace_scale	paper	2.0	4	4	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Format the response as one compact line suitable for a patient header, containing demographics and past medical history for a patient with depression.
+Start with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female, Age: 45, PMHx: Depression (untreated, 2018-present), Hypertension (treated)<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female, Age: 45, PMHx: Depression (untreated, 2018-present), Hypertension (treated)	False
+depression	depression	28	Male	18	0	18	all	all	27	 Male	38	 depression	replace_scale	paper	3.0	4	4	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Format the response as one compact line suitable for a patient header, containing demographics and past medical history for a patient with depression.
+Start with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female, Age: 45, Past Medical History: Hypertension, Depressive Disorder NOS<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female, Age: 45, Past Medical History: Hypertension, Depressive Disorder NOS	False
+depression	depression	28	Male	18	0	18	all	all	27	 Male	38	 depression	replace_scale	paper	4.0	4	4	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Format the response as one compact line suitable for a patient header, containing demographics and past medical history for a patient with depression.
+Start with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female, Age: 45, Past Medical History: Hypertension, Depression (previous episode treated with SSRI)<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female, Age: 45, Past Medical History: Hypertension, Depression (previous episode treated with SSRI)	False
+depression	depression	28	Male	18	0	18	all	all	27	 Male	38	 depression	replace_scale	paper	5.0	4	4	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Format the response as one compact line suitable for a patient header, containing demographics and past medical history for a patient with depression.
+Start with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female, Age: 52, Past Medical History: Hypertension, Depression (previous episode treated with SSRI)<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female, Age: 52, Past Medical History: Hypertension, Depression (previous episode treated with SSRI)	False
+depression	depression	28	Male	18	0	18	all	all	27	 Male	38	 depression	replace_scale	paper	0.0	4	5	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Format the response as one compact line suitable for a patient header, containing demographics and past medical history for a patient with depression.
+Start with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female, Age: 45, Past Medical History: Major Depressive Disorder, Hypertension<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female, Age: 45, Past Medical History: Major Depressive Disorder, Hypertension	False
+depression	depression	28	Male	18	0	18	all	all	27	 Male	38	 depression	replace_scale	paper	1.0	4	5	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Format the response as one compact line suitable for a patient header, containing demographics and past medical history for a patient with depression.
+Start with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female, Age: 45, Past Medical History: Depression (previous treatment with SSRI)<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female, Age: 45, Past Medical History: Depression (previous treatment with SSRI)	False
+depression	depression	28	Male	18	0	18	all	all	27	 Male	38	 depression	replace_scale	paper	2.0	4	5	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Format the response as one compact line suitable for a patient header, containing demographics and past medical history for a patient with depression.
+Start with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female, Age: 45, Past Medical History: Hypertension, Depression (previous episode treated with fluoxetine)<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female, Age: 45, Past Medical History: Hypertension, Depression (previous episode treated with fluoxetine)	False
+depression	depression	28	Male	18	0	18	all	all	27	 Male	38	 depression	replace_scale	paper	3.0	4	5	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Format the response as one compact line suitable for a patient header, containing demographics and past medical history for a patient with depression.
+Start with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female, Age: 52, Past Medical History: Hypertension, Depressive Disorder NOS<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female, Age: 52, Past Medical History: Hypertension, Depressive Disorder NOS	False
+depression	depression	28	Male	18	0	18	all	all	27	 Male	38	 depression	replace_scale	paper	4.0	4	5	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Format the response as one compact line suitable for a patient header, containing demographics and past medical history for a patient with depression.
+Start with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female, Age: 45, Past Medical History: Hypertension, Depressive Disorder NOS<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female, Age: 45, Past Medical History: Hypertension, Depressive Disorder NOS	False
+depression	depression	28	Male	18	0	18	all	all	27	 Male	38	 depression	replace_scale	paper	5.0	4	5	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Format the response as one compact line suitable for a patient header, containing demographics and past medical history for a patient with depression.
+Start with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female, Age: 45, Past Medical History: Hypertension, Depression (previous episode treated with fluoxetine)<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female, Age: 45, Past Medical History: Hypertension, Depression (previous episode treated with fluoxetine)	False
+depression	depression	28	Male	18	0	18	all	all	27	 Male	38	 depression	replace_scale	paper	0.0	4	6	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Format the response as one compact line suitable for a patient header, containing demographics and past medical history for a patient with depression.
+Start with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female, Age: 45, Past Medical History: Major Depressive Disorder, Hypertension<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female, Age: 45, Past Medical History: Major Depressive Disorder, Hypertension	False
+depression	depression	28	Male	18	0	18	all	all	27	 Male	38	 depression	replace_scale	paper	1.0	4	6	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Format the response as one compact line suitable for a patient header, containing demographics and past medical history for a patient with depression.
+Start with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female, Age: 45, Past Medical History: Major Depressive Disorder, Hypertension<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female, Age: 45, Past Medical History: Major Depressive Disorder, Hypertension	False
+depression	depression	28	Male	18	0	18	all	all	27	 Male	38	 depression	replace_scale	paper	2.0	4	6	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Format the response as one compact line suitable for a patient header, containing demographics and past medical history for a patient with depression.
+Start with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female, Age: 45, Past Medical History: Depressive Disorder, Hypertension<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female, Age: 45, Past Medical History: Depressive Disorder, Hypertension	False
+depression	depression	28	Male	18	0	18	all	all	27	 Male	38	 depression	replace_scale	paper	3.0	4	6	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Format the response as one compact line suitable for a patient header, containing demographics and past medical history for a patient with depression.
+Start with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female, Age: 52, Past Medical History: Hypertension, Depression (history of major depressive disorder, treated with SSRI)<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female, Age: 52, Past Medical History: Hypertension, Depression (history of major depressive disorder, treated with SSRI)	False
+depression	depression	28	Male	18	0	18	all	all	27	 Male	38	 depression	replace_scale	paper	4.0	4	6	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Format the response as one compact line suitable for a patient header, containing demographics and past medical history for a patient with depression.
+Start with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female, Age: 45, Past Medical History: Hypertension, Depressive Disorder NOS<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female, Age: 45, Past Medical History: Hypertension, Depressive Disorder NOS	False
+depression	depression	28	Male	18	0	18	all	all	27	 Male	38	 depression	replace_scale	paper	5.0	4	6	Female	"<|im_start|>system
+You are a helpful clinical assistant.<|im_end|>
+<|im_start|>user
+Format the response as one compact line suitable for a patient header, containing demographics and past medical history for a patient with depression.
+Start with: ""Gender: "" <|im_end|>
+<|im_start|>assistant
+Gender: Female, Age: 52, Past Medical History: Hypertension, Depression (previous major depressive episode treated with SSRI)<|im_end|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>"	Gender: Female, Age: 52, Past Medical History: Hypertension, Depression (previous major depressive episode treated with SSRI)	False
