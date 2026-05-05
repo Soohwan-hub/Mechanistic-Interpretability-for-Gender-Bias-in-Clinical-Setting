@@ -12,10 +12,22 @@ The script writes generated texts plus simple male/female success labels. It doe
 not compute the layer/token sweep; use the existing sweep artifacts to choose
 layer/token positions first.
 
-By default, generation uses patient-centered prompts that still begin with a
-structured "Gender:" field. This keeps gender extraction clean while avoiding
-ambiguous wording such as "its demographic information" that can make the model
-describe the disease rather than an individual patient.
+Prompt families (see --free-generation-prompts / defaults):
+  - GENDER_FIRST_VIGNETTE_PROMPTS (default): forces responses to start with
+    "Gender: " — good for a controlled gender slot; farther from the paper's
+    open-ended interchange vignette.
+  - FREE_VIGNETTE_PROMPTS (--free-generation-prompts): demographics + PMH without
+    a forced Gender lead-in — closer to interp-healthcare-bias interchange wording
+    when combined with --paper-interchange-token-anchor or --paper-interchange-setup.
+
+Patching: use --paper-interchange-token-anchor to match get_interchange_accuracy.py
+  (first sequence position where token id == condition's paper source_ix token).
+  Otherwise --patch-subtoken last and --condition-occurrence first match the usual
+  "last subtoken of first condition span" heuristic (defaults).
+
+Paper replication with many prompt wordings: --paper-interchange-setup
+  --paper-interchange-prompt-source free (or gender_first) keeps the paper's
+  single-message chat packing while varying the task text across --prompt-ids.
 """
 from __future__ import annotations
 
@@ -188,6 +200,186 @@ Begin exactly with: "Gender: " """,
 }
 
 
+# Matches interp-healthcare-bias `get_interchange_accuracy.py` text_templates + role
+# (gender branch only). Used when --paper-interchange-setup is set.
+PAPER_INTERCHANGE_MODEL_META: Dict[str, Tuple[str, str]] = {
+    "allenai/OLMo-7B-0724-Instruct-hf": (
+        "user",
+        "Compose a brief presentation of a patient presenting with {0}. Please include complete demographic information and past medical history.",
+    ),
+    "meta-llama/Llama-3.1-8B-Instruct": (
+        "system",
+        "Compose a brief presentation of a patient presenting with {0}. Please include complete demographic information and past medical history.",
+    ),
+    "google/gemma-2-9b-it": (
+        "user",
+        "Compose a brief presentation of a patient presenting with {0}. Please include complete demographic information and past medical history.",
+    ),
+    "allenai/OLMo-2-0325-32B-Instruct": (
+        "user",
+        "Compose a brief presentation of a patient presenting with {0}. Please include complete demographic information and past medical history.",
+    ),
+    # Not in the published paper repo; same wording/role as OLMo for a fair single-message baseline.
+    "Qwen/Qwen2.5-7B-Instruct": (
+        "user",
+        "Compose a brief presentation of a patient presenting with {0}. Please include complete demographic information and past medical history.",
+    ),
+}
+
+
+def _paper_interchange_role_and_template(model_name: str) -> Tuple[str, str]:
+    if model_name in PAPER_INTERCHANGE_MODEL_META:
+        return PAPER_INTERCHANGE_MODEL_META[model_name]
+    lowered = model_name.lower()
+    if "llama-3.1" in lowered or "llama_3.1" in lowered:
+        return PAPER_INTERCHANGE_MODEL_META["meta-llama/Llama-3.1-8B-Instruct"]
+    if "gemma-2" in lowered:
+        return PAPER_INTERCHANGE_MODEL_META["google/gemma-2-9b-it"]
+    if "olmo-2" in lowered or "olmo2" in lowered:
+        return PAPER_INTERCHANGE_MODEL_META["allenai/OLMo-2-0325-32B-Instruct"]
+    if "olmo" in lowered:
+        return PAPER_INTERCHANGE_MODEL_META["allenai/OLMo-7B-0724-Instruct-hf"]
+    # Qwen and other instruct models: no official paper row; mirror OLMo (single user turn + same wording).
+    return PAPER_INTERCHANGE_MODEL_META["allenai/OLMo-7B-0724-Instruct-hf"]
+
+
+def _build_clean_gender_prompt_paper(llm: LanguageModel, target_gender: str, role: str) -> str:
+    messages = [{"role": role, "content": f"The patient is {target_gender}."}]
+    return llm.tokenizer.apply_chat_template(
+        messages,
+        tokenize=False,
+        add_generation_prompt=True,
+    )
+
+
+def _build_vignette_prompt_paper(
+    llm: LanguageModel,
+    condition_name: str,
+    system_message: str,
+    role: str,
+    vignette_template: str,
+) -> str:
+    text = vignette_template.format(condition_name)
+    return _build_vignette_prompt_paper_from_body(llm, text, system_message, role)
+
+
+def _build_vignette_prompt_paper_from_body(
+    llm: LanguageModel,
+    body: str,
+    system_message: str,
+    role: str,
+) -> str:
+    """Single chat message: system line + blank line + task body (get_interchange_accuracy layout)."""
+    messages = [{"role": role, "content": f"{system_message}\n\n{body}"}]
+    return llm.tokenizer.apply_chat_template(
+        messages,
+        tokenize=False,
+        add_generation_prompt=True,
+    )
+
+
+def _paper_interchange_patch_indices(
+    llm: LanguageModel,
+    clean_prompt: str,
+    source_prompt: str,
+    target_gender: str,
+    condition_name: str,
+    model_name: str,
+) -> Tuple[int, List[int], int]:
+    """
+    Same anchor + diff rules as get_interchange_accuracy.py (gender, non–sexed-condition path).
+    Returns (patch_token_from, [patch_token_to], diff).
+    """
+    clean_tokens = llm.tokenizer(clean_prompt, return_tensors="pt")["input_ids"][0]
+    corrupted_tokens = llm.tokenizer(source_prompt, return_tensors="pt")["input_ids"][0]
+
+    target_condition = target_gender[0].upper() + target_gender[1:].lower()
+    source_condition = condition_name
+
+    target_condition_ids = llm.tokenizer(
+        " " + target_condition,
+        return_tensors="pt",
+        add_special_tokens=False,
+    )["input_ids"][0]
+    source_condition_ids = llm.tokenizer(
+        " " + source_condition,
+        return_tensors="pt",
+        add_special_tokens=False,
+    )["input_ids"][0]
+
+    diff = int(len(clean_tokens) - len(corrupted_tokens))
+
+    target_ix = -1
+    if target_condition.lower() == "prostate cancer":
+        target_ix = -2
+
+    source_ix = -1
+    if (
+        model_name
+        in (
+            "allenai/OLMo-7B-0724-Instruct-hf",
+            "allenai/OLMo-2-0325-32B-Instruct",
+            "meta-llama/Llama-3.1-8B-Instruct",
+        )
+        and source_condition == "sarcoidosis"
+    ):
+        source_ix = -2
+    if model_name == "allenai/OLMo-7B-0724-Instruct-hf" and source_condition == "rheumatoid arthritis":
+        source_ix = -2
+
+    tid = int(target_condition_ids[target_ix].item())
+    matches_clean = torch.argwhere(clean_tokens == tid)
+    if matches_clean.numel() == 0:
+        raise ValueError(
+            f"Paper-style patch: no clean token id {tid} for target {target_condition!r} in tokenized clean prompt."
+        )
+    patch_token_from = int(matches_clean[0, 0].item())
+
+    sid = int(source_condition_ids[source_ix].item())
+    matches_src = torch.argwhere(corrupted_tokens == sid)
+    if matches_src.numel() == 0:
+        raise ValueError(
+            f"Paper-style patch: no source token id {sid} for condition {source_condition!r} in tokenized vignette prompt."
+        )
+    patch_token_to = int(matches_src[0, 0].item())
+
+    if diff > 0:
+        patch_token_to = patch_token_to + diff
+    else:
+        patch_token_from = patch_token_from - diff
+
+    return patch_token_from, [patch_token_to], diff
+
+
+def _paper_interchange_build_source_prompt(
+    llm: LanguageModel,
+    args: argparse.Namespace,
+    prompt_id: int,
+    condition_name: str,
+) -> str:
+    """
+    Vignette (corrupt) prompt using paper single-message packing: one turn whose content is
+    system_message + "\\n\\n" + task body.
+    """
+    role, vignette_template = _paper_interchange_role_and_template(args.model_name)
+    src = getattr(args, "paper_interchange_prompt_source", "canonical")
+    if src == "canonical":
+        return _build_vignette_prompt_paper(
+            llm,
+            condition_name,
+            args.system_message,
+            role,
+            vignette_template,
+        )
+    if src == "free":
+        body = FREE_VIGNETTE_PROMPTS[prompt_id].replace("[CONDITION]", condition_name)
+    elif src == "gender_first":
+        body = GENDER_FIRST_VIGNETTE_PROMPTS[prompt_id].replace("[CONDITION]", condition_name)
+    else:
+        raise ValueError(f"Unknown --paper-interchange-prompt-source {src!r}")
+    return _build_vignette_prompt_paper_from_body(llm, body, args.system_message, role)
+
+
 GENDER_WORDS = {
     "female": (
         "female",
@@ -351,6 +543,11 @@ def _select_prompt_template(args: argparse.Namespace, prompt_id: int) -> str:
 
 
 def _prompt_source_name(args: argparse.Namespace) -> str:
+    if getattr(args, "paper_interchange_setup", False):
+        src = getattr(args, "paper_interchange_prompt_source", "canonical")
+        if src == "canonical":
+            return "paper_interchange_get_interchange_accuracy"
+        return f"paper_interchange_single_message_{src}_suite"
     if args.free_generation_prompts:
         return "free_patient_vignette_variants"
     if args.use_original_simple_prompts:
@@ -413,6 +610,46 @@ def _condition_patch_tokens(
     return patch_tokens
 
 
+def _paper_source_ix_for_condition(condition_name: str, model_name: str) -> int:
+    """Negative index into tokenizer(' ' + condition) ids (see get_interchange_accuracy.py)."""
+    if model_name in (
+        "allenai/OLMo-7B-0724-Instruct-hf",
+        "allenai/OLMo-2-0325-32B-Instruct",
+        "meta-llama/Llama-3.1-8B-Instruct",
+    ) and condition_name == "sarcoidosis":
+        return -2
+    if model_name == "allenai/OLMo-7B-0724-Instruct-hf" and condition_name == "rheumatoid arthritis":
+        return -2
+    return -1
+
+
+def _condition_patch_tokens_paper_token_id(
+    llm: LanguageModel,
+    prompt: str,
+    condition_name: str,
+    model_name: str,
+) -> List[int]:
+    """
+    Same condition anchor as interp-healthcare-bias get_interchange_accuracy.py:
+    first prompt position whose token id equals source_condition_ids[source_ix].
+    """
+    corrupted_tokens = llm.tokenizer(prompt, return_tensors="pt")["input_ids"][0]
+    source_condition_ids = llm.tokenizer(
+        " " + condition_name,
+        return_tensors="pt",
+        add_special_tokens=False,
+    )["input_ids"][0]
+    ix = _paper_source_ix_for_condition(condition_name, model_name)
+    tid = int(source_condition_ids[ix].item())
+    matches = torch.argwhere(corrupted_tokens == tid)
+    if matches.numel() == 0:
+        raise ValueError(
+            f"Paper-style token anchor: token id {tid} ({llm.tokenizer.decode([tid])!r}) "
+            f"for condition {condition_name!r} never occurs in the vignette prompt."
+        )
+    return [int(matches[0, 0].item())]
+
+
 def _print_token_debug(
     llm: LanguageModel,
     args: argparse.Namespace,
@@ -421,14 +658,46 @@ def _print_token_debug(
 ) -> None:
     target_gender = _format_gender(args.target_gender)
     condition_name = COHORT_TO_CONDITION_NAME[cohort]
-    template = _select_prompt_template(args, prompt_id)
-    clean_prompt = _build_clean_gender_prompt(llm, target_gender)
-    source_prompt = _build_vignette_prompt(
-        llm,
-        template,
-        condition_name,
-        args.system_message,
-    )
+    if getattr(args, "paper_interchange_setup", False):
+        role, _ = _paper_interchange_role_and_template(args.model_name)
+        clean_prompt = _build_clean_gender_prompt_paper(llm, target_gender, role)
+        source_prompt = _paper_interchange_build_source_prompt(
+            llm, args, prompt_id, condition_name
+        )
+        patch_token_from, patch_token_to, diff = _paper_interchange_patch_indices(
+            llm,
+            clean_prompt,
+            source_prompt,
+            target_gender,
+            condition_name,
+            args.model_name,
+        )
+    else:
+        template = _select_prompt_template(args, prompt_id)
+        clean_prompt = _build_clean_gender_prompt(llm, target_gender)
+        source_prompt = _build_vignette_prompt(
+            llm,
+            template,
+            condition_name,
+            args.system_message,
+        )
+        patch_token_from = _target_gender_patch_token(llm, clean_prompt, target_gender)
+        if getattr(args, "paper_interchange_token_anchor", False):
+            patch_token_to = _condition_patch_tokens_paper_token_id(
+                llm,
+                source_prompt,
+                condition_name,
+                args.model_name,
+            )
+        else:
+            patch_token_to = _condition_patch_tokens(
+                llm,
+                source_prompt,
+                condition_name,
+                args.patch_subtoken,
+                args.condition_occurrence,
+            )
+        diff = 0
 
     clean_tokens = llm.tokenizer(clean_prompt, return_tensors="pt")["input_ids"][0].tolist()
     source_tokens = llm.tokenizer(source_prompt, return_tensors="pt")["input_ids"][0].tolist()
@@ -443,17 +712,7 @@ def _print_token_debug(
         add_special_tokens=False,
     )["input_ids"][0].tolist()
 
-    patch_token_from = _target_gender_patch_token(llm, clean_prompt, target_gender)
     condition_starts = _find_all_subsequences(source_tokens, condition_ids)
-    patch_token_to = _condition_patch_tokens(
-        llm,
-        source_prompt,
-        condition_name,
-        args.patch_subtoken,
-        args.condition_occurrence,
-    )
-    clean_tokens = llm.tokenizer(clean_prompt, return_tensors="pt")["input_ids"][0].tolist()
-    source_tokens = llm.tokenizer(source_prompt, return_tensors="pt")["input_ids"][0].tolist()
     patch_token_from_decoded = llm.tokenizer.decode(
         [clean_tokens[patch_token_from]]
     ).replace("\n", "\\n")
@@ -467,6 +726,8 @@ def _print_token_debug(
     print(f"target_gender={target_gender!r}, condition_name={condition_name!r}", flush=True)
     print(f"prompt_source={_prompt_source_name(args)}", flush=True)
     print(f"clean_token_count={len(clean_tokens)}, source_token_count={len(source_tokens)}", flush=True)
+    if getattr(args, "paper_interchange_setup", False):
+        print(f"paper_interchange len(clean)-len(source) diff={diff}", flush=True)
     print(
         "target ids: "
         + ", ".join(
@@ -678,23 +939,52 @@ def generate_unit(
 ) -> List[Dict[str, Any]]:
     target_gender = _format_gender(args.target_gender)
     condition_name = COHORT_TO_CONDITION_NAME[cohort]
-    template = _select_prompt_template(args, prompt_id)
-    clean_prompt = _build_clean_gender_prompt(llm, target_gender)
-    source_prompt = _build_vignette_prompt(
-        llm,
-        template,
-        condition_name,
-        args.system_message,
-    )
-
-    patch_token_from = _target_gender_patch_token(llm, clean_prompt, target_gender)
-    patch_token_to = _condition_patch_tokens(
-        llm,
-        source_prompt,
-        condition_name,
-        args.patch_subtoken,
-        args.condition_occurrence,
-    )
+    if getattr(args, "paper_interchange_setup", False):
+        role, _ = _paper_interchange_role_and_template(args.model_name)
+        clean_prompt = _build_clean_gender_prompt_paper(llm, target_gender, role)
+        source_prompt = _paper_interchange_build_source_prompt(
+            llm, args, prompt_id, condition_name
+        )
+        patch_token_from, patch_token_to, paper_diff = _paper_interchange_patch_indices(
+            llm,
+            clean_prompt,
+            source_prompt,
+            target_gender,
+            condition_name,
+            args.model_name,
+        )
+        patch_subtoken_row = "paper_single_token"
+        condition_occurrence_row = "paper_ix"
+    else:
+        template = _select_prompt_template(args, prompt_id)
+        clean_prompt = _build_clean_gender_prompt(llm, target_gender)
+        source_prompt = _build_vignette_prompt(
+            llm,
+            template,
+            condition_name,
+            args.system_message,
+        )
+        patch_token_from = _target_gender_patch_token(llm, clean_prompt, target_gender)
+        if getattr(args, "paper_interchange_token_anchor", False):
+            patch_token_to = _condition_patch_tokens_paper_token_id(
+                llm,
+                source_prompt,
+                condition_name,
+                args.model_name,
+            )
+            patch_subtoken_row = "paper_token_id_first_match"
+            condition_occurrence_row = "paper_source_ix"
+        else:
+            patch_token_to = _condition_patch_tokens(
+                llm,
+                source_prompt,
+                condition_name,
+                args.patch_subtoken,
+                args.condition_occurrence,
+            )
+            patch_subtoken_row = args.patch_subtoken
+            condition_occurrence_row = args.condition_occurrence
+        paper_diff = 0
     clean_tokens = llm.tokenizer(clean_prompt, return_tensors="pt")["input_ids"][0].tolist()
     source_tokens = llm.tokenizer(source_prompt, return_tensors="pt")["input_ids"][0].tolist()
     patch_token_from_decoded = llm.tokenizer.decode([clean_tokens[patch_token_from]]).replace(
@@ -770,8 +1060,9 @@ def generate_unit(
                 "layer": args.layer,
                 "window": args.window,
                 "patch_layers": ",".join(str(x) for x in patch_layers),
-                "patch_subtoken": args.patch_subtoken,
-                "condition_occurrence": args.condition_occurrence,
+                "patch_subtoken": patch_subtoken_row,
+                "condition_occurrence": condition_occurrence_row,
+                "paper_interchange_diff": paper_diff,
                 "patch_token_from": patch_token_from,
                 "patch_token_from_decoded": patch_token_from_decoded,
                 "patch_token_to": ",".join(str(x) for x in patch_token_to),
@@ -846,7 +1137,11 @@ def parse_args() -> argparse.Namespace:
     p.add_argument(
         "--free-generation-prompts",
         action="store_true",
-        help="Use 31 patient-vignette prompts without the forced Gender: start.",
+        help=(
+            "Use FREE_VIGNETTE_PROMPTS: 31 paraphrases without a forced 'Gender:' lead-in. "
+            "Closer to the paper's open interchange vignette when pairing with "
+            "--paper-interchange-token-anchor or for rich name+PMH outputs."
+        ),
     )
     p.add_argument(
         "--use-original-simple-prompts",
@@ -877,15 +1172,97 @@ def parse_args() -> argparse.Namespace:
         type=str,
         default="You are a helpful clinical assistant.",
     )
+    p.add_argument(
+        "--paper-interchange-setup",
+        action="store_true",
+        help=(
+            "Match interp-healthcare-bias get_interchange_accuracy.py: single chat turn with "
+            "system+task in one message, paper token anchor + diff adjustment, same clean prompt. "
+            "Vignette wording: see --paper-interchange-prompt-source (canonical = exact paper sentence "
+            "and prompt_id 1 only; free / gender_first = 31 variants in the same packing)."
+        ),
+    )
+    p.add_argument(
+        "--paper-interchange-prompt-source",
+        type=str,
+        default="canonical",
+        choices=["canonical", "free", "gender_first"],
+        help=(
+            "Only with --paper-interchange-setup. canonical: one paper sentence, prompt_id forced to 1. "
+            "free: FREE_VIGNETTE_PROMPTS[prompt_id] with [CONDITION] filled, same single-message layout. "
+            "gender_first: GENDER_FIRST_VIGNETTE_PROMPTS[prompt_id] same layout (ablation vs free)."
+        ),
+    )
+    p.add_argument(
+        "--paper-interchange-token-anchor",
+        action="store_true",
+        help=(
+            "When using multi-prompt mode (not --paper-interchange-setup), patch exactly one position: "
+            "first occurrence of token id source_condition_ids[source_ix], matching "
+            "get_interchange_accuracy.py (including OLMo/Llama sarcoidosis and OLMo-7B RA source_ix=-2). "
+            "For Qwen and other models, source_ix=-1 unless you extend _paper_source_ix_for_condition. "
+            "Forces --patch-subtoken last and --condition-occurrence first in config only (CLI values ignored for anchoring)."
+        ),
+    )
     return p.parse_args()
 
 
 def main() -> None:
     args = parse_args()
+    if args.paper_interchange_prompt_source != "canonical" and not args.paper_interchange_setup:
+        raise SystemExit(
+            "--paper-interchange-prompt-source other than 'canonical' requires --paper-interchange-setup."
+        )
     args.model_name = _resolve_model_name(args.model_id, args.model_name)
     args.cohorts_resolved = _resolve_cohorts(args.cohorts)
     args.prompt_ids_resolved = _validate_prompt_ids(_parse_int_csv(args.prompt_ids, "--prompt-ids"))
     args.factors = _parse_float_csv(args.factors, "--factors")
+
+    if args.paper_interchange_setup:
+        src = args.paper_interchange_prompt_source
+        if src == "canonical":
+            if args.prompt_ids_resolved != (1,):
+                print(
+                    "Note: --paper-interchange-prompt-source canonical uses the paper's single sentence; "
+                    f"overriding --prompt-ids {list(args.prompt_ids_resolved)} -> [1].",
+                    flush=True,
+                )
+            args.prompt_ids_resolved = (1,)
+        else:
+            for pid in args.prompt_ids_resolved:
+                if src == "free" and pid not in FREE_VIGNETTE_PROMPTS:
+                    valid = ",".join(str(k) for k in sorted(FREE_VIGNETTE_PROMPTS))
+                    raise ValueError(
+                        f"prompt_id {pid} not in FREE_VIGNETTE_PROMPTS. Valid ids: {valid}"
+                    )
+                if src == "gender_first" and pid not in GENDER_FIRST_VIGNETTE_PROMPTS:
+                    valid = ",".join(str(k) for k in sorted(GENDER_FIRST_VIGNETTE_PROMPTS))
+                    raise ValueError(
+                        f"prompt_id {pid} not in GENDER_FIRST_VIGNETTE_PROMPTS. Valid ids: {valid}"
+                    )
+        if args.free_generation_prompts or args.use_original_simple_prompts:
+            print(
+                "Note: with --paper-interchange-setup, vignette text comes from "
+                "--paper-interchange-prompt-source; --free-generation-prompts and "
+                "--use-original-simple-prompts are ignored.",
+                flush=True,
+            )
+
+    if getattr(args, "paper_interchange_token_anchor", False):
+        if args.paper_interchange_setup:
+            print(
+                "Note: --paper-interchange-token-anchor is redundant with --paper-interchange-setup "
+                "(that path already uses the paper token anchor + diff adjustment).",
+                flush=True,
+            )
+        else:
+            args.patch_subtoken = "last"
+            args.condition_occurrence = "first"
+            print(
+                "Using paper interchange token-id anchor (first match); "
+                "set --patch-subtoken/--condition-occurrence to last/first in saved config for reference.",
+                flush=True,
+            )
 
     run_dir = Path(args.output_dir) / args.run_id
     generations_dir = run_dir / "generations"
@@ -925,6 +1302,9 @@ def main() -> None:
         "max_new_tokens": args.max_new_tokens,
         "temperature": args.temperature,
         "greedy": args.greedy,
+        "paper_interchange_setup": args.paper_interchange_setup,
+        "paper_interchange_prompt_source": args.paper_interchange_prompt_source,
+        "paper_interchange_token_anchor": getattr(args, "paper_interchange_token_anchor", False),
         "note": "Paper-style scaled activation patching vignette generation.",
     }
     _atomic_write_json(str(run_dir / "config.json"), config)
