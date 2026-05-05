@@ -6,15 +6,18 @@
 #
 # Usage:
 #   chmod +x run_paper_interchange_free31.sh
-#   ./run_paper_interchange_free31.sh              # Qwen 2.5 7B (default below)
-#   MODEL_NAME=allenai/OLMo-7B-0724-Instruct-hf ./run_paper_interchange_free31.sh
+#   ./run_paper_interchange_free31.sh
+#   MODEL_NAME=Qwen/Qwen2.5-7B-Instruct RUN_ID=qwen_free31_8370 ./run_paper_interchange_free31.sh
+#
+# Sample budget: 5 cohorts × 31 prompts = 155 cells; outer_n × inner_n × |factors|
+#   = 18 × 1 × 3 = 54 rows per cell → 155 × 54 = 8,370 generations total.
 #
 set -euo pipefail
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 cd "$SCRIPT_DIR"
 
-MODEL_NAME="${MODEL_NAME:-Qwen/Qwen2.5-7B-Instruct}"
-RUN_ID="${RUN_ID:-paper_pack_free31_layer18}"
+MODEL_NAME="${MODEL_NAME:-allenai/OLMo-7B-0724-Instruct-hf}"
+RUN_ID="${RUN_ID:-olmo_free31_8370_layer18}"
 # Relative to this script's directory (we cd there before invoking Python).
 OUTPUT_DIR="${OUTPUT_DIR:-vignette_results}"
 COHORTS="${COHORTS:-asthma,depression,multiple_sclerosis,rheumatoid_arthritis,sarcoidosis}"
@@ -28,8 +31,8 @@ python3 generate_scaled_vignettes.py \
   --layer 18 \
   --window 0 \
   --factors 1,2,5 \
-  --outer-n 25 \
-  --inner-n 20 \
+  --outer-n 18 \
+  --inner-n 1 \
   --max-new-tokens 80 \
   --temperature 0.7 \
   --model-name "${MODEL_NAME}" \
