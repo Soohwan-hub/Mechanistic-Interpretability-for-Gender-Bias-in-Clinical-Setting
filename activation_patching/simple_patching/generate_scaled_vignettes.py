@@ -343,10 +343,11 @@ def _paper_interchange_patch_indices(
         )
     patch_token_to = int(matches_src[0, 0].item())
 
-    if diff > 0:
-        patch_token_to = patch_token_to + diff
-    else:
-        patch_token_from = patch_token_from - diff
+    # get_interchange_accuracy.py adjusts indices by diff = len(clean) - len(corrupt) for
+    # batch padding alignment. We run separate unpadded invoke(clean) / invoke(corrupt)
+    # passes; applying that shift can push patch_token_from past len(clean) when the
+    # vignette prompt is much longer than the clean line (e.g. FREE-31 bodies).
+    # Keep raw argwhere positions for each forward.
 
     return patch_token_from, [patch_token_to], diff
 
