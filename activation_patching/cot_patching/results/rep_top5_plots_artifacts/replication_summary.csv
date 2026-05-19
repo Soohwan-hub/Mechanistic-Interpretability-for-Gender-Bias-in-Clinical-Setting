@@ -1,3 +1,0 @@
-layer,feature_idx,token_identity,n_hits,n_runs,n_conditions,n_prompt_vars,n_temps,n_seeds,mean_norm_effect,median_norm_effect,std_norm_effect,sign_consistency
-11,87380,<blank>,12,12,5,3,5,4,0.0786353071286731,0.04904306219128454,0.14349985658518588,0.6666666666666666
-3,87385,<blank>,12,12,5,3,5,4,-0.06935074647714944,-0.09166666659888889,0.17246592026868449,0.16666666666666666

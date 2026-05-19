@@ -23,6 +23,7 @@ class ExperimentConfig:
         "vignette_simple_4",
         "vignette_cot_demographics_first",
         "vignette_cot_clinical_first",
+        #TODO: Do we need the cot_swap prompt? created by Rundraash?
     )
 
     # Pull condition from these fields in order.
