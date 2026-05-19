@@ -57,12 +57,61 @@ except Exception:
 # Constants
 # -----------------------------------------------------------------------------
 MODEL_NAME = "Qwen/Qwen2.5-7B-Instruct"
+GEMMA2_MODEL_NAME = "google/gemma-2-2b-it"
+GEMMA_SCOPE2_4B_IT_MODEL_NAME = "google/gemma-3-4b-it"
 # Preferred SAELens registry release name (falls back to HF repo id if needed).
 SAE_RELEASE = "qwen2.5-7b-instruct-andyrdt"
 SAE_RELEASE_FALLBACK = "andyrdt/saes-qwen2.5-7b-instruct"
 GEAMING_SAE_RELEASE = "Geaming/Qwen2.5-7B-Instruct_SAEs"
+GEMMA2_SAE_RELEASE = "google/gemma-scope-2b-pt-res-canonical"
+GEMMA_SCOPE2_4B_IT_SAE_RELEASES = [
+    # Prefer official SAELens registry names first.
+    "gemma-scope-2-4b-it-res-all",
+    "gemma-scope-2-4b-it-res",
+    # Fallback to canonical HF repo id; select specific folders via sae_id patterns.
+    "google/gemma-scope-2-4b-it",
+    # Keep legacy aliases as optional fallbacks for older environments.
+    "gemma-scope-2-4b-it-resid_post_all",
+    "gemma-scope-2-4b-it-resid_post",
+]
 # Combined layer superset from andyrdt + Geaming releases.
-SAE_LAYERS = [3, 4, 7, 11, 12, 15, 18, 19, 20, 23, 25, 27]
+QWEN_SUPERSET_SAE_LAYERS = [3, 4, 7, 11, 12, 15, 18, 19, 20, 23, 25, 27]
+QWEN_ORIGINAL_SAE_LAYERS = [3, 7, 11, 15, 19, 23, 27]
+# Gemma-2 2B has 26 transformer blocks (0..25). This preset allows "all layers".
+GEMMA2_ALL_SAE_LAYERS = list(range(26))
+SAE_LAYER_PRESETS = {
+    "qwen_superset": QWEN_SUPERSET_SAE_LAYERS,
+    "qwen_original": QWEN_ORIGINAL_SAE_LAYERS,
+    "gemma2_all": GEMMA2_ALL_SAE_LAYERS,
+    # Resolve after model load from model.cfg.n_layers.
+    "model_all": [],
+}
+# Runtime-selected layer list. Defaults to qwen superset for backward compatibility.
+SAE_LAYERS = QWEN_SUPERSET_SAE_LAYERS.copy()
+
+MODEL_PRESETS: Dict[str, Dict[str, Any]] = {
+    "qwen2.5_7b_instruct": {
+        "model_name": MODEL_NAME,
+        "sae_releases": [SAE_RELEASE, SAE_RELEASE_FALLBACK, GEAMING_SAE_RELEASE],
+        "sae_family": "qwen",
+    },
+    "gemma2_2b_it": {
+        "model_name": GEMMA2_MODEL_NAME,
+        "sae_releases": [GEMMA2_SAE_RELEASE],
+        "sae_family": "gemma2",
+    },
+    "gemma_scope2_4b_it": {
+        "model_name": GEMMA_SCOPE2_4B_IT_MODEL_NAME,
+        "sae_releases": GEMMA_SCOPE2_4B_IT_SAE_RELEASES,
+        "sae_family": "gemma_scope2",
+    },
+}
+
+# Runtime-selected model/SAE registry configuration.
+ACTIVE_MODEL_NAME = MODEL_NAME
+ACTIVE_SAE_RELEASES = [SAE_RELEASE, SAE_RELEASE_FALLBACK, GEAMING_SAE_RELEASE]
+ACTIVE_SAE_FAMILY = "qwen"
+_FINITENESS_LOGGED = False
 
 CONDITIONS = [
     "rheumatoid arthritis",
@@ -140,6 +189,45 @@ def _parse_csv_list(value: str) -> List[str]:
 
 def _parse_float_list(value: str) -> List[float]:
     return [float(x.strip()) for x in value.split(",") if x.strip()]
+
+
+def _parse_int_list(value: str) -> List[int]:
+    return [int(x.strip()) for x in value.split(",") if x.strip()]
+
+
+def _parse_csv_list_optional(value: str) -> List[str]:
+    if not value:
+        return []
+    return [x.strip() for x in value.split(",") if x.strip()]
+
+
+def _chunk_layers(layers: List[int], chunk_size: int) -> List[List[int]]:
+    if chunk_size <= 0:
+        return [list(layers)]
+    return [list(layers[i : i + chunk_size]) for i in range(0, len(layers), chunk_size)]
+
+
+def resolve_sae_layers(args: argparse.Namespace, model_n_layers: int | None = None) -> List[int]:
+    if args.sae_layers:
+        parsed = sorted(set(_parse_int_list(args.sae_layers)))
+        if not parsed:
+            raise ValueError("--sae-layers was provided but no valid integers were parsed.")
+        return parsed
+    if args.sae_layer_preset == "model_all":
+        if model_n_layers is None:
+            return []
+        return list(range(int(model_n_layers)))
+    return SAE_LAYER_PRESETS[args.sae_layer_preset].copy()
+
+
+def resolve_model_config(args: argparse.Namespace) -> Tuple[str, List[str], str]:
+    preset = MODEL_PRESETS[args.model_preset]
+    model_name = args.model_name.strip() if args.model_name.strip() else str(preset["model_name"])
+    family = str(preset["sae_family"])
+    releases = _parse_csv_list_optional(args.sae_releases)
+    if not releases:
+        releases = list(preset["sae_releases"])
+    return model_name, releases, family
 
 
 def _resolve_dtype(device: str, dtype_arg: str, runtime_profile: str) -> torch.dtype:
@@ -254,9 +342,11 @@ def run_paths(run_dir: Path) -> Dict[str, Path]:
         "sweep_coords": art / "sweep_coords.json",
         "sweep_results": art / "sweep_results.parquet",
         "controls_results": art / "controls_results.parquet",
+        "controls_diag": art / "controls_diagnostics.json",
         "shortlist": art / "causal_shortlist.csv",
         "stats": art / "control_stats.csv",
         "timeline": art / "timeline_summary.csv",
+        "run_config": art / "run_config.json",
     }
 
 
@@ -266,7 +356,7 @@ def load_progress(progress_path: Path) -> Dict[str, Any]:
             "completed_stages": [],
             "failed_stages": {},
             "updated": "",
-            "model_name": MODEL_NAME,
+            "model_name": ACTIVE_MODEL_NAME,
         }
     return load_json(progress_path)
 
@@ -300,7 +390,7 @@ def load_model_and_tokenizer(args) -> Tuple[Any, Any, int, int, str]:
         login(token=token)
 
     model = HookedTransformer.from_pretrained(
-        MODEL_NAME,
+        ACTIVE_MODEL_NAME,
         dtype=dtype,
         fold_ln=False,
         center_writing_weights=False,
@@ -321,12 +411,18 @@ def load_model_and_tokenizer(args) -> Tuple[Any, Any, int, int, str]:
 
 
 def load_sae_for_layer(layer: int, device: str, overrides: Dict[int, str]) -> Tuple[Any, str]:
-    andyrdt_candidates: List[str] = []
+    qwen_candidates: List[str] = []
     geaming_candidates: List[str] = []
+    gemma2_candidates: List[str] = []
+    gemma_scope2_candidates: List[str] = []
+    generic_candidates: List[str] = []
     if layer in overrides:
-        andyrdt_candidates.append(overrides[layer])
+        qwen_candidates.append(overrides[layer])
         geaming_candidates.append(overrides[layer])
-    andyrdt_candidates.extend(
+        gemma2_candidates.append(overrides[layer])
+        gemma_scope2_candidates.append(overrides[layer])
+        generic_candidates.append(overrides[layer])
+    qwen_candidates.extend(
         [
             # SAELens registry IDs for andyrdt release commonly use trainer suffixes.
             f"resid_post_layer_{layer}_trainer_1",
@@ -355,17 +451,77 @@ def load_sae_for_layer(layer: int, device: str, overrides: Dict[int, str]) -> Tu
             f"blocks.{layer}.hook_resid_post",
         ]
     )
-    release_candidates = [
-        (SAE_RELEASE, andyrdt_candidates),
-        (SAE_RELEASE_FALLBACK, andyrdt_candidates),
-        (GEAMING_SAE_RELEASE, geaming_candidates),
-    ]
+    gemma2_candidates.extend(
+        [
+            # Common naming styles for Gemma Scope-like releases.
+            f"layer_{layer}/width_16k/canonical",
+            f"layer_{layer}/width_16k/average_l0_82",
+            f"layer_{layer}/width_16k/average_l0_41",
+            f"resid_post_layer_{layer}",
+            f"blocks.{layer}.hook_resid_post",
+        ]
+    )
+    gemma_scope2_candidates.extend(
+        [
+            # Gemma Scope 2 naming styles.
+            f"layer_{layer}_width_16k_l0_big",
+            f"layer_{layer}_width_16k_l0_small",
+            f"layer_{layer}_width_262k_l0_big",
+            f"layer_{layer}_width_262k_l0_small",
+            f"layer_{layer}_width_65k_l0_big",
+            f"layer_{layer}_width_65k_l0_medium",
+            f"layer_{layer}_width_65k_l0_small",
+            f"layer_{layer}_width_1m_l0_big",
+            f"layer_{layer}_width_1m_l0_medium",
+            f"layer_{layer}_width_1m_l0_small",
+            f"resid_post_all/layer_{layer}_width_16k_l0_small",
+            f"resid_post_all/layer_{layer}_width_16k_l0_big",
+            f"resid_post_all/layer_{layer}_width_262k_l0_small",
+            f"resid_post_all/layer_{layer}_width_262k_l0_big",
+            f"resid_post/layer_{layer}_width_16k_l0_small",
+            f"resid_post/layer_{layer}_width_16k_l0_medium",
+            f"resid_post/layer_{layer}_width_16k_l0_big",
+            f"resid_post/layer_{layer}_width_262k_l0_small",
+            f"resid_post/layer_{layer}_width_262k_l0_medium",
+            f"resid_post/layer_{layer}_width_262k_l0_big",
+            f"resid_post/layer_{layer}_width_65k_l0_small",
+            f"resid_post/layer_{layer}_width_65k_l0_medium",
+            f"resid_post/layer_{layer}_width_65k_l0_big",
+            f"resid_post/layer_{layer}_width_1m_l0_small",
+            f"resid_post/layer_{layer}_width_1m_l0_medium",
+            f"resid_post/layer_{layer}_width_1m_l0_big",
+            # Backward-compatible naming variants.
+            f"layer_{layer}/width_16k/canonical",
+            f"layer_{layer}/width_16k/average_l0_82",
+            f"blocks.{layer}.hook_resid_post",
+        ]
+    )
+    generic_candidates.extend(
+        [
+            f"resid_post_layer_{layer}",
+            f"resid_post_layer_{layer}_trainer_1",
+            f"blocks.{layer}.hook_resid_post",
+        ]
+    )
+    family_candidates: Dict[str, List[str]] = {
+        # Superset uses andyrdt-style + Geaming-style IDs; try both for every release
+        # (wrong names fail fast; Geaming repo needs BT(F)/blocks_{L}_... paths).
+        "qwen": qwen_candidates + geaming_candidates + generic_candidates,
+        "gemma2": gemma2_candidates + generic_candidates,
+        "gemma_scope2": gemma_scope2_candidates + generic_candidates,
+    }
+    candidates = family_candidates.get(ACTIVE_SAE_FAMILY, generic_candidates)
+    release_candidates = [(release, candidates) for release in ACTIVE_SAE_RELEASES]
     errs = []
     for release, candidates in release_candidates:
         for sae_id in candidates:
             try:
                 sae, _, _ = SAE.from_pretrained(release=release, sae_id=sae_id, device=device)
+                # Gemma Scope + BF16 runtime can yield NaNs in encode() for some checkpoints.
+                # Keep SAE math in FP32 for numerical stability even when model runs BF16/FP16.
+                sae = sae.to(dtype=torch.float32)
                 sae.eval()
+                print(f"[load_sae_for_layer] release={release} sae_id={sae_id} device={device}")
                 return sae, sae_id
             except Exception as e:
                 errs.append((f"{release} :: {sae_id}", str(e)))
@@ -373,10 +529,11 @@ def load_sae_for_layer(layer: int, device: str, overrides: Dict[int, str]) -> Tu
     raise RuntimeError(f"Failed loading SAE for layer={layer}. Attempts:\n{msg}")
 
 
-def load_saes(device: str, overrides: Dict[int, str]) -> Tuple[Dict[int, Any], Dict[int, str]]:
+def load_saes(device: str, overrides: Dict[int, str], layers: List[int] | None = None) -> Tuple[Dict[int, Any], Dict[int, str]]:
     saes: Dict[int, Any] = {}
     sae_ids: Dict[int, str] = {}
-    for layer in SAE_LAYERS:
+    active_layers = SAE_LAYERS if layers is None else list(layers)
+    for layer in active_layers:
         sae, sae_id = load_sae_for_layer(layer, device, overrides)
         saes[layer] = sae
         sae_ids[layer] = sae_id
@@ -391,10 +548,37 @@ def preflight_summary(args, device: str) -> None:
     print(f"dtype={dtype}")
     print(f"stage={args.stage}")
     print(f"run_id={args.run_id}")
-    print(f"sae_layers={SAE_LAYERS}")
+    print(f"model_preset={args.model_preset}")
+    print(f"model_name={ACTIVE_MODEL_NAME}")
+    print(f"sae_releases={ACTIVE_SAE_RELEASES}")
+    print(f"sae_layer_preset={args.sae_layer_preset}")
+    print(f"sae_layer_chunk_size={args.sae_layer_chunk_size}")
+    if args.sae_layer_preset == "model_all" and not SAE_LAYERS and not args.sae_layers:
+        print("sae_layers=<deferred: model_all; resolves after model load>")
+    else:
+        print(f"sae_layers={SAE_LAYERS}")
     print(f"max_sweep_coords={args.max_sweep_coords}")
     print(f"max_control_rows={args.max_control_rows}")
+    print(f"ablation_mode={args.ablation_mode}")
+    print(f"stage3_key_source={args.stage3_key_source}")
+    print(f"stage3_max_keys_per_group={args.stage3_max_keys_per_group}")
+    print(f"allow_post_decision_coords={args.allow_post_decision_coords}")
     print("===============================")
+
+
+def save_run_config(args: argparse.Namespace, paths: Dict[str, Path]) -> None:
+    payload = {
+        "run_id": args.run_id,
+        "ablation_mode": args.ablation_mode,
+        "stage3_key_source": args.stage3_key_source,
+        "stage3_max_keys_per_group": int(args.stage3_max_keys_per_group),
+        "allow_post_decision_coords": bool(args.allow_post_decision_coords),
+        "gating_mode": args.gating_mode,
+        "runtime_profile": args.runtime_profile,
+        "model_name": ACTIVE_MODEL_NAME,
+        "sae_layers": list(SAE_LAYERS),
+    }
+    save_json(paths["run_config"], payload)
 
 
 # -----------------------------------------------------------------------------
@@ -522,10 +706,55 @@ def get_max_latents_for_text(model, text: str, layer: int, sae) -> np.ndarray:
     hook_name = f"blocks.{layer}.hook_resid_post"
     with torch.no_grad():
         _, cache = model.run_with_cache(tokens, names_filter=lambda n: n == hook_name)
-        resid = cache[hook_name]
+        resid = cache[hook_name].to(dtype=torch.float32)
         feats = sae.encode(resid)
         max_lat = feats[:, 1:, :].max(dim=1).values
     return max_lat.squeeze(0).detach().float().cpu().numpy()
+
+
+def per_token_sae_feature_acts(
+    model,
+    text: str,
+    layer: int,
+    sae: Any,
+    feature_idx: int,
+) -> Tuple[np.ndarray, List[str]]:
+    """
+    Pre-reconstruction SAE feature activations at every token position for one sequence.
+
+    Uses the same tokenization path as ``get_max_latents_for_text`` (``prepend_bos=False``).
+
+    Returns
+    -------
+    acts
+        Shape ``[seq_len]``, ``acts[i]`` = activation of ``feature_idx`` at token position ``i``.
+    token_strs
+        Per-position tokenizer decode strings aligned with ``acts`` (same length).
+    """
+    tokens = model.to_tokens(text, prepend_bos=False)
+    hook_name = f"blocks.{layer}.hook_resid_post"
+    with torch.no_grad():
+        _, cache = model.run_with_cache(tokens, names_filter=lambda n: n == hook_name)
+        resid = cache[hook_name].to(dtype=torch.float32)
+        feats = sae.encode(resid)
+        global _FINITENESS_LOGGED
+        if not _FINITENESS_LOGGED:
+            resid_ok = bool(torch.isfinite(resid).all().item())
+            feats_ok = bool(torch.isfinite(feats).all().item())
+            resid_nan = int(torch.isnan(resid).sum().item())
+            feats_nan = int(torch.isnan(feats).sum().item())
+            print(
+                "[per_token_sae_feature_acts] "
+                f"resid_finite={resid_ok} resid_nan={resid_nan} "
+                f"feats_finite={feats_ok} feats_nan={feats_nan} "
+                f"resid_shape={tuple(resid.shape)} feats_shape={tuple(feats.shape)}"
+            )
+            _FINITENESS_LOGGED = True
+        acts = feats[0, :, int(feature_idx)].detach().float().cpu().numpy()
+    ids = tokens[0].tolist()
+    tok = model.tokenizer
+    token_strs = [tok.decode([t_id], skip_special_tokens=False) for t_id in ids]
+    return acts, token_strs
 
 
 def rank_latents(lat_female: np.ndarray, lat_male: np.ndarray, top_k: int) -> Tuple[List[int], np.ndarray, np.ndarray]:
@@ -550,34 +779,50 @@ def rank_latents(lat_female: np.ndarray, lat_male: np.ndarray, top_k: int) -> Tu
     return merged, coef, effect
 
 
-def run_stage2_discovery(args, paths: Dict[str, Path], model, saes: Dict[int, Any], sae_ids: Dict[int, str]) -> None:
-    if args.resume and checkpoint_exists(paths["contrastive"]) and checkpoint_exists(paths["top_latents"]):
+def run_stage2_discovery(
+    args,
+    paths: Dict[str, Path],
+    model,
+    saes: Dict[int, Any],
+    sae_ids: Dict[int, str],
+    layer_subset: List[int] | None = None,
+    chunk_mode: bool = False,
+    reset_output: bool = False,
+) -> None:
+    if (not chunk_mode) and args.resume and checkpoint_exists(paths["contrastive"]) and checkpoint_exists(paths["top_latents"]):
         print("Stage 2: discovery artifacts already exist; skipping due to --resume")
         return
     baseline = load_json(paths["baseline"])
     run_index = load_json(paths["run_index"])
     eligible_keys = run_index["eligible_keys"]
 
-    contrastive: Dict[str, Any] = {}
-    for key in eligible_keys:
-        row = baseline[key]
-        gen = row["generated_text"]
-        female_gen = rewrite_gender(gen, "female")
-        male_gen = rewrite_gender(gen, "male")
-        contrastive[key] = {
-            "condition": row["condition"],
-            "variation": row["variation"],
-            "temp_idx": row["temp_idx"],
-            "prompt_str": row["prompt_str"],
-            "female_text": row["prompt_str"] + female_gen,
-            "male_text": row["prompt_str"] + male_gen,
-            "female_gen": female_gen,
-            "male_gen": male_gen,
-        }
-    save_json(paths["contrastive"], contrastive)
+    if (args.resume or chunk_mode) and checkpoint_exists(paths["contrastive"]):
+        contrastive = load_json(paths["contrastive"])
+    else:
+        contrastive = {}
+        for key in eligible_keys:
+            row = baseline[key]
+            gen = row["generated_text"]
+            female_gen = rewrite_gender(gen, "female")
+            male_gen = rewrite_gender(gen, "male")
+            contrastive[key] = {
+                "condition": row["condition"],
+                "variation": row["variation"],
+                "temp_idx": row["temp_idx"],
+                "prompt_str": row["prompt_str"],
+                "female_text": row["prompt_str"] + female_gen,
+                "male_text": row["prompt_str"] + male_gen,
+                "female_gen": female_gen,
+                "male_gen": male_gen,
+            }
+        save_json(paths["contrastive"], contrastive)
 
-    top_latents: Dict[str, Any] = {}
-    for layer in SAE_LAYERS:
+    active_layers = list(layer_subset) if layer_subset is not None else list(SAE_LAYERS)
+    if chunk_mode and checkpoint_exists(paths["top_latents"]) and not reset_output:
+        top_latents = load_json(paths["top_latents"])
+    else:
+        top_latents = {}
+    for layer in active_layers:
         f_rows: List[np.ndarray] = []
         m_rows: List[np.ndarray] = []
         for key in tqdm(eligible_keys, desc=f"Stage2 layer={layer}"):
@@ -601,23 +846,53 @@ def run_stage2_discovery(args, paths: Dict[str, Path], model, saes: Dict[int, An
             payload["decoder_directions"][str(int(i))] = d.tolist()
         top_latents[str(layer)] = payload
     save_json(paths["top_latents"], top_latents)
-    print("Stage2 done: wrote contrastive_pairs + top_latents")
+    print(f"Stage2 done: wrote contrastive_pairs + top_latents (layers={active_layers})")
 
 
-def run_stage3_cache_latents(args, paths: Dict[str, Path], model, tokenizer, saes: Dict[int, Any]) -> None:
-    if args.resume and checkpoint_exists(paths["sweep_coords"]):
+def run_stage3_cache_latents(
+    args,
+    paths: Dict[str, Path],
+    model,
+    tokenizer,
+    saes: Dict[int, Any],
+    layer_subset: List[int] | None = None,
+    chunk_mode: bool = False,
+    reset_output: bool = False,
+) -> None:
+    if (not chunk_mode) and args.resume and checkpoint_exists(paths["sweep_coords"]):
         print("Stage 3: sweep coordinates already exist; skipping due to --resume")
         return
     baseline = load_json(paths["baseline"])
     run_index = load_json(paths["run_index"])
     top_latents = load_json(paths["top_latents"])
-    rep_keys = run_index["representative_keys"]
+    stage3_source = args.stage3_key_source
+    if stage3_source == "representative":
+        stage3_keys = list(run_index["representative_keys"])
+    else:
+        stage3_keys = list(run_index["eligible_keys"])
+    if args.stage3_max_keys_per_group > 0:
+        grouped: Dict[Tuple[str, str, int], List[str]] = defaultdict(list)
+        for key in stage3_keys:
+            row = baseline[key]
+            grouped[(str(row["condition"]), str(row["variation"]), int(row["temp_idx"]))].append(key)
+        bounded_keys: List[str] = []
+        for _, keys in grouped.items():
+            # Prefer traces with larger absolute decision margin within each group.
+            keys_sorted = sorted(keys, key=lambda k: abs(float(baseline[k]["logit_diff"])), reverse=True)
+            bounded_keys.extend(keys_sorted[: int(args.stage3_max_keys_per_group)])
+        stage3_keys = sorted(set(bounded_keys))
+    stage3_group_counts: Dict[str, int] = defaultdict(int)
+    for key in stage3_keys:
+        row = baseline[key]
+        gk = f"{row['condition']}|{row['variation']}|temp{row['temp_idx']}"
+        stage3_group_counts[gk] += 1
+    active_layers = list(layer_subset) if layer_subset is not None else list(SAE_LAYERS)
 
     latent_values_pos: Dict[Tuple[int, int], List[float]] = defaultdict(list)
     latent_values_neg: Dict[Tuple[int, int], List[float]] = defaultdict(list)
     per_trace: Dict[str, Any] = {}
 
-    for trace_key in tqdm(rep_keys, desc="Stage3 cache f_k(T)"):
+    for trace_key in tqdm(stage3_keys, desc="Stage3 cache f_k(T)"):
         row = baseline[trace_key]
         token_ids = row["full_token_ids"]
         tokens = torch.tensor(token_ids, device=model.cfg.device).unsqueeze(0)
@@ -634,10 +909,10 @@ def run_stage3_cache_latents(args, paths: Dict[str, Path], model, tokenizer, sae
         }
 
         with torch.no_grad():
-            for layer in SAE_LAYERS:
+            for layer in active_layers:
                 hook_name = f"blocks.{layer}.hook_resid_post"
                 _, cache = model.run_with_cache(tokens, names_filter=lambda n: n == hook_name)
-                resid = cache[hook_name]
+                resid = cache[hook_name].to(dtype=torch.float32)
                 feats = saes[layer].encode(resid).squeeze(0).detach().float().cpu().numpy()
                 layer_payload: Dict[str, List[float]] = {}
                 for k in [int(i) for i in top_latents[str(layer)]["feature_indices"]]:
@@ -666,7 +941,10 @@ def run_stage3_cache_latents(args, paths: Dict[str, Path], model, tokenizer, sae
         }
 
     coords = []
+    post_decision_excluded = 0
+    pre_decision_kept = 0
     for trace_key, payload in per_trace.items():
+        gender_pos = int(payload.get("gender_pos", -1))
         for layer_s, layer_data in payload["layers"].items():
             layer = int(layer_s)
             for k_s, fk_list in layer_data.items():
@@ -678,6 +956,10 @@ def run_stage3_cache_latents(args, paths: Dict[str, Path], model, tokenizer, sae
                 z_pos = float(z_map.get("positive", 0.0))
                 z_neg = float(z_map.get("negative", 0.0))
                 for pos, fk in enumerate(fk_list):
+                    if (not args.allow_post_decision_coords) and gender_pos > 0 and pos > (gender_pos - 1):
+                        post_decision_excluded += 1
+                        continue
+                    pre_decision_kept += 1
                     if args.gating_mode == "sign_aware":
                         if fk > z_pos:
                             coords.append(
@@ -721,15 +1003,53 @@ def run_stage3_cache_latents(args, paths: Dict[str, Path], model, tokenizer, sae
         coords = coords[: args.max_sweep_coords]
         print(f"Stage3: truncated coordinates to max_sweep_coords={args.max_sweep_coords}")
 
-    save_json(
-        paths["sweep_coords"],
-        {
-            "thresholds": thresholds,
-            "coordinates": coords,
-            "per_trace": per_trace,
+    payload = {
+        "metadata": {
+            "stage3_key_source": stage3_source,
+            "stage3_max_keys_per_group": int(args.stage3_max_keys_per_group),
+            "allow_post_decision_coords": bool(args.allow_post_decision_coords),
+            "post_decision_coords_excluded": int(post_decision_excluded),
+            "pre_decision_positions_kept": int(pre_decision_kept),
+            "n_stage3_keys": int(len(stage3_keys)),
+            "stage3_group_counts": dict(stage3_group_counts),
+            "gating_mode": args.gating_mode,
         },
+        "thresholds": thresholds,
+        "coordinates": coords,
+        "per_trace": per_trace,
+    }
+    if chunk_mode and checkpoint_exists(paths["sweep_coords"]) and not reset_output:
+        prev = load_json(paths["sweep_coords"])
+        merged_metadata = dict(prev.get("metadata", {}))
+        merged_metadata.update(payload.get("metadata", {}))
+        merged_thresholds = dict(prev.get("thresholds", {}))
+        merged_thresholds.update(payload["thresholds"])
+        merged_coords = list(prev.get("coordinates", [])) + payload["coordinates"]
+        merged_per_trace = prev.get("per_trace", {})
+        for trace_key, trace_payload in payload["per_trace"].items():
+            if trace_key not in merged_per_trace:
+                merged_per_trace[trace_key] = trace_payload
+                continue
+            merged_layers = merged_per_trace[trace_key].setdefault("layers", {})
+            for layer_s, layer_payload in trace_payload.get("layers", {}).items():
+                merged_layers[layer_s] = layer_payload
+        payload = {
+            "metadata": merged_metadata,
+            "thresholds": merged_thresholds,
+            "coordinates": merged_coords,
+            "per_trace": merged_per_trace,
+        }
+    if not args.allow_post_decision_coords:
+        for c in payload["coordinates"]:
+            trace_meta = payload["per_trace"].get(c["trace_key"], {})
+            gpos = int(trace_meta.get("gender_pos", -1))
+            if gpos > 0 and int(c["token_pos"]) > (gpos - 1):
+                raise RuntimeError("Stage3 smoke check failed: found post-decision coordinate while filter is active.")
+    save_json(paths["sweep_coords"], payload)
+    print(
+        f"Stage3 done: coordinates={len(payload['coordinates'])} "
+        f"(layers={active_layers}, source={stage3_source}, post_decision_excluded={post_decision_excluded})"
     )
-    print(f"Stage3 done: coordinates={len(coords)}")
 
 
 def run_single_ablation(
@@ -741,10 +1061,13 @@ def run_single_ablation(
     feature_idx: int,
     threshold: float,
     gate_sign: str = "positive",
+    ablation_mode: str = "exact_zero",
 ):
     hook_name = f"blocks.{layer}.hook_resid_post"
-    d_k = sae.W_dec[feature_idx].detach()
-    d_k = d_k / (d_k.norm() + 1e-9)
+    d_k = None
+    if ablation_mode == "decoder_subtract":
+        d_k = sae.W_dec[feature_idx].detach()
+        d_k = d_k / (d_k.norm() + 1e-9)
 
     def ablate_hook(resid_post, hook):
         if token_pos >= resid_post.shape[1]:
@@ -761,7 +1084,16 @@ def run_single_ablation(
                     return resid_post
             elif f_k <= threshold:
                 return resid_post
-            resid_post[0, token_pos, :] = x - f_k * d_k
+            if ablation_mode == "exact_zero":
+                x_tok = x.unsqueeze(0).unsqueeze(0)
+                f_mod = f.clone()
+                f_mod[0, 0, feature_idx] = 0.0
+                recon = sae.decode(f)
+                recon_mod = sae.decode(f_mod)
+                residual = x_tok - recon
+                resid_post[0, token_pos, :] = (recon_mod + residual)[0, 0, :]
+            else:
+                resid_post[0, token_pos, :] = x - f_k * d_k
         return resid_post
 
     with torch.no_grad():
@@ -769,25 +1101,41 @@ def run_single_ablation(
     return logits
 
 
-def run_stage4_causal_sweep(args, paths: Dict[str, Path], model, tokenizer, female_id: int, male_id: int, saes: Dict[int, Any]) -> None:
+def run_stage4_causal_sweep(
+    args,
+    paths: Dict[str, Path],
+    model,
+    tokenizer,
+    female_id: int,
+    male_id: int,
+    saes: Dict[int, Any],
+    layer_subset: List[int] | None = None,
+    chunk_mode: bool = False,
+    reset_output: bool = False,
+) -> None:
     ensure_parquet()
-    if args.resume and checkpoint_exists(paths["sweep_results"]):
+    if (not chunk_mode) and args.resume and checkpoint_exists(paths["sweep_results"]):
         print("Stage 4: sweep results already exist; skipping due to --resume")
         return
     baseline = load_json(paths["baseline"])
     sweep_cache = load_json(paths["sweep_coords"])
+    active_layers = set(layer_subset if layer_subset is not None else SAE_LAYERS)
 
     rows = []
     for coord in tqdm(sweep_cache["coordinates"], desc="Stage4 sparse sweep"):
         trace_key = coord["trace_key"]
         trace = baseline[trace_key]
         layer = int(coord["layer"])
+        if layer not in active_layers:
+            continue
         token_pos = int(coord["token_pos"])
         feature_idx = int(coord["feature_idx"])
         threshold = float(coord["threshold"])
         gate_sign = str(coord.get("gate_sign", "positive"))
         gender_pos = int(trace["gender_pos"])
         if gender_pos <= 0:
+            continue
+        if (not args.allow_post_decision_coords) and token_pos > (gender_pos - 1):
             continue
         tokens = torch.tensor(trace["full_token_ids"], device=model.cfg.device).unsqueeze(0)
         logits = run_single_ablation(
@@ -799,6 +1147,7 @@ def run_stage4_causal_sweep(args, paths: Dict[str, Path], model, tokenizer, fema
             feature_idx,
             threshold,
             gate_sign=gate_sign,
+            ablation_mode=args.ablation_mode,
         )
         dec = logits[0, gender_pos - 1, :]
         delta_abl = float((dec[female_id] - dec[male_id]).item())
@@ -823,19 +1172,33 @@ def run_stage4_causal_sweep(args, paths: Dict[str, Path], model, tokenizer, fema
                 "delta_abl": delta_abl,
                 "delta_shift": shift,
                 "norm_effect": norm,
+                "ablation_mode": args.ablation_mode,
+                "stage3_key_source": args.stage3_key_source,
+                "allow_post_decision_coords": bool(args.allow_post_decision_coords),
+                "gating_mode": args.gating_mode,
             }
         )
-    pd.DataFrame(rows).to_parquet(paths["sweep_results"], index=False)
-    print(f"Stage4 done: rows={len(rows)}")
+    new_df = pd.DataFrame(rows)
+    if chunk_mode and checkpoint_exists(paths["sweep_results"]) and not reset_output:
+        prev_df = pd.read_parquet(paths["sweep_results"])
+        out_df = pd.concat([prev_df, new_df], ignore_index=True) if len(new_df) > 0 else prev_df
+    else:
+        out_df = new_df
+    if len(out_df) > 0 and "ablation_mode" not in out_df.columns:
+        raise RuntimeError("Stage4 smoke check failed: ablation_mode metadata column missing.")
+    out_df.to_parquet(paths["sweep_results"], index=False)
+    print(f"Stage4 done: rows={len(out_df)} (layers={sorted(active_layers)})")
 
 
 def _replace_condition(prompt: str, old_condition: str, new_condition: str) -> str:
     return re.sub(re.escape(old_condition), new_condition, prompt, flags=re.IGNORECASE)
 
 
-def discover_condition_control_latents(model, saes: Dict[int, Any], baseline: Dict[str, Any], sample_keys: List[str], top_k: int) -> Dict[int, List[int]]:
+def discover_condition_control_latents(
+    model, saes: Dict[int, Any], baseline: Dict[str, Any], sample_keys: List[str], top_k: int
+) -> Dict[int, List[int]]:
     out: Dict[int, List[int]] = {}
-    for layer in SAE_LAYERS:
+    for layer in sorted(saes.keys()):
         orig_vecs: List[np.ndarray] = []
         swap_vecs: List[np.ndarray] = []
         for key in sample_keys:
@@ -855,30 +1218,43 @@ def latent_activation_vector(model, sae, tokens, layer: int, token_pos: int) -> 
     hook_name = f"blocks.{layer}.hook_resid_post"
     with torch.no_grad():
         _, cache = model.run_with_cache(tokens, names_filter=lambda n: n == hook_name)
-        resid = cache[hook_name]
+        resid = cache[hook_name].to(dtype=torch.float32)
         feats = sae.encode(resid)
     return feats[0, token_pos, :].detach().float().cpu().numpy()
 
 
 def sample_magnitude_matched_latent(feat_vec: np.ndarray, target_idx: int, rel_tol: float = 0.10):
-    target = feat_vec[target_idx]
-    if target <= 0:
+    target = float(feat_vec[target_idx])
+    target_abs = abs(target)
+    if target_abs <= 0:
         return None
-    rel_diff = np.abs(feat_vec - target) / (np.abs(target) + 1e-9)
+    rel_diff = np.abs(np.abs(feat_vec) - target_abs) / (target_abs + 1e-9)
     candidates = np.where((rel_diff <= rel_tol) & (np.arange(len(feat_vec)) != target_idx))[0]
     if len(candidates) == 0:
         return None
     return int(np.random.choice(candidates))
 
 
-def run_stage5_controls(args, paths: Dict[str, Path], model, female_id: int, male_id: int, saes: Dict[int, Any]) -> None:
+def run_stage5_controls(
+    args,
+    paths: Dict[str, Path],
+    model,
+    female_id: int,
+    male_id: int,
+    saes: Dict[int, Any],
+    layer_subset: List[int] | None = None,
+    chunk_mode: bool = False,
+    reset_output: bool = False,
+) -> None:
     ensure_parquet()
-    if args.resume and checkpoint_exists(paths["controls_results"]):
+    if (not chunk_mode) and args.resume and checkpoint_exists(paths["controls_results"]):
         print("Stage 5: controls results already exist; skipping due to --resume")
         return
     baseline = load_json(paths["baseline"])
     run_index = load_json(paths["run_index"])
     sweep_df = pd.read_parquet(paths["sweep_results"])
+    active_layers = set(layer_subset if layer_subset is not None else SAE_LAYERS)
+    sweep_df = sweep_df[sweep_df["layer"].astype(int).isin(active_layers)].copy()
 
     condition_control = discover_condition_control_latents(
         model=model,
@@ -889,6 +1265,13 @@ def run_stage5_controls(args, paths: Dict[str, Path], model, female_id: int, mal
     )
 
     rows = []
+    diag = {
+        "random_magnitude_matched_attempts": 0,
+        "random_magnitude_matched_success": 0,
+        "condition_semantic_attempts": 0,
+        "condition_semantic_success": 0,
+        "condition_semantic_low_quality_swaps": 0,
+    }
     records = sweep_df.to_dict("records")
     if args.max_control_rows > 0 and len(records) > args.max_control_rows:
         random.Random(args.seed).shuffle(records)
@@ -906,9 +1289,22 @@ def run_stage5_controls(args, paths: Dict[str, Path], model, female_id: int, mal
         tokens = torch.tensor(trace["full_token_ids"], device=model.cfg.device).unsqueeze(0)
         feat_vec = latent_activation_vector(model, saes[layer], tokens, layer, token_pos)
 
+        diag["random_magnitude_matched_attempts"] += 1
         rand_idx = sample_magnitude_matched_latent(feat_vec, feat_idx, rel_tol=0.10)
         if rand_idx is not None:
-            rand_logits = run_single_ablation(model, saes[layer], tokens, layer, token_pos, rand_idx, threshold=0.0)
+            diag["random_magnitude_matched_success"] += 1
+            source_sign = int(np.sign(float(feat_vec[feat_idx])))
+            control_sign = int(np.sign(float(feat_vec[rand_idx])))
+            rand_logits = run_single_ablation(
+                model,
+                saes[layer],
+                tokens,
+                layer,
+                token_pos,
+                rand_idx,
+                threshold=0.0,
+                ablation_mode=args.ablation_mode,
+            )
             rand_delta = float((rand_logits[0, gender_pos - 1, female_id] - rand_logits[0, gender_pos - 1, male_id]).item())
             rows.append(
                 {
@@ -924,12 +1320,32 @@ def run_stage5_controls(args, paths: Dict[str, Path], model, female_id: int, mal
                     "delta_control": rand_delta,
                     "delta_shift": float(row["delta_base"] - rand_delta),
                     "norm_effect": float((row["delta_base"] - rand_delta) / (abs(row["delta_base"]) + 1e-9)),
+                    "source_activation_sign": source_sign,
+                    "control_activation_sign": control_sign,
+                    "activation_sign_match": int(source_sign == control_sign),
+                    "control_match_quality": "matched",
+                    "ablation_mode": args.ablation_mode,
                 }
             )
 
+        diag["condition_semantic_attempts"] += 1
         if len(condition_control[layer]) > 0:
+            swapped_prompt = _replace_condition(trace["prompt_str"], trace["condition"], "___TEMP_SWAP___")
+            swap_low_quality = int(swapped_prompt == trace["prompt_str"])
+            if swap_low_quality:
+                diag["condition_semantic_low_quality_swaps"] += 1
             cond_idx = int(random.choice(condition_control[layer]))
-            cond_logits = run_single_ablation(model, saes[layer], tokens, layer, token_pos, cond_idx, threshold=0.0)
+            diag["condition_semantic_success"] += 1
+            cond_logits = run_single_ablation(
+                model,
+                saes[layer],
+                tokens,
+                layer,
+                token_pos,
+                cond_idx,
+                threshold=0.0,
+                ablation_mode=args.ablation_mode,
+            )
             cond_delta = float((cond_logits[0, gender_pos - 1, female_id] - cond_logits[0, gender_pos - 1, male_id]).item())
             rows.append(
                 {
@@ -945,10 +1361,19 @@ def run_stage5_controls(args, paths: Dict[str, Path], model, female_id: int, mal
                     "delta_control": cond_delta,
                     "delta_shift": float(row["delta_base"] - cond_delta),
                     "norm_effect": float((row["delta_base"] - cond_delta) / (abs(row["delta_base"]) + 1e-9)),
+                    "condition_swap_low_quality": swap_low_quality,
+                    "ablation_mode": args.ablation_mode,
                 }
             )
-    pd.DataFrame(rows).to_parquet(paths["controls_results"], index=False)
-    print(f"Stage5 done: rows={len(rows)}")
+    new_df = pd.DataFrame(rows)
+    if chunk_mode and checkpoint_exists(paths["controls_results"]) and not reset_output:
+        prev_df = pd.read_parquet(paths["controls_results"])
+        out_df = pd.concat([prev_df, new_df], ignore_index=True) if len(new_df) > 0 else prev_df
+    else:
+        out_df = new_df
+    out_df.to_parquet(paths["controls_results"], index=False)
+    save_json(paths["controls_diag"], diag)
+    print(f"Stage5 done: rows={len(out_df)} (layers={sorted(active_layers)})")
 
 
 def _stage_label(per_trace: Dict[str, Any], trace_key: str, token_pos: int) -> str:
@@ -976,6 +1401,7 @@ def run_stage6_analysis(args, paths: Dict[str, Path]) -> None:
 
     controls_df = pd.read_parquet(paths["controls_results"]) if checkpoint_exists(paths["controls_results"]) else pd.DataFrame()
     sweep_cache = load_json(paths["sweep_coords"])
+    sweep_meta = sweep_cache.get("metadata", {})
     per_trace = sweep_cache.get("per_trace", {})
 
     real_df = sweep_df.copy()
@@ -1034,6 +1460,10 @@ def run_stage6_analysis(args, paths: Dict[str, Path]) -> None:
         mean_norm_effect=("norm_effect", "mean"),
         median_norm_effect=("norm_effect", "median"),
     )
+    timeline["stage3_key_source"] = str(sweep_meta.get("stage3_key_source", "unknown"))
+    timeline["allow_post_decision_coords"] = bool(sweep_meta.get("allow_post_decision_coords", True))
+    timeline["post_decision_coords_excluded"] = int(sweep_meta.get("post_decision_coords_excluded", 0))
+    timeline["ablation_mode"] = args.ablation_mode
     timeline.to_csv(paths["timeline"], index=False)
 
     if args.save_plots and _HAS_PLOTLY:
@@ -1088,10 +1518,41 @@ def parse_args() -> argparse.Namespace:
     p.add_argument("--rep-temp-idx", type=int, default=0)
     p.add_argument("--max-new-tokens", type=int, default=700)
     p.add_argument("--top-k", type=int, default=10)
+    p.add_argument(
+        "--sae-layer-chunk-size",
+        type=int,
+        default=0,
+        help="If >0, stages 2-5 load/process SAEs in layer chunks to reduce VRAM (0 disables chunking).",
+    )
 
     p.add_argument("--max-sweep-coords", type=int, default=-1, help="-1 means profile default, 0 means no limit")
     p.add_argument("--max-control-rows", type=int, default=-1, help="-1 means profile default, 0 means no limit")
+    p.add_argument(
+        "--ablation-mode",
+        type=str,
+        default="exact_zero",
+        choices=["exact_zero", "decoder_subtract"],
+        help="exact_zero performs latent-space erasure with decode+residual reconstruction.",
+    )
     p.add_argument("--no-controls", action="store_true")
+    p.add_argument(
+        "--stage3-key-source",
+        type=str,
+        default="eligible",
+        choices=["eligible", "representative"],
+        help="Which traces feed Stage3/4 coordinate discovery and sweeps.",
+    )
+    p.add_argument(
+        "--stage3-max-keys-per-group",
+        type=int,
+        default=0,
+        help="Optional cap per (condition, prompt variation, temp_idx) for Stage3 keys; 0 disables.",
+    )
+    p.add_argument(
+        "--allow-post-decision-coords",
+        action="store_true",
+        help="If set, Stage3/4 include coordinates after the decision logit position.",
+    )
     p.add_argument(
         "--gating-mode",
         type=str,
@@ -1103,6 +1564,38 @@ def parse_args() -> argparse.Namespace:
     p.add_argument("--save-plots", action="store_true")
     p.add_argument("--plot-format", type=str, default="png", choices=["png", "pdf"])
     p.add_argument("--sae-id-overrides", type=str, default="", help="JSON string, e.g. '{\"3\":\"qwen2.5-7b-it/3-resid-post-aa\"}'")
+    p.add_argument(
+        "--model-preset",
+        type=str,
+        default="qwen2.5_7b_instruct",
+        choices=sorted(MODEL_PRESETS.keys()),
+        help="Model + SAE release preset. Use gemma2_2b_it for Gemma2 experiments.",
+    )
+    p.add_argument(
+        "--model-name",
+        type=str,
+        default="",
+        help="Optional direct model override (HF id). Overrides --model-preset model_name.",
+    )
+    p.add_argument(
+        "--sae-releases",
+        type=str,
+        default="",
+        help="Optional comma-separated SAE releases. Overrides --model-preset SAE releases.",
+    )
+    p.add_argument(
+        "--sae-layer-preset",
+        type=str,
+        default="qwen_superset",
+        choices=sorted(SAE_LAYER_PRESETS.keys()),
+        help="Predefined SAE layer set. Use gemma2_all for Gemma-2 2B (0..25) or model_all for all layers of selected model.",
+    )
+    p.add_argument(
+        "--sae-layers",
+        type=str,
+        default="",
+        help="Optional explicit comma-separated SAE layers, e.g. '0,1,2,3'. Overrides --sae-layer-preset.",
+    )
     return p.parse_args()
 
 
@@ -1111,6 +1604,10 @@ def apply_profile_defaults(args: argparse.Namespace) -> None:
         args.max_sweep_coords = 0 if args.runtime_profile == "gh200" else 25000
     if args.max_control_rows == -1:
         args.max_control_rows = 0 if args.runtime_profile == "gh200" else 10000
+    if args.sae_layer_chunk_size < 0:
+        raise ValueError("--sae-layer-chunk-size must be >= 0")
+    if args.stage3_max_keys_per_group < 0:
+        raise ValueError("--stage3-max-keys-per-group must be >= 0")
 
 
 def stage_outputs_exist(stage: str, paths: Dict[str, Path]) -> bool:
@@ -1126,8 +1623,22 @@ def stage_outputs_exist(stage: str, paths: Dict[str, Path]) -> bool:
 
 
 def main() -> None:
+    global SAE_LAYERS, ACTIVE_MODEL_NAME, ACTIVE_SAE_RELEASES, ACTIVE_SAE_FAMILY
     args = parse_args()
     apply_profile_defaults(args)
+    ACTIVE_MODEL_NAME, ACTIVE_SAE_RELEASES, ACTIVE_SAE_FAMILY = resolve_model_config(args)
+    # Ensure Gemma Scope 2 4B IT uses all layers by default.
+    if (
+        args.model_preset == "gemma_scope2_4b_it"
+        and not args.sae_layers
+        and args.sae_layer_preset != "model_all"
+    ):
+        print(
+            "Auto-switching --sae-layer-preset to model_all for gemma_scope2_4b_it "
+            "(use --sae-layers to manually override)."
+        )
+        args.sae_layer_preset = "model_all"
+    SAE_LAYERS = resolve_sae_layers(args)
     random.seed(args.seed)
     np.random.seed(args.seed)
     torch.manual_seed(args.seed)
@@ -1137,6 +1648,7 @@ def main() -> None:
     paths = run_paths(run_dir)
     paths["artifacts_dir"].mkdir(parents=True, exist_ok=True)
     paths["heatmaps_dir"].mkdir(parents=True, exist_ok=True)
+    save_run_config(args, paths)
 
     device = "cuda" if torch.cuda.is_available() else "cpu"
     preflight_summary(args, device)
@@ -1171,6 +1683,69 @@ def main() -> None:
             print(f"\n>>> Running stage {stage}")
             if stage in {"1", "2", "3", "4", "5"} and model is None:
                 model, tokenizer, female_id, male_id, _ = load_model_and_tokenizer(args)
+                if args.sae_layer_preset == "model_all" and not args.sae_layers:
+                    SAE_LAYERS = resolve_sae_layers(args, model_n_layers=int(model.cfg.n_layers))
+                    print(f"Resolved model_all SAE layers from model: {SAE_LAYERS[:3]}...{SAE_LAYERS[-3:]} (n={len(SAE_LAYERS)})")
+            use_chunking = stage in {"2", "3", "4", "5"} and args.sae_layer_chunk_size > 0
+            if use_chunking:
+                chunks = _chunk_layers(SAE_LAYERS, args.sae_layer_chunk_size)
+                print(f"Stage {stage}: chunking enabled ({len(chunks)} chunk(s), chunk_size={args.sae_layer_chunk_size})")
+                for chunk_idx, layer_chunk in enumerate(chunks):
+                    print(f"  - chunk {chunk_idx + 1}/{len(chunks)} layers={layer_chunk}")
+                    saes, sae_ids = load_saes(model.cfg.device, overrides, layers=layer_chunk)
+                    reset_output = chunk_idx == 0
+                    if stage == "2":
+                        run_stage2_discovery(
+                            args,
+                            paths,
+                            model,
+                            saes,
+                            sae_ids,
+                            layer_subset=layer_chunk,
+                            chunk_mode=True,
+                            reset_output=reset_output,
+                        )
+                    elif stage == "3":
+                        run_stage3_cache_latents(
+                            args,
+                            paths,
+                            model,
+                            tokenizer,
+                            saes,
+                            layer_subset=layer_chunk,
+                            chunk_mode=True,
+                            reset_output=reset_output,
+                        )
+                    elif stage == "4":
+                        run_stage4_causal_sweep(
+                            args,
+                            paths,
+                            model,
+                            tokenizer,
+                            female_id,
+                            male_id,
+                            saes,
+                            layer_subset=layer_chunk,
+                            chunk_mode=True,
+                            reset_output=reset_output,
+                        )
+                    elif stage == "5":
+                        run_stage5_controls(
+                            args,
+                            paths,
+                            model,
+                            female_id,
+                            male_id,
+                            saes,
+                            layer_subset=layer_chunk,
+                            chunk_mode=True,
+                            reset_output=reset_output,
+                        )
+                    del saes, sae_ids
+                    if torch.cuda.is_available():
+                        torch.cuda.empty_cache()
+                mark_stage_completed(progress_path, stage)
+                continue
             if stage in {"2", "3", "4", "5"} and saes is None:
                 saes, sae_ids = load_saes(model.cfg.device, overrides)
 

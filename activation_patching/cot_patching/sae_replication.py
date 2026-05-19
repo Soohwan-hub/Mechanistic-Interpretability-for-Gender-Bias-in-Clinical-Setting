@@ -104,6 +104,7 @@ def select_targets(args: argparse.Namespace, paths: Dict[str, Path]) -> pd.DataF
                 {
                     "layer": int(layer),
                     "feature_idx": int(feat),
+                    "gate_sign": "positive",
                     "token_identity": "<manual>",
                     "n_conditions": np.nan,
                     "mean_norm_effect": np.nan,
@@ -120,11 +121,21 @@ def select_targets(args: argparse.Namespace, paths: Dict[str, Path]) -> pd.DataF
             raise ValueError(
                 f"Shortlist file is missing required columns: {sorted(missing)}"
             )
+        if "gate_sign" not in shortlist.columns:
+            shortlist["gate_sign"] = "positive"
         shortlist = shortlist.sort_values(
             ["n_conditions", "mean_norm_effect"], ascending=[False, False]
         )
-        shortlist = shortlist.drop_duplicates(["layer", "feature_idx"], keep="first")
-        targets = shortlist.head(args.top_n).copy()
+        shortlist = shortlist.drop_duplicates(["layer", "feature_idx", "gate_sign"], keep="first")
+        top_slice = shortlist.head(args.top_n).copy()
+        pair_only_count = int(top_slice.drop_duplicates(["layer", "feature_idx"]).shape[0])
+        if pair_only_count < len(top_slice):
+            # Smoke check: sign variants remain separate targets when present.
+            print(
+                "Smoke check: shortlist top-N contains both gate signs for at least one "
+                "(layer, feature) pair; keeping them as distinct replication targets."
+            )
+        targets = top_slice
         targets["expected_sign"] = (
             targets["mean_norm_effect"].astype(float).map(_expected_sign_from_value)
         )
@@ -132,6 +143,13 @@ def select_targets(args: argparse.Namespace, paths: Dict[str, Path]) -> pd.DataF
 
     targets["layer"] = targets["layer"].astype(int)
     targets["feature_idx"] = targets["feature_idx"].astype(int)
+    targets["gate_sign"] = targets["gate_sign"].astype(str)
+    if (targets["source"] == "shortlist").any() and "gate_sign" in targets.columns:
+        sign_split = (
+            targets.groupby(["layer", "feature_idx"])["gate_sign"].nunique().reset_index(name="n_gate_signs")
+        )
+        both_sign_rows = int((sign_split["n_gate_signs"] > 1).sum())
+        print(f"Target gate-sign split groups preserved: {both_sign_rows}")
     targets.to_csv(paths["targets"], index=False)
     return targets
 
@@ -282,7 +300,7 @@ def cache_target_feature_activations(
             for layer, feat_list in features_by_layer.items():
                 hook_name = f"blocks.{layer}.hook_resid_post"
                 _, cache = model.run_with_cache(tokens, names_filter=lambda n: n == hook_name)
-                resid = cache[hook_name]
+                resid = cache[hook_name].to(dtype=torch.float32)
                 feats = saes[layer].encode(resid).squeeze(0).detach().float().cpu().numpy()
                 layer_payload: Dict[str, List[float]] = {}
                 for feat_idx in feat_list:
@@ -326,6 +344,7 @@ def run_replication_ablation(
     model,
     saes: Dict[int, Any],
     gating_mode: str,
+    ablation_mode: str,
 ) -> pd.DataFrame:
     per_trace = activation_cache["per_trace"]
     thresholds = activation_cache["thresholds"]
@@ -336,6 +355,7 @@ def run_replication_ablation(
     for target in tqdm(target_rows, desc="Replicating targets"):
         layer = int(target["layer"])
         feat_idx = int(target["feature_idx"])
+        target_gate_sign = str(target.get("gate_sign", "positive"))
         expected_sign = int(target.get("expected_sign", 1))
         threshold_map = thresholds.get(
             f"{layer}:{feat_idx}",
@@ -364,11 +384,10 @@ def run_replication_ablation(
 
             for token_pos, f_value in enumerate(fk_list):
                 f_value = float(f_value)
-                gate_signs = (
-                    ["positive", "negative"]
-                    if gating_mode == "sign_aware"
-                    else ["positive"]
-                )
+                if gating_mode == "sign_aware":
+                    gate_signs = [target_gate_sign] if target_gate_sign in {"positive", "negative"} else ["positive", "negative"]
+                else:
+                    gate_signs = ["positive"]
                 for gate_sign in gate_signs:
                     threshold = float(threshold_map.get(gate_sign, 0.0))
                     if gate_sign == "positive" and f_value <= threshold:
@@ -385,6 +404,7 @@ def run_replication_ablation(
                         feature_idx=feat_idx,
                         threshold=threshold,
                         gate_sign=gate_sign,
+                        ablation_mode=ablation_mode,
                     )
                     dec = logits[0, gender_pos - 1, :]
                     delta_abl = float((dec[female_id] - dec[male_id]).item())
@@ -417,8 +437,10 @@ def run_replication_ablation(
                             "delta_shift": delta_shift,
                             "norm_effect": norm_effect,
                             "expected_sign": expected_sign,
+                            "target_gate_sign": target_gate_sign,
                             "effect_sign": sign,
                             "sign_match": sign_match,
+                            "ablation_mode": ablation_mode,
                         }
                     )
 
@@ -742,6 +764,13 @@ def parse_args() -> argparse.Namespace:
         choices=["sign_aware", "positive_only"],
         help="sign_aware evaluates positive and negative gates separately.",
     )
+    parser.add_argument(
+        "--ablation-mode",
+        type=str,
+        default="exact_zero",
+        choices=["exact_zero", "decoder_subtract"],
+        help="Must match localization ablation mode for apples-to-apples replication.",
+    )
     parser.add_argument("--save-plots", action="store_true")
     parser.add_argument("--plot-format", type=str, default="png", choices=["png", "pdf"])
     parser.add_argument("--max-plot-tokens", type=int, default=40)
@@ -774,6 +803,7 @@ def main() -> None:
     print(f"shortlist_csv={args.shortlist_csv}")
     print(f"top_n={args.top_n}")
     print(f"gating_mode={args.gating_mode}")
+    print(f"ablation_mode={args.ablation_mode}")
     print("===============================")
     if args.dry_run:
         return
@@ -812,6 +842,10 @@ def main() -> None:
 
     if args.resume and base.checkpoint_exists(paths["raw"]) and base.checkpoint_exists(paths["summary"]) and base.checkpoint_exists(paths["pass_fail"]):
         print("Replication outputs already exist; skipping compute due to --resume")
+        raw_df = pd.read_parquet(paths["raw"])
+        summary_df = pd.read_csv(paths["summary"])
+        pass_fail_df = pd.read_csv(paths["pass_fail"])
+        save_replication_plots(raw_df, summary_df, pass_fail_df, paths, args)
         return
 
     raw_df = run_replication_ablation(
@@ -825,6 +859,7 @@ def main() -> None:
         model=model,
         saes=saes,
         gating_mode=args.gating_mode,
+        ablation_mode=args.ablation_mode,
     )
     raw_df.to_parquet(paths["raw"], index=False)
 
