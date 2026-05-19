@@ -1,0 +1,3 @@
+# Pandas pulls in numpy; on Windows, install into a SHORT venv path to avoid WinError 206,
+# e.g.  python -m venv C:\venvs\lp  then  C:\venvs\lp\Scripts\pip install -r requirements-scrub.txt
+pandas>=2.0
