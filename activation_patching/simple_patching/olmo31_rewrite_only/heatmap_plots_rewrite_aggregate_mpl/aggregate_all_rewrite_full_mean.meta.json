@@ -1,0 +1,13 @@
+{
+  "artifacts_dir": "c:\\Users\\soohw\\rtar_parent\\Simple_Patching\\Mechanistic-Interpretability-for-Gender-Bias-in-Clinical-Setting\\activation_patching\\simple_patching\\olmo31_rewrite_only\\artifacts",
+  "num_artifacts_total": 155,
+  "num_artifacts_used": 155,
+  "num_artifacts_skipped": 0,
+  "x_axis": "full",
+  "agg_stat": "mean",
+  "aggregate_align": "pad",
+  "top_k_runs": 5,
+  "cohort": null,
+  "prompt_id": null,
+  "render_backend": "matplotlib"
+}
