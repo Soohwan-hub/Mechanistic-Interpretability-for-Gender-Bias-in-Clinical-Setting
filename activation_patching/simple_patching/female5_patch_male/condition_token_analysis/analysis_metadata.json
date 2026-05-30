@@ -1,0 +1,15 @@
+{
+  "source_run_dir": "c:\\Users\\soohw\\rtar_parent\\Simple_Patching\\Mechanistic-Interpretability-for-Gender-Bias-in-Clinical-Setting\\activation_patching\\simple_patching\\female5_patch_male",
+  "num_artifacts": 155,
+  "num_rows": 4340,
+  "condition_token_strategy": "last_subtoken",
+  "top_k": 15,
+  "score_keys": [
+    "rewrite_scores"
+  ],
+  "outputs": {
+    "per_unit": "c:\\Users\\soohw\\rtar_parent\\Simple_Patching\\Mechanistic-Interpretability-for-Gender-Bias-in-Clinical-Setting\\activation_patching\\simple_patching\\female5_patch_male\\condition_token_analysis\\per_unit_layer_condition_token_summary.csv",
+    "aggregate": "c:\\Users\\soohw\\rtar_parent\\Simple_Patching\\Mechanistic-Interpretability-for-Gender-Bias-in-Clinical-Setting\\activation_patching\\simple_patching\\female5_patch_male\\condition_token_analysis\\aggregate_layer_condition_token_summary.csv",
+    "aggregate_by_cohort": "c:\\Users\\soohw\\rtar_parent\\Simple_Patching\\Mechanistic-Interpretability-for-Gender-Bias-in-Clinical-Setting\\activation_patching\\simple_patching\\female5_patch_male\\condition_token_analysis\\aggregate_by_cohort_layer_condition_token_summary.csv"
+  }
+}
