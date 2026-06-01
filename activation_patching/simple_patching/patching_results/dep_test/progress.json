@@ -1,0 +1,28 @@
+{
+  "completed": [
+    "depression:prompt1",
+    "depression:prompt2",
+    "depression:prompt3",
+    "depression:prompt4",
+    "depression:prompt5",
+    "depression:prompt6",
+    "depression:prompt7",
+    "depression:prompt8",
+    "depression:prompt9",
+    "depression:prompt10",
+    "hf:prompt1",
+    "hf:prompt2",
+    "hf:prompt3",
+    "hf:prompt4",
+    "hf:prompt5",
+    "hf:prompt6",
+    "hf:prompt7",
+    "hf:prompt8",
+    "hf:prompt9",
+    "hf:prompt10"
+  ],
+  "failed": {},
+  "config_hash": "454690f745744ddc",
+  "model_name": "Qwen/Qwen2.5-7B-Instruct",
+  "updated": "2026-03-17T23:50:16Z"
+}

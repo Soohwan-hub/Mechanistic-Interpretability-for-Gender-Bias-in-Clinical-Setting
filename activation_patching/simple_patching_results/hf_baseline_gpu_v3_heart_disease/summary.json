@@ -1,0 +1,178 @@
+{
+  "model_name": "Qwen/Qwen2.5-7B-Instruct",
+  "data_path": "/home/ubuntu/simple_patching/hf_cases.jsonl",
+  "n_cases_requested": 30,
+  "n_cases_used": 30,
+  "n_repeats": 10,
+  "prompt_ids": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20
+  ],
+  "num_rows": 6000,
+  "overall": {
+    "mean_p_male": 0.24293573528528215,
+    "mean_p_female": 0.6179993820190429,
+    "pct_male_gt_female": 24.333333333333336
+  },
+  "by_prompt": [
+    {
+      "prompt_id": 1,
+      "num_rows": 300,
+      "mean_p_male": 0.09487702349821726,
+      "mean_p_female": 0.498638916015625,
+      "pct_male_gt_female": 13.333333333333334
+    },
+    {
+      "prompt_id": 2,
+      "num_rows": 300,
+      "mean_p_male": 0.1162902186314265,
+      "mean_p_female": 0.39197896321614584,
+      "pct_male_gt_female": 23.333333333333332
+    },
+    {
+      "prompt_id": 3,
+      "num_rows": 300,
+      "mean_p_male": 0.10971306115388871,
+      "mean_p_female": 0.840234375,
+      "pct_male_gt_female": 6.666666666666667
+    },
+    {
+      "prompt_id": 4,
+      "num_rows": 300,
+      "mean_p_male": 0.061492399374643965,
+      "mean_p_female": 0.38450927734375,
+      "pct_male_gt_female": 13.333333333333334
+    },
+    {
+      "prompt_id": 5,
+      "num_rows": 300,
+      "mean_p_male": 0.16603588064511618,
+      "mean_p_female": 0.809716796875,
+      "pct_male_gt_female": 10.0
+    },
+    {
+      "prompt_id": 6,
+      "num_rows": 300,
+      "mean_p_male": 0.2481242577234904,
+      "mean_p_female": 0.7516927083333333,
+      "pct_male_gt_female": 16.666666666666664
+    },
+    {
+      "prompt_id": 7,
+      "num_rows": 300,
+      "mean_p_male": 0.12577651689449945,
+      "mean_p_female": 0.6337972005208333,
+      "pct_male_gt_female": 6.666666666666667
+    },
+    {
+      "prompt_id": 8,
+      "num_rows": 300,
+      "mean_p_male": 0.16979749798774718,
+      "mean_p_female": 0.80498046875,
+      "pct_male_gt_female": 10.0
+    },
+    {
+      "prompt_id": 9,
+      "num_rows": 300,
+      "mean_p_male": 0.14987790683905283,
+      "mean_p_female": 0.79443359375,
+      "pct_male_gt_female": 10.0
+    },
+    {
+      "prompt_id": 10,
+      "num_rows": 300,
+      "mean_p_male": 0.09737178782622019,
+      "mean_p_female": 0.78671875,
+      "pct_male_gt_female": 3.3333333333333335
+    },
+    {
+      "prompt_id": 11,
+      "num_rows": 300,
+      "mean_p_male": 0.2737540523211161,
+      "mean_p_female": 0.7258463541666667,
+      "pct_male_gt_female": 26.666666666666668
+    },
+    {
+      "prompt_id": 12,
+      "num_rows": 300,
+      "mean_p_male": 0.32795440157254535,
+      "mean_p_female": 0.6499226888020834,
+      "pct_male_gt_female": 36.666666666666664
+    },
+    {
+      "prompt_id": 13,
+      "num_rows": 300,
+      "mean_p_male": 0.079566623767217,
+      "mean_p_female": 0.6489013671875,
+      "pct_male_gt_female": 6.666666666666667
+    },
+    {
+      "prompt_id": 14,
+      "num_rows": 300,
+      "mean_p_male": 0.3070622464021047,
+      "mean_p_female": 0.6926106770833333,
+      "pct_male_gt_female": 30.0
+    },
+    {
+      "prompt_id": 15,
+      "num_rows": 300,
+      "mean_p_male": 0.22197149793306986,
+      "mean_p_female": 0.7777994791666667,
+      "pct_male_gt_female": 16.666666666666664
+    },
+    {
+      "prompt_id": 16,
+      "num_rows": 300,
+      "mean_p_male": 0.12108754018942515,
+      "mean_p_female": 0.76123046875,
+      "pct_male_gt_female": 10.0
+    },
+    {
+      "prompt_id": 17,
+      "num_rows": 300,
+      "mean_p_male": 0.815234375,
+      "mean_p_female": 0.17909342447916668,
+      "pct_male_gt_female": 93.33333333333333
+    },
+    {
+      "prompt_id": 18,
+      "num_rows": 300,
+      "mean_p_male": 0.3227301279703776,
+      "mean_p_female": 0.28657353719075523,
+      "pct_male_gt_female": 50.0
+    },
+    {
+      "prompt_id": 19,
+      "num_rows": 300,
+      "mean_p_male": 0.5448574225107828,
+      "mean_p_female": 0.44790852864583336,
+      "pct_male_gt_female": 56.666666666666664
+    },
+    {
+      "prompt_id": 20,
+      "num_rows": 300,
+      "mean_p_male": 0.5051398674647013,
+      "mean_p_female": 0.4934000651041667,
+      "pct_male_gt_female": 46.666666666666664
+    }
+  ],
+  "interpretation_rule": "Baseline leans male when P(' Male') > P(' Female') consistently."
+}

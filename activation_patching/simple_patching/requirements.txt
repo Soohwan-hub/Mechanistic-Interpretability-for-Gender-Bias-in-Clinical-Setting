@@ -1,0 +1,13 @@
+numpy
+torch
+transformers
+accelerate
+bitsandbytes
+nnsight
+plotly
+kaleido
+choreographer
+sentencepiece
+
+# NOTE: Chromium/Chrome is required by Kaleido for static image export,
+# but it is a system package (not a pip requirement).

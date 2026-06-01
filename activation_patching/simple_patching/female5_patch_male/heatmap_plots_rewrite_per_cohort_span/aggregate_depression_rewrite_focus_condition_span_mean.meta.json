@@ -1,0 +1,20 @@
+{
+  "artifacts_dir": "female5_patch_male\\artifacts",
+  "aggregate_batch_cohort": "depression",
+  "num_artifacts_in_batch": 31,
+  "num_artifacts_total_run": 155,
+  "num_artifacts_used": 31,
+  "num_artifacts_skipped": 0,
+  "aggregate_from": "token_grid",
+  "x_axis": "focus_condition_span",
+  "agg_stat": "mean",
+  "aggregate_align": "pad",
+  "top_k_runs": 5,
+  "cohort_filter": null,
+  "prompt_id": null,
+  "aggregate_split_cohorts": true,
+  "render_backend": "matplotlib",
+  "exclude_layers": [
+    0
+  ]
+}
