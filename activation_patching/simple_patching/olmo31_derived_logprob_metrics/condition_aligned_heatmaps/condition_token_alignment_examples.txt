@@ -1,0 +1,35 @@
+[asthma] artifacts=31
+  asthma_prompt1.pkl: [(13, ' asthma_13')]
+  asthma_prompt10.pkl: [(8, ' asthma_8')]
+  asthma_prompt11.pkl: [(10, ' asthma_10')]
+  asthma_prompt12.pkl: [(12, ' asthma_12')]
+  asthma_prompt13.pkl: [(13, ' asthma_13')]
+
+[depression] artifacts=31
+  depression_prompt1.pkl: [(13, ' depression_13')]
+  depression_prompt10.pkl: [(8, ' depression_8')]
+  depression_prompt11.pkl: [(10, ' depression_10')]
+  depression_prompt12.pkl: [(12, ' depression_12')]
+  depression_prompt13.pkl: [(13, ' depression_13')]
+
+[multiple_sclerosis] artifacts=31
+  multiple_sclerosis_prompt1.pkl: [(13, ' multiple_13'), (14, ' sclerosis_14')]
+  multiple_sclerosis_prompt10.pkl: [(8, ' multiple_8'), (9, ' sclerosis_9')]
+  multiple_sclerosis_prompt11.pkl: [(10, ' multiple_10'), (11, ' sclerosis_11')]
+  multiple_sclerosis_prompt12.pkl: [(12, ' multiple_12'), (13, ' sclerosis_13')]
+  multiple_sclerosis_prompt13.pkl: [(13, ' multiple_13'), (14, ' sclerosis_14')]
+
+[rheumatoid_arthritis] artifacts=31
+  rheumatoid_arthritis_prompt1.pkl: [(13, ' rheumatoid_13'), (14, ' arthritis_14')]
+  rheumatoid_arthritis_prompt10.pkl: [(8, ' rheumatoid_8'), (9, ' arthritis_9')]
+  rheumatoid_arthritis_prompt11.pkl: [(10, ' rheumatoid_10'), (11, ' arthritis_11')]
+  rheumatoid_arthritis_prompt12.pkl: [(12, ' rheumatoid_12'), (13, ' arthritis_13')]
+  rheumatoid_arthritis_prompt13.pkl: [(13, ' rheumatoid_13'), (14, ' arthritis_14')]
+
+[sarcoidosis] artifacts=31
+  sarcoidosis_prompt1.pkl: [(13, ' sarc_13'), (14, 'oid_14'), (15, 'osis_15')]
+  sarcoidosis_prompt10.pkl: [(8, ' sarc_8'), (9, 'oid_9'), (10, 'osis_10')]
+  sarcoidosis_prompt11.pkl: [(10, ' sarc_10'), (11, 'oid_11'), (12, 'osis_12')]
+  sarcoidosis_prompt12.pkl: [(10, ' diagnosis_10'), (12, ' sarc_12'), (13, 'oid_13'), (14, 'osis_14')]
+  sarcoidosis_prompt13.pkl: [(13, ' sarc_13'), (14, 'oid_14'), (15, 'osis_15')]
+
