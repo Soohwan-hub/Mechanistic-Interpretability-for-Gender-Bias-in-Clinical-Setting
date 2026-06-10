@@ -1,8 +1,12 @@
 """
 Simple gender activation patching for Qwen 2.5 7B: gather activations from
-"The patient is Male/Female" at MLP layers, patch into BHC vignette prompts,
+"The patient is Male/Female", patch into simple gender-first vignette prompts,
 compute rewrite score at forced "Gender:" position. Supports checkpoint/resume,
 Lambda GPU-friendly defaults, and visualizations (heatmaps + per-layer plots).
+
+Patch site (--patch-target):
+  mlp      : layer MLP down_proj output (default; matches prior rewrite sweeps)
+  residual : decoder block residual stream (layer.output)
 """
 from __future__ import annotations
 
@@ -130,6 +134,7 @@ Begin exactly with: "Gender: \"""",
 
 SCORE_MATRIX_KEYS = ("rewrite_scores", "logprob_scores", "logprob_delta_scores")
 STAT_KEYS = ("mean", "median", "trimmed_mean", "topk_mean")
+PATCH_TARGET_CHOICES = ("mlp", "residual")
 
 
 # -----------------------------------------------------------------------------
@@ -244,8 +249,38 @@ def build_corrupt_prompt(
 
 
 # -----------------------------------------------------------------------------
-# Patching sweep (MLP only, probability-based rewrite score)
+# Patching sweep (MLP or residual stream, probability-based rewrite score)
 # -----------------------------------------------------------------------------
+def _validate_patch_target(patch_target: str) -> str:
+    if patch_target not in PATCH_TARGET_CHOICES:
+        valid = ",".join(PATCH_TARGET_CHOICES)
+        raise ValueError(f"Unknown patch_target={patch_target!r}. Valid values: {valid}")
+    return patch_target
+
+
+def _save_clean_activation(layer: Any, patch_target: str, token_idx: int) -> Any:
+    if patch_target == "mlp":
+        return layer.mlp.down_proj.output[:, token_idx, :].save()
+    act = layer.output[0]
+    return act[token_idx, :].save()
+
+
+def _apply_activation_patch(
+    layer: Any,
+    patch_target: str,
+    patch_idx: int,
+    clean_vector: torch.Tensor,
+) -> None:
+    if patch_target == "mlp":
+        z_corrupt = layer.mlp.down_proj.output
+        z_corrupt[:, patch_idx, :] = clean_vector
+        layer.mlp.down_proj.output = z_corrupt
+        return
+    act = layer.output[0]
+    act[patch_idx, :] = clean_vector
+    layer.output[0] = act
+
+
 def run_patch_sweep(
     llm: LanguageModel,
     clean_prompt: str,
@@ -258,15 +293,17 @@ def run_patch_sweep(
     layer_end: int,
     max_tokens: int,
     selected_score_keys: Tuple[str, ...],
+    patch_target: str = "mlp",
     step: int = 1,
 ) -> Dict[str, Any]:
     """
     Run layer x token sweep and return score matrices/baselines.
-    Uses MLP down_proj output for patching. Exposes:
+    Patches either MLP down_proj output or the block residual stream. Exposes:
       - rewrite_scores = (p* - p) / (1 - p)
       - logprob_scores = log p*(target)
       - logprob_delta_scores = log p*(target) - log p(target)
     """
+    patch_target = _validate_patch_target(patch_target)
     token_count = corrupted_tokens.shape[0]
     if max_tokens > 0:
         token_count = min(max_tokens, token_count)
@@ -296,9 +333,11 @@ def run_patch_sweep(
             with llm.generate(max_new_tokens=1) as tracer:
                 with tracer.invoke(clean_prompt):
                     for li in layer_indices:
-                        saved_clean[li] = llm.model.layers[li].mlp.down_proj.output[
-                            :, clean_patch_token_from, :
-                        ].save()
+                        saved_clean[li] = _save_clean_activation(
+                            llm.model.layers[li],
+                            patch_target,
+                            clean_patch_token_from,
+                        )
         z_hs: Dict[int, torch.Tensor] = {}
         for li in layer_indices:
             z_hs[li] = _resolve(saved_clean[li]).detach().clone()
@@ -333,10 +372,13 @@ def run_patch_sweep(
                 with torch.no_grad():
                     with llm.generate(max_new_tokens=1) as tracer:
                         with tracer.invoke(corrupted_prompt):
-                            z_corrupt = llm.model.layers[layer_idx].mlp.down_proj.output
                             patch_idx = token_idx + offset
-                            z_corrupt[:, patch_idx, :] = z_hs[layer_idx]
-                            llm.model.layers[layer_idx].mlp.down_proj.output = z_corrupt
+                            _apply_activation_patch(
+                                llm.model.layers[layer_idx],
+                                patch_target,
+                                patch_idx,
+                                z_hs[layer_idx],
+                            )
                             patched_logits = llm.lm_head.output
                             if need_logprob or need_logprob_delta:
                                 patched_logprob = torch.log_softmax(
@@ -364,6 +406,7 @@ def run_patch_sweep(
                     logprob_delta_list.append(float(_resolve(logprob_delta_proxy).cpu().float().item()))
 
     result: Dict[str, Any] = {
+        "patch_target": patch_target,
         "corrupted_prob": corrupted_prob_val or 0.0,
         "corrupted_logprob": corrupted_logprob_val
         if corrupted_logprob_val is not None
@@ -677,6 +720,13 @@ def parse_args() -> argparse.Namespace:
     p.add_argument("--resume", action="store_true", help="Skip completed units")
     p.add_argument("--output-dir", type=str, default="patching_results", help="Base output directory")
     p.add_argument(
+        "--patch-target",
+        type=str,
+        default="mlp",
+        choices=list(PATCH_TARGET_CHOICES),
+        help="Where to read/write activations during the rewrite sweep (default: mlp).",
+    )
+    p.add_argument(
         "--cohorts",
         type=str,
         default=",".join(DEFAULT_COHORTS),
@@ -798,6 +848,7 @@ def run_patching(args: argparse.Namespace, run_dir: Path) -> None:
                 layer_end=layer_end,
                 max_tokens=args.max_tokens,
                 selected_score_keys=selected_score_keys,
+                patch_target=args.patch_target,
                 step=args.layer_step,
             )
             shape_key = next((k for k in selected_score_keys if k in sweep), None)
@@ -813,6 +864,7 @@ def run_patching(args: argparse.Namespace, run_dir: Path) -> None:
                 "cohort": cohort,
                 "prompt_id": prompt_id,
                 "patch_gender": gender,
+                "patch_target": args.patch_target,
                 "condition_name": condition_name,
                 "corrupted_prob": sweep.get("corrupted_prob", 0.0),
                 "corrupted_logprob": sweep.get("corrupted_logprob", float("-inf")),
@@ -1104,6 +1156,7 @@ def main() -> None:
     if args.dry_run:
         work_list = build_work_list(args, run_dir)
         print(f"Dry run: run_dir={run_dir}, work_units={len(work_list)}", flush=True)
+        print(f"Patch target: {args.patch_target}", flush=True)
         print(f"Selected score keys: {','.join(args.selected_score_keys)}", flush=True)
         print(f"Progress: {load_progress(run_dir)}", flush=True)
         # Validate layer_aggregates
