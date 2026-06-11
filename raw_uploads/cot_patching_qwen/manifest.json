@@ -1,0 +1,13 @@
+{
+  "mlp": {
+    "source": "/home/ubuntu/mlp_cot_patching_results",
+    "copied_to": "/home/ubuntu/notebook_exports/cot_patching_results_20260610_232148/mlp_cot_patching_results",
+    "file_counts": {
+      ".pkl": 4224,
+      ".json": 12,
+      ".png": 44,
+      ".pdf": 0,
+      ".csv": 0
+    }
+  }
+}
