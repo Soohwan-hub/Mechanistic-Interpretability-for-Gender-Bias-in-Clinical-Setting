@@ -30,6 +30,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import re
 import sys
 from collections import Counter
 from dataclasses import dataclass, replace
@@ -95,6 +96,75 @@ def pos_neg_latents_from_tsv(tsv_path: Path) -> tuple[int, float, int, float]:
     return lp, cp, ln, cn
 
 
+def ranked_latents_from_tsv(
+    tsv_path: Path,
+    top_n: int,
+    selection_mode: str,
+) -> list[tuple[int, float, str, str]]:
+    """
+    Return up to top_n rows as (latent, coeff, polarity_label, tag), selected from TSV.
+    selection_mode:
+      - abs: largest |coeff|
+      - pos_only: largest positive coeffs
+      - neg_only: most negative coeffs
+    """
+    df = pd.read_csv(tsv_path, sep="\t")
+    if "latent" not in df.columns or "coeff" not in df.columns:
+        raise ValueError(f"{tsv_path}: expected tabs and columns latent, coeff; got {list(df.columns)}")
+
+    rows: list[tuple[int, float]] = [
+        (int(lat), float(coef)) for lat, coef in zip(df["latent"].astype(int), df["coeff"].astype(float))
+    ]
+    if selection_mode == "abs":
+        rows = sorted(rows, key=lambda x: -abs(x[1]))
+    elif selection_mode == "pos_only":
+        rows = sorted([x for x in rows if x[1] > 0.0], key=lambda x: -x[1])
+    elif selection_mode == "neg_only":
+        rows = sorted([x for x in rows if x[1] < 0.0], key=lambda x: x[1])
+    else:
+        raise ValueError(f"Unsupported selection mode: {selection_mode}")
+
+    selected: list[tuple[int, float, str, str]] = []
+    for rank, (latent, coeff) in enumerate(rows[: max(0, int(top_n))], start=1):
+        sign_tag = "pos" if coeff >= 0 else "neg"
+        pol = f"coef_rank_{selection_mode}_{rank:02d}"
+        tag = f"{selection_mode}{rank:02d}_{sign_tag}"
+        selected.append((latent, coeff, pol, tag))
+    return selected
+
+
+def is_structural_token(token: str) -> bool:
+    t = token.replace("\n", "\\n").strip().lower()
+    if not t:
+        return True
+    if t in {":", ">", ".", "\\n"}:
+        return True
+    if "_med" in t or "_proc" in t:
+        return True
+    if t.isdigit():
+        return True
+    if re.fullmatch(r"[0-9]+(\.[0-9]+)?", t):
+        return True
+    if re.fullmatch(r"[^\w]+", t):
+        return True
+    return False
+
+
+def suggest_circuit_from_text(blob: str) -> str:
+    s = blob.lower()
+    if any(k in s for k in ("opor", "osteopen", "dens", "calcium", "t-score")):
+        return "osteoporosis_frail"
+    if any(k in s for k in ("iv", "prison", "tattoo", "dope", "incarcer", "fucked", "hiv", "hep c")):
+        return "substance_incarceration"
+    if any(k in s for k in ("bypass", "graft", "cabg")):
+        return "cabg_cardiovascular"
+    if any(k in s for k in ("inflammatory", "autoimmune", "abnormal")):
+        return "autoimmune_inflammatory"
+    if any(k in s for k in ("hern", "inguinal", "hiatal")):
+        return "hernia"
+    return "unassigned"
+
+
 def build_sae_override_for_layer(meta_dir: Path | None, layer: int, meta_file: Path | None) -> dict[int, str]:
     if meta_file is not None:
         meta = json.loads(meta_file.expanduser().read_text(encoding="utf-8"))
@@ -129,6 +199,22 @@ class MaeRunConfig:
     output_jsonl: str
 
 
+@dataclass
+class MaeRunSummary:
+    layer: int
+    feature_idx: int
+    sae_id: str
+    polarity: str
+    top_token_preview: str
+    top_window_preview: str
+    structural_share_top10: float
+    typo_flag: bool
+    suggested_circuit: str
+    auto_tag: str
+    female_top_ratio: float
+    male_top_ratio: float
+
+
 def run_single_mae(
     *,
     cfg: MaeRunConfig,
@@ -140,7 +226,7 @@ def run_single_mae(
     polarity_label: str = "",
     sae_obj=None,
     sae_id_cached: str = "",
-) -> str:
+) -> MaeRunSummary:
     """
     Run MAE for one latent. If sae_obj is None, loads SAE (and deletes after if created here).
     Returns sae_id string.
@@ -216,6 +302,8 @@ def run_single_mae(
             print(f"  M{rank:02d}. act={act:.4f}  row={row_i}  pos={pos}  subject_id={subj}")
             print(f"      token={tok_disp!r}  window={repl_win!r}")
 
+    top_rows_f: list[dict[str, float | str | int]] = []
+    top_rows_m: list[dict[str, float | str | int]] = []
     if cfg.enrichment_top_n > 0:
         enrich_pool = cands[: cfg.enrichment_top_n]
         tok_f: Counter[str] = Counter()
@@ -247,6 +335,8 @@ def run_single_mae(
             )
         rows_f = sorted(rows, key=lambda r: (-r["female_enrichment_ratio"], -r["total"]))
         rows_m = sorted(rows, key=lambda r: (-r["male_enrichment_ratio"], -r["total"]))
+        top_rows_f = rows_f[: cfg.enrichment_show_k]
+        top_rows_m = rows_m[: cfg.enrichment_show_k]
 
         print(
             f"\nToken enrichment from top {len(enrich_pool)} global spikes "
@@ -295,12 +385,49 @@ def run_single_mae(
                 )
         print(f"Wrote {out}")
 
+    top_tok = [x[5] for x in ranked[:10]]
+    top_win = [x[6] for x in ranked[:6]]
+    structural_hits = sum(1 for t in top_tok if is_structural_token(t))
+    structural_share = (structural_hits / max(1, len(top_tok))) * 100.0
+    text_blob = " ".join(top_tok + top_win).lower()
+    typo_flag = ("protatic" in text_blob) or ("menstural" in text_blob)
+    suggested_circuit = suggest_circuit_from_text(text_blob)
+
+    if typo_flag:
+        auto_tag = "reject_typo"
+    elif structural_share >= 40.0:
+        auto_tag = "reject_structural"
+    elif suggested_circuit == "unassigned":
+        auto_tag = "needs_review"
+    else:
+        auto_tag = "candidate_keep"
+
+    f_ratio = 0.0
+    m_ratio = 0.0
+    if top_rows_f:
+        f_ratio = float(top_rows_f[0]["female_enrichment_ratio"])  # strongest female-enriched token
+    if top_rows_m:
+        m_ratio = float(top_rows_m[0]["male_enrichment_ratio"])  # strongest male-enriched token
+
     if own_sae:
         del sae
         if torch.cuda.is_available():
             torch.cuda.empty_cache()
 
-    return sae_id
+    return MaeRunSummary(
+        layer=layer,
+        feature_idx=feature_idx,
+        sae_id=sae_id,
+        polarity=polarity_label,
+        top_token_preview=" | ".join(t.replace("\n", "\\n") for t in top_tok[:8]),
+        top_window_preview=" || ".join(w.replace("\n", "\\n")[:160] for w in top_win[:4]),
+        structural_share_top10=structural_share,
+        typo_flag=typo_flag,
+        suggested_circuit=suggested_circuit,
+        auto_tag=auto_tag,
+        female_top_ratio=f_ratio,
+        male_top_ratio=m_ratio,
+    )
 
 
 def parse_args() -> argparse.Namespace:
@@ -341,7 +468,7 @@ def parse_args() -> argparse.Namespace:
         "--probe-tsv-dir",
         type=str,
         default="",
-        help="Folder with top_pred_latents_layer_L.tsv files; runs coef-max and coef-min latent per layer.",
+        help="Folder with top_pred_latents_layer_L.tsv files.",
     )
     p.add_argument(
         "--probe-meta-dir",
@@ -357,6 +484,22 @@ def parse_args() -> argparse.Namespace:
         type=str,
         default="",
         help='Inclusive layers, e.g. "4-28" or "3,7,11" (batch mode).',
+    )
+    p.add_argument(
+        "--top-n-from-tsv",
+        type=int,
+        default=0,
+        help=(
+            "Batch mode: if >0, run MAE on top-N TSV latents per layer selected by --selection-mode. "
+            "If 0, keeps legacy behavior (max positive + max negative)."
+        ),
+    )
+    p.add_argument(
+        "--selection-mode",
+        type=str,
+        default="abs",
+        choices=["abs", "pos_only", "neg_only"],
+        help="Batch mode latent ranking strategy when --top-n-from-tsv > 0.",
     )
     p.add_argument("--sae-id-override", type=str, default="", help="Force sae_id (single-layer mode only).")
     p.add_argument("--max-seq-len", type=int, default=8192)
@@ -382,6 +525,12 @@ def parse_args() -> argparse.Namespace:
         default="",
         help="Single-feature: write path. Batch: optional directory prefix — each job writes "
         "layer{L}_{pos|neg}_feat{idx}.jsonl underneath if this is a directory, else appended suffix.",
+    )
+    p.add_argument(
+        "--emit-review-csv",
+        type=str,
+        default="",
+        help="Optional CSV path for batch review sheet with auto-tags and suggested circuits.",
     )
     args = p.parse_args()
     return args
@@ -444,24 +593,41 @@ def main() -> None:
                 batch_out_parent = Path(out_base).expanduser().resolve()
                 batch_out_parent.mkdir(parents=True, exist_ok=True)
 
+        review_rows: list[dict[str, object]] = []
         print(f"BATCH MAE  layers={layers[0]}..{layers[-1]} ({len(layers)} total)  tsv_root={tsv_root}")
         for layer in layers:
             tsv_path = tsv_root / f"top_pred_latents_layer_{layer}.tsv"
             if not tsv_path.is_file():
                 print(f"SKIP layer {layer}: missing {tsv_path.name}")
                 continue
-            lp, cp, ln, cn = pos_neg_latents_from_tsv(tsv_path)
-            print(
-                f"\n>>> Layer {layer} from {tsv_path.name}: "
-                f"pos latent={lp} (coef={cp:.6g}); neg latent={ln} (coef={cn:.6g})"
-            )
+            selected: list[tuple[int, float, str, str]]
+            if args.top_n_from_tsv > 0:
+                selected = ranked_latents_from_tsv(
+                    tsv_path=tsv_path,
+                    top_n=args.top_n_from_tsv,
+                    selection_mode=args.selection_mode,
+                )
+                print(
+                    f"\n>>> Layer {layer} from {tsv_path.name}: selected {len(selected)} "
+                    f"latents by mode={args.selection_mode} top_n={args.top_n_from_tsv}"
+                )
+            else:
+                lp, cp, ln, cn = pos_neg_latents_from_tsv(tsv_path)
+                selected = [
+                    (lp, cp, "coef_max_positive", "pos"),
+                    (ln, cn, "coef_min_negative", "neg"),
+                ]
+                print(
+                    f"\n>>> Layer {layer} from {tsv_path.name}: "
+                    f"pos latent={lp} (coef={cp:.6g}); neg latent={ln} (coef={cn:.6g})"
+                )
             try:
                 sae_ov = build_sae_override_for_layer(meta_dir_path, layer, None)
             except Exception as e:
                 print(f"SKIP layer {layer}: {e}")
                 continue
 
-            for feat_idx, polarity, tag in [(lp, "coef_max_positive", "pos"), (ln, "coef_min_negative", "neg")]:
+            for feat_idx, coeff, polarity, tag in selected:
                 jr = replace(cfg, output_jsonl="")
                 if batch_out_parent is not None:
                     jr.output_jsonl = str(
@@ -470,7 +636,7 @@ def main() -> None:
                 elif out_base and Path(out_base).suffix == ".jsonl":
                     jr.output_jsonl = str(Path(out_base).with_name(f"L{layer}_{tag}_{Path(out_base).name}"))
 
-                run_single_mae(
+                summary = run_single_mae(
                     cfg=jr,
                     df=df,
                     model=model,
@@ -479,7 +645,34 @@ def main() -> None:
                     sae_override=sae_ov,
                     polarity_label=polarity,
                 )
+                review_rows.append(
+                    {
+                        "layer": layer,
+                        "feature_idx": int(feat_idx),
+                        "coeff": float(coeff),
+                        "selection_tag": tag,
+                        "polarity": summary.polarity,
+                        "sae_id": summary.sae_id,
+                        "auto_tag": summary.auto_tag,
+                        "typo_flag": int(summary.typo_flag),
+                        "suggested_circuit": summary.suggested_circuit,
+                        "structural_share_top10": round(summary.structural_share_top10, 2),
+                        "female_top_ratio": round(summary.female_top_ratio, 4),
+                        "male_top_ratio": round(summary.male_top_ratio, 4),
+                        "manual_verdict": "",
+                        "manual_circuit": "",
+                        "notes": "",
+                        "top_token_preview": summary.top_token_preview,
+                        "top_window_preview": summary.top_window_preview,
+                    }
+                )
                 print("\n")
+
+        if args.emit_review_csv.strip():
+            out_csv = Path(args.emit_review_csv).expanduser().resolve()
+            out_csv.parent.mkdir(parents=True, exist_ok=True)
+            pd.DataFrame(review_rows).to_csv(out_csv, index=False)
+            print(f"Wrote review CSV: {out_csv}")
 
         print("Batch MAE finished.")
         return
