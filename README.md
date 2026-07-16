@@ -2,13 +2,14 @@
 
 > **Branch: `om`** — this README describes the layout of the `om` working branch. The original project README content from `main` is preserved at the bottom.
 
-The `om` branch adds three things on top of `main`:
+The `om` branch adds four things on top of `main`:
 
 1. **Aggregated numbers and analysis docs** for §2.5, §2.6, §2.7 of the writeup (Qwen vs OLMo, simple-MLP vs CoT-MLP vs simple-residual)
 2. **Raw uploaded result bundles** from collaborators (Soohwan's Qwen log_delta, OLMo CoT MLP, Qwen CoT MLP, Sam's simple-residual)
 3. **The Qwen log_delta rerun notebook** + instructions for running on Lambda
+4. **Publication-ready paper figures** (standardized palette/fonts, re-rendered from committed source data) in `paper_figures/`
 
-Nothing here mutates files under `main` paths (`activation_patching/`, `cot_vignette/`, `localize_bias/`, `build_dataset/`, `config.py`, `model_runner.py`). Everything new is in three folders: `docs/`, `raw_uploads/`, `om_comparison/`, plus one notebook + one instructions file under `activation_patching/simple_patching/`.
+Nothing here mutates files under `main` paths (`activation_patching/`, `cot_vignette/`, `localize_bias/`, `build_dataset/`, `config.py`, `model_runner.py`). Everything new is in four folders: `docs/`, `raw_uploads/`, `om_comparison/`, `paper_figures/`, plus one notebook + one instructions file under `activation_patching/simple_patching/`.
 
 ---
 
@@ -36,6 +37,17 @@ Nothing here mutates files under `main` paths (`activation_patching/`, `cot_vign
 │       ├── fig2a_heatmap_qwen.png             # prompt × layer heatmap (Qwen)
 │       ├── fig2b_heatmap_olmo.png             # prompt × layer heatmap (OLMo) — shared color scale
 │       └── fig3_layer18_by_cohort.png         # L18 by cohort, OLMo sarcoidosis flagged NaN
+│
+├── paper_figures/                             # publication-ready renders (standardized palette/fonts)
+│   ├── README.md                              # per-figure source-data table + caveats
+│   ├── fig1_gender_probs_by_condition.png
+│   ├── fig2a_toplayers_asthma.png
+│   ├── fig2b_toplayers_depression.png
+│   ├── fig2_toplayers_combined_asthma_depression.png
+│   ├── fig4_layer18_condition_token_table.png
+│   ├── fig5a_mlp_heatmap_asthma_prompt1.png
+│   ├── fig5b_mlp_heatmap_rheumatoid_arthritis_prompt1.png
+│   └── fig5_mlp_heatmaps_combined_asthma_ra.png
 │
 ├── raw_uploads/                               # raw bundles from collaborators (large, not regenerated here)
 │   ├── log_delta/                             # Soohwan: Qwen logprob_delta token×layer CSVs
@@ -132,6 +144,7 @@ Companion: `activation_patching/simple_patching/RUN_INSTRUCTIONS.md`.
 | Understand what's on other contributors' branches | `docs/BRANCH_CHANGES.md` |
 | Understand what came in via PR #6 and PR #8 | `docs/BUNDLE_DIGEST.md` + the `activation_patching/simple_patching/{female5_patch_male,olmo31_rewrite_only,olmo31_derived_logprob_metrics}/` dirs (these are upstream, not under `raw_uploads/`) |
 | Run the missing Qwen log_delta sweep | `activation_patching/simple_patching/run_qwen_logdelta.ipynb` + `RUN_INSTRUCTIONS.md` |
+| Grab a Slack/paper-ready figure | `paper_figures/` — see its `README.md` for what each PNG shows and its exact source data |
 
 ---
 
