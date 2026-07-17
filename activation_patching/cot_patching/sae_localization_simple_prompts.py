@@ -259,10 +259,12 @@ def apply_profile_defaults(args: argparse.Namespace) -> None:
 
 
 def _load_simple_prompts(args: argparse.Namespace) -> pd.DataFrame:
+    source_label = "<built_in_simple_prompts>"
     if args.simple_prompts_csv.strip():
         csv_path = Path(args.simple_prompts_csv).expanduser().resolve()
         if not csv_path.is_file():
             raise FileNotFoundError(f"--simple-prompts-csv not found: {csv_path}")
+        source_label = str(csv_path)
         df = pd.read_csv(csv_path)
     else:
         conditions = sl._parse_csv_list(str(args.simple_prompt_condition))
@@ -286,8 +288,7 @@ def _load_simple_prompts(args: argparse.Namespace) -> pd.DataFrame:
     required = {"prompt_id", "prompt_text"}
     missing = [c for c in required if c not in df.columns]
     if missing:
-        source = args.simple_prompts_csv if args.simple_prompts_csv.strip() else "<built_in_simple_prompts>"
-        raise ValueError(f"{source}: missing required columns {missing}; need prompt_id,prompt_text.")
+        raise ValueError(f"{source_label}: missing required columns {missing}; need prompt_id,prompt_text.")
     if len(df) != int(args.expected_prompt_count):
         raise ValueError(
             f"expected {args.expected_prompt_count} rows, found {len(df)}. "
@@ -296,12 +297,12 @@ def _load_simple_prompts(args: argparse.Namespace) -> pd.DataFrame:
     df["prompt_id"] = df["prompt_id"].astype(str).str.strip()
     df["prompt_text"] = df["prompt_text"].astype(str).str.strip()
     if (df["prompt_id"] == "").any():
-        raise ValueError(f"{csv_path}: prompt_id must be non-empty.")
+        raise ValueError(f"{source_label}: prompt_id must be non-empty.")
     if df["prompt_id"].duplicated().any():
         dups = sorted(df[df["prompt_id"].duplicated()]["prompt_id"].unique().tolist())
-        raise ValueError(f"{csv_path}: duplicate prompt_id values: {dups[:8]}")
+        raise ValueError(f"{source_label}: duplicate prompt_id values: {dups[:8]}")
     if (df["prompt_text"] == "").any():
-        raise ValueError(f"{csv_path}: prompt_text must be non-empty.")
+        raise ValueError(f"{source_label}: prompt_text must be non-empty.")
     if "group" not in df.columns:
         df["group"] = ""
     if "expected_condition" not in df.columns:
