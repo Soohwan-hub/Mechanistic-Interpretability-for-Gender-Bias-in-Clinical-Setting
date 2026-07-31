@@ -25,14 +25,26 @@ data" per figure below.
 The heatmaps are cropped for legibility in a paper column — **no values were
 altered**, only rows/columns hidden:
 
-- **Layers:** trimmed to a contiguous band, layers 0–21. Layers 22–27 carry
-  essentially no signal in either condition (max |score| < 0.09 for asthma,
-  < 0.005 for rheumatoid arthritis).
-- **Tokens:** kept only columns whose max |rewrite score| across the shown
-  layers is ≥ 0.05. Asthma 55 → 47 tokens; rheumatoid arthritis 58 → 29.
-- Both panels of the combined figure share the same layer range so cell
-  heights stay uniform and the two conditions remain directly comparable.
+- **Layers:** restricted to **L3–L21**, the interpretable band. Layers 0–2 are
+  the early-layer saturating artifact the paper already treats as noise (the
+  same bars muted in fig2), and layers 22–27 carry no signal in either
+  condition.
+- **Tokens:** kept the **top 18 tokens by peak |rewrite score| within L3–L21**.
+  Ranking inside the band matters: layer 0 saturates near 1.0 on almost every
+  token, so ranking that included it readmitted 47 of 55 columns and defeated
+  the decluttering. Asthma 55 → 18 tokens; rheumatoid arthritis 58 → 18.
+- Both panels use the same layer range and an identical symmetric color scale,
+  so the two conditions stay directly comparable.
 - Token tick labels are reformatted from `' patient_16'` to `patient (16)`.
+
+**Known limitation — the rheumatoid-arthritis panel renders nearly blank.**
+That is a faithful result, not a plotting bug: RA's entire effect sits in the
+excluded artifact layers 0 and 2, and its largest in-band value is 0.085
+(vs 0.99 for asthma). This is consistent with RA's near-zero scores in fig2 and
+fig4. If a visually informative RA panel is needed, either annotate the blank
+panel explicitly or show RA on its own rescaled colorbar — do not silently
+reintroduce layers 0–2 for RA only, which would make the two panels
+incomparable.
 
 ## Caveat on `fig4`
 
