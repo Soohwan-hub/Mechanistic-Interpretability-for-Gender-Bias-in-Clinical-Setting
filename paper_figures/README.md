@@ -12,11 +12,26 @@ data" per figure below.
 | `fig1_gender_probs_by_condition.png` | Grouped bar: mean P(Male) vs P(Female) at the forced "Gender:" next-token, one pair per condition (7 conditions, x-order alphabetical) | `activation_patching/simple_patching/female_bias_run1/summary.json` → `by_condition` |
 | `fig2a_toplayers_asthma.png` | Top-15 layers by mean rewrite score, asthma cohort, descending, layers 0/1/2 muted as artifact bars | `activation_patching/simple_patching/female5_patch_male/aggregate_per_layer.json` → `raw_units` (cohort=asthma), same aggregation as `plot_top_layers_bar` |
 | `fig2b_toplayers_depression.png` | Same as above, depression cohort | same file, cohort=depression |
-| `fig2_toplayers_combined_asthma_depression.png` | Side-by-side asthma / depression version of the two above, shared y-axis | same as fig2a/fig2b |
+| `fig2c_toplayers_all_conditions.png` | Same as above, averaged across **all 5 cohorts** (asthma, depression, multiple sclerosis, rheumatoid arthritis, sarcoidosis; 155 units) | same file, all `raw_units` |
+| `fig2_toplayers_combined_asthma_depression.png` | Side-by-side asthma / depression version, shared y-axis | same as fig2a/fig2b |
 | `fig4_layer18_condition_token_table.png` | Booktabs-style table: layer-18 condition-token rewrite score, OLMo-7B vs Qwen2.5-7B, 5 conditions. Max/min cell bolded. | Values supplied directly by the user (team's canonical numbers — the values committed in `olmo31_rewrite_only/` and `female5_patch_male/condition_token_analysis/` in this repo are an older/different run and do **not** match; see caveat below) |
 | `fig5a_mlp_heatmap_asthma_prompt1.png` | Layer × token heatmap of rewrite score, Qwen simple-prompt MLP patching, asthma prompt 1, divergent green(+)/orange(−) scale centered at 0 | `activation_patching/simple_patching/female5_patch_male/artifacts/asthma_prompt1.pkl` |
 | `fig5b_mlp_heatmap_rheumatoid_arthritis_prompt1.png` | Same, rheumatoid arthritis prompt 1 | `activation_patching/simple_patching/female5_patch_male/artifacts/rheumatoid_arthritis_prompt1.pkl` |
 | `fig5_mlp_heatmaps_combined_asthma_ra.png` | Stacked combined version of fig5a (top) + fig5b (bottom), shared colorbar/z-scale | same two `.pkl` files |
+
+## Display filtering (fig5 only)
+
+The heatmaps are cropped for legibility in a paper column — **no values were
+altered**, only rows/columns hidden:
+
+- **Layers:** trimmed to a contiguous band, layers 0–21. Layers 22–27 carry
+  essentially no signal in either condition (max |score| < 0.09 for asthma,
+  < 0.005 for rheumatoid arthritis).
+- **Tokens:** kept only columns whose max |rewrite score| across the shown
+  layers is ≥ 0.05. Asthma 55 → 47 tokens; rheumatoid arthritis 58 → 29.
+- Both panels of the combined figure share the same layer range so cell
+  heights stay uniform and the two conditions remain directly comparable.
+- Token tick labels are reformatted from `' patient_16'` to `patient (16)`.
 
 ## Caveat on `fig4`
 
