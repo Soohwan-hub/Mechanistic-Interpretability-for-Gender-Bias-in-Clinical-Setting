@@ -18,6 +18,7 @@ data" per figure below.
 | `fig5a_mlp_heatmap_asthma_prompt1.png` | Layer × token heatmap of rewrite score, Qwen simple-prompt MLP patching, asthma prompt 1, divergent green(+)/orange(−) scale centered at 0 | `activation_patching/simple_patching/female5_patch_male/artifacts/asthma_prompt1.pkl` |
 | `fig5b_mlp_heatmap_rheumatoid_arthritis_prompt1.png` | Same, rheumatoid arthritis prompt 1 | `activation_patching/simple_patching/female5_patch_male/artifacts/rheumatoid_arthritis_prompt1.pkl` |
 | `fig5_mlp_heatmaps_combined_asthma_ra.png` | Stacked combined version of fig5a (top) + fig5b (bottom), shared colorbar/z-scale | same two `.pkl` files |
+| `fig11_residual_plateau_qwen.png` | Per-layer rewrite score (mean / median / top-k mean) for Qwen simple-prompt **residual-stream** patching, 28 layers × 155 units. Mid-layer plateau L5–L21 shaded; L18 and the L22 collapse marked. | `raw_uploads/simple_prompt_residual/aggregate_per_layer.csv` → `rewrite_scores_{mean,median,topk_mean}` |
 
 ## Display filtering (fig5 only)
 
