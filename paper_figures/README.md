@@ -57,11 +57,20 @@ on a Lambda instance at `/home/ubuntu/patching_results1_*` and shared as a zip.
 It is CoT + residual-stream, distinct from the MLP CoT bundles under
 `raw_uploads/cot_patching_{qwen,olmo}/` — do not substitute those.
 
-Token selection is the 15 prompt tokens ending just before the "You must start
-with" instruction, plotted in **descending** position order left-to-right
-(`._156` -> `consistent_142`) exactly as the source figure does (the source figure's title says "Top-15 tokens (max|RS|)", but
-ranking by max|RS| does not reproduce its axes; the contiguous window does, and
-was verified against all four conditions).
+**Panel sources are not uniform.** Despite the source figure's "PROMPT_A" title,
+the panels come from different prompt types, verified label-for-label:
+
+| Panel | var1 figure | var2 figure |
+|---|---|---|
+| depression | PROMPT_A / var1, tokens 142-156 | PROMPT_A / var2, 139-153 |
+| multiple sclerosis | **PROMPT_C** / var1, 133-147 | **PROMPT_C** / var2, 136-150 |
+| rheumatoid arthritis | PROMPT_A / var1, 148-162 | PROMPT_A / var2, 145-159 |
+| sarcoidosis | PROMPT_A / var1, 146-160 | PROMPT_A / var2, 143-157 |
+
+Each panel shows a contiguous 15-token window plotted in **descending** position
+order left-to-right, matching the source figure. The window is hard-coded per
+panel in the generating script rather than derived, since no single rule
+reproduces all four.
 
 Verified: 28 layers, ~180-token prompts, signal saturating near 1.0 across
 L0-21 and collapsing at L22 (max |RS| 0.0002-0.045 for L22-27).
