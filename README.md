@@ -43,11 +43,18 @@ Nothing here mutates files under `main` paths (`activation_patching/`, `cot_vign
 │   ├── fig1_gender_probs_by_condition.png
 │   ├── fig2a_toplayers_asthma.png
 │   ├── fig2b_toplayers_depression.png
+│   ├── fig2c_toplayers_all_conditions.png
 │   ├── fig2_toplayers_combined_asthma_depression.png
 │   ├── fig4_layer18_condition_token_table.png
 │   ├── fig5a_mlp_heatmap_asthma_prompt1.png
 │   ├── fig5b_mlp_heatmap_rheumatoid_arthritis_prompt1.png
-│   └── fig5_mlp_heatmaps_combined_asthma_ra.png
+│   ├── fig5_mlp_heatmaps_combined_asthma_ra.png
+│   ├── fig9_cot_residual_by_condition_promptA_var1.png
+│   ├── fig9b_cot_residual_by_condition_promptA_var2.png
+│   └── fig11_residual_plateau_qwen.png
+│
+├── _archive/                                  # relocated, never deleted (see its README)
+│   └── stray_cot_bundle_root_files/           # duplicate manifest + empty 0B stub from the CoT bundle
 │
 ├── raw_uploads/                               # raw bundles from collaborators (large, not regenerated here)
 │   ├── log_delta/                             # Soohwan: Qwen logprob_delta token×layer CSVs
@@ -144,6 +151,7 @@ Companion: `activation_patching/simple_patching/RUN_INSTRUCTIONS.md`.
 | Understand what's on other contributors' branches | `docs/BRANCH_CHANGES.md` |
 | Understand what came in via PR #6 and PR #8 | `docs/BUNDLE_DIGEST.md` + the `activation_patching/simple_patching/{female5_patch_male,olmo31_rewrite_only,olmo31_derived_logprob_metrics}/` dirs (these are upstream, not under `raw_uploads/`) |
 | Run the missing Qwen log_delta sweep | `activation_patching/simple_patching/run_qwen_logdelta.ipynb` + `RUN_INSTRUCTIONS.md` |
+| Find something that used to be at the repo root | `_archive/` — nothing is deleted, only relocated with a note explaining why |
 | Grab a Slack/paper-ready figure | `paper_figures/` — see its `README.md` for what each PNG shows and its exact source data |
 
 ---

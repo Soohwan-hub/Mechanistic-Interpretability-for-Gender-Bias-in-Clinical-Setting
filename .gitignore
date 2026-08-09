@@ -40,3 +40,7 @@ activation_patching/cot_patching/SAE_BIAS_COMPARISON_REPORT.md
 # Local run notes / experiment index (keep on disk, not in git)
 activation_patching/cot_patching/commands_to_run.md
 activation_patching/cot_patching/results/EXPERIMENTS.md
+
+# macOS / editor noise
+.DS_Store
+**/.DS_Store

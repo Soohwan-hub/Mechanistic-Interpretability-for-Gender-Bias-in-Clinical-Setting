@@ -1,0 +1,86 @@
+{
+  "patching_results1_essential hypertension": {
+    "source": "/home/ubuntu/patching_results1_essential hypertension",
+    "copied_to": "/home/ubuntu/notebook_exports/cot_resdstream_results_20260609_222032/patching_results1_essential hypertension",
+    "numeric_file_counts": {
+      ".pkl": 121,
+      ".json": 0,
+      ".csv": 0,
+      ".parquet": 0,
+      ".npy": 0,
+      ".npz": 0
+    }
+  },
+  "patching_results1_sarcoidosis": {
+    "source": "/home/ubuntu/patching_results1_sarcoidosis",
+    "copied_to": "/home/ubuntu/notebook_exports/cot_resdstream_results_20260609_222032/patching_results1_sarcoidosis",
+    "numeric_file_counts": {
+      ".pkl": 220,
+      ".json": 0,
+      ".csv": 0,
+      ".parquet": 0,
+      ".npy": 0,
+      ".npz": 0
+    }
+  },
+  "patching_results1_depression": {
+    "source": "/home/ubuntu/patching_results1_depression",
+    "copied_to": "/home/ubuntu/notebook_exports/cot_resdstream_results_20260609_222032/patching_results1_depression",
+    "numeric_file_counts": {
+      ".pkl": 220,
+      ".json": 0,
+      ".csv": 0,
+      ".parquet": 0,
+      ".npy": 0,
+      ".npz": 0
+    }
+  },
+  "patching_results1_rheumatoid arthritis": {
+    "source": "/home/ubuntu/patching_results1_rheumatoid arthritis",
+    "copied_to": "/home/ubuntu/notebook_exports/cot_resdstream_results_20260609_222032/patching_results1_rheumatoid arthritis",
+    "numeric_file_counts": {
+      ".pkl": 220,
+      ".json": 0,
+      ".csv": 0,
+      ".parquet": 0,
+      ".npy": 0,
+      ".npz": 0
+    }
+  },
+  "patching_results1": {
+    "source": "/home/ubuntu/patching_results1",
+    "copied_to": "/home/ubuntu/notebook_exports/cot_resdstream_results_20260609_222032/patching_results1",
+    "numeric_file_counts": {
+      ".pkl": 1,
+      ".json": 0,
+      ".csv": 0,
+      ".parquet": 0,
+      ".npy": 0,
+      ".npz": 0
+    }
+  },
+  "patching_results1_asthma": {
+    "source": "/home/ubuntu/patching_results1_asthma",
+    "copied_to": "/home/ubuntu/notebook_exports/cot_resdstream_results_20260609_222032/patching_results1_asthma",
+    "numeric_file_counts": {
+      ".pkl": 143,
+      ".json": 0,
+      ".csv": 0,
+      ".parquet": 0,
+      ".npy": 0,
+      ".npz": 0
+    }
+  },
+  "patching_results1_multiple sclerosis": {
+    "source": "/home/ubuntu/patching_results1_multiple sclerosis",
+    "copied_to": "/home/ubuntu/notebook_exports/cot_resdstream_results_20260609_222032/patching_results1_multiple sclerosis",
+    "numeric_file_counts": {
+      ".pkl": 220,
+      ".json": 0,
+      ".csv": 0,
+      ".parquet": 0,
+      ".npy": 0,
+      ".npz": 0
+    }
+  }
+}
