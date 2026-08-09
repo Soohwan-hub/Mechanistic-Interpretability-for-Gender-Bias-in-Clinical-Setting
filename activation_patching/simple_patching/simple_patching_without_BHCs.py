@@ -17,8 +17,10 @@ from typing import Any, Dict, List, Optional, Tuple
 
 import numpy as np
 import torch
+import torch.nn.functional as F
 from nnsight import LanguageModel
 from transformers import BitsAndBytesConfig
+from huggingface_hub import snapshot_download
 
 # Optional plotting (kaleido for static export)
 try:
@@ -33,6 +35,7 @@ except ImportError:
 # Constants
 # -----------------------------------------------------------------------------
 MODEL_NAME = "Qwen/Qwen2.5-7B-Instruct"
+TUNED_LENS_REPO_ID = "alunxu/qwen-2.5-7b-tuned-lens-fwedu-262M"
 
 COHORT_TO_CONDITION_NAME = {
     "depression": "depression",
@@ -707,6 +710,29 @@ def parse_args() -> argparse.Namespace:
     p.add_argument("--heatmap-overview-bin-size", type=int, default=10, help="Bin size for compact overview heatmap (1 disables binning)")
     p.add_argument("--rebuild-plots-only", action="store_true", help="Regenerate plots from saved artifacts only")
     p.add_argument("--dry-run", action="store_true", help="Only validate config, work list, and progress (no model load)")
+    p.add_argument(
+        "--logit-lens",
+        action="store_true",
+        help="Run logit-lens export (top-k tokens per position/layer) instead of patch sweep.",
+    )
+    p.add_argument(
+        "--logit-lens-layers",
+        type=str,
+        default="17,18,19",
+        help="Comma-separated layers for logit lens export.",
+    )
+    p.add_argument(
+        "--logit-lens-top-k",
+        type=int,
+        default=20,
+        help="Top-k tokens at final prompt position for logit lens export.",
+    )
+    p.add_argument(
+        "--logit-lens-output-subdir",
+        type=str,
+        default="logit_lens",
+        help="Subdirectory under run_dir for logit lens JSON files.",
+    )
     return p.parse_args()
 
 
@@ -879,6 +905,290 @@ def run_patching(args: argparse.Namespace, run_dir: Path) -> None:
 
     # Build aggregate from all artifacts
     build_aggregates(run_dir, args)
+
+
+def _parse_int_list_csv(raw: str) -> List[int]:
+    out: List[int] = []
+    for tok in [x.strip() for x in raw.split(",") if x.strip()]:
+        out.append(int(tok))
+    return out
+
+
+def _ensure_2d_nested_list(values: Any) -> List[List[Any]]:
+    """
+    Normalize list-like data to 2D nested-list form.
+    Handles both [N, K] and [K] outputs from framework shape edge cases.
+    """
+    if isinstance(values, list):
+        if not values:
+            return []
+        if isinstance(values[0], list):
+            return values
+        return [values]
+    return [[values]]
+
+
+def _normalize_lens_logits_shape(lens_logits: torch.Tensor, expected_seq_len: int) -> torch.Tensor:
+    """
+    Normalize logits to [seq_len, vocab_size] for per-token logit-lens export.
+    """
+    if lens_logits.ndim == 3:
+        # Common case from HF heads: [batch, seq, vocab].
+        if lens_logits.shape[0] == 1:
+            lens_logits = lens_logits[0]
+        else:
+            raise ValueError(
+                f"Unexpected 3D lens logits batch shape: {tuple(lens_logits.shape)}"
+            )
+
+    if lens_logits.ndim != 2:
+        raise ValueError(f"Unexpected lens logits rank: {tuple(lens_logits.shape)}")
+
+    if int(lens_logits.shape[0]) != int(expected_seq_len):
+        raise ValueError(
+            f"Lens logits seq_len mismatch: got {int(lens_logits.shape[0])}, "
+            f"expected {int(expected_seq_len)}."
+        )
+
+    return lens_logits
+
+
+def _apply_final_norm_for_lens(llm: LanguageModel, hidden: torch.Tensor) -> torch.Tensor:
+    """
+    Apply final normalization before lm_head projection.
+    Supports common Hugging Face wrapper layouts.
+    """
+    if hasattr(llm.model, "norm"):
+        return llm.model.norm(hidden)
+    if hasattr(llm.model, "model") and hasattr(llm.model.model, "norm"):
+        return llm.model.model.norm(hidden)
+    if hasattr(llm.model, "transformer") and hasattr(llm.model.transformer, "ln_f"):
+        return llm.model.transformer.ln_f(hidden)
+    return hidden
+
+
+def _resolve_tuned_lens_weight_keys(
+    layer_idx: int,
+    tuned_lens_state: Dict[str, torch.Tensor],
+) -> Tuple[str, Optional[str]]:
+    candidates = [
+        (f"{layer_idx}.weight", f"{layer_idx}.bias"),
+        (f"layer_translators.{layer_idx}.weight", f"layer_translators.{layer_idx}.bias"),
+    ]
+    for w_key, b_key in candidates:
+        if w_key in tuned_lens_state:
+            return w_key, b_key if b_key in tuned_lens_state else None
+    available = sorted(k for k in tuned_lens_state.keys() if k.endswith(".weight"))[:5]
+    raise KeyError(
+        f"Tuned lens translator not found for layer {layer_idx}. "
+        f"Sample available keys: {available}"
+    )
+
+
+def _load_tuned_lens_state_dict(repo_id: str = TUNED_LENS_REPO_ID) -> Dict[str, torch.Tensor]:
+    lens_dir = snapshot_download(repo_id)
+    params_path = Path(lens_dir) / "params.pt"
+    if not params_path.exists():
+        raise FileNotFoundError(f"Tuned lens checkpoint not found: {params_path}")
+    state = torch.load(params_path, map_location="cpu")
+    if not isinstance(state, dict):
+        raise TypeError(f"Unexpected tuned lens checkpoint type: {type(state)}")
+    return state
+
+
+def _apply_tuned_lens_translator(
+    hidden: torch.Tensor,
+    layer_idx: int,
+    tuned_lens_state: Dict[str, torch.Tensor],
+) -> torch.Tensor:
+    weight_key, bias_key = _resolve_tuned_lens_weight_keys(layer_idx, tuned_lens_state)
+    weight = tuned_lens_state[weight_key].to(device=hidden.device, dtype=hidden.dtype)
+    bias = (
+        tuned_lens_state[bias_key].to(device=hidden.device, dtype=hidden.dtype)
+        if bias_key is not None
+        else None
+    )
+    # Tuned lens uses a residual affine translator: h + W h + b.
+    return hidden + F.linear(hidden, weight, bias)
+
+
+def run_logit_lens_export(args: argparse.Namespace, run_dir: Path) -> None:
+    """
+    Export tuned-lens top-k vocab predictions at the final decision position
+    on the corrupted prompt stream (no activation patching).
+    """
+    layers = _parse_int_list_csv(args.logit_lens_layers)
+    if not layers:
+        raise ValueError("--logit-lens-layers resolved to empty set.")
+    top_k = int(args.logit_lens_top_k)
+    if top_k <= 0:
+        raise ValueError("--logit-lens-top-k must be > 0.")
+
+    # If user kept default prompt IDs, widen to full simple prompt set for logit-lens runs.
+    # Keep this local so config hashing and other modes are unaffected.
+    work_args = argparse.Namespace(**vars(args))
+    if work_args.prompt_ids.strip() == "1,2,3,4":
+        work_args.prompt_ids = ",".join(str(i) for i in sorted(SIMPLE_PROMPTS.keys()))
+
+    work_list = build_work_list(work_args, run_dir)
+    progress = load_progress(run_dir)
+    completed_set = set(progress.get("completed", []))
+    lens_key_prefix = "logit_lens:"
+    completed_lens = {k for k in completed_set if k.startswith(lens_key_prefix)}
+    if args.resume:
+        work_list = [
+            w for w in work_list
+            if f"{lens_key_prefix}{unit_key(w[0], w[1])}" not in completed_lens
+        ]
+        print(
+            f"Resume: {len(completed_lens)} completed logit-lens units, {len(work_list)} remaining",
+            flush=True,
+        )
+    if not work_list:
+        print("No work units to run.", flush=True)
+        return
+
+    quantization_config = BitsAndBytesConfig(
+        load_in_4bit=True,
+        bnb_4bit_quant_type="nf4",
+        bnb_4bit_compute_dtype=torch.bfloat16,
+        bnb_4bit_use_double_quant=True,
+    )
+    llm = LanguageModel(MODEL_NAME, quantization_config=quantization_config, device_map="auto")
+    num_layers = len(llm.model.layers)
+    vocab_size = int(getattr(llm.tokenizer, "vocab_size", 0) or 0)
+    if vocab_size > 0 and top_k > vocab_size:
+        raise ValueError(
+            f"--logit-lens-top-k ({top_k}) exceeds tokenizer vocab size ({vocab_size})."
+        )
+
+    valid_layers = sorted({l for l in layers if 0 <= l < num_layers})
+    if not valid_layers:
+        raise ValueError(f"No valid logit-lens layers in {layers} for model with {num_layers} layers.")
+    layer_set = set(valid_layers)
+    print(f"Logit lens layers: {valid_layers} | top_k={top_k}", flush=True)
+    print(f"Using tuned lens: {TUNED_LENS_REPO_ID}", flush=True)
+
+    tuned_lens_state = _load_tuned_lens_state_dict(TUNED_LENS_REPO_ID)
+
+    out_dir = run_dir / args.logit_lens_output_subdir
+    out_dir.mkdir(parents=True, exist_ok=True)
+
+    cohort_to_gender = COHORT_TO_PATCH_GENDER
+    condition_names = COHORT_TO_CONDITION_NAME
+
+    for cohort, prompt_id in work_list:
+        key = unit_key(cohort, prompt_id)
+        lens_key = f"{lens_key_prefix}{key}"
+        out_path = out_dir / f"{cohort}_prompt{prompt_id}.json"
+        if args.resume and out_path.exists():
+            mark_completed(run_dir, lens_key, progress)
+            progress = load_progress(run_dir)
+            continue
+
+        try:
+            gender = cohort_to_gender.get(cohort, "Male")
+            condition_name = condition_names.get(cohort, cohort)
+            template = SIMPLE_PROMPTS[prompt_id]
+            _clean_text, _clean_tokens, _patch_token_from = build_clean_prompt(llm, gender)
+            corrupted_text, corrupted_tokens = build_corrupt_prompt(llm, template, condition_name)
+            token_ids = corrupted_tokens.tolist()
+            token_texts = [llm.tokenizer.decode([int(tid)]) for tid in token_ids]
+            if not token_ids:
+                raise ValueError("Corrupted prompt tokenization produced an empty token sequence.")
+            last_pos = len(token_ids) - 1
+            male_token_id = int(_validated_gender_token_ids(llm, "Male")[-1].item())
+            female_token_id = int(_validated_gender_token_ids(llm, "Female")[-1].item())
+
+            payload: Dict[str, Any] = {
+                "cohort": cohort,
+                "condition_name": condition_name,
+                "prompt_id": prompt_id,
+                "patch_gender": gender,
+                "layers": valid_layers,
+                "top_k": top_k,
+                "token_ids": [token_ids[last_pos]],
+                "token_texts": [token_texts[last_pos]],
+                "selected_positions": [last_pos],
+                "lens_type": "tuned_lens",
+                "lens_repo_id": TUNED_LENS_REPO_ID,
+                "gender_token_ids": {
+                    "male": male_token_id,
+                    "female": female_token_id,
+                },
+                "topk": {},
+                "gender_scores": {},
+            }
+
+            with torch.no_grad():
+                with llm.generate(max_new_tokens=1) as tracer:
+                    with tracer.invoke(corrupted_text):
+                        for li in valid_layers:
+                            hidden = llm.model.layers[li].output[0]
+                            hidden_tuned = _apply_tuned_lens_translator(
+                                hidden=hidden,
+                                layer_idx=li,
+                                tuned_lens_state=tuned_lens_state,
+                            )
+                            hidden_for_head = _apply_final_norm_for_lens(llm, hidden_tuned)
+                            lens_logits = llm.lm_head(hidden_for_head)
+                            lens_logits = _normalize_lens_logits_shape(
+                                lens_logits, expected_seq_len=len(token_ids)
+                            )
+                            lens_probs = torch.softmax(lens_logits, dim=-1)
+                            # Keep only the decision point (next token after final prompt position).
+                            lens_probs = lens_probs[-1:, :]
+                            tk_probs, tk_ids = torch.topk(lens_probs, k=top_k, dim=-1)
+                            last_logits = lens_logits[-1]
+                            male_logit = last_logits[male_token_id]
+                            female_logit = last_logits[female_token_id]
+                            male_prob = lens_probs[0, male_token_id]
+                            female_prob = lens_probs[0, female_token_id]
+                            male_rank = int((last_logits > male_logit).sum().item()) + 1
+                            female_rank = int((last_logits > female_logit).sum().item()) + 1
+                            payload["topk"][str(li)] = {
+                                "token_topk_ids": tk_ids.save(),
+                                "token_topk_probs": tk_probs.save(),
+                            }
+                            payload["gender_scores"][str(li)] = {
+                                "male_logit": float(male_logit.item()),
+                                "female_logit": float(female_logit.item()),
+                                "male_prob": float(male_prob.item()),
+                                "female_prob": float(female_prob.item()),
+                                "logit_delta_male_minus_female": float((male_logit - female_logit).item()),
+                                "prob_delta_male_minus_female": float((male_prob - female_prob).item()),
+                                "male_rank": male_rank,
+                                "female_rank": female_rank,
+                            }
+
+            # Resolve proxies and decode top-k token IDs.
+            for li in valid_layers:
+                rec = payload["topk"][str(li)]
+                ids_arr = _resolve(rec["token_topk_ids"]).detach().cpu().tolist()
+                probs_arr = _resolve(rec["token_topk_probs"]).detach().cpu().float().tolist()
+                ids_arr_2d = _ensure_2d_nested_list(ids_arr)
+                probs_arr_2d = _ensure_2d_nested_list(probs_arr)
+                if len(ids_arr_2d) != 1:
+                    raise ValueError(
+                        f"Top-k row count mismatch for layer {li}: got {len(ids_arr_2d)}, "
+                        "expected 1 (final position only)."
+                    )
+                decoded = [[llm.tokenizer.decode([int(tid)]) for tid in row] for row in ids_arr_2d]
+                payload["topk"][str(li)] = {
+                    "token_topk_ids": ids_arr_2d,
+                    "token_topk_probs": probs_arr_2d,
+                    "token_topk_texts": decoded,
+                }
+
+            _atomic_write_json(str(out_path), payload)
+            mark_completed(run_dir, lens_key, progress)
+            progress = load_progress(run_dir)
+            print(f"Done {key} -> {out_path}", flush=True)
+        except Exception as e:
+            mark_failed(run_dir, lens_key, str(e), progress)
+            progress = load_progress(run_dir)
+            print(f"Failed {key}: {e}", file=sys.stderr, flush=True)
+            raise
 
 
 def build_aggregates(run_dir: Path, args: argparse.Namespace) -> None:
@@ -1102,9 +1412,17 @@ def main() -> None:
         save_progress(run_dir, progress)
 
     if args.dry_run:
-        work_list = build_work_list(args, run_dir)
+        dry_run_args = argparse.Namespace(**vars(args))
+        if args.logit_lens and dry_run_args.prompt_ids.strip() == "1,2,3,4":
+            dry_run_args.prompt_ids = ",".join(str(i) for i in sorted(SIMPLE_PROMPTS.keys()))
+        work_list = build_work_list(dry_run_args, run_dir)
         print(f"Dry run: run_dir={run_dir}, work_units={len(work_list)}", flush=True)
         print(f"Selected score keys: {','.join(args.selected_score_keys)}", flush=True)
+        if args.logit_lens:
+            print(
+                f"Logit-lens mode enabled: layers={args.logit_lens_layers}, top_k={args.logit_lens_top_k}",
+                flush=True,
+            )
         print(f"Progress: {load_progress(run_dir)}", flush=True)
         # Validate layer_aggregates
         fake = np.random.randn(4, 10).astype(np.float32)
@@ -1113,7 +1431,10 @@ def main() -> None:
         print("Dry run OK (config, work list, progress, layer_aggregates).", flush=True)
         return
 
-    run_patching(args, run_dir)
+    if args.logit_lens:
+        run_logit_lens_export(args, run_dir)
+    else:
+        run_patching(args, run_dir)
 
 
 if __name__ == "__main__":
