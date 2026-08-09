@@ -1,0 +1,242 @@
+{
+ "var1/depression": {
+  "prompt": "VIGNETTE_PROMPT_A",
+  "variant": "var1",
+  "window_positions": [
+   156,
+   155,
+   154,
+   153,
+   152,
+   151,
+   150,
+   149,
+   148,
+   147,
+   146,
+   145,
+   144,
+   143,
+   142
+  ],
+  "matrix_shape": [
+   28,
+   182
+  ],
+  "files": [
+   "depression_A_var1_rewrite_matrix.csv",
+   "depression_A_var1_token_labels.json",
+   "depression_A_var1_fig9_var1_window.csv"
+  ]
+ },
+ "var1/multiple sclerosis": {
+  "prompt": "VIGNETTE_PROMPT_C",
+  "variant": "var1",
+  "window_positions": [
+   147,
+   146,
+   145,
+   144,
+   143,
+   142,
+   141,
+   140,
+   139,
+   138,
+   137,
+   136,
+   135,
+   134,
+   133
+  ],
+  "matrix_shape": [
+   28,
+   173
+  ],
+  "files": [
+   "multiple_sclerosis_C_var1_rewrite_matrix.csv",
+   "multiple_sclerosis_C_var1_token_labels.json",
+   "multiple_sclerosis_C_var1_fig9_var1_window.csv"
+  ]
+ },
+ "var1/rheumatoid arthritis": {
+  "prompt": "VIGNETTE_PROMPT_A",
+  "variant": "var1",
+  "window_positions": [
+   162,
+   161,
+   160,
+   159,
+   158,
+   157,
+   156,
+   155,
+   154,
+   153,
+   152,
+   151,
+   150,
+   149,
+   148
+  ],
+  "matrix_shape": [
+   28,
+   188
+  ],
+  "files": [
+   "rheumatoid_arthritis_A_var1_rewrite_matrix.csv",
+   "rheumatoid_arthritis_A_var1_token_labels.json",
+   "rheumatoid_arthritis_A_var1_fig9_var1_window.csv"
+  ]
+ },
+ "var1/sarcoidosis": {
+  "prompt": "VIGNETTE_PROMPT_A",
+  "variant": "var1",
+  "window_positions": [
+   160,
+   159,
+   158,
+   157,
+   156,
+   155,
+   154,
+   153,
+   152,
+   151,
+   150,
+   149,
+   148,
+   147,
+   146
+  ],
+  "matrix_shape": [
+   28,
+   186
+  ],
+  "files": [
+   "sarcoidosis_A_var1_rewrite_matrix.csv",
+   "sarcoidosis_A_var1_token_labels.json",
+   "sarcoidosis_A_var1_fig9_var1_window.csv"
+  ]
+ },
+ "var2/depression": {
+  "prompt": "VIGNETTE_PROMPT_A",
+  "variant": "var2",
+  "window_positions": [
+   153,
+   152,
+   151,
+   150,
+   149,
+   148,
+   147,
+   146,
+   145,
+   144,
+   143,
+   142,
+   141,
+   140,
+   139
+  ],
+  "matrix_shape": [
+   28,
+   179
+  ],
+  "files": [
+   "depression_A_var2_rewrite_matrix.csv",
+   "depression_A_var2_token_labels.json",
+   "depression_A_var2_fig9_var2_window.csv"
+  ]
+ },
+ "var2/multiple sclerosis": {
+  "prompt": "VIGNETTE_PROMPT_C",
+  "variant": "var2",
+  "window_positions": [
+   150,
+   149,
+   148,
+   147,
+   146,
+   145,
+   144,
+   143,
+   142,
+   141,
+   140,
+   139,
+   138,
+   137,
+   136
+  ],
+  "matrix_shape": [
+   28,
+   176
+  ],
+  "files": [
+   "multiple_sclerosis_C_var2_rewrite_matrix.csv",
+   "multiple_sclerosis_C_var2_token_labels.json",
+   "multiple_sclerosis_C_var2_fig9_var2_window.csv"
+  ]
+ },
+ "var2/rheumatoid arthritis": {
+  "prompt": "VIGNETTE_PROMPT_A",
+  "variant": "var2",
+  "window_positions": [
+   159,
+   158,
+   157,
+   156,
+   155,
+   154,
+   153,
+   152,
+   151,
+   150,
+   149,
+   148,
+   147,
+   146,
+   145
+  ],
+  "matrix_shape": [
+   28,
+   185
+  ],
+  "files": [
+   "rheumatoid_arthritis_A_var2_rewrite_matrix.csv",
+   "rheumatoid_arthritis_A_var2_token_labels.json",
+   "rheumatoid_arthritis_A_var2_fig9_var2_window.csv"
+  ]
+ },
+ "var2/sarcoidosis": {
+  "prompt": "VIGNETTE_PROMPT_A",
+  "variant": "var2",
+  "window_positions": [
+   157,
+   156,
+   155,
+   154,
+   153,
+   152,
+   151,
+   150,
+   149,
+   148,
+   147,
+   146,
+   145,
+   144,
+   143
+  ],
+  "matrix_shape": [
+   28,
+   183
+  ],
+  "files": [
+   "sarcoidosis_A_var2_rewrite_matrix.csv",
+   "sarcoidosis_A_var2_token_labels.json",
+   "sarcoidosis_A_var2_fig9_var2_window.csv"
+  ]
+ }
+}
