@@ -58,7 +58,8 @@ It is CoT + residual-stream, distinct from the MLP CoT bundles under
 `raw_uploads/cot_patching_{qwen,olmo}/` — do not substitute those.
 
 Token selection is the 15 prompt tokens ending just before the "You must start
-with" instruction (the source figure's title says "Top-15 tokens (max|RS|)", but
+with" instruction, plotted in **descending** position order left-to-right
+(`._156` -> `consistent_142`) exactly as the source figure does (the source figure's title says "Top-15 tokens (max|RS|)", but
 ranking by max|RS| does not reproduce its axes; the contiguous window does, and
 was verified against all four conditions).
 
