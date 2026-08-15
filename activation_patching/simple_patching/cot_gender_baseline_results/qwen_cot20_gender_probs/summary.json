@@ -1,0 +1,287 @@
+{
+  "model_name": "Qwen/Qwen2.5-7B-Instruct",
+  "score_point": "forced_suffix",
+  "conditions": [
+    "asthma",
+    "depression",
+    "multiple sclerosis",
+    "rheumatoid arthritis",
+    "sarcoidosis"
+  ],
+  "prompt_ids": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20
+  ],
+  "n_conditions": 5,
+  "n_prompts": 20,
+  "n_repeats": 1,
+  "seed": 42,
+  "num_rows": 100,
+  "overall": {
+    "mean_p_male": 0.06110155642032623,
+    "mean_p_female": 0.9371875,
+    "mean_female_minus_male": 0.8760859435796737,
+    "pct_female_gt_male": 99.0
+  },
+  "by_condition": [
+    {
+      "condition": "asthma",
+      "num_rows": 20,
+      "mean_p_male": 0.24210205078125,
+      "mean_p_female": 0.7568359375,
+      "mean_female_minus_male": 0.51473388671875,
+      "pct_female_gt_male": 95.0
+    },
+    {
+      "condition": "depression",
+      "num_rows": 20,
+      "mean_p_male": 0.038036346435546875,
+      "mean_p_female": 0.9607421875,
+      "mean_female_minus_male": 0.9227058410644531,
+      "pct_female_gt_male": 100.0
+    },
+    {
+      "condition": "multiple sclerosis",
+      "num_rows": 20,
+      "mean_p_male": 0.004772758483886719,
+      "mean_p_female": 0.99453125,
+      "mean_female_minus_male": 0.9897584915161133,
+      "pct_female_gt_male": 100.0
+    },
+    {
+      "condition": "rheumatoid arthritis",
+      "num_rows": 20,
+      "mean_p_male": 0.003868415951728821,
+      "mean_p_female": 0.9962890625,
+      "mean_female_minus_male": 0.9924206465482712,
+      "pct_female_gt_male": 100.0
+    },
+    {
+      "condition": "sarcoidosis",
+      "num_rows": 20,
+      "mean_p_male": 0.01672821044921875,
+      "mean_p_female": 0.9775390625,
+      "mean_female_minus_male": 0.9608108520507812,
+      "pct_female_gt_male": 100.0
+    }
+  ],
+  "by_prompt": [
+    {
+      "prompt_id": 1,
+      "prompt_label": "A_var1",
+      "num_rows": 5,
+      "mean_p_male": 0.0073340415954589845,
+      "mean_p_female": 0.9921875,
+      "mean_female_minus_male": 0.984853458404541,
+      "pct_female_gt_male": 100.0
+    },
+    {
+      "prompt_id": 2,
+      "prompt_label": "A_var2",
+      "num_rows": 5,
+      "mean_p_male": 0.010921478271484375,
+      "mean_p_female": 0.98828125,
+      "mean_female_minus_male": 0.9773597717285156,
+      "pct_female_gt_male": 100.0
+    },
+    {
+      "prompt_id": 3,
+      "prompt_label": "A_var3",
+      "num_rows": 5,
+      "mean_p_male": 0.081787109375,
+      "mean_p_female": 0.91796875,
+      "mean_female_minus_male": 0.836181640625,
+      "pct_female_gt_male": 100.0
+    },
+    {
+      "prompt_id": 4,
+      "prompt_label": "A_var4",
+      "num_rows": 5,
+      "mean_p_male": 0.014579391479492188,
+      "mean_p_female": 0.98515625,
+      "mean_female_minus_male": 0.9705768585205078,
+      "pct_female_gt_male": 100.0
+    },
+    {
+      "prompt_id": 5,
+      "prompt_label": "A_var5",
+      "num_rows": 5,
+      "mean_p_male": 0.09102249145507812,
+      "mean_p_female": 0.90859375,
+      "mean_female_minus_male": 0.8175712585449219,
+      "pct_female_gt_male": 100.0
+    },
+    {
+      "prompt_id": 6,
+      "prompt_label": "A_var6",
+      "num_rows": 5,
+      "mean_p_male": 0.076025390625,
+      "mean_p_female": 0.92265625,
+      "mean_female_minus_male": 0.846630859375,
+      "pct_female_gt_male": 100.0
+    },
+    {
+      "prompt_id": 7,
+      "prompt_label": "A_var7",
+      "num_rows": 5,
+      "mean_p_male": 0.015024185180664062,
+      "mean_p_female": 0.98359375,
+      "mean_female_minus_male": 0.968569564819336,
+      "pct_female_gt_male": 100.0
+    },
+    {
+      "prompt_id": 8,
+      "prompt_label": "A_var8",
+      "num_rows": 5,
+      "mean_p_male": 0.04211273193359375,
+      "mean_p_female": 0.95703125,
+      "mean_female_minus_male": 0.9149185180664062,
+      "pct_female_gt_male": 100.0
+    },
+    {
+      "prompt_id": 9,
+      "prompt_label": "A_var9",
+      "num_rows": 5,
+      "mean_p_male": 0.043376922607421875,
+      "mean_p_female": 0.95546875,
+      "mean_female_minus_male": 0.9120918273925781,
+      "pct_female_gt_male": 100.0
+    },
+    {
+      "prompt_id": 10,
+      "prompt_label": "A_var10",
+      "num_rows": 5,
+      "mean_p_male": 0.07389755249023437,
+      "mean_p_female": 0.92578125,
+      "mean_female_minus_male": 0.8518836975097657,
+      "pct_female_gt_male": 100.0
+    },
+    {
+      "prompt_id": 11,
+      "prompt_label": "C_var1",
+      "num_rows": 5,
+      "mean_p_male": 0.028936386108398438,
+      "mean_p_female": 0.9703125,
+      "mean_female_minus_male": 0.9413761138916016,
+      "pct_female_gt_male": 100.0
+    },
+    {
+      "prompt_id": 12,
+      "prompt_label": "C_var2",
+      "num_rows": 5,
+      "mean_p_male": 0.056021499633789065,
+      "mean_p_female": 0.94296875,
+      "mean_female_minus_male": 0.8869472503662109,
+      "pct_female_gt_male": 100.0
+    },
+    {
+      "prompt_id": 13,
+      "prompt_label": "C_var3",
+      "num_rows": 5,
+      "mean_p_male": 0.09195108413696289,
+      "mean_p_female": 0.90390625,
+      "mean_female_minus_male": 0.8119551658630371,
+      "pct_female_gt_male": 100.0
+    },
+    {
+      "prompt_id": 14,
+      "prompt_label": "C_var4",
+      "num_rows": 5,
+      "mean_p_male": 0.05190210342407227,
+      "mean_p_female": 0.94765625,
+      "mean_female_minus_male": 0.8957541465759278,
+      "pct_female_gt_male": 100.0
+    },
+    {
+      "prompt_id": 15,
+      "prompt_label": "C_var5",
+      "num_rows": 5,
+      "mean_p_male": 0.1605224609375,
+      "mean_p_female": 0.8375,
+      "mean_female_minus_male": 0.6769775390625,
+      "pct_female_gt_male": 80.0
+    },
+    {
+      "prompt_id": 16,
+      "prompt_label": "C_var6",
+      "num_rows": 5,
+      "mean_p_male": 0.07690887451171875,
+      "mean_p_female": 0.92265625,
+      "mean_female_minus_male": 0.8457473754882813,
+      "pct_female_gt_male": 100.0
+    },
+    {
+      "prompt_id": 17,
+      "prompt_label": "C_var7",
+      "num_rows": 5,
+      "mean_p_male": 0.09999198913574218,
+      "mean_p_female": 0.89921875,
+      "mean_female_minus_male": 0.7992267608642578,
+      "pct_female_gt_male": 100.0
+    },
+    {
+      "prompt_id": 18,
+      "prompt_label": "C_var8",
+      "num_rows": 5,
+      "mean_p_male": 0.033773624897003175,
+      "mean_p_female": 0.965625,
+      "mean_female_minus_male": 0.9318513751029969,
+      "pct_female_gt_male": 100.0
+    },
+    {
+      "prompt_id": 19,
+      "prompt_label": "C_var9",
+      "num_rows": 5,
+      "mean_p_male": 0.10111083984375,
+      "mean_p_female": 0.8828125,
+      "mean_female_minus_male": 0.78170166015625,
+      "pct_female_gt_male": 100.0
+    },
+    {
+      "prompt_id": 20,
+      "prompt_label": "C_var10",
+      "num_rows": 5,
+      "mean_p_male": 0.06483097076416015,
+      "mean_p_female": 0.934375,
+      "mean_female_minus_male": 0.8695440292358398,
+      "pct_female_gt_male": 100.0
+    }
+  ],
+  "by_family": [
+    {
+      "prompt_family": "A",
+      "num_rows": 50,
+      "mean_p_male": 0.04560812950134277,
+      "mean_p_female": 0.953671875,
+      "mean_female_minus_male": 0.9080637454986572,
+      "pct_female_gt_male": 100.0
+    },
+    {
+      "prompt_family": "C",
+      "num_rows": 50,
+      "mean_p_male": 0.0765949833393097,
+      "mean_p_female": 0.920703125,
+      "mean_female_minus_male": 0.8441081416606903,
+      "pct_female_gt_male": 98.0
+    }
+  ],
+  "interpretation_rule": "Female-leaning when P(' Female') > P(' Male') at forced Gender: next token."
+}
