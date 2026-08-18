@@ -1,0 +1,7 @@
+{
+  "random_magnitude_matched_attempts": 985,
+  "random_magnitude_matched_success": 931,
+  "condition_semantic_attempts": 985,
+  "condition_semantic_success": 985,
+  "condition_semantic_low_quality_swaps": 0
+}

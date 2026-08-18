@@ -1,0 +1,16 @@
+intervention_scope,layer,feature_idx,gate_sign,token_identity,n_hits,n_conditions,mean_norm_effect,neutralized_hits,inverted_hits
+local_token,3,84633,positive,<blank>,45,5,0.7100873934586542,4,5
+local_token,25,23584,positive,demographics,5,5,0.5987624616941537,0,1
+local_token,12,23848,positive,concise,9,5,0.27125422314989467,0,1
+local_token,19,126496,positive,<blank>,45,5,0.16900373862205434,0,1
+local_token,18,12895,positive,concise,13,5,0.15391543129000815,0,1
+local_token,19,44157,positive,<blank>,45,5,0.13771453438849812,0,1
+local_token,25,23584,positive,presentation,36,5,0.13052648344595566,0,1
+local_token,25,3008,positive,Do,31,5,0.12882690646749223,0,1
+local_token,4,557,positive,aus,24,5,0.1287565581378893,0,1
+local_token,11,112606,positive,<blank>,45,5,0.10819424671355905,0,1
+local_token,25,3008,positive,ibility,24,5,0.10627307788229322,0,1
+local_token,25,23584,positive,swap,32,5,0.08452181443382417,0,1
+local_token,23,91857,positive,<blank>,45,5,0.06749579314505472,0,1
+local_token,4,15523,positive,<|im_start|>,45,5,0.06288072630894866,0,1
+local_token,18,14727,positive,choice,45,5,0.052767723551030064,0,1

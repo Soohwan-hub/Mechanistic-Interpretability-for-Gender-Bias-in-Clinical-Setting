@@ -1,0 +1,2 @@
+intervention_scope,stage,count,mean_norm_effect,median_norm_effect,stage3_key_source,allow_post_decision_coords,post_decision_coords_excluded,ablation_mode
+local_token,prompt,1071,0.16371103678995055,0.16326530609579343,eligible,False,1388970,exact_zero

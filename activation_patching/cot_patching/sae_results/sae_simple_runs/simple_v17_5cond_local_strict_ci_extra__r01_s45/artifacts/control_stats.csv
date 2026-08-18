@@ -1,0 +1,3 @@
+intervention_scope,control_type,n_real,n_control,real_mean,control_mean,mannwhitney_u,p_value
+local_token,condition_semantic,985,985,0.10350135497498529,0.06779794422308831,509350.0,0.05482784652887914
+local_token,random_magnitude_matched,985,931,0.10350135497498529,0.06224290396336166,484639.0,0.030902366260051883

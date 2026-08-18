@@ -1,0 +1,26 @@
+{
+  "runs_c": [
+    "C:\\Users\\soohw\\rtar_parent\\qwen_probe_downloads\\simple_v17_5cond_local_strict_ci__r01_s42",
+    "C:\\Users\\soohw\\rtar_parent\\qwen_probe_downloads\\simple_v17_5cond_local_strict_ci__r02_s43",
+    "C:\\Users\\soohw\\rtar_parent\\qwen_probe_downloads\\simple_v17_5cond_local_strict_ci__r03_s44",
+    "C:\\Users\\soohw\\rtar_parent\\qwen_probe_downloads\\simple_v17_5cond_local_strict_ci_extra__r01_s45",
+    "C:\\Users\\soohw\\rtar_parent\\qwen_probe_downloads\\simple_v17_5cond_local_strict_ci_extra__r02_s46"
+  ],
+  "runs_a": [
+    "C:\\Users\\soohw\\rtar_parent\\qwen_probe_downloads\\simple_v17_5cond_local_strict_ci_promptA__r01_s42",
+    "C:\\Users\\soohw\\rtar_parent\\qwen_probe_downloads\\simple_v17_5cond_local_strict_ci_promptA__r02_s43",
+    "C:\\Users\\soohw\\rtar_parent\\qwen_probe_downloads\\simple_v17_5cond_local_strict_ci_promptA__r03_s44",
+    "C:\\Users\\soohw\\rtar_parent\\qwen_probe_downloads\\simple_v17_5cond_local_strict_ci_promptA__r04_s45",
+    "C:\\Users\\soohw\\rtar_parent\\qwen_probe_downloads\\simple_v17_5cond_local_strict_ci_promptA__r05_s46"
+  ],
+  "gate_sign": "positive",
+  "top_tokens": 40,
+  "top_latents": 10,
+  "bootstrap_iters": 2000,
+  "seed": 123,
+  "figure_files": [
+    "fig1_heatmaps_A_C_delta.png",
+    "fig2_top10_latents_bootstrap_ci.png",
+    "fig3_real_vs_control_gap.png"
+  ]
+}
