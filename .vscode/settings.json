@@ -18,5 +18,21 @@
       "tools": ["pdflatex"]
     }
   ],
-  "latex-workshop.latex.outDir": "%DIR%"
+  "latex-workshop.latex.outDir": "%DIR%",
+  "latex-workshop.latex.clean.fileTypes": [
+    "*.aux", "*.bbl", "*.blg", "*.idx", "*.ind", "*.lof",
+    "*.lot", "*.out", "*.toc", "*.fls", "*.fdb_latexmk",
+    "*.synctex.gz", "*.run.xml", "*.bcf"
+  ],
+  "files.exclude": {
+    "paper/*.aux": true,
+    "paper/*.bbl": true,
+    "paper/*.blg": true,
+    "paper/*.fdb_latexmk": true,
+    "paper/*.fls": true,
+    "paper/*.log": true,
+    "paper/*.out": true,
+    "paper/*.synctex.gz": true,
+    "paper/*.toc": true
+  }
 }
