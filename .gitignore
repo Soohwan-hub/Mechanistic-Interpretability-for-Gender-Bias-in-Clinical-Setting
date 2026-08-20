@@ -44,3 +44,15 @@ activation_patching/cot_patching/results/EXPERIMENTS.md
 # macOS / editor noise
 .DS_Store
 **/.DS_Store
+
+# LaTeX build artifacts (paper/)
+paper/*.aux
+paper/*.log
+paper/*.out
+paper/*.toc
+paper/*.synctex.gz
+paper/*.fls
+paper/*.fdb_latexmk
+paper/*.bbl
+paper/*.blg
+paper/*.pdf

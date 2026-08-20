@@ -2,85 +2,38 @@
 
 > **Branch: `om`** — this README describes the layout of the `om` working branch. The original project README content from `main` is preserved at the bottom.
 
-The `om` branch adds four things on top of `main`:
+The `om` branch adds five things on top of `main`:
 
 1. **Aggregated numbers and analysis docs** for §2.5, §2.6, §2.7 of the writeup (Qwen vs OLMo, simple-MLP vs CoT-MLP vs simple-residual)
 2. **Raw uploaded result bundles** from collaborators (Soohwan's Qwen log_delta, OLMo CoT MLP, Qwen CoT MLP, Sam's simple-residual)
 3. **The Qwen log_delta rerun notebook** + instructions for running on Lambda
 4. **Publication-ready paper figures** (standardized palette/fonts, re-rendered from committed source data) in `paper_figures/`
+5. **The paper's LaTeX source** in `paper/`
 
-Nothing here mutates files under `main` paths (`activation_patching/`, `cot_vignette/`, `localize_bias/`, `build_dataset/`, `config.py`, `model_runner.py`). Everything new is in four folders: `docs/`, `raw_uploads/`, `om_comparison/`, `paper_figures/`, plus one notebook + one instructions file under `activation_patching/simple_patching/`.
+Nothing here mutates files under `main` paths (`activation_patching/`, `cot_vignette/`, `localize_bias/`, `build_dataset/`, `config.py`, `model_runner.py`). Everything new is in five folders: `docs/`, `raw_uploads/`, `om_comparison/`, `paper_figures/`, `paper/`, plus one notebook + one instructions file under `activation_patching/simple_patching/`.
+
+Most top-level folders have their own `README.md` with the detail — this file is a signpost to them, not a duplicate of their contents.
 
 ---
 
-## Top-level layout (om branch)
+## Top-level folders (om branch)
 
-```
-.
-├── README.md                                  # this file
-├── docs/                                      # all reports / extracted-number markdown
-│   ├── BRANCH_CHANGES.md                      # what each remote branch contains
-│   ├── BUNDLE_DIGEST.md                       # contents of the female5/olmo31 committed bundles
-│   ├── results_for_writeup.md                 # §2.5/§2.6/§2.7 numbers from log_delta + OLMo CoT
-│   └── results_qwen_cot_and_simple_residual.md # §2.5/§2.6/§2.7 numbers from Qwen CoT + Qwen residual
-│
-├── om_comparison/                             # per-prompt Qwen vs OLMo (from rewrite_score CSVs)
-│   ├── per_prompt_layer_qwen.csv
-│   ├── per_prompt_layer_olmo.csv
-│   ├── per_prompt_layer_merged.csv            # long table on (prompt_id, layer)
-│   ├── per_prompt_cohort_layer_qwen.csv
-│   ├── per_prompt_cohort_layer_olmo.csv
-│   ├── qwen_peak_per_prompt.csv
-│   ├── olmo_peak_per_prompt.csv
-│   └── figures/
-│       ├── fig1_per_layer_cross_model.png     # cross-model per-layer line, L18 marked
-│       ├── fig2a_heatmap_qwen.png             # prompt × layer heatmap (Qwen)
-│       ├── fig2b_heatmap_olmo.png             # prompt × layer heatmap (OLMo) — shared color scale
-│       └── fig3_layer18_by_cohort.png         # L18 by cohort, OLMo sarcoidosis flagged NaN
-│
-├── paper_figures/                             # publication-ready renders (standardized palette/fonts)
-│   ├── README.md                              # per-figure source-data table + caveats
-│   ├── fig1_gender_probs_by_condition.png
-│   ├── fig2a_toplayers_asthma.png
-│   ├── fig2b_toplayers_depression.png
-│   ├── fig2c_toplayers_all_conditions.png
-│   ├── fig2_toplayers_combined_asthma_depression.png
-│   ├── fig4_layer18_condition_token_table.png
-│   ├── fig5a_mlp_heatmap_asthma_prompt1.png
-│   ├── fig5b_mlp_heatmap_rheumatoid_arthritis_prompt1.png
-│   ├── fig5_mlp_heatmaps_combined_asthma_ra.png
-│   ├── fig9_cot_residual_by_condition_promptA_var1.png
-│   ├── fig9b_cot_residual_by_condition_promptA_var2.png
-│   └── fig11_residual_plateau_qwen.png
-│
-├── _archive/                                  # relocated, never deleted (see its README)
-│   └── stray_cot_bundle_root_files/           # duplicate manifest + empty 0B stub from the CoT bundle
-│
-├── raw_uploads/                               # raw bundles from collaborators (large, not regenerated here)
-│   ├── log_delta/                             # Soohwan: Qwen logprob_delta token×layer CSVs
-│   │   ├── fig_token_layer_heatmap_all155_logdelta.{csv,pdf,png}
-│   │   ├── layer_mean_logdelta_bar_all155.{pdf,png}
-│   │   ├── per_cohort/                        # 5 × {csv,pdf,png}
-│   │   └── per_cell/                          # 155 × {csv,pdf,png}
-│   ├── cot_patching_olmo/                     # OLMo-7B-0424-Instruct CoT MLP results
-│   │   ├── manifest.json
-│   │   └── mlp_cot_patching_results/
-│   │       ├── pred_gender_tracker_{A,C}_*.json   # 12 files
-│   │       ├── prompt_A/{condition}/*.pkl         # safe_var_matrix_* aggregates + per-cell pickles
-│   │       └── prompt_C/{condition}/*.pkl
-│   ├── cot_patching_qwen/                     # Qwen 2.5-7B-Instruct CoT MLP results
-│   │   └── mlp_cot_patching_results/          # same shape as cot_patching_olmo/
-│   └── simple_prompt_residual/                # Sam: Qwen simple-prompt RESIDUAL-stream patching
-│       ├── aggregate_per_layer.{json,csv}     # 28-layer mean/median/trimmed/topk
-│       ├── progress.json
-│       └── artifacts/                         # 155 per-unit pickles (5 cohorts × 31 prompts)
-│
-├── activation_patching/simple_patching/       # (mostly main; om adds two files)
-│   ├── run_qwen_logdelta.ipynb                # om: Lambda-ready rerun with --score-keys all
-│   └── RUN_INSTRUCTIONS.md                    # om: how to run the notebook
-│
-└── (everything else)                          # unchanged from main
-```
+Each folder documents its own contents in its own `README.md` — that's the
+source of truth for what's inside; this table is just a signpost so it
+doesn't need to be kept in sync with every file added or moved.
+
+| Folder | What's there |
+|---|---|
+| `docs/` | Extracted-number writeup docs (§2.5–§2.7) |
+| `om_comparison/` | Cross-model per-prompt comparison CSVs + exploratory figures |
+| `paper_figures/` | Publication-styled figures (standardized palette/fonts) for the writeup/Slack |
+| `paper/` | LaTeX source for the writeup |
+| `raw_uploads/` | Raw result bundles from collaborators (read-only reference) |
+| `activation_patching/` | Model code + committed patching result bundles (mostly `main`; two `om`-added files under `simple_patching/`) |
+| `cot_vignette/`, `localize_bias/` | CoT vignette prompt/patch-target code and bias-localization notes (`main`-branch) |
+| `_archive/` | Relocated files that no longer belong at the root — never deleted, see its README |
+
+Everything not listed above is unchanged from `main`.
 
 ---
 
