@@ -16,6 +16,9 @@ what was committed (the published figures came from tweaked off-repo copies):
     white template, black bar borders.
   * Fig 3 y-axis reads "Score" (committed: "Rewrite score"), white template.
 
+maybe_save_plots also emits fig1_gender_probs_by_prompt.png (not a
+paper figure, not committed).
+
 Figures 8 and 10 are NOT here -- no generator for Fig 8 exists on any branch,
 and Fig 10's two-panel assembly / slice / label reformat are not committed.
 
@@ -130,33 +133,6 @@ ns["plot_top_layers_bar"]([(l, float(per[l])) for l in range(28)],
                           "Top layers (all conditions) by mean rewrite score",
                           str(OUT / "fig3_top_layers"), plot_format="png")
 
-# ---------- Fig 10 : Om's px.imshow settings, paper's stacked 2-panel layout ----
-print("Fig 10 <- simple_patching.py :: plot_heatmap  (paper: 2 panels, shared bar)")
-from plotly.subplots import make_subplots
-import re as _re
-def _fmt(t):
-    m = _re.match(r"^(.*)_(\d+)$", str(t).strip())
-    return f"{m.group(1)} ({m.group(2)})" if m else str(t).strip()
-base = "activation_patching/simple_patching/female5_patch_male/artifacts"
-panels = [("asthma", "Asthma (Prompt 1)"), ("rheumatoid_arthritis", "Rheumatoid Arthritis (Prompt 1)")]
-fig = make_subplots(rows=2, cols=1, vertical_spacing=0.18,
-                    subplot_titles=[t for _, t in panels])
-for i, (tag, _t) in enumerate(panels, start=1):
-    d = pickle.load(open(f"{base}/{tag}_prompt1.pkl", "rb"))
-    m = np.asarray(d["rewrite_scores"])[:22, :]
-    fig.add_trace(go.Heatmap(z=m, x=[_fmt(t) for t in d["token_labels"]],
-                             y=list(range(22)), colorscale=DIV, zmid=0,
-                             zmin=-1, zmax=1, showscale=(i == 1),
-                             colorbar=dict(title="Rewrite Score", len=0.9)),
-                  row=i, col=1)
-    fig.update_yaxes(title_text="Layer", autorange="reversed", tickmode="linear",
-                     tick0=0, dtick=1, row=i, col=1)
-    fig.update_xaxes(title_text="Token", tickangle=-90, row=i, col=1)
-fig.update_layout(title="MLP Patching Rewrite Score Across Layer × Token",
-                  height=1100, width=1900)
-_real_pio.write_image(fig, str(OUT / "fig10_mlp_heatmaps.png"), scale=2)
-print("   wrote fig10_mlp_heatmaps.png")
-
 # ---------- Fig 5 : Om's module, PALETTE overridden ----------
 print("Fig 5  <- recreate_simple_vs_cot_l18_plots.py :: plot_by_condition")
 mod_src = Path(sys.argv[3]).read_text()
@@ -169,3 +145,34 @@ m5.PALETTE.update({"green_dark": P["dark"], "green_mid": P["mid"],
 df = pd.read_csv(f"{SAM}/simple_vs_cot_l18_comparison.csv")
 m5.plot_by_condition(df, OUT / "fig5_simple_vs_cot.png", dpi=160)
 print("   wrote fig5_simple_vs_cot.png")
+
+
+# ---------- Fig 9 : raw_uploads/cot_residual_fig9/regenerate_fig9.py ----------
+print("Fig 9  <- regenerate_fig9.py :: COLORSCALE only")
+import os as _os
+f9 = Path("raw_uploads/cot_residual_fig9/regenerate_fig9.py")
+src9 = f9.read_text()
+old9 = '''COLORSCALE = [
+    [0.0, "#488f31"], [1/6, "#6aaa96"], [2/6, "#aecdc2"],
+    [0.5, "#f1f1f1"],
+    [4/6, "#f8b9a1"], [5/6, "#f08056"], [1.0, "#de3e00"],
+]'''
+new9 = '''COLORSCALE = [
+    [0.0, "#8f0707"], [0.25, "#be6c65"],
+    [0.5, "#d7c2c1"],
+    [0.75, "#de99a1"], [1.0, "#de6e8c"],
+]'''
+assert src9.count(old9) == 1, "fig9 COLORSCALE block not found verbatim"
+src9 = src9.replace(old9, new9)
+src9 = src9.replace(
+    'DATA = os.path.join(os.path.dirname(os.path.abspath(__file__)), "data")',
+    f'DATA = {str(f9.parent / "data")!r}')
+src9 = src9.replace(
+    'OUT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "..", "paper_figures")',
+    f'OUT = {str(OUT)!r}')
+exec(compile(src9, str(f9), "exec"), {"__name__": "fig9", "os": _os})
+_os.replace(OUT / "fig9_cot_residual_by_condition_promptA_var1.png",
+            OUT / "fig9_cot_residual.png")
+# his script also emits the var2 panel (paper fig 9b, not in this paper)
+(OUT / "fig9b_cot_residual_by_condition_promptA_var2.png").unlink(missing_ok=True)
+print("   wrote fig9_cot_residual.png")
