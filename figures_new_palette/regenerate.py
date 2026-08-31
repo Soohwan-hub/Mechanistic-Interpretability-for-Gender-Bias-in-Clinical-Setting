@@ -45,7 +45,7 @@ P = dict(dark="#8f0707", mid="#be6c65", neutral="#d7c2c1",
          light="#de99a1", pink="#de6e8c")
 DIV = [[0.0, P["dark"]], [0.25, P["mid"]], [0.5, P["neutral"]],
        [0.75, P["light"]], [1.0, P["pink"]]]
-BAR_CYCLE = [P["dark"], P["light"], P["mid"], P["pink"]]
+BAR_CYCLE = [P["dark"], P["pink"], P["mid"], P["light"]]
 # -----------------------------------------------------------------
 
 def extract(src_path, names):
@@ -125,6 +125,8 @@ for u in a["raw_units"]:
 per /= np.maximum(cnt, 1)
 src = extract(SP, ["plot_top_layers_bar"])["plot_top_layers_bar"]
 def _fig3_paper(fig):
+    for tr in fig.data:
+        tr.marker.line = dict(color="black", width=1)      # black bar borders
     fig.update_yaxes(title_text="Score")
     fig.update_layout(template="plotly_white")            # paper: white, not blue-grey
 ns = make_ns(OUT / "fig3_top_layers.png", post=_fig3_paper)
