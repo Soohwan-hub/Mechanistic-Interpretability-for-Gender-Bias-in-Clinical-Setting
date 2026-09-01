@@ -15,9 +15,11 @@ data" per figure below.
 | `fig2c_toplayers_all_conditions.png` | Same as above, averaged across **all 5 cohorts** (asthma, depression, multiple sclerosis, rheumatoid arthritis, sarcoidosis; 155 units) | same file, all `raw_units` |
 | `fig2_toplayers_combined_asthma_depression.png` | Side-by-side asthma / depression version, shared y-axis | same as fig2a/fig2b |
 | `fig4_layer18_condition_token_table.png` | Booktabs-style table: layer-18 condition-token rewrite score, OLMo-7B vs Qwen2.5-7B, 5 conditions. Max/min cell bolded. | Values supplied directly by the user (team's canonical numbers — the values committed in `olmo31_rewrite_only/` and `female5_patch_male/condition_token_analysis/` in this repo are an older/different run and do **not** match; see caveat below) |
+| `fig2_token_association_table_nosubtitle.png` | Same table as `fig4_layer18_condition_token_table.png`, regenerated with the grey source-bundle subtitles (`olmo31_rewrite_only` / `female5_patch_male`) removed from under the column headers. Values, bolding, zebra shading, rules and 2538px width are unchanged; height drops 1335 -> 1045 because the header is one line instead of two. | Same team-supplied values as fig4, transcribed rather than recomputed (see caveat below) |
 | `fig5a_mlp_heatmap_asthma_prompt1.png` | Layer × token heatmap of rewrite score, Qwen simple-prompt MLP patching, asthma prompt 1, divergent green(+)/orange(−) scale centered at 0 | `activation_patching/simple_patching/female5_patch_male/artifacts/asthma_prompt1.pkl` |
 | `fig5b_mlp_heatmap_rheumatoid_arthritis_prompt1.png` | Same, rheumatoid arthritis prompt 1 | `activation_patching/simple_patching/female5_patch_male/artifacts/rheumatoid_arthritis_prompt1.pkl` |
 | `fig5_mlp_heatmaps_combined_asthma_ra.png` | Stacked combined version of fig5a (top) + fig5b (bottom), shared colorbar/z-scale | same two `.pkl` files |
+| `fig5_mlp_heatmaps_combined_asthma_ra_redpink.png` | Alternate-palette render of the combined fig5 heatmap: divergent pink(+)/dark-red(−) scale centered at 0, replacing the green/orange ramp. **Produced by recolouring the unfiltered fig5 render (commit `f0a910e`) pixel-by-pixel** via `recolor_fig5_palette.py` — nothing is re-plotted, so tokens, values, layer range, layout and fonts are preserved bit-for-bit; only heatmap and colorbar pixels differ. Note this means it shows the **unfiltered** L0–L21 / all-token view, not the L3–L21 / top-18 filtering that the current `fig5*.png` files carry. | recoloured from `f0a910e:paper_figures/fig5_mlp_heatmaps_combined_asthma_ra.png` |
 | `fig9_cot_residual_by_condition_promptA_var1.png` | CoT **residual-stream** rewrite score, layer × token, four conditions (depression, multiple sclerosis, rheumatoid arthritis, sarcoidosis), Qwen Prompt A / var1. 28 layers; 15-token window ending just before the "You must start with" instruction, matching the source figure. Shared symmetric [-1, 1] scale, **orange positive / green negative** (ramp reversed relative to the other figures). | `cot_resdstream_results_20260609_222032/patching_results1_<condition>/VIGNETTE_PROMPT_A/result_var1.pkl` → `rewrite_matrix` + `token_labels` |
 | `fig9b_cot_residual_by_condition_promptA_var2.png` | Same, Prompt A / var2. | same bundle, `result_var2.pkl` |
 | `fig11_residual_plateau_qwen.png` | Per-layer rewrite score (mean / median / top-k mean) for Qwen simple-prompt **residual-stream** patching, 28 layers × 155 units. Mid-layer plateau L5–L21 shaded; L18 and the L22 collapse marked. The "mean across token positions × 155 units" aggregation detail belongs in the caption, not the axis label. | `raw_uploads/simple_prompt_residual/aggregate_per_layer.csv` → `rewrite_scores_{mean,median,topk_mean}` |
@@ -48,6 +50,43 @@ panel explicitly or show RA on its own rescaled colorbar — do not silently
 reintroduce layers 0–2 for RA only, which would make the two panels
 incomparable.
 
+
+
+## Alternate palette (`_redpink`)
+
+`fig5_mlp_heatmaps_combined_asthma_ra_redpink.png` restates the combined fig5
+heatmap in a divergent red/pink scale. The mapping mirrors the original ramp's
+structure, keeping a neutral near-white midpoint so zero cells still read as
+empty:
+
+| Score | Original | `_redpink` |
+|---|---|---|
+| +1 | `#488f31` green | `#de6e8c` pink |
+| 0 | `#f1f1f1` | `#f1f1f1` |
+| −1 | `#de3e00` orange | `#8f0707` dark red |
+
+The palette's own `#d7c2c1` midpoint was **not** used at zero: it tints every
+near-zero cell, so the grid stops reading as empty-vs-signal. It sits at the
+−1/3 stop instead.
+
+Because the source data is almost entirely positive, the dark-red end is
+effectively unused — the figure reads as pink-on-white and `#8f0707` appears
+mainly in the colorbar.
+
+Regenerate with:
+
+```
+git show f0a910e:paper_figures/fig5_mlp_heatmaps_combined_asthma_ra.png > /tmp/src.png
+python paper_figures/recolor_fig5_palette.py /tmp/src.png \
+    paper_figures/fig5_mlp_heatmaps_combined_asthma_ra_redpink.png
+```
+
+Verified bit-for-bit reproducible, with the white-background and text masks
+pixel-identical to the source.
+
+**No generating script for fig5 exists in this repo** — searched across every
+commit in history; only the PNG outputs were ever committed. That is why this
+figure is produced by recolouring the render rather than by re-running a plot.
 
 ## Note on `fig9` provenance
 
