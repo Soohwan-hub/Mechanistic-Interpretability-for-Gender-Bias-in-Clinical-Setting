@@ -14,11 +14,18 @@
   ],
   "latex-workshop.latex.recipes": [
     {
+      "name": "pdflatex x2",
+      "tools": ["pdflatex", "pdflatex"]
+    },
+    {
       "name": "pdflatex",
       "tools": ["pdflatex"]
     }
   ],
   "latex-workshop.latex.outDir": "%DIR%",
+  "latex-workshop.latex.rootFile.useSubFile": true,
+  "latex-workshop.view.pdf.viewer": "tab",
+  "latex-workshop.latex.autoBuild.cleanAndRetry.enabled": true,
   "latex-workshop.latex.clean.fileTypes": [
     "*.aux", "*.bbl", "*.blg", "*.idx", "*.ind", "*.lof",
     "*.lot", "*.out", "*.toc", "*.fls", "*.fdb_latexmk",

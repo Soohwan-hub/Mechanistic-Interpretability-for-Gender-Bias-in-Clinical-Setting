@@ -1,50 +1,50 @@
-# *ACL Paper Styles
+# paper/
 
-This directory contains the latest LaTeX templates for *ACL conferences.
+LaTeX sources for the paper. Three venue variants share the same content and
+figures, differing only in the NeurIPS track option and workshop title.
 
-## Instructions for authors
+| File | Venue | Class option |
+|---|---|---|
+| `GenAI4health.tex` | GenAI4Health workshop | `[dblblindworkshop,nonatbib]` + `\workshoptitle{GenAI4Health}` |
+| `AI4Good.tex` | Trustworthy AI for Good (AI4GOOD) workshop | `[dblblindworkshop,nonatbib]` + `\workshoptitle{Trustworthy AI for Good (AI4GOOD)}` |
+| `neurips_most_recent.tex` | Interp4Discovery workshop | `[dblblindworkshop,nonatbib]` + `\workshoptitle{Interpretability for Discovery (Interp4Discovery)}` |
 
-Paper submissions to *ACL conferences must use the official ACL style
-templates.
+## Required files
 
-The LaTeX style files are available
+Every variant needs these present to compile:
 
-- as an [Overleaf template](https://www.overleaf.com/latex/templates/association-for-computational-linguistics-acl-conference/jvxskxpnznfj)
-- in this repository
-- as a [.zip file](https://github.com/acl-org/acl-style-files/archive/refs/heads/master.zip)
+- `neurips_2026.sty` — official NeurIPS 2026 style file, do not modify
+- `checklist.tex` — pulled in via `\input`, has no preamble of its own
+- The figure PNGs alongside the `.tex` (no `\graphicspath`, figures resolve locally)
 
-Please see [`acl_latex.tex`](https://github.com/acl-org/acl-style-files/blob/master/acl_latex.tex) for detailed instructions on using the LaTeX style.  This file also serves as a template document for use with LaTeX and pdfLaTeX.  The file  [`acl_lualatex.tex`](https://github.com/acl-org/acl-style-files/blob/master/acl_lualatex.tex) serves as a template document for use with both XeLaTeX and LuaLaTeX. 
+`neurips_formatting_instructions.tex` is the official NeurIPS template, kept as
+the reference for formatting audits. It is not compiled as part of any paper.
 
-Please follow the paper formatting guidelines general to *ACL
-conferences:
+## Formatting compliance
 
-- [Paper formatting guidelines](https://acl-org.github.io/ACLPUB/formatting.html)
+`GenAI4health.tex` and `AI4Good.tex` were audited against
+`neurips_formatting_instructions.tex` and conform to the rules it states:
+sentence-case headings and captions, figure captions after figures, table
+titles before tables, no vertical rules, graphics widths as multiples of
+`\linewidth`, single-paragraph abstract, nine content pages, line numbers,
+US Letter, Type 1 fonts, unmodified style parameters.
 
-Authors may not modify these style files or use templates designed for
-other conferences.
+Two things to know when compiling:
 
-## Instructions for publications chairs
+- The submission PDF shows the generic "Submitted to..." footer for every
+  track. `neurips_2026.sty` only substitutes the workshop name when the
+  `final` option is set, so this is expected, not a misconfiguration.
+- `neurips_most_recent.tex` emits one `natbib` error because it loads
+  `natbib` while passing `nonatbib` to the class. It falls back to numerical
+  style and compiles. The other two variants do not load `natbib`.
 
-To adapt the style files for your conference, please fork this repository and
-make necessary changes. Minimally, you'll need to update the name of
-the conference and rename the files.
+## Build
 
-If you make improvements to the templates that should be propagated to
-future conferences, please submit a pull request. Thank you in
-advance!
+Three `pdflatex` passes to resolve references and the appendix tables:
 
-In older versions of the templates, authors were asked to fill in the
-START submission ID so that it would be stamped at the top of each
-page of the anonymized version. This is no longer needed, because it
-is now possible to do this stamping automatically within
-START. Currently, the way to do this is for the program chair to email
-support@softconf.com and request it.
+```bash
+pdflatex -interaction=nonstopmode <file>.tex   # x3
+```
 
-## Instructions for making changes to style files
-
-- merge pull request in github, or push to github
-- git pull from github to a local repository
-- then, git push from your local repository to overleaf project 
-    - Overleaf project is https://www.overleaf.com/project/5f64f1fb97c4c50001b60549
-    - Overleaf git url is https://git.overleaf.com/5f64f1fb97c4c50001b60549
-- then, click "Submit" and then "Submit as Template" in overleaf in order to ask overleaf to update the overleaf template from the overleaf project 
+Build artifacts (`*.aux`, `*.log`, `*.pdf`, `*.synctex.gz`, ...) are
+gitignored. `.vscode/settings.json` configures build-on-save.
