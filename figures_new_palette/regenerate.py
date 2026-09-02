@@ -131,7 +131,9 @@ def _fig3_paper(fig):
     fig.update_layout(template="plotly_white")            # paper: white, not blue-grey
 ns = make_ns(OUT / "fig3_top_layers.png", post=_fig3_paper)
 exec(src, ns)
-ns["plot_top_layers_bar"]([(l, float(per[l])) for l in range(28)],
+# layers 0 and 2 are the early-layer template artifact the paper excludes
+ns["plot_top_layers_bar"]([(l, float(per[l])) for l in range(28)
+                           if l not in (0, 2)],
                           "Top layers (all conditions) by mean rewrite score",
                           str(OUT / "fig3_top_layers"), plot_format="png")
 
